@@ -20,11 +20,6 @@ export interface ButtonProps {
   label: string;
 
   /**
-   * Type of gnagna
-   */
-  thetype?: 'and' | 'or';
-  
-  /**
    * Optional click handler
    */
   onClick?: () => void;
