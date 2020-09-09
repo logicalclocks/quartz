@@ -10,7 +10,7 @@ The current repo is the implementation of the library of the design system of Lo
 
 - NPM package of React components TS
 - use storybook as documentation
-- use Rebass as a base CSS frame and emotion for overwritting style
+- use Rebass as a base CSS frame and Emotion for overwriting style
 
 The DS is first experimented on Figma before being implemented:
 [https://www.figma.com/file/mvY1f3xMXUEd6szvT82FxB/Feature-Store?node-id=327%3A0](https://www.figma.com/file/mvY1f3xMXUEd6szvT82FxB/Feature-Store?node-id=327%3A0)
@@ -43,9 +43,9 @@ class Example extends Component {
 
 Run `npm start` from the root to compile files automatically.
 
-Simultenously, run `npm start`from `example` folder in order to preview component in the browser.
+Simultaneously, run `npm start`from `example` folder in order to preview component in the browser.
 
 
 ## License
 
-MIT © [logicalclocks](https://github.com/logicalclocks)
+AGPL-3.0 Licence  © [logicalclocks](https://github.com/logicalclocks)
