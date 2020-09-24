@@ -1,3 +1,6 @@
-const init = 'Init Project';
+import Button from './components/button';
 
-export default init;
+// Theme
+import ThemeProvider from './components/theme/ThemeProvider';
+
+export { Button, ThemeProvider };
