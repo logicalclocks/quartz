@@ -3,11 +3,15 @@ import buttons from './buttons';
 import iconButtons from './icon-buttons';
 import footerButtons from './footer-buttons';
 
+// Card themes
+import cards from './cards';
+
 const theme = {
   colors: {
     primary: '#21B182',
     primaryShade1: '#65D3AF',
     primaryShade2: '#E6F2EE',
+    primaryShade3: '#E2E2E2',
 
     primaryGray: '#A0A0A0',
     primaryGrayShade1: '#CBCBCB',
@@ -32,7 +36,9 @@ const theme = {
   transitions: {
     button: 'all .25s ease',
   },
-  variants: {},
+  variants: {
+    ...cards,
+  },
   text: {},
   buttons: {
     ...buttons,
