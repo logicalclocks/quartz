@@ -17,7 +17,7 @@ export default {
 
   cursor: 'pointer',
 
-  transition: 'all .3s ease',
+  transition: 'all .25s ease',
 
   ':disabled': {
     cursor: 'default',

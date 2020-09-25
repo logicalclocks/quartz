@@ -1,25 +1,23 @@
 import React, { FC } from 'react';
-import { Button as RebassButton } from 'rebass';
+import { Button as RebassButton, ButtonProps } from 'rebass';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { IconDefinition } from '@fortawesome/fontawesome-common-types';
 
 // Styles
 import styles from './button.styles';
 
-export interface ButtonProps {
+export interface QuartzButtonProps extends Omit<ButtonProps, 'css'> {
   children: React.ReactNode;
-  intent: 'primary' | 'secondary' | 'ghost' | 'inline';
-  disabled?: boolean;
+  intent?: 'primary' | 'secondary' | 'ghost' | 'inline';
   icon?: IconDefinition;
-  onClick: (event: React.SyntheticEvent<HTMLButtonElement>) => void;
 }
 
-const Button: FC<ButtonProps> = ({
-  intent,
+const Button: FC<QuartzButtonProps> = ({
+  intent = 'primary',
   icon,
   children,
   ...props
-}: ButtonProps) => (
+}: QuartzButtonProps) => (
   <RebassButton sx={styles} variant={intent} {...props}>
     {icon && (
       <span>

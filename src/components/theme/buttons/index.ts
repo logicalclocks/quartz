@@ -3,4 +3,11 @@ import inline from './inline';
 import primary from './primary';
 import secondary from './secondary';
 
-export { ghost, inline, primary, secondary };
+const styles = {
+  ghost,
+  inline,
+  primary,
+  secondary,
+};
+
+export default styles;

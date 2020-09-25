@@ -1,9 +1,10 @@
 export default {
   color: 'primary',
-  bg: 'unset',
+  bg: 'white',
+
   borderWidth: '1px',
   borderStyle: 'solid',
-  borderColor: 'transparent',
+  borderColor: 'white',
 
   ':hover': {
     bg: 'primaryShade2',

@@ -1,5 +1,6 @@
 // Button themes
-import * as buttons from './buttons';
+import buttons from './buttons';
+import iconButtons from './icon-buttons';
 
 const theme = {
   colors: {
@@ -9,7 +10,9 @@ const theme = {
 
     primaryGray: '#A0A0A0',
     primaryGrayShade1: '#CBCBCB',
+    primaryGrayShade2: '#F5F5F5',
 
+    dark: '#000000',
     darkGray: '#272727',
     white: '#FFFFFF',
   },
@@ -24,7 +27,13 @@ const theme = {
   },
   variants: {},
   text: {},
-  buttons,
+  buttons: {
+    ...buttons,
+    ...iconButtons,
+  },
+  tooltip: {
+    bg: 'red',
+  },
 };
 
 export default theme;
