@@ -39,9 +39,6 @@ const theme = {
     ...iconButtons,
     ...footerButtons,
   },
-  tooltip: {
-    bg: 'red',
-  },
 };
 
 export default theme;
