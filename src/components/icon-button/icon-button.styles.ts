@@ -19,15 +19,19 @@ export default {
   outline: 'none',
   cursor: 'pointer',
 
-  transition: 'all .25s ease',
+  transition: ({ transitions }) => transitions.button,
 
   ':disabled': {
     cursor: 'default',
     pointerEvents: 'none',
   },
 
+  // Tooltip
   '> span': {
     visibility: 'hidden',
+
+    maxWidth: '200px',
+    width: 'max-content',
 
     position: 'absolute',
     left: '50%',

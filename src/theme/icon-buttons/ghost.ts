@@ -1,5 +1,6 @@
 export default {
   bg: 'white',
+
   borderColor: 'white',
 
   ':hover': {

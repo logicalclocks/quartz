@@ -2,10 +2,10 @@ import primary from './primary';
 import ghost from './ghost';
 import ghostWhite from './ghost-white';
 
-const styles = {
+const variants = {
   'icon-primary': primary,
   'icon-ghost': ghost,
   'icon-ghost-white': ghostWhite,
 };
 
-export default styles;
+export default variants;

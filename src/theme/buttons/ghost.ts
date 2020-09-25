@@ -9,9 +9,11 @@ export default {
   ':hover': {
     bg: 'primaryShade2',
   },
+
   ':focus': {
     outline: 'none',
   },
+
   ':active': {
     outline: 'none',
     bg: 'primaryShade2',
@@ -19,6 +21,7 @@ export default {
     borderStyle: 'solid',
     borderColor: 'primary',
   },
+
   ':disabled': {
     bg: 'unset',
   },

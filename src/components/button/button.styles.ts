@@ -1,3 +1,5 @@
+import { SxStyleProp } from 'rebass';
+
 export default {
   display: 'flex',
   flexDirection: 'row',
@@ -10,14 +12,14 @@ export default {
 
   outlineColor: 'primary',
 
-  fontFamily: 'Inter',
+  fontFamily: 'buttons',
   fontStyle: 'normal',
   fontWeight: 'bold',
   fontSize: '12px',
 
   cursor: 'pointer',
 
-  transition: 'all .25s ease',
+  transition: ({ transitions }) => transitions.button,
 
   ':disabled': {
     cursor: 'default',
@@ -26,4 +28,4 @@ export default {
   '> span': {
     mr: '8px',
   },
-};
+} as SxStyleProp;

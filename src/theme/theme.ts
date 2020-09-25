@@ -1,6 +1,7 @@
 // Button themes
 import buttons from './buttons';
 import iconButtons from './icon-buttons';
+import footerButtons from './footer-buttons';
 
 const theme = {
   colors: {
@@ -21,15 +22,22 @@ const theme = {
     heading: 700,
     bold: 700,
   },
+  fonts: {
+    buttons: 'Inter',
+  },
   shadows: {
     primary: '0px 5px 15px rgba(33, 177, 130, 0.2)',
     disabled: '0px 4px 15px rgba(0, 0, 0, 0.25)',
+  },
+  transitions: {
+    button: 'all .25s ease',
   },
   variants: {},
   text: {},
   buttons: {
     ...buttons,
     ...iconButtons,
+    ...footerButtons,
   },
   tooltip: {
     bg: 'red',

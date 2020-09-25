@@ -3,11 +3,11 @@ import inline from './inline';
 import primary from './primary';
 import secondary from './secondary';
 
-const styles = {
+const variants = {
   ghost,
   inline,
   primary,
   secondary,
 };
 
-export default styles;
+export default variants;
