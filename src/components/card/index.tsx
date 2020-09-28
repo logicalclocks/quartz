@@ -8,18 +8,21 @@ export interface CardProps extends Omit<BoxProps, 'css'> {
   link?: string;
   actions?: React.ReactNode;
   children: React.ReactNode;
+  contentProps?: Omit<BoxProps, 'css'>;
 }
 
 const Card: FC<CardProps> = ({
   title,
   actions,
   children,
+  height,
+  contentProps,
   ...props
 }: CardProps) => {
   const isShowHeader = title || actions;
 
   return (
-    <Box {...props} variant="card" sx={styles}>
+    <Box {...props} height={height} variant="card" sx={styles}>
       {/* Header */}
       {isShowHeader && (
         <Box sx={cardHeaderStyles}>
@@ -28,7 +31,16 @@ const Card: FC<CardProps> = ({
         </Box>
       )}
       {/* Content */}
-      <Box width="100%" height="100%" p="20px" overflowY="auto">
+      <Box
+        sx={{
+          boxShadow: height ? 'cardInsetShadow' : 'none',
+        }}
+        width="100%"
+        height="100%"
+        p="20px"
+        overflowY="auto"
+        {...contentProps}
+      >
         {children}
       </Box>
     </Box>
