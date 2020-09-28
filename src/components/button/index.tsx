@@ -1,49 +1,31 @@
 import React, { FC } from 'react';
-import { Button } from 'rebass';
+import { Button as RebassButton, ButtonProps } from 'rebass';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { IconDefinition } from '@fortawesome/fontawesome-common-types';
 
-export interface ButtonProps {
-  variant: string;
+// Styles
+import styles from './button.styles';
+
+export interface QuartzButtonProps extends Omit<ButtonProps, 'css'> {
+  children: React.ReactNode;
+  intent?: 'primary' | 'secondary' | 'ghost' | 'inline';
+  icon?: IconDefinition;
 }
 
-const StyledButton: FC<ButtonProps> = (props: ButtonProps) => (
-  <Button
-    {...props}
-    sx={{
-      display: 'flex',
-      flexDirection: 'row',
-      padding: '8px 15px',
-
-      position: 'absolute',
-      height: '31px',
-      left: '25.36%',
-      right: '69.27%',
-      top: '83px',
-
-      background: '#21B182',
-
-      border: '1px solid #21B182',
-      borderRadius: '0',
-      boxSizing: 'border-box',
-
-      outlineColor: 'red',
-
-      boxShadow: '0px 5px 15px rgba(33, 177, 130, 0.2)',
-
-      fontFamily: 'Inter',
-      fontStyle: 'normal',
-      fontWeight: 'bold',
-      fontSize: '12px',
-      lineHeight: '15px',
-
-      cursor: 'pointer',
-
-      transition: 'background .3s ease',
-
-      ':hover': {
-        background: '#65D3AF',
-      },
-    }}
-  />
+const Button: FC<QuartzButtonProps> = ({
+  intent = 'primary',
+  icon,
+  children,
+  ...props
+}: QuartzButtonProps) => (
+  <RebassButton sx={styles} variant={intent} {...props}>
+    {icon && (
+      <span>
+        <FontAwesomeIcon icon={icon} size="sm" />
+      </span>
+    )}
+    {children}
+  </RebassButton>
 );
 
-export default StyledButton;
+export default Button;
