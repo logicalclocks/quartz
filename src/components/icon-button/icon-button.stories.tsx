@@ -1,6 +1,6 @@
+import React from 'react';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { action } from '@storybook/addon-actions';
-import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
 import { faEye } from '@fortawesome/free-regular-svg-icons';
 import { faEye as fasEye } from '@fortawesome/free-solid-svg-icons';
@@ -53,18 +53,18 @@ IconButtons.argTypes = {
     type: {
       required: true,
       summary:
-        'Put icon component from @fortawesome/free-solid-svg-icons package',
+        'Icon name, icon SVG, or array like ["far", "eye"] ["fas", "eye"]',
     },
   },
   iconOnHover: {
     control: {
       type: 'select',
-      options: [undefined, faEye],
+      options: ['coffee', ['far', 'eye'], faEye],
       default: undefined,
     },
     type: {
       summary:
-        'Put icon component from @fortawesome/free-solid-svg-icons package',
+        'Icon name, icon SVG, or array like ["far", "eye"] ["fas", "eye"]',
     },
   },
 };
