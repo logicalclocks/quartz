@@ -6,6 +6,8 @@
     "plugin:prettier/recommended",
     "prettier/standard",
     "prettier/react",
+    "prettier",
+    "airbnb-typescript",
     "plugin:@typescript-eslint/eslint-recommended"
   ],
   "env": {
@@ -16,7 +18,8 @@
     "ecmaFeatures": {
       "legacyDecorators": true,
       "jsx": true
-    }
+    },
+    "project": "./tsconfig.json"
   },
   "settings": {
     "react": {
@@ -29,6 +32,10 @@
     "react/jsx-handler-names": 0,
     "react/jsx-fragments": 0,
     "react/no-unused-prop-types": 0,
-    "import/export": 0
+    "import/export": 0,
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars-experimental": "error",
+    "react/jsx-props-no-spreading": 0
   }
 }
