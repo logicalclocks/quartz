@@ -23,7 +23,8 @@
     "predeploy": "cd example && npm install && npm run build",
     "deploy": "gh-pages -d example/build",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "chromatic": "npx chromatic --project-token dqq8k95raoo"
   },
   "peerDependencies": {
     "react": "^16.0.0"
