@@ -1,8 +1,6 @@
 import { SxStyleProp } from 'rebass';
 
 export default {
-  position: 'relative',
-
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
@@ -26,49 +24,6 @@ export default {
     pointerEvents: 'none',
   },
 
-  // Tooltip
-  '> span': {
-    visibility: 'hidden',
-
-    maxWidth: '200px',
-    width: 'max-content',
-
-    position: 'absolute',
-    left: '50%',
-    bottom: '-7px',
-
-    transform: 'translate(-50%, 100%)',
-
-    py: '5px',
-    px: '10px',
-
-    fontFamily: 'Inter',
-    fontStyle: 'normal',
-    fontWeight: 'bold',
-    fontSize: '12px',
-
-    lineHeight: '15px',
-
-    textAlign: 'center',
-
-    borderRadius: '2px',
-
-    ':after': {
-      position: 'absolute',
-      top: '-5px',
-      left: '50%',
-
-      transform: 'translateX(-50%)',
-
-      content: '""',
-
-      borderLeft: '6px solid transparent',
-      borderRight: '6px solid transparent',
-      borderBottomWidth: '5px',
-      borderBlockEndStyle: 'solid',
-    },
-  },
-
   '> svg': {
     fontSize: '20px',
 
@@ -83,9 +38,5 @@ export default {
     ':nth-child(2)': {
       display: 'block',
     },
-  },
-
-  ':hover > span': {
-    visibility: 'visible',
   },
 } as SxStyleProp;

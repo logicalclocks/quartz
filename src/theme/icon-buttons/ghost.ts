@@ -21,15 +21,4 @@ export default {
   '& path': {
     fill: 'dark',
   },
-
-  //  Tooltip
-  '> span': {
-    bg: 'dark',
-    color: 'white',
-
-    // Arrow
-    ':after': {
-      borderBottomColor: 'dark',
-    },
-  },
 };

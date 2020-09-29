@@ -2,7 +2,8 @@
 import buttons from './buttons';
 import iconButtons from './icon-buttons';
 import footerButtons from './footer-buttons';
-
+// Tooltip themes
+import tooltip from './tooltip';
 // Card themes
 import cards from './cards';
 
@@ -32,12 +33,14 @@ const theme = {
   shadows: {
     primary: '0px 5px 15px rgba(33, 177, 130, 0.2)',
     disabled: '0px 4px 15px rgba(0, 0, 0, 0.25)',
+    cardInsetShadow: 'inset 0px -20px 30px -25px rgba(0, 0, 0, 0.15)',
   },
   transitions: {
     button: 'all .25s ease',
   },
   variants: {
     ...cards,
+    tooltip,
   },
   text: {},
   buttons: {
