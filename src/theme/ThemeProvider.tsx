@@ -4,6 +4,8 @@ import { ThemeProvider as EmotionThemeProvider } from 'emotion-theming';
 
 // Theme
 import defaultTheme from './theme';
+// Types
+import { ITheme } from './types';
 
 export interface ThemeProviderProps {
   children: React.ReactNode;
@@ -18,7 +20,9 @@ const ThemeProvider: FC<ThemeProviderProps> = ({
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap');
       `}
     />
-    <EmotionThemeProvider theme={defaultTheme}>{children}</EmotionThemeProvider>
+    <EmotionThemeProvider<ITheme> theme={defaultTheme}>
+      {children}
+    </EmotionThemeProvider>
   </React.Fragment>
 );
 

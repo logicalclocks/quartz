@@ -80,6 +80,7 @@
     "@fortawesome/free-regular-svg-icons": "^5.14.0",
     "@fortawesome/free-solid-svg-icons": "^5.14.0",
     "@fortawesome/react-fontawesome": "^0.1.11",
+    "@styled-system/css": "^5.1.5",
     "emotion-theming": "^10.0.27",
     "rebass": "^4.0.7"
   }

@@ -2,12 +2,16 @@
 import buttons from './buttons';
 import iconButtons from './icon-buttons';
 import footerButtons from './footer-buttons';
+// Label themes
+import label from './label';
 // Tooltip themes
 import tooltip from './tooltip';
 // Card themes
 import cards from './cards';
+// Types
+import { ITheme } from './types';
 
-const theme = {
+const theme: ITheme = {
   colors: {
     primary: '#21B182',
     primaryShade1: '#65D3AF',
@@ -22,13 +26,9 @@ const theme = {
     darkGray: '#272727',
     white: '#FFFFFF',
   },
-  fontWeights: {
-    body: 400,
-    heading: 700,
-    bold: 700,
-  },
   fonts: {
     buttons: 'Inter',
+    inputs: 'Inter',
   },
   shadows: {
     primary: '0px 5px 15px rgba(33, 177, 130, 0.2)',
@@ -41,6 +41,7 @@ const theme = {
   variants: {
     ...cards,
     tooltip,
+    label,
   },
   text: {},
   buttons: {
