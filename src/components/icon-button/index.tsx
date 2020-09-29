@@ -24,31 +24,18 @@ const IconButton: FC<IconButtonProps> = ({
   disabled,
   iconOnHover,
   ...props
-}: IconButtonProps) => {
-  if (tooltip) {
-    return (
-      <Tooltip disabled={disabled} mainText={tooltip}>
-        <RebassButton
-          sx={styles}
-          variant={`icon-${intent}`}
-          disabled={disabled}
-          {...props}
-        >
-          <FontAwesomeIcon icon={icon} />
-          {(iconOnHover || icon) && (
-            <FontAwesomeIcon icon={iconOnHover || icon} />
-          )}
-        </RebassButton>
-      </Tooltip>
-    );
-  }
-
-  return (
-    <RebassButton sx={styles} variant={`icon-${intent}`} {...props}>
+}: IconButtonProps) => (
+  <Tooltip disabled={disabled} mainText={tooltip}>
+    <RebassButton
+      sx={styles}
+      variant={`icon-${intent}`}
+      disabled={disabled}
+      {...props}
+    >
       <FontAwesomeIcon icon={icon} />
       {(iconOnHover || icon) && <FontAwesomeIcon icon={iconOnHover || icon} />}
     </RebassButton>
-  );
-};
+  </Tooltip>
+);
 
 export default IconButton;
