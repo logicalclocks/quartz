@@ -1,6 +1,6 @@
 export default {
   bg: 'white',
-  color: 'dark',
+  color: 'darkGray',
 
   borderColor: 'primaryShade3',
 };

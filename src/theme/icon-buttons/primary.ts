@@ -4,7 +4,7 @@ export default {
   borderColor: 'primaryGrayShade1',
 
   ':hover': {
-    borderColor: 'dark',
+    borderColor: 'darkGray',
   },
 
   ':active': {
@@ -17,6 +17,6 @@ export default {
 
   // Icon color
   '& path': {
-    fill: 'dark',
+    fill: 'darkGray',
   },
 };
