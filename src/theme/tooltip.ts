@@ -1,10 +1,10 @@
 export default {
-  bg: 'dark',
+  bg: 'darkGray',
   color: 'white',
 
   // Arrow
   ':after': {
-    borderBottomColor: 'dark',
+    borderColor: 'darkGray',
   },
 
   // Secondary text

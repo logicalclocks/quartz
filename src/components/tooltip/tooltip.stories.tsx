@@ -1,5 +1,3 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
-import { action } from '@storybook/addon-actions';
 import React from 'react';
 
 import { Story, Meta } from '@storybook/react/types-6-0';
@@ -19,7 +17,6 @@ const Template: Story<TooltipProps> = (props) => (
 );
 
 export const Default = Template.bind({});
-export const WithComponentInside = Template.bind({});
 
 const argTypes = {
   mainText: {
@@ -29,7 +26,7 @@ const argTypes = {
     },
     type: {
       required: true,
-      summary: 'Accepts text, React component (link,button, ...)',
+      summary: 'Tooltip text',
     },
   },
   secondaryText: {
@@ -39,8 +36,7 @@ const argTypes = {
     },
     type: {
       required: false,
-      summary:
-        'Text gray colored. Accepts string, React component (link,button, ...)',
+      summary: 'Gray colored text',
     },
   },
   disabled: {
@@ -52,6 +48,17 @@ const argTypes = {
       required: false,
     },
   },
+  position: {
+    control: {
+      type: 'select',
+      default: 'bottom',
+      options: ['bottom', 'right'],
+    },
+    type: {
+      required: false,
+      summary: 'Tooltip position according to the wrapped component',
+    },
+  },
 };
 
 Default.args = {
@@ -59,14 +66,4 @@ Default.args = {
   secondaryText: 'secondary',
 };
 
-WithComponentInside.args = {
-  mainText: 'tooltip',
-  secondaryText: (
-    <Button intent="inline" padding="0" onClick={action('Button from tooltip')}>
-      inline button
-    </Button>
-  ),
-};
-
 Default.argTypes = argTypes;
-WithComponentInside.argTypes = argTypes;

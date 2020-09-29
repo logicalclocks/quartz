@@ -1,14 +1,22 @@
 import React, { FC } from 'react';
 import { Box, BoxProps } from 'rebass';
 
+// Enums
+import TooltipPositions from './positions';
+
 // Styles
-import { containerStyles, popupStyles, tooltipStyles } from './tooltip.styles';
+import {
+  containerStyles,
+  getPopupStyles,
+  getTooltipStyles,
+} from './tooltip.styles';
 
 export interface TooltipProps extends Omit<BoxProps, 'css'> {
   children: React.ReactNode;
-  mainText: React.ReactNode;
-  secondaryText?: React.ReactNode;
+  mainText: string;
+  secondaryText?: string;
   disabled?: boolean;
+  position?: TooltipPositions;
 }
 
 const Tooltip: FC<TooltipProps> = ({
@@ -16,13 +24,14 @@ const Tooltip: FC<TooltipProps> = ({
   mainText,
   secondaryText,
   disabled,
+  position = TooltipPositions.bottom,
   ...props
 }: TooltipProps) => (
   <Box {...props} sx={containerStyles}>
     {children}
     {!disabled && (
-      <Box as="span" sx={popupStyles}>
-        <Box as="span" variant="tooltip" sx={tooltipStyles}>
+      <Box as="span" sx={getPopupStyles(position)}>
+        <Box as="span" variant="tooltip" sx={getTooltipStyles(position)}>
           {mainText}
           {secondaryText && <span>{secondaryText}</span>}
         </Box>

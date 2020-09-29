@@ -11,7 +11,7 @@ import styles from './icon-button.styles';
 
 export interface IconButtonProps extends Omit<ButtonProps, 'css'> {
   intent?: 'primary' | 'ghost' | 'ghost-white';
-  tooltip?: string;
+  tooltip: string;
   icon: IconDefinition;
   disabled?: boolean;
   iconOnHover?: IconDefinition;
