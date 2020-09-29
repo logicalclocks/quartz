@@ -52,6 +52,7 @@ const tooltipArrows = {
 
 export const containerStyles = {
   position: 'relative',
+  maxWidth: 'max-content',
 
   ':hover': {
     '> span:last-of-type': {
