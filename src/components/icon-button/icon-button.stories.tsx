@@ -31,6 +31,15 @@ IconButtons.argTypes = {
       default: 'primary',
     },
   },
+  tooltip: {
+    control: {
+      type: 'text',
+      default: 'Tooltip',
+    },
+    type: {
+      required: true,
+    },
+  },
   disabled: {
     control: {
       type: 'boolean',

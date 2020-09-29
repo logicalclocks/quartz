@@ -4,7 +4,7 @@ export default {
 
   // Arrow
   ':after': {
-    borderBottomColor: 'darkGray',
+    borderColor: 'darkGray',
   },
 
   // Secondary text
