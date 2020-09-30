@@ -27,7 +27,6 @@ const theme: ITheme = {
     primaryGrayShade1: '#CBCBCB',
     primaryGrayShade2: '#F5F5F5',
 
-    dark: '#000000',
     darkGray: '#272727',
     white: '#FFFFFF',
 
