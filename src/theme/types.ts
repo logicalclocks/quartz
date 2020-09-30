@@ -32,6 +32,7 @@ export interface IThemeShadows {
   primary: string;
   disabled: string;
   cardInsetShadow: string;
+  navigation: string;
 }
 
 export interface IThemeVariants {
@@ -58,4 +59,5 @@ export interface ITheme {
   buttons: Variants;
   inputs: Variants;
   inputIntents: IInputIntent;
+  navigation: Variants;
 }
