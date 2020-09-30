@@ -11,6 +11,13 @@ export interface IThemeColors {
   dark: string;
   darkGray: string;
   white: string;
+
+  labels: {
+    red: string;
+    orange: string;
+    purple: string;
+    skyblue: string;
+  };
 }
 
 export interface IThemeFonts {
@@ -32,12 +39,24 @@ export interface IThemeVariants {
   [key: string]: SystemStyleObject;
 }
 
+interface INestedThemeVariants {
+  [key: string]: IThemeVariants;
+}
+
+interface IInputIntent {
+  [key: string]: string;
+}
+
+export type Variants = IThemeVariants | INestedThemeVariants;
+
 export interface ITheme {
   colors: IThemeColors;
   fonts: IThemeFonts;
   shadows: IThemeShadows;
   transitions: IThemeTransitions;
-  variants: IThemeVariants;
-  text: IThemeVariants;
-  buttons: IThemeVariants;
+  variants: Variants;
+  text: Variants;
+  buttons: Variants;
+  inputs: Variants;
+  inputIntents: IInputIntent;
 }

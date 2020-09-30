@@ -5,7 +5,7 @@ import styles from './label.styles';
 
 export interface LabelProps extends Omit<BoxProps, 'css' | 'action'> {
   action?: React.ReactNode;
-  text: string;
+  text?: string;
   children: React.ReactNode;
 }
 

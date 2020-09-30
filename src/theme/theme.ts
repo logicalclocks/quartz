@@ -8,6 +8,11 @@ import label from './label';
 import tooltip from './tooltip';
 // Card themes
 import cards from './cards';
+// Input info themes
+import inputInfo from './input-info';
+// Inputs themes
+import inputs from './inputs';
+import inputIntents from './intents';
 // Types
 import { ITheme } from './types';
 
@@ -25,6 +30,13 @@ const theme: ITheme = {
     dark: '#000000',
     darkGray: '#272727',
     white: '#FFFFFF',
+
+    labels: {
+      red: '#EB5757',
+      orange: '#f2994a',
+      purple: '#9B51E0',
+      skyblue: '#56CCF2',
+    },
   },
   fonts: {
     buttons: 'Inter',
@@ -43,12 +55,16 @@ const theme: ITheme = {
     tooltip,
     label,
   },
-  text: {},
+  text: {
+    inputInfo,
+  },
   buttons: {
     ...buttons,
     ...iconButtons,
     ...footerButtons,
   },
+  inputs,
+  inputIntents,
 };
 
 export default theme;
