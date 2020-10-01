@@ -12,7 +12,8 @@ export default {
   },
 
   ':disabled': {
-    borderColor: 'transparent',
+    bg: 'primaryShade3',
+    borderColor: 'primaryShade3',
   },
 
   '::-webkit-input-placeholder': {

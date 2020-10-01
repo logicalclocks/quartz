@@ -4,7 +4,7 @@ import { Story, Meta } from '@storybook/react/types-6-0';
 import InputInfo, { InputInfoProps } from '.';
 
 export default {
-  title: 'Quartz/Input info',
+  title: 'Quartz/Input/Info',
   component: InputInfo,
 } as Meta;
 

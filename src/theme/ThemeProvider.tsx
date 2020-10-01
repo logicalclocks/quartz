@@ -18,7 +18,6 @@ const ThemeProvider: FC<ThemeProviderProps> = ({
     <Global
       styles={css`
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@500;700&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
       `}
     />
     <EmotionThemeProvider<ITheme> theme={defaultTheme}>
