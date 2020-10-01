@@ -6,7 +6,7 @@ import Label, { LabelProps } from '.';
 import Button from '../button';
 
 export default {
-  title: 'Quartz/Label',
+  title: 'Quartz/Input/Label',
   component: Label,
 } as Meta;
 
