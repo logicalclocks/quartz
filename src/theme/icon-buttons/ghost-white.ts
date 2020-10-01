@@ -19,17 +19,6 @@ export default {
 
   // Icon color
   '& path': {
-    fill: 'dark',
-  },
-
-  //  Tooltip
-  '> span': {
-    bg: 'dark',
-    color: 'white',
-
-    // Arrow
-    ':after': {
-      borderBottomColor: 'dark',
-    },
+    fill: 'darkGray',
   },
 };

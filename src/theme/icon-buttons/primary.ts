@@ -4,7 +4,7 @@ export default {
   borderColor: 'primaryGrayShade1',
 
   ':hover': {
-    borderColor: 'dark',
+    borderColor: 'darkGray',
   },
 
   ':active': {
@@ -17,17 +17,6 @@ export default {
 
   // Icon color
   '& path': {
-    fill: 'dark',
-  },
-
-  //  Tooltip
-  '> span': {
-    bg: 'dark',
-    color: 'white',
-
-    // Arrow
-    ':after': {
-      borderBottomColor: 'dark',
-    },
+    fill: 'darkGray',
   },
 };
