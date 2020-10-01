@@ -19,6 +19,6 @@ export default {
 
   // Icon color
   '& path': {
-    fill: 'dark',
+    fill: 'darkGray',
   },
 };

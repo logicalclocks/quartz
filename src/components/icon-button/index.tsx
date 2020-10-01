@@ -1,7 +1,7 @@
+import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import React, { FC } from 'react';
 import { Button as RebassButton, ButtonProps } from 'rebass';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { IconDefinition } from '@fortawesome/fontawesome-common-types';
 
 // Components
 import Tooltip from '../tooltip';
@@ -12,9 +12,9 @@ import styles from './icon-button.styles';
 export interface IconButtonProps extends Omit<ButtonProps, 'css'> {
   intent?: 'primary' | 'ghost' | 'ghost-white';
   tooltip: string;
-  icon: IconDefinition;
+  icon: IconProp;
   disabled?: boolean;
-  iconOnHover?: IconDefinition;
+  iconOnHover?: IconProp;
 }
 
 const IconButton: FC<IconButtonProps> = ({
@@ -24,18 +24,23 @@ const IconButton: FC<IconButtonProps> = ({
   disabled,
   iconOnHover,
   ...props
-}: IconButtonProps) => (
-  <Tooltip disabled={disabled} mainText={tooltip}>
-    <RebassButton
-      sx={styles}
-      variant={`icon-${intent}`}
-      disabled={disabled}
-      {...props}
-    >
-      <FontAwesomeIcon icon={icon} />
-      {(iconOnHover || icon) && <FontAwesomeIcon icon={iconOnHover || icon} />}
-    </RebassButton>
-  </Tooltip>
-);
+}: IconButtonProps) => {
+  // @ts-ignore
+  const hoverIcon = iconOnHover ?? icon;
+
+  return (
+    <Tooltip disabled={disabled} mainText={tooltip}>
+      <RebassButton
+        sx={styles}
+        variant={`icon-${intent}`}
+        disabled={disabled}
+        {...props}
+      >
+        <FontAwesomeIcon icon={icon} />
+        <FontAwesomeIcon icon={hoverIcon} />
+      </RebassButton>
+    </Tooltip>
+  );
+};
 
 export default IconButton;

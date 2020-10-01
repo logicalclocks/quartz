@@ -1,14 +1,14 @@
 import React, { FC } from 'react';
-import { Box, BoxProps } from 'rebass';
+import { Box, Card as RebassCard, CardProps as RebassCardProps } from 'rebass';
 
 // Styles
 import styles, { cardHeaderStyles } from './card.styles';
 
-export interface CardProps extends Omit<BoxProps, 'css'> {
+export interface CardProps extends Omit<RebassCardProps, 'css'> {
   link?: string;
   actions?: React.ReactNode;
   children: React.ReactNode;
-  contentProps?: Omit<BoxProps, 'css'>;
+  contentProps?: Omit<CardProps, 'css'>;
 }
 
 const Card: FC<CardProps> = ({
@@ -22,7 +22,7 @@ const Card: FC<CardProps> = ({
   const isShowHeader = title || actions;
 
   return (
-    <Box {...props} height={height} variant="card" sx={styles}>
+    <RebassCard {...props} height={height} sx={styles}>
       {/* Header */}
       {isShowHeader && (
         <Box sx={cardHeaderStyles}>
@@ -43,7 +43,7 @@ const Card: FC<CardProps> = ({
       >
         {children}
       </Box>
-    </Box>
+    </RebassCard>
   );
 };
 

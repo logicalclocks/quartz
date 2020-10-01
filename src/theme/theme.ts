@@ -2,12 +2,21 @@
 import buttons from './buttons';
 import iconButtons from './icon-buttons';
 import footerButtons from './footer-buttons';
+// Label themes
+import label from './label';
 // Tooltip themes
 import tooltip from './tooltip';
 // Card themes
 import cards from './cards';
+// Input info themes
+import inputInfo from './input-info';
+// Inputs themes
+import inputs from './inputs';
+import inputIntents from './intents';
+// Types
+import { ITheme } from './types';
 
-const theme = {
+const theme: ITheme = {
   colors: {
     primary: '#21B182',
     primaryShade1: '#65D3AF',
@@ -18,17 +27,19 @@ const theme = {
     primaryGrayShade1: '#CBCBCB',
     primaryGrayShade2: '#F5F5F5',
 
-    dark: '#000000',
     darkGray: '#272727',
     white: '#FFFFFF',
-  },
-  fontWeights: {
-    body: 400,
-    heading: 700,
-    bold: 700,
+
+    labels: {
+      red: '#EB5757',
+      orange: '#f2994a',
+      purple: '#9B51E0',
+      skyblue: '#56CCF2',
+    },
   },
   fonts: {
     buttons: 'Inter',
+    inputs: 'Inter',
   },
   shadows: {
     primary: '0px 5px 15px rgba(33, 177, 130, 0.2)',
@@ -41,13 +52,18 @@ const theme = {
   variants: {
     ...cards,
     tooltip,
+    label,
   },
-  text: {},
+  text: {
+    inputInfo,
+  },
   buttons: {
     ...buttons,
     ...iconButtons,
     ...footerButtons,
   },
+  inputs,
+  inputIntents,
 };
 
 export default theme;

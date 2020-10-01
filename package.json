@@ -43,6 +43,7 @@
     "@types/react": "^16.9.27",
     "@types/react-dom": "^16.9.7",
     "@types/rebass": "^4.0.6",
+    "@types/rebass__forms": "^4.0.4",
     "@typescript-eslint/eslint-plugin": "^4.2.0",
     "@typescript-eslint/parser": "^2.26.0",
     "babel-eslint": "^10.0.3",
@@ -81,6 +82,7 @@
     "@fortawesome/free-regular-svg-icons": "^5.14.0",
     "@fortawesome/free-solid-svg-icons": "^5.14.0",
     "@fortawesome/react-fontawesome": "^0.1.11",
+    "@styled-system/css": "^5.1.5",
     "emotion-theming": "^10.0.27",
     "rebass": "^4.0.7"
   }

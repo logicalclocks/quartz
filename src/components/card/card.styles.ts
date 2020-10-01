@@ -1,4 +1,5 @@
 import { SxStyleProp } from 'rebass';
+import { ITheme } from '../../theme/types';
 
 export const cardHeaderStyles = {
   display: 'flex',
@@ -15,7 +16,8 @@ export const cardHeaderStyles = {
 
   borderBottomWidth: '1px',
   borderBottomStyle: 'solid',
-  borderBottomColor: ({ variants }) => variants.card.borderColor,
+  // @ts-ignore
+  borderBottomColor: ({ variants }: ITheme) => variants?.card?.borderColor,
 
   boxShadow: '0px 10px 40px -20px rgba(0, 0, 0, 0.15)',
 
