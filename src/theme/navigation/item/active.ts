@@ -7,4 +7,8 @@ export default {
   },
 
   cursor: 'default',
+
+  '~ div': {
+    borderTopColor: 'primaryGrayShade2',
+  },
 };

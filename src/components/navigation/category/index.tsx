@@ -1,38 +1,41 @@
-import React, { FC } from 'react';
 import { Box } from 'rebass';
-import { IconProp } from '@fortawesome/fontawesome-svg-core';
+import React, { FC, memo, useCallback, useContext } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 // Components
-import NavigationItem from '../item';
+import NavigationItem, { NavigationItemProps } from '../item';
 // Styles
 import styles from './navigation-category.styles';
+// Content
+import NavigationContext from '../context/navigation.context';
 
-export interface NavigationCategoryProps {
-  title: string;
-  icon: IconProp;
-  children: React.ReactNode;
-  isActive?: boolean;
-  onOpen?: (event: React.SyntheticEvent<HTMLDivElement>) => void;
-  onClose?: (event: React.SyntheticEvent<HTMLDivElement>) => void;
+export interface NavigationCategoryProps
+  extends Omit<NavigationItemProps, 'isSubItem'> {
+  onBackClick?: () => void;
 }
 
 const NavigationCategory: FC<NavigationCategoryProps> = ({
-  title,
-  isActive,
-  icon,
   children,
-  onClose,
-}: NavigationCategoryProps) => (
-  <NavigationItem title={title} icon={icon} isActive={isActive}>
-    <Box sx={styles}>
-      <div onClick={onClose}>
-        <FontAwesomeIcon icon="arrow-left" />
-        Back
-      </div>
-      {children}
-    </Box>
-  </NavigationItem>
-);
+  title,
+  ...props
+}: NavigationCategoryProps) => {
+  const { onBack } = useContext(NavigationContext);
 
-export default NavigationCategory;
+  const handleBackClick = useCallback(() => {
+    onBack(title);
+  }, [onBack]);
+
+  return (
+    <NavigationItem title={title} {...props}>
+      <Box sx={styles} tx="navigation" variant="category">
+        <div onClick={handleBackClick} role="button" tabIndex={-1}>
+          <FontAwesomeIcon icon="arrow-left" />
+          Back
+        </div>
+        {children}
+      </Box>
+    </NavigationItem>
+  );
+};
+
+export default memo(NavigationCategory);

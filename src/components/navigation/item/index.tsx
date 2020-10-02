@@ -1,9 +1,18 @@
 import { Box, BoxProps } from 'rebass';
-import React, { FC, useCallback } from 'react';
+import React, {
+  FC,
+  memo,
+  ReactElement,
+  useCallback,
+  useContext,
+  useEffect,
+  useMemo,
+} from 'react';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import useItemState from '../useItemState';
 
+// Context
+import NavigationContext from '../context/navigation.context';
 // Styles
 import styles from './navigation-item.styles';
 
@@ -12,35 +21,93 @@ export interface NavigationItemProps extends Omit<BoxProps, 'css'> {
   icon?: IconProp;
   isActive?: boolean;
   isSubItem?: boolean;
+  hasDivider?: boolean;
   children?: React.ReactNode;
+  disabled?: boolean;
+  onClick?: () => void;
 }
 
-const NavigationItem: FC<NavigationItemProps> = ({
-  icon,
-  title,
-  isActive,
-  isSubItem,
-  children,
-  ...props
-}: NavigationItemProps) => {
-  const [active, setActive] = useItemState(isActive);
+const getVariant = (isDisabled = false, isActive = false): string => {
+  if (isDisabled) {
+    return 'disabled';
+  }
 
-  const childs = React.Children.map(children, (child) =>
-    React.cloneElement(child, { isSubItem: true }),
+  return isActive ? 'active' : 'default';
+};
+
+const NavigationItem: FC<NavigationItemProps> = (
+  props: NavigationItemProps,
+) => {
+  const { activePath, onActivate, openPath, onOpen, trackBy } = useContext(
+    NavigationContext,
   );
 
+  const {
+    // @ts-ignore
+    [trackBy]: key,
+    icon,
+    title,
+    isActive,
+    isSubItem,
+    children,
+    hasDivider,
+    onClick = () => {},
+    disabled,
+    ...restProps
+  } = props;
+
+  const isOpen = openPath.includes(key);
+  const isActiveItem = activePath.includes(key);
+  const tx = `navigation.${isSubItem ? 'subItem' : 'item'}`;
+  const display = children && isOpen ? 'block' : 'none';
+
+  const childs = useMemo(
+    () =>
+      React.Children.map(children, (child) =>
+        React.cloneElement(child as ReactElement<NavigationItemProps>, {
+          isSubItem: true,
+        }),
+      ),
+    [children],
+  );
+
+  const containerStyles = useMemo(
+    () => ({
+      listStyleType: 'none',
+      outline: 'none',
+      ':focus-within > div:first-of-type': {
+        variant: `${tx}.active`,
+      },
+    }),
+    [tx],
+  );
+
+  // Handlers
   const handleClick = useCallback(() => {
-    setActive((a) => !a);
-  }, [active]);
+    // If no children it's the link
+    if (!children) {
+      onClick();
+      onActivate(key);
+    } else {
+      // If has children it's a category or subcategory
+      onOpen(key);
+    }
+  }, [disabled]);
+
+  useEffect(() => {
+    if (isActive) {
+      onActivate(key);
+    }
+  }, []);
 
   return (
-    <Box as="li" sx={{ listStyleType: 'none' }}>
+    <Box as="li" tabIndex={!disabled ? -1 : undefined} sx={containerStyles}>
       <Box
-        tx={`navigation.${isSubItem ? 'subItem' : 'item'}`}
-        variant={active ? 'active' : 'default'}
+        tx={tx}
+        variant={getVariant(disabled, isActiveItem)}
         sx={styles}
-        onClick={handleClick}
-        {...props}
+        onClick={!disabled ? handleClick : undefined}
+        {...restProps}
       >
         {icon && (
           <div>
@@ -49,13 +116,9 @@ const NavigationItem: FC<NavigationItemProps> = ({
         )}
         <span>{title}</span>
       </Box>
-      {childs && active && (
-        <Box
-          as="ul"
-          sx={{
-            pl: '33px',
-          }}
-        >
+      {hasDivider && <div />}
+      {childs && (
+        <Box paddingLeft="33px" as="ul" display={display}>
           {childs}
         </Box>
       )}
@@ -63,4 +126,4 @@ const NavigationItem: FC<NavigationItemProps> = ({
   );
 };
 
-export default NavigationItem;
+export default memo(NavigationItem);

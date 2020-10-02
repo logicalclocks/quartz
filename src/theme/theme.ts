@@ -28,6 +28,8 @@ const theme: ITheme = {
     primaryGray: '#A0A0A0',
     primaryGrayShade1: '#CBCBCB',
     primaryGrayShade2: '#F5F5F5',
+    primaryGrayShade3: '#E5E5E5',
+    primaryGrayShade4: '#9B9B9B',
 
     darkGray: '#272727',
     white: '#FFFFFF',

@@ -11,6 +11,7 @@ export default {
   fontStyle: 'normal',
   fontWeight: 'bold',
   fontSize: '12px',
+
   lineHeight: '15px',
 
   transition: 'all 0.25s ease',
@@ -37,5 +38,12 @@ export default {
   // Title
   '> span': {
     pl: '20px',
+  },
+
+  '~ div': {
+    borderTopWidth: '1px',
+    borderTopStyle: 'solid',
+    position: 'relative',
+    bottom: '1px',
   },
 };

@@ -10,18 +10,20 @@ export default {
   top: 0,
   bottom: 0,
 
-  bg: 'white',
-
   transition: 'all, 0.15s',
 
-  borderLeft: '1px solid #E5E5E5',
+  borderLeftWidth: '1px',
+  borderLeftStyle: 'solid',
 
   '> div:first-of-type': {
-    display: 'flex',
-    alignItems: 'center',
+    boxSizing: 'border-box',
+
+    outline: 'none',
+
     px: '21px',
     pt: '18px',
-    pb: '18px',
+
+    height: '50px',
 
     cursor: 'pointer',
 

@@ -25,4 +25,8 @@ export default {
       fill: 'darkGray',
     },
   },
+
+  '~ div': {
+    borderTopColor: 'primaryGrayShade2',
+  },
 };

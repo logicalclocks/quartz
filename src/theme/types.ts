@@ -8,6 +8,8 @@ export interface IThemeColors {
   primaryGray: string;
   primaryGrayShade1: string;
   primaryGrayShade2: string;
+  primaryGrayShade3: string;
+  primaryGrayShade4: string;
   darkGray: string;
   white: string;
 
