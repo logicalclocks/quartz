@@ -17,9 +17,9 @@ const getStyles = (intent: Intents) => ({
 
   transition: 'all 0.25s ease',
 
-  fontFamily: 'Inter',
-  fontWeight: 500,
-  fontSize: '12px',
+  fontFamily: 'text',
+  fontWeight: 'text',
+  fontSize: 'text',
   lineHeight: '32px',
 
   // Icon

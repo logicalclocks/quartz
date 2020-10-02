@@ -10,12 +10,9 @@ export default {
   borderRadius: 0,
   boxSizing: 'border-box',
 
-  outlineColor: 'primary',
-
-  fontFamily: 'buttons',
-  fontStyle: 'normal',
-  fontWeight: 'bold',
-  fontSize: '12px',
+  fontFamily: 'label',
+  fontWeight: 'label',
+  fontSize: 'label',
 
   cursor: 'pointer',
 

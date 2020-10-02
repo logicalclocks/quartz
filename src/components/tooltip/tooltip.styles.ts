@@ -89,10 +89,9 @@ export const getTooltipStyles = (position: TooltipPositions): SxStyleProp => ({
   alignItems: 'center',
   justifyContent: 'flexStart',
 
-  fontFamily: 'Inter',
-  fontStyle: 'normal',
-  fontWeight: 'bold',
-  fontSize: '12px',
+  fontFamily: 'label',
+  fontWeight: 'label',
+  fontSize: 'label',
 
   lineHeight: '15px',
 

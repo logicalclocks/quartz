@@ -1,9 +1,9 @@
 import { SxStyleProp } from 'rebass';
 
 export default {
-  fontFamily: 'inputs',
-  fontWeight: 'bold',
-  fontSize: '12px',
+  fontFamily: 'label',
+  fontWeight: 'label',
+  fontSize: 'label',
   lineHeight: '15px',
 
   mt: '1px',

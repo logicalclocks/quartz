@@ -1,5 +1,5 @@
 export default {
-  bg: 'primaryGrayShade2',
+  bg: 'primaryShade2',
   color: 'primary',
 
   path: {
@@ -9,6 +9,6 @@ export default {
   cursor: 'default',
 
   '~ div': {
-    borderTopColor: 'primaryGrayShade2',
+    borderTopColor: 'primaryShade2',
   },
 };

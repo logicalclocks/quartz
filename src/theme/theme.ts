@@ -23,15 +23,13 @@ const theme: ITheme = {
     primary: '#21B182',
     primaryShade1: '#65D3AF',
     primaryShade2: '#E6F2EE',
-    primaryShade3: '#E2E2E2',
 
-    primaryGray: '#A0A0A0',
-    primaryGrayShade1: '#CBCBCB',
-    primaryGrayShade2: '#F5F5F5',
-    primaryGrayShade3: '#E5E5E5',
-    primaryGrayShade4: '#9B9B9B',
+    gray: '#a0a0a0',
+    grayShade1: '#CBCBCB',
+    grayShade2: '#E2E2E2',
+    grayShade3: '#F5F5F5',
 
-    darkGray: '#272727',
+    black: '#272727',
     white: '#FFFFFF',
 
     labels: {
@@ -42,17 +40,37 @@ const theme: ITheme = {
     },
   },
   fonts: {
-    buttons: 'Inter',
-    inputs: 'Inter',
+    text: 'Inter',
+    title: 'Inter',
+    subtitle: 'Inter',
+    label: 'Inter',
+    microlabel: 'Inter',
+    value: 'IBM Plex Mono',
+  },
+  fontSizes: {
+    text: '12px',
+    title: '24px',
+    subtitle: '18px',
+    label: '12px',
+    microlabel: '9px',
+    value: '12px',
+  },
+  fontWeights: {
+    text: 500,
+    title: 700,
+    subtitle: 700,
+    label: 700,
+    microlabel: 700,
+    value: 700,
+  },
+  transitions: {
+    button: 'all .25s ease',
   },
   shadows: {
     primary: '0px 5px 15px rgba(33, 177, 130, 0.2)',
     disabled: '0px 4px 15px rgba(0, 0, 0, 0.25)',
     cardInsetShadow: 'inset 0px -20px 30px -25px rgba(0, 0, 0, 0.15)',
     navigation: '1px 0px 0px #E5E5E5, 2px 0px 0px #FFFFFF',
-  },
-  transitions: {
-    button: 'all .25s ease',
   },
   variants: {
     ...cards,
@@ -62,6 +80,7 @@ const theme: ITheme = {
   text: {
     inputInfo,
   },
+
   buttons: {
     ...buttons,
     ...iconButtons,

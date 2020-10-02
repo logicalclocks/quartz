@@ -4,21 +4,21 @@ export default {
   borderColor: 'white',
 
   ':hover': {
-    bg: 'primaryGrayShade2',
-    borderColor: 'primaryGrayShade2',
+    bg: 'grayShade3',
+    borderColor: 'grayShade3',
   },
 
   ':active': {
-    bg: 'primaryGrayShade2',
-    borderColor: 'primaryGray',
+    bg: 'grayShade3',
+    borderColor: 'gray',
   },
 
   ':disabled': {
-    borderColor: 'primaryGrayShade1',
+    borderColor: 'grayShade3',
   },
 
   // Icon color
   '& path': {
-    fill: 'darkGray',
+    fill: 'black',
   },
 };
