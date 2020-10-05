@@ -4,6 +4,6 @@ export default {
   bg: 'white',
 
   ':focus': {
-    borderColor: 'primaryGray',
+    borderColor: 'gray',
   },
 };

@@ -23,10 +23,10 @@ export default {
   },
 
   ':disabled': {
-    bg: 'primaryGray',
+    bg: 'gray',
     borderWidth: '1px ',
     borderStyle: 'solid ',
-    borderColor: 'primaryGray',
+    borderColor: 'gray',
     boxShadow: 'disabled',
   },
 };

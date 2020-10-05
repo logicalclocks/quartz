@@ -10,7 +10,7 @@ export default {
 
   ':hover': {
     bg: 'primaryShade2',
-    borderColor: 'primaryShade1',
+    borderColor: 'primary',
   },
 
   ':focus': {
@@ -23,9 +23,9 @@ export default {
   },
 
   ':disabled': {
-    bg: 'primaryGrayShade1',
-    color: 'darkGray',
-    borderColor: 'primaryGrayShade1',
+    bg: 'grayShade1',
+    color: 'black',
+    borderColor: 'grayShade1',
     boxShadow: 'disabled',
   },
 };

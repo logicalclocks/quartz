@@ -1,21 +1,21 @@
 export default {
   bg: 'white',
 
-  borderLeftColor: 'primaryGrayShade3',
+  borderLeftColor: 'grayShade2',
 
   '> div:first-of-type': {
-    color: 'darkGray',
+    color: 'black',
 
     svg: {
       mr: '11px',
 
       path: {
-        fill: 'darkGray',
+        fill: 'black',
       },
     },
   },
 
   '~ div': {
-    borderTopColor: 'primaryGrayShade2',
+    borderTopColor: 'grayShade3',
   },
 };

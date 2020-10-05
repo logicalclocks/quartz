@@ -1,36 +1,36 @@
 export default {
-  color: 'darkGray',
+  color: 'black',
 
-  bg: 'primaryGrayShade2',
+  bg: 'grayShade3',
 
   ':hover': {
-    borderColor: 'primaryGrayShade1',
+    borderColor: 'grayShade1',
   },
 
   ':focus': {
-    borderColor: 'darkGray',
+    borderColor: 'black',
   },
 
   ':disabled': {
-    bg: 'primaryShade3',
-    borderColor: 'primaryShade3',
+    bg: 'grayShade2',
+    borderColor: 'grayShade2',
   },
 
   '::-webkit-input-placeholder': {
-    color: 'primaryGray',
+    color: 'gray',
   },
   '::-moz-placeholder': {
-    color: 'primaryGray',
+    color: 'gray',
   },
   ':-ms-input-placeholder': {
-    color: 'primaryGray',
+    color: 'gray',
   },
   ':-moz-placeholder': {
-    color: 'primaryGray',
+    color: 'gray',
   },
 
   //  Icon
   '~ svg path': {
-    fill: 'primaryGray',
+    fill: 'gray',
   },
 };

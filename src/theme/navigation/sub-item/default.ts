@@ -3,5 +3,5 @@ export default {
 
   borderLeftWidth: '2px',
   borderLeftStyle: 'solid',
-  borderLeftColor: '#E5E5E5',
+  borderLeftColor: 'grayShade2',
 };

@@ -9,7 +9,7 @@ export default {
 
   ':active': {
     bg: 'white',
-    borderColor: 'primaryGray',
+    borderColor: 'gray',
   },
 
   ':disabled': {
@@ -19,6 +19,6 @@ export default {
 
   // Icon color
   '& path': {
-    fill: 'darkGray',
+    fill: 'black',
   },
 };

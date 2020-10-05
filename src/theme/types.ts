@@ -4,13 +4,13 @@ export interface IThemeColors {
   primary: string;
   primaryShade1: string;
   primaryShade2: string;
-  primaryShade3: string;
-  primaryGray: string;
-  primaryGrayShade1: string;
-  primaryGrayShade2: string;
-  primaryGrayShade3: string;
-  primaryGrayShade4: string;
-  darkGray: string;
+
+  gray: string;
+  grayShade1: string;
+  grayShade2: string;
+  grayShade3: string;
+
+  black: string;
   white: string;
 
   labels: {
@@ -21,10 +21,25 @@ export interface IThemeColors {
   };
 }
 
-export interface IThemeFonts {
-  buttons: string;
-  inputs: string;
-}
+export type Fonts =
+  | 'text'
+  | 'title'
+  | 'subtitle'
+  | 'label'
+  | 'microlabel'
+  | 'value';
+
+export type IThemeFonts = {
+  [key in Fonts]: string;
+};
+
+export type IThemeFontSizes = {
+  [key in Fonts]: string;
+};
+
+export type IThemeFontWeights = {
+  [key in Fonts]: number;
+};
 
 export interface IThemeTransitions {
   button: string;
@@ -54,6 +69,8 @@ export type Variants = IThemeVariants | INestedThemeVariants;
 export interface ITheme {
   colors: IThemeColors;
   fonts: IThemeFonts;
+  fontSizes: IThemeFontSizes;
+  fontWeights: IThemeFontWeights;
   shadows: IThemeShadows;
   transitions: IThemeTransitions;
   variants: Variants;
