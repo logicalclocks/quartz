@@ -4,10 +4,10 @@ export default {
   boxShadow: 'navigation',
 
   '> div': {
-    color: 'primaryGrayShade4',
+    color: 'gray',
 
     path: {
-      fill: 'primaryGrayShade4',
+      fill: 'gray',
     },
   },
 };

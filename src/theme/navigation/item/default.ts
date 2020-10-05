@@ -1,15 +1,15 @@
 export default {
-  color: 'darkGray',
+  color: 'black',
   bg: 'white',
 
   cursor: 'pointer',
 
   path: {
-    fill: 'darkGray',
+    fill: 'black',
   },
 
   ':hover': {
-    bg: 'primaryGrayShade2',
+    bg: 'grayShade3',
     color: 'primary',
 
     path: {
@@ -18,15 +18,15 @@ export default {
   },
 
   ':active': {
-    bg: 'primaryGrayShade2',
-    color: 'darkGray',
+    bg: 'grayShade3',
+    color: 'black',
 
     path: {
-      fill: 'darkGray',
+      fill: 'black',
     },
   },
 
   '~ div': {
-    borderTopColor: 'primaryGrayShade2',
+    borderTopColor: 'grayShade3',
   },
 };

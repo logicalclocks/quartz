@@ -4,9 +4,9 @@ export default {
   display: 'flex',
   flexDirection: 'column',
 
-  fontFamily: 'inputs',
-  fontWeight: 'bold',
-  fontSize: '12px',
+  fontFamily: 'label',
+  fontWeight: 'label',
+  fontSize: 'label',
   lineHeight: '15px',
 
   '> span': {

@@ -1,22 +1,22 @@
 export default {
   bg: 'white',
 
-  borderColor: 'primaryGrayShade1',
+  borderColor: 'grayShade1',
 
   ':hover': {
-    borderColor: 'darkGray',
+    borderColor: 'black',
   },
 
   ':active': {
-    borderColor: 'primaryGrayShade2',
+    borderColor: 'grayShade3',
   },
 
   ':disabled': {
-    borderColor: 'primaryGrayShade1',
+    borderColor: 'grayShade1',
   },
 
   // Icon color
   '& path': {
-    fill: 'darkGray',
+    fill: 'black',
   },
 };

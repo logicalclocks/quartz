@@ -5,10 +5,9 @@ export default {
   alignItems: 'center',
   textAlign: 'center',
 
-  fontFamily: 'buttons',
-  fontStyle: 'normal',
-  fontWeight: 'bold',
-  fontSize: '12px',
+  fontFamily: 'label',
+  fontWeight: 'label',
+  fontSize: 'label',
 
   lineHeight: '15px',
 
