@@ -33,7 +33,10 @@ const NavigationProvider: FC<CategoriesProviderProps> = ({
       );
 
       setActivePath(path);
-      setOpenPath(path);
+
+      if (path.length > 1) {
+        setOpenPath(path);
+      }
 
       if (onNavigate) {
         onNavigate(getNode(tree, trackBy, target));

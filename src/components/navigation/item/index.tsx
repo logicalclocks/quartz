@@ -71,17 +71,6 @@ const NavigationItem: FC<NavigationItemProps> = (
     [children],
   );
 
-  const containerStyles = useMemo(
-    () => ({
-      listStyleType: 'none',
-      outline: 'none',
-      ':focus-within > div:first-of-type': {
-        variant: `${tx}.active`,
-      },
-    }),
-    [tx],
-  );
-
   // Handlers
   const handleClick = useCallback(() => {
     // If no children it's the link
@@ -101,7 +90,14 @@ const NavigationItem: FC<NavigationItemProps> = (
   }, []);
 
   return (
-    <Box as="li" tabIndex={!disabled ? -1 : undefined} sx={containerStyles}>
+    <Box
+      as="li"
+      tabIndex={!disabled ? -1 : undefined}
+      sx={{
+        listStyleType: 'none',
+        outline: 'none',
+      }}
+    >
       <Box
         tx={tx}
         variant={getVariant(disabled, isActiveItem)}
