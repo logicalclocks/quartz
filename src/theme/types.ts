@@ -8,6 +8,8 @@ export interface IThemeColors {
   primaryGray: string;
   primaryGrayShade1: string;
   primaryGrayShade2: string;
+  primaryGrayShade3: string;
+  primaryGrayShade4: string;
   darkGray: string;
   white: string;
 
@@ -32,6 +34,7 @@ export interface IThemeShadows {
   primary: string;
   disabled: string;
   cardInsetShadow: string;
+  navigation: string;
 }
 
 export interface IThemeVariants {
@@ -58,4 +61,5 @@ export interface ITheme {
   buttons: Variants;
   inputs: Variants;
   inputIntents: IInputIntent;
+  navigation: Variants;
 }
