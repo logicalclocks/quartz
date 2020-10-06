@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { FC, useRef } from 'react';
 
 // Components
-import { ListItem } from '../../index';
+import ListItem from '../list/item';
 import List, { ListProps } from '../list/container';
 // Hooks
 import useOnClickOutside from '../../utils/useClickOutside';

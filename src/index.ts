@@ -16,6 +16,7 @@ import Avatar from './components/avatar';
 import Header from './components/header';
 import List from './components/list/container';
 import ListItem from './components/list/item';
+import Dropdown from './components/dropdown';
 
 // Navigation
 import Navigation from './components/navigation/container';
@@ -48,6 +49,7 @@ export {
   Avatar,
   Button,
   Card,
+  Dropdown,
   FooterButton,
   Header,
   IconButton,
