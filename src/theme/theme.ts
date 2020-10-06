@@ -17,6 +17,10 @@ import inputIntents from './intents';
 import navigation from './navigation';
 // List
 import list from './list';
+// Header
+import header from './header';
+// Typography
+import typography from './typography';
 // Types
 import { ITheme } from './types';
 
@@ -80,11 +84,18 @@ const theme: ITheme = {
     tooltip,
     label,
     list,
+    header,
   },
   text: {
     inputInfo,
+    ...typography,
   },
-
+  zIndices: {
+    default: 10,
+    tooltips: 20,
+    popups: 30,
+    modals: 40,
+  },
   buttons: {
     ...buttons,
     ...iconButtons,
