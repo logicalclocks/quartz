@@ -15,6 +15,8 @@ import inputs from './inputs';
 import inputIntents from './intents';
 // Navigation
 import navigation from './navigation';
+// List
+import list from './list';
 // Types
 import { ITheme } from './types';
 
@@ -71,11 +73,13 @@ const theme: ITheme = {
     disabled: '0px 4px 15px rgba(0, 0, 0, 0.25)',
     cardInsetShadow: 'inset 0px -20px 30px -25px rgba(0, 0, 0, 0.15)',
     navigation: '1px 0px 0px #E5E5E5, 2px 0px 0px #FFFFFF',
+    list: '0px 4px 15px rgba(0, 0, 0, 0.25)',
   },
   variants: {
     ...cards,
     tooltip,
     label,
+    list,
   },
   text: {
     inputInfo,

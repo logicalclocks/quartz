@@ -12,6 +12,8 @@ import InputInfo from './components/input-info';
 import FooterButton from './components/footer-button';
 import Label from './components/label';
 import Tooltip from './components/tooltip';
+import List from './components/list/container';
+import ListItem from './components/list/item';
 
 // Navigation
 import Navigation from './components/navigation/container';
@@ -36,6 +38,8 @@ export {
   Input,
   InputInfo,
   Label,
+  List,
+  ListItem,
   ThemeProvider,
   Tooltip,
   // Navigation

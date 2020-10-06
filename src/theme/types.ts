@@ -50,6 +50,7 @@ export interface IThemeShadows {
   disabled: string;
   cardInsetShadow: string;
   navigation: string;
+  list: string;
 }
 
 export interface IThemeVariants {
