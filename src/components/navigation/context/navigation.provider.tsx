@@ -1,4 +1,4 @@
-import React, { FC, useCallback, useMemo, useState } from 'react';
+import React, { FC, useCallback, useEffect, useMemo, useState } from 'react';
 
 // Context
 import NavigationContext from './navigation.context';
@@ -22,7 +22,7 @@ const NavigationProvider: FC<CategoriesProviderProps> = ({
   onNavigate,
 }: CategoriesProviderProps) => {
   const [activePath, setActivePath] = useState<string[]>([]);
-  const [openPath, setOpenPath] = useState<string[]>([]);
+  const [activeNode, setActiveNode] = useState<TreeNode | null>(null);
 
   const handleActivate = useCallback(
     (target: string) => {
@@ -33,48 +33,40 @@ const NavigationProvider: FC<CategoriesProviderProps> = ({
       );
 
       setActivePath(path);
-
-      if (path.length > 1) {
-        setOpenPath(path);
-      }
-
-      if (onNavigate) {
-        onNavigate(getNode(tree, trackBy, target));
-      }
-    },
-    [tree],
-  );
-
-  const handleOpen = useCallback(
-    (target: string) => {
-      const path = getPathInTree(tree, (node) => node[trackBy] === target);
-
-      setOpenPath(path);
     },
     [tree],
   );
 
   const handleBack = useCallback(
     (target) => {
-      setOpenPath((path) =>
+      setActivePath((path) =>
         path.slice(path.indexOf(target) - 1, path.length - 1),
       );
     },
-    [openPath],
+    [activePath],
   );
 
   const value = useMemo(
     () => ({
       trackBy,
       tree,
+      activeNode,
       activePath,
-      openPath,
       onActivate: handleActivate,
-      onOpen: handleOpen,
       onBack: handleBack,
     }),
-    [tree, activePath, openPath],
+    [tree, activePath.length, activeNode],
   );
+
+  useEffect(() => {
+    const node = getNode(tree, trackBy, activePath[activePath.length - 1]);
+
+    if (onNavigate) {
+      onNavigate(node);
+    }
+
+    setActiveNode(node);
+  }, [activePath, onNavigate, setActiveNode]);
 
   return (
     <NavigationContext.Provider value={value}>

@@ -23,9 +23,7 @@ const Header: FC<HeaderProps> = ({
   <Box sx={styles} variant="header">
     {/* Left Section */}
     <Box sx={leftSectionStyles}>
-      <div>
-        <Logo />
-      </div>
+      <Logo />
     </Box>
     <Box
       sx={{

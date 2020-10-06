@@ -10,12 +10,10 @@ import defaultImage from './default.svg';
 export interface AvatarProps extends Omit<BoxProps, 'css'> {
   borderColor?: string;
   src?: string;
-  size?: string;
 }
 
 const Avatar: FC<AvatarProps> = ({
   src = defaultImage,
-  size = '33px',
   borderColor = '#EB5757',
   ...props
 }: AvatarProps) => (
@@ -24,8 +22,8 @@ const Avatar: FC<AvatarProps> = ({
     as="img"
     src={src}
     sx={{ ...styles, borderColor }}
-    minWidth={size}
-    height={size}
+    minWidth="32px"
+    height="32px"
     alt="User avatar"
   />
 );
