@@ -50,6 +50,7 @@ export interface IThemeShadows {
   disabled: string;
   cardInsetShadow: string;
   navigation: string;
+  list: string;
 }
 
 export interface IThemeVariants {
@@ -62,6 +63,13 @@ interface INestedThemeVariants {
 
 interface IInputIntent {
   [key: string]: string;
+}
+
+interface IZIndeces {
+  default: number;
+  tooltips: number;
+  popups: number;
+  modals: number;
 }
 
 export type Variants = IThemeVariants | INestedThemeVariants;
@@ -79,4 +87,5 @@ export interface ITheme {
   inputs: Variants;
   inputIntents: IInputIntent;
   navigation: Variants;
+  zIndices: IZIndeces;
 }

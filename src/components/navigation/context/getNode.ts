@@ -3,7 +3,7 @@ import { TreeNode } from '../types';
 const getNode = (
   tree: TreeNode[] | TreeNode,
   key: string,
-  value: string,
+  value?: string,
 ): TreeNode | null => {
   if (Array.isArray(tree)) {
     return tree.reduce(
