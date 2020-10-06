@@ -2,7 +2,7 @@ import React from 'react';
 import { Box } from 'rebass';
 import { Story, Meta } from '@storybook/react/types-6-0';
 
-import { ListItemProps } from './item';
+import ListItem, { ListItemProps } from './item';
 import List, { ListProps } from './container';
 
 export default {
@@ -19,18 +19,18 @@ export const Container: Story<ListProps> = (props) => (
 Container.args = {
   children: (
     <>
-      <List.Item>name</List.Item>
-      <List.Item>creation date</List.Item>
-      <List.Item>size</List.Item>
-      <List.Item variant="withDivider"># of rows</List.Item>
-      <List.Item># of features</List.Item>
+      <ListItem>name</ListItem>
+      <ListItem>creation date</ListItem>
+      <ListItem>size</ListItem>
+      <ListItem variant="withDivider"># of rows</ListItem>
+      <ListItem># of features</ListItem>
     </>
   ),
 };
 
 export const Item: Story<ListItemProps> = (props) => (
   <Box width="300px">
-    <List.Item {...props} />
+    <ListItem {...props} />
   </Box>
 );
 
@@ -56,6 +56,15 @@ Item.argTypes = {
     },
   },
   hasDivider: {
+    control: {
+      type: 'boolean',
+    },
+    type: {
+      required: false,
+      summary: 'Enable divider flag',
+    },
+  },
+  isRightAlignment: {
     control: {
       type: 'boolean',
     },

@@ -26,7 +26,9 @@ import NavigationContext from './components/navigation/context/navigation.contex
 import ThemeProvider from './theme/ThemeProvider';
 
 // Hooks
+import useDropdown from './utils/useDropdown';
 import useNavigation from './components/navigation/useNavigation';
+import useOnClickOutside from './utils/useClickOutside';
 
 library.add(fas, far);
 
@@ -48,5 +50,8 @@ export {
   NavigationCategory,
   NavigationProvider,
   NavigationContext,
+  // Hooks
+  useDropdown,
   useNavigation,
+  useOnClickOutside,
 };
