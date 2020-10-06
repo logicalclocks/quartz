@@ -38,9 +38,7 @@ const getVariant = (isDisabled = false, isActive = false): string => {
 const NavigationItem: FC<NavigationItemProps> = (
   props: NavigationItemProps,
 ) => {
-  const { activePath, onActivate, openPath, onOpen, trackBy } = useContext(
-    NavigationContext,
-  );
+  const { activePath, onActivate, trackBy } = useContext(NavigationContext);
 
   const {
     // @ts-ignore
@@ -56,7 +54,7 @@ const NavigationItem: FC<NavigationItemProps> = (
     ...restProps
   } = props;
 
-  const isOpen = openPath.includes(key);
+  const isOpen = activePath.includes(key);
   const isActiveItem = activePath.includes(key);
   const tx = `navigation.${isSubItem ? 'subItem' : 'item'}`;
   const display = children && isOpen ? 'block' : 'none';
@@ -71,27 +69,10 @@ const NavigationItem: FC<NavigationItemProps> = (
     [children],
   );
 
-  const containerStyles = useMemo(
-    () => ({
-      listStyleType: 'none',
-      outline: 'none',
-      ':focus-within > div:first-of-type': {
-        variant: `${tx}.active`,
-      },
-    }),
-    [tx],
-  );
-
   // Handlers
   const handleClick = useCallback(() => {
-    // If no children it's the link
-    if (!children) {
-      onClick();
-      onActivate(key);
-    } else {
-      // If has children it's a category or subcategory
-      onOpen(key);
-    }
+    onClick();
+    onActivate(key);
   }, [disabled]);
 
   useEffect(() => {
@@ -101,7 +82,14 @@ const NavigationItem: FC<NavigationItemProps> = (
   }, []);
 
   return (
-    <Box as="li" tabIndex={!disabled ? -1 : undefined} sx={containerStyles}>
+    <Box
+      as="li"
+      tabIndex={!disabled ? -1 : undefined}
+      sx={{
+        listStyleType: 'none',
+        outline: 'none',
+      }}
+    >
       <Box
         tx={tx}
         variant={getVariant(disabled, isActiveItem)}

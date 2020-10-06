@@ -1,22 +1,21 @@
 import React from 'react';
+import { TreeNode } from '../types';
 
 export interface NavigationContextValue {
   trackBy: string;
   activePath: string[];
-  openPath: string[];
   tree: any;
+  activeNode: TreeNode | null;
   onActivate: (name: string) => void;
-  onOpen: (name: string) => void;
   onBack: (name: string) => void;
 }
 
 const NavigationContext = React.createContext<NavigationContextValue>({
   trackBy: 'title',
   activePath: [],
-  openPath: [],
   tree: [],
+  activeNode: null,
   onActivate: () => {},
-  onOpen: () => {},
   onBack: () => {},
 });
 
