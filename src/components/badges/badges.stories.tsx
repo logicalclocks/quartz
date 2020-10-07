@@ -1,6 +1,7 @@
 import { Story, Meta } from '@storybook/react/types-6-0';
 import React from 'react';
 import Badge, { BadgeProps } from './badge';
+import Dot, { DotProps } from './dot';
 import TextValueBadge, { TextValueBadgeProps } from './text-value-badge';
 
 export default {
@@ -14,6 +15,7 @@ const Template: Story<TextValueBadgeProps> = (props) => (
 
 export const TextValue = Template.bind({});
 export const Default: Story<BadgeProps> = (props) => <Badge {...props} />;
+export const DotBadge: Story<DotProps> = (props) => <Dot {...props} />;
 
 TextValue.args = {
   text: 'features',
@@ -65,6 +67,20 @@ Default.argTypes = {
     control: {
       type: 'select',
       options: ['light', 'bold', 'fail', 'success', 'label'],
+    },
+    type: {
+      required: false,
+    },
+  },
+};
+
+DotBadge.args = {};
+
+DotBadge.argTypes = {
+  variant: {
+    control: {
+      type: 'select',
+      options: ['green', 'black'],
     },
     type: {
       required: false,
