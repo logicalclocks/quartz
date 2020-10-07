@@ -3,7 +3,7 @@ import { SxStyleProp } from 'rebass';
 export default {
   display: 'flex',
   alignItems: 'center',
-  textAlign: 'center',
+  justifyContent: 'center',
 
   fontFamily: 'label',
   fontWeight: 'label',
@@ -25,12 +25,6 @@ export default {
 
   px: '35px',
   py: '15px',
-
-  ':after': {
-    fontSize: '13px',
-    marginLeft: '4px',
-    content: '"\\01F852"',
-  },
 
   ':disabled': {
     cursor: 'default',

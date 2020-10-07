@@ -51,6 +51,7 @@ export interface IThemeShadows {
   cardInsetShadow: string;
   navigation: string;
   list: string;
+  popup: string;
 }
 
 export interface IThemeVariants {
