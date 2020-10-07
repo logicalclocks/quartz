@@ -20,6 +20,7 @@ import Dropdown from './components/dropdown';
 
 // Badges
 import User from './components/user';
+import TextValueBadge from './components/badges/text-value-badge';
 
 // Navigation
 import Navigation from './components/navigation/container';
@@ -66,6 +67,7 @@ export {
   Tooltip,
   // Badges
   User,
+  TextValueBadge,
   // Navigation
   Navigation,
   NavigationItem,
