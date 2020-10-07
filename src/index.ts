@@ -14,6 +14,9 @@ import Label from './components/label';
 import Tooltip from './components/tooltip';
 import Avatar from './components/avatar';
 import Header from './components/header';
+import List from './components/list/container';
+import ListItem from './components/list/item';
+import Dropdown from './components/dropdown';
 
 // Navigation
 import Navigation from './components/navigation/container';
@@ -36,7 +39,9 @@ import FolderIcon from './components/icons/folder-icon';
 import ThemeProvider from './theme/ThemeProvider';
 
 // Hooks
+import useDropdown from './utils/useDropdown';
 import useNavigation from './components/navigation/useNavigation';
+import useOnClickOutside from './utils/useClickOutside';
 
 library.add(fas, far);
 
@@ -44,6 +49,7 @@ export {
   Avatar,
   Button,
   Card,
+  Dropdown,
   FooterButton,
   Header,
   IconButton,
@@ -51,6 +57,8 @@ export {
   InputInfo,
   Label,
   Logo,
+  List,
+  ListItem,
   ThemeProvider,
   Tooltip,
   // Navigation
@@ -59,6 +67,8 @@ export {
   NavigationCategory,
   NavigationProvider,
   NavigationContext,
+  // Hooks
+  useDropdown,
   useNavigation,
   //  Typography
   Value,
@@ -68,4 +78,5 @@ export {
   Labeling,
   //  Icons
   FolderIcon,
+  useOnClickOutside,
 };
