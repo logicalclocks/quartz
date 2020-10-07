@@ -41,7 +41,7 @@ const Drawer: IDrawer<DrawerProps> = ({
         <IconButton
           tooltip="Close"
           ml="-10px"
-          intent="ghost-white"
+          intent="ghost"
           icon="times"
           onClick={onClose}
         />
