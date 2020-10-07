@@ -3,6 +3,7 @@ import { action } from '@storybook/addon-actions';
 import React from 'react';
 import { Box } from 'rebass';
 import { Story, Meta } from '@storybook/react/types-6-0';
+
 import Dropdown, { DropdownProps } from './index';
 
 export default {
@@ -43,20 +44,6 @@ Default.argTypes = {
     type: {
       required: true,
       summary: 'Array of Items',
-    },
-  },
-
-  alignment: {
-    control: {
-      type: 'select',
-      options: ['left', 'right'],
-    },
-    type: {
-      required: false,
-      summary: 'List items alignment',
-    },
-    defaultValue: {
-      summary: 'left',
     },
   },
   isOpen: {

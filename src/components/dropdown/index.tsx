@@ -10,7 +10,6 @@ import useOnClickOutside from '../../utils/useClickOutside';
 import { DropdownItem } from './types';
 
 export interface DropdownProps extends ListProps {
-  alignment?: 'left' | 'right';
   items: DropdownItem[];
   isOpen?: boolean;
   onClickOutside: () => void;
@@ -18,7 +17,6 @@ export interface DropdownProps extends ListProps {
 
 const Dropdown: FC<DropdownProps> = ({
   items,
-  alignment,
   isOpen = true,
   onClickOutside,
   ...props
@@ -39,7 +37,6 @@ const Dropdown: FC<DropdownProps> = ({
           <ListItem
             hasDivider={hasDivider}
             key={id || value}
-            isRightAlignment={alignment === 'right'}
             onClick={() => onClick(item)}
           >
             {icon && <FontAwesomeIcon icon={icon} />}
