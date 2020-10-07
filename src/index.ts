@@ -18,6 +18,9 @@ import List from './components/list/container';
 import ListItem from './components/list/item';
 import Dropdown from './components/dropdown';
 
+// Badges
+import User from './components/user';
+
 // Navigation
 import Navigation from './components/navigation/container';
 import NavigationItem from './components/navigation/item';
@@ -61,6 +64,8 @@ export {
   ListItem,
   ThemeProvider,
   Tooltip,
+  // Badges
+  User,
   // Navigation
   Navigation,
   NavigationItem,
