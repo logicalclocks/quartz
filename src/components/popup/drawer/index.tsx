@@ -51,7 +51,18 @@ const Drawer: IDrawer<DrawerProps> = ({
       {headerSummary}
     </DrawerSection>
     {children}
-    {bottomButton && <Box mt="auto">{bottomButton}</Box>}
+    {bottomButton && (
+      <Box
+        sx={{
+          left: 0,
+          right: 0,
+          bottom: 0,
+          position: 'sticky',
+        }}
+      >
+        {bottomButton}
+      </Box>
+    )}
   </Popup>
 );
 
