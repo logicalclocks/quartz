@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useMemo, useRef } from 'react';
+import React, { FC, useCallback, useEffect, useMemo, useRef } from 'react';
 import { Box, BoxProps } from 'rebass';
 
 // Hooks
@@ -46,6 +46,17 @@ const Popup: FC<PopupProps> = ({
     }
   });
 
+  const handleBackdropClick = useCallback(
+    (event: React.SyntheticEvent<HTMLDivElement>) => {
+      onClose();
+
+      if (onBackdropClick) {
+        onBackdropClick(event);
+      }
+    },
+    [onClose, onBackdropClick],
+  );
+
   useEffect(() => {
     openRef.current = isOpen;
   }, [isOpen]);
@@ -68,7 +79,7 @@ const Popup: FC<PopupProps> = ({
       </Box>
 
       {/* Backdrop */}
-      {hasBackdrop && <Box sx={backdropStyles} onClick={onBackdropClick} />}
+      {hasBackdrop && <Box sx={backdropStyles} onClick={handleBackdropClick} />}
     </>
   );
 };

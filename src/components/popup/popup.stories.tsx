@@ -39,12 +39,7 @@ const Template: Story<PopupProps> = (props) => {
   return (
     <div>
       <Button onClick={handleToggle}>Open Drawer</Button>
-      <Popup
-        isOpen={isOpen}
-        onBackdropClick={handleToggle}
-        onClose={handleToggle}
-        {...props}
-      />
+      <Popup isOpen={isOpen} onClose={handleToggle} {...props} />
     </div>
   );
 };
