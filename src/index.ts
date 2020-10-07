@@ -21,6 +21,7 @@ import Dropdown from './components/dropdown';
 // Badges
 import User from './components/user';
 import TextValueBadge from './components/badges/text-value-badge';
+import Badge from './components/badges/badge';
 
 // Navigation
 import Navigation from './components/navigation/container';
@@ -68,6 +69,7 @@ export {
   // Badges
   User,
   TextValueBadge,
+  Badge,
   // Navigation
   Navigation,
   NavigationItem,
