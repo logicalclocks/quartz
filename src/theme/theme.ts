@@ -21,6 +21,8 @@ import list from './list';
 import header from './header';
 // Typography
 import typography from './typography';
+// Checkbox
+import checkbox from './checkbox';
 // Types
 import { ITheme } from './types';
 
@@ -85,6 +87,7 @@ const theme: ITheme = {
     label,
     list,
     header,
+    checkbox,
   },
   text: {
     inputInfo,

@@ -1,9 +1,9 @@
 import React, { FC } from 'react';
-import { Box, BoxProps } from 'rebass';
+import { Flex, FlexProps } from 'rebass';
 
 import styles from './label.styles';
 
-export interface LabelProps extends Omit<BoxProps, 'css' | 'action'> {
+export interface LabelProps extends Omit<FlexProps, 'css' | 'action'> {
   action?: React.ReactNode;
   text?: string;
   children: React.ReactNode;
@@ -15,13 +15,19 @@ const Label: FC<LabelProps> = ({
   children,
   ...props
 }: LabelProps) => (
-  <Box as="label" variant="label" sx={styles} {...props}>
+  <Flex
+    as="label"
+    flexDirection="column"
+    {...props}
+    variant="label"
+    sx={styles}
+  >
     <span>
       {text}
       {action}
     </span>
     {children}
-  </Box>
+  </Flex>
 );
 
 export default Label;
