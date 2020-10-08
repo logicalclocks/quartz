@@ -26,6 +26,7 @@ const Template: Story = () => (
     <Subtitle>Titrage/H2</Subtitle>
     <Labeling bold>labeur/bold</Labeling>
     <Labeling>labeur/regular</Labeling>
+    <Labeling gray>labeur/gray</Labeling>
     <Value>value/default</Value>
     <Microlabeling>labeling/micro</Microlabeling>
   </Box>
