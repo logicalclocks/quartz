@@ -1,23 +1,49 @@
 import React, { FC } from 'react';
-import { Box, BoxProps } from 'rebass';
+import { FlexProps, Flex } from 'rebass';
 
-export interface DotProps extends Omit<BoxProps, 'css'> {
-  variant?: 'green' | 'black';
+// Components
+import Tooltip from '../tooltip';
+// Types
+import TooltipPositions from '../tooltip/positions';
+
+export interface DotProps extends Omit<FlexProps, 'css'> {
+  mainText: string;
+  variant?: 'green' | 'black' | 'info';
+  secondaryText?: string;
+  position?: TooltipPositions;
 }
 
-const Dot: FC<DotProps> = ({ variant = 'black', ...props }: DotProps) => (
-  <Box
-    {...props}
-    as="span"
-    tx="variants.badges.dot"
-    variant={variant}
-    width="12px"
-    height="12px"
-    display="block"
-    sx={{
-      borderRadius: '50%',
-    }}
-  />
+const Dot: FC<DotProps> = ({
+  mainText,
+  secondaryText,
+  position,
+  variant = 'black',
+  ...props
+}: DotProps) => (
+  <Tooltip
+    mainText={mainText}
+    secondaryText={secondaryText}
+    position={position}
+  >
+    <Flex
+      width="12px"
+      height="12px"
+      {...props}
+      as="span"
+      tx="variants.badges.dot"
+      variant={variant}
+      alignItems="center"
+      justifyContent="center"
+      sx={{
+        fontSize: '11px',
+        fontFamily: 'Inter',
+        borderRadius: '50%',
+        userSelect: 'none',
+      }}
+    >
+      {variant === 'info' && 'i'}
+    </Flex>
+  </Tooltip>
 );
 
 export default Dot;

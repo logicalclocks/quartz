@@ -15,7 +15,7 @@ const Template: Story<TextValueBadgeProps> = (props) => (
 
 export const TextValue = Template.bind({});
 export const Default: Story<BadgeProps> = (props) => <Badge {...props} />;
-export const DotBadge: Story<DotProps> = (props) => <Dot {...props} />;
+export const DotBadge: Story<DotProps> = (props) => <Dot p="5px" {...props} />;
 
 TextValue.args = {
   text: 'features',
@@ -74,16 +74,45 @@ Default.argTypes = {
   },
 };
 
-DotBadge.args = {};
+DotBadge.args = {
+  mainText: 'title',
+};
 
 DotBadge.argTypes = {
   variant: {
     control: {
       type: 'select',
-      options: ['green', 'black'],
+      options: ['green', 'black', 'info'],
     },
     type: {
       required: false,
+    },
+  },
+  mainText: {
+    control: {
+      type: 'text',
+    },
+    type: {
+      required: true,
+    },
+  },
+  secondaryText: {
+    control: {
+      type: 'text',
+    },
+    type: {
+      required: false,
+    },
+  },
+  position: {
+    control: {
+      type: 'select',
+      default: 'bottom',
+      options: ['bottom', 'right'],
+    },
+    type: {
+      required: false,
+      summary: 'Tooltip position ',
     },
   },
 };
