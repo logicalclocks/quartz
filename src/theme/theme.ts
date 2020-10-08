@@ -23,6 +23,8 @@ import header from './header';
 import typography from './typography';
 // Popup
 import popup from './popup';
+// Badges
+import badges from './badges';
 // Types
 import { ITheme } from './types';
 
@@ -44,6 +46,7 @@ const theme: ITheme = {
       red: '#EB5757',
       orange: '#f2994a',
       purple: '#9B51E0',
+      green: '#21B182',
       skyblue: '#56CCF2',
     },
   },
@@ -88,6 +91,7 @@ const theme: ITheme = {
     label,
     list,
     header,
+    badges,
     popup,
   },
   text: {

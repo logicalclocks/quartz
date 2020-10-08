@@ -24,6 +24,12 @@ import DrawerSection from './components/popup/drawer/drawer-section';
 import Popup from './components/popup';
 import TinyPopup from './components/popup/tiny';
 
+// Badges
+import User from './components/user';
+import TextValueBadge from './components/badges/text-value-badge';
+import Badge from './components/badges/badge';
+import Dot from './components/badges/dot';
+
 // Navigation
 import Navigation from './components/navigation/container';
 import NavigationItem from './components/navigation/item';
@@ -73,6 +79,11 @@ export {
   Drawer,
   TinyPopup,
   DrawerSection,
+  // Badges
+  User,
+  TextValueBadge,
+  Badge,
+  Dot,
   // Navigation
   Navigation,
   NavigationItem,
