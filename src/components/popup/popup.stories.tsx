@@ -1,10 +1,11 @@
+// eslint-disable-next-line import/no-extraneous-dependencies
+import { action } from '@storybook/addon-actions';
 import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
 import { Box, BoxProps } from 'rebass';
 
 import Button from '../button';
 import Drawer from './drawer';
-import { FooterButton } from '../../index';
 import { DrawerSectionProps } from './drawer/drawer-section';
 import Popup, { PopupProps } from './index';
 import TinyPopup, { TinyPopupProps } from './tiny';
@@ -33,6 +34,9 @@ const YellowBox = (props: Omit<BoxProps, 'css'>) => (
   />
 );
 
+const callbackDescription =
+  'Action Definition array [title, callback function]';
+
 const Template: Story<PopupProps> = (props) => {
   const [isOpen, handleToggle] = usePopup();
 
@@ -58,36 +62,24 @@ export const PopupDrawer = () => {
         isOpen={isOpen}
         headerLine={<YellowBox width="268px">head line</YellowBox>}
         headerSummary={<YellowBox>header summary</YellowBox>}
-        bottomButton={<FooterButton width="100%">CTA</FooterButton>}
+        bottomButton={['CTA', action('CTA')]}
         onClose={handleToggle}
       >
         <Drawer.Section
           title="Section title"
-          actions={
-            <Button intent="inline" p="0">
-              section link
-            </Button>
-          }
+          action={['section link', action('section action')]}
         >
           <YellowBox height="64px">content</YellowBox>
         </Drawer.Section>
         <Drawer.Section
           title="Section title"
-          actions={
-            <Button intent="inline" p="0">
-              section link
-            </Button>
-          }
+          action={['section link', action('section action')]}
         >
           <YellowBox height="121px">content</YellowBox>
         </Drawer.Section>
         <Drawer.Section
           title="Section title"
-          actions={
-            <Button intent="inline" p="0">
-              section link
-            </Button>
-          }
+          action={['section link', action('section action')]}
         >
           <YellowBox height="163px">content</YellowBox>
         </Drawer.Section>
@@ -106,15 +98,9 @@ export const PopupTiny: Story<TinyPopupProps> = (props) => {
         {...props}
         onClose={handleToggle}
         isOpen={isOpen}
-        mainButton={<Button>main</Button>}
-        secondaryButton={
-          <Button intent="secondary" mr="11px">
-            secondary
-          </Button>
-        }
-      >
-        children?: React.ReactNode;
-      </TinyPopup>
+        mainButton={['main', action('main')]}
+        secondaryButton={['secondary', action('secondary')]}
+      />
     </>
   );
 };
@@ -125,11 +111,7 @@ export const DrawerSection: Story<DrawerSectionProps> = (props) => (
 
 DrawerSection.args = {
   title: 'Title',
-  actions: (
-    <Button intent="inline" p="0">
-      section link
-    </Button>
-  ),
+  action: ['section link', action('section action')],
   children: <YellowBox height="121px">content</YellowBox>,
 };
 
@@ -143,13 +125,9 @@ DrawerSection.argTypes = {
       required: true,
     },
   },
-  actions: {
-    control: {
-      type: 'text',
-    },
-
+  action: {
     type: {
-      summary: 'React Component slot',
+      summary: callbackDescription,
     },
   },
   children: {
@@ -185,12 +163,9 @@ PopupDrawer.argTypes = {
     },
   },
   bottomButton: {
-    control: {
-      type: 'text',
-    },
     type: {
-      summary: 'React Component slot',
-      required: true,
+      summary: callbackDescription,
+      required: false,
     },
   },
   children: {
@@ -199,7 +174,7 @@ PopupDrawer.argTypes = {
     },
 
     type: {
-      summary: 'Slot for any React component or the Drawer Section',
+      summary: 'Only DrawerSection components',
     },
   },
   otherProps: {
@@ -234,21 +209,13 @@ PopupTiny.argTypes = {
     },
   },
   mainButton: {
-    control: {
-      type: 'text',
-    },
-
     type: {
-      summary: 'React Component slot',
+      summary: callbackDescription,
     },
   },
   secondaryButton: {
-    control: {
-      type: 'text',
-    },
-
     type: {
-      summary: 'React Component slot',
+      summary: callbackDescription,
     },
   },
   otherProps: {
