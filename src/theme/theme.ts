@@ -2,6 +2,7 @@
 import buttons from './buttons';
 import iconButtons from './icon-buttons';
 import footerButtons from './footer-buttons';
+import toggleButton from './toggle-button';
 // Label themes
 import label from './label';
 // Tooltip themes
@@ -103,6 +104,7 @@ const theme: ITheme = {
     ...buttons,
     ...iconButtons,
     ...footerButtons,
+    toggleButton,
   },
   navigation,
   inputs,

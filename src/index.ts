@@ -17,6 +17,8 @@ import Header from './components/header';
 import List from './components/list/container';
 import ListItem from './components/list/item';
 import Dropdown from './components/dropdown';
+import Checkbox from './components/checkbox';
+import ToggleButton from './components/toggle-button';
 
 // Navigation
 import Navigation from './components/navigation/container';
@@ -49,6 +51,7 @@ export {
   Avatar,
   Button,
   Card,
+  Checkbox,
   Dropdown,
   FooterButton,
   Header,
@@ -60,6 +63,7 @@ export {
   List,
   ListItem,
   ThemeProvider,
+  ToggleButton,
   Tooltip,
   // Navigation
   Navigation,
