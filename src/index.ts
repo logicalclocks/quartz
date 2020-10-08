@@ -20,6 +20,12 @@ import Dropdown from './components/dropdown';
 import Checkbox from './components/checkbox';
 import ToggleButton from './components/toggle-button';
 
+// Badges
+import User from './components/user';
+import TextValueBadge from './components/badges/text-value-badge';
+import Badge from './components/badges/badge';
+import Dot from './components/badges/dot';
+
 // Navigation
 import Navigation from './components/navigation/container';
 import NavigationItem from './components/navigation/item';
@@ -65,6 +71,11 @@ export {
   ThemeProvider,
   ToggleButton,
   Tooltip,
+  // Badges
+  User,
+  TextValueBadge,
+  Badge,
+  Dot,
   // Navigation
   Navigation,
   NavigationItem,

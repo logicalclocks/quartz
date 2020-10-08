@@ -3,14 +3,14 @@ import subtitle from './subtitle';
 import labeling from './labeling';
 import microlabeling from './microlabeling';
 import value from './value';
-import labelingBold from './labelingBold';
+import labelingGray from './labelingGray';
 
 const variants = {
   title,
   subtitle,
   labeling,
   value,
-  labelingBold,
+  labelingGray,
   microlabeling,
 };
 
