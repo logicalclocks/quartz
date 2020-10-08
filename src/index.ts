@@ -18,6 +18,12 @@ import List from './components/list/container';
 import ListItem from './components/list/item';
 import Dropdown from './components/dropdown';
 
+// Badges
+import User from './components/user';
+import TextValueBadge from './components/badges/text-value-badge';
+import Badge from './components/badges/badge';
+import Dot from './components/badges/dot';
+
 // Navigation
 import Navigation from './components/navigation/container';
 import NavigationItem from './components/navigation/item';
@@ -61,6 +67,11 @@ export {
   ListItem,
   ThemeProvider,
   Tooltip,
+  // Badges
+  User,
+  TextValueBadge,
+  Badge,
+  Dot,
   // Navigation
   Navigation,
   NavigationItem,
