@@ -23,6 +23,8 @@ import header from './header';
 import typography from './typography';
 // Badges
 import badges from './badges';
+// Bar
+import bar from './bar';
 // Types
 import { ITheme } from './types';
 
@@ -89,6 +91,7 @@ const theme: ITheme = {
     list,
     header,
     badges,
+    bar,
   },
   text: {
     inputInfo,

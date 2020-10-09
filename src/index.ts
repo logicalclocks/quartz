@@ -18,6 +18,11 @@ import List from './components/list/container';
 import ListItem from './components/list/item';
 import Dropdown from './components/dropdown';
 
+// Bars
+import Bar from './components/bar';
+import ProgressBar from './components/bar/progress';
+import FreshnessBar from './components/bar/freshness';
+
 // Badges
 import User from './components/user';
 import TextValueBadge from './components/badges/text-value-badge';
@@ -67,6 +72,10 @@ export {
   ListItem,
   ThemeProvider,
   Tooltip,
+  // Bars
+  Bar,
+  ProgressBar,
+  FreshnessBar,
   // Badges
   User,
   TextValueBadge,
