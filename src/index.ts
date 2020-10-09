@@ -21,6 +21,12 @@ import Tooltip from './components/tooltip';
 import Select from './components/select';
 import ToggleButton from './components/toggle-button';
 
+// Popups
+import Drawer from './components/popup/drawer';
+import DrawerSection from './components/popup/drawer/drawer-section';
+import Popup from './components/popup';
+import TinyPopup from './components/popup/tiny';
+
 // Badges
 import User from './components/user';
 import TextValueBadge from './components/badges/text-value-badge';
@@ -37,6 +43,7 @@ import Logo from './components/logo';
 
 // Typography
 import Value from './components/typography/value';
+import Text from './components/typography/text';
 import Title from './components/typography/title';
 import Subtitle from './components/typography/subtitle';
 import Labeling from './components/typography/labeling';
@@ -73,6 +80,11 @@ export {
   ThemeProvider,
   ToggleButton,
   Tooltip,
+  // Popups
+  Popup,
+  Drawer,
+  TinyPopup,
+  DrawerSection,
   // Badges
   User,
   TextValueBadge,
@@ -89,6 +101,7 @@ export {
   useNavigation,
   //  Typography
   Value,
+  Text,
   Title,
   Subtitle,
   Microlabeling,
