@@ -3,20 +3,20 @@ import { useCallback, useState } from 'react';
 export type UseDropdown = [boolean, (state?: boolean) => void, () => void];
 
 const useDropdown = (isInitialOpen = false): UseDropdown => {
-  const [isoOpen, setOpen] = useState(isInitialOpen);
+  const [isOpen, setOpen] = useState(isInitialOpen);
 
   const handleClickOutside = useCallback(() => {
     setOpen(false);
-  }, [setOpen, isoOpen]);
+  }, [setOpen, isOpen]);
 
   const handleToggle = useCallback(
     (state?: boolean) => {
       setOpen((currentState) => state ?? !currentState);
     },
-    [isoOpen, setOpen],
+    [isOpen, setOpen],
   );
 
-  return [isoOpen, handleToggle, handleClickOutside];
+  return [isOpen, handleToggle, handleClickOutside];
 };
 
 export default useDropdown;

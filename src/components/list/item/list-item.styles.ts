@@ -1,10 +1,4 @@
-export const reverse = {
-  flexDirection: 'row-reverse',
-
-  '> svg': {
-    pl: '7px',
-  },
-};
+export const withoutBorder = { borderBottomColor: 'transparent' };
 
 export default {
   height: '35px',
@@ -18,7 +12,18 @@ export default {
 
   listStyleType: 'none',
 
+  borderBottomStyle: 'solid',
+  borderBottomWidth: '1px',
+
   '> svg': {
     pr: '7px',
+  },
+
+  '> button:last-of-type': {
+    visibility: 'hidden',
+  },
+
+  ':hover > button:last-of-type': {
+    visibility: 'visible',
   },
 };

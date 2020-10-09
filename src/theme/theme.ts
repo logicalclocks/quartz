@@ -26,6 +26,8 @@ import typography from './typography';
 import badges from './badges';
 // Checkbox
 import checkbox from './checkbox';
+// Select
+import select from './select';
 // Types
 import { ITheme } from './types';
 
@@ -93,6 +95,7 @@ const theme: ITheme = {
     header,
     checkbox,
     badges,
+    select,
   },
   text: {
     inputInfo,

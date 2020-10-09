@@ -1,36 +1,52 @@
 import React, { FC, memo } from 'react';
 import { Box, BoxProps } from 'rebass';
 
+// Components
+import Button from '../../button';
 // Styles
-import styles, { reverse } from './list-item.styles';
+import styles, { withoutBorder } from './list-item.styles';
 
-export interface ListItemProps extends Omit<BoxProps, 'css'> {
+export interface ListItemProps extends Omit<BoxProps, 'css' | 'action'> {
   children: React.ReactNode;
-  variant?: 'primary' | 'withDivider';
+  variant?: 'primary' | 'active';
   hasDivider?: boolean;
   isRightAlignment?: boolean;
+  action?: [string, (event: React.MouseEvent<HTMLButtonElement>) => void];
 }
 
 const ListItem: FC<ListItemProps> = ({
   children,
   variant = 'primary',
   hasDivider,
+  action,
   isRightAlignment,
   ...props
-}: ListItemProps) => (
-  <Box
-    p="10px"
-    as="li"
-    tx="variants.list.item"
-    variant={hasDivider ? 'withDivider' : variant}
-    {...props}
-    sx={{
-      ...styles,
-      ...(isRightAlignment && reverse),
-    }}
-  >
-    {children}
-  </Box>
-);
+}: ListItemProps) => {
+  const [actionTitle, actionCallback] = action || [];
+
+  return (
+    <Box
+      p="10px"
+      as="li"
+      tx="variants.list.item"
+      variant={variant}
+      {...props}
+      sx={styles}
+      css={!hasDivider ? withoutBorder : undefined}
+    >
+      {children}
+      {action && (
+        <Button
+          ml="auto"
+          intent="inline"
+          p="0 0 0 10px"
+          onClick={actionCallback}
+        >
+          {actionTitle}
+        </Button>
+      )}
+    </Box>
+  );
+};
 
 export default memo(ListItem);
