@@ -1,9 +1,6 @@
 import { SxStyleProp } from 'rebass';
 
 export default {
-  display: 'flex',
-  flexDirection: 'column',
-
   fontFamily: 'label',
   fontWeight: 'label',
   fontSize: 'label',

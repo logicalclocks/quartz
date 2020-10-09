@@ -2,6 +2,7 @@
 import buttons from './buttons';
 import iconButtons from './icon-buttons';
 import footerButtons from './footer-buttons';
+import toggleButton from './toggle-button';
 // Label themes
 import label from './label';
 // Tooltip themes
@@ -25,6 +26,8 @@ import typography from './typography';
 import popup from './popup';
 // Badges
 import badges from './badges';
+// Checkbox
+import checkbox from './checkbox';
 // Types
 import { ITheme } from './types';
 
@@ -91,6 +94,7 @@ const theme: ITheme = {
     label,
     list,
     header,
+    checkbox,
     badges,
     popup,
   },
@@ -108,6 +112,7 @@ const theme: ITheme = {
     ...buttons,
     ...iconButtons,
     ...footerButtons,
+    toggleButton,
   },
   navigation,
   inputs,
