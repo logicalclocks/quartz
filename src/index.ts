@@ -17,6 +17,14 @@ import Header from './components/header';
 import List from './components/list/container';
 import ListItem from './components/list/item';
 import Dropdown from './components/dropdown';
+import Checkbox from './components/checkbox';
+import ToggleButton from './components/toggle-button';
+
+// Popups
+import Drawer from './components/popup/drawer';
+import DrawerSection from './components/popup/drawer/drawer-section';
+import Popup from './components/popup';
+import TinyPopup from './components/popup/tiny';
 
 // Badges
 import User from './components/user';
@@ -34,6 +42,7 @@ import Logo from './components/logo';
 
 // Typography
 import Value from './components/typography/value';
+import Text from './components/typography/text';
 import Title from './components/typography/title';
 import Subtitle from './components/typography/subtitle';
 import Labeling from './components/typography/labeling';
@@ -55,6 +64,7 @@ export {
   Avatar,
   Button,
   Card,
+  Checkbox,
   Dropdown,
   FooterButton,
   Header,
@@ -66,7 +76,13 @@ export {
   List,
   ListItem,
   ThemeProvider,
+  ToggleButton,
   Tooltip,
+  // Popups
+  Popup,
+  Drawer,
+  TinyPopup,
+  DrawerSection,
   // Badges
   User,
   TextValueBadge,
@@ -83,6 +99,7 @@ export {
   useNavigation,
   //  Typography
   Value,
+  Text,
   Title,
   Subtitle,
   Microlabeling,

@@ -1,11 +1,3 @@
-export const reverse = {
-  flexDirection: 'row-reverse',
-
-  '> svg': {
-    pl: '7px',
-  },
-};
-
 export default {
   height: '35px',
 
