@@ -42,7 +42,7 @@ const SelectLabel: FC<SelectLabelProps> = forwardRef(
       <Labeling minWidth="max-content" gray={!!value.length}>
         {placeholder}
       </Labeling>
-      <Labeling pl="5px" sx={valueStyles}>
+      <Labeling px="5px" sx={valueStyles}>
         {getLabelText(value, options)}
       </Labeling>
       <ArrowsIcon />
