@@ -37,6 +37,8 @@ Default.args = {
   placeholder: 'choice',
   width: '300px',
   listWidth: '300px',
+  variant: 'primary',
+  isMulti: false,
 };
 
 Default.argTypes = {
