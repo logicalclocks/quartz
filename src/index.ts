@@ -26,6 +26,11 @@ import DrawerSection from './components/popup/drawer/drawer-section';
 import Popup from './components/popup';
 import TinyPopup from './components/popup/tiny';
 
+// Bars
+import Bar from './components/bar';
+import ProgressBar from './components/bar/progress';
+import FreshnessBar from './components/bar/freshness';
+
 // Badges
 import User from './components/user';
 import TextValueBadge from './components/badges/text-value-badge';
@@ -83,6 +88,10 @@ export {
   Drawer,
   TinyPopup,
   DrawerSection,
+  // Bars
+  Bar,
+  ProgressBar,
+  FreshnessBar,
   // Badges
   User,
   TextValueBadge,
