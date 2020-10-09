@@ -21,6 +21,8 @@ import list from './list';
 import header from './header';
 // Typography
 import typography from './typography';
+// Popup
+import popup from './popup';
 // Badges
 import badges from './badges';
 // Types
@@ -81,6 +83,7 @@ const theme: ITheme = {
     cardInsetShadow: 'inset 0px -20px 30px -25px rgba(0, 0, 0, 0.15)',
     navigation: '1px 0px 0px #E5E5E5, 2px 0px 0px #FFFFFF',
     list: '0px 4px 15px rgba(0, 0, 0, 0.25)',
+    popup: '0px 4px 4px rgba(0, 0, 0, 0.25)',
   },
   variants: {
     ...cards,
@@ -89,6 +92,7 @@ const theme: ITheme = {
     list,
     header,
     badges,
+    popup,
   },
   text: {
     inputInfo,
