@@ -55,6 +55,10 @@ export default {
   alignItems: 'center',
   justifyContent: 'space-between',
 
+  position: 'relative',
+
+  zIndex: 32,
+
   width: '100%',
   height: '70px',
 
