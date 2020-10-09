@@ -23,9 +23,9 @@ export const cardHeaderStyles = {
 
   // Title
   '> h4': {
-    fontFamily: 'Inter',
-    fontWeight: 'bold',
-    fontSize: '18px',
+    fontFamily: 'subtitle',
+    fontWeight: 'subtitle',
+    fontSize: 'subtitle',
   },
 
   // Actions

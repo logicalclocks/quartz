@@ -12,7 +12,7 @@ const fadeIn = keyframes`
 
 const popupPositions = {
   [TooltipPositions.bottom]: {
-    pt: '7px',
+    pt: '6px',
     left: '50%',
     bottom: '0px',
     transform: 'translate(-50%, 100%)',
@@ -27,7 +27,7 @@ const popupPositions = {
 
 const tooltipArrows = {
   [TooltipPositions.bottom]: {
-    top: '-5px',
+    top: '-4px',
     left: '50%',
 
     transform: 'translateX(-50%)',
@@ -39,7 +39,7 @@ const tooltipArrows = {
   },
   [TooltipPositions.right]: {
     top: '50%',
-    left: '-5px',
+    left: '-4px',
 
     borderTop: '6px solid transparent',
     borderBottom: '6px solid transparent',
@@ -52,7 +52,7 @@ const tooltipArrows = {
 
 export const containerStyles = {
   position: 'relative',
-  maxWidth: 'max-content',
+  maxWidth: 'min-content',
 
   ':hover': {
     '> span:last-of-type': {
@@ -89,10 +89,9 @@ export const getTooltipStyles = (position: TooltipPositions): SxStyleProp => ({
   alignItems: 'center',
   justifyContent: 'flexStart',
 
-  fontFamily: 'Inter',
-  fontStyle: 'normal',
-  fontWeight: 'bold',
-  fontSize: '12px',
+  fontFamily: 'label',
+  fontWeight: 'label',
+  fontSize: 'label',
 
   lineHeight: '15px',
 

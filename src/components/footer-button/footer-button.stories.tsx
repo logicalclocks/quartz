@@ -1,3 +1,4 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { action } from '@storybook/addon-actions';
 import React from 'react';
@@ -18,7 +19,12 @@ export const Footer = Template.bind({});
 
 Footer.args = {
   intent: 'primary',
-  children: 'Open Feature Group’s Page',
+  children: (
+    <>
+      <span>Open Feature Group’s Page</span>
+      <FontAwesomeIcon icon="arrow-right" />
+    </>
+  ),
   onClick: action('onClick'),
 };
 

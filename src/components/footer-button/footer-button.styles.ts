@@ -3,12 +3,11 @@ import { SxStyleProp } from 'rebass';
 export default {
   display: 'flex',
   alignItems: 'center',
-  textAlign: 'center',
+  justifyContent: 'center',
 
-  fontFamily: 'buttons',
-  fontStyle: 'normal',
-  fontWeight: 'bold',
-  fontSize: '12px',
+  fontFamily: 'label',
+  fontWeight: 'label',
+  fontSize: 'label',
 
   lineHeight: '15px',
 
@@ -26,12 +25,6 @@ export default {
 
   px: '35px',
   py: '15px',
-
-  ':after': {
-    fontSize: '13px',
-    marginLeft: '4px',
-    content: '"\\01F852"',
-  },
 
   ':disabled': {
     cursor: 'default',

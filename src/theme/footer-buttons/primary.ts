@@ -1,6 +1,6 @@
 export default {
-  color: 'darkGray',
-  bg: 'primaryGrayShade2',
+  color: 'black',
+  bg: 'grayShade3',
 
   borderTopColor: 'primary',
 
@@ -11,12 +11,12 @@ export default {
 
   ':active': {
     bg: 'primaryShade2',
-    color: 'darkGray',
+    color: 'black',
   },
 
   ':disabled': {
-    color: 'darkGray',
+    color: 'black',
 
-    bg: 'primaryGrayShade2',
+    bg: 'grayShade3',
   },
 };

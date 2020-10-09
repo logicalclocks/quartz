@@ -1,15 +1,15 @@
 export default {
-  bg: 'darkGray',
+  bg: 'black',
   color: 'white',
 
   // Arrow
   ':after': {
-    borderColor: 'darkGray',
+    borderColor: 'black',
   },
 
   // Secondary text
   '> span': {
     pl: '10px',
-    color: 'primaryGray',
+    color: 'gray',
   },
 };

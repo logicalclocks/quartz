@@ -1,5 +1,5 @@
 import { SxStyleProp } from 'rebass';
 
 export default {
-  color: 'darkGray',
+  color: 'black',
 } as SxStyleProp;
