@@ -4,20 +4,21 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { far } from '@fortawesome/free-regular-svg-icons';
 
+import Avatar from './components/avatar';
 import Button from './components/button';
 import Card from './components/card';
+import Checkbox from './components/checkbox';
+import Dropdown from './components/dropdown';
+import FooterButton from './components/footer-button';
+import Header from './components/header';
 import IconButton from './components/icon-button';
 import Input from './components/input';
 import InputInfo from './components/input-info';
-import FooterButton from './components/footer-button';
 import Label from './components/label';
-import Tooltip from './components/tooltip';
-import Avatar from './components/avatar';
-import Header from './components/header';
 import List from './components/list/container';
 import ListItem from './components/list/item';
-import Dropdown from './components/dropdown';
-import Checkbox from './components/checkbox';
+import Tooltip from './components/tooltip';
+import Select from './components/select';
 import ToggleButton from './components/toggle-button';
 
 // Popups
@@ -25,6 +26,11 @@ import Drawer from './components/popup/drawer';
 import DrawerSection from './components/popup/drawer/drawer-section';
 import Popup from './components/popup';
 import TinyPopup from './components/popup/tiny';
+
+// Bars
+import Bar from './components/bar';
+import ProgressBar from './components/bar/progress';
+import FreshnessBar from './components/bar/freshness';
 
 // Badges
 import User from './components/user';
@@ -49,7 +55,7 @@ import Labeling from './components/typography/labeling';
 import Microlabeling from './components/typography/microlabeling';
 
 // Icons
-import FolderIcon from './components/icons/folder-icon';
+import FolderIcon from './components/icons/folder.icon';
 // Theme
 import ThemeProvider from './theme/ThemeProvider';
 
@@ -75,6 +81,7 @@ export {
   Logo,
   List,
   ListItem,
+  Select,
   ThemeProvider,
   ToggleButton,
   Tooltip,
@@ -83,6 +90,10 @@ export {
   Drawer,
   TinyPopup,
   DrawerSection,
+  // Bars
+  Bar,
+  ProgressBar,
+  FreshnessBar,
   // Badges
   User,
   TextValueBadge,

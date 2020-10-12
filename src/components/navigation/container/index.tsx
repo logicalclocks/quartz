@@ -2,11 +2,11 @@ import { Box } from 'rebass';
 import React, { FC, ReactElement, useMemo } from 'react';
 
 // Components
-import NavigationItem, { NavigationItemProps } from '../item';
+import NavigationItem from '../item';
 import NavigationProvider from '../context/navigation.provider';
 import NavigationCategory, { NavigationCategoryProps } from '../category';
 // Types
-import { TreeNode } from '../types';
+import { NavigationItemProps, TreeNode } from '../types';
 // Styles
 import styles from './navigation.styles';
 // Utils

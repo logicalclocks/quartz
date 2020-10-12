@@ -1,9 +1,11 @@
 import primary from './primary';
-import active from './active';
+import white from './white';
+import disabled from './disabled';
 
 const variants = {
+  disabled,
   primary,
-  active,
+  white,
 };
 
 export default variants;

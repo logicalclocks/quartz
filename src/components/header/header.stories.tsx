@@ -7,7 +7,7 @@ import { Box } from 'rebass';
 // Components
 import Avatar from '../avatar';
 import { IconButton, Label } from '../../index';
-import FolderIcon from '../icons/folder-icon';
+import FolderIcon from '../icons/folder.icon';
 import Subtitle from '../typography/subtitle';
 import Header, { HeaderProps } from './index';
 import Navigation from '../navigation/container';

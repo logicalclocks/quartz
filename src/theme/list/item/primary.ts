@@ -8,6 +8,8 @@ export default {
 
   cursor: 'pointer',
 
+  borderBottomColor: 'grayShade2',
+
   ':hover': {
     bg: 'grayShade3',
   },
