@@ -1,4 +1,4 @@
-import { Box, BoxProps } from 'rebass';
+import { Box } from 'rebass';
 import React, {
   FC,
   memo,
@@ -8,24 +8,13 @@ import React, {
   useEffect,
   useMemo,
 } from 'react';
-import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 // Context
 import NavigationContext from '../context/navigation.context';
+import { NavigationItemProps } from '../types';
 // Styles
 import styles from './navigation-item.styles';
-
-export interface NavigationItemProps extends Omit<BoxProps, 'css'> {
-  title: string;
-  icon?: IconProp;
-  isActive?: boolean;
-  isSubItem?: boolean;
-  hasDivider?: boolean;
-  children?: React.ReactNode;
-  disabled?: boolean;
-  onClick?: () => void;
-}
 
 const getVariant = (isDisabled = false, isActive = false): string => {
   if (isDisabled) {

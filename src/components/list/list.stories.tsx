@@ -19,10 +19,10 @@ export const Container: Story<ListProps> = (props) => (
 Container.args = {
   children: (
     <>
-      <ListItem>name</ListItem>
+      <ListItem hasDivider>name</ListItem>
       <ListItem>creation date</ListItem>
       <ListItem>size</ListItem>
-      <ListItem variant="withDivider"># of rows</ListItem>
+      <ListItem variant="active"># of rows</ListItem>
       <ListItem># of features</ListItem>
     </>
   ),
@@ -48,7 +48,7 @@ Item.argTypes = {
   variant: {
     control: {
       type: 'select',
-      options: ['primary', 'withDivider'],
+      options: ['primary', 'active'],
     },
     type: {
       required: false,
@@ -56,15 +56,6 @@ Item.argTypes = {
     },
   },
   hasDivider: {
-    control: {
-      type: 'boolean',
-    },
-    type: {
-      required: false,
-      summary: 'Enable divider flag',
-    },
-  },
-  isRightAlignment: {
     control: {
       type: 'boolean',
     },

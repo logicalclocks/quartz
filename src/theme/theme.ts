@@ -28,6 +28,8 @@ import popup from './popup';
 import badges from './badges';
 // Checkbox
 import checkbox from './checkbox';
+// Select
+import select from './select';
 // Bar
 import bar from './bar';
 // Types
@@ -100,6 +102,7 @@ const theme: ITheme = {
     badges,
     popup,
     bar,
+    select,
   },
   text: {
     inputInfo,

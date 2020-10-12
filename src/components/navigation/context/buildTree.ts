@@ -1,6 +1,6 @@
 import React, { ReactElement } from 'react';
-import { NavigationItemProps } from '../item';
-import { TreeNode } from '../types';
+
+import { NavigationItemProps, TreeNode } from '../types';
 
 const buildTree = (children: ReactElement<NavigationItemProps>): TreeNode[] => {
   if (children) {

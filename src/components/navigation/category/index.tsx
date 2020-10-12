@@ -3,11 +3,13 @@ import React, { FC, memo, useCallback, useContext } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 // Components
-import NavigationItem, { NavigationItemProps } from '../item';
+import NavigationItem from '../item';
 // Styles
 import styles from './navigation-category.styles';
 // Content
 import NavigationContext from '../context/navigation.context';
+// Types
+import { NavigationItemProps } from '../types';
 
 export interface NavigationCategoryProps
   extends Omit<NavigationItemProps, 'isSubItem'> {
