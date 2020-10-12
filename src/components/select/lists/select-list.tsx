@@ -18,7 +18,7 @@ const SelectList: FC<SelectListProps> = ({
   );
 
   return (
-    <>
+    <React.Fragment>
       {options?.map((option) => (
         <ListItem
           key={option}
@@ -28,7 +28,7 @@ const SelectList: FC<SelectListProps> = ({
           {option}
         </ListItem>
       ))}
-    </>
+    </React.Fragment>
   );
 };
 

@@ -39,7 +39,7 @@ const SelectListMulti: FC<SelectListProps> = ({
   const handleCheck = useCallback(() => {}, []);
 
   return (
-    <>
+    <React.Fragment>
       {options?.map((option) => (
         <ListItem
           key={option}
@@ -54,7 +54,7 @@ const SelectListMulti: FC<SelectListProps> = ({
           {option}
         </ListItem>
       ))}
-    </>
+    </React.Fragment>
   );
 };
 
