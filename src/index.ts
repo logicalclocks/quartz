@@ -58,6 +58,7 @@ import Microlabeling from './components/typography/microlabeling';
 import FolderIcon from './components/icons/folder.icon';
 // Theme
 import ThemeProvider from './theme/ThemeProvider';
+import theme from './theme/theme';
 
 // Hooks
 import useDropdown from './utils/useDropdown';
@@ -118,4 +119,5 @@ export {
   //  Icons
   FolderIcon,
   useOnClickOutside,
+  theme,
 };
