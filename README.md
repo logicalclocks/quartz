@@ -20,30 +20,64 @@ The DS is first experimented on Figma before being implemented:
 
 ### Installation
 
+NPM
 ```bash
 npm install --save quartz-design-system
+```
+
+Yarn
+```bash
+yarn add quartz-design-system
 ```
 
 ### Usage
 
 ```tsx
-import React, { Component } from 'react'
+import React from 'react'
 
-import MyComponent from 'quartz-design-system'
-import 'quartz-design-system/dist/index.css'
+import { ThemeProvider, Button } from 'quartz-design-system'
 
-class Example extends Component {
-  render() {
-    return <MyComponent />
-  }
+const App = () => (
+    <ThemeProvider>
+      <Button>My button</Button>
+    </ThemeProvider>
+)
+```
+
+Since components are built on `rebass`, those have extended props from `Box` or `Flex' components.
+It means that you can add some extra styles if they needed.
+
+For example:
+```tsx
+<Button
+    p="30px 40px 10px 0px"
+    m="10px"
+    width="auto"
+>
+  Button
+</Button>
+```
+
+Put ThemeProvider Context on the top of components tree to provide the default theme.
+
+The library has peer dependencies which need to be installed in a main project:
+```json
+{
+    "rebass": "^4.0.7",
+    "react": "^16.13.1",
+    "emotion-theming": "^10.0.27"
 }
 ```
 
 ## How to develop components for the package?
 
-Run `npm start` from the root to compile files automatically.
+Run `npm run storybook`
 
-Simultaneously, run `npm start`from `example` folder in order to preview component in the browser.
+Put new component in
+
+## How to build?
+
+Run `npm run build`
 
 
 ## License
