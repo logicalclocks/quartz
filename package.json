@@ -1,6 +1,11 @@
 {
+<<<<<<< Updated upstream
   "name": "quartz-design-system",
   "version": "1.0.0",
+=======
+  "name": "@logicalclocks/quartz",
+  "version": "1.1.0",
+>>>>>>> Stashed changes
   "description": "Logical Clocks Design System Library",
   "author": "logicalclocks",
   "license": "MIT",
