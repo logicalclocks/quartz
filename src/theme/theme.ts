@@ -32,6 +32,8 @@ import checkbox from './checkbox';
 import select from './select';
 // Bar
 import bar from './bar';
+// Code
+import code from './code';
 // Types
 import { ITheme } from './types';
 
@@ -102,6 +104,7 @@ const theme: ITheme = {
     badges,
     popup,
     bar,
+    code,
     select,
   },
   text: {
