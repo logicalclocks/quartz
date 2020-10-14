@@ -7,6 +7,7 @@ import { far } from '@fortawesome/free-regular-svg-icons';
 import Avatar from './components/avatar';
 import Button from './components/button';
 import Card from './components/card';
+import Code from './components/code';
 import Checkbox from './components/checkbox';
 import Dropdown from './components/dropdown';
 import FooterButton from './components/footer-button';
@@ -71,6 +72,7 @@ export {
   Avatar,
   Button,
   Card,
+  Code,
   Checkbox,
   Dropdown,
   FooterButton,
