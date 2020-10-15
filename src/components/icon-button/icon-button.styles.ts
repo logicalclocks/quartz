@@ -27,7 +27,7 @@ export default {
   '> svg': {
     fontSize: '20px',
 
-    ':nth-child(2)': {
+    ':nth-of-type(2)': {
       display: 'none',
     },
   },
@@ -35,7 +35,7 @@ export default {
   ':hover > svg': {
     display: 'none',
 
-    ':nth-child(2)': {
+    ':nth-of-type(2)': {
       display: 'block',
     },
   },
