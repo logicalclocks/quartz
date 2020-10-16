@@ -47,6 +47,9 @@ import NavigationProvider from './components/navigation/context/navigation.provi
 import NavigationContext from './components/navigation/context/navigation.context';
 import Logo from './components/logo';
 
+// Sticky Summary
+import StickySummary from './components/sticky-summary';
+
 // Typography
 import Value from './components/typography/value';
 import Text from './components/typography/text';
@@ -118,6 +121,7 @@ export {
   Subtitle,
   Microlabeling,
   Labeling,
+  StickySummary,
   //  Icons
   FolderIcon,
   useOnClickOutside,
