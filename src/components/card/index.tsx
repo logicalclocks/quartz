@@ -8,7 +8,7 @@ export interface CardProps extends Omit<RebassCardProps, 'css'> {
   link?: string;
   actions?: React.ReactNode;
   children: React.ReactNode;
-  contentProps?: Omit<CardProps, 'css'>;
+  contentProps?: Omit<CardProps, 'css' | 'children'>;
 }
 
 const Card: FC<CardProps> = ({

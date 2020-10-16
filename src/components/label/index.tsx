@@ -22,10 +22,12 @@ const Label: FC<LabelProps> = ({
     variant="label"
     sx={styles}
   >
-    <span>
-      {text}
-      {action}
-    </span>
+    {(text || action) && (
+      <span>
+        {text}
+        {action}
+      </span>
+    )}
     {children}
   </Flex>
 );

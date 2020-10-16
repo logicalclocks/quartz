@@ -1,10 +1,10 @@
-import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import React, { FC } from 'react';
+import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import { Button as RebassButton, ButtonProps } from 'rebass';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 // Components
-import Tooltip from '../tooltip';
+import Tooltip, { TooltipProps } from '../tooltip';
 
 // Styles
 import styles from './icon-button.styles';
@@ -15,6 +15,7 @@ export interface IconButtonProps extends Omit<ButtonProps, 'css'> {
   icon: IconProp;
   disabled?: boolean;
   iconOnHover?: IconProp;
+  tooltipProps?: TooltipProps;
 }
 
 const IconButton: FC<IconButtonProps> = ({
@@ -23,13 +24,14 @@ const IconButton: FC<IconButtonProps> = ({
   icon,
   disabled,
   iconOnHover,
+  tooltipProps,
   ...props
 }: IconButtonProps) => {
   // @ts-ignore
   const hoverIcon = iconOnHover ?? icon;
 
   return (
-    <Tooltip disabled={disabled} mainText={tooltip}>
+    <Tooltip {...tooltipProps} disabled={disabled} mainText={tooltip}>
       <RebassButton
         sx={styles}
         variant={`icon-${intent}`}
