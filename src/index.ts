@@ -47,6 +47,11 @@ import NavigationProvider from './components/navigation/context/navigation.provi
 import NavigationContext from './components/navigation/context/navigation.context';
 import Logo from './components/logo';
 
+// Row
+import Row from './components/row/container';
+import RowGroup from './components/row/group';
+import RowItem from './components/row/item';
+
 // Typography
 import Value from './components/typography/value';
 import Text from './components/typography/text';
@@ -111,6 +116,10 @@ export {
   // Hooks
   useDropdown,
   useNavigation,
+  // Row
+  Row,
+  RowGroup,
+  RowItem,
   //  Typography
   Value,
   Text,
