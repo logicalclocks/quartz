@@ -13,6 +13,7 @@
   },
   "scripts": {
     "build": "microbundle-crl --no-compress --format modern,cjs",
+    "build-dev": "run-s build && rm -rf node_modules/rebass node_modules/react node_modules/emotion-theming",
     "start": "microbundle-crl watch --no-compress --format modern,cjs",
     "prepare": "run-s build",
     "test": "run-s test:unit test:lint test:build",

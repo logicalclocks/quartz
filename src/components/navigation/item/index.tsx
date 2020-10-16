@@ -65,7 +65,9 @@ const NavigationItem: FC<NavigationItemProps> = (
   }, [disabled]);
 
   useEffect(() => {
-    onActivate(key);
+    if (isActive) {
+      onActivate(key);
+    }
   }, [isActive]);
 
   return (
