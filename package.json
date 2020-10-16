@@ -86,7 +86,7 @@
     "@fortawesome/free-regular-svg-icons": "^5.14.0",
     "@fortawesome/free-solid-svg-icons": "^5.14.0",
     "@fortawesome/react-fontawesome": "^0.1.11",
-    "@rebass/form": "^1.0.0-2",
+    "@rebass/forms": "^4.0.6",
     "@styled-system/css": "^5.1.5"
   }
 }
