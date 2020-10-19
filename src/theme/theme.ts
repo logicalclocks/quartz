@@ -32,6 +32,11 @@ import checkbox from './checkbox';
 import select from './select';
 // Bar
 import bar from './bar';
+<<<<<<< HEAD
+// Code
+import code from './code';
+=======
+>>>>>>> master
 // Types
 import { ITheme } from './types';
 
@@ -102,6 +107,10 @@ const theme: ITheme = {
     badges,
     popup,
     bar,
+<<<<<<< HEAD
+    code,
+=======
+>>>>>>> master
     select,
   },
   text: {

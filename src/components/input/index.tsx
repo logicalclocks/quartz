@@ -13,11 +13,11 @@ import { Intents } from '../intents';
 import getStyles from './input.styles';
 
 export interface InputProps extends Omit<RebassInputProps, 'css'> {
-  variant: 'primary' | 'white';
+  variant?: 'primary' | 'white';
   intent?: Intents;
   info?: string;
   icon?: IconProp;
-  label: string;
+  label?: string;
   placeholder?: string;
   width?: string | number;
   labelProps?: Omit<LabelProps, 'action' | 'text'>;
@@ -28,7 +28,7 @@ const Input: FC<InputProps> = forwardRef(
   (
     {
       placeholder,
-      label,
+      label = '',
       labelAction,
       icon,
       info,

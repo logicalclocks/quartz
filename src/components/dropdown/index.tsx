@@ -9,16 +9,16 @@ import useOnClickOutside from '../../utils/useClickOutside';
 // Types
 import { DropdownItem } from './types';
 
-export interface DropdownProps extends ListProps {
+export interface DropdownProps extends Omit<ListProps, 'css'> {
   items: DropdownItem[];
   isOpen?: boolean;
-  onClickOutside: () => void;
+  onClickOutside?: () => void;
 }
 
 const Dropdown: FC<DropdownProps> = ({
   items,
   isOpen = true,
-  onClickOutside,
+  onClickOutside = () => {},
   ...props
 }: DropdownProps) => {
   const containerRef = useRef(null);

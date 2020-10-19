@@ -1,5 +1,5 @@
 {
-  "name": "quartz-design-system",
+  "name": "@logicalclocks/quartz",
   "version": "1.1.0",
   "description": "Logical Clocks Design System Library",
   "author": "logicalclocks",
@@ -13,6 +13,7 @@
   },
   "scripts": {
     "build": "microbundle-crl --no-compress --format modern,cjs",
+    "build-dev": "run-s build && rm -rf node_modules/rebass node_modules/react node_modules/emotion-theming",
     "start": "microbundle-crl watch --no-compress --format modern,cjs",
     "prepare": "run-s build",
     "test": "run-s test:unit test:lint test:build",
@@ -29,6 +30,7 @@
   "peerDependencies": {
     "rebass": "^4.0.7",
     "react": "^16.13.1",
+    "react-dom": "^16.13.1",
     "emotion-theming": "^10.0.27"
   },
   "devDependencies": {
@@ -69,7 +71,8 @@
     "microbundle-crl": "^0.13.10",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.0.4",
-    "react-dom": "^16.13.1",
+    "rebass": "^4.0.7",
+    "emotion-theming": "^10.0.27",
     "react-is": "^16.13.1",
     "react-scripts": "^3.4.1",
     "typescript": "^3.7.5"

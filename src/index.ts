@@ -7,6 +7,7 @@ import { far } from '@fortawesome/free-regular-svg-icons';
 import Avatar from './components/avatar';
 import Button from './components/button';
 import Card from './components/card';
+import Code from './components/code';
 import Checkbox from './components/checkbox';
 import Dropdown from './components/dropdown';
 import FooterButton from './components/footer-button';
@@ -58,6 +59,7 @@ import Microlabeling from './components/typography/microlabeling';
 import FolderIcon from './components/icons/folder.icon';
 // Theme
 import ThemeProvider from './theme/ThemeProvider';
+import theme from './theme/theme';
 
 // Hooks
 import useDropdown from './utils/useDropdown';
@@ -70,6 +72,7 @@ export {
   Avatar,
   Button,
   Card,
+  Code,
   Checkbox,
   Dropdown,
   FooterButton,
@@ -118,4 +121,5 @@ export {
   //  Icons
   FolderIcon,
   useOnClickOutside,
+  theme,
 };

@@ -20,7 +20,7 @@ const getStyles = (intent: Intents) => ({
   fontFamily: 'text',
   fontWeight: 'text',
   fontSize: 'text',
-  lineHeight: '32px',
+  lineHeight: '28px',
 
   // Icon
   '~ svg': {

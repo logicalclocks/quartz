@@ -68,7 +68,7 @@ const NavigationItem: FC<NavigationItemProps> = (
     if (isActive) {
       onActivate(key);
     }
-  }, []);
+  }, [isActive]);
 
   return (
     <Box
