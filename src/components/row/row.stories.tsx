@@ -1,10 +1,13 @@
 import React from 'react';
 import { Box } from 'rebass';
 import { Story, Meta } from '@storybook/react/types-6-0';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import { action } from '@storybook/addon-actions';
 import Row, { RowProps } from './container';
 import RowGroup, { RowGroupProps } from './group';
 import RowItem, { RowItemProps } from './item';
-import Avatar from '../avatar';
+import User from '../user';
+import Button from '../button';
 import Value from '../typography/value';
 import { Mode } from './container/types';
 import { TableItemPosition } from './item/types';
@@ -46,23 +49,27 @@ Container.args = {
   mode: Mode.full,
   middleColumn: 2,
   groupComponents: [
-    [Avatar, Avatar, Value, Value, Value],
-    [Avatar, Avatar, Value, Value, Value],
+    [User, Button, Value, Value, Value],
+    [User, Button, Value, Value, Value],
   ],
   groupProps: [
     [
-      { borderColor: 'green' },
-      { borderColor: 'yellow' },
-      { children: 'Text1', color: 'white', bg: 'primary' },
-      { children: 'Text2', color: 'secondary', bg: 'primary' },
-      { children: 'Text3', color: 'secondary', bg: 'primary' },
+      { name: 'Name' },
+      {
+        children: 'Button',
+        width: '100%',
+        onClick: action('onClick'),
+      },
+      { children: 'Text1', color: 'black' },
+      { children: 'Text2', color: 'black' },
+      { children: 'Text3', color: 'black' },
     ],
     [
-      { borderColor: 'red' },
-      { borderColor: 'yellow' },
-      { children: 'Text4', color: 'secondary' },
-      { children: 'Text5', color: 'secondary' },
-      { children: 'Text6', color: 'secondary' },
+      { name: 'Name' },
+      { children: 'Button 2', onClick: action('onClick 2') },
+      { children: 'Text4', color: 'black' },
+      { children: 'Text5', color: 'black' },
+      { children: 'Text6', color: 'black' },
     ],
   ],
 };
@@ -108,13 +115,13 @@ Container.argTypes = {
 
 Group.args = {
   mode: Mode.full,
-  components: [Avatar, Avatar, Value, Value, Value],
+  components: [User, Button, Value, Value, Value],
   componentsProps: [
-    { borderColor: 'green' },
-    { borderColor: 'yellow' },
-    { children: 'Text1', color: 'primary' },
-    { children: 'Text2', color: 'secondary' },
-    { children: 'Text3', color: 'secondary' },
+    { name: 'Name' },
+    { children: 'Button', onClick: action('onClick') },
+    { children: 'Text1', color: 'black' },
+    { children: 'Text2', color: 'black' },
+    { children: 'Text3', color: 'black' },
   ],
   middleColumn: 2,
 };
@@ -160,8 +167,8 @@ Group.argTypes = {
 
 Item.args = {
   mode: Mode.full,
-  component: Avatar,
-  componentProps: { borderColor: 'green' },
+  component: User,
+  componentProps: { name: 'Name' },
   position: TableItemPosition.right,
 };
 

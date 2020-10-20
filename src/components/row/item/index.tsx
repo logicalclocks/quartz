@@ -6,7 +6,7 @@ import { Mode } from '../container/types';
 
 export interface RowItemProps {
   mode?: Mode;
-  component: ComponentType;
+  component: ComponentType<any>;
   componentProps: any;
   position?: TableItemPosition;
   fillSpace?: boolean;

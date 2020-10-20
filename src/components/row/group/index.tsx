@@ -7,7 +7,7 @@ import { TableItemPosition } from '../item/types';
 
 export interface RowGroupProps {
   mode?: Mode;
-  components: ComponentType[];
+  components: ComponentType<any>[];
   componentsProps: any[];
   middleColumn: number;
 }

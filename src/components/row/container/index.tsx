@@ -6,7 +6,7 @@ import styles from './container.styles';
 
 export interface RowProps {
   mode?: Mode;
-  groupComponents: ComponentType[][];
+  groupComponents: ComponentType<any>[][];
   groupProps: Record<string, any>[][];
   middleColumn: number;
 }
