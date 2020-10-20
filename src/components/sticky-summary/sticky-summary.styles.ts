@@ -6,7 +6,7 @@ export const boxStyles = {
   alignItems: 'center',
 
   '> div': {
-    ml: '14px',
+    ml: '20px',
   },
 };
 
@@ -16,19 +16,20 @@ export const boxButtonStyles = {
   alignItems: 'center',
 
   div: {
-    ml: '19px',
+    ml: '20px',
   },
 };
 
 export default {
-  boxShadow: '0px -1px 0px #E5E5E5, 0px -2px 0px #FFFFFF',
+  borderTopStyle: 'solid',
+  borderTopWidth: '1px',
+  borderTopColor: 'grayShade2',
   position: 'absolute',
   bottom: 0,
   left: 0,
   right: 0,
   justifyContent: 'space-between',
   alignItems: 'center',
-  pl: '29px',
-  pr: '35px',
+  px: '20px',
   py: '20px',
 } as SxStyleProp;
