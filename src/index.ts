@@ -50,6 +50,11 @@ import Logo from './components/logo';
 // Sticky Summary
 import StickySummary from './components/sticky-summary';
 
+// Row
+import Row from './components/row/container';
+import RowGroup from './components/row/group';
+import RowItem from './components/row/item';
+
 // Typography
 import Value from './components/typography/value';
 import Text from './components/typography/text';
@@ -114,6 +119,10 @@ export {
   // Hooks
   useDropdown,
   useNavigation,
+  // Row
+  Row,
+  RowGroup,
+  RowItem,
   //  Typography
   Value,
   Text,
