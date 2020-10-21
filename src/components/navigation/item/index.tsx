@@ -42,11 +42,12 @@ const NavigationItem: FC<NavigationItemProps> = (
     disabled,
     ...restProps
   } = props;
+  const isOpen =
+    activePath.length > 1 && !!activePath.slice(activePath.indexOf(key)).length;
 
-  const isOpen = activePath.includes(key);
   const isActiveItem = activePath.includes(key);
   const tx = `navigation.${isSubItem ? 'subItem' : 'item'}`;
-  const display = children && isOpen ? 'block' : 'none';
+  const display = children && isActiveItem && isOpen ? 'block' : 'none';
 
   const childs = useMemo(
     () =>

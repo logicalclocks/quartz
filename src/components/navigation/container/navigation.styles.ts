@@ -9,6 +9,7 @@ export default {
   overflowX: 'hidden',
 
   width: '240px',
+  minWidth: '240px',
   height: '100%',
 
   '> ul': {

@@ -18,7 +18,7 @@ export interface SelectProps extends Omit<LabelProps, 'onChange' | 'children'> {
   options: string[];
   placeholder: string;
   isMulti?: boolean;
-  label: string;
+  label?: string;
   disabled?: boolean;
   width?: string | number;
   labelAction?: React.ReactNode;
@@ -30,7 +30,7 @@ export interface SelectProps extends Omit<LabelProps, 'onChange' | 'children'> {
 const Select: FC<SelectProps> = ({
   labelAction,
   label,
-  width = 'auto',
+  width = '180px',
   variant = 'primary',
   options,
   disabled,
