@@ -1,7 +1,7 @@
 export default {
   bg: 'white',
 
-  boxShadow: 'navigation',
+  borderRightColor: 'grayShade2',
 
   '> div': {
     color: 'gray',

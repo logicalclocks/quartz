@@ -4,6 +4,9 @@ export default {
   alignItems: 'center',
   justifyContent: 'space-between',
 
+  borderRightStyle: 'solid',
+  borderRightWidth: '1px',
+
   position: 'relative',
 
   overflowX: 'hidden',
