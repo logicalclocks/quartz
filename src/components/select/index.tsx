@@ -2,8 +2,8 @@ import React, { FC, useCallback, useRef } from 'react';
 
 // Components
 import SelectLabel from './label';
-import Label, { LabelProps } from '../label';
 import List from '../list/container';
+import Label, { LabelProps } from '../label';
 // List types
 import SelectList from './lists/select-list';
 import SelectListMulti from './lists/select-list-multi';
@@ -18,7 +18,7 @@ export interface SelectProps extends Omit<LabelProps, 'onChange' | 'children'> {
   options: string[];
   placeholder: string;
   isMulti?: boolean;
-  label: string;
+  label?: string;
   disabled?: boolean;
   width?: string | number;
   labelAction?: React.ReactNode;
@@ -30,7 +30,7 @@ export interface SelectProps extends Omit<LabelProps, 'onChange' | 'children'> {
 const Select: FC<SelectProps> = ({
   labelAction,
   label,
-  width = 'auto',
+  width = '180px',
   variant = 'primary',
   options,
   disabled,
@@ -50,7 +50,7 @@ const Select: FC<SelectProps> = ({
     if (!disabled) {
       handleToggle();
     }
-  }, [handleToggle]);
+  }, [handleToggle, disabled]);
 
   return (
     <Label
