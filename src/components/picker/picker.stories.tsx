@@ -138,6 +138,69 @@ SingleRange.argTypes = {
   },
 };
 
+export const DoubleRange: Story<MultiRangeSliderProps> = (props) => {
+  return (
+    <Box width="700px">
+      <MultiRangeSlider {...props} />
+    </Box>
+  );
+};
+
+DoubleRange.args = {
+  min: -1,
+  max: 1,
+  value: [-0.55, 0.1],
+  step: 0.01,
+  handleChange: action('OnChange'),
+};
+DoubleRange.argTypes = {
+  min: {
+    control: {
+      type: 'number',
+    },
+    type: {
+      required: true,
+      summary: 'integer',
+    },
+  },
+  max: {
+    control: {
+      type: 'number',
+    },
+    type: {
+      required: true,
+      summary: 'integer',
+    },
+  },
+  value: {
+    control: {
+      type: 'array',
+    },
+    type: {
+      required: true,
+      summary: 'array of integers',
+    },
+  },
+  step: {
+    control: {
+      type: 'number',
+    },
+    type: {
+      summary: 'integer',
+    },
+    defaultValue: { summary: 0.01 },
+  },
+  handleChange: {
+    control: {
+      type: 'object',
+      disable: true,
+    },
+    type: {
+      summary: 'function',
+    },
+  },
+};
+
 export const MultiRange: Story<MultiRangeSliderProps> = (props) => {
   return (
     <Box width="700px">

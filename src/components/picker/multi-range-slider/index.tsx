@@ -1,4 +1,4 @@
-import React, { FC, useMemo } from 'react';
+import React, { FC, useCallback, useContext, useMemo } from 'react';
 import { Box } from 'rebass';
 import { Range } from 'rc-slider';
 import { useTheme } from 'emotion-theming';
@@ -6,6 +6,11 @@ import PickerHandler from '../handler';
 import { ITheme } from '../../../theme/types';
 import styles from './multi-range-slider.styles';
 import 'rc-slider/assets/index.css';
+import PickerProvider from '../picker.provider';
+import PickerContext, {
+  IPickerContext,
+  PickerContextDefault,
+} from '../picker.context';
 
 export interface MultiRangeSliderProps {
   value: number[];
@@ -23,6 +28,7 @@ const MultiRangeSlider: FC<MultiRangeSliderProps> = ({
   handleChange,
   ...props
 }: MultiRangeSliderProps) => {
+  const [context, setContext] = useContext(PickerContext);
   const theme = useTheme<ITheme>();
   const trackStyle = useMemo(() => {
     return value.reduce((curr: any, _item, index) => {
@@ -33,8 +39,32 @@ const MultiRangeSlider: FC<MultiRangeSliderProps> = ({
     }, []);
   }, value);
 
+  const boxProps = useMemo(() => {
+    const { activeHandlerId: ahId, isDraggable, isHover } = context;
+    const trackId = ahId % 2 === 0 ? ahId + 1 : ahId;
+
+    return {
+      sliderTrackStyles: {
+        [`.rc-slider-track-${trackId}`]: {
+          bg: isDraggable || isHover ? 'primary' : 'bg',
+        },
+      },
+    };
+  }, [context]);
+
+  const handleMouseHover = useCallback(
+    (index: number, isHover: boolean): void => {
+      setContext((v: IPickerContext) => ({
+        ...v,
+        activeHandlerId: index,
+        isHover,
+      }));
+    },
+    [],
+  );
+
   return (
-    <Box sx={{ ...styles }} {...props}>
+    <Box sx={{ ...styles(boxProps) }} {...props}>
       <Range
         min={min}
         max={max}
@@ -48,10 +78,24 @@ const MultiRangeSlider: FC<MultiRangeSliderProps> = ({
           backgroundColor: theme.colors.grayShade2,
         }}
         onChange={handleChange}
-        handle={PickerHandler}
+        handle={({ index, ...restProps }) => (
+          <PickerHandler
+            key={index}
+            onMouseOver={() => handleMouseHover(index, true)}
+            onMouseLeave={() => handleMouseHover(index, false)}
+            {...restProps}
+          />
+        )}
+        onAfterChange={() => setContext(PickerContextDefault)}
       />
     </Box>
   );
 };
 
-export default MultiRangeSlider;
+const MultiRangeSliderWrapped = (props: MultiRangeSliderProps) => (
+  <PickerProvider>
+    <MultiRangeSlider {...props} />
+  </PickerProvider>
+);
+
+export default MultiRangeSliderWrapped;

@@ -1,8 +1,13 @@
-import React, { FC } from 'react';
+import React, { FC, useCallback, useContext, useMemo } from 'react';
 import { Box } from 'rebass';
 import Slider from 'rc-slider';
 import { useTheme } from 'emotion-theming';
 import PickerHandler from '../handler';
+import PickerProvider from '../picker.provider';
+import PickerContext, {
+  IPickerContext,
+  PickerContextDefault,
+} from '../picker.context';
 import styles from './single-range-slider.styles';
 import { ITheme } from '../../../theme/types';
 import 'rc-slider/assets/index.css';
@@ -23,10 +28,32 @@ const SingleRangeSlider: FC<SingleRangeSliderProps> = ({
   handleChange,
   ...props
 }: SingleRangeSliderProps) => {
+  const [context, setContext] = useContext(PickerContext);
   const theme = useTheme<ITheme>();
 
+  const boxProps = useMemo(() => {
+    return {
+      sliderTrackStyles: {
+        '.rc-slider-track': {
+          bg: context.isDraggable || context.isHover ? 'primary' : 'bg',
+        },
+      },
+    };
+  }, [context]);
+
+  const handleMouseHover = useCallback(
+    (index: number, isHover: boolean): void => {
+      setContext((v: IPickerContext) => ({
+        ...v,
+        activeHandlerId: index,
+        isHover,
+      }));
+    },
+    [],
+  );
+
   return (
-    <Box sx={{ ...styles }} {...props}>
+    <Box sx={{ ...styles(boxProps) }} {...props}>
       <Slider
         min={min}
         max={max}
@@ -37,11 +64,25 @@ const SingleRangeSlider: FC<SingleRangeSliderProps> = ({
           height: '2px',
           backgroundColor: theme.colors.grayShade2,
         }}
-        handle={PickerHandler}
+        handle={({ index, ...restProps }) => (
+          <PickerHandler
+            key={index}
+            onMouseOver={() => handleMouseHover(index, true)}
+            onMouseLeave={() => handleMouseHover(index, false)}
+            {...restProps}
+          />
+        )}
         onChange={handleChange}
+        onAfterChange={() => setContext(PickerContextDefault)}
       />
     </Box>
   );
 };
 
-export default SingleRangeSlider;
+const SingleRangeSliderWrapped = (props: SingleRangeSliderProps) => (
+  <PickerProvider>
+    <SingleRangeSlider {...props} />
+  </PickerProvider>
+);
+
+export default SingleRangeSliderWrapped;

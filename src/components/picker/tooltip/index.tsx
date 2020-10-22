@@ -15,7 +15,7 @@ interface ITooltipWrapperProps {
 const TooltipWrapper: FC<ITooltipWrapperProps> = (
   props: ITooltipWrapperProps,
 ) => {
-  const { value, index, dragging, children } = props;
+  const { value, index, children } = props;
   const theme = useTheme<ITheme>();
 
   return (
@@ -47,7 +47,7 @@ const TooltipWrapper: FC<ITooltipWrapperProps> = (
       />
       <Tooltip
         prefixCls="rc-slider-tooltip"
-        visible={dragging}
+        visible
         overlay={<Value color="white">{value}</Value>}
         placement="top"
         key={index}
