@@ -12,6 +12,8 @@ export interface IThemeColors {
 
   black: string;
   white: string;
+  error: string;
+  warning: string;
 
   labels: {
     red: string;

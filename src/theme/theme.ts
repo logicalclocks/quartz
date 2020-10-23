@@ -34,6 +34,7 @@ import select from './select';
 import bar from './bar';
 // Code
 import code from './code';
+import callout from './callout';
 // Types
 import { ITheme } from './types';
 
@@ -50,6 +51,8 @@ const theme: ITheme = {
 
     black: '#272727',
     white: '#FFFFFF',
+    error: '#F8DEDE',
+    warning: '#FDF0E4',
 
     labels: {
       red: '#EB5757',
@@ -106,6 +109,7 @@ const theme: ITheme = {
     bar,
     code,
     select,
+    callout
   },
   text: {
     inputInfo,
