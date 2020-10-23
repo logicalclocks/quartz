@@ -55,6 +55,11 @@ import Row from './components/row/container';
 import RowGroup from './components/row/group';
 import RowItem from './components/row/item';
 
+// Picker
+import Picker from './components/picker/container';
+import SingleRangeSlider from './components/picker/single-range-slider';
+import MultiRangeSlider from './components/picker/multi-range-slider';
+
 // Typography
 import Value from './components/typography/value';
 import Text from './components/typography/text';
@@ -123,6 +128,9 @@ export {
   Row,
   RowGroup,
   RowItem,
+  Picker,
+  SingleRangeSlider,
+  MultiRangeSlider,
   //  Typography
   Value,
   Text,
