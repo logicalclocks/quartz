@@ -1,14 +1,20 @@
 import React, { FC } from 'react';
-import { Box, Card as RebassCard, CardProps as RebassCardProps } from 'rebass';
+import {
+  Box,
+  Flex,
+  Card as RebassCard,
+  CardProps as RebassCardProps,
+} from 'rebass';
 
 // Styles
 import styles, { cardHeaderStyles } from './card.styles';
 
-export interface CardProps extends Omit<RebassCardProps, 'css'> {
+export interface CardProps extends Omit<RebassCardProps, 'css' | 'title'> {
+  title?: React.ReactElement | string;
   link?: string;
   actions?: React.ReactNode;
   children: React.ReactNode;
-  contentProps?: Omit<CardProps, 'css' | 'children'>;
+  contentProps?: Omit<RebassCardProps, 'css' | 'children'>;
 }
 
 const Card: FC<CardProps> = ({
@@ -26,7 +32,11 @@ const Card: FC<CardProps> = ({
       {/* Header */}
       {isShowHeader && (
         <Box sx={cardHeaderStyles}>
-          {title && <h4>{title}</h4>}
+          {title && (
+            <Flex alignItems="center" as="h4">
+              {title}
+            </Flex>
+          )}
           {actions && <div>{actions}</div>}
         </Box>
       )}
@@ -38,7 +48,6 @@ const Card: FC<CardProps> = ({
         width="100%"
         height="100%"
         p="20px"
-        overflowY="auto"
         {...contentProps}
       >
         {children}

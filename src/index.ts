@@ -12,6 +12,7 @@ import Checkbox from './components/checkbox';
 import Dropdown from './components/dropdown';
 import FooterButton from './components/footer-button';
 import Header from './components/header';
+import Icon from './components/icon';
 import IconButton from './components/icon-button';
 import Input from './components/input';
 import InputInfo from './components/input-info';
@@ -85,6 +86,7 @@ export {
   Dropdown,
   FooterButton,
   Header,
+  Icon,
   IconButton,
   Input,
   InputInfo,

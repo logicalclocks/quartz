@@ -34,6 +34,8 @@ import select from './select';
 import bar from './bar';
 // Code
 import code from './code';
+// Icon
+import icon from './icon';
 // Types
 import { ITheme } from './types';
 
@@ -106,6 +108,7 @@ const theme: ITheme = {
     bar,
     code,
     select,
+    icon,
   },
   text: {
     inputInfo,

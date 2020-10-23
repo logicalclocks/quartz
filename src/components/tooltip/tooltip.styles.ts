@@ -73,6 +73,8 @@ export const getPopupStyles = (position: TooltipPositions): SxStyleProp => ({
 
   position: 'absolute',
 
+  zIndex: 'tooltips',
+
   ...popupPositions[position],
 
   ':hover': {
