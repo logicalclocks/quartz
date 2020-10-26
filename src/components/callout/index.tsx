@@ -1,8 +1,8 @@
 import React, { FC } from 'react';
 import { Box, Flex } from 'rebass';
-import styles from './callout.styles';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Labeling from '../typography/labeling';
-import CalloutIcon from './icons/CalloutIcon';
+import styles, { iconStyles } from './callout.styles';
 
 export enum CalloutTypes {
   valid = 'valid',
@@ -22,26 +22,24 @@ const Callout: FC<ICalloutProps> = ({
   content,
   cta,
   ...props
-}: ICalloutProps) => {
-  return (
-    <Flex
-      width="100%"
-      variant={`callout.${type}`}
-      sx={{ borderLeftWidth: cta ? '2px' : 0, ...styles }}
-      {...props}
-    >
-      <Flex justifyContent="space-between" alignItems="center">
-        <Box>
-          <CalloutIcon />
-        </Box>
-        <Box ml="8px" as="pre">
-          <Labeling bold>{content}</Labeling>
-        </Box>
-      </Flex>
-
-      {cta && <Box>{cta}</Box>}
+}: ICalloutProps) => (
+  <Flex
+    width="100%"
+    variant={`callout.${type}`}
+    sx={{ borderLeftWidth: cta ? '2px' : 0, ...styles }}
+    {...props}
+  >
+    <Flex justifyContent="space-between" alignItems="center">
+      <Box>
+        <FontAwesomeIcon icon="info-circle" style={iconStyles} />
+      </Box>
+      <Box ml="8px" as="pre">
+        <Labeling bold>{content}</Labeling>
+      </Box>
     </Flex>
-  );
-};
+
+    {cta && <Box>{cta}</Box>}
+  </Flex>
+);
 
 export default Callout;

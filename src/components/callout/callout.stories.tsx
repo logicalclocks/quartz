@@ -1,5 +1,6 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
+// eslint-disable-next-line import/no-extraneous-dependencies
 import { action } from '@storybook/addon-actions';
 import { Box } from 'rebass';
 import Callout, { ICalloutProps, CalloutTypes } from './index';
@@ -41,13 +42,11 @@ const argTypes = {
   },
 };
 
-const Template: Story<ICalloutProps> = (props) => (
+export const Default: Story<ICalloutProps> = (props) => (
   <Box width="700px">
     <Callout {...props} />
   </Box>
 );
-
-export const Default = Template.bind({});
 
 Default.args = {
   type: CalloutTypes.valid,
@@ -60,3 +59,16 @@ Default.args = {
 };
 
 Default.argTypes = argTypes;
+
+export const WithoutCTA: Story<ICalloutProps> = (props) => (
+  <Box width="700px">
+    <Callout {...props} />
+  </Box>
+);
+
+WithoutCTA.args = {
+  type: CalloutTypes.valid,
+  content: 'lorem ipsum',
+};
+
+WithoutCTA.argTypes = argTypes;

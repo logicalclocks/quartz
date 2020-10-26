@@ -51,8 +51,6 @@ const theme: ITheme = {
 
     black: '#272727',
     white: '#FFFFFF',
-    error: '#F8DEDE',
-    warning: '#FDF0E4',
 
     labels: {
       red: '#EB5757',
@@ -60,6 +58,8 @@ const theme: ITheme = {
       purple: '#9B51E0',
       green: '#21B182',
       skyblue: '#56CCF2',
+      redShade3: '#F8DEDE',
+      orangeShade3: '#FDF0E4',
     },
   },
   fonts: {
