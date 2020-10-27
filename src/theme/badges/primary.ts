@@ -3,7 +3,6 @@ const variants = {
     '> span': {
       color: 'white',
     },
-
     bg: 'gray',
   },
   fail: {
