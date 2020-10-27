@@ -90,6 +90,7 @@
     "@rebass/forms": "^4.0.6",
     "@styled-system/css": "^5.1.5",
     "rc-slider": "^9.5.3",
-    "rc-tooltip": "^4.2.3"
+    "rc-tooltip": "^4.2.3",
+    "react-table": "^7.6.0"
   }
 }

@@ -58,14 +58,11 @@ import Row from './components/row/container';
 import RowGroup from './components/row/group';
 import RowItem from './components/row/item';
 
-<<<<<<< HEAD
 // Picker
 import Picker from './components/picker/container';
 import SingleRangeSlider from './components/picker/single-range-slider';
 import MultiRangeSlider from './components/picker/multi-range-slider';
 
-=======
->>>>>>> 57c6693... Release 1.1.2 (#42)
 // Typography
 import Value from './components/typography/value';
 import Text from './components/typography/text';
@@ -137,12 +134,9 @@ export {
   Row,
   RowGroup,
   RowItem,
-<<<<<<< HEAD
   Picker,
   SingleRangeSlider,
   MultiRangeSlider,
-=======
->>>>>>> 57c6693... Release 1.1.2 (#42)
   //  Typography
   Value,
   Text,
