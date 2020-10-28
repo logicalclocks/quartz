@@ -36,6 +36,8 @@ import bar from './bar';
 import code from './code';
 // Icon
 import icon from './icon';
+// Pagination
+import pagination from './pagination';
 // Types
 import { ITheme } from './types';
 
@@ -129,6 +131,7 @@ const theme: ITheme = {
   navigation,
   inputs,
   inputIntents,
+  pagination,
 };
 
 export default theme;

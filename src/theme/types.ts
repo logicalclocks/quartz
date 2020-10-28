@@ -1,4 +1,5 @@
 import { SystemStyleObject } from '@styled-system/css';
+import pagination from './pagination';
 
 export interface IThemeColors {
   primary: string;
@@ -87,6 +88,7 @@ export interface ITheme {
   text: Variants;
   buttons: Variants;
   inputs: Variants;
+  pagination: Variants;
   inputIntents: IInputIntent;
   navigation: Variants;
   zIndices: IZIndeces;

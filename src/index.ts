@@ -19,6 +19,7 @@ import InputInfo from './components/input-info';
 import Label from './components/label';
 import List from './components/list/container';
 import ListItem from './components/list/item';
+import Pagination from './components/pagination';
 import Tooltip from './components/tooltip';
 import Select from './components/select';
 import ToggleButton from './components/toggle-button';
@@ -99,6 +100,7 @@ export {
   Logo,
   List,
   ListItem,
+  Pagination,
   Select,
   ThemeProvider,
   ToggleButton,
