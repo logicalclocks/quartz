@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
 
 import Table, { TableProps } from './index';
@@ -12,9 +12,21 @@ export default {
 } as Meta;
 
 
-export const ReadOnly: Story<ReadOnlyTableProps> = (props) => (
-  <ReadOnlyTable {...props} />
-);
+export const ReadOnly: Story<ReadOnlyTableProps> = (props) => {
+  const [staticColumn, setStaticColumn]= useState<string>();
+
+  const handleChangeStaticColumn = (column: string) => {
+    setStaticColumn(column);
+  };
+
+  return (
+    <ReadOnlyTable
+      {...props} 
+      staticColumn={staticColumn}
+      onFreeze={handleChangeStaticColumn}
+      actions={ [{label: 'go to stats', handler: (column) => { console.log('go to stats of ' + column) } } ]} />
+  )
+};
 
 ReadOnly.args = {
   variant: 'read-only',

@@ -1,5 +1,5 @@
 import React, { FC, useCallback, useRef, useState } from 'react';
-import { Box } from 'rebass';
+import { Box, Button } from 'rebass';
 
 // Components
 import Table, { TableProps } from '../index';
@@ -11,50 +11,92 @@ import { getColumns, getRows } from './utils';
 // Styles
 import {
   containerStyles,
+  dropdownStyles,
   tableStyles,
   theadStyles,
   trowStyles
 } from '../table.styles';
 
 // Hooks
-import { useDropdown, useOnClickOutside } from '../../..';
+import { ListItem, useDropdown, useOnClickOutside } from '../../..';
 import List from '../../list/container';
-import SelectList from '../../select/lists/select-list';
+
+export interface TheadProps{
+  column: string;
+  className: string;
+  actions: Array<{
+    label: string,
+    handler: (column: string) => void
+  }>
+}
+
+const Thead: FC<TheadProps> = ({
+  column,
+  className,
+  actions,
+}: TheadProps) => {
+
+  const containerRef = useRef(null);
+  const [isOpen, handleToggle, handleClickOutside] = useDropdown();
+  useOnClickOutside<HTMLDivElement>(containerRef, handleClickOutside);
+
+  // // Handlers
+  const handleToggleList = useCallback(() => {
+    handleToggle();
+  }, [handleToggle]);
+
+  return(
+    <Box as="th" sx={theadStyles} className={className} onClick={handleToggleList} ref={containerRef}>
+      {column}
+      {isOpen && (
+        <List sx={dropdownStyles}>
+          {actions.map(action =>
+            <ListItem onClick={ () => {action.handler(column)} }>{ action.label }</ListItem>
+          )}
+        </List>
+      )}
+    </Box>
+  )
+}
 
 export interface ReadOnlyTableProps extends Omit<TableProps, 'value'> {
   staticColumn?: string;
+  onFreeze: (column: string) => void;
+  actions: Array<{
+    label: string,
+    handler: (column: string) => void
+  }>
 }
-
 
 const ReadOnlyTable: FC<ReadOnlyTableProps> = ({
   staticColumn,
+  onFreeze,
+  actions,
   ...props
 }: ReadOnlyTableProps) => {
-  const containerRef = useRef(null);
-  const [isOpen, handleToggle, handleClickOutside] = useDropdown(false);
-  useOnClickOutside<HTMLDivElement>(containerRef, handleClickOutside);
-
-  // Handlers
-  const handleLabelClick = useCallback(() => {
-    handleToggle();
-  }, [handleToggle]);
 
   const [hoverColumn, setHoverColumn] = useState<string>();
 
   return(
   <Box sx={containerStyles}>
-    {isOpen && (
-          <List>
-              <SelectList options={options} value={value} onChange={onChange} />
-          </List>
-        )}
     <Box as="table" sx={tableStyles}>
       <Box as="thead" sx={theadStyles}>
         <Box as="tr">
           <Box as="th" sx={theadStyles} className="table-corner"></Box>
-          {staticColumn && <Box as="th" sx={theadStyles} className={'static-column ' + (hoverColumn == staticColumn && 'hover-column')}>{staticColumn}</Box>}
-          {getColumns(props.values).map( column =>
-            column !== staticColumn && <Box as="th" sx={theadStyles} className={'' + (hoverColumn == column && 'hover-column')}>{column}</Box>
+          {staticColumn && <Thead column={staticColumn} className={'static-column ' + (hoverColumn == staticColumn && 'hover-column')} actions={
+                [
+                  {label: 'unfreeze', handler: (staticColumn) => { onFreeze(''); } },
+                  actions[0] // todo
+                ]
+              }></Thead> }
+
+          {getColumns(props.values).map( (column: string) =>
+            column !== staticColumn && <Thead column={column} className={'' + (hoverColumn == column && 'hover-column')} actions={
+                [
+                  {label: 'freeze', handler: (column) => { onFreeze(column); } },
+                  actions[0] // todo
+                ]
+            }></Thead>
           )}
         </Box>
       </Box>

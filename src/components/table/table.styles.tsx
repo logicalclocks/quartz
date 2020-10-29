@@ -108,3 +108,10 @@ export const trowStyles = {
   }
 };
 
+
+export const dropdownStyles = {
+  position: 'absolute',
+  left: '0',
+  top: '32px',
+  zIndex: '200'
+}

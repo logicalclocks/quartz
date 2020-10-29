@@ -3,7 +3,7 @@ import { Box, BoxProps } from 'rebass';
 import { Row } from './type';
 
 // Styles
-import styles from './table.styles';
+//import styles from './table.styles';
 
 export interface TableProps extends Omit<BoxProps, 'css'> {
   variant?: 'read-only' | 'editable';
@@ -15,7 +15,7 @@ const Table: FC<TableProps> = ({
   values,
   ...props
 }: TableProps) => (
-  <Box {...props} tx="table" variant={variant} sx={styles}>
+  <Box {...props} tx="table" variant={variant}>
     <Box as="span" />
   </Box>
 );
