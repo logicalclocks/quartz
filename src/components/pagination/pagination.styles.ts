@@ -20,13 +20,22 @@ export default {
     },
 
     '> input': {
-      position: 'absolute',
-      zIndex: -1,
-      opacity: 0,
+      width: '30px',
 
-      ':focus ~ div:first-of-type:after': {
-        content: '"|"',
-        fontSize: '10px',
+      border: 'none',
+      outline: 'none',
+
+      textAlign: 'right',
+      bg: 'inherit',
+
+      fontWeight: 'label',
+      fontSize: 'label',
+      fontFamily: 'label',
+
+      // Hide control arrows in the input
+      MozAppearance: 'textfield',
+      '::-webkit-outer-spin-button, ::-webkit-inner-spin-button': {
+        WebkitAppearance: 'none',
       },
     },
   },
