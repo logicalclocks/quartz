@@ -94,7 +94,6 @@ const Pagination: FC<PaginationProps> = ({
           alignItems="center"
           px="8px"
         >
-          <div>{current}</div>
           <Box
             as="input"
             type="number"
@@ -104,6 +103,7 @@ const Pagination: FC<PaginationProps> = ({
             onChange={handleChange}
             onKeyUp={handleKeyUp}
           />
+          <div>{current}</div>
           <Labeling gray bold>{`/${totalPages}`}</Labeling>
         </Flex>
       </Tooltip>

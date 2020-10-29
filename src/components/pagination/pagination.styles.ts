@@ -23,6 +23,11 @@ export default {
       position: 'absolute',
       zIndex: -1,
       opacity: 0,
+
+      ':focus ~ div:first-of-type:after': {
+        content: '"|"',
+        fontSize: '10px',
+      },
     },
   },
 

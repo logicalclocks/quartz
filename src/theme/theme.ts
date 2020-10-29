@@ -113,7 +113,7 @@ const theme: ITheme = {
     bar,
     code,
     select,
-    callout
+    callout,
     icon,
   },
   text: {
