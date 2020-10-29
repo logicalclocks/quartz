@@ -28,6 +28,8 @@ import popup from './popup';
 import badges from './badges';
 // Checkbox
 import checkbox from './checkbox';
+// Radio
+import radio from './radio';
 // Select
 import select from './select';
 // Bar
@@ -101,6 +103,7 @@ const theme: ITheme = {
     list,
     header,
     checkbox,
+    radio,
     badges,
     popup,
     bar,

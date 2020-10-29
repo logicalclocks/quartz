@@ -9,6 +9,9 @@ import Button from './components/button';
 import Card from './components/card';
 import Code from './components/code';
 import Checkbox from './components/checkbox';
+import CheckboxGroup from './components/checkbox/checkbox-group';
+import Radio from './components/radio';
+import RadioGroup from './components/radio/radio-group';
 import Dropdown from './components/dropdown';
 import FooterButton from './components/footer-button';
 import Header from './components/header';
@@ -87,6 +90,7 @@ export {
   Card,
   Code,
   Checkbox,
+  CheckboxGroup,
   Dropdown,
   FooterButton,
   Header,
@@ -101,6 +105,8 @@ export {
   ThemeProvider,
   ToggleButton,
   Tooltip,
+  Radio,
+  RadioGroup,
   // Popups
   Popup,
   Drawer,
