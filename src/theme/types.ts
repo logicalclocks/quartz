@@ -20,6 +20,8 @@ export interface IThemeColors {
     purple: string;
     green: string;
     skyblue: string;
+    redShade3: string;
+    orangeShade3: string;
   };
 }
 

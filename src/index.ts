@@ -9,6 +9,7 @@ import Button from './components/button';
 import Card from './components/card';
 import Code from './components/code';
 import Checkbox from './components/checkbox';
+import Callout from './components/callout';
 import Dropdown from './components/dropdown';
 import FooterButton from './components/footer-button';
 import Header from './components/header';
@@ -89,6 +90,7 @@ export {
   Card,
   Code,
   Checkbox,
+  Callout,
   Dropdown,
   FooterButton,
   Header,
