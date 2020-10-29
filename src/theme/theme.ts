@@ -35,6 +35,10 @@ import bar from './bar';
 // Code
 import code from './code';
 import callout from './callout';
+// Icon
+import icon from './icon';
+// Pagination
+import pagination from './pagination';
 // Types
 import { ITheme } from './types';
 
@@ -109,7 +113,8 @@ const theme: ITheme = {
     bar,
     code,
     select,
-    callout
+    callout,
+    icon,
   },
   text: {
     inputInfo,
@@ -130,6 +135,7 @@ const theme: ITheme = {
   navigation,
   inputs,
   inputIntents,
+  pagination,
 };
 
 export default theme;
