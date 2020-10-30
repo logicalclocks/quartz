@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
 
-import Table, { TableProps } from './index';
+import Table from './index';
 import ReadOnlyTable, { ReadOnlyTableProps } from './read-only';
 
-import dummyValues from './dummydata.json';
+import dummyValues from './read-only/dummydata.json';
 
 export default {
   title: 'Quartz/Tables',
@@ -13,8 +13,8 @@ export default {
 
 
 export const ReadOnly: Story<ReadOnlyTableProps> = (props) => {
-  const [staticColumn, setStaticColumn]= useState<string>();
 
+  const [staticColumn, setStaticColumn]= useState<string>();
   const handleChangeStaticColumn = (column: string) => {
     setStaticColumn(column);
   };
@@ -41,7 +41,7 @@ ReadOnly.argTypes = {
     },
     type: {
       required: false,
-      summary: 'Tooltip length',
+      summary: 'Type of table',
     },
     defaultValue: { summary: 'read-only' },
   }

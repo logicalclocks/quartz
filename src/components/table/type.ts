@@ -1,11 +1,11 @@
 
 
-export type Item = {
+export type FGItem = {
     columnName: string,
     columnValue: string
 }
 
-export type Row = {
+export type FGRow = {
     type: string,
-    row: Array<Item>
+    row: Array<FGItem>
 }

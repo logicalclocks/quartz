@@ -1,13 +1,10 @@
 import React, { FC } from 'react';
 import { Box, BoxProps } from 'rebass';
-import { Row } from './type';
-
-// Styles
-//import styles from './table.styles';
+import { FGRow } from './type';
 
 export interface TableProps extends Omit<BoxProps, 'css'> {
   variant?: 'read-only' | 'editable';
-  values: Array<Row>;
+  values: Array<FGRow>;
 }
 
 const Table: FC<TableProps> = ({
@@ -15,8 +12,6 @@ const Table: FC<TableProps> = ({
   values,
   ...props
 }: TableProps) => (
-  <Box {...props} tx="table" variant={variant}>
-    <Box as="span" />
-  </Box>
+  <Box {...props} tx="table" variant={variant}></Box>
 );
 export default Table;

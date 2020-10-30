@@ -27,6 +27,10 @@ export const theadStyles = {
   position: 'sticky',
   top: '0',
   backgroundColor: 'white',
+  cursor: 'pointer',
+  '&:hover': {
+    backgroundColor: 'primaryShade2'
+  },
   '&.table-corner': {
     backgroundColor: 'grayShade2',
     borderLeftColor: 'grayShade2',
@@ -34,7 +38,8 @@ export const theadStyles = {
     borderWidth: '0 4px 4px 0',
     left: '0',
     zIndex: '100',
-    width: '32px'
+    width: '32px',
+    cursor: 'pointer'
   },
   '&.hover-column': {
     backgroundColor: 'grayShade2'
@@ -52,7 +57,6 @@ export const theadStyles = {
 } as SxStyleProp;
 
 export const trowStyles = {
-  
   color: 'black',
   fontFamily: 'value',
   fontWeight: 'value',
