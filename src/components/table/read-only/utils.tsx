@@ -8,7 +8,7 @@ export const getColumns = (rows: Array<FGRow>) => {
 
 export const getRows = (rows: Array<FGRow>) => {
     return rows.map((row: FGRow) => {
-            let newRow = {};
+            const newRow = {};
             row.row.map( (item: FGItem) => newRow[item.columnName] = item.columnValue )
             return newRow;
         }
