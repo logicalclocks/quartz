@@ -9,6 +9,7 @@ import styles from './toggle-button.styles';
 
 export interface ToggleButtonProps extends Omit<RebassCheckboxProps, 'css'> {
   children: string;
+  variant?: 'primary' | 'white';
 }
 
 const ToggleButton: FC<ToggleButtonProps> = ({
@@ -18,6 +19,7 @@ const ToggleButton: FC<ToggleButtonProps> = ({
   onChange,
   checked,
   children,
+  variant = 'primary',
   ...props
 }: ToggleButtonProps) => (
   <Flex
@@ -25,7 +27,7 @@ const ToggleButton: FC<ToggleButtonProps> = ({
     as="label"
     sx={styles}
     tx="buttons.toggleButton"
-    variant="primary"
+    variant={variant}
   >
     <input
       type="checkbox"

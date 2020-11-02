@@ -12,7 +12,6 @@ const List = forwardRef<HTMLUListElement, ListProps>(
       as="ul"
       m="0"
       p="0"
-      overflowY="auto"
       width="max-content"
       {...props}
       tx="variants.list"

@@ -36,6 +36,11 @@ import select from './select';
 import bar from './bar';
 // Code
 import code from './code';
+import callout from './callout';
+// Icon
+import icon from './icon';
+// Pagination
+import pagination from './pagination';
 // Types
 import { ITheme } from './types';
 
@@ -59,6 +64,8 @@ const theme: ITheme = {
       purple: '#9B51E0',
       green: '#21B182',
       skyblue: '#56CCF2',
+      redShade3: '#F8DEDE',
+      orangeShade3: '#FDF0E4',
     },
   },
   fonts: {
@@ -109,6 +116,8 @@ const theme: ITheme = {
     bar,
     code,
     select,
+    callout,
+    icon,
   },
   text: {
     inputInfo,
@@ -129,6 +138,7 @@ const theme: ITheme = {
   navigation,
   inputs,
   inputIntents,
+  pagination,
 };
 
 export default theme;

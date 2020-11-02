@@ -12,5 +12,6 @@ export default {
     alignItems: 'center',
 
     mb: '4px',
+    mr: '8px',
   },
 } as SxStyleProp;

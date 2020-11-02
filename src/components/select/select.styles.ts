@@ -1,5 +1,6 @@
 export const listStyles = {
   position: 'absolute',
+  zIndex: 'popups',
   left: 0,
   top: '33px',
 };
@@ -20,6 +21,7 @@ export default {
 
   display: 'flex',
   alignItems: 'center',
+  flexGrow: 1,
 
   borderWidth: '1px',
   borderStyle: 'solid',

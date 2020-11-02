@@ -9,18 +9,21 @@ import Button from './components/button';
 import Card from './components/card';
 import Code from './components/code';
 import Checkbox from './components/checkbox';
+import Callout from './components/callout';
 import CheckboxGroup from './components/checkbox/checkbox-group';
 import Radio from './components/radio';
 import RadioGroup from './components/radio/radio-group';
 import Dropdown from './components/dropdown';
 import FooterButton from './components/footer-button';
 import Header from './components/header';
+import Icon from './components/icon';
 import IconButton from './components/icon-button';
 import Input from './components/input';
 import InputInfo from './components/input-info';
 import Label from './components/label';
 import List from './components/list/container';
 import ListItem from './components/list/item';
+import Pagination from './components/pagination';
 import Tooltip from './components/tooltip';
 import Select from './components/select';
 import ToggleButton from './components/toggle-button';
@@ -90,10 +93,12 @@ export {
   Card,
   Code,
   Checkbox,
+  Callout,
   CheckboxGroup,
   Dropdown,
   FooterButton,
   Header,
+  Icon,
   IconButton,
   Input,
   InputInfo,
@@ -101,6 +106,7 @@ export {
   Logo,
   List,
   ListItem,
+  Pagination,
   Select,
   ThemeProvider,
   ToggleButton,
