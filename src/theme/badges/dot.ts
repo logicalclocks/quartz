@@ -4,11 +4,7 @@ const variants = {
     color: 'white',
   },
   green: {
-    bg: 'green',
-    color: 'white',
-  },
-  info: {
-    bg: 'black',
+    bg: 'labels.green',
     color: 'white',
   },
 };

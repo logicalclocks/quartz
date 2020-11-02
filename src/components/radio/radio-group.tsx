@@ -1,12 +1,11 @@
 import React, { FC, useCallback } from 'react';
+import { Flex } from 'rebass';
 
 // Components
 import Radio, { RadioProps } from './index';
-import { Flex } from 'rebass';
 
 export interface RadioGroupProps
   extends Omit<RadioProps, 'label' | 'onChange' | 'options' | 'value'> {
-  label: string;
   value: string | null;
   options: string[];
   onChange: (value: string) => void;
@@ -14,7 +13,6 @@ export interface RadioGroupProps
 }
 
 const RadioGroup: FC<RadioGroupProps> = ({
-  label,
   options,
   value,
   onChange,
