@@ -32,4 +32,5 @@ export default {
   alignItems: 'center',
   px: '20px',
   py: '20px',
+  backgroundColor: '#FFFFFF',
 } as SxStyleProp;
