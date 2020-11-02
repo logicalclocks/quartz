@@ -28,6 +28,7 @@ export default {
   bottom: 0,
   left: 0,
   right: 0,
+  bg: 'white',
   justifyContent: 'space-between',
   alignItems: 'center',
   px: '20px',
