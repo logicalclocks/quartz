@@ -63,6 +63,10 @@ import Picker from './components/picker/container';
 import SingleRangeSlider from './components/picker/single-range-slider';
 import MultiRangeSlider from './components/picker/multi-range-slider';
 
+// Table
+import Table from './components/table';
+import ReadOnlyTable from './components/table/read-only'
+
 // Typography
 import Value from './components/typography/value';
 import Text from './components/typography/text';
@@ -134,9 +138,13 @@ export {
   Row,
   RowGroup,
   RowItem,
+  // Picker
   Picker,
   SingleRangeSlider,
   MultiRangeSlider,
+  //  Table
+  Table,
+  ReadOnlyTable,
   //  Typography
   Value,
   Text,
