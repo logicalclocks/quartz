@@ -9,7 +9,7 @@ import Button from './components/button';
 import Card from './components/card';
 import Code from './components/code';
 import Checkbox from './components/checkbox';
-import Callout from './components/callout';
+import Callout, { CalloutTypes } from './components/callout';
 import CheckboxGroup from './components/checkbox/checkbox-group';
 import Radio from './components/radio';
 import RadioGroup from './components/radio/radio-group';
@@ -94,6 +94,7 @@ export {
   Code,
   Checkbox,
   Callout,
+  CalloutTypes,
   CheckboxGroup,
   Dropdown,
   FooterButton,
