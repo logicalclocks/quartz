@@ -16,6 +16,7 @@ export interface TooltipProps extends Omit<BoxProps, 'css'> {
   mainText: string;
   secondaryText?: string;
   disabled?: boolean;
+  visibleDefault?: boolean;
   position?: TooltipPositions;
 }
 
@@ -24,13 +25,14 @@ const Tooltip: FC<TooltipProps> = ({
   mainText,
   secondaryText,
   disabled,
+  visibleDefault,
   position = TooltipPositions.bottom,
   ...props
 }: TooltipProps) => (
   <Box {...props} sx={containerStyles}>
     {children}
     {!disabled && (
-      <Box as="span" sx={getPopupStyles(position)}>
+      <Box as="span" sx={getPopupStyles(position, visibleDefault)}>
         <Box as="span" variant="tooltip" sx={getTooltipStyles(position)}>
           {mainText}
           {secondaryText && <span>{secondaryText}</span>}
