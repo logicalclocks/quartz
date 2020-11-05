@@ -1,5 +1,4 @@
 import { SystemStyleObject } from '@styled-system/css';
-import pagination from './pagination';
 
 export interface IThemeColors {
   primary: string;
@@ -56,6 +55,7 @@ export interface IThemeShadows {
   navigation: string;
   list: string;
   popup: string;
+  notification: string;
 }
 
 export interface IThemeVariants {
@@ -75,6 +75,7 @@ interface IZIndeces {
   tooltips: number;
   popups: number;
   modals: number;
+  notifications: number;
 }
 
 export type Variants = IThemeVariants | INestedThemeVariants;
@@ -93,5 +94,6 @@ export interface ITheme {
   pagination: Variants;
   inputIntents: IInputIntent;
   navigation: Variants;
+  notification: Variants;
   zIndices: IZIndeces;
 }

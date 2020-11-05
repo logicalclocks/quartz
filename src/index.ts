@@ -28,6 +28,8 @@ import Tooltip from './components/tooltip';
 import TooltipPositions from './components/tooltip/positions';
 import Select from './components/select';
 import ToggleButton from './components/toggle-button';
+import NotificationsContainer from './components/notifications/index';
+import NotificationsManager from './components/notifications/notifications-manager';
 
 // Popups
 import Drawer from './components/popup/drawer';
@@ -136,6 +138,9 @@ export {
   NavigationCategory,
   NavigationProvider,
   NavigationContext,
+  // Notifications
+  NotificationsContainer,
+  NotificationsManager,
   // Hooks
   useDropdown,
   useNavigation,
