@@ -13,7 +13,7 @@ const useNavigation = (): UseNavigation => {
   );
 
   return {
-    isOpen: activePath.length > 1 || !!activeNode?.children,
+    isOpen: activePath.length > 1,
     activeNode,
     activePath,
     ...contextData,

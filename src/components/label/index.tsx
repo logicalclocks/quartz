@@ -6,6 +6,7 @@ import styles from './label.styles';
 export interface LabelProps extends Omit<FlexProps, 'css' | 'action'> {
   action?: React.ReactNode;
   text?: string;
+  align?: 'top' | 'left';
   children: React.ReactNode;
 }
 
@@ -13,11 +14,13 @@ const Label: FC<LabelProps> = ({
   action,
   text,
   children,
+  align = 'top',
+  as = 'label',
   ...props
 }: LabelProps) => (
   <Flex
-    as="label"
-    flexDirection="column"
+    flexDirection={align === 'top' ? 'column' : 'row'}
+    as={as}
     {...props}
     variant="label"
     sx={styles}

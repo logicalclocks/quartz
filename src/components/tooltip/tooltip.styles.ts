@@ -52,7 +52,7 @@ const tooltipArrows = {
 
 export const containerStyles = {
   position: 'relative',
-  maxWidth: 'min-content',
+  maxWidth: 'max-content',
 
   ':hover': {
     '> span:last-of-type': {
@@ -64,14 +64,19 @@ export const containerStyles = {
   },
 } as SxStyleProp;
 
-export const getPopupStyles = (position: TooltipPositions): SxStyleProp => ({
-  visibility: 'hidden',
-  opacity: 0,
+export const getPopupStyles = (
+  position: TooltipPositions,
+  visibleDefault = false,
+): SxStyleProp => ({
+  visibility: visibleDefault ? 'visible' : 'hidden',
+  opacity: visibleDefault ? 1 : 0,
 
   maxWidth: '200px',
   width: 'max-content',
 
   position: 'absolute',
+
+  zIndex: 'tooltips',
 
   ...popupPositions[position],
 

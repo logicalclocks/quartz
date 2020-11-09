@@ -4,11 +4,15 @@ export default {
   alignItems: 'center',
   justifyContent: 'space-between',
 
+  borderRightStyle: 'solid',
+  borderRightWidth: '1px',
+
   position: 'relative',
 
   overflowX: 'hidden',
 
   width: '240px',
+  minWidth: '240px',
   height: '100%',
 
   '> ul': {

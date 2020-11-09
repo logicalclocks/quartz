@@ -19,6 +19,8 @@ export interface IThemeColors {
     purple: string;
     green: string;
     skyblue: string;
+    redShade3: string;
+    orangeShade3: string;
   };
 }
 
@@ -53,6 +55,7 @@ export interface IThemeShadows {
   navigation: string;
   list: string;
   popup: string;
+  notification: string;
 }
 
 export interface IThemeVariants {
@@ -72,6 +75,7 @@ interface IZIndeces {
   tooltips: number;
   popups: number;
   modals: number;
+  notifications: number;
 }
 
 export type Variants = IThemeVariants | INestedThemeVariants;
@@ -87,7 +91,9 @@ export interface ITheme {
   text: Variants;
   buttons: Variants;
   inputs: Variants;
+  pagination: Variants;
   inputIntents: IInputIntent;
   navigation: Variants;
+  notification: Variants;
   zIndices: IZIndeces;
 }

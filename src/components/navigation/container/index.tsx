@@ -20,10 +20,11 @@ type INavigation<P> = FC<P> & {
 
 export interface NavigationProps {
   children?: React.ReactNode;
-  onNavigate?: (node: TreeNode | null) => void;
   footer?: React.ReactNode;
   trackBy?: string;
   tree?: TreeNode[];
+  onNavigate?: (node: TreeNode | null) => void;
+  onBackCLick?: () => void;
 }
 
 const Navigation: INavigation<NavigationProps> = ({

@@ -1,26 +1,35 @@
 const variants = {
   bold: {
-    color: 'white',
-
+    '> span': {
+      color: 'white',
+    },
     bg: 'gray',
   },
   fail: {
-    color: 'white',
+    '> span': {
+      color: 'white',
+    },
 
     bg: 'labels.red',
   },
   label: {
-    color: 'white',
+    '> span': {
+      color: 'white',
+    },
 
     bg: 'black',
   },
   light: {
-    color: 'black',
+    '> span': {
+      color: 'black',
+    },
 
     bg: 'grayShade3',
   },
   success: {
-    color: 'white',
+    '> span': {
+      color: 'white',
+    },
 
     bg: 'labels.green',
   },
