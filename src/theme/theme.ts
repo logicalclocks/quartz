@@ -28,6 +28,8 @@ import popup from './popup';
 import badges from './badges';
 // Checkbox
 import checkbox from './checkbox';
+// Radio
+import radio from './radio';
 // Select
 import select from './select';
 // Bar
@@ -41,6 +43,8 @@ import icon from './icon';
 import pagination from './pagination';
 // Types
 import { ITheme } from './types';
+// Notifications
+import notification from './notifications';
 
 const theme: ITheme = {
   colors: {
@@ -100,6 +104,7 @@ const theme: ITheme = {
     navigation: '1px 0px 0px #E5E5E5, 2px 0px 0px #FFFFFF',
     list: '0px 4px 15px rgba(0, 0, 0, 0.25)',
     popup: '0px 4px 4px rgba(0, 0, 0, 0.25)',
+    notification: '0px 0px 15px rgba(0, 0, 0, 0.25)',
   },
   variants: {
     ...cards,
@@ -108,6 +113,7 @@ const theme: ITheme = {
     list,
     header,
     checkbox,
+    radio,
     badges,
     popup,
     bar,
@@ -125,6 +131,7 @@ const theme: ITheme = {
     tooltips: 20,
     popups: 30,
     modals: 40,
+    notifications: 50,
   },
   buttons: {
     ...buttons,
@@ -136,6 +143,7 @@ const theme: ITheme = {
   inputs,
   inputIntents,
   pagination,
+  notification,
 };
 
 export default theme;

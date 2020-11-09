@@ -48,6 +48,14 @@ const argTypes = {
       required: false,
     },
   },
+  visibleDefault: {
+    control: {
+      type: 'boolean',
+    },
+    type: {
+      required: false,
+    },
+  },
   position: {
     control: {
       type: 'select',

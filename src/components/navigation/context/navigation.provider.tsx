@@ -13,6 +13,7 @@ export interface CategoriesProviderProps {
   trackBy?: string;
   children: React.ReactNode;
   onNavigate?: (node: TreeNode | null) => void;
+  onBackCLick?: () => void;
 }
 
 const NavigationProvider: FC<CategoriesProviderProps> = ({
@@ -20,6 +21,7 @@ const NavigationProvider: FC<CategoriesProviderProps> = ({
   trackBy = 'title',
   children,
   onNavigate,
+  onBackCLick,
 }: CategoriesProviderProps) => {
   const [activePath, setActivePath] = useState<string[]>([]);
   const [activeNode, setActiveNode] = useState<TreeNode | null>(null);
@@ -42,6 +44,10 @@ const NavigationProvider: FC<CategoriesProviderProps> = ({
       setActivePath((path) =>
         path.slice(path.indexOf(target) - 1, path.length - 1),
       );
+
+      if (onBackCLick) {
+        onBackCLick();
+      }
     },
     [activePath],
   );

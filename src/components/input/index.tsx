@@ -20,7 +20,7 @@ export interface InputProps extends Omit<RebassInputProps, 'css'> {
   label?: string;
   placeholder?: string;
   width?: string | number;
-  labelProps?: Omit<LabelProps, 'action' | 'text'>;
+  labelProps?: Omit<LabelProps, 'action' | 'text' | 'children'>;
   labelAction?: React.ReactNode;
 }
 

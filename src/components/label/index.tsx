@@ -14,7 +14,7 @@ const Label: FC<LabelProps> = ({
   action,
   text,
   children,
-  align,
+  align = 'top',
   as = 'label',
   ...props
 }: LabelProps) => (

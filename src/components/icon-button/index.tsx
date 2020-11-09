@@ -15,7 +15,7 @@ export interface IconButtonProps extends Omit<ButtonProps, 'css'> {
   icon: IconProp;
   disabled?: boolean;
   iconOnHover?: IconProp;
-  tooltipProps?: TooltipProps;
+  tooltipProps?: Omit<TooltipProps, 'children' | 'mainText'>;
 }
 
 const IconButton: FC<IconButtonProps> = ({

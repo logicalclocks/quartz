@@ -89,7 +89,9 @@
     "@fortawesome/react-fontawesome": "^0.1.11",
     "@rebass/forms": "^4.0.6",
     "@styled-system/css": "^5.1.5",
+    "events": "^3.2.0",
     "rc-slider": "^9.5.3",
+    "react-spring": "^8.0.27",
     "rc-tooltip": "^4.2.3",
     "react-table": "^7.6.0"
   }
