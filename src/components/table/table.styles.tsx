@@ -1,10 +1,9 @@
 import { SxStyleProp } from 'rebass';
 
 export const containerStyles = {
-  width: '400px',
-  height: '600px',
-  overflow: 'scroll'
-}
+  overflow: 'auto',
+  height: '100%',
+};
 
 export const tableStyles = {
   borderSpacing: '0',
@@ -13,10 +12,10 @@ export const tableStyles = {
   borderWidth: '0 1px 1px 0',
   borderColor: 'primary',
   textAlign: 'right',
-}
+};
 
 export const theadStyles = {
-  padding: "8px",
+  padding: '8px',
   borderWidth: '1px 1px 1px 0',
   borderStyle: 'Solid',
   borderColor: 'gray',
@@ -29,7 +28,7 @@ export const theadStyles = {
   backgroundColor: 'white',
   cursor: 'pointer',
   '&:hover': {
-    backgroundColor: 'primaryShade2'
+    backgroundColor: 'primaryShade2',
   },
   '&.table-corner': {
     backgroundColor: 'grayShade2',
@@ -39,10 +38,10 @@ export const theadStyles = {
     left: '0',
     zIndex: '100',
     width: '32px',
-    cursor: 'pointer'
+    cursor: 'pointer',
   },
   '&.hover-column': {
-    backgroundColor: 'grayShade2'
+    backgroundColor: 'grayShade2',
   },
   '&.static-column': {
     borderColor: 'primary',
@@ -51,9 +50,9 @@ export const theadStyles = {
     left: '33px',
     zIndex: '100',
     '&.hover-column': {
-      backgroundColor: 'primaryShade2'
+      backgroundColor: 'primaryShade2',
     },
-  }
+  },
 } as SxStyleProp;
 
 export const trowStyles = {
@@ -63,21 +62,20 @@ export const trowStyles = {
   fontSize: 'value',
   '&:hover': {
     backgroundColor: 'grayShade3',
-    'td.static-column': { 
-      backgroundColor: 'primaryShade2'
+    'td.static-column': {
+      backgroundColor: 'primaryShade2',
     },
-    'th': {
-      backgroundColor: 'grayShade2'
-    }
+    th: {
+      backgroundColor: 'grayShade2',
+    },
   },
   '&:last-child td, &:last-child th': {
     borderBottomColor: 'gray',
   },
   'td, th': {
-    padding: "8px",
-    
+    padding: '8px',
   },
-  'th': {
+  th: {
     textAlign: 'center',
     borderWidth: '0 1px 1px 1px',
     borderColor: 'gray',
@@ -85,17 +83,17 @@ export const trowStyles = {
     borderStyle: 'Solid',
     left: '0',
     position: 'sticky',
-    backgroundColor: 'white'
+    backgroundColor: 'white',
   },
-  'td': {
+  td: {
     borderWidth: '0 0 1px 0',
     borderStyle: 'Solid',
     borderColor: 'grayShade2',
     '&:hover': {
-      backgroundColor: 'grayShade2'
+      backgroundColor: 'grayShade2',
     },
     '&.hover-column:not(:hover)': {
-      backgroundColor: 'grayShade3'
+      backgroundColor: 'grayShade3',
     },
     '&:last-child': {
       borderRightStyle: 'Solid',
@@ -108,14 +106,13 @@ export const trowStyles = {
       left: '33px',
       borderRightColor: 'gray',
       borderRightWidth: '1px',
-    }
-  }
+    },
+  },
 };
-
 
 export const dropdownStyles = {
   position: 'absolute',
   left: '0',
   top: '32px',
-  zIndex: '200'
-}
+  zIndex: '200',
+};

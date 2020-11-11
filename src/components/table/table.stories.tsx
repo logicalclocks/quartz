@@ -11,26 +11,34 @@ export default {
   component: Table,
 } as Meta;
 
-
 export const ReadOnly: Story<ReadOnlyTableProps> = (props) => {
-
-  const [staticColumn, setStaticColumn]= useState<string>();
-  const handleChangeStaticColumn = (column: string) => {
+  const [staticColumn, setStaticColumn] = useState<string | undefined>(
+    undefined,
+  );
+  const handleChangeStaticColumn = (column: string | undefined) => {
     setStaticColumn(column);
   };
 
   return (
     <ReadOnlyTable
-      {...props} 
+      {...props}
       staticColumn={staticColumn}
       onFreeze={handleChangeStaticColumn}
-      actions={ [{label: 'go to stats', handler: (column) => { console.log('go to stats of ' + column) } } ]} />
-  )
+      actions={[
+        {
+          label: 'go to stats',
+          handler: (column) => {
+            console.log('go to stats of ' + column);
+          },
+        },
+      ]}
+    />
+  );
 };
 
 ReadOnly.args = {
   variant: 'read-only',
-  values: dummyValues
+  values: dummyValues,
 };
 
 ReadOnly.argTypes = {
@@ -44,5 +52,5 @@ ReadOnly.argTypes = {
       summary: 'Type of table',
     },
     defaultValue: { summary: 'read-only' },
-  }
+  },
 };

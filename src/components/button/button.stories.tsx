@@ -25,7 +25,7 @@ Default.argTypes = {
   intent: {
     control: {
       type: 'select',
-      options: ['primary', 'secondary', 'ghost', 'inline'],
+      options: ['primary', 'secondary', 'ghost', 'inline', 'alert'],
     },
   },
   disabled: {

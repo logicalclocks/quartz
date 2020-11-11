@@ -36,6 +36,7 @@ import Drawer from './components/popup/drawer';
 import DrawerSection from './components/popup/drawer/drawer-section';
 import Popup from './components/popup';
 import TinyPopup from './components/popup/tiny';
+import usePopup from './utils/usePopup';
 
 // Bars
 import Bar from './components/bar';
@@ -71,7 +72,7 @@ import MultiRangeSlider from './components/picker/multi-range-slider';
 
 // Table
 import Table from './components/table';
-import ReadOnlyTable from './components/table/read-only'
+import ReadOnlyTable from './components/table/read-only';
 
 // Typography
 import Value from './components/typography/value';
@@ -123,6 +124,7 @@ export {
   Radio,
   RadioGroup,
   // Popups
+  usePopup,
   Popup,
   Drawer,
   TinyPopup,

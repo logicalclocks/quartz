@@ -11,9 +11,9 @@ export default {
   wrapper: {
     paddingLeft: '30px',
     position: 'absolute',
-    height: '70vh',
+    maxHeight: '70vh',
     top: 0,
-    right: 0,
+    right: '20px',
     overflow: 'hidden',
     zIndex: 'notifications',
   },

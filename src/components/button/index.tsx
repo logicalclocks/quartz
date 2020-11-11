@@ -8,7 +8,7 @@ import styles from './button.styles';
 
 export interface QuartzButtonProps extends Omit<ButtonProps, 'css'> {
   children: React.ReactNode;
-  intent?: 'primary' | 'secondary' | 'ghost' | 'inline';
+  intent?: 'primary' | 'secondary' | 'ghost' | 'inline' | 'alert';
   icon?: IconDefinition;
 }
 
