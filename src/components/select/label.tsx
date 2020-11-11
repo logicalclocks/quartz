@@ -14,6 +14,8 @@ export interface SelectLabelProps extends Omit<BoxProps, 'css'> {
   value: string[];
   options: string[];
   children: React.ReactNode;
+  isMulti?: boolean;
+  noDataMessage?: string;
 }
 
 const getLabelText = (value: string[], options: string[]) =>
@@ -27,6 +29,8 @@ const SelectLabel: FC<SelectLabelProps> = forwardRef(
       value,
       children,
       options,
+      isMulti,
+      noDataMessage,
       ...props
     }: SelectLabelProps,
     ref,
@@ -40,7 +44,7 @@ const SelectLabel: FC<SelectLabelProps> = forwardRef(
       ref={ref}
     >
       <Labeling minWidth="max-content" gray={!!value.length}>
-        {placeholder}
+        {!isMulti ? placeholder : !value.length ? noDataMessage : placeholder}
       </Labeling>
       <Labeling px="5px" sx={valueStyles}>
         {getLabelText(value, options)}

@@ -53,6 +53,10 @@ Default.argTypes = {
     type: { required: true },
     control: { type: 'text' },
   },
+  noDataMessage: {
+    type: { required: false },
+    control: { type: 'text' },
+  },
   onChange: {
     type: { required: true, summary: 'Change callback function' },
   },

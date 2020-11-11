@@ -25,6 +25,7 @@ export interface SelectProps extends Omit<LabelProps, 'onChange' | 'children'> {
   listWidth?: string | number;
   variant?: 'primary' | 'white';
   onChange: (value: string[]) => void;
+  noDataMessage?: string;
 }
 
 const Select: FC<SelectProps> = ({
@@ -38,6 +39,7 @@ const Select: FC<SelectProps> = ({
   value,
   isMulti,
   placeholder,
+  noDataMessage,
   onChange,
   ...props
 }: SelectProps) => {
@@ -65,6 +67,8 @@ const Select: FC<SelectProps> = ({
         variant={disabled ? 'disabled' : variant}
         placeholder={placeholder}
         value={value}
+        isMulti={isMulti}
+        noDataMessage={noDataMessage}
         options={options}
         ref={containerRef}
       >
