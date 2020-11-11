@@ -22,6 +22,8 @@ export interface InputProps extends Omit<RebassInputProps, 'css'> {
   width?: string | number;
   labelProps?: Omit<LabelProps, 'action' | 'text' | 'children'>;
   labelAction?: React.ReactNode;
+  type?: 'text' | 'number' | 'textarea';
+  rows?: number;
 }
 
 const Input: FC<InputProps> = forwardRef(
@@ -36,31 +38,41 @@ const Input: FC<InputProps> = forwardRef(
       labelProps,
       variant = 'primary',
       intent = 'default',
+      type = 'text',
+      rows = 3,
       ...props
     }: InputProps,
     ref,
-  ) => (
-    <Label action={labelAction} text={label} width={width} {...labelProps}>
-      <Box
-        sx={{
-          position: 'relative',
-        }}
-      >
+  ) => {
+    const isTextArea = type === 'textarea';
+
+    return (
+      <Label action={labelAction} text={label} width={width} {...labelProps}>
         <Box
-          ref={ref}
-          as="input"
-          tx="inputs"
-          paddingLeft={icon && '34px'}
-          sx={getStyles(intent)}
-          variant={variant}
-          placeholder={placeholder}
-          {...props}
-        />
-        {icon && <FontAwesomeIcon icon={icon} />}
-      </Box>
-      {info && <InputInfo intent={intent}>{info}</InputInfo>}
-    </Label>
-  ),
+          sx={{
+            position: 'relative',
+          }}
+        >
+          <Box
+            ref={ref}
+            as={isTextArea ? 'textarea' : 'input'}
+            type={type}
+            tx="inputs"
+            rows={rows}
+            minHeight="32px"
+            minWidth={width}
+            paddingLeft={icon && '34px'}
+            sx={getStyles(intent, isTextArea)}
+            variant={variant}
+            placeholder={placeholder}
+            {...props}
+          />
+          {icon && <FontAwesomeIcon icon={icon} />}
+        </Box>
+        {info && <InputInfo intent={intent}>{info}</InputInfo>}
+      </Label>
+    );
+  },
 );
 
 export default Input;
