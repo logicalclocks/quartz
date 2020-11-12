@@ -13,7 +13,7 @@ export default {
 
   ':active': {
     outline: 'none',
-    bg: 'primaryShade2',
+    bg: 'labels.redShade3',
     borderWidth: '1px',
     borderStyle: 'solid',
     borderColor: 'labels.red',
