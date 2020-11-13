@@ -7,6 +7,7 @@ import Title from './title';
 import Subtitle from './subtitle';
 import Labeling from './labeling';
 import Microlabeling from './microlabeling';
+import { HoverableText } from '../../index';
 
 export default {
   title: 'Quartz/Typography',
@@ -23,6 +24,7 @@ const Template: Story = () => (
     }}
   >
     <Title>Titrage/H1</Title>
+    <HoverableText>hoverable</HoverableText>
     <Subtitle>Titrage/H2</Subtitle>
     <Labeling bold>labeur/bold</Labeling>
     <Labeling>labeur/regular</Labeling>

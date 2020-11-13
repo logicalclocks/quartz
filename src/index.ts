@@ -83,6 +83,7 @@ import Title from './components/typography/title';
 import Subtitle from './components/typography/subtitle';
 import Labeling from './components/typography/labeling';
 import Microlabeling from './components/typography/microlabeling';
+import HoverableText from './components/typography/hoverable';
 
 // Icons
 import FolderIcon from './components/icons/folder.icon';
@@ -168,6 +169,7 @@ export {
   //  Typography
   Value,
   Text,
+  HoverableText,
   Title,
   Subtitle,
   Microlabeling,
