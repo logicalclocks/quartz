@@ -3,6 +3,9 @@ import { SxStyleProp } from 'rebass';
 export const containerStyles = {
   overflow: 'auto',
   height: '100%',
+  borderWidth: '0 1px 1px 0',
+  borderColor: 'gray',
+  borderStyle: 'solid',
 };
 
 export const tableStyles = {
@@ -25,6 +28,11 @@ export const theadStyles = {
   fontSize: 'label',
   position: 'sticky',
   top: '0',
+
+  '> div': {
+    display: 'flex',
+  },
+
   backgroundColor: 'white',
   cursor: 'pointer',
   '&:hover': {
@@ -37,7 +45,7 @@ export const theadStyles = {
     borderWidth: '0 4px 4px 0',
     left: '0',
     zIndex: '100',
-    width: '32px',
+    width: '40px',
     cursor: 'pointer',
   },
   '&.hover-column': {
@@ -47,7 +55,7 @@ export const theadStyles = {
     borderColor: 'primary',
     borderWidth: '1px',
     position: 'sticky',
-    left: '33px',
+    left: '40px',
     zIndex: '100',
     '&.hover-column': {
       backgroundColor: 'primaryShade2',
@@ -84,6 +92,7 @@ export const trowStyles = {
     left: '0',
     position: 'sticky',
     backgroundColor: 'white',
+    display: 'block',
   },
   td: {
     borderWidth: '0 0 1px 0',
@@ -103,7 +112,7 @@ export const trowStyles = {
     '&.static-column': {
       backgroundColor: 'white',
       position: 'sticky',
-      left: '33px',
+      left: '40px',
       borderRightColor: 'gray',
       borderRightWidth: '1px',
     },

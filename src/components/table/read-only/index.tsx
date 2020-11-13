@@ -57,35 +57,37 @@ export const Thead: FC<TheadProps> = ({
       onClick={handleToggleList}
       ref={containerRef}
     >
-      {column}
-      {isPrimary && (
-        <Icon
-          ml="10px"
-          icon="star"
-          style={{ color: theme.colors.labels.green }}
-        />
-      )}
-      {isPartition && (
-        <Icon
-          ml="10px"
-          icon="equals"
-          style={{ color: theme.colors.labels.green }}
-        />
-      )}
-      {isOpen && (
-        <List sx={dropdownStyles}>
-          {actions.map((action) => (
-            <ListItem
-              key={action.label}
-              onClick={() => {
-                action.handler(column);
-              }}
-            >
-              {action.label}
-            </ListItem>
-          ))}
-        </List>
-      )}
+      <div>
+        {column}
+        {isPrimary && (
+          <Icon
+            ml="10px"
+            icon="star"
+            style={{ color: theme.colors.labels.green }}
+          />
+        )}
+        {isPartition && (
+          <Icon
+            ml="10px"
+            icon="equals"
+            style={{ color: theme.colors.labels.green }}
+          />
+        )}
+        {isOpen && (
+          <List sx={dropdownStyles}>
+            {actions.map((action) => (
+              <ListItem
+                key={action.label}
+                onClick={() => {
+                  action.handler(column);
+                }}
+              >
+                {action.label}
+              </ListItem>
+            ))}
+          </List>
+        )}
+      </div>
     </Box>
   );
 };
