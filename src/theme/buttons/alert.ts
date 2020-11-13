@@ -10,12 +10,4 @@ export default {
   ':hover': {
     bg: 'labels.redShade3',
   },
-
-  ':active': {
-    outline: 'none',
-    bg: 'labels.redShade3',
-    borderWidth: '1px',
-    borderStyle: 'solid',
-    borderColor: 'labels.red',
-  },
 };
