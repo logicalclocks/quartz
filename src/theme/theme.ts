@@ -99,6 +99,7 @@ const theme: ITheme = {
   },
   shadows: {
     primary: '0px 5px 15px rgba(33, 177, 130, 0.2)',
+    alert: '0px 5px 15px rgba(235, 87, 87, 0.25)',
     disabled: '0px 4px 15px rgba(0, 0, 0, 0.25)',
     cardInsetShadow: 'inset 0px -20px 30px -25px rgba(0, 0, 0, 0.15)',
     navigation: '1px 0px 0px #E5E5E5, 2px 0px 0px #FFFFFF',

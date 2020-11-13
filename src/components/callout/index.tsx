@@ -13,7 +13,7 @@ export enum CalloutTypes {
 
 export interface ICalloutProps {
   type: CalloutTypes;
-  content: string;
+  content: string | React.ReactNode;
   cta?: React.ReactNode;
 }
 

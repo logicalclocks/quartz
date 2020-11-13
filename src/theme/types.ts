@@ -49,6 +49,7 @@ export interface IThemeTransitions {
 }
 
 export interface IThemeShadows {
+  alert: string;
   primary: string;
   disabled: string;
   cardInsetShadow: string;

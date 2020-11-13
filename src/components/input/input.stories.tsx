@@ -84,6 +84,25 @@ const argTypes = {
       summary: 'Input intent (error border)',
     },
   },
+  type: {
+    control: {
+      type: 'select',
+      options: ['textarea', 'text', 'number'],
+    },
+    type: {
+      required: false,
+      summary: 'Input type',
+    },
+  },
+  rows: {
+    control: {
+      type: 'number',
+    },
+    type: {
+      required: false,
+      summary: 'Textarea rows count',
+    },
+  },
   icon: {
     control: {
       type: 'select',
