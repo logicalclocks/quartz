@@ -26,14 +26,14 @@ export interface TheadProps {
   column: string;
   isPrimary?: boolean;
   isPartition?: boolean;
-  className: string;
+  className?: string;
   actions: Array<{
     label: string;
     handler: (column: string) => void;
   }>;
 }
 
-const Thead: FC<TheadProps> = ({
+export const Thead: FC<TheadProps> = ({
   column,
   className,
   actions,

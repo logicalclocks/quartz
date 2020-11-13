@@ -1,0 +1,198 @@
+[
+  {
+    "row": [
+      {
+        "columnName": "away_team_id",
+        "columnValue": "11"
+      },
+      {
+        "columnName": "score",
+        "columnValue": true
+      },
+      {
+        "columnName": "dummycolumn_test1",
+        "columnValue": [
+          "2"
+        ]
+      },
+      {
+        "columnName": "dummycolumn_test2",
+        "columnValue": "dasda"
+      },
+      {
+        "columnName": "home_team_id",
+        "columnValue": [
+          "2"
+        ]
+      }
+    ]
+  },
+  {
+    "row": [
+      {
+        "columnName": "away_team_id",
+        "columnValue": "11"
+      },
+      {
+        "columnName": "score",
+        "columnValue": true
+      },
+      {
+        "columnName": "dummycolumn_test1",
+        "columnValue": [
+          "2"
+        ]
+      },
+      {
+        "columnName": "dummycolumn_test2",
+        "columnValue": "dasda"
+      },
+      {
+        "columnName": "home_team_id",
+        "columnValue": [
+          "2"
+        ]
+      }
+    ]
+  },
+  {
+    "row": [
+      {
+        "columnName": "away_team_id",
+        "columnValue": "11"
+      },
+      {
+        "columnName": "score",
+        "columnValue": true
+      },
+      {
+        "columnName": "dummycolumn_test1",
+        "columnValue": [
+          "2"
+        ]
+      },
+      {
+        "columnName": "dummycolumn_test2",
+        "columnValue": "dasda"
+      },
+      {
+        "columnName": "home_team_id",
+        "columnValue": [
+          "2"
+        ]
+      }
+    ]
+  },
+  {
+    "row": [
+      {
+        "columnName": "away_team_id",
+        "columnValue": "11"
+      },
+      {
+        "columnName": "score",
+        "columnValue": true
+      },
+      {
+        "columnName": "dummycolumn_test1",
+        "columnValue": [
+          "2"
+        ]
+      },
+      {
+        "columnName": "dummycolumn_test2",
+        "columnValue": "dasda"
+      },
+      {
+        "columnName": "home_team_id",
+        "columnValue": [
+          "2"
+        ]
+      }
+    ]
+  },
+  {
+    "row": [
+      {
+        "columnName": "away_team_id",
+        "columnValue": "11"
+      },
+      {
+        "columnName": "score",
+        "columnValue": true
+      },
+      {
+        "columnName": "dummycolumn_test1",
+        "columnValue": [
+          "2"
+        ]
+      },
+      {
+        "columnName": "dummycolumn_test2",
+        "columnValue": "dasda"
+      },
+      {
+        "columnName": "home_team_id",
+        "columnValue": [
+          "2"
+        ]
+      }
+    ]
+  },
+  {
+    "row": [
+      {
+        "columnName": "away_team_id",
+        "columnValue": "11"
+      },
+      {
+        "columnName": "score",
+        "columnValue": true
+      },
+      {
+        "columnName": "dummycolumn_test1",
+        "columnValue": [
+          "2"
+        ]
+      },
+      {
+        "columnName": "dummycolumn_test2",
+        "columnValue": "dasda"
+      },
+      {
+        "columnName": "home_team_id",
+        "columnValue": [
+          "2"
+        ]
+      }
+    ]
+  },
+  {
+    "row": [
+      {
+        "columnName": "away_team_id",
+        "columnValue": "11"
+      },
+      {
+        "columnName": "score",
+        "columnValue": true
+      },
+      {
+        "columnName": "dummycolumn_test1",
+        "columnValue": [
+          "2"
+        ]
+      },
+      {
+        "columnName": "dummycolumn_test2",
+        "columnValue": "dasda"
+      },
+      {
+        "columnName": "home_team_id",
+        "columnValue": [
+          "2"
+        ]
+      }
+    ]
+  }
+]
