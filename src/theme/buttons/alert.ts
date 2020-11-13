@@ -10,4 +10,7 @@ export default {
   ':hover': {
     bg: 'labels.redShade3',
   },
+  ':active': {
+    borderColor: 'labels.redShade3',
+  },
 };
