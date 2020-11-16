@@ -72,6 +72,7 @@ export const trowStyles = {
     backgroundColor: 'grayShade3',
     'td.static-column': {
       backgroundColor: 'primaryShade2',
+      whiteSpace: 'nowrap',
     },
     th: {
       backgroundColor: 'grayShade2',
@@ -98,6 +99,7 @@ export const trowStyles = {
     borderWidth: '0 0 1px 0',
     borderStyle: 'Solid',
     borderColor: 'grayShade2',
+    whiteSpace: 'nowrap',
     '&:hover': {
       backgroundColor: 'grayShade2',
     },

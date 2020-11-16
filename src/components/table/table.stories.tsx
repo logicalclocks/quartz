@@ -9,6 +9,7 @@ import dummyValuesEditable from './editable/dummydata.json';
 import EditableTable, { TableColumn } from './editable';
 import { Button, Checkbox, Select } from '../../index';
 import BlurInput from './editable/blur-input';
+import { Box } from 'rebass';
 
 export default {
   title: 'Quartz/Tables',
@@ -24,19 +25,23 @@ export const ReadOnly: Story<ReadOnlyTableProps> = (props) => {
   };
 
   return (
-    <ReadOnlyTable
-      {...props}
-      staticColumn={staticColumn}
-      onFreeze={handleChangeStaticColumn}
-      actions={[
-        {
-          label: 'go to stats',
-          handler: (column) => {
-            console.log('go to stats of ' + column);
-          },
-        },
-      ]}
-    />
+    <Box width="1000px">
+      <Box height="400px">
+        <ReadOnlyTable
+          {...props}
+          staticColumn={staticColumn}
+          onFreeze={handleChangeStaticColumn}
+          actions={[
+            {
+              label: 'go to stats',
+              handler: (column) => {
+                console.log('go to stats of ' + column);
+              },
+            },
+          ]}
+        />
+      </Box>
+    </Box>
   );
 };
 

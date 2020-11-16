@@ -29,7 +29,7 @@ const getStyles = ({
   bottom,
   right,
 }: GetStylesParams): SxStyleProp => ({
-  position: 'absolute',
+  position: 'fixed',
   zIndex: 31,
 
   maxHeight: '100%',

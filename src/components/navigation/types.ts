@@ -1,10 +1,9 @@
-import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import React from 'react';
 import { BoxProps } from 'rebass';
 
 export interface NavigationItemProps extends Omit<BoxProps, 'css'> {
   title: string;
-  icon?: IconProp;
+  icon?: any;
   isActive?: boolean;
   isSubItem?: boolean;
   hasDivider?: boolean;
@@ -15,6 +14,6 @@ export interface NavigationItemProps extends Omit<BoxProps, 'css'> {
 
 export interface TreeNode extends NavigationItemProps {
   title: string;
-  icon?: IconProp;
+  icon?: any;
   children?: TreeNode[];
 }

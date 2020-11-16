@@ -85,6 +85,7 @@ const Pagination: FC<PaginationProps> = ({
         mainText="Press enter to navigate"
         secondaryText={error}
         mx="4px"
+        disabled={disabled}
       >
         <Flex
           as="label"
@@ -95,6 +96,7 @@ const Pagination: FC<PaginationProps> = ({
           pr="8px"
         >
           <Box
+            disabled={disabled}
             as="input"
             type="number"
             value={current}

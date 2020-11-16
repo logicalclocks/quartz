@@ -33,7 +33,12 @@ const TinyPopup: FC<TinyPopupProps> = ({
       pl="20px"
       pr="20px"
       pb="20px"
-      width="460px"
+      width="fit-content"
+      sx={{
+        left: '50%',
+        top: '50%',
+        transform: 'translate(-50%, -50%)',
+      }}
       {...props}
       onClose={onClose}
     >

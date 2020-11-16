@@ -10,6 +10,11 @@ import Navigation, { NavigationProps } from './container';
 // Types
 import { TreeNode } from './types';
 import useNavigation from './useNavigation';
+// Sources
+import sources from '../../sources/source_02rev.json';
+import query from '../../sources/query-04.json';
+import runjobs from '../../sources/runjobs.json';
+import td from '../../sources/TD_01 (1).json';
 
 export default {
   title: 'Quartz/Navigation',
@@ -54,10 +59,10 @@ export const Footer = () => {
 const Template: Story<NavigationProps> = () => (
   <Box height="100vh">
     <Navigation onNavigate={action('On Navigate')} footer={<Footer />}>
-      <Navigation.Category title="Home" icon={['far', 'copy']}>
+      <Navigation.Category title="Home" icon={query}>
         <Navigation.Item title="Overview1" />
       </Navigation.Category>
-      <Navigation.Category title="Feature Groups" icon={['far', 'copy']}>
+      <Navigation.Category title="Feature Groups" icon={query}>
         <Navigation.Item title="Overview">
           <Navigation.Item title="Feature List" />
           <Navigation.Item
@@ -71,13 +76,9 @@ const Template: Story<NavigationProps> = () => (
         <Navigation.Item title="Data" />
         <Navigation.Item title="Activity" />
       </Navigation.Category>
-      <Navigation.Item
-        title="Training Datasets"
-        hasDivider
-        icon={['far', 'copy']}
-      />
-      <Navigation.Item title="Source" icon={['far', 'copy']} />
-      <Navigation.Item title="Jobs" icon={['far', 'copy']} />
+      <Navigation.Item title="Training Datasets" hasDivider icon={td} />
+      <Navigation.Item title="Sources" icon={sources} />
+      <Navigation.Item title="Jobs" icon={runjobs} />
     </Navigation>
   </Box>
 );
@@ -86,7 +87,7 @@ export const TreeObject: Story<NavigationProps> = () => {
   const tree: TreeNode[] = [
     {
       title: 'Home',
-      icon: ['far', 'copy'],
+      icon: td,
       children: [
         {
           title: 'Owerview 2',
@@ -95,7 +96,7 @@ export const TreeObject: Story<NavigationProps> = () => {
     },
     {
       title: 'Feature Groups',
-      icon: ['far', 'copy'],
+      icon: query,
       children: [
         {
           title: 'Owerview',
@@ -126,11 +127,11 @@ export const TreeObject: Story<NavigationProps> = () => {
     },
     {
       title: 'Training Datasets',
-      icon: ['far', 'copy'],
+      icon: td,
       hasDivider: true,
     },
-    { title: 'Source', icon: ['far', 'copy'] },
-    { title: 'Jobs', icon: ['far', 'copy'] },
+    { title: 'Source', icon: sources },
+    { title: 'Jobs', icon: runjobs },
   ];
 
   return (

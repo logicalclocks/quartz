@@ -129,7 +129,7 @@ const theme: ITheme = {
   },
   zIndices: {
     default: 10,
-    tooltips: 20,
+    tooltips: 1000,
     popups: 30,
     modals: 40,
     notifications: 50,

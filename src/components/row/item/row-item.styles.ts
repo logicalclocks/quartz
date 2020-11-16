@@ -3,7 +3,6 @@ import { Mode } from '../container/types';
 
 export default function ({ position, mode, fillSpace }: ITableItemStyles) {
   return {
-    whiteSpace: 'nowrap',
     width: fillSpace ? '100%' : 'auto',
     textAlign: position,
     py: mode === Mode.full ? '12px' : '8px',
