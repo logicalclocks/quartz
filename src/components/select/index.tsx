@@ -21,6 +21,7 @@ export interface SelectProps extends Omit<LabelProps, 'onChange' | 'children'> {
   label?: string;
   disabled?: boolean;
   width?: string | number;
+  maxListHeight?: string;
   labelAction?: React.ReactNode;
   listWidth?: string | number;
   variant?: 'primary' | 'white';
@@ -39,6 +40,7 @@ const Select: FC<SelectProps> = ({
   value,
   isMulti,
   placeholder,
+  maxListHeight = '150px',
   noDataMessage,
   onChange,
   ...props
@@ -73,7 +75,7 @@ const Select: FC<SelectProps> = ({
         ref={containerRef}
       >
         {isOpen && (
-          <List sx={listStyles} width={listWidth}>
+          <List sx={listStyles} width={listWidth} maxHeight={maxListHeight}>
             {isMulti ? (
               // Multi choice
               <SelectListMulti

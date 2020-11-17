@@ -19,6 +19,7 @@ import Header from './components/header';
 import Icon from './components/icon';
 import IconButton from './components/icon-button';
 import Input from './components/input';
+import BlurInput from './components/table/editable/blur-input';
 import InputInfo from './components/input-info';
 import Label from './components/label';
 import List from './components/list/container';
@@ -73,6 +74,7 @@ import MultiRangeSlider from './components/picker/multi-range-slider';
 // Table
 import Table from './components/table';
 import ReadOnlyTable from './components/table/read-only';
+import EditableTable from './components/table/editable';
 
 // Typography
 import Value from './components/typography/value';
@@ -111,6 +113,7 @@ export {
   Icon,
   IconButton,
   Input,
+  BlurInput,
   InputInfo,
   Label,
   Logo,
@@ -161,6 +164,7 @@ export {
   MultiRangeSlider,
   //  Table
   Table,
+  EditableTable,
   ReadOnlyTable,
   //  Typography
   Value,

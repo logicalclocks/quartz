@@ -20,7 +20,7 @@ const StickySummary: FC<StickySummaryProps> = ({
   secondaryButton,
   ...props
 }: StickySummaryProps) => (
-  <Flex width="100%" sx={{ ...styles }} {...props}>
+  <Flex sx={{ ...styles }} {...props}>
     <Box sx={{ ...boxStyles }}>
       {title && <Title sx={{ textTransform: 'normal' }}>{title}</Title>}
       {firstValue && (

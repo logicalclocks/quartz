@@ -7,8 +7,9 @@ import React, {
   useContext,
   useEffect,
   useMemo,
+  useState,
 } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Lottie from 'lottie-react-web';
 
 // Context
 import NavigationContext from '../context/navigation.context';
@@ -59,6 +60,8 @@ const NavigationItem: FC<NavigationItemProps> = (
     [children],
   );
 
+  const [isToggled, setToggled] = useState(false);
+
   // Handlers
   const handleClick = useCallback(() => {
     onClick();
@@ -68,6 +71,9 @@ const NavigationItem: FC<NavigationItemProps> = (
   useEffect(() => {
     if (isActive) {
       onActivate(key);
+      setToggled(true);
+    } else {
+      setToggled(false);
     }
   }, [isActive]);
 
@@ -89,7 +95,15 @@ const NavigationItem: FC<NavigationItemProps> = (
       >
         {icon && (
           <div>
-            <FontAwesomeIcon icon={icon} />
+            <Lottie
+              width={22}
+              height={22}
+              direction={isToggled ? 1 : -1}
+              options={{
+                animationData: icon,
+                loop: false,
+              }}
+            />
           </div>
         )}
         <span>{title}</span>
