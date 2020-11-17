@@ -19,6 +19,7 @@ export const tableStyles = {
 };
 
 export const theadStyles = {
+  zIndex: 1,
   padding: '8px',
   borderWidth: '1px 1px 1px 0',
   borderStyle: 'Solid',
