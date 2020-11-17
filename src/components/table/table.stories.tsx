@@ -25,22 +25,20 @@ export const ReadOnly: Story<ReadOnlyTableProps> = (props) => {
   };
 
   return (
-    <Box width="1000px">
-      <Box height="400px">
-        <ReadOnlyTable
-          {...props}
-          staticColumn={staticColumn}
-          onFreeze={handleChangeStaticColumn}
-          actions={[
-            {
-              label: 'go to stats',
-              handler: (column) => {
-                console.log('go to stats of ' + column);
-              },
+    <Box>
+      <ReadOnlyTable
+        {...props}
+        staticColumn={staticColumn}
+        onFreeze={handleChangeStaticColumn}
+        actions={[
+          {
+            label: 'go to stats',
+            handler: (column) => {
+              console.log('go to stats of ' + column);
             },
-          ]}
-        />
-      </Box>
+          },
+        ]}
+      />
     </Box>
   );
 };

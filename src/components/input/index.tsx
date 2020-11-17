@@ -34,6 +34,7 @@ const Input: FC<InputProps> = forwardRef(
       labelAction,
       icon,
       info,
+      readOnly,
       width = '180px',
       labelProps,
       variant = 'primary',
@@ -60,10 +61,11 @@ const Input: FC<InputProps> = forwardRef(
             tx="inputs"
             rows={rows}
             minHeight="32px"
+            readOnly={readOnly}
             minWidth={width}
             paddingLeft={icon && '34px'}
             sx={getStyles(intent, isTextArea)}
-            variant={variant}
+            variant={readOnly ? 'disabled' : variant}
             placeholder={placeholder}
             {...props}
           />

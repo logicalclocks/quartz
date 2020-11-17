@@ -2,8 +2,9 @@ import { SxStyleProp } from 'rebass';
 
 export const containerStyles = {
   overflow: 'auto',
-  height: '100%',
-  borderWidth: '0 1px 1px 0',
+  maxHeight: '100%',
+  maxWidth: 'fit-content',
+  borderWidth: '0 3px 3px 0',
   borderColor: 'gray',
   borderStyle: 'solid',
 };
@@ -45,7 +46,7 @@ export const theadStyles = {
     borderWidth: '0 4px 4px 0',
     left: '0',
     zIndex: '100',
-    width: '40px',
+    minWidth: '40px',
     cursor: 'pointer',
   },
   '&.hover-column': {
