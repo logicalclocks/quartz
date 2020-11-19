@@ -22,7 +22,7 @@ export interface InputProps extends Omit<RebassInputProps, 'css'> {
   width?: string | number;
   labelProps?: Omit<LabelProps, 'action' | 'text' | 'children'>;
   labelAction?: React.ReactNode;
-  type?: 'text' | 'number' | 'textarea';
+  type?: 'text' | 'number' | 'textarea' | 'password';
   rows?: number;
 }
 
@@ -64,6 +64,7 @@ const Input: FC<InputProps> = forwardRef(
             readOnly={readOnly}
             minWidth={width}
             paddingLeft={icon && '34px'}
+            // @ts-ignore
             sx={getStyles(intent, isTextArea)}
             variant={readOnly ? 'disabled' : variant}
             placeholder={placeholder}
