@@ -23,6 +23,8 @@ const getStyles = (intent: Intents, isTextArea: boolean) => ({
   fontSize: 'text',
   lineHeight: isTextArea ? '20px' : '28px',
 
+  ...(isTextArea && { resize: 'vertical' }),
+
   // Icon
   '~ svg': {
     left: '10px',
