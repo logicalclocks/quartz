@@ -28,6 +28,7 @@ import Pagination from './components/pagination';
 import Tooltip from './components/tooltip';
 import TooltipPositions from './components/tooltip/positions';
 import Select from './components/select';
+import SplitGraph from './components/graphs/split-graph';
 import ToggleButton from './components/toggle-button';
 import NotificationsContainer from './components/notifications/index';
 import NotificationsManager from './components/notifications/notifications-manager';
@@ -175,6 +176,7 @@ export {
   Microlabeling,
   Labeling,
   StickySummary,
+  SplitGraph,
   //  Icons
   FolderIcon,
   useOnClickOutside,
