@@ -24,7 +24,7 @@ const Code: FC<CodeProps> = ({
 
   return (
     <Flex width="100%" variant="code" sx={{ ...styles }} {...props}>
-      <Box as="pre" sx={{ ...boxStyles }}>
+      <Box as="pre" width="90%" sx={{ ...boxStyles }}>
         {content}
       </Box>
 
