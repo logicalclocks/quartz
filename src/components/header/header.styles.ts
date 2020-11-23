@@ -47,6 +47,8 @@ export const leftSectionStyles = {
 
   bg: 'primary',
 
+  cursor: 'pointer',
+
   borderRadius: '0px 3px 3px 0px',
 };
 
