@@ -2,6 +2,8 @@ import { SxStyleProp } from 'rebass';
 
 export const boxStyles = {
   lineHeight: '16px',
+  overflowX: 'auto',
+  whiteSpace: 'pre-wrap',
 };
 
 export default {
