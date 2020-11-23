@@ -59,27 +59,27 @@ export const Footer = () => {
 const Template: Story<NavigationProps> = () => (
   <Box height="100vh">
     <Navigation onNavigate={action('On Navigate')} footer={<Footer />}>
-      <Navigation.Category tId="1" title="Home" icon={query}>
-        <Navigation.Item tId="1" title="Overview1" />
+      <Navigation.Category id="1" title="Home" icon={query}>
+        <Navigation.Item id="2" title="Overview1" />
       </Navigation.Category>
-      <Navigation.Category tId="1" title="Feature Groups" icon={query}>
-        <Navigation.Item tId="1" title="Overview">
-          <Navigation.Item tId="1" title="Feature List" />
+      <Navigation.Category id="3" title="Feature Groups" icon={query}>
+        <Navigation.Item id="4" title="Overview">
+          <Navigation.Item id="5" title="Feature List" />
           <Navigation.Item
-            tId="1"
+            id="6"
             title="Schematised Tags"
             isActive
             onClick={action('Navigate to')}
           />
-          <Navigation.Item tId="1" title="Running Code" />
-          <Navigation.Item tId="1" title="API" />
+          <Navigation.Item id="7" title="Running Code" />
+          <Navigation.Item id="8" title="API" />
         </Navigation.Item>
-        <Navigation.Item tId="1" title="Data" />
-        <Navigation.Item tId="1" title="Activity" />
+        <Navigation.Item id="9" title="Data" />
+        <Navigation.Item id="10" title="Activity" />
       </Navigation.Category>
-      <Navigation.Item tId="1" title="Training Datasets" hasDivider icon={td} />
-      <Navigation.Item tId="1" title="Sources" icon={sources} />
-      <Navigation.Item tId="1" title="Jobs" icon={runjobs} />
+      <Navigation.Item id="11" title="Training Datasets" hasDivider icon={td} />
+      <Navigation.Item id="12" title="Sources" icon={sources} />
+      <Navigation.Item id="13" title="Jobs" icon={runjobs} />
     </Navigation>
   </Box>
 );
@@ -89,10 +89,10 @@ export const TreeObject: Story<NavigationProps> = () => {
     {
       title: 'Home',
       icon: td,
-      tId: '1',
+      id: '1',
       children: [
         {
-          tId: '32',
+          id: '32',
           title: 'Owerview 2',
         },
       ],
@@ -100,50 +100,50 @@ export const TreeObject: Story<NavigationProps> = () => {
     {
       title: 'Feature Groups',
       icon: query,
-      tId: '2',
+      id: '2',
       children: [
         {
           title: 'Owerview',
-          tId: '3',
+          id: '3',
           children: [
             {
               title: 'Feature List',
-              tId: '4',
+              id: '4',
             },
             {
               title: 'Schematised Tags',
-              tId: '5',
+              id: '5',
               onClick: action('Tags Click'),
               isActive: true,
             },
             {
               title: 'Running Code',
-              tId: '6',
+              id: '6',
             },
             {
               title: 'API',
-              tId: '7',
+              id: '7',
             },
           ],
         },
         {
           title: 'Data',
-          tId: '8',
+          id: '8',
         },
         {
           title: 'Activity',
-          tId: '9',
+          id: '9',
         },
       ],
     },
     {
       title: 'Training Datasets',
       icon: td,
-      tId: '10',
+      id: '10',
       hasDivider: true,
     },
-    { title: 'Source', icon: sources, tId: '11' },
-    { title: 'Jobs', icon: runjobs, tId: '12' },
+    { title: 'Source', icon: sources, id: '11' },
+    { title: 'Jobs', icon: runjobs, id: '12' },
   ];
 
   return (

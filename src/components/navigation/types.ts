@@ -1,9 +1,9 @@
 import React from 'react';
 import { BoxProps } from 'rebass';
 
-export interface NavigationItemProps extends Omit<BoxProps, 'css,tId'> {
+export interface NavigationItemProps extends Omit<BoxProps, 'css' | 'id'> {
   title: string;
-  tId: string;
+  id: string;
   icon?: any;
   isActive?: boolean;
   isSubItem?: boolean;
@@ -14,7 +14,7 @@ export interface NavigationItemProps extends Omit<BoxProps, 'css,tId'> {
 }
 
 export interface TreeNode extends NavigationItemProps {
-  tId: string;
+  id: string;
   title: string;
   icon?: any;
   children?: TreeNode[];
