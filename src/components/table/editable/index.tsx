@@ -47,6 +47,7 @@ const EditableTable: FC<EditableTableProps> = ({
   values,
   columns,
   actions = [],
+  ...props
 }: EditableTableProps) => {
   const [staticColumn, setStaticColumn] = useState<TableColumn>();
 
@@ -68,8 +69,8 @@ const EditableTable: FC<EditableTableProps> = ({
   }, [values.length]);
 
   return (
-    <Box sx={{ ...containerStyles, overflow: 'visible' }}>
-      <Box as="table" sx={tableStyles}>
+    <Box {...props} sx={{ ...containerStyles, overflow: 'visible' }}>
+      <Box {...props} as="table" sx={tableStyles}>
         <Box as="thead" sx={theadStyles}>
           <Box as="tr">
             <Box as="th" sx={theadStyles} className="table-corner" />
@@ -128,6 +129,7 @@ const EditableTable: FC<EditableTableProps> = ({
                   p="0px !important"
                 >
                   {staticColumn.render({
+                    readOnly: row[staticColumn.name + 'readOnly'],
                     onChange: handleChangeData(rowIndex, staticColumn.name),
                     value: row[staticColumn.name],
                   })}
@@ -144,6 +146,7 @@ const EditableTable: FC<EditableTableProps> = ({
                       p="0px !important"
                     >
                       {column.render({
+                        readOnly: row[column.name + 'readOnly'],
                         onChange: handleChangeData(rowIndex, column.name),
                         value: row[column.name],
                       })}

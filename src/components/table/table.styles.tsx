@@ -96,6 +96,7 @@ export const trowStyles = {
     position: 'sticky',
     backgroundColor: 'white',
     display: 'block',
+    zIndex: 1,
   },
   td: {
     borderWidth: '0 0 1px 0',
