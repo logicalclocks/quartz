@@ -59,7 +59,7 @@ export default {
 
   position: 'relative',
 
-  zIndex: 32,
+  zIndex: 30,
 
   width: '100%',
   height: '70px',

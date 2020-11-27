@@ -3,6 +3,7 @@ export type FGItem = {
   columnValue: string | string[] | boolean;
   isPrimary?: boolean;
   isPartition?: boolean;
+  readOnly?: boolean;
 };
 
 export type FGRow = {
