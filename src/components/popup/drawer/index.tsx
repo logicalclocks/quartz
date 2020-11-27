@@ -13,13 +13,13 @@ type IDrawer<P> = FC<P> & {
   Section: FC<DrawerSectionProps>;
 };
 
+type Children = React.ReactElement<DrawerSectionProps> | null;
+
 export interface DrawerProps extends Omit<PopupProps, 'css'> {
   bottomButton?: Action<React.MouseEvent<HTMLButtonElement>>;
   headerLine?: React.ReactNode;
   headerSummary?: React.ReactNode;
-  children:
-    | React.ReactElement<DrawerSectionProps>
-    | React.ReactElement<DrawerSectionProps>[];
+  children: Children | Children[];
   isOpen?: boolean;
   onClose?: () => void;
 }
@@ -73,7 +73,7 @@ const Drawer: IDrawer<DrawerProps> = ({
             left: 0,
             right: 0,
             bottom: 0,
-            position: 'sticky',
+            position: 'absolute',
           }}
         >
           <FooterButton width="100%" onClick={bottomActionCallback}>
