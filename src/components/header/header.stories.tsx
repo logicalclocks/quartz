@@ -6,13 +6,14 @@ import { Box } from 'rebass';
 
 // Components
 import Avatar from '../avatar';
-import { IconButton, Label } from '../../index';
+import { IconButton, Label, List, ListItem } from '../../index';
 import FolderIcon from '../icons/folder.icon';
 import Subtitle from '../typography/subtitle';
 import Header, { HeaderProps } from './index';
 import Navigation from '../navigation/container';
 // Types
 import { TreeNode } from '../navigation/types';
+import MenuButton from './menu-button';
 
 export default {
   title: 'Quartz/Header',
@@ -95,7 +96,17 @@ Default.args = {
       <Subtitle ml="16px">PROJECT ACME</Subtitle>
     </>
   ),
-  onMenuClick: action('Menu'),
+  menuAction: (
+    <>
+      <MenuButton />
+      <Box sx={{ position: 'absolute', right: '16px', top: '56px' }}>
+        <List>
+          <ListItem>Account</ListItem>
+          <ListItem>Log Out</ListItem>
+        </List>
+      </Box>
+    </>
+  ),
 };
 
 Default.argTypes = {

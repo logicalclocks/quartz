@@ -5,24 +5,25 @@ import { Box, BoxProps } from 'rebass';
 import styles, { leftSectionStyles, rightSectionStyles } from './header.styles';
 // Components
 import Logo from '../logo';
-import MenuButton from './menu-button';
 
 export interface HeaderProps extends Omit<BoxProps, 'css'> {
   children?: React.ReactNode;
   user?: React.ReactNode;
   actions?: React.ReactNode[];
-  onMenuClick?: () => void;
+  menuAction: React.ReactNode;
+  logoAction?: () => void;
 }
 
 const Header: FC<HeaderProps> = ({
   children,
   user,
   actions,
-  onMenuClick,
+  menuAction,
+  logoAction,
 }: HeaderProps) => (
   <Box sx={styles} variant="header">
     {/* Left Section */}
-    <Box sx={leftSectionStyles}>
+    <Box sx={leftSectionStyles} onClick={logoAction}>
       <Logo />
     </Box>
     <Box
@@ -55,11 +56,7 @@ const Header: FC<HeaderProps> = ({
       </Box>
 
       {/* Menu */}
-      {onMenuClick && (
-        <span onClick={onMenuClick} role="button" tabIndex={0}>
-          <MenuButton />
-        </span>
-      )}
+      {menuAction}
     </Box>
   </Box>
 );

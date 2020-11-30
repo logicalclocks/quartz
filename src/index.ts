@@ -18,6 +18,7 @@ import FooterButton from './components/footer-button';
 import Header from './components/header';
 import Icon from './components/icon';
 import IconButton from './components/icon-button';
+import MenuButton from './components/header/menu-button';
 import Input from './components/input';
 import BlurInput from './components/table/editable/blur-input';
 import InputInfo from './components/input-info';
@@ -113,6 +114,7 @@ export {
   Header,
   Icon,
   IconButton,
+  MenuButton,
   Input,
   BlurInput,
   InputInfo,
