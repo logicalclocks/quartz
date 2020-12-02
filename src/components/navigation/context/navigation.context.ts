@@ -11,7 +11,7 @@ export interface NavigationContextValue {
 }
 
 const NavigationContext = React.createContext<NavigationContextValue>({
-  trackBy: 'title',
+  trackBy: 'id',
   activePath: [],
   tree: [],
   activeNode: null,
