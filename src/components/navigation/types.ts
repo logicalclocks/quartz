@@ -10,6 +10,7 @@ export interface NavigationItemProps extends Omit<BoxProps, 'css'> {
   children?: React.ReactNode;
   disabled?: boolean;
   onClick?: () => void;
+  tooltipText?: string;
 }
 
 export interface TreeNode extends NavigationItemProps {

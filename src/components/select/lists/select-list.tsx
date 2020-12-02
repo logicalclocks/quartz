@@ -12,7 +12,7 @@ const SelectList: FC<SelectListProps> = ({
 }: SelectListProps) => {
   const handleClick = useCallback(
     (option: string) => () => {
-      onChange(value.includes(option) ? [] : [option]);
+      onChange([option]);
     },
     [value, onChange],
   );

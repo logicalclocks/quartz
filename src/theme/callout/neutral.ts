@@ -2,7 +2,7 @@ import { SystemStyleObject } from '@styled-system/css';
 
 export default {
   color: 'black',
-  bg: 'grayShade3',
+  bg: 'grayShade2',
   borderLeftWidth: 0,
   borderLeftStyle: 'solid',
   borderLeftColor: 'black',
