@@ -21,14 +21,7 @@ const Template: Story<SelectProps> = (props) => {
     setValue(data);
   };
 
-  return (
-    <Select
-      {...props}
-      options={options}
-      value={value}
-      onChange={handleChange}
-    />
-  );
+  return <Select {...props} value={value} onChange={handleChange} />;
 };
 
 export const Default = Template.bind({});
@@ -39,6 +32,8 @@ Default.args = {
   listWidth: '300px',
   variant: 'primary',
   isMulti: false,
+  options,
+  noDataMessage: 'no labels',
 };
 
 Default.argTypes = {
