@@ -16,6 +16,8 @@ import NavigationContext from '../context/navigation.context';
 import { NavigationItemProps } from '../types';
 // Styles
 import styles from './navigation-item.styles';
+import { Tooltip } from '../../../index';
+import TooltipPositions from '../../tooltip/positions';
 
 const getVariant = (isDisabled = false, isActive = false): string => {
   if (isDisabled) {
@@ -41,6 +43,7 @@ const NavigationItem: FC<NavigationItemProps> = (
     hasDivider,
     onClick = () => {},
     disabled,
+    tooltipText = '',
     ...restProps
   } = props;
   const isOpen =
@@ -49,6 +52,8 @@ const NavigationItem: FC<NavigationItemProps> = (
   const isActiveItem = activePath.includes(key);
   const tx = `navigation.${isSubItem ? 'subItem' : 'item'}`;
   const display = children && isActiveItem && isOpen ? 'block' : 'none';
+
+  const disableTooltip = !tooltipText;
 
   const childs = useMemo(
     () =>
@@ -95,15 +100,21 @@ const NavigationItem: FC<NavigationItemProps> = (
       >
         {icon && (
           <div>
-            <Lottie
-              width={22}
-              height={22}
-              direction={isToggled ? 1 : -1}
-              options={{
-                animationData: icon,
-                loop: false,
-              }}
-            />
+            <Tooltip
+              disabled={disableTooltip || !isOpen}
+              position={TooltipPositions.right}
+              mainText={tooltipText}
+            >
+              <Lottie
+                width={22}
+                height={22}
+                direction={isToggled ? 1 : -1}
+                options={{
+                  animationData: icon,
+                  loop: false,
+                }}
+              />
+            </Tooltip>
           </div>
         )}
         <span>{title}</span>

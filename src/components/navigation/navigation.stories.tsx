@@ -96,11 +96,13 @@ export const TreeObject: Story<NavigationProps> = () => {
           title: 'Owerview 2',
         },
       ],
+      tooltipText: 'Home',
     },
     {
       title: 'Feature Groups',
       icon: query,
       id: '2',
+      tooltipText: 'Feature Groups',
       children: [
         {
           title: 'Owerview',

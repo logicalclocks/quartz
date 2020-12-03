@@ -6,7 +6,11 @@ export interface ValueProps extends Omit<TextProps, 'css'> {
 }
 
 const Value: FC<ValueProps> = ({ primary, ...props }: ValueProps) => (
-  <Text {...props} variant={`value${primary ? 'Primary' : ''}`} />
+  <Text
+    fontFamily="Inter"
+    {...props}
+    variant={`value${primary ? 'Primary' : ''}`}
+  />
 );
 
 export default Value;
