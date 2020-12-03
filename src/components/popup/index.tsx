@@ -10,6 +10,7 @@ export interface PopupProps extends Omit<BoxProps, 'css'> {
   children: React.ReactNode;
   variant?: 'primary';
   hasBackdrop?: boolean;
+  closeOnBackdropClick?: boolean;
   left?: string;
   top?: string;
   bottom?: string;
@@ -29,6 +30,7 @@ const Popup: FC<PopupProps> = ({
   hasBackdrop = true,
   isOpen = false,
   onBackdropClick,
+  closeOnBackdropClick = true,
   onClose = () => {},
   ...props
 }: PopupProps) => {
@@ -48,13 +50,15 @@ const Popup: FC<PopupProps> = ({
 
   const handleBackdropClick = useCallback(
     (event: React.SyntheticEvent<HTMLDivElement>) => {
-      onClose();
+      if (closeOnBackdropClick) {
+        onClose();
+      }
 
       if (onBackdropClick) {
         onBackdropClick(event);
       }
     },
-    [onClose, onBackdropClick],
+    [onClose, onBackdropClick, closeOnBackdropClick],
   );
 
   useEffect(() => {
