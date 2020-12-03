@@ -83,3 +83,19 @@ Run `npm run build`
 ## License
 
 AGPL-3.0 Licence  © [logicalclocks](https://github.com/logicalclocks)
+
+## Run locally
+
+Run `npm install` and then `npm run storybook`
+
+## Build locally
+
+Run `npm install` and then `npm run build-dev`
+
+## Troubleshooting
+
+Delete `node_modules` and `dist` folders then follow **Build locally** or **Run locally** instruction
+
+## On repo update
+
+Follow **Build locally** or **Run locally** instruction
