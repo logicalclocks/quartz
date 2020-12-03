@@ -33,24 +33,28 @@ const SelectLabel: FC<SelectLabelProps> = forwardRef(
       ...props
     }: SelectLabelProps,
     ref,
-  ) => (
-    <Box
-      {...props}
-      sx={styles}
-      tx="variants.select"
-      variant={variant}
-      tabIndex={0}
-      ref={ref}
-    >
-      <Labeling minWidth="max-content" gray={!!value.length}>
-        {!isMulti ? placeholder : !value.length ? noDataMessage : placeholder}
-      </Labeling>
-      <Labeling px="5px" sx={valueStyles}>
-        {getLabelText(value)}
-      </Labeling>
-      <ArrowsIcon />
-      {children}
-    </Box>
-  ),
+  ) => {
+    const content = !options.length ? noDataMessage : placeholder;
+
+    return (
+      <Box
+        {...props}
+        sx={styles}
+        tx="variants.select"
+        variant={variant}
+        tabIndex={0}
+        ref={ref}
+      >
+        <Labeling minWidth="max-content" gray={!!value.length}>
+          {content}
+        </Labeling>
+        <Labeling px="5px" sx={valueStyles}>
+          {getLabelText(value)}
+        </Labeling>
+        <ArrowsIcon />
+        {children}
+      </Box>
+    );
+  },
 );
 export default SelectLabel;
