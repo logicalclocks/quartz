@@ -3,6 +3,8 @@ import { Flex } from 'rebass';
 
 // Components
 import Radio, { RadioProps } from './index';
+// Utils
+import randomString from '../../utils/randomString';
 
 export interface RadioGroupProps
   extends Omit<RadioProps, 'label' | 'onChange' | 'options' | 'value'> {
@@ -20,11 +22,13 @@ const RadioGroup: FC<RadioGroupProps> = ({
   ...props
 }: RadioGroupProps) => {
   const handleChange = useCallback(
-    ({ target }) => {
-      onChange(target.name);
+    (value: string) => () => {
+      onChange(value);
     },
     [value, onChange],
   );
+
+  const name = randomString();
 
   return (
     <Flex flexDirection={flexDirection}>
@@ -35,8 +39,8 @@ const RadioGroup: FC<RadioGroupProps> = ({
           mt={flexDirection === 'column' ? 2 : 0}
           checked={value === option}
           label={option}
-          name={option}
-          onChange={handleChange}
+          name={name}
+          onChange={handleChange(option)}
         />
       ))}
     </Flex>
