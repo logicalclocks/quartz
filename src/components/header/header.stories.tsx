@@ -5,7 +5,6 @@ import { Story, Meta } from '@storybook/react/types-6-0';
 import { Box } from 'rebass';
 
 // Components
-import Avatar from '../avatar';
 import { IconButton, Label, List, ListItem } from '../../index';
 import FolderIcon from '../icons/folder.icon';
 import Subtitle from '../typography/subtitle';
@@ -14,6 +13,7 @@ import Navigation from '../navigation/container';
 // Types
 import { TreeNode } from '../navigation/types';
 import MenuButton from './menu-button';
+import User from '../user';
 
 export default {
   title: 'Quartz/Header',
@@ -24,8 +24,10 @@ const tree: TreeNode[] = [
   {
     title: 'Home',
     icon: ['far', 'copy'],
+    id: '321',
     children: [
       {
+        id: '32',
         title: 'Owerview 2',
       },
     ],
@@ -33,41 +35,50 @@ const tree: TreeNode[] = [
   {
     title: 'Feature Groups',
     icon: ['far', 'copy'],
+    id: '32',
     children: [
       {
         title: 'Owerview',
+        id: '32',
         children: [
           {
+            id: '32',
             title: 'Feature List',
           },
           {
             title: 'Schematised Tags',
             onClick: action('Tags Click'),
+            id: '32',
             isActive: true,
           },
           {
             title: 'Running Code',
+            id: '32',
           },
           {
+            id: '32',
             title: 'API',
           },
         ],
       },
       {
         title: 'Data',
+        id: '32',
       },
       {
         title: 'Activity',
+        id: '32',
       },
     ],
   },
   {
     title: 'Training Datasets',
+    id: '32',
     icon: ['far', 'copy'],
     hasDivider: true,
   },
-  { title: 'Source', icon: ['far', 'copy'] },
-  { title: 'Jobs', icon: ['far', 'copy'] },
+  { title: 'Source', id: '32', icon: ['far', 'copy'] },
+  { title: 'Jobs', id: '32', icon: ['far', 'copy'] },
 ];
 
 const Template: Story<HeaderProps> = (props) => (
@@ -82,7 +93,7 @@ export const Default = Template.bind({});
 Default.args = {
   user: (
     <>
-      <Avatar marginRight="12px" />
+      <User photo="" name="" />
       <Label>Anna Lundström</Label>
     </>
   ),

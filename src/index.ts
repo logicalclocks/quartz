@@ -4,7 +4,6 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { far } from '@fortawesome/free-regular-svg-icons';
 
-import Avatar from './components/avatar';
 import Button from './components/button';
 import Card from './components/card';
 import Code from './components/code';
@@ -101,7 +100,6 @@ import useOnClickOutside from './utils/useClickOutside';
 library.add(fas, far);
 
 export {
-  Avatar,
   Button,
   Card,
   Code,
