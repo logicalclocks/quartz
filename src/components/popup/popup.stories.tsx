@@ -10,6 +10,7 @@ import { DrawerSectionProps } from './drawer/drawer-section';
 import Popup, { PopupProps } from './index';
 import TinyPopup, { TinyPopupProps } from './tiny';
 import usePopup from '../../utils/usePopup';
+import { Input } from '../../index';
 
 export default {
   title: 'Quartz/Popup',
@@ -100,7 +101,9 @@ export const PopupTiny: Story<TinyPopupProps> = (props) => {
         isOpen={isOpen}
         mainButton={['main', action('main')]}
         secondaryButton={['secondary', action('secondary')]}
-      />
+      >
+        <Input label="Value" />
+      </TinyPopup>
     </>
   );
 };

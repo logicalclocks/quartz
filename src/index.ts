@@ -15,6 +15,7 @@ import RadioGroup from './components/radio/radio-group';
 import Dropdown from './components/dropdown';
 import FooterButton from './components/footer-button';
 import Header from './components/header';
+import AlternativeHeader from './components/alternative-header';
 import Icon from './components/icon';
 import IconButton from './components/icon-button';
 import MenuButton from './components/header/menu-button';
@@ -110,6 +111,7 @@ export {
   Dropdown,
   FooterButton,
   Header,
+  AlternativeHeader,
   Icon,
   IconButton,
   MenuButton,

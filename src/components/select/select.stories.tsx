@@ -34,6 +34,10 @@ Default.args = {
   isMulti: false,
   options,
   noDataMessage: 'no labels',
+  bottomActionText: 'Add another label',
+  bottomActionHandler: () => {
+    console.log('add');
+  },
 };
 
 Default.argTypes = {

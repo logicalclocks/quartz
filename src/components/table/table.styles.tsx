@@ -47,7 +47,7 @@ export const theadStyles = {
     borderWidth: '0 4px 4px 0',
     left: '0',
     zIndex: '100',
-    minWidth: '40px',
+    width: '40px',
     cursor: 'pointer',
   },
   '&.hover-column': {

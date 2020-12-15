@@ -5,6 +5,17 @@ export const listStyles = {
   top: '33px',
 };
 
+export const bottomActionStyles = {
+  p: '10px',
+  borderTopWidth: '1px',
+  borderTopStyle: 'solid',
+  borderTopColor: 'grayShade2',
+
+  ':hover': {
+    bg: 'grayShade3',
+  },
+};
+
 export const valueStyles = {
   flexGrow: 2,
   overflow: 'hidden',
