@@ -1,6 +1,8 @@
 import React, { FC } from 'react';
-import Avatar from '../avatar';
 import Tooltip from '../tooltip';
+import { Box } from 'rebass';
+import styles from '../avatar/avatar.styles';
+import defaultPhoto from '../avatar/default.svg';
 
 export interface UserProps {
   photo: string;
@@ -23,11 +25,18 @@ const User: FC<UserProps> = ({
       mainText={capitalisedName}
       secondaryText={title}
     >
-      <Avatar
-        src={photo}
-        borderColor={`hsl(${Math.round(
-          ((capitalisedName.charCodeAt(0) - 64) * 360) / 26,
-        )}, 75%, 55%)`}
+      <Box
+        as="img"
+        src={photo || defaultPhoto}
+        sx={{
+          ...styles,
+          borderColor: `hsl(${Math.round(
+            ((capitalisedName.charCodeAt(0) - 64) * 360) / 26,
+          )}, 75%, 55%)`,
+        }}
+        minWidth="32px"
+        height="32px"
+        alt="User avatar"
       />
     </Tooltip>
   );
