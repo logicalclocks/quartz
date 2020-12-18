@@ -89,6 +89,7 @@
     "@fortawesome/react-fontawesome": "^0.1.11",
     "@rebass/forms": "^4.0.6",
     "@styled-system/css": "^5.1.5",
+    "d3": "^6.3.1",
     "events": "^3.2.0",
     "lottie-react-web": "^2.2.2",
     "rc-slider": "^9.5.3",
