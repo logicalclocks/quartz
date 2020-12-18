@@ -39,11 +39,11 @@ const CommitLegend: FC<CommitLegendProps> = ({
     <Flex
       key={`legend-${groupKey}`}
       mt="20px"
-      ml="10px"
+      ml="12px"
       justifyContent="space-between"
     >
-      <Labeling>{groupKey}</Labeling>
-      <Label mr="5px">{values ? values[groupKey] : ''}</Label>
+      <Label>Commits over time</Label>
+      <Labeling mr="5px">{values ? values[groupKey] : ''}</Labeling>
     </Flex>
   </Flex>
 );

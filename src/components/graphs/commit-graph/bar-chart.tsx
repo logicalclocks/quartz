@@ -25,9 +25,9 @@ const BarChart: FC<BarChartProps> = ({
   const drawBarChart = (data: object[], containerEl: HTMLElement) => {
     const margin = {
       top: 10,
-      right: 10,
+      right: 20,
       bottom: 10,
-      left: 10,
+      left: 20,
     };
     const aspectRatio = 4;
     const width = containerEl.parentElement.offsetWidth;
