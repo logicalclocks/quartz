@@ -52,6 +52,7 @@ import User from './components/user';
 import TextValueBadge from './components/badges/text-value-badge';
 import Badge from './components/badges/badge';
 import Dot from './components/badges/dot';
+import ProjectBadge from './components/badges/project-badge';
 
 // Navigation
 import Navigation from './components/navigation/container';
@@ -146,6 +147,7 @@ export {
   User,
   TextValueBadge,
   Badge,
+  ProjectBadge,
   Dot,
   // Navigation
   Navigation,

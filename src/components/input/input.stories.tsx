@@ -4,6 +4,9 @@ import { Meta, Story } from '@storybook/react/types-6-0';
 import React from 'react';
 
 import Input, { InputProps } from '.';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Box } from 'rebass';
+import { Labeling } from '../../index';
 
 export default {
   title: 'Quartz/Input',
@@ -113,10 +116,44 @@ const argTypes = {
       summary: 'Left icon',
     },
   },
+  rightIcon: {
+    control: {
+      type: 'select',
+      options: [undefined, 'search', 'coffee'],
+    },
+    type: {
+      required: false,
+      summary: 'Right icon',
+    },
+  },
 };
 
 const Template: Story<InputProps> = (props) => (
-  <Input icon="coffee" {...props} />
+  <Input
+    icon="coffee"
+    iconPaddingRight="40px"
+    rightIcon={
+      <Box
+        sx={{
+          right: '10px',
+          position: 'absolute',
+          top: '16px',
+          transform: 'translateY(-50%)',
+          path: {
+            fill: 'gray',
+          },
+          fontSize: '14px',
+        }}
+      >
+        <FontAwesomeIcon icon="apple-alt" />
+        <FontAwesomeIcon icon="plus" />
+        <Labeling display="initial" gray>
+          P
+        </Labeling>
+      </Box>
+    }
+    {...props}
+  />
 );
 
 export const Default = Template.bind({});

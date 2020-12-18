@@ -41,6 +41,7 @@ const getStyles = ({
 
   display: 'flex',
   flexDirection: 'column',
+  justifyContent: 'space-between',
 
   top: top ?? '50%',
   left: left ?? '50%',
