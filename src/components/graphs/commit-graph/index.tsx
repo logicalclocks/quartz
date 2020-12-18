@@ -43,6 +43,7 @@ const CommitGraph: FC<CommitGraphProps> = ({
       <CommitLegend
         keys={keys}
         groupKey={groupKey}
+        amount={values.length}
         values={selected !== -1 ? values[selected] : null}
       />
     </Flex>

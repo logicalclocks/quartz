@@ -18,6 +18,7 @@ export interface CommitLegendProps {
   values: CommitLegendValue | null;
   groupKey: string;
   keys: string[];
+  amount: number;
 }
 
 const toDate = (timestamp: number) => {
@@ -29,6 +30,7 @@ const CommitLegend: FC<CommitLegendProps> = ({
   values,
   groupKey,
   keys,
+  amount,
   ...props
 }: CommitLegendProps) => (
   <Flex {...props} mt="10px" flexDirection="column">
@@ -48,7 +50,7 @@ const CommitLegend: FC<CommitLegendProps> = ({
       justifyContent="space-between"
     >
       <Label>Commits over time</Label>
-      <Labeling mr="5px">{values ? toDate(values[groupKey]) : ''}</Labeling>
+      <Labeling mr="5px">{values ? toDate(values[groupKey]) : `${amount} last commits`}</Labeling>
     </Flex>
   </Flex>
 );
