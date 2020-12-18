@@ -47,7 +47,7 @@ const mockValues = Array(10)
   .map((__u: null, i: number) => {
     const random = (max: number) => Math.round(Math.random() * max);
     return {
-      date: Date.now() + (i + 1),
+      date: Date.now() + ((i + 1) * 60000),
       added: random(100),
       removed: random(16),
       modified: random(34),

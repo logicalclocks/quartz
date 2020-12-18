@@ -20,6 +20,11 @@ export interface CommitLegendProps {
   keys: string[];
 }
 
+const toDate = (timestamp: number) => {
+  const date = new Date(timestamp);
+  return `${date.toLocaleDateString()}-${date.getHours()}:${date.getMinutes()}`;
+};
+
 const CommitLegend: FC<CommitLegendProps> = ({
   values,
   groupKey,
@@ -43,7 +48,7 @@ const CommitLegend: FC<CommitLegendProps> = ({
       justifyContent="space-between"
     >
       <Label>Commits over time</Label>
-      <Labeling mr="5px">{values ? values[groupKey] : ''}</Labeling>
+      <Labeling mr="5px">{values ? toDate(values[groupKey]) : ''}</Labeling>
     </Flex>
   </Flex>
 );
