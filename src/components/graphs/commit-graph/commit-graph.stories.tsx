@@ -55,7 +55,7 @@ const mockValues = Array(10)
   });
 
 const Template: Story<CommitGraphProps> = (props) => (
-  <Box width="300px">
+  <Box width="600px">
     <CommitGraph {...props} />
   </Box>
 );

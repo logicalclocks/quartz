@@ -10,28 +10,6 @@ export interface BarChartProps {
   onSelect: Function;
 }
 
-const responsivefy = (svg) => {
-  // get container + svg aspect ratio
-  const container = d3.select(svg.node().parentNode);
-  const width = parseInt(svg.style('width'), 10);
-  const height = parseInt(svg.style('height'), 10);
-  const aspect = width / height;
-
-  // get width of container and resize svg to fit it
-  const resize = () => {
-    const targetWidth = parseInt(container.style('width'), 10);
-    svg.attr('width', targetWidth);
-    svg.attr('height', Math.round(targetWidth / aspect));
-  };
-
-  // add viewBox and preserveAspectRatio properties,
-  // and call resize so that svg resizes on inital page load
-  svg
-    .attr('viewBox', `0 0 ${width} ${height}`)
-    .attr('perserveAspectRatio', 'xMinYMid')
-    .call(resize);
-};
-
 const BarChart: FC<BarChartProps> = ({
   values,
   groupKey,
@@ -51,9 +29,9 @@ const BarChart: FC<BarChartProps> = ({
       bottom: 10,
       left: 10,
     };
-    const height = 200;
-    const widthRatio = 4;
-    const width = height * widthRatio;
+    const aspectRatio = 4;
+    const width = containerEl.parentElement.offsetWidth;
+    const height = width / aspectRatio;
 
     const min = 0;
     const color = d3.scaleOrdinal().range(colors);
@@ -94,9 +72,7 @@ const BarChart: FC<BarChartProps> = ({
           .duration(200)
           .ease(d3.easeLinear)
           .style('opacity', 1);
-      })
-      // make the chart responsive.
-      .call(responsivefy);
+      });
 
     container
       .append('g')
