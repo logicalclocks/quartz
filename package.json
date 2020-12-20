@@ -28,6 +28,7 @@
     "chromatic": "npx chromatic --project-token dqq8k95raoo"
   },
   "peerDependencies": {
+    "d3": "^6.3.1",
     "rebass": "^4.0.7",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
@@ -49,6 +50,7 @@
     "@types/react-dom": "^16.9.7",
     "@types/rebass": "^4.0.6",
     "@types/rebass__forms": "^4.0.4",
+    "@types/d3": "^6.2.0",
     "@typescript-eslint/eslint-plugin": "^4.2.0",
     "@typescript-eslint/parser": "^2.26.0",
     "babel-eslint": "^10.0.3",
@@ -89,7 +91,6 @@
     "@fortawesome/react-fontawesome": "^0.1.11",
     "@rebass/forms": "^4.0.6",
     "@styled-system/css": "^5.1.5",
-    "d3": "^6.3.1",
     "events": "^3.2.0",
     "lottie-react-web": "^2.2.2",
     "rc-slider": "^9.5.3",
