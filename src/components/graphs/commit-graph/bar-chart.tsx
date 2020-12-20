@@ -1,5 +1,11 @@
-import React, { FC, useEffect, useRef } from 'react';
+import React, { FC, useLayoutEffect, useRef } from 'react';
 import * as d3 from 'd3';
+import { ScaleBand, ScaleLinear } from 'd3';
+
+export interface KeyValue {
+  key: string;
+  value: number;
+}
 
 export interface BarChartProps {
   values: object[];
@@ -18,9 +24,7 @@ const BarChart: FC<BarChartProps> = ({
   backgroundColor,
   onSelect,
 }: BarChartProps) => {
-  const containerRef = useRef(null);
-
-
+  const containerRef = useRef<HTMLDivElement>(null);
 
   const drawBarChart = (data: object[], containerEl: HTMLElement) => {
     const margin = {
@@ -30,36 +34,38 @@ const BarChart: FC<BarChartProps> = ({
       left: 20,
     };
     const aspectRatio = 4;
-    const width = containerEl.parentElement.offsetWidth;
+
+    const parent = containerEl.parentElement as HTMLElement;
+    const width = parent.offsetWidth;
     const height = width / aspectRatio;
 
     const min = 0;
-    const color = d3.scaleOrdinal().range(colors);
+    const color: Function = d3.scaleOrdinal().range(colors);
     const max = d3.max(data, (d: object) => d3.max(keys, (k: string) => d[k]));
 
     // Y
-    const y = d3
+    const y: ScaleLinear<number, number> = d3
       .scaleLinear()
       .domain([min, max])
       .nice()
       .rangeRound([height - margin.bottom, margin.top]);
 
     // GENERAL X
-    const x0 = d3
+    const x0: ScaleBand<string> = d3
       .scaleBand()
       .domain(data.map((d) => d[groupKey]))
       .rangeRound([margin.left, width - margin.right])
       .paddingInner(0.5); // padding between groups
 
     // GROUP X
-    const x1 = d3
+    const x1: ScaleBand<string> = d3
       .scaleBand()
       .domain(keys)
       .rangeRound([0, x0.bandwidth()])
       .padding(0.05); // padding within groups
 
     // CONTAINER
-    const container = d3
+    const container: any = d3
       .select(containerEl)
       .append('svg')
       .attr('width', width)
@@ -85,26 +91,32 @@ const BarChart: FC<BarChartProps> = ({
       .selectAll('rect')
       .data((d: object) => keys.map((key) => ({ key, value: d[key] })))
       .join('rect')
-      .attr('x', (d: object) => x1(d.key))
-      .attr('y', (d: object) => y(d.value))
+      .attr('x', (d: KeyValue) => x1(d.key))
+      .attr('y', (d: KeyValue) => y(d.value))
       .attr('width', x1.bandwidth())
-      .attr('height', (d: object) => y(0) - y(d.value))
-      .attr('fill', (d: object) => color(d.key));
+      .attr('height', (d: KeyValue) => y(0) - y(d.value))
+      .attr('fill', (d: KeyValue) => color(d.key));
 
     container.selectAll('g').on('mouseover', (event: MouseEvent) => {
-      const parent = event.target.parentNode;
-      onSelect(parseInt(parent.id, 10));
-      // Decrease opacity of all commits;
-      d3.selectAll('rect').style('opacity', 0.3);
-      // Set full opacity for hovered commit;
-      d3.select(parent).selectChildren().style('opacity', 1);
+      const targetEl = event?.target as HTMLElement | undefined;
+      const parentNode = targetEl?.parentElement;
+
+      if (parentNode) {
+        onSelect(parseInt(parentNode.id, 10));
+        // Decrease opacity of all commits;
+        d3.selectAll('rect').style('opacity', 0.3);
+        // Set full opacity for hovered commit;
+        d3.select(parentNode).selectChildren().style('opacity', 1);
+      }
     });
 
     return container.node();
   };
 
-  useEffect(() => {
-    drawBarChart(values, containerRef.current);
+  useLayoutEffect(() => {
+    if (containerRef?.current) {
+      drawBarChart(values, containerRef.current);
+    }
   }, []);
 
   return <div ref={containerRef} />;
