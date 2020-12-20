@@ -33,7 +33,7 @@ const CommitLegend: FC<CommitLegendProps> = ({
   amount,
   ...props
 }: CommitLegendProps) => (
-  <Flex {...props} mt="10px" flexDirection="column">
+  <Flex {...props} mt="10px" mb="20px" flexDirection="column">
     <Flex flexDirection="row">
       {keys.map((key, idx) => (
         <Flex key={`legend-${key}`} ml="12px">
