@@ -98,6 +98,9 @@ import useDropdown from './utils/useDropdown';
 import useNavigation from './components/navigation/useNavigation';
 import useOnClickOutside from './utils/useClickOutside';
 
+// Charts
+import CommitGraph from './components/graphs/commit-graph';
+
 library.add(fas, far);
 
 export {
@@ -179,6 +182,8 @@ export {
   Labeling,
   StickySummary,
   SplitGraph,
+    // Charts
+  CommitGraph,
   //  Icons
   FolderIcon,
   useOnClickOutside,
