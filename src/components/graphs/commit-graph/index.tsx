@@ -29,7 +29,7 @@ const CommitGraph: FC<CommitGraphProps> = ({
   const [selected, setSelected] = useState<number | null>(null);
 
   return (
-    <Flex {...props} flexDirection="column">
+    <Flex {...props} flexDirection="column" width="100%">
       {/* D3 chart */}
       <BarChart
         values={values}
