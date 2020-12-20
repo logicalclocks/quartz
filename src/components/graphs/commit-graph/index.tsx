@@ -26,7 +26,7 @@ const CommitGraph: FC<CommitGraphProps> = ({
   keys,
   ...props
 }: CommitGraphProps) => {
-  const [selected, setSelected] = useState(-1);
+  const [selected, setSelected] = useState<number | null>(null);
 
   return (
     <Flex {...props} flexDirection="column">
@@ -44,7 +44,7 @@ const CommitGraph: FC<CommitGraphProps> = ({
         keys={keys}
         groupKey={groupKey}
         amount={values.length}
-        values={selected !== -1 ? values[selected] : null}
+        values={selected !== null ? values[selected] : null}
       />
     </Flex>
   );
