@@ -50,7 +50,9 @@ const CommitLegend: FC<CommitLegendProps> = ({
       justifyContent="space-between"
     >
       <Label>Commits over time</Label>
-      <Labeling mr="5px">{values ? toDate(values[groupKey]) : `${amount} last commits`}</Labeling>
+      <Labeling mr="5px">
+        {values ? toDate(values[groupKey]) : `${amount} last commits`}
+      </Labeling>
     </Flex>
   </Flex>
 );
