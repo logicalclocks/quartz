@@ -42,12 +42,12 @@ const argTypes = {
   },
 };
 
-const mockValues = Array(10)
+const mockValues = Array(Math.floor(Math.random() * 10) + 1)
   .fill(null)
   .map((__u: null, i: number) => {
     const random = (max: number) => Math.round(Math.random() * max);
     return {
-      date: Date.now() + (i + 1) * 60000,
+      date: new Date(Date.now() + (i + 1) * 60000).toLocaleString(),
       added: random(100),
       removed: random(16),
       modified: random(34),

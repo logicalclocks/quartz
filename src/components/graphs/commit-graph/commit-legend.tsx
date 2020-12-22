@@ -8,7 +8,7 @@ import Labeling from '../../typography/labeling';
 const graphColors = ['#21B182', '#EB5757', '#F2994A'];
 
 export interface CommitLegendValue {
-  date: number;
+  date: string;
   added: number;
   removed: number;
   modified: number;
@@ -20,11 +20,6 @@ export interface CommitLegendProps {
   keys: string[];
   amount: number;
 }
-
-const toDate = (timestamp: number) => {
-  const date = new Date(timestamp);
-  return `${date.toLocaleDateString()}-${date.getHours()}:${date.getMinutes()}`;
-};
 
 const CommitLegend: FC<CommitLegendProps> = ({
   values,
@@ -51,7 +46,9 @@ const CommitLegend: FC<CommitLegendProps> = ({
     >
       <Label>Commits over time</Label>
       <Labeling mr="5px">
-        {values ? toDate(values[groupKey]) : `${amount} last commits`}
+        {values
+          ? values[groupKey]
+          : `${amount} last commit${amount === 1 ? '' : 's'}`}
       </Labeling>
     </Flex>
   </Flex>
