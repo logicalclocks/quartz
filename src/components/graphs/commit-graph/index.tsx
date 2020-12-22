@@ -8,7 +8,7 @@ const graphColors = ['#21B182', '#EB5757', '#F2994A'];
 const backgroundColor = '#F5F5F5';
 
 export interface CommitGraphValue {
-  date: number;
+  date: string;
   added: number;
   removed: number;
   modified: number;
@@ -28,11 +28,24 @@ const CommitGraph: FC<CommitGraphProps> = ({
 }: CommitGraphProps) => {
   const [selected, setSelected] = useState<number | null>(null);
 
+  const fillToTen = (data: CommitGraphValue[]) => {
+    // Keep the bars with the same disposition even if there are less than 10;
+    if (data.length >= 10) {
+      return data;
+    }
+    return [
+      ...data,
+      ...new Array(10 - data.length)
+        .fill(null)
+        .map((__x, idx) => ({ date: idx.toString() })),
+    ];
+  };
+
   return (
     <Flex {...props} flexDirection="column" width="100%">
       {/* D3 chart */}
       <BarChart
-        values={values}
+        values={fillToTen(values)}
         keys={keys}
         groupKey={groupKey}
         backgroundColor={backgroundColor}
