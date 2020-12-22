@@ -94,7 +94,7 @@ const BarChart: FC<BarChartProps> = ({
       .attr('x', (d: KeyValue) => x1(d.key))
       .attr('y', (d: KeyValue) => y(d.value))
       .attr('width', x1.bandwidth())
-      .attr('height', (d: KeyValue) => y(0) - y(d.value))
+      .attr('height', (d: KeyValue) => y(0) - y(d.value || 0))
       .attr('fill', (d: KeyValue) => color(d.key));
 
     container.selectAll('g').on('mouseover', (event: MouseEvent) => {
@@ -115,9 +115,13 @@ const BarChart: FC<BarChartProps> = ({
 
   useLayoutEffect(() => {
     if (containerRef?.current) {
+      const children = d3.select(containerRef?.current).selectChildren();
+      if (children.size() !== 0) {
+        d3.select(containerRef?.current).selectChildren().remove();
+      }
       drawBarChart(values, containerRef.current);
     }
-  }, []);
+  }, [JSON.stringify(values), groupKey, keys, backgroundColor]);
 
   return <div ref={containerRef} />;
 };
