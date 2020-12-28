@@ -11,7 +11,7 @@ export default {
     flexDirection: 'row',
     alignItems: 'center',
 
-    mb: '4px',
+    mb: '8px',
     mr: '8px',
   },
 } as SxStyleProp;

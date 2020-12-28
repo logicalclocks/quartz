@@ -23,6 +23,16 @@ const popupPositions = {
     top: '50%',
     transform: 'translate(100%, -50%)',
   },
+  [TooltipPositions.top]: {
+    left: '50%',
+    top: '-6px',
+    transform: 'translate(-50%, -100%)',
+  },
+  [TooltipPositions.left]: {
+    left: '-7px',
+    top: '50%',
+    transform: 'translate(-100%, -50%)',
+  },
 };
 
 const tooltipArrows = {
@@ -48,21 +58,44 @@ const tooltipArrows = {
 
     transform: 'translateY(-50%)',
   },
+  [TooltipPositions.top]: {
+    bottom: '-5px',
+    left: '50%',
+
+    transform: 'translateX(-50%) rotate(180deg)',
+
+    borderLeft: '6px solid transparent',
+    borderRight: '6px solid transparent',
+    borderBottomWidth: '5px',
+    borderBottomStyle: 'solid',
+  },
+  [TooltipPositions.left]: {
+    top: '50%',
+    right: '-5px',
+
+    borderTop: '6px solid transparent',
+    borderBottom: '6px solid transparent',
+    borderRightWidth: '5px',
+    borderRightStyle: 'solid',
+
+    transform: 'translateY(-50%) rotate(180deg)',
+  },
 };
 
-export const containerStyles = {
-  position: 'relative',
-  maxWidth: 'max-content',
+export const containerStyles = (isDelayed: boolean) =>
+  ({
+    position: 'relative',
+    maxWidth: 'max-content',
 
-  ':hover': {
-    '> span:last-of-type': {
-      visibility: 'visible',
-      animation: `${fadeIn} 0.25s ease`,
-      animationDelay: '.5s',
-      animationFillMode: 'forwards',
+    ':hover': {
+      '> span:last-of-type': {
+        visibility: 'visible',
+        animation: `${fadeIn} 0.25s ease`,
+        animationDelay: isDelayed ? '.5s' : '0s',
+        animationFillMode: 'forwards',
+      },
     },
-  },
-} as SxStyleProp;
+  } as SxStyleProp);
 
 export const getPopupStyles = (
   position: TooltipPositions,

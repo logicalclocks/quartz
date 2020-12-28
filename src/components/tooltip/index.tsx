@@ -12,6 +12,7 @@ import {
 } from './tooltip.styles';
 
 export interface TooltipProps extends Omit<BoxProps, 'css'> {
+  delayed?: boolean;
   children: React.ReactNode;
   mainText: string;
   secondaryText?: string;
@@ -26,10 +27,11 @@ const Tooltip: FC<TooltipProps> = ({
   secondaryText,
   disabled,
   visibleDefault,
+  delayed = true,
   position = TooltipPositions.bottom,
   ...props
 }: TooltipProps) => (
-  <Box {...props} sx={containerStyles}>
+  <Box {...props} sx={containerStyles(delayed)}>
     {children}
     {!disabled && (
       <Box as="span" sx={getPopupStyles(position, visibleDefault)}>

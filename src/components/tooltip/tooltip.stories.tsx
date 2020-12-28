@@ -56,11 +56,20 @@ const argTypes = {
       required: false,
     },
   },
+  delayed: {
+    control: {
+      type: 'boolean',
+      default: true,
+    },
+    type: {
+      required: false,
+    },
+  },
   position: {
     control: {
       type: 'select',
       default: 'bottom',
-      options: ['bottom', 'right'],
+      options: ['bottom', 'right', 'top', 'left'],
     },
     type: {
       required: false,
