@@ -32,6 +32,8 @@ import checkbox from './checkbox';
 import radio from './radio';
 // Select
 import select from './select';
+// Select info themes
+import selectInfo from './select-info';
 // Bar
 import bar from './bar';
 // Code
@@ -125,6 +127,7 @@ const theme: ITheme = {
   },
   text: {
     inputInfo,
+    selectInfo,
     ...typography,
   },
   zIndices: {

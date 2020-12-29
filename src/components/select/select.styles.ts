@@ -1,3 +1,9 @@
+import { ITheme } from '../../theme/types';
+import { Intents } from '../intents';
+
+const getIntentColor = (intent: Intents) => ({ inputIntents }: ITheme) =>
+  inputIntents[intent] ?? 'transparent';
+
 export const listStyles = {
   position: 'absolute',
   zIndex: 'popups',
@@ -12,8 +18,10 @@ export const valueStyles = {
   textOverflow: 'ellipsis',
 };
 
-export default {
+export const getLabelStyles = (intent: Intents) => ({
   position: 'relative',
+
+  borderColor: getIntentColor(intent),
 
   outline: 'none',
 
@@ -35,4 +43,4 @@ export default {
     minWidth: '8px',
     ml: 'auto',
   },
-};
+});
