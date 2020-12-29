@@ -9,6 +9,7 @@ export interface CheckboxGroupProps {
   value: string[];
   options: string[];
   onChange: (value: string[]) => void;
+  disabledUnselect?: boolean;
 }
 
 const CheckboxGroup: FC<CheckboxGroupProps> = ({
@@ -16,6 +17,7 @@ const CheckboxGroup: FC<CheckboxGroupProps> = ({
   options,
   value,
   onChange,
+  disabledUnselect = false,
 }: CheckboxGroupProps) => {
   const handleChange = useCallback(
     ({ target }) => {
@@ -38,6 +40,7 @@ const CheckboxGroup: FC<CheckboxGroupProps> = ({
           label={option}
           name={option}
           onChange={handleChange}
+          disabled={disabledUnselect && !value.includes(option)}
         />
       ))}
     </Label>

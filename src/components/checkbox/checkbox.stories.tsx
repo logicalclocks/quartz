@@ -36,6 +36,15 @@ Group.argTypes = {
       summary: 'Change callback function',
     },
   },
+  disabledUnselect: {
+    control: {
+      type: 'boolean',
+    },
+    type: {
+      required: false,
+      summary: 'Disable unselect choices',
+    },
+  },
   label: {
     control: {
       type: 'text',
