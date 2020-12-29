@@ -28,8 +28,8 @@ const Drawer: IDrawer<DrawerProps> = ({
   bottomButton,
   headerLine,
   headerSummary,
-  children,
   onClose,
+  children,
   ...props
 }: DrawerProps) => {
   const [bottomActionTitle, bottomActionCallback] = bottomButton || [];
