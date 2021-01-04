@@ -16,11 +16,12 @@ type IDrawer<P> = FC<P> & {
 type Children = React.ReactElement<DrawerSectionProps> | null;
 
 export interface DrawerProps extends Omit<PopupProps, 'css'> {
-  bottomButton?: Action<React.MouseEvent<HTMLButtonElement>>;
+  bottomButton?: Action<React.MouseEvent<HTMLButtonElement>> | React.ReactNode;
   headerLine?: React.ReactNode;
   headerSummary?: React.ReactNode;
   children: Children | Children[];
   isOpen?: boolean;
+  singleBottom?: boolean;
   onClose?: () => void;
 }
 
@@ -29,10 +30,14 @@ const Drawer: IDrawer<DrawerProps> = ({
   headerLine,
   headerSummary,
   children,
+  singleBottom = true,
   onClose,
   ...props
 }: DrawerProps) => {
-  const [bottomActionTitle, bottomActionCallback] = bottomButton || [];
+  // @ts-ignore
+  const [bottomActionTitle, bottomActionCallback] = singleBottom
+    ? bottomButton
+    : [] || [];
 
   return (
     <Popup
@@ -76,9 +81,13 @@ const Drawer: IDrawer<DrawerProps> = ({
             position: 'absolute',
           }}
         >
-          <FooterButton width="100%" onClick={bottomActionCallback}>
-            {bottomActionTitle}
-          </FooterButton>
+          {singleBottom ? (
+            <FooterButton width="100%" onClick={bottomActionCallback}>
+              {bottomActionTitle}
+            </FooterButton>
+          ) : (
+            bottomButton
+          )}
         </Box>
       )}
     </Popup>

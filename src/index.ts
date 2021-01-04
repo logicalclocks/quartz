@@ -33,6 +33,8 @@ import SplitGraph from './components/graphs/split-graph';
 import ToggleButton from './components/toggle-button';
 import NotificationsContainer from './components/notifications/index';
 import NotificationsManager from './components/notifications/notifications-manager';
+import Symbol from './components/symbol';
+import { SymbolMode } from './components/symbol';
 
 // Popups
 import Drawer from './components/popup/drawer';
@@ -182,5 +184,7 @@ export {
   //  Icons
   FolderIcon,
   useOnClickOutside,
+  Symbol,
+  SymbolMode,
   theme,
 };
