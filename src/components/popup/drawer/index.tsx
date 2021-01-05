@@ -73,14 +73,7 @@ const Drawer: IDrawer<DrawerProps> = ({
       </Box>
       {children}
       {bottomButton && (
-        <Box
-          sx={{
-            left: 0,
-            right: 0,
-            bottom: 0,
-            position: 'absolute',
-          }}
-        >
+        <Box>
           {singleBottom ? (
             <FooterButton width="100%" onClick={bottomActionCallback}>
               {bottomActionTitle}
