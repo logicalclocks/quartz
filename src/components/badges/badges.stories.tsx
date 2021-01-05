@@ -3,6 +3,7 @@ import React from 'react';
 import Badge, { BadgeProps } from './badge';
 import Dot, { DotProps } from './dot';
 import TextValueBadge, { TextValueBadgeProps } from './text-value-badge';
+import ProjectBadge, { ProjectBadgeProps } from './project-badge';
 
 export default {
   title: 'Quartz/Badges',
@@ -16,6 +17,9 @@ const Template: Story<TextValueBadgeProps> = (props) => (
 export const TextValue = Template.bind({});
 export const Default: Story<BadgeProps> = (props) => <Badge {...props} />;
 export const DotBadge: Story<DotProps> = (props) => <Dot p="5px" {...props} />;
+export const ProjectBadgeBadge: Story<ProjectBadgeProps> = (props) => (
+  <ProjectBadge p="5px" {...props} />
+);
 
 TextValue.args = {
   text: 'features',
@@ -113,6 +117,29 @@ DotBadge.argTypes = {
     type: {
       required: false,
       summary: 'Tooltip position ',
+    },
+  },
+};
+
+ProjectBadgeBadge.args = {
+  value: 'title',
+};
+
+ProjectBadgeBadge.argTypes = {
+  value: {
+    control: {
+      type: 'text',
+    },
+    type: {
+      required: true,
+    },
+  },
+  isLock: {
+    control: {
+      type: 'boolean',
+    },
+    type: {
+      required: false,
     },
   },
 };
