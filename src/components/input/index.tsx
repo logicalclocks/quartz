@@ -17,6 +17,8 @@ export interface InputProps extends Omit<RebassInputProps, 'css'> {
   intent?: Intents;
   info?: string;
   icon?: IconProp;
+  rightIcon?: React.ReactElement;
+  iconPaddingRight?: string;
   label?: string;
   placeholder?: string;
   width?: string | number;
@@ -33,7 +35,9 @@ const Input: FC<InputProps> = forwardRef(
       label = '',
       labelAction,
       icon,
+      rightIcon,
       info,
+      iconPaddingRight,
       readOnly,
       width = '180px',
       labelProps,
@@ -63,14 +67,16 @@ const Input: FC<InputProps> = forwardRef(
             minHeight="32px"
             readOnly={readOnly}
             minWidth={width}
-            paddingLeft={icon && '34px'}
+            pl={icon && '34px'}
+            pr={iconPaddingRight}
             // @ts-ignore
             sx={getStyles(intent, isTextArea)}
             variant={readOnly ? 'disabled' : variant}
             placeholder={placeholder}
             {...props}
-          />
+          />{' '}
           {icon && <FontAwesomeIcon icon={icon} />}
+          {rightIcon && rightIcon}
         </Box>
         {info && <InputInfo intent={intent}>{info}</InputInfo>}
       </Label>

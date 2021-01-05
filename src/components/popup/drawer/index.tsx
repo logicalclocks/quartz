@@ -48,30 +48,32 @@ const Drawer: IDrawer<DrawerProps> = ({
       onClose={onClose}
       {...props}
     >
-      <Box p="20px" {...props} tx="variants.popup" variant="drawerSection">
-        <Box
-          width="100%"
-          display="flex"
-          sx={{
-            alignItems: 'center',
-          }}
-        >
-          <IconButton
-            tooltip="Close"
-            ml="-10px"
-            intent="ghost"
-            icon="times"
-            onClick={onClose}
-          />
-          <Box ml="auto" display="flex">
-            {headerLine}
+      <Box>
+        <Box p="20px" {...props} tx="variants.popup" variant="drawerSection">
+          <Box
+            width="100%"
+            display="flex"
+            sx={{
+              alignItems: 'center',
+            }}
+          >
+            <IconButton
+              tooltip="Close"
+              ml="-10px"
+              intent="ghost"
+              icon="times"
+              onClick={onClose}
+            />
+            <Box ml="auto" display="flex">
+              {headerLine}
+            </Box>
+          </Box>
+          <Box mt="17px" display="flex">
+            {headerSummary}
           </Box>
         </Box>
-        <Box mt="17px" display="flex">
-          {headerSummary}
-        </Box>
+        {children}
       </Box>
-      {children}
       {bottomButton && (
         <Box>
           {singleBottom ? (
