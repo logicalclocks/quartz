@@ -11,10 +11,11 @@ import SelectListMulti from './lists/select-list-multi';
 // Types
 import { Intents } from '../intents';
 // Styles
-import { listStyles } from './select.styles';
+import { listStyles, bottomActionStyles } from './select.styles';
 // Hooks
 import useDropdown from '../../utils/useDropdown';
 import useOnClickOutside from '../../utils/useClickOutside';
+import { Box } from 'rebass';
 
 export interface SelectProps extends Omit<LabelProps, 'onChange' | 'children'> {
   value: string[];
@@ -32,6 +33,8 @@ export interface SelectProps extends Omit<LabelProps, 'onChange' | 'children'> {
   intent?: Intents;
   onChange: (value: string[]) => void;
   noDataMessage?: string;
+  bottomActionText?: string;
+  bottomActionHandler?: () => void;
 }
 
 const Select: FC<SelectProps> = ({
@@ -50,6 +53,8 @@ const Select: FC<SelectProps> = ({
   info,
   intent = 'default',
   onChange,
+  bottomActionHandler,
+  bottomActionText,
   ...props
 }: SelectProps) => {
   const containerRef = useRef(null);
@@ -94,6 +99,11 @@ const Select: FC<SelectProps> = ({
             ) : (
               // Single choice
               <SelectList options={options} value={value} onChange={onChange} />
+            )}
+            {bottomActionText && (
+              <Box sx={bottomActionStyles} onClick={bottomActionHandler}>
+                {bottomActionText}
+              </Box>
             )}
           </List>
         )}

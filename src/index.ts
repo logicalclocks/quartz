@@ -4,7 +4,6 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { far } from '@fortawesome/free-regular-svg-icons';
 
-import Avatar from './components/avatar';
 import Button from './components/button';
 import Card from './components/card';
 import Code from './components/code';
@@ -16,6 +15,7 @@ import RadioGroup from './components/radio/radio-group';
 import Dropdown from './components/dropdown';
 import FooterButton from './components/footer-button';
 import Header from './components/header';
+import AlternativeHeader from './components/alternative-header';
 import Icon from './components/icon';
 import IconButton from './components/icon-button';
 import MenuButton from './components/header/menu-button';
@@ -52,6 +52,7 @@ import User from './components/user';
 import TextValueBadge from './components/badges/text-value-badge';
 import Badge from './components/badges/badge';
 import Dot from './components/badges/dot';
+import ProjectBadge from './components/badges/project-badge';
 
 // Navigation
 import Navigation from './components/navigation/container';
@@ -102,7 +103,6 @@ import useOnClickOutside from './utils/useClickOutside';
 library.add(fas, far);
 
 export {
-  Avatar,
   Button,
   Card,
   Code,
@@ -113,6 +113,7 @@ export {
   Dropdown,
   FooterButton,
   Header,
+  AlternativeHeader,
   Icon,
   IconButton,
   MenuButton,
@@ -146,6 +147,7 @@ export {
   User,
   TextValueBadge,
   Badge,
+  ProjectBadge,
   Dot,
   // Navigation
   Navigation,
