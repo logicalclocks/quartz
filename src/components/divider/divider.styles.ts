@@ -1,5 +1,6 @@
 import { SxStyleProp } from 'rebass';
 
 export default {
-  borderBottom: '2px solid #F5F5F5',
+  borderBottom: '2px solid',
+  color: 'grayShade3',
 } as SxStyleProp;
