@@ -14,7 +14,8 @@
       },
       {
         "columnName": "dummycolumn_test1",
-        "columnValue": "1"
+        "columnValue": "1",
+        "isPartition": true
       },
       {
         "columnName": "dummycolumn_test2",
