@@ -34,7 +34,11 @@ const SelectLabel: FC<SelectLabelProps> = forwardRef(
     }: SelectLabelProps,
     ref,
   ) => {
-    const content = !options.length ? noDataMessage : placeholder;
+    const content = !options.length
+      ? noDataMessage
+      : !value.length
+      ? placeholder
+      : '';
 
     return (
       <Box
