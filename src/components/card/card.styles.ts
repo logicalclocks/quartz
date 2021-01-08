@@ -8,6 +8,7 @@ export const cardHeaderStyles = {
   justifyContent: 'space-between',
 
   height: '62px',
+  minHeight: '62px',
   width: '100%',
 
   px: '20px',

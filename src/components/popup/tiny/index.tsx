@@ -31,7 +31,7 @@ const TinyPopup: FC<TinyPopupProps> = ({
 
   return (
     <Popup
-      pt="14px"
+      pt="20px"
       pl="20px"
       pr="20px"
       pb="20px"
