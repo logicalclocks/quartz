@@ -4,9 +4,12 @@ import React, { FC, useCallback, useRef } from 'react';
 import SelectLabel from './label';
 import List from '../list/container';
 import Label, { LabelProps } from '../label';
+import SelectInfo from './info';
 // List types
 import SelectList from './lists/select-list';
 import SelectListMulti from './lists/select-list-multi';
+// Types
+import { Intents } from '../intents';
 // Styles
 import { listStyles, bottomActionStyles } from './select.styles';
 // Hooks
@@ -26,6 +29,8 @@ export interface SelectProps extends Omit<LabelProps, 'onChange' | 'children'> {
   labelAction?: React.ReactNode;
   listWidth?: string | number;
   variant?: 'primary' | 'white';
+  info?: string;
+  intent?: Intents;
   onChange: (value: string[]) => void;
   noDataMessage?: string;
   bottomActionText?: string;
@@ -45,6 +50,8 @@ const Select: FC<SelectProps> = ({
   placeholder,
   maxListHeight = '150px',
   noDataMessage,
+  info,
+  intent = 'default',
   onChange,
   bottomActionHandler,
   bottomActionText,
@@ -71,6 +78,7 @@ const Select: FC<SelectProps> = ({
       onClick={handleLabelClick}
     >
       <SelectLabel
+        intent={intent}
         variant={disabled ? 'disabled' : variant}
         placeholder={placeholder}
         value={value}
@@ -100,6 +108,7 @@ const Select: FC<SelectProps> = ({
           </List>
         )}
       </SelectLabel>
+      {info && <SelectInfo intent={intent}>{info}</SelectInfo>}
     </Label>
   );
 };

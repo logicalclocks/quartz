@@ -6,12 +6,6 @@ export default {
   fontSize: 'label',
   lineHeight: '15px',
 
-  '> span': {
-    display: 'flex',
-    flexDirection: 'row',
-    alignItems: 'center',
-
-    mb: '8px',
-    mr: '8px',
-  },
+  mt: '1px',
+  ml: '1px',
 } as SxStyleProp;

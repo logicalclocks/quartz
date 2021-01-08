@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, useEffect, useRef, useState } from 'react';
 import {
   Box,
   Flex,
@@ -22,13 +22,22 @@ const Card: FC<CardProps> = ({
   actions,
   children,
   height,
+  maxHeight,
   contentProps,
   ...props
 }: CardProps) => {
   const isShowHeader = title || actions;
 
+  const [containerHeight, setHeight] = useState<number>();
+
+  const contentRef = useRef<HTMLDivElement>();
+
+  useEffect(() => {
+    setHeight(contentRef.current?.scrollHeight);
+  }, []);
+
   return (
-    <RebassCard {...props} height={height} sx={styles}>
+    <RebassCard {...props} maxHeight={maxHeight} sx={styles}>
       {/* Header */}
       {isShowHeader && (
         <Box sx={cardHeaderStyles}>
@@ -43,10 +52,24 @@ const Card: FC<CardProps> = ({
       {/* Content */}
       <Box
         sx={{
-          boxShadow: height ? 'cardInsetShadow' : 'none',
+          boxShadow:
+            containerHeight &&
+            maxHeight &&
+            containerHeight >
+              +(maxHeight as string).slice(
+                0,
+                (maxHeight as string).indexOf('px'),
+              ) -
+                64
+              ? 'cardInsetShadow'
+              : 'none',
         }}
+        ref={contentRef}
         width="100%"
+        maxHeight={maxHeight}
         height="100%"
+        overflowX="hidden"
+        overflowY="auto"
         p="20px"
         {...contentProps}
       >
