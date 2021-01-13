@@ -68,6 +68,25 @@ Default.argTypes = {
     control: { type: 'boolean' },
     defaultValue: { summary: 'false' },
   },
+  info: {
+    control: {
+      type: 'text',
+    },
+    type: {
+      required: false,
+      summary: 'Message text (validation error)',
+    },
+  },
+  intent: {
+    control: {
+      type: 'select',
+      options: ['default', 'error'],
+    },
+    type: {
+      required: false,
+      summary: 'Select intent (error border)',
+    },
+  },
   disabled: {
     type: { required: false },
     control: { type: 'boolean' },

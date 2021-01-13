@@ -34,6 +34,7 @@ import ToggleButton from './components/toggle-button';
 import NotificationsContainer from './components/notifications/index';
 import NotificationsManager from './components/notifications/notifications-manager';
 import DatePicker from './components/datepicker';
+import Divider from './components/divider';
 
 // Popups
 import Drawer from './components/popup/drawer';
@@ -133,6 +134,7 @@ export {
   Radio,
   RadioGroup,
   DatePicker,
+  Divider,
   // Popups
   usePopup,
   Popup,
