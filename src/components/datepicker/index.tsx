@@ -8,13 +8,18 @@ import styles from './datepicker.styles';
 
 export interface DatePickerProps extends ReactDatePickerProps {
   selectProps: SelectProps;
+  datePickerAlign?: 'left' | 'right';
 }
 
-const DatePicker: FC<DatePickerProps> = ({ selectProps, ...props }) => {
+const DatePicker: FC<DatePickerProps> = ({
+  selectProps,
+  datePickerAlign = 'right',
+  ...props
+}) => {
   const [open, setOpen] = useState(false);
 
   return (
-    <Box sx={styles}>
+    <Box sx={styles(datePickerAlign)}>
       <Box onClick={() => setOpen(!open)}>
         <Select {...selectProps} />
       </Box>

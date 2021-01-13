@@ -36,4 +36,24 @@ Default.args = {
   excludeTimes: [new Date()],
 };
 
-Default.argTypes = {};
+Default.argTypes = {
+  selectProps: {
+    type: {
+      required: true,
+      summary: 'Select props',
+    },
+  },
+  datePickerAlign: {
+    control: {
+      type: 'select',
+      default: 'right',
+      options: ['left', 'right'],
+    },
+    type: {
+      required: false,
+    },
+    defaultValue: {
+      summary: 'datepicker align',
+    },
+  },
+};
