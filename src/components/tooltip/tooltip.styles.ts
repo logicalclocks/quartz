@@ -71,7 +71,6 @@ export const getPopupStyles = (
   visibility: visibleDefault ? 'visible' : 'hidden',
   opacity: visibleDefault ? 1 : 0,
 
-  maxWidth: '200px',
   width: 'max-content',
 
   position: 'absolute',

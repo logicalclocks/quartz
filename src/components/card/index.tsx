@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useRef, useState } from 'react';
+import React, { FC, useEffect, useMemo, useRef, useState } from 'react';
 import {
   Box,
   Flex,
@@ -36,6 +36,16 @@ const Card: FC<CardProps> = ({
     setHeight(contentRef.current?.scrollHeight);
   }, []);
 
+  const isScrollable = useMemo(() => {
+    return (
+      containerHeight &&
+      maxHeight &&
+      containerHeight >
+        +(maxHeight as string).slice(0, (maxHeight as string).indexOf('px')) -
+          64
+    );
+  }, [containerHeight, maxHeight]);
+
   return (
     <RebassCard {...props} maxHeight={maxHeight} sx={styles}>
       {/* Header */}
@@ -52,24 +62,14 @@ const Card: FC<CardProps> = ({
       {/* Content */}
       <Box
         sx={{
-          boxShadow:
-            containerHeight &&
-            maxHeight &&
-            containerHeight >
-              +(maxHeight as string).slice(
-                0,
-                (maxHeight as string).indexOf('px'),
-              ) -
-                64
-              ? 'cardInsetShadow'
-              : 'none',
+          boxShadow: isScrollable ? 'cardInsetShadow' : 'none',
         }}
         ref={contentRef}
         width="100%"
         maxHeight={maxHeight}
         height="100%"
         overflowX="hidden"
-        overflowY="auto"
+        overflowY={isScrollable ? 'auto' : 'hidden'}
         p="20px"
         {...contentProps}
       >
