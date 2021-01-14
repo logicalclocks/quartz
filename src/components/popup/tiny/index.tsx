@@ -45,7 +45,7 @@ const TinyPopup: FC<TinyPopupProps> = ({
       onClose={onClose}
     >
       <Subtitle lineHeight="22px">{title}</Subtitle>
-      <Text lineHeight="14px" py="12px">
+      <Text lineHeight="14px" py="20px">
         {secondaryText}
       </Text>
       <Box>{children}</Box>
