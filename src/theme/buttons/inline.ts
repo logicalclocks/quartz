@@ -11,4 +11,9 @@ export default {
   ':focus': {
     outline: 'none',
   },
+
+  ':disabled': {
+    color: 'gray',
+    textDecoration: 'none',
+  },
 };
