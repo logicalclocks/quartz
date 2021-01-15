@@ -41,7 +41,7 @@ const Notification: FC<SystemNotification> = ({
     <Box
       sx={{
         ...styles.notification,
-        borderLeftColor: isError ? 'labels.red' : 'green',
+        borderLeftColor: !isError ? 'labels.red' : 'labels.green',
       }}
       key={id}
       onMouseEnter={hoverHandler}
