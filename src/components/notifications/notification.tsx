@@ -41,7 +41,7 @@ const Notification: FC<SystemNotification> = ({
     <Box
       sx={{
         ...styles.notification,
-        borderLeftColor: !isError ? 'labels.red' : 'labels.green',
+        borderLeftColor: isError ? 'labels.red' : 'labels.green',
       }}
       key={id}
       onMouseEnter={hoverHandler}
@@ -61,7 +61,9 @@ const Notification: FC<SystemNotification> = ({
           icon="times"
         />
       </Flex>
-      <Box maxWidth="fit-content">{content}</Box>
+      <Box sx={{ whiteSpace: 'nowrap' }} maxWidth="fit-content">
+        {content}
+      </Box>
     </Box>
   );
 };

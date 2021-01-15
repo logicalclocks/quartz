@@ -17,9 +17,9 @@ const Template: Story = () => {
       type: <Label fontSize="18px">'Title</Label>,
       content: (
         <Flex alignItems="center">
-          <Labeling>message or</Labeling>
+          <Labeling>message or message or message</Labeling>
           <Button ml="-10px" intent="inline">
-            link
+            link link link
           </Button>
         </Flex>
       ),
