@@ -11,6 +11,7 @@ const Notification: FC<SystemNotification> = ({
   type,
   content,
   duration,
+  isError = true,
 }) => {
   const [timeout, setTimeoutNumber] = useState<number | null>(null);
 
@@ -38,7 +39,10 @@ const Notification: FC<SystemNotification> = ({
 
   return (
     <Box
-      sx={styles.notification}
+      sx={{
+        ...styles.notification,
+        borderLeftColor: isError ? 'labels.red' : 'labels.green',
+      }}
       key={id}
       onMouseEnter={hoverHandler}
       mb="20px"
@@ -57,7 +61,9 @@ const Notification: FC<SystemNotification> = ({
           icon="times"
         />
       </Flex>
-      {content}
+      <Box sx={{ whiteSpace: 'nowrap' }} maxWidth="fit-content">
+        {content}
+      </Box>
     </Box>
   );
 };

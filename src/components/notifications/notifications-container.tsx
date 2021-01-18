@@ -32,13 +32,7 @@ const NotificationsItemsContainer: FC<NotificationsItemsContainerProps> = ({
     <Flex {...props} flexDirection="column" sx={styles.wrapper}>
       {transitions.map(({ item: notification, props, key }) => (
         <animated.div key={key} style={props}>
-          <Notification
-            id={notification.id}
-            key={notification.id}
-            duration={notification.duration}
-            type={notification.type}
-            content={notification.content}
-          />
+          <Notification key={notification.id} {...notification} />
         </animated.div>
       ))}
     </Flex>
