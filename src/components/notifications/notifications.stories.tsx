@@ -3,7 +3,8 @@ import { Story, Meta } from '@storybook/react/types-6-0';
 import NotificationManager from './notifications-manager';
 // Components
 import NotificationsContainer from './index';
-import { Badge, Button, Label } from '../../index';
+import { Button, Label, Labeling } from '../../index';
+import { Flex } from 'rebass';
 
 export default {
   title: 'Quartz/NotificationsContainer',
@@ -13,15 +14,15 @@ export default {
 const Template: Story = () => {
   const notifyHandler = useCallback(() => {
     NotificationManager.create({
-      type: (
-        <Badge
-          width="fit-content"
-          mb="14px"
-          variant="fail"
-          value="server error"
-        />
+      type: <Label fontSize="18px">'Title</Label>,
+      content: (
+        <Flex alignItems="center">
+          <Labeling>message or message or message</Labeling>
+          <Button ml="-10px" intent="inline">
+            link link link
+          </Button>
+        </Flex>
       ),
-      content: <Label>Try again later or contact the support</Label>,
     });
   }, []);
 

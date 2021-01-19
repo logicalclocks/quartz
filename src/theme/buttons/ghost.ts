@@ -23,6 +23,7 @@ export default {
   },
 
   ':disabled': {
+    bg: 'unset',
     color: 'gray',
   },
 };
