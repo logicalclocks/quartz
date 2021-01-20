@@ -1,4 +1,4 @@
-import { Box } from 'rebass';
+import { Box, Flex } from 'rebass';
 import React, { FC, memo, useState } from 'react';
 import Select, { SelectProps } from '../select';
 import ReactDatePicker, { ReactDatePickerProps } from 'react-datepicker';
@@ -19,20 +19,22 @@ const DatePicker: FC<DatePickerProps> = ({
   const [open, setOpen] = useState(false);
 
   return (
-    <Box sx={styles(datePickerAlign)}>
+    <Flex flexDirection="column" sx={styles(datePickerAlign)}>
       <Box onClick={() => setOpen(!open)}>
         <Select {...selectProps} />
       </Box>
-      <ReactDatePicker
-        open={open}
-        {...props}
-        onChange={(date, event) => {
-          props.onChange(date, event);
-          setOpen(false);
-        }}
-        onClickOutside={() => setOpen(false)}
-      />
-    </Box>
+      <Box alignSelf={datePickerAlign === 'right' ? 'flex-end' : 'flex-start'}>
+        <ReactDatePicker
+          open={open}
+          {...props}
+          onChange={(date, event) => {
+            props.onChange(date, event);
+            setOpen(false);
+          }}
+          onClickOutside={() => setOpen(false)}
+        />
+      </Box>
+    </Flex>
   );
 };
 

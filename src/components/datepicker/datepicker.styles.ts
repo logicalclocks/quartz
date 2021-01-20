@@ -12,11 +12,12 @@ export default (align: 'left' | 'right') =>
 
     '.react-datepicker-popper': {
       top: '-25px !important',
-      left: align === 'right' ? '-147px !important' : '0',
+      left: align === 'right' ? '-270px !important' : '0',
     },
 
     '.react-datepicker__input-container input': {
-      display: 'none',
+      width: '50px',
+      visibility: 'hidden',
     },
 
     '.react-datepicker__triangle': {
