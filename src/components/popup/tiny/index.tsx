@@ -23,6 +23,7 @@ const TinyPopup: FC<TinyPopupProps> = ({
   mainButton,
   secondaryButton,
   onClose = () => {},
+  disabledMainButton = false,
   children,
   ...props
 }: TinyPopupProps) => {
@@ -61,7 +62,9 @@ const TinyPopup: FC<TinyPopupProps> = ({
             </Button>
           )}
           {mainButton && (
-            <Button onClick={mainActionCallback}>{mainActionTitle}</Button>
+            <Button disabled={disabledMainButton} onClick={mainActionCallback}>
+              {mainActionTitle}
+            </Button>
           )}
         </Box>
       </Box>
