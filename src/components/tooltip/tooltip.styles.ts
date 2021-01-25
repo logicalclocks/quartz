@@ -1,29 +1,8 @@
-import { keyframes } from '@emotion/core';
 import { SxStyleProp } from 'rebass';
 
 // Enums
 import TooltipPositions from './positions';
-
-const fadeIn = keyframes`
-  100% {
-    opacity: 1;
-  }
-`;
-
-const popupPositions = {
-  [TooltipPositions.bottom]: {
-    pt: '6px',
-    left: '50%',
-    bottom: '0px',
-    transform: 'translate(-50%, 100%)',
-  },
-  [TooltipPositions.right]: {
-    pl: '7px',
-    right: '0px',
-    top: '50%',
-    transform: 'translate(100%, -50%)',
-  },
-};
+import { keyframes } from '@emotion/core';
 
 const tooltipArrows = {
   [TooltipPositions.bottom]: {
@@ -50,20 +29,6 @@ const tooltipArrows = {
   },
 };
 
-export const containerStyles = {
-  position: 'relative',
-  maxWidth: 'max-content',
-
-  ':hover': {
-    '> span:last-of-type': {
-      visibility: 'visible',
-      animation: `${fadeIn} 0.25s ease`,
-      animationDelay: '.5s',
-      animationFillMode: 'forwards',
-    },
-  },
-} as SxStyleProp;
-
 export const getPopupStyles = (
   position: TooltipPositions,
   visibleDefault = false,
@@ -73,15 +38,14 @@ export const getPopupStyles = (
 
   width: 'max-content',
 
-  position: 'absolute',
-
   zIndex: 'tooltips',
 
-  ...popupPositions[position],
+  animation: `${appear} .3s linear`,
 
-  ':hover': {
-    visibility: 'visible',
-  },
+  transform:
+    position === TooltipPositions.right
+      ? 'translateY(-50%)'
+      : 'translateX(-50%)',
 });
 
 export const getTooltipStyles = (position: TooltipPositions): SxStyleProp => ({
@@ -105,10 +69,6 @@ export const getTooltipStyles = (position: TooltipPositions): SxStyleProp => ({
 
   borderRadius: '2px',
 
-  ':hover': {
-    visibility: 'visible',
-  },
-
   ':after': {
     position: 'absolute',
     content: '""',
@@ -116,3 +76,13 @@ export const getTooltipStyles = (position: TooltipPositions): SxStyleProp => ({
     ...tooltipArrows[position],
   },
 });
+
+const appear = keyframes`
+  from {
+    opacity: 0
+  }
+
+  to {
+    opacity: 1
+  }
+`;
