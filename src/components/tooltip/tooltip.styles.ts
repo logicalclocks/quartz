@@ -27,6 +27,39 @@ const tooltipArrows = {
 
     transform: 'translateY(-50%)',
   },
+  [TooltipPositions.left]: {
+    top: '50%',
+    right: '-4px',
+
+    borderTop: '6px solid transparent',
+    borderBottom: '6px solid transparent',
+    borderRightWidth: '5px',
+    borderRightStyle: 'solid',
+
+    transform: 'translateY(-50%) rotate(180deg)',
+  },
+  [TooltipPositions.top]: {
+    bottom: '-4px',
+    left: '50%',
+
+    transform: 'translateX(-50%) rotate(180deg)',
+
+    borderLeft: '6px solid transparent',
+    borderRight: '6px solid transparent',
+    borderBottomWidth: '5px',
+    borderBottomStyle: 'solid',
+  },
+};
+
+const getTransform = (position: TooltipPositions) => {
+  const transformMap = new Map<TooltipPositions, string>([
+    [TooltipPositions.right, 'translateY(-50%)'],
+    [TooltipPositions.bottom, 'translateX(-50%)'],
+    [TooltipPositions.top, 'translateX(-50%)'],
+    [TooltipPositions.left, 'translateY(-50%)'],
+  ]);
+
+  return transformMap.get(position);
 };
 
 export const getPopupStyles = (
@@ -42,10 +75,7 @@ export const getPopupStyles = (
 
   animation: `${appear} .3s linear`,
 
-  transform:
-    position === TooltipPositions.right
-      ? 'translateY(-50%)'
-      : 'translateX(-50%)',
+  transform: getTransform(position),
 });
 
 export const getTooltipStyles = (position: TooltipPositions): SxStyleProp => ({

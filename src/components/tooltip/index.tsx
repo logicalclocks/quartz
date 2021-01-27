@@ -1,4 +1,4 @@
-import React, { FC, useRef, useState } from 'react';
+import React, { FC, useCallback, useRef, useState } from 'react';
 import { Box, BoxProps } from 'rebass';
 
 // Enums
@@ -15,6 +15,7 @@ export interface TooltipProps extends Omit<BoxProps, 'css'> {
   disabled?: boolean;
   visibleDefault?: boolean;
   position?: TooltipPositions;
+  delayed?: boolean;
 }
 
 export interface TooltipStyles {
@@ -45,6 +46,20 @@ const getStyles = (
         top: dimensions.top + dimensions.height / 2,
       },
     ],
+    [
+      TooltipPositions.top,
+      {
+        left: dimensions.left + dimensions.width / 2,
+        bottom: dimensions.top + dimensions.height + space,
+      },
+    ],
+    [
+      TooltipPositions.left,
+      {
+        right: dimensions.left + dimensions.width + space,
+        top: dimensions.top + dimensions.height / 2,
+      },
+    ],
   ]);
 
   return positionsMap.get(position) || {};
@@ -57,9 +72,13 @@ const Tooltip: FC<TooltipProps> = ({
   disabled,
   visibleDefault = false,
   position = TooltipPositions.bottom,
+  delayed = true,
   ...props
 }: TooltipProps) => {
   const [visible, setVisible] = useState<boolean>(visibleDefault);
+
+  const overTimeout = useRef(0);
+  const outTimeout = useRef(0);
 
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -67,18 +86,54 @@ const Tooltip: FC<TooltipProps> = ({
     ? getStyles(containerRef.current.getBoundingClientRect(), position)
     : {};
 
+  const handleMouseOver = useCallback(() => {
+    if (delayed) {
+      if (!overTimeout.current) {
+        overTimeout.current = setTimeout(() => {
+          setVisible(true);
+        }, 500);
+      } else if (outTimeout.current) {
+        clearTimeout(outTimeout.current);
+        outTimeout.current = 0;
+      }
+    } else {
+      setVisible(true);
+
+      if (outTimeout.current) {
+        clearTimeout(outTimeout.current);
+        outTimeout.current = 0;
+      }
+    }
+  }, [delayed]);
+
+  const handleMouseOut = useCallback(() => {
+    if (outTimeout.current) {
+      clearTimeout(outTimeout.current);
+      outTimeout.current = 0;
+    }
+
+    outTimeout.current = setTimeout(() => {
+      setVisible(false);
+
+      if (overTimeout.current) {
+        clearTimeout(overTimeout.current);
+        overTimeout.current = 0;
+      }
+    }, 200);
+  }, []);
+
   return (
-    <span
-      onMouseOver={() => setVisible(true)}
-      onMouseOut={() => setVisible(false)}
+    <Box
       ref={containerRef}
+      onMouseOut={handleMouseOut}
+      onMouseOver={handleMouseOver}
+      {...props}
     >
       {children}
 
       {visible && !disabled && (
         <Portal>
           <Box
-            {...props}
             sx={{
               position: 'fixed',
               ...getPopupStyles(position, visible),
@@ -93,7 +148,7 @@ const Tooltip: FC<TooltipProps> = ({
           </Box>
         </Portal>
       )}
-    </span>
+    </Box>
   );
 };
 

@@ -1,4 +1,4 @@
-import React, { FC, memo, useEffect, useRef, useState } from 'react';
+import React, { FC, memo, useRef } from 'react';
 import {
   Box,
   Flex,
@@ -27,18 +27,12 @@ const Card: FC<CardProps> = ({
 }: CardProps) => {
   const isShowHeader = title || actions;
 
-  const [containerHeight, setHeight] = useState<number>();
-
   const contentRef = useRef<HTMLDivElement>();
 
-  useEffect(() => {
-    setHeight(contentRef.current?.scrollHeight);
-  }, []);
-
   const isScrollable =
-    containerHeight &&
+    contentRef.current?.scrollHeight &&
     maxHeight &&
-    containerHeight >
+    contentRef.current?.scrollHeight >
       +(maxHeight as string).slice(0, (maxHeight as string).indexOf('px')) - 64;
 
   return (
