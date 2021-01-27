@@ -17,7 +17,7 @@ import {
 } from '../table.styles';
 
 // Hooks
-import { ListItem, useDropdown, useOnClickOutside } from '../../..';
+import { ListItem, Tooltip, useDropdown, useOnClickOutside } from '../../..';
 import List from '../../list/container';
 import Icon from '../../icon';
 import theme from '../../../theme/theme';
@@ -60,18 +60,14 @@ export const Thead: FC<TheadProps> = ({
       <div>
         {column}
         {isPrimary && (
-          <Icon
-            ml="10px"
-            icon="star"
-            style={{ color: theme.colors.labels.green }}
-          />
+          <Tooltip ml="10px" mainText="primary key">
+            <Icon icon="star" style={{ color: theme.colors.labels.green }} />
+          </Tooltip>
         )}
         {isPartition && (
-          <Icon
-            ml="10px"
-            icon="equals"
-            style={{ color: theme.colors.labels.green }}
-          />
+          <Tooltip ml="10px" mainText="primary key">
+            <Icon icon="equals" style={{ color: theme.colors.labels.green }} />
+          </Tooltip>
         )}
         {isOpen && (
           <List sx={dropdownStyles}>

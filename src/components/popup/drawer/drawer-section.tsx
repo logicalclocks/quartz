@@ -24,7 +24,7 @@ const DrawerSection: FC<DrawerSectionProps> = ({
 
   return (
     <Box
-      pt="8px"
+      pt="16px"
       pr="20px"
       pb="20px"
       pl="20px"

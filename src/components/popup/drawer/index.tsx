@@ -16,11 +16,12 @@ type IDrawer<P> = FC<P> & {
 type Children = React.ReactElement<DrawerSectionProps> | null;
 
 export interface DrawerProps extends Omit<PopupProps, 'css'> {
-  bottomButton?: Action<React.MouseEvent<HTMLButtonElement>>;
+  bottomButton?: Action<React.MouseEvent<HTMLButtonElement>> | React.ReactNode;
   headerLine?: React.ReactNode;
   headerSummary?: React.ReactNode;
   children: Children | Children[];
   isOpen?: boolean;
+  singleBottom?: boolean;
   onClose?: () => void;
 }
 
@@ -29,10 +30,14 @@ const Drawer: IDrawer<DrawerProps> = ({
   headerLine,
   headerSummary,
   children,
+  singleBottom = true,
   onClose,
   ...props
 }: DrawerProps) => {
-  const [bottomActionTitle, bottomActionCallback] = bottomButton || [];
+  // @ts-ignore
+  const [bottomActionTitle, bottomActionCallback] = singleBottom
+    ? bottomButton
+    : [] || [];
 
   return (
     <Popup
@@ -43,42 +48,41 @@ const Drawer: IDrawer<DrawerProps> = ({
       onClose={onClose}
       {...props}
     >
-      <Box p="20px" {...props} tx="variants.popup" variant="drawerSection">
-        <Box
-          width="100%"
-          display="flex"
-          sx={{
-            alignItems: 'center',
-          }}
-        >
-          <IconButton
-            tooltip="Close"
-            ml="-10px"
-            intent="ghost"
-            icon="times"
-            onClick={onClose}
-          />
-          <Box ml="auto" display="flex">
-            {headerLine}
+      <Box>
+        <Box p="20px" {...props} tx="variants.popup" variant="drawerSection">
+          <Box
+            width="100%"
+            display="flex"
+            sx={{
+              alignItems: 'center',
+            }}
+          >
+            <IconButton
+              tooltip="Close"
+              ml="-10px"
+              intent="ghost"
+              icon="times"
+              onClick={onClose}
+            />
+            <Box ml="auto" display="flex">
+              {headerLine}
+            </Box>
+          </Box>
+          <Box mt="17px" display="flex">
+            {headerSummary}
           </Box>
         </Box>
-        <Box mt="17px" display="flex">
-          {headerSummary}
-        </Box>
+        {children}
       </Box>
-      {children}
       {bottomButton && (
-        <Box
-          sx={{
-            left: 0,
-            right: 0,
-            bottom: 0,
-            position: 'absolute',
-          }}
-        >
-          <FooterButton width="100%" onClick={bottomActionCallback}>
-            {bottomActionTitle}
-          </FooterButton>
+        <Box>
+          {singleBottom ? (
+            <FooterButton width="100%" onClick={bottomActionCallback}>
+              {bottomActionTitle}
+            </FooterButton>
+          ) : (
+            bottomButton
+          )}
         </Box>
       )}
     </Popup>

@@ -46,6 +46,7 @@ export const Item: Story<RowItemProps> = (props) => (
 );
 
 Container.args = {
+  legend: ['some', 'some', 'some', 'some', 'some'],
   mode: Mode.full,
   middleColumn: 2,
   groupComponents: [

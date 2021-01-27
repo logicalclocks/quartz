@@ -39,6 +39,7 @@ export interface EditableTableProps extends Omit<TableProps, 'value'> {
   }>;
   columns: TableColumn[];
   values: FGRow[];
+  hasFreezeButton?: boolean;
 }
 
 const EditableTable: FC<EditableTableProps> = ({
@@ -47,6 +48,7 @@ const EditableTable: FC<EditableTableProps> = ({
   values,
   columns,
   actions = [],
+  hasFreezeButton = true,
   ...props
 }: EditableTableProps) => {
   const [staticColumn, setStaticColumn] = useState<TableColumn>();
@@ -101,15 +103,19 @@ const EditableTable: FC<EditableTableProps> = ({
                     column={column.name}
                     isPartition={column.isPartition}
                     isPrimary={column.isPrimary}
-                    actions={[
-                      {
-                        label: 'freeze',
-                        handler: () => {
-                          onFreeze(column);
-                        },
-                      },
-                      ...actions,
-                    ]}
+                    actions={
+                      hasFreezeButton
+                        ? [
+                            {
+                              label: 'freeze',
+                              handler: () => {
+                                onFreeze(column);
+                              },
+                            },
+                            ...actions,
+                          ]
+                        : actions
+                    }
                   />
                 ),
             )}

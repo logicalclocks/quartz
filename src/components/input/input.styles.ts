@@ -25,8 +25,8 @@ const getStyles = (intent: Intents, isTextArea: boolean) => ({
 
   ...(isTextArea && { resize: 'vertical' }),
 
-  // Icon
-  '~ svg': {
+  // Left icon
+  '~ svg: first-of-type': {
     left: '10px',
     position: 'absolute',
     top: '15px',

@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, memo, useEffect, useRef, useState } from 'react';
 import {
   Box,
   Flex,
@@ -21,14 +21,28 @@ const Card: FC<CardProps> = ({
   title,
   actions,
   children,
-  height,
+  maxHeight,
   contentProps,
   ...props
 }: CardProps) => {
   const isShowHeader = title || actions;
 
+  const [containerHeight, setHeight] = useState<number>();
+
+  const contentRef = useRef<HTMLDivElement>();
+
+  useEffect(() => {
+    setHeight(contentRef.current?.scrollHeight);
+  }, []);
+
+  const isScrollable =
+    containerHeight &&
+    maxHeight &&
+    containerHeight >
+      +(maxHeight as string).slice(0, (maxHeight as string).indexOf('px')) - 64;
+
   return (
-    <RebassCard {...props} height={height} sx={styles}>
+    <RebassCard {...props} maxHeight={maxHeight} sx={styles}>
       {/* Header */}
       {isShowHeader && (
         <Box sx={cardHeaderStyles}>
@@ -43,10 +57,13 @@ const Card: FC<CardProps> = ({
       {/* Content */}
       <Box
         sx={{
-          boxShadow: height ? 'cardInsetShadow' : 'none',
+          boxShadow: isScrollable ? 'cardInsetShadow' : 'none',
         }}
+        ref={contentRef}
         width="100%"
+        maxHeight={maxHeight}
         height="100%"
+        overflowY={isScrollable ? 'auto' : 'initial'}
         p="20px"
         {...contentProps}
       >
@@ -56,4 +73,4 @@ const Card: FC<CardProps> = ({
   );
 };
 
-export default Card;
+export default memo(Card);

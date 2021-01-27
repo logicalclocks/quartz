@@ -7,6 +7,9 @@ export default {
 
     boxSizing: 'border-box',
     boxShadow: 'notification',
+    border: 'none',
+    borderLeftStyle: 'solid',
+    borderLeftWidth: '5px',
   },
   wrapper: {
     paddingLeft: '30px',

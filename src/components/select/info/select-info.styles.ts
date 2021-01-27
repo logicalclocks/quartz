@@ -6,5 +6,6 @@ export default {
   fontSize: 'label',
   lineHeight: '15px',
 
-  mt: '8px',
+  mt: '1px',
+  ml: '1px',
 } as SxStyleProp;

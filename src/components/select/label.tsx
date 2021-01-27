@@ -3,10 +3,11 @@ import { Box, BoxProps } from 'rebass';
 
 // Icons
 import ArrowsIcon from '../icons/arrows.icon';
+import { Intents } from '../intents';
 // Components
 import Labeling from '../typography/labeling';
 // Styles
-import styles, { valueStyles } from './select.styles';
+import { valueStyles, getLabelStyles } from './select.styles';
 
 export interface SelectLabelProps extends Omit<BoxProps, 'css'> {
   variant: 'primary' | 'white' | 'disabled';
@@ -16,6 +17,7 @@ export interface SelectLabelProps extends Omit<BoxProps, 'css'> {
   children: React.ReactNode;
   isMulti?: boolean;
   noDataMessage?: string;
+  intent: Intents;
 }
 
 const getLabelText = (value: string[]) => value.join(', ');
@@ -30,16 +32,22 @@ const SelectLabel: FC<SelectLabelProps> = forwardRef(
       options,
       isMulti,
       noDataMessage,
+      intent,
       ...props
     }: SelectLabelProps,
     ref,
   ) => {
-    const content = !options.length ? noDataMessage : placeholder;
+    const content = !options.length
+      ? noDataMessage
+      : !value.length
+      ? placeholder
+      : '';
 
     return (
       <Box
         {...props}
-        sx={styles}
+        // @ts-ignore
+        sx={getLabelStyles(intent)}
         tx="variants.select"
         variant={variant}
         tabIndex={0}

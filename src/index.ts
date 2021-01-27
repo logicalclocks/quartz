@@ -33,6 +33,9 @@ import SplitGraph from './components/graphs/split-graph';
 import ToggleButton from './components/toggle-button';
 import NotificationsContainer from './components/notifications/index';
 import NotificationsManager from './components/notifications/notifications-manager';
+import Divider from './components/divider';
+import Symbol from './components/symbol';
+import { SymbolMode } from './components/symbol';
 
 // Popups
 import Drawer from './components/popup/drawer';
@@ -51,6 +54,7 @@ import User from './components/user';
 import TextValueBadge from './components/badges/text-value-badge';
 import Badge from './components/badges/badge';
 import Dot from './components/badges/dot';
+import ProjectBadge from './components/badges/project-badge';
 
 // Navigation
 import Navigation from './components/navigation/container';
@@ -130,6 +134,7 @@ export {
   TooltipPositions,
   Radio,
   RadioGroup,
+  Divider,
   // Popups
   usePopup,
   Popup,
@@ -144,6 +149,7 @@ export {
   User,
   TextValueBadge,
   Badge,
+  ProjectBadge,
   Dot,
   // Navigation
   Navigation,
@@ -182,5 +188,7 @@ export {
   //  Icons
   FolderIcon,
   useOnClickOutside,
+  Symbol,
+  SymbolMode,
   theme,
 };

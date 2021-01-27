@@ -1,17 +1,15 @@
 import { EventEmitter } from 'events';
 import { ReactNode } from 'react';
 
-export interface SystemNotification {
-  id: number;
-  type: ReactNode;
-  content: ReactNode;
-  duration?: number;
-}
-
 export interface Notification {
   type: ReactNode;
   content: ReactNode;
   duration?: number;
+  isError?: boolean;
+}
+
+export interface SystemNotification extends Notification {
+  id: number;
 }
 
 class NotificationsManager extends EventEmitter {
