@@ -8,7 +8,6 @@ import rowStyles from '../item/row-item.styles';
 import { TableItemPosition } from '../item/types';
 
 export interface RowProps {
-  legend?: string[];
   mode?: Mode;
   groupComponents: ComponentType<any>[][];
   groupProps: Record<string, any>[][];
