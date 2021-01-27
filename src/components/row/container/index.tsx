@@ -3,18 +3,24 @@ import { Box } from 'rebass';
 import TableRow from '../group';
 import { Mode } from './types';
 import styles from './container.styles';
+import { Labeling } from '../../../index';
+import rowStyles from '../item/row-item.styles';
+import { TableItemPosition } from '../item/types';
 
 export interface RowProps {
+  legend?: string[];
   mode?: Mode;
   groupComponents: ComponentType<any>[][];
   groupProps: Record<string, any>[][];
   middleColumn: number;
+  legend?: String[];
 }
 
 const Row: FC<RowProps> = ({
   mode = Mode.full,
   groupComponents,
   groupProps,
+  legend,
   middleColumn,
   ...props
 }: RowProps) => {
@@ -26,6 +32,25 @@ const Row: FC<RowProps> = ({
   return (
     <Box as="table" sx={styles} {...props}>
       <Box as="tbody">
+        {!!legend && (
+          <Box as="tr" width="100%">
+            {legend.map((name, index) => (
+              <Labeling
+                key={`${name}${index}`}
+                sx={rowStyles({
+                  position: TableItemPosition.left,
+                  mode,
+                  fillSpace: false,
+                })}
+                gray
+                pb="4px"
+                as="td"
+              >
+                {name}
+              </Labeling>
+            ))}
+          </Box>
+        )}
         {groupComponents.map((row, index) => (
           <TableRow
             key={keys[index]}

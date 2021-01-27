@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useMemo, useRef, useState } from 'react';
+import React, { FC, memo, useEffect, useRef, useState } from 'react';
 import {
   Box,
   Flex,
@@ -21,7 +21,6 @@ const Card: FC<CardProps> = ({
   title,
   actions,
   children,
-  height,
   maxHeight,
   contentProps,
   ...props
@@ -36,15 +35,11 @@ const Card: FC<CardProps> = ({
     setHeight(contentRef.current?.scrollHeight);
   }, []);
 
-  const isScrollable = useMemo(() => {
-    return (
-      containerHeight &&
-      maxHeight &&
-      containerHeight >
-        +(maxHeight as string).slice(0, (maxHeight as string).indexOf('px')) -
-          64
-    );
-  }, [containerHeight, maxHeight]);
+  const isScrollable =
+    containerHeight &&
+    maxHeight &&
+    containerHeight >
+      +(maxHeight as string).slice(0, (maxHeight as string).indexOf('px')) - 64;
 
   return (
     <RebassCard {...props} maxHeight={maxHeight} sx={styles}>
@@ -68,8 +63,7 @@ const Card: FC<CardProps> = ({
         width="100%"
         maxHeight={maxHeight}
         height="100%"
-        overflowX="hidden"
-        overflowY={isScrollable ? 'auto' : 'hidden'}
+        overflowY={isScrollable ? 'auto' : 'initial'}
         p="20px"
         {...contentProps}
       >
@@ -79,4 +73,4 @@ const Card: FC<CardProps> = ({
   );
 };
 
-export default Card;
+export default memo(Card);
