@@ -117,7 +117,7 @@ const NavigationItem: FC<NavigationItemProps> = (
             </Tooltip>
           </div>
         )}
-        <span>{title}</span>
+        <span style={disabled ? { color: 'gray' } : {}}>{title}</span>
       </Box>
       {hasDivider && <div />}
       {childs && (
