@@ -18,6 +18,8 @@ import { NavigationItemProps } from '../types';
 import styles from './navigation-item.styles';
 import { Tooltip } from '../../../index';
 import TooltipPositions from '../../tooltip/positions';
+import { useTheme } from 'emotion-theming';
+import { ITheme } from '../../../theme/types';
 
 const getVariant = (isDisabled = false, isActive = false): string => {
   if (isDisabled) {
@@ -31,6 +33,8 @@ const NavigationItem: FC<NavigationItemProps> = (
   props: NavigationItemProps,
 ) => {
   const { activePath, onActivate, trackBy } = useContext(NavigationContext);
+
+  const theme = useTheme<ITheme>();
 
   const {
     // @ts-ignore
@@ -117,7 +121,9 @@ const NavigationItem: FC<NavigationItemProps> = (
             </Tooltip>
           </div>
         )}
-        <span style={disabled ? { color: 'gray' } : {}}>{title}</span>
+        <span style={disabled ? { color: theme.colors.gray } : {}}>
+          {title}
+        </span>
       </Box>
       {hasDivider && <div />}
       {childs && (

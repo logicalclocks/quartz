@@ -12,7 +12,7 @@ export interface RowProps {
   groupComponents: ComponentType<any>[][];
   groupProps: Record<string, any>[][];
   middleColumn: number;
-  legend?: String[];
+  legend?: string[];
 }
 
 const Row: FC<RowProps> = ({
