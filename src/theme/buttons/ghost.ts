@@ -1,10 +1,10 @@
 export default {
   color: 'primary',
-  bg: 'white',
+  bg: 'transparent',
 
   borderWidth: '1px',
   borderStyle: 'solid',
-  borderColor: 'white',
+  borderColor: 'transparent',
 
   ':hover': {
     bg: 'primaryShade2',
@@ -23,7 +23,7 @@ export default {
   },
 
   ':disabled': {
-    color: 'gray',
     bg: 'unset',
+    color: 'gray',
   },
 };
