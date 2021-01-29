@@ -59,6 +59,8 @@ const Tooltip: FC<TooltipProps> = ({
   position = TooltipPositions.bottom,
   ...props
 }: TooltipProps) => {
+  const timeout = useRef(0);
+
   const [visible, setVisible] = useState<boolean>(visibleDefault);
 
   const containerRef = useRef<HTMLDivElement>(null);
@@ -68,9 +70,19 @@ const Tooltip: FC<TooltipProps> = ({
     : {};
 
   return (
-    <span
-      onMouseOver={() => setVisible(true)}
-      onMouseOut={() => setVisible(false)}
+    <Box
+      onMouseOver={() => {
+        if (timeout.current) {
+          clearTimeout(timeout.current);
+        }
+        setVisible(true);
+      }}
+      onMouseOut={() => {
+        timeout.current = setTimeout(() => {
+          setVisible(false);
+        }, 100);
+      }}
+      {...props}
       ref={containerRef}
     >
       {children}
@@ -78,7 +90,6 @@ const Tooltip: FC<TooltipProps> = ({
       {visible && !disabled && (
         <Portal>
           <Box
-            {...props}
             sx={{
               position: 'fixed',
               ...getPopupStyles(position, visible),
@@ -93,7 +104,7 @@ const Tooltip: FC<TooltipProps> = ({
           </Box>
         </Portal>
       )}
-    </span>
+    </Box>
   );
 };
 
