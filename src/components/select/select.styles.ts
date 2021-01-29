@@ -45,7 +45,7 @@ export const getLabelStyles = (intent: Intents) => ({
   borderWidth: '1px',
   borderStyle: 'solid',
 
-  pl: '12px',
+  pl: '8px',
   pr: '8px',
 
   transition: 'all 0.25s ease',

@@ -35,6 +35,7 @@ export interface SelectProps extends Omit<LabelProps, 'onChange' | 'children'> {
   noDataMessage?: string;
   bottomActionText?: string;
   bottomActionHandler?: () => void;
+  hasPlaceholder?: boolean;
 }
 
 const Select: FC<SelectProps> = ({
@@ -55,6 +56,7 @@ const Select: FC<SelectProps> = ({
   onChange,
   bottomActionHandler,
   bottomActionText,
+  hasPlaceholder = true,
   ...props
 }: SelectProps) => {
   const containerRef = useRef(null);
@@ -78,6 +80,7 @@ const Select: FC<SelectProps> = ({
       onClick={handleLabelClick}
     >
       <SelectLabel
+        hasPlaceholder={hasPlaceholder}
         intent={intent}
         variant={disabled ? 'disabled' : variant}
         placeholder={placeholder}
