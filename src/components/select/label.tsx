@@ -1,4 +1,4 @@
-import React, { FC, forwardRef } from 'react';
+import React, { FC, forwardRef, useMemo } from 'react';
 import { Box, BoxProps } from 'rebass';
 
 // Icons
@@ -17,6 +17,7 @@ export interface SelectLabelProps extends Omit<BoxProps, 'css'> {
   children: React.ReactNode;
   isMulti?: boolean;
   noDataMessage?: string;
+  hasPlaceholder: boolean;
   intent: Intents;
 }
 
@@ -33,15 +34,22 @@ const SelectLabel: FC<SelectLabelProps> = forwardRef(
       isMulti,
       noDataMessage,
       intent,
+      hasPlaceholder,
       ...props
     }: SelectLabelProps,
     ref,
   ) => {
-    const content = !options.length
-      ? noDataMessage
-      : !value.length
-      ? placeholder
-      : '';
+    const content = useMemo(() => {
+      if (!options.length) {
+        return noDataMessage;
+      }
+
+      if (!value.length) {
+        return placeholder;
+      }
+
+      return hasPlaceholder ? placeholder : '';
+    }, [value, options, hasPlaceholder, placeholder, noDataMessage]);
 
     return (
       <Box
