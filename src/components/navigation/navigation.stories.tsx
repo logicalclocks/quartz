@@ -102,6 +102,7 @@ export const TreeObject: Story<NavigationProps> = () => {
       title: 'Feature Groups',
       icon: query,
       id: '2',
+      disabled: true,
       tooltipText: 'Feature Groups',
       children: [
         {
@@ -125,6 +126,7 @@ export const TreeObject: Story<NavigationProps> = () => {
             {
               title: 'API',
               id: '7',
+              disabled: true,
             },
           ],
         },
