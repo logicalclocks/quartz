@@ -56,7 +56,7 @@ const Input: FC<InputProps> = forwardRef(
   ) => {
     const isTextArea = type === 'textarea';
 
-    const actions = (
+    const actions = (labelAction || tooltipInfo || optional) && (
       <Flex>
         {labelAction}
         {optional && (
