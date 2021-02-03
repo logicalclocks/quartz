@@ -13,7 +13,7 @@ export interface CardProps extends Omit<RebassCardProps, 'css' | 'title'> {
   title?: React.ReactElement | string;
   link?: string;
   actions?: React.ReactNode;
-  children: React.ReactNode;
+  children?: React.ReactNode;
   contentProps?: Omit<RebassCardProps, 'css' | 'children'>;
 }
 
@@ -55,20 +55,22 @@ const Card: FC<CardProps> = ({
         </Box>
       )}
       {/* Content */}
-      <Box
-        sx={{
-          boxShadow: isScrollable ? 'cardInsetShadow' : 'none',
-        }}
-        ref={contentRef}
-        width="100%"
-        maxHeight={maxHeight}
-        height="100%"
-        overflowY={isScrollable ? 'auto' : 'initial'}
-        p="20px"
-        {...contentProps}
-      >
-        {children}
-      </Box>
+      {!!children && (
+        <Box
+          sx={{
+            boxShadow: isScrollable ? 'cardInsetShadow' : 'none',
+          }}
+          ref={contentRef}
+          width="100%"
+          maxHeight={maxHeight}
+          height="100%"
+          overflowY={isScrollable ? 'auto' : 'initial'}
+          p="20px"
+          {...contentProps}
+        >
+          {children}
+        </Box>
+      )}
     </RebassCard>
   );
 };
