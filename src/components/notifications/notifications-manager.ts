@@ -47,6 +47,13 @@ class NotificationsManager extends EventEmitter {
   removeChangeListener(callback: (list: SystemNotification[]) => void) {
     this.removeListener('CHANGE', callback);
   }
+
+  closeAllNotifications() {
+    setTimeout(() => {
+      this.listNotify = [];
+      this.emitChange();
+    }, 2000);
+  }
 }
 
 export default new NotificationsManager();

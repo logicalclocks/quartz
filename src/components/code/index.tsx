@@ -5,12 +5,14 @@ import styles, { boxStyles } from './code.styles';
 
 export interface CodeProps extends Omit<FlexProps, 'css'> {
   content: string;
+  element?: React.ReactElement;
   copyButton?: boolean;
 }
 
 const Code: FC<CodeProps> = ({
   content,
   copyButton = false,
+  element,
   ...props
 }: CodeProps) => {
   function copyToClipboard(): void {
@@ -24,9 +26,13 @@ const Code: FC<CodeProps> = ({
 
   return (
     <Flex width="100%" variant="code" sx={{ ...styles }} {...props}>
-      <Box as="pre" width="90%" sx={{ ...boxStyles }}>
-        {content}
-      </Box>
+      {!!element ? (
+        element
+      ) : (
+        <Box as="pre" width="90%" sx={{ ...boxStyles }}>
+          {content}
+        </Box>
+      )}
 
       {copyButton && (
         <Box ml="4" mb="auto">

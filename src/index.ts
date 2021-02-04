@@ -33,6 +33,7 @@ import SplitGraph from './components/graphs/split-graph';
 import ToggleButton from './components/toggle-button';
 import NotificationsContainer from './components/notifications/index';
 import NotificationsManager from './components/notifications/notifications-manager';
+import DatePicker from './components/datepicker';
 import Divider from './components/divider';
 import Symbol from './components/symbol';
 import { SymbolMode } from './components/symbol';
@@ -134,6 +135,7 @@ export {
   TooltipPositions,
   Radio,
   RadioGroup,
+  DatePicker,
   Divider,
   // Popups
   usePopup,
