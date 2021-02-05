@@ -26,7 +26,6 @@ const TooltipWrapper: FC<ITooltipWrapperProps> = (
             border-radius: 1px;
             box-shadow: none;
             background: ${theme.colors.black};
-            min-width: 20px;
             height: 18px;
             line-height: 14px;
             display: flex;
