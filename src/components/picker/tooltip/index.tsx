@@ -10,6 +10,7 @@ interface ITooltipWrapperProps {
   index: number;
   dragging: boolean;
   children: React.ReactElement;
+  visible: boolean;
 }
 
 const TooltipWrapper: FC<ITooltipWrapperProps> = (
@@ -46,7 +47,7 @@ const TooltipWrapper: FC<ITooltipWrapperProps> = (
       />
       <Tooltip
         prefixCls="rc-slider-tooltip"
-        visible
+        visible={props.visible}
         overlay={<Value color="white">{value}</Value>}
         placement="top"
         key={index}
