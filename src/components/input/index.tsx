@@ -1,4 +1,4 @@
-import { Box } from 'rebass';
+import { Box, Flex } from 'rebass';
 import React, { FC, forwardRef } from 'react';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import { InputProps as RebassInputProps } from 'rebass__forms';
@@ -11,6 +11,7 @@ import InputInfo from '../input-info';
 import { Intents } from '../intents';
 // Styles
 import getStyles from './input.styles';
+import { Icon, Labeling, Tooltip } from '../../index';
 
 export interface InputProps extends Omit<RebassInputProps, 'css'> {
   variant?: 'primary' | 'white';
@@ -26,6 +27,8 @@ export interface InputProps extends Omit<RebassInputProps, 'css'> {
   labelAction?: React.ReactNode;
   type?: 'text' | 'number' | 'textarea' | 'password';
   rows?: number;
+  optional?: boolean;
+  tooltipInfo?: string;
 }
 
 const Input: FC<InputProps> = forwardRef(
@@ -45,14 +48,34 @@ const Input: FC<InputProps> = forwardRef(
       intent = 'default',
       type = 'text',
       rows = 3,
+      tooltipInfo,
+      optional,
       ...props
     }: InputProps,
     ref,
   ) => {
     const isTextArea = type === 'textarea';
 
+    const actions = (labelAction || tooltipInfo || optional) && (
+      <Flex>
+        {labelAction}
+        {optional && (
+          <Labeling ml="8px" bold gray>
+            optional
+          </Labeling>
+        )}
+        {tooltipInfo && (
+          <Box ml="8px">
+            <Tooltip mainText={tooltipInfo}>
+              <Icon icon="info-circle" />
+            </Tooltip>
+          </Box>
+        )}
+      </Flex>
+    );
+
     return (
-      <Label action={labelAction} text={label} width={width} {...labelProps}>
+      <Label action={actions} text={label} width={width} {...labelProps}>
         <Box
           sx={{
             position: 'relative',
