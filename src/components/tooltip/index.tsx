@@ -56,7 +56,7 @@ const getStyles = (
     [
       TooltipPositions.left,
       {
-        right: dimensions.left + dimensions.width + space,
+        left: dimensions.left - space,
         top: dimensions.top + dimensions.height / 2,
       },
     ],
@@ -64,6 +64,8 @@ const getStyles = (
 
   return positionsMap.get(position) || {};
 };
+
+const delayTime = 500;
 
 const Tooltip: FC<TooltipProps> = ({
   children,
@@ -75,10 +77,10 @@ const Tooltip: FC<TooltipProps> = ({
   delayed = true,
   ...props
 }: TooltipProps) => {
-  const [visible, setVisible] = useState<boolean>(visibleDefault);
-
   const overTimeout = useRef(0);
   const outTimeout = useRef(0);
+
+  const [visible, setVisible] = useState<boolean>(visibleDefault);
 
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -91,7 +93,7 @@ const Tooltip: FC<TooltipProps> = ({
       if (!overTimeout.current) {
         overTimeout.current = setTimeout(() => {
           setVisible(true);
-        }, 500);
+        }, delayTime);
       } else if (outTimeout.current) {
         clearTimeout(outTimeout.current);
         outTimeout.current = 0;

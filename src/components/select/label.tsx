@@ -21,7 +21,8 @@ export interface SelectLabelProps extends Omit<BoxProps, 'css'> {
   intent: Intents;
 }
 
-const getLabelText = (value: string[]) => value.join(', ');
+const getLabelText = (value: string[], options: string[], isMulti?: boolean) =>
+  value.length === options.length && isMulti ? 'all' : value.join(', ');
 
 const SelectLabel: FC<SelectLabelProps> = forwardRef(
   (
@@ -65,7 +66,7 @@ const SelectLabel: FC<SelectLabelProps> = forwardRef(
           {content}
         </Labeling>
         <Labeling px="5px" sx={valueStyles}>
-          {getLabelText(value)}
+          {getLabelText(value, options, isMulti)}
         </Labeling>
         <ArrowsIcon />
         {children}

@@ -56,7 +56,7 @@ const getTransform = (position: TooltipPositions) => {
     [TooltipPositions.right, 'translateY(-50%)'],
     [TooltipPositions.bottom, 'translateX(-50%)'],
     [TooltipPositions.top, 'translateX(-50%)'],
-    [TooltipPositions.left, 'translateY(-50%)'],
+    [TooltipPositions.left, 'translate(-100%, -50%)'],
   ]);
 
   return transformMap.get(position);
