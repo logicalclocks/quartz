@@ -8,7 +8,7 @@ import Labeling from '../typography/labeling';
 import styles from './toggle-button.styles';
 
 export interface ToggleButtonProps extends Omit<RebassCheckboxProps, 'css'> {
-  children: string;
+  children: string | React.ReactNode;
   variant?: 'primary' | 'white';
 }
 
