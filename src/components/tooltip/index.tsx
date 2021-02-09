@@ -77,8 +77,8 @@ const Tooltip: FC<TooltipProps> = ({
   delayed = true,
   ...props
 }: TooltipProps) => {
-  const overTimeout = useRef(0);
-  const outTimeout = useRef(0);
+  const overTimeout = useRef<number>(0);
+  const outTimeout = useRef<number>(0);
 
   const [visible, setVisible] = useState<boolean>(visibleDefault);
 
@@ -91,7 +91,7 @@ const Tooltip: FC<TooltipProps> = ({
   const handleMouseOver = useCallback(() => {
     if (delayed) {
       if (!overTimeout.current) {
-        overTimeout.current = setTimeout(() => {
+        overTimeout.current = window.setTimeout(() => {
           setVisible(true);
         }, delayTime);
       } else if (outTimeout.current) {
@@ -114,7 +114,7 @@ const Tooltip: FC<TooltipProps> = ({
       outTimeout.current = 0;
     }
 
-    outTimeout.current = setTimeout(() => {
+    outTimeout.current = window.setTimeout(() => {
       setVisible(false);
 
       if (overTimeout.current) {
