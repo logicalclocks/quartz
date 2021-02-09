@@ -6,10 +6,12 @@ import { far } from '@fortawesome/free-regular-svg-icons';
 
 import Button from './components/button';
 import Card from './components/card';
+import CardSecondary from './components/card/card-secondary';
 import Code from './components/code';
 import Checkbox from './components/checkbox';
 import Callout, { CalloutTypes } from './components/callout';
 import CheckboxGroup from './components/checkbox/checkbox-group';
+import { graphColors } from './components/graphs/split-graph';
 import Radio from './components/radio';
 import RadioGroup from './components/radio/radio-group';
 import Dropdown from './components/dropdown';
@@ -84,6 +86,7 @@ import ReadOnlyTable from './components/table/read-only';
 import EditableTable from './components/table/editable';
 
 // Typography
+import InputValidation from './components/typography/input-validation/input-validation';
 import Value from './components/typography/value';
 import Text from './components/typography/text';
 import Title from './components/typography/title';
@@ -108,7 +111,9 @@ library.add(fas, far);
 export {
   Button,
   Card,
+  CardSecondary,
   Code,
+  InputValidation,
   Checkbox,
   Callout,
   CalloutTypes,
@@ -192,5 +197,6 @@ export {
   useOnClickOutside,
   Symbol,
   SymbolMode,
+  graphColors,
   theme,
 };

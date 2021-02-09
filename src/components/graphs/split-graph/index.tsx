@@ -4,7 +4,7 @@ import { progressBarStyles, circleStyles } from './split-graph.styles';
 import Label from '../../label';
 import Labeling from '../../typography/labeling';
 
-const graphColors = [
+export const graphColors = [
   '#FFADAD',
   '#A0C4FF',
   '#CAFFBF',
