@@ -8,6 +8,10 @@ import valuePrimary from './valuePrimary';
 import text from './text';
 import labelingGray from './labelingGray';
 
+import inputValidationneutral from './input-validation.neutral';
+import inputValidationsuccess from './input-validation.success';
+import inputValidationwarning from './input-validation.warning';
+
 const variants = {
   title,
   text,
@@ -18,6 +22,9 @@ const variants = {
   labelingGray,
   microlabeling,
   microlabelingGray,
+  inputValidationneutral,
+  inputValidationsuccess,
+  inputValidationwarning,
 };
 
 export default variants;

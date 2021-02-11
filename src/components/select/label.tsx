@@ -21,8 +21,17 @@ export interface SelectLabelProps extends Omit<BoxProps, 'css'> {
   intent: Intents;
 }
 
-const getLabelText = (value: string[], options: string[], isMulti?: boolean) =>
-  value.length === options.length && isMulti ? 'all' : value.join(', ');
+const getLabelText = (
+  value: string[],
+  options: string[],
+  isMulti?: boolean,
+) => {
+  if (!options.length) {
+    return '';
+  }
+
+  return value.length === options.length && isMulti ? 'all' : value.join(', ');
+};
 
 const SelectLabel: FC<SelectLabelProps> = forwardRef(
   (
@@ -62,7 +71,10 @@ const SelectLabel: FC<SelectLabelProps> = forwardRef(
         tabIndex={0}
         ref={ref}
       >
-        <Labeling minWidth="max-content" gray={!!value.length}>
+        <Labeling
+          minWidth="max-content"
+          gray={!hasPlaceholder && !!options.length ? true : !!value.length}
+        >
           {content}
         </Labeling>
         <Labeling px="5px" sx={valueStyles}>
