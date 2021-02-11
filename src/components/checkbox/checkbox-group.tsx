@@ -3,12 +3,15 @@ import React, { FC, useCallback } from 'react';
 // Components
 import Label from '../label';
 import Checkbox from './index';
+import { TooltipProps } from '../tooltip';
 
 export interface CheckboxGroupProps {
   label: string;
   value: string[];
   options: string[];
   onChange: (value: string[]) => void;
+  disabledUnselect?: boolean;
+  tooltipProps?: Omit<TooltipProps, 'children'>;
 }
 
 const CheckboxGroup: FC<CheckboxGroupProps> = ({
@@ -16,6 +19,8 @@ const CheckboxGroup: FC<CheckboxGroupProps> = ({
   options,
   value,
   onChange,
+  disabledUnselect = false,
+  tooltipProps,
 }: CheckboxGroupProps) => {
   const handleChange = useCallback(
     ({ target }) => {
@@ -36,8 +41,10 @@ const CheckboxGroup: FC<CheckboxGroupProps> = ({
           key={option}
           checked={value.includes(option)}
           label={option}
+          tooltipProps={tooltipProps}
           name={option}
           onChange={handleChange}
+          disabled={disabledUnselect && !value.includes(option)}
         />
       ))}
     </Label>

@@ -5,9 +5,9 @@ import TooltipWrapper from '../tooltip';
 import PickerContext from '../picker.context';
 
 // @ts-ignore
-const PickerHandler = React.forwardRef((props: any, ref: any) => {
+const PickerHandler = React.forwardRef((props: any) => {
   const { value, dragging, index, ...restProps } = props;
-  // @ts-ignore
+
   const [context, setContext] = useContext(PickerContext);
 
   useEffect(() => {
@@ -21,7 +21,13 @@ const PickerHandler = React.forwardRef((props: any, ref: any) => {
   }, [dragging, index]);
 
   return (
-    <TooltipWrapper value={value} dragging={dragging} index={index} key={index}>
+    <TooltipWrapper
+      value={value}
+      visible={context.isHover}
+      dragging={dragging}
+      index={index}
+      key={index}
+    >
       <Handle value={value} {...restProps}>
         <div className="icon" />
       </Handle>

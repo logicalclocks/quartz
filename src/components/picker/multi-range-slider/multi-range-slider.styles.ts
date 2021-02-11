@@ -1,6 +1,4 @@
 import { SxStyleProp } from 'rebass';
-import LSB from '../img/lsb.svg';
-import RSB from '../img/rsb.svg';
 
 export default ({ sliderTrackStyles }: any) => {
   return {
@@ -26,13 +24,13 @@ export default ({ sliderTrackStyles }: any) => {
 
         ':nth-of-type(even)': {
           '.icon': {
-            backgroundImage: `url(${LSB})`,
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='3' height='12' viewBox='0 0 3 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3 11L0.999999 11L1 1L3 1' stroke='black'/%3E%3C/svg%3E%0A")`,
             height: '12px',
           },
         },
         ':nth-of-type(odd)': {
           '.icon': {
-            backgroundImage: `url(${RSB})`,
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='3' height='12' viewBox='0 0 3 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 1H2V11H0' stroke='black'/%3E%3C/svg%3E")`,
             height: '12px',
           },
         },
