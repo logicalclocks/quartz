@@ -8,12 +8,12 @@ import { ReactDatePickerProps } from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.min.css';
 import styles from './datepicker.styles';
 
-export interface DatePickerProps extends ReactDatePickerProps {
+export interface DatePickerProps {
   selectProps: SelectProps;
   datePickerAlign?: 'left' | 'right';
 }
 
-const DatePicker: FC<DatePickerProps> = ({
+const DatePicker: FC<DatePickerProps & ReactDatePickerProps> = ({
   selectProps,
   datePickerAlign = 'right',
   ...props
