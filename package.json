@@ -78,7 +78,8 @@
     "react-is": "^16.13.1",
     "react-scripts": "^3.4.1",
     "rebass": "^4.0.7",
-    "typescript": "^3.7.5"
+    "typescript": "^3.7.5",
+    "react-datepicker": "^3.3.0"
   },
   "files": [
     "dist"
@@ -96,6 +97,7 @@
     "rc-slider": "^9.5.3",
     "rc-tooltip": "^4.2.3",
     "react-spring": "^8.0.27",
-    "react-table": "^7.6.0"
+    "react-table": "^7.6.0",
+    "react-datepicker": "^3.3.0"
   }
 }
