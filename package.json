@@ -78,8 +78,7 @@
     "react-is": "^16.13.1",
     "react-scripts": "^3.4.1",
     "rebass": "^4.0.7",
-    "typescript": "^3.7.5",
-    "react-datepicker": "^3.3.0"
+    "typescript": "^3.7.5"
   },
   "files": [
     "dist"
