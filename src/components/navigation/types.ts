@@ -12,11 +12,13 @@ export interface NavigationItemProps extends Omit<BoxProps, 'css' | 'id'> {
   disabled?: boolean;
   onClick?: () => void;
   tooltipText?: string;
+  href?: string;
 }
 
 export interface TreeNode extends NavigationItemProps {
   id: string;
   title: string;
   icon?: any;
+  href?: string;
   children?: TreeNode[];
 }

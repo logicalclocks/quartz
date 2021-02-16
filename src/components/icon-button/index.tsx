@@ -15,6 +15,7 @@ export interface IconButtonProps extends Omit<ButtonProps, 'css'> {
   icon: IconProp;
   disabled?: boolean;
   iconOnHover?: IconProp;
+  href?: string;
   tooltipProps?: Omit<TooltipProps, 'children' | 'mainText'>;
 }
 
@@ -25,12 +26,13 @@ const IconButton: FC<IconButtonProps> = ({
   disabled,
   iconOnHover,
   tooltipProps,
+  href,
   ...props
 }: IconButtonProps) => {
   // @ts-ignore
   const hoverIcon = iconOnHover ?? icon;
 
-  return (
+  const component = (
     <Tooltip {...tooltipProps} disabled={disabled} mainText={tooltip}>
       <RebassButton
         sx={styles}
@@ -43,6 +45,24 @@ const IconButton: FC<IconButtonProps> = ({
       </RebassButton>
     </Tooltip>
   );
+
+  if (!!href) {
+    return (
+      <a
+        style={{
+          textDecoration: 'none',
+        }}
+        onClick={(e) => {
+          e.preventDefault();
+        }}
+        href={href}
+      >
+        {component}
+      </a>
+    );
+  }
+
+  return component;
 };
 
 export default IconButton;
