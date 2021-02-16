@@ -19,6 +19,7 @@ const InputValidation: FC<InputValidationProps> = ({
         pl="10px"
         fontSize="12px"
         fontFamily="Inter"
+        fontWeight={700}
         {...props}
         variant={`inputValidation${intent}`}
       />

@@ -28,10 +28,10 @@
     "chromatic": "npx chromatic --project-token dqq8k95raoo"
   },
   "peerDependencies": {
-    "rebass": "^4.0.7",
+    "emotion-theming": "^10.0.27",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "emotion-theming": "^10.0.27"
+    "rebass": "^4.0.7"
   },
   "devDependencies": {
     "@babel/core": "^7.11.4",
