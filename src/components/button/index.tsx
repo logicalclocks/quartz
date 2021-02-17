@@ -10,22 +10,44 @@ export interface QuartzButtonProps extends Omit<ButtonProps, 'css'> {
   children: React.ReactNode;
   intent?: 'primary' | 'secondary' | 'ghost' | 'inline' | 'alert';
   icon?: IconDefinition;
+  href?: string;
 }
 
 const Button: FC<QuartzButtonProps> = ({
   intent = 'primary',
   icon,
   children,
+  href,
   ...props
-}: QuartzButtonProps) => (
-  <RebassButton sx={styles} variant={intent} {...props}>
-    {icon && (
-      <span>
-        <FontAwesomeIcon icon={icon} size="sm" />
-      </span>
-    )}
-    {children}
-  </RebassButton>
-);
+}: QuartzButtonProps) => {
+  const component = (
+    <RebassButton sx={styles} variant={intent} {...props}>
+      {icon && (
+        <span>
+          <FontAwesomeIcon icon={icon} size="sm" />
+        </span>
+      )}
+      {children}
+    </RebassButton>
+  );
+
+  if (!!href) {
+    return (
+      <a
+        style={{
+          textDecoration: 'none',
+        }}
+        onClick={(e) => {
+          e.preventDefault();
+        }}
+        href={href}
+      >
+        {component}
+      </a>
+    );
+  }
+
+  return component;
+};
 
 export default Button;

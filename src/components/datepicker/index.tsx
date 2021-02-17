@@ -1,17 +1,19 @@
 import { Box, Flex } from 'rebass';
 import React, { FC, memo, useState } from 'react';
 import Select, { SelectProps } from '../select';
-import ReactDatePicker, { ReactDatePickerProps } from 'react-datepicker';
+import ReactDatePicker from 'react-datepicker';
+
+import { ReactDatePickerProps } from 'react-datepicker';
 
 import 'react-datepicker/dist/react-datepicker.min.css';
 import styles from './datepicker.styles';
 
-export interface DatePickerProps extends ReactDatePickerProps {
+export interface DatePickerProps {
   selectProps: SelectProps;
   datePickerAlign?: 'left' | 'right';
 }
 
-const DatePicker: FC<DatePickerProps> = ({
+const DatePicker: FC<DatePickerProps & ReactDatePickerProps> = ({
   selectProps,
   datePickerAlign = 'right',
   ...props

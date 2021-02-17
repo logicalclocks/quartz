@@ -50,8 +50,8 @@ const SelectLabel: FC<SelectLabelProps> = forwardRef(
     ref,
   ) => {
     const content = useMemo(() => {
-      if (!options.length) {
-        return noDataMessage;
+      if (!options.length && !value.length) {
+        return '';
       }
 
       if (!value.length) {
