@@ -30,9 +30,9 @@
   "peerDependencies": {
     "emotion-theming": "^10.0.27",
     "react": "^16.13.1",
+    "react-datepicker": "^3.3.0",
     "react-dom": "^16.13.1",
-    "rebass": "^4.0.7",
-    "react-datepicker": "^3.3.0"
+    "rebass": "^4.0.7"
   },
   "devDependencies": {
     "@babel/core": "^7.11.4",
@@ -95,8 +95,8 @@
     "lottie-react-web": "^2.2.2",
     "rc-slider": "^9.5.3",
     "rc-tooltip": "^4.2.3",
+    "react-datepicker": "^3.3.0",
     "react-spring": "^8.0.27",
-    "react-table": "^7.6.0",
-    "react-datepicker": "^3.3.0"
+    "react-table": "^7.6.0"
   }
 }
