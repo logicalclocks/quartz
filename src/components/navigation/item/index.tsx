@@ -48,6 +48,7 @@ const NavigationItem: FC<NavigationItemProps> = (
     onClick = () => {},
     disabled,
     tooltipText = '',
+    href,
     ...restProps
   } = props;
   const isOpen =
@@ -86,6 +87,37 @@ const NavigationItem: FC<NavigationItemProps> = (
     }
   }, [isActive]);
 
+  const component = (
+    <Box
+      tx={tx}
+      variant={getVariant(disabled, isActiveItem)}
+      sx={styles}
+      onClick={!disabled ? handleClick : undefined}
+      {...restProps}
+    >
+      {icon && (
+        <div>
+          <Tooltip
+            disabled={disableTooltip || !isOpen}
+            position={TooltipPositions.right}
+            mainText={tooltipText}
+          >
+            <Lottie
+              width={22}
+              height={22}
+              direction={isToggled ? 1 : -1}
+              options={{
+                animationData: icon,
+                loop: false,
+              }}
+            />
+          </Tooltip>
+        </div>
+      )}
+      <span style={disabled ? { color: theme.colors.gray } : {}}>{title}</span>
+    </Box>
+  );
+
   return (
     <Box
       as="li"
@@ -95,36 +127,21 @@ const NavigationItem: FC<NavigationItemProps> = (
         outline: 'none',
       }}
     >
-      <Box
-        tx={tx}
-        variant={getVariant(disabled, isActiveItem)}
-        sx={styles}
-        onClick={!disabled ? handleClick : undefined}
-        {...restProps}
-      >
-        {icon && (
-          <div>
-            <Tooltip
-              disabled={disableTooltip || !isOpen}
-              position={TooltipPositions.right}
-              mainText={tooltipText}
-            >
-              <Lottie
-                width={22}
-                height={22}
-                direction={isToggled ? 1 : -1}
-                options={{
-                  animationData: icon,
-                  loop: false,
-                }}
-              />
-            </Tooltip>
-          </div>
-        )}
-        <span style={disabled ? { color: theme.colors.gray } : {}}>
-          {title}
-        </span>
-      </Box>
+      {!!href ? (
+        <a
+          style={{
+            textDecoration: 'none',
+          }}
+          onClick={(e) => {
+            e.preventDefault();
+          }}
+          href={href}
+        >
+          {component}
+        </a>
+      ) : (
+        component
+      )}
       {hasDivider && <div />}
       {childs && (
         <Box paddingLeft="33px" as="ul" display={display}>
