@@ -4,7 +4,8 @@ import NotificationManager, {
   SystemNotification,
 } from './notifications-manager';
 import styles from './notifications-styles';
-import IconButton from '../icon-button';
+import icons from '../../sources/icons';
+import { Tooltip } from '../../index';
 
 const Notification: FC<SystemNotification> = ({
   id,
@@ -52,14 +53,28 @@ const Notification: FC<SystemNotification> = ({
     >
       <Flex justifyContent="space-between" alignItems="flex-start">
         {type}
-        <IconButton
-          mt="-10px"
-          mr="-10px"
-          onClick={removeHandler(id)}
-          intent="ghost"
-          tooltip="hide"
-          icon="times"
-        />
+        <Tooltip mainText="Hide">
+          <Box
+            mt="-5px"
+            mr="-7px"
+            onClick={removeHandler(id)}
+            p="2px"
+            height="30px"
+            sx={{
+              borderWidth: '1px',
+              borderStyle: 'solid',
+              borderColor: 'transparent',
+              cursor: 'pointer',
+
+              ':hover': {
+                backgroundColor: 'grayShade3',
+                borderColor: 'grayShade3',
+              },
+            }}
+          >
+            {icons.cross}
+          </Box>
+        </Tooltip>
       </Flex>
       <Box sx={{ whiteSpace: 'nowrap' }} maxWidth="fit-content">
         {content}
