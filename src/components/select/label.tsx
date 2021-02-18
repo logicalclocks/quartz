@@ -26,7 +26,7 @@ const getLabelText = (
   options: string[],
   isMulti?: boolean,
 ) => {
-  if (!options.length) {
+  if (!options.length && !value.length) {
     return '';
   }
 
@@ -51,10 +51,18 @@ const SelectLabel: FC<SelectLabelProps> = forwardRef(
   ) => {
     const content = useMemo(() => {
       if (!options.length && !value.length) {
-        return '';
+        return noDataMessage;
+      }
+
+      if (!options.length) {
+        return noDataMessage;
       }
 
       if (!value.length) {
+        return placeholder;
+      }
+
+      if (value.length && hasPlaceholder) {
         return placeholder;
       }
 
