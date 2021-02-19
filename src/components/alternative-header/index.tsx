@@ -46,6 +46,15 @@ const AlternativeHeader: FC<AlternativeHeaderProps> = ({
   }));
 
   useEffect(() => {
+    setTimeout(() => {
+      setStyles({
+        left: getUnderlineLeftPosition(tabRefs.current, activeTabIndex),
+        width: getUnderlineWidth(tabRefs.current, activeTabIndex),
+      });
+    }, 150);
+  }, []);
+
+  useEffect(() => {
     setStyles({
       left: getUnderlineLeftPosition(tabRefs.current, activeTabIndex),
       width: getUnderlineWidth(tabRefs.current, activeTabIndex),
