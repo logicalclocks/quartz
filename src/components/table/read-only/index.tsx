@@ -19,8 +19,7 @@ import {
 // Hooks
 import { ListItem, Tooltip, useDropdown, useOnClickOutside } from '../../..';
 import List from '../../list/container';
-import Icon from '../../icon';
-import theme from '../../../theme/theme';
+import icons from '../../../sources/icons';
 
 export interface TheadProps {
   column: string;
@@ -60,13 +59,37 @@ export const Thead: FC<TheadProps> = ({
       <div>
         {column}
         {isPrimary && (
-          <Tooltip ml="10px" mainText="primary key">
-            <Icon icon="star" style={{ color: theme.colors.labels.green }} />
+          <Tooltip mainText="primary key">
+            <Box
+              ml="5px"
+              sx={{
+                svg: {
+                  path: {
+                    fill: 'labels.green',
+                  },
+                },
+              }}
+              my="-5px"
+            >
+              {icons.primary}
+            </Box>
           </Tooltip>
         )}
         {isPartition && (
-          <Tooltip ml="10px" mainText="primary key">
-            <Icon icon="equals" style={{ color: theme.colors.labels.green }} />
+          <Tooltip mainText="partition key">
+            <Box
+              ml="5px"
+              sx={{
+                svg: {
+                  path: {
+                    fill: 'labels.green',
+                  },
+                },
+              }}
+              my="-5px"
+            >
+              {icons.partition}
+            </Box>
           </Tooltip>
         )}
         {isOpen && (
