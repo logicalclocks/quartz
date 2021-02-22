@@ -37,7 +37,7 @@ const Radio: FC<RadioProps> = forwardRef(
       />
       <span />
       {label && (
-        <Labeling bold ml="10px">
+        <Labeling bold ml="8px">
           {label}
         </Labeling>
       )}

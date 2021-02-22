@@ -12,6 +12,7 @@ export interface ListItemProps extends Omit<BoxProps, 'css' | 'action'> {
   hasDivider?: boolean;
   isRightAlignment?: boolean;
   action?: [string, (event: React.MouseEvent<HTMLButtonElement>) => void];
+  isActive?: boolean;
 }
 
 const ListItem: FC<ListItemProps> = ({
@@ -19,6 +20,7 @@ const ListItem: FC<ListItemProps> = ({
   variant = 'primary',
   hasDivider,
   action,
+  isActive = false,
   isRightAlignment,
   ...props
 }: ListItemProps) => {
@@ -31,7 +33,7 @@ const ListItem: FC<ListItemProps> = ({
       tx="variants.list.item"
       variant={variant}
       {...props}
-      sx={styles}
+      sx={styles(isActive)}
       css={!hasDivider ? withoutBorder : undefined}
     >
       {children}
