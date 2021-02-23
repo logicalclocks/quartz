@@ -11,7 +11,8 @@ import InputInfo from '../input-info';
 import { Intents } from '../intents';
 // Styles
 import getStyles from './input.styles';
-import { Icon, Labeling, Tooltip } from '../../index';
+import { Labeling, Tooltip } from '../../index';
+import icons from '../../sources/icons';
 
 export interface InputProps extends Omit<RebassInputProps, 'css'> {
   variant?: 'primary' | 'white';
@@ -65,11 +66,11 @@ const Input: FC<InputProps> = forwardRef(
           </Labeling>
         )}
         {tooltipInfo && (
-          <Box ml="8px">
-            <Tooltip mainText={tooltipInfo}>
-              <Icon icon="info-circle" />
-            </Tooltip>
-          </Box>
+          <Tooltip mainText={tooltipInfo}>
+            <Box mt="-6px" mb="-3px">
+              {icons.info_block}
+            </Box>
+          </Tooltip>
         )}
       </Flex>
     );

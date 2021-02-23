@@ -1,8 +1,8 @@
 import React, { FC } from 'react';
 import { Box, Flex } from 'rebass';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Labeling from '../typography/labeling';
-import styles, { iconStyles } from './callout.styles';
+import styles from './callout.styles';
+import icons from '../../sources/icons';
 
 export enum CalloutTypes {
   valid = 'valid',
@@ -30,8 +30,8 @@ const Callout: FC<ICalloutProps> = ({
     {...props}
   >
     <Flex justifyContent="space-between" alignItems="center">
-      <Box>
-        <FontAwesomeIcon icon="info-circle" style={iconStyles} />
+      <Box mt="-2px" mb="-3px">
+        {icons.info_block}
       </Box>
       <Box ml="8px" as="pre">
         <Labeling bold>{content}</Labeling>

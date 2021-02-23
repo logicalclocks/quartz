@@ -3,11 +3,12 @@ import { Box } from 'rebass';
 
 // Components
 import Popup, { PopupProps } from '../index';
-import IconButton from '../../icon-button';
 import FooterButton from '../../footer-button';
 import DrawerSection, { DrawerSectionProps } from './drawer-section';
 // Types
 import Action from '../../action.type';
+import { Tooltip } from '../../../index';
+import icons from '../../../sources/icons';
 
 type IDrawer<P> = FC<P> & {
   Section: FC<DrawerSectionProps>;
@@ -57,13 +58,26 @@ const Drawer: IDrawer<DrawerProps> = ({
               alignItems: 'center',
             }}
           >
-            <IconButton
-              tooltip="Close"
-              ml="-10px"
-              intent="ghost"
-              icon="times"
-              onClick={onClose}
-            />
+            <Tooltip mainText="Close">
+              <Box
+                onClick={onClose}
+                p="2px"
+                height="30px"
+                sx={{
+                  borderWidth: '1px',
+                  borderStyle: 'solid',
+                  borderColor: 'transparent',
+                  cursor: 'pointer',
+
+                  ':hover': {
+                    backgroundColor: 'grayShade3',
+                    borderColor: 'grayShade3',
+                  },
+                }}
+              >
+                {icons.cross}
+              </Box>
+            </Tooltip>
             <Box ml="auto" display="flex">
               {headerLine}
             </Box>
