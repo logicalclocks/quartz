@@ -121,6 +121,7 @@ const Select: FC<SelectProps> = ({
         value={value}
         isMulti={isMulti}
         noDataMessage={noDataMessage}
+        additionalTexts={additionalTexts}
         options={options}
         ref={containerRef}
       >
