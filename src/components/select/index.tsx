@@ -18,6 +18,7 @@ import useOnClickOutside from '../../utils/useClickOutside';
 import { Box, Flex } from 'rebass';
 import { Divider, Input } from '../../index';
 import useKeyUp from '../../utils/useKeyUp';
+import icons from '../../sources/icons';
 
 export interface SelectProps extends Omit<LabelProps, 'onChange' | 'children'> {
   value: string[];
@@ -39,7 +40,7 @@ export interface SelectProps extends Omit<LabelProps, 'onChange' | 'children'> {
   bottomActionHandler?: () => void;
   hasPlaceholder?: boolean;
   hasSearch?: boolean;
-  searchPlaceholder: string;
+  searchPlaceholder?: string;
   customFilter?: React.ReactNode;
   additionalTexts?: string[];
   additionalComponents?: React.ReactNode[];
@@ -128,26 +129,35 @@ const Select: FC<SelectProps> = ({
             <Flex>
               {!!customFilter && customFilter}
               {hasSearch && (
-                <Box
-                  flex={1}
-                  mr="20px"
-                  sx={{
-                    svg: {
-                      mt: '10px',
-                      ml: '8px',
-                    },
-                  }}
-                >
+                <Flex flex={1} ml="20px">
+                  <Box
+                    mt="20px"
+                    mr="-34px"
+                    sx={{
+                      svg: {
+                        width: '14px',
+                        height: '14px',
+
+                        path: {
+                          fill: 'gray',
+                        },
+                      },
+                      zIndex: 1,
+                    }}
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    {icons.glass}
+                  </Box>
                   <Input
+                    pl="32px"
                     m="10px"
                     width="100%"
-                    icon="search"
                     value={search}
                     placeholder={searchPlaceholder}
                     onChange={({ target }) => setSearch(target.value)}
                     onClick={(e) => e.stopPropagation()}
                   />
-                </Box>
+                </Flex>
               )}
             </Flex>
             {(!!customFilter || hasSearch) && (

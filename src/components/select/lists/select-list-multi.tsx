@@ -54,7 +54,11 @@ const SelectListMulti: FC<SelectListProps> = ({
           key={option}
           isActive={index === activeIndex}
           onClick={handleClick(option)}
-          action={['only', handleSelectOnly(option)]}
+          action={
+            !additionalComponents?.length
+              ? ['only', handleSelectOnly(option)]
+              : undefined
+          }
         >
           <Checkbox
             mr="10px"
@@ -72,7 +76,6 @@ const SelectListMulti: FC<SelectListProps> = ({
               sx={{
                 position: 'absolute',
                 right: '10px',
-                zIndex: -1,
               }}
             >
               {additionalComponents[index]}
