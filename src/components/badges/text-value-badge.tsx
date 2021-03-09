@@ -36,9 +36,7 @@ const TextValueBadge: FC<TextValueBadgeProps> = ({
   ...props
 }: TextValueBadgeProps) => (
   <Box tx="variants.badges.keyValue" sx={styles} variant={variant} {...props}>
-    <Labeling as="span" gray>
-      {text}
-    </Labeling>
+    <Labeling as="span">{text}</Labeling>
     <Value as="span">{value}</Value>
   </Box>
 );

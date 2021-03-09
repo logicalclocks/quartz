@@ -1,11 +1,11 @@
 export default {
   bg: 'white',
 
-  borderColor: 'black',
+  borderColor: 'gray',
 
   '> span': {
     '&:last-of-type': {
-      bg: 'grayShade3',
+      bg: 'grayShade2',
     },
   },
 };
