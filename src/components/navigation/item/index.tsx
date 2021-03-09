@@ -114,7 +114,17 @@ const NavigationItem: FC<NavigationItemProps> = (
           </Tooltip>
         </div>
       )}
-      <span style={disabled ? { color: theme.colors.gray } : {}}>{title}</span>
+      <span>
+        <Tooltip
+          disabled={icon || disableTooltip}
+          position={TooltipPositions.right}
+          mainText={tooltipText}
+        >
+          <span style={disabled ? { color: theme.colors.gray } : {}}>
+            {title}
+          </span>
+        </Tooltip>
+      </span>
     </Box>
   );
 

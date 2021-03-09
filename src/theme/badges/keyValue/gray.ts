@@ -1,7 +1,7 @@
 export default {
-  bg: 'grayShade3',
+  bg: 'grayShade2',
 
-  borderColor: 'black',
+  borderColor: 'gray',
 
   '> span': {
     '&:last-of-type': {
