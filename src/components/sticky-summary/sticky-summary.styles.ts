@@ -20,19 +20,30 @@ export const boxButtonStyles = {
   },
 };
 
-export default {
-  borderTopStyle: 'solid',
-  borderTopWidth: '1px',
-  borderTopColor: 'grayShade2',
-  position: 'fixed',
-  bottom: 0,
-  left: '240px',
-  right: 0,
-  bg: 'white',
-  justifyContent: 'space-between',
-  alignItems: 'center',
-  px: '20px',
-  py: '20px',
-  zIndex: 1,
-  backgroundColor: '#FFFFFF',
-} as SxStyleProp;
+export default (hasScrollOnScreen: boolean) =>
+  ({
+    ...(hasScrollOnScreen
+      ? {
+          borderTopStyle: 'solid',
+          borderTopWidth: '1px',
+          borderTopColor: 'grayShade2',
+        }
+      : {
+          borderStyle: 'solid',
+          borderColor: 'grayShade2',
+          borderWidth: '1px',
+        }),
+
+    position: hasScrollOnScreen ? 'fixed' : 'initial',
+    bottom: 0,
+    left: '240px',
+    right: 0,
+    bg: 'white',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    px: '20px',
+    py: '20px',
+    mt: hasScrollOnScreen ? '0px' : '-80px',
+    zIndex: 1,
+    backgroundColor: 'white',
+  } as SxStyleProp);
