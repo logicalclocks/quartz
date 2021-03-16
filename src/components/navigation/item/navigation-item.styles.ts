@@ -15,6 +15,13 @@ export default {
 
   transition: 'all 0.25s ease',
 
+  '&.oldui':
+  {
+    background: '#F5F5F5',
+    borderTop: '1px Solid #E2E2E2',
+    borderBottom: '1px Solid #E2E2E2'
+  },
+
   // Icon
   '> div': {
     display: 'flex',
