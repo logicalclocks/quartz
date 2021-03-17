@@ -96,6 +96,26 @@ const Select: FC<SelectProps> = ({
     );
   }, [search, options]);
 
+  const filteredAdditionalTexts = useMemo(() => {
+    if (!search) {
+      return additionalTexts;
+    }
+
+    return additionalTexts?.filter((_, index) =>
+      options[index].toLowerCase().includes(search.toLowerCase()),
+    );
+  }, [search, additionalTexts, options]);
+
+  const filteredAdditionalComponents = useMemo(() => {
+    if (!search) {
+      return additionalComponents;
+    }
+
+    return additionalComponents?.filter((_, index) =>
+      options[index].toLowerCase().includes(search.toLowerCase()),
+    );
+  }, [search, additionalComponents, options]);
+
   // Handlers
   const handleLabelClick = useCallback(() => {
     if (!disabled) {
@@ -171,8 +191,8 @@ const Select: FC<SelectProps> = ({
                 onChange={onChange}
                 onClose={handleToggle}
                 options={filteredOptions}
-                additionalTexts={additionalTexts}
-                additionalComponents={additionalComponents}
+                additionalTexts={filteredAdditionalTexts}
+                additionalComponents={filteredAdditionalComponents}
               />
             ) : (
               // Single choice
@@ -181,8 +201,8 @@ const Select: FC<SelectProps> = ({
                 onChange={onChange}
                 onClose={handleToggle}
                 options={filteredOptions}
-                additionalTexts={additionalTexts}
-                additionalComponents={additionalComponents}
+                additionalTexts={filteredAdditionalTexts}
+                additionalComponents={filteredAdditionalComponents}
               />
             )}
             {bottomActionText && (

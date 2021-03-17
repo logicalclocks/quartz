@@ -5,8 +5,8 @@ import { Labeling } from '../../index';
 import icons from '../../sources/icons';
 import styles, { contentStyles, containerStyles } from './collapse.styles';
 
-export interface CollapseProps extends Omit<BoxProps, 'css'> {
-  title: string;
+export interface CollapseProps extends Omit<BoxProps, 'css' | 'title'> {
+  title: React.ReactNode;
   secondaryContent?: React.ReactNode;
   contentProps?: Omit<BoxProps, 'css' | 'children'>;
 }
@@ -36,7 +36,7 @@ const Collapse: FC<CollapseProps> = ({
       <Flex sx={styles(isOpen)} onClick={() => setIsOpen(!isOpen)}>
         <Flex>
           <Box>{isOpen ? icons.arrow_up : icons.arrow_down}</Box>
-          <Labeling ml="8px">{title}</Labeling>
+          {title}
         </Flex>
         {!!secondaryContent && <Labeling>{secondaryContent}</Labeling>}
       </Flex>

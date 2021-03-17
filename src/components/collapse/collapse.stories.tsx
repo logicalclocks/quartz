@@ -38,7 +38,7 @@ const Template: Story<CollapseProps> = (props) => {
 export const Default = Template.bind({});
 
 Default.args = {
-  title: 'section title',
+  title: <Labeling ml="8px">section title</Labeling>,
   secondaryContent: <Labeling gray>secondary text</Labeling>,
 };
 

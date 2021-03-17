@@ -3,10 +3,8 @@ import { SxStyleProp } from 'rebass';
 const paddingY = 40;
 
 export const contentStyles = (isOpen: boolean, height: number) => ({
-  px: '20px',
   bg: 'white',
   overflow: 'hidden',
-  py: isOpen ? '20px' : 0,
 
   maxHeight: isOpen ? `${height + paddingY}px !important` : 0,
 

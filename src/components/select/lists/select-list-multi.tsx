@@ -51,7 +51,7 @@ const SelectListMulti: FC<SelectListProps> = ({
     <React.Fragment>
       {options?.map((option, index) => (
         <ListItem
-          key={option}
+          key={`${option} - ${index}`}
           isActive={index === activeIndex}
           onClick={handleClick(option)}
           action={

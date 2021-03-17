@@ -32,7 +32,7 @@ const SelectList: FC<SelectListProps> = ({
     <React.Fragment>
       {options?.map((option, index) => (
         <ListItem
-          key={option}
+          key={`${option} - ${index}`}
           isActive={index === activeIndex}
           variant={value.includes(option) ? 'active' : undefined}
           onClick={handleClick(option)}
