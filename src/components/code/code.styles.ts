@@ -3,7 +3,6 @@ import { SxStyleProp } from 'rebass';
 export const boxStyles = {
   width: '100%',
   lineHeight: '16px',
-  overflowX: 'auto',
   whiteSpace: 'pre-wrap',
   wordBreak: 'break-all',
   backgroundColor: 'grayShade3',
@@ -11,7 +10,7 @@ export const boxStyles = {
   fontWeight: 'text',
   marginTop: 0,
   marginBottom: 0,
-  paddingLeft: 20,
+  padding: 20,
 };
 
 export const codeHeaderStyles = {
@@ -19,6 +18,9 @@ export const codeHeaderStyles = {
   color: 'gray',
   justifyContent: 'space-between',
   alignItems: 'center',
+  fontFamily: 'Inter',
+  fontWeight: 700,
+  fontSize: 'value',
 };
 
 export const buttonsStyles = {

@@ -18,6 +18,7 @@ export interface CodeProps extends Omit<FlexProps, 'css' | 'title'> {
   content: string;
   language?: string;
   element?: React.ReactElement;
+  isColorSyntax?: boolean;
   copyButton?: boolean;
   downloadButton?: boolean;
 }
@@ -26,6 +27,7 @@ const Code: FC<CodeProps> = ({
   title,
   content,
   language,
+  isColorSyntax,
   copyButton = false,
   downloadButton = false,
   element,
@@ -86,7 +88,11 @@ const Code: FC<CodeProps> = ({
         {!!element ? (
           element
         ) : (
-          <SyntaxHighlighter language={language} customStyle={{ ...boxStyles }}>
+          <SyntaxHighlighter
+            wrapLongLines
+            language={isColorSyntax ? language : 'text'}
+            customStyle={{ ...boxStyles }}
+          >
             {content}
           </SyntaxHighlighter>
         )}
