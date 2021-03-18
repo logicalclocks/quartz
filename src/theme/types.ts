@@ -19,6 +19,7 @@ export interface IThemeColors {
     purple: string;
     green: string;
     skyblue: string;
+    blue: string;
     redShade3: string;
     orangeShade3: string;
   };
@@ -51,6 +52,8 @@ export interface IThemeTransitions {
 export interface IThemeShadows {
   alert: string;
   primary: string;
+  explorer: string;
+  file: string;
   disabled: string;
   cardInsetShadow: string;
   navigation: string;

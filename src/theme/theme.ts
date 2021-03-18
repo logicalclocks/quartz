@@ -2,6 +2,7 @@
 import buttons from './buttons';
 import iconButtons from './icon-buttons';
 import footerButtons from './footer-buttons';
+import fileButtons from './file-buttons';
 import toggleButton from './toggle-button';
 // Label themes
 import label from './label';
@@ -68,6 +69,7 @@ const theme: ITheme = {
       purple: '#9B51E0',
       green: '#21B182',
       skyblue: '#56CCF2',
+      blue: '#41B7DC',
       redShade3: '#F8DEDE',
       orangeShade3: '#FDF0E4',
     },
@@ -101,6 +103,8 @@ const theme: ITheme = {
   },
   shadows: {
     primary: '0px 5px 15px rgba(33, 177, 130, 0.2)',
+    file: '0px 5px 15px rgba(144, 144, 144, 0.2)',
+    explorer: '0px -1px 1px #E5E5E5',
     alert: '0px 5px 15px rgba(235, 87, 87, 0.25)',
     disabled: '0px 4px 15px rgba(0, 0, 0, 0.25)',
     cardInsetShadow: 'inset 0px -20px 30px -25px rgba(0, 0, 0, 0.15)',
@@ -141,6 +145,7 @@ const theme: ITheme = {
     ...buttons,
     ...iconButtons,
     ...footerButtons,
+    ...fileButtons,
     toggleButton,
   },
   navigation,
