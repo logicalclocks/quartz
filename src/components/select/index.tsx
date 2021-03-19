@@ -16,7 +16,7 @@ import { listStyles, bottomActionStyles } from './select.styles';
 import useDropdown from '../../utils/useDropdown';
 import useOnClickOutside from '../../utils/useClickOutside';
 import { Box, Flex } from 'rebass';
-import { Divider, Input } from '../../index';
+import { Divider, Input, Value } from '../../index';
 import useKeyUp from '../../utils/useKeyUp';
 import icons from '../../sources/icons';
 
@@ -44,6 +44,7 @@ export interface SelectProps extends Omit<LabelProps, 'onChange' | 'children'> {
   customFilter?: React.ReactNode;
   additionalTexts?: string[];
   additionalComponents?: React.ReactNode[];
+  noMathText?: string;
 }
 
 const Select: FC<SelectProps> = ({
@@ -70,6 +71,7 @@ const Select: FC<SelectProps> = ({
   customFilter,
   additionalComponents,
   additionalTexts,
+  noMathText = 'No result',
   ...props
 }: SelectProps) => {
   const containerRef = useRef(null);
@@ -164,26 +166,32 @@ const Select: FC<SelectProps> = ({
             {(!!customFilter || hasSearch) && (
               <Divider my={0} width="calc(100% + 20px)" />
             )}
-            {isMulti ? (
-              // Multi choice
-              <SelectListMulti
-                value={value}
-                onChange={onChange}
-                onClose={handleToggle}
-                options={filteredOptions}
-                additionalTexts={additionalTexts}
-                additionalComponents={additionalComponents}
-              />
+            {!!filteredOptions.length ? (
+              isMulti ? (
+                // Multi choice
+                <SelectListMulti
+                  value={value}
+                  onChange={onChange}
+                  onClose={handleToggle}
+                  options={filteredOptions}
+                  additionalTexts={additionalTexts}
+                  additionalComponents={additionalComponents}
+                />
+              ) : (
+                // Single choice
+                <SelectList
+                  value={value}
+                  onChange={onChange}
+                  onClose={handleToggle}
+                  options={filteredOptions}
+                  additionalTexts={additionalTexts}
+                  additionalComponents={additionalComponents}
+                />
+              )
             ) : (
-              // Single choice
-              <SelectList
-                value={value}
-                onChange={onChange}
-                onClose={handleToggle}
-                options={filteredOptions}
-                additionalTexts={additionalTexts}
-                additionalComponents={additionalComponents}
-              />
+              <Flex height="55px" alignItems="center" justifyContent="center">
+                <Value>{noMathText}</Value>
+              </Flex>
             )}
             {bottomActionText && (
               <Box sx={bottomActionStyles} onClick={bottomActionHandler}>

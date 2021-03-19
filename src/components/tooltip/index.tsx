@@ -129,6 +129,8 @@ const Tooltip: FC<TooltipProps> = ({
       ref={containerRef}
       onMouseOut={handleMouseOut}
       onMouseOver={handleMouseOver}
+      onPointerOut={handleMouseOut}
+      onPointerOver={handleMouseOver}
       {...props}
     >
       {children}
