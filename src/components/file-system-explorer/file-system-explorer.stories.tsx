@@ -20,8 +20,8 @@ export const Default = Template.bind({});
 Default.args = {
   title: 'Select a file',
   width: '830px',
-  children: '',
-  height: '270px',
+  // children: '',
+  height: '100%',
   shortcutActions: (
     <React.Fragment>
       <Button padding="0" variant="inline" onClick={action('Shortcut action')}>
@@ -32,15 +32,6 @@ Default.args = {
 };
 
 Default.argTypes = {
-  children: {
-    control: {
-      type: 'text',
-    },
-    type: {
-      summary: 'Card content',
-      required: true,
-    },
-  },
   title: {
     control: {
       type: 'text',

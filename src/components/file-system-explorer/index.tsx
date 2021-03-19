@@ -1,64 +1,66 @@
-import React, { FC, memo, useRef } from 'react';
-import { Box, Card as RebassCard, CardProps as RebassCardProps } from 'rebass';
+import React, { FC, memo, useRef, useState } from 'react';
+import {
+  Box,
+  Card as RebassCard,
+  CardProps as RebassCardProps,
+  Flex,
+} from 'rebass';
 
 import Footer from './footer';
 import Header from './header';
 import Button from '../button';
-import FileExplorer from './file';
+import Column from './Column';
 
 // Styles
 import styles from './file-system-explorer.styles';
+import FolderExplorer from './folder';
+
+//Data
+import { data } from './data';
+import FileExplorer from './file';
 
 export interface FileSystemExplorerProps
   extends Omit<RebassCardProps, 'css' | 'title'> {
   title?: string;
   link?: string;
   shortcutActions?: React.ReactNode;
-  children?: React.ReactNode;
   contentProps?: Omit<RebassCardProps, 'css' | 'children'>;
 }
 
 const FileSystemExplorer: FC<FileSystemExplorerProps> = ({
   title = 'Select a file',
   shortcutActions,
-  children,
-  maxHeight,
   contentProps,
   ...props
 }: FileSystemExplorerProps) => {
   const contentRef = useRef<HTMLDivElement>();
 
-  // const isScrollable =
-  //   contentRef.current?.scrollHeight &&
-  //   maxHeight &&
-  //   contentRef.current?.scrollHeight >
-  //     +(maxHeight as string).slice(0, (maxHeight as string).indexOf('px')) - 64;
+  const [columns, setColumns] = useState([data]);
 
+  console.log(columns);
   return (
-    <RebassCard {...props} maxHeight={maxHeight} sx={styles}>
+    <RebassCard {...props} sx={styles}>
       <Header shortcutActions={shortcutActions} title={title} />
-      {!!children && (
-        <Box
-          sx={{
-            boxShadow: 'none',
-          }}
-          ref={contentRef}
-          width="100%"
-          maxHeight={maxHeight}
-          height="100%"
-          overflowY="initial"
-          p="20px"
-          {...contentProps}
-        >
-          <FileExplorer name="File1" isActive={false} selected={false} />
-          <FileExplorer name="File2" isActive={false} selected={false} />
-          <FileExplorer name="File3" isActive={false} selected={false} />
-          <FileExplorer name="File4" isActive={false} selected={false} />
-          <FileExplorer name="File5" isActive={false} selected={false} />
-          {children}
-        </Box>
-      )}
-      {/* Footer */}
+      <Flex
+        sx={{
+          boxShadow: 'none',
+        }}
+        ref={contentRef}
+        width="100%"
+        height="100%"
+        overflowY="initial"
+        p="20px"
+        {...contentProps}
+      >
+        {columns.map((el, index) => (
+          <Column
+            children={el}
+            setColumns={setColumns}
+            key={index}
+            index={index}
+          />
+        ))}
+      </Flex>
       <Footer
         secondaryButton={<Button variant="file-secondary">Back</Button>}
         mainButton={<Button intent="primary">Select</Button>}

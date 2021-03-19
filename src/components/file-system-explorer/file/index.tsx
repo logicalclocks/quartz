@@ -21,19 +21,19 @@ const FileExplorer: FC<QuartzFileExplorerProps> = ({
   const [selectedFile, setSelectedFile] = useState(selected);
 
   const handleClickFile = () => {
-    console.log('handleClickFile');
     setActive(!active);
     setSelectedFile(!selectedFile);
   };
 
   return (
-    <Flex
-      sx={{ ...fileExplorerStyle(active, selectedFile) }}
-      tabIndex={0}
-      onClick={handleClickFile}
-    >
-      <Checkbox m="10px" checked={selectedFile} variant="gray" />
-      {name}
+    <Flex sx={{ ...fileExplorerStyle(active, selectedFile) }} tabIndex={0}>
+      <Checkbox
+        m="10px"
+        label={name}
+        checked={selectedFile}
+        variant="gray"
+        onChange={handleClickFile}
+      />
     </Flex>
   );
 };

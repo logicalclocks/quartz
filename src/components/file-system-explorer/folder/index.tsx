@@ -6,27 +6,36 @@ import icons from '../../../sources/icons';
 import { folderExplorerStyle } from './folder-explorer.styles';
 
 export interface QuartzFileExplorerFolderProps {
-  children: boolean;
+  children: Array<any>;
   name: string;
   isActive: boolean;
+  index: number;
+  setColumns: any;
+  isHasChildren: boolean;
 }
 
 const FolderExplorer: FC<QuartzFileExplorerFolderProps> = ({
   children,
+  isHasChildren,
   isActive,
+  index,
   name,
+  setColumns,
   ...props
 }: QuartzFileExplorerFolderProps) => {
   const [active, setActive] = useState(isActive);
 
   const handleClickFolder = () => {
     setActive(!active);
+    [];
+    setColumns((prevState) => [...prevState.slice(0, index + 1), children]);
   };
 
   return (
     <Flex
-      sx={{ ...folderExplorerStyle(active, children) }}
+      sx={{ ...folderExplorerStyle(isHasChildren) }}
       onClick={handleClickFolder}
+      tabIndex={0}
     >
       <Box
         sx={{
