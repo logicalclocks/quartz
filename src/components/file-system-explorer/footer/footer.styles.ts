@@ -4,7 +4,6 @@ export const boxStyles = {
   display: 'flex',
   justifyContent: 'space-between',
   alignItems: 'center',
-
   '> div': {
     ml: '20px',
   },
@@ -20,7 +19,8 @@ export const boxButtonStyles = {
 };
 
 export default {
-  width: 700,
+  width: '100%',
+  minWidth: '700px',
   borderStyle: 'solid',
   borderWidth: '1px',
   borderColor: 'grayShade2',

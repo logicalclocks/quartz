@@ -31,8 +31,8 @@ const FooterFileExplorer: FC<fileExplorerFooter> = ({
       )}
     </Box>
     <Box sx={{ ...boxButtonStyles }}>
-      {secondaryButton && <Box>{secondaryButton}</Box>}
-      <Box>{mainButton}</Box>
+      <Box>{secondaryButton}</Box>
+      {mainButton && <Box>{mainButton}</Box>}
     </Box>
   </Flex>
 );

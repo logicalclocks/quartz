@@ -18,13 +18,13 @@ const Template: Story<FileSystemExplorerProps> = (props) => (
 export const Default = Template.bind({});
 
 Default.args = {
-  title: 'Title',
+  title: 'Select a file',
   width: '830px',
   children: '',
   height: '270px',
-  actions: (
+  shortcutActions: (
     <React.Fragment>
-      <Button variant="inline" pr="0" onClick={action('Card action')}>
+      <Button padding="0" variant="inline" onClick={action('Shortcut action')}>
         Go directly to Jupyter notebook directory
       </Button>
     </React.Fragment>
@@ -54,9 +54,8 @@ Default.argTypes = {
     control: {
       type: 'text',
     },
-
     type: {
-      summary: 'Any Components to show in the right side',
+      summary: 'Shortcut: label and destination',
     },
   },
   height: {
