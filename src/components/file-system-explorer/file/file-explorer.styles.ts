@@ -10,12 +10,7 @@ export const fileExplorerStyle = (
     position: 'relative',
     flexDirection: 'row',
 
-    backgroundColor: !isActive
-      ? 'white'
-      : selected
-      ? 'grayShade2'
-      : 'primaryShade2',
-
+    backgroundColor: !isActive ? 'white' : selected ? 'grayShade2' : '',
     width: 190,
 
     ':focus': {
@@ -27,9 +22,7 @@ export const fileExplorerStyle = (
       m: 9,
     },
 
-    '> div': {
-      p: mode === 'nFiles' ? 0 : 9,
-    },
+    p: mode === 'nFiles' ? 0 : 9,
 
     cursor: 'pointer',
 

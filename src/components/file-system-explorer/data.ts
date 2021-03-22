@@ -84,33 +84,33 @@ export const data = [
             author: 'Fabio',
           },
           {
-            id: 8,
+            id: 24,
             name: 'Folder_4',
             type: 'folder',
             children: [
               {
-                id: 9,
+                id: 25,
                 name: 'Folder_1',
                 type: 'folder',
                 children: [
                   {
-                    id: 8,
+                    id: 26,
                     name: 'Folder_4',
                     type: 'folder',
                     children: [
                       {
-                        id: 9,
+                        id: 27,
                         name: 'Folder_1',
                         type: 'folder',
                         children: [],
                       },
                       {
-                        id: 10,
+                        id: 28,
                         name: 'Folder_2',
                         type: 'folder',
                         children: [
                           {
-                            id: 11,
+                            id: 29,
                             name: 'File_1',
                             type: 'file',
                             size: '1.4kb',
@@ -119,7 +119,7 @@ export const data = [
                             author: 'Fabio',
                           },
                           {
-                            id: 12,
+                            id: 30,
                             name: 'File_2',
                             type: 'file',
                             size: '1.4kb',
@@ -134,12 +134,12 @@ export const data = [
                 ],
               },
               {
-                id: 10,
+                id: 13,
                 name: 'Folder_2',
                 type: 'folder',
                 children: [
                   {
-                    id: 11,
+                    id: 14,
                     name: 'File_1',
                     type: 'file',
                     size: '1.4kb',
@@ -148,7 +148,7 @@ export const data = [
                     author: 'Fabio',
                   },
                   {
-                    id: 12,
+                    id: 15,
                     name: 'File_2',
                     type: 'file',
                     size: '1.4kb',
@@ -165,47 +165,20 @@ export const data = [
     ],
   },
   {
-    id: 13,
+    id: 16,
     name: 'Folder_5',
     type: 'folder',
     children: [],
   },
   {
-    id: 14,
+    id: 17,
     name: 'Folder_6',
     type: 'folder',
     children: [],
   },
   {
-    id: 15,
-    name: 'File_1',
-    type: 'file',
-    size: '1.4kb',
-    creation: '10-01-2021 10:10:30',
-    last_update: '10-01-2021 10:10:30',
-    author: 'Fabio',
-  },
-  {
-    id: 16,
-    name: 'File_2',
-    type: 'file',
-    size: '1.4kb',
-    creation: '10-01-2021 10:10:30',
-    last_update: '10-01-2021 10:10:30',
-    author: 'Fabio',
-  },
-  {
-    id: 17,
-    name: 'File_1',
-    type: 'file',
-    size: '1.4kb',
-    creation: '10-01-2021 10:10:30',
-    last_update: '10-01-2021 10:10:30',
-    author: 'Fabio',
-  },
-  {
     id: 18,
-    name: 'File_2',
+    name: 'File_1',
     type: 'file',
     size: '1.4kb',
     creation: '10-01-2021 10:10:30',
@@ -214,7 +187,7 @@ export const data = [
   },
   {
     id: 19,
-    name: 'File_1',
+    name: 'File_2',
     type: 'file',
     size: '1.4kb',
     creation: '10-01-2021 10:10:30',
@@ -223,6 +196,33 @@ export const data = [
   },
   {
     id: 20,
+    name: 'File_1',
+    type: 'file',
+    size: '1.4kb',
+    creation: '10-01-2021 10:10:30',
+    last_update: '10-01-2021 10:10:30',
+    author: 'Fabio',
+  },
+  {
+    id: 21,
+    name: 'File_2',
+    type: 'file',
+    size: '1.4kb',
+    creation: '10-01-2021 10:10:30',
+    last_update: '10-01-2021 10:10:30',
+    author: 'Fabio',
+  },
+  {
+    id: 22,
+    name: 'File_1',
+    type: 'file',
+    size: '1.4kb',
+    creation: '10-01-2021 10:10:30',
+    last_update: '10-01-2021 10:10:30',
+    author: 'Fabio',
+  },
+  {
+    id: 23,
     name: 'File_2',
     type: 'file',
     size: '1.4kb',

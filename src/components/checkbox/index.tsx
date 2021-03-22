@@ -29,8 +29,15 @@ const Checkbox: FC<CheckboxProps> = forwardRef(
     }: CheckboxProps,
     ref,
   ) => (
-    <Tooltip disabled={!disabled} {...tooltipProps}>
+    <Tooltip
+      disabled={!disabled}
+      {...tooltipProps}
+      // sx={{
+      //   width: '100%',
+      // }}
+    >
       <Flex
+        // width="100%"
         alignItems="center"
         flexDirection="row"
         as="label"

@@ -1,8 +1,8 @@
-export default {
+export const FileExplorerInfoStyle = {
   display: 'flex',
   flexDirection: 'column',
-  alignItems: 'start',
-  justifyContent: 'center',
+  alignItems: 'center',
+  justifyContent: 'space-between',
 
   minHeight: '62px',
   width: '100%',
@@ -11,10 +11,6 @@ export default {
   p: '20px',
 
   boxSizing: 'border-box',
-  borderBottomWidth: '1px',
-  borderBottomStyle: 'solid',
-
-  boxShadow: '0px 10px 40px -20px rgba(0, 0, 0, 0.15)',
 
   // Title
   '> h4': {
@@ -22,10 +18,11 @@ export default {
     fontWeight: 'subtitle',
     fontSize: 'subtitle',
   },
+};
 
-  // Shortcut
-
-  '> div': {
+export const blockInfo = {
+  ' > div > span': {
+    color: 'black',
     marginLeft: 0,
   },
 };

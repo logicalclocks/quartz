@@ -1,4 +1,4 @@
-import React, { FC, memo, useRef, useState } from 'react';
+import React, { FC, memo, useEffect, useRef, useState } from 'react';
 import {
   Box,
   Card as RebassCard,
@@ -38,21 +38,42 @@ const FileSystemExplorer: FC<FileSystemExplorerProps> = ({
 
   const [columns, setColumns] = useState([data]);
   const [activeFile, setActiveFile] = useState(null);
+  const [fileListValue, setFileListValue] = useState([]);
 
-  console.log('itemInfo in MAIN: ', activeFile);
+  const lastChildOfColumn = useRef(null);
+
+  const scrollToRight = () => {
+    lastChildOfColumn.current?.scrollIntoView();
+  };
+
+  const isFileSelected = (item: object, action: boolean) => {
+    if (action) {
+      setFileListValue((prevState) => prevState.push());
+    } else {
+      setFileListValue((prevState) =>
+        prevState.filter((el) => el.id === item.id),
+      );
+    }
+  };
+
+  useEffect(() => {
+    scrollToRight();
+  }, [columns, activeFile]);
 
   return (
     <RebassCard {...props} sx={styles}>
       <Header shortcutActions={shortcutActions} title={title} />
       <Flex
         sx={{
-          boxShadow: 'none',
+          borderStyle: 'solid',
+          borderColor: 'grayShade3',
+          borderWidth: '1px',
+          overflowX: 'hidden',
         }}
         ref={contentRef}
-        width="100%"
         height="100%"
         overflowY="initial"
-        p="20px"
+        m="20px"
         {...contentProps}
       >
         {columns.map((el, index) => (
@@ -63,14 +84,16 @@ const FileSystemExplorer: FC<FileSystemExplorerProps> = ({
             setColumns={setColumns}
             key={index}
             index={index}
+            isFileSelected={isFileSelected}
           />
         ))}
-        <Info activeFile={activeFile} />
+        {activeFile && <Info activeFile={activeFile} />}
+        <Box ref={lastChildOfColumn} />
       </Flex>
       <Footer
         secondaryButton={<Button variant="file-secondary">Back</Button>}
         mainButton={<Button intent="primary">Select</Button>}
-        value="pick a file"
+        value={fileListValue}
       />
     </RebassCard>
   );

@@ -17,7 +17,7 @@ export interface FileExplorerFooterProps {
 }
 
 const FooterFileExplorer: FC<fileExplorerFooter> = ({
-  value = 'pick a file',
+  value,
   mainButton,
   secondaryButton,
   ...props

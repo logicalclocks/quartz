@@ -1,34 +1,39 @@
 import React, { FC, useState } from 'react';
-import { Box, Flex } from 'rebass';
+import { Flex } from 'rebass';
 
 // Styles
 import { fileExplorerStyle } from './file-explorer.styles';
 import { Checkbox } from '../../../index';
-import { folderExplorerStyle } from '../folder/folder-explorer.styles';
-import icons from '../../../sources/icons';
 
 export interface QuartzFileExplorerProps {
   name?: string;
   isActive?: boolean;
+  index?: number;
   selected?: boolean;
   activeFile?: object;
   mode?: string;
   itemInfo?: object;
   setActiveFile?: any;
+  isFileSected?: any;
+  setColumns?: any;
+  setActiveFolder?: any;
 }
 
 const FileExplorer: FC<QuartzFileExplorerProps> = ({
-  isActive,
+  isActive = false,
+  setActiveFolder,
   activeFile,
   setActiveFile,
   itemInfo,
-  mode,
-  selected,
+  index,
+  setColumns,
+  mode = 'oneFile',
+  selected = false,
+  isFileSelected,
   ...props
 }: QuartzFileExplorerProps) => {
   const [active, setActive] = useState(isActive);
   const [selectedFile, setSelectedFile] = useState(selected);
-  console.log('itemInfo in file: ', itemInfo);
 
   const handleClickFile = (mode: string) => {
     if (mode === 'nFiles') {
@@ -39,39 +44,39 @@ const FileExplorer: FC<QuartzFileExplorerProps> = ({
       setActive(!active);
       setActiveFile(itemInfo);
     }
-    // console.log('Click1');
-    // setActive(!active);
-    // setSelectedFile(!selectedFile);
-    // console.log('Click2');
-    // setActiveFile(itemInfo);
-    // console.log('Click3');
+    setActiveFolder(0);
+    setColumns((prevState: any) => [...prevState.slice(0, index + 1)]);
+    isFileSelected();
   };
 
-  return (
+  const selectActiveFile = () => {
+    setActiveFile(itemInfo);
+  };
+
+  return mode === 'nFiles' ? (
     <Flex
       sx={{ ...fileExplorerStyle(active, selectedFile, mode) }}
       tabIndex={0}
+      onClick={selectActiveFile}
     >
-      {mode === 'nFiles' ? (
-        <Checkbox
-          m="10px"
-          label={itemInfo.name}
-          checked={selectedFile}
-          variant="gray"
-          onChange={() => handleClickFile(mode)}
-        />
-      ) : (
-        <Flex
-          sx={{
-            ...fileExplorerStyle(active, selectedFile, mode),
-          }}
-          onClick={() => handleClickFile(mode)}
-          tabIndex={0}
-        >
-          {console.log(mode == 'oneFile')}
-          {itemInfo.name}
-        </Flex>
-      )}
+      <Checkbox
+        m="10px"
+        sx={{
+          width: '100%',
+        }}
+        label={itemInfo.name}
+        checked={selectedFile}
+        onChange={() => handleClickFile(mode)}
+        variant="gray"
+      />
+    </Flex>
+  ) : (
+    <Flex
+      sx={{ ...fileExplorerStyle(active, selectedFile, mode) }}
+      onClick={() => handleClickFile(mode)}
+      tabIndex={0}
+    >
+      {itemInfo.name}
     </Flex>
   );
 };

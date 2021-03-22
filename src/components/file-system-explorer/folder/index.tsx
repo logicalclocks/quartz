@@ -8,32 +8,41 @@ import { folderExplorerStyle } from './folder-explorer.styles';
 export interface QuartzFileExplorerFolderProps {
   children: Array<any>;
   name: string;
+  id: number;
   isActive: boolean;
   index: number;
   setColumns: any;
   isHasChildren: boolean;
+  setActiveFile: any;
+  setActiveFolder: any;
+  activeFolder: number;
 }
 
 const FolderExplorer: FC<QuartzFileExplorerFolderProps> = ({
   children,
+  setActiveFile,
   isHasChildren,
   isActive,
+  setActiveFolder,
+  activeFolder,
   index,
   name,
+  id,
   setColumns,
   ...props
 }: QuartzFileExplorerFolderProps) => {
-  const [active, setActive] = useState(isActive);
-
   const handleClickFolder = () => {
-    setActive(!active);
-    [];
-    setColumns((prevState) => [...prevState.slice(0, index + 1), children]);
+    setActiveFolder(id);
+    setActiveFile(null);
+    setColumns((prevState: any) => [
+      ...prevState.slice(0, index + 1),
+      children,
+    ]);
   };
 
   return (
     <Flex
-      sx={{ ...folderExplorerStyle(isHasChildren) }}
+      sx={{ ...folderExplorerStyle(isHasChildren, activeFolder, id) }}
       onClick={handleClickFolder}
       tabIndex={0}
     >
