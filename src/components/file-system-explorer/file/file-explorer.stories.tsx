@@ -30,6 +30,13 @@ File.argTypes = {
       type: 'boolean',
     },
   },
+  mode: {
+    control: {
+      type: 'select',
+      options: ['oneFile', 'nFiles'],
+      summary: 'Mode: one file or n-files',
+    },
+  },
   selected: {
     control: {
       type: 'boolean',

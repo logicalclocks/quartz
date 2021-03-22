@@ -9,20 +9,20 @@ import {
 import Footer from './footer';
 import Header from './header';
 import Button from '../button';
-import Column from './Column';
+import Column from './column';
+import Info from './info';
 
 // Styles
 import styles from './file-system-explorer.styles';
-import FolderExplorer from './folder';
 
 //Data
 import { data } from './data';
-import FileExplorer from './file';
 
 export interface FileSystemExplorerProps
   extends Omit<RebassCardProps, 'css' | 'title'> {
   title?: string;
   link?: string;
+  mode?: string;
   shortcutActions?: React.ReactNode;
   contentProps?: Omit<RebassCardProps, 'css' | 'children'>;
 }
@@ -30,14 +30,17 @@ export interface FileSystemExplorerProps
 const FileSystemExplorer: FC<FileSystemExplorerProps> = ({
   title = 'Select a file',
   shortcutActions,
+  mode = 'oneFile',
   contentProps,
   ...props
 }: FileSystemExplorerProps) => {
   const contentRef = useRef<HTMLDivElement>();
 
   const [columns, setColumns] = useState([data]);
+  const [activeFile, setActiveFile] = useState(null);
 
-  console.log(columns);
+  console.log('itemInfo in MAIN: ', activeFile);
+
   return (
     <RebassCard {...props} sx={styles}>
       <Header shortcutActions={shortcutActions} title={title} />
@@ -54,12 +57,15 @@ const FileSystemExplorer: FC<FileSystemExplorerProps> = ({
       >
         {columns.map((el, index) => (
           <Column
+            setActiveFile={setActiveFile}
+            mode={mode}
             children={el}
             setColumns={setColumns}
             key={index}
             index={index}
           />
         ))}
+        <Info activeFile={activeFile} />
       </Flex>
       <Footer
         secondaryButton={<Button variant="file-secondary">Back</Button>}

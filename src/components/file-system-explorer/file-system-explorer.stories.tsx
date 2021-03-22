@@ -41,6 +41,15 @@ Default.argTypes = {
       summary: 'Card title',
     },
   },
+  mode: {
+    control: {
+      type: 'select',
+      options: ['oneFile', 'nFiles'],
+    },
+    type: {
+      summary: 'Mode: one file or n-files',
+    },
+  },
   actions: {
     control: {
       type: 'text',

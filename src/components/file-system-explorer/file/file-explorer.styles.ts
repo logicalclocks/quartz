@@ -1,6 +1,10 @@
 import { SxStyleProp } from 'rebass';
 
-export const fileExplorerStyle = (isActive: boolean, selected: boolean) =>
+export const fileExplorerStyle = (
+  isActive: boolean,
+  selected: boolean,
+  mode: string,
+) =>
   ({
     display: 'flex',
     position: 'relative',
@@ -17,6 +21,14 @@ export const fileExplorerStyle = (isActive: boolean, selected: boolean) =>
     ':focus': {
       backgroundColor: 'primaryShade2',
       outlineWidth: 0,
+    },
+
+    '> label': {
+      m: 9,
+    },
+
+    '> div': {
+      p: mode === 'nFiles' ? 0 : 9,
     },
 
     cursor: 'pointer',

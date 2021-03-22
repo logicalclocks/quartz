@@ -13,7 +13,7 @@ export const folderExplorerStyle = (children: boolean) =>
 
     width: 190,
 
-    py: '10px',
+    py: '9px',
     px: '11px',
 
     cursor: 'pointer',

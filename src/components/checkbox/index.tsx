@@ -11,6 +11,7 @@ import { TooltipProps } from '../tooltip';
 
 export interface CheckboxProps extends Omit<RebassCheckboxProps, 'css'> {
   label?: string;
+  mode?: string;
   tooltipProps?: Omit<TooltipProps, 'children'>;
 }
 

@@ -1,9 +1,6 @@
 import React, { FC } from 'react';
-import { Box, BoxProps, Flex } from 'rebass';
+import { Box, BoxProps } from 'rebass';
 
-// Styles
-import style from './file-explorer-column.styles';
-import { data } from '../data';
 import FolderExplorer from '../folder';
 import FileExplorer from '../file';
 
@@ -11,14 +8,21 @@ export interface FileExplorerColumnProps
   extends Omit<BoxProps, 'css' | 'action'> {
   children?: Array[any];
   setColumns?: any;
+  mode?: string;
   index?: number;
+  setActiveFile?: object;
+  setActive?: any;
 }
 
 const FileExplorerColumn: FC<FileExplorerColumnProps> = ({
   children,
+  mode,
   index,
   setColumns,
+  setActiveFile,
+  setActive,
 }: FileExplorerColumnProps) => {
+  console.log('Here ', setActiveFile);
   return (
     <Box
       sx={{
@@ -45,7 +49,10 @@ const FileExplorerColumn: FC<FileExplorerColumnProps> = ({
           } else {
             return (
               <FileExplorer
-                name={item.name}
+                mode={mode}
+                setActive={setActive}
+                setActiveFile={setActiveFile}
+                itemInfo={item}
                 isActive={false}
                 selected={false}
               />

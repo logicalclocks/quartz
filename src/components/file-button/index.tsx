@@ -6,7 +6,7 @@ import icons from '../../sources/icons';
 import { fileButton, inputBox, inputButton } from './file-button.styles';
 
 export interface QuartzFileButtonProps extends Omit<ButtonProps, 'css'> {
-  children: React.ReactNode;
+  children: React.ReactNode | string;
   mode: string;
   intent?: 'secondary';
   href?: string;
@@ -30,12 +30,10 @@ const UploadButton: FC<QuartzFileButtonProps> = ({
   //
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const fileUploaded = event.target.files;
-    console.log(typeof fileUploaded);
     renderUploadFiles(fileUploaded);
   };
 
   const renderUploadFiles = (file: any) => {
-    console.log('renderUploadFiles: ', file);
     const list = document.createElement('ul');
     //for every file...
     for (let x = 0; x < file.length; x++) {
