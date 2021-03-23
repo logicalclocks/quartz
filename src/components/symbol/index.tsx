@@ -46,7 +46,7 @@ const Symbol: FC<SymbolProps> = ({
       secondaryText={tooltipSecondaryText}
     >
       <Text
-        height="18px"
+        height="19px"
         onMouseEnter={() => setHover(true)}
         onMouseLeave={() => setHover(false)}
         onClick={handleClick}
