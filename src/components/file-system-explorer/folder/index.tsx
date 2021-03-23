@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react';
+import React, { FC } from 'react';
 import { Box, Flex } from 'rebass';
 import icons from '../../../sources/icons';
 

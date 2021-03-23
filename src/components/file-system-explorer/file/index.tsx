@@ -17,10 +17,12 @@ export interface QuartzFileExplorerProps {
   isFileSected?: any;
   setColumns?: any;
   setActiveFolder?: any;
+  isFileSelected?: any;
+  setSelectedFile?: any;
 }
 
 const FileExplorer: FC<QuartzFileExplorerProps> = ({
-  isActive = false,
+  isActive,
   setActiveFolder,
   activeFile,
   setActiveFile,
@@ -28,7 +30,7 @@ const FileExplorer: FC<QuartzFileExplorerProps> = ({
   index,
   setColumns,
   mode = 'oneFile',
-  selected = false,
+  selected,
   isFileSelected,
   ...props
 }: QuartzFileExplorerProps) => {
@@ -46,10 +48,11 @@ const FileExplorer: FC<QuartzFileExplorerProps> = ({
     }
     setActiveFolder(0);
     setColumns((prevState: any) => [...prevState.slice(0, index + 1)]);
-    isFileSelected();
+    isFileSelected(itemInfo, !selectedFile);
   };
 
   const selectActiveFile = () => {
+    // isFileSelected(itemInfo, selectedFile);
     setActiveFile(itemInfo);
   };
 

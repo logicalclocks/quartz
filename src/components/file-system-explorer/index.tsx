@@ -46,13 +46,13 @@ const FileSystemExplorer: FC<FileSystemExplorerProps> = ({
     lastChildOfColumn.current?.scrollIntoView();
   };
 
-  const isFileSelected = (item: object, action: boolean) => {
+  const isFileSelected = (item: any, action: boolean) => {
     if (action) {
-      setFileListValue((prevState) => prevState.push());
+      setFileListValue((prevState: any) => [...prevState, item]);
     } else {
-      setFileListValue((prevState) =>
-        prevState.filter((el) => el.id === item.id),
-      );
+      setFileListValue((prevState) => [
+        ...prevState.filter((el) => el.id !== item.id),
+      ]);
     }
   };
 

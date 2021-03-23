@@ -4,7 +4,7 @@ import styles, { boxStyles, boxButtonStyles } from './footer.styles';
 import Labeling from '../../typography/labeling';
 
 export interface fileExplorerFooter {
-  value?: string;
+  value?: Array[];
   mainButton: React.ReactNode;
   secondaryButton?: React.ReactNode;
 }
@@ -24,11 +24,17 @@ const FooterFileExplorer: FC<fileExplorerFooter> = ({
 }: fileExplorerFooter) => (
   <Flex sx={{ ...styles }} {...props}>
     <Box sx={{ ...boxStyles }}>
-      {value && (
-        <Labeling gray bold sx={{ textTransform: 'normal' }}>
-          {value}
-        </Labeling>
-      )}
+      {value?.length > 0
+        ? value.map((el) => (
+            <Labeling
+              key={el.id}
+              bold
+              sx={{ textTransform: 'normal', color: 'primary' }}
+            >
+              {el.name}
+            </Labeling>
+          ))
+        : ''}
     </Box>
     <Box sx={{ ...boxButtonStyles }}>
       <Box>{secondaryButton}</Box>
