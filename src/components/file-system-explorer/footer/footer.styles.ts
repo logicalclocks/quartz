@@ -5,7 +5,23 @@ export const boxStyles = {
   justifyContent: 'space-between',
   alignItems: 'center',
   '> div': {
-    ml: '20px',
+    ml: '3px',
+    position: 'relative',
+    paddingRight: '5px',
+  },
+  '> div:after': {
+    display: 'block',
+    content: '";"',
+    width: '8px',
+    height: '8px',
+    position: 'absolute',
+    right: '-5px',
+    top: '-1px',
+    color: 'gray',
+  },
+
+  '> div:last-child:after': {
+    display: 'none',
   },
 };
 

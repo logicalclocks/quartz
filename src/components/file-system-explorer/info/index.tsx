@@ -27,7 +27,9 @@ const FileExplorerInfo: FC<FileExplorerInfoProps> = ({
           ...blockInfo,
         }}
       >
-        <Value as="h4">{activeFile.name}</Value>
+        <Value as="h2" marginBottom="32px" textAlign="center">
+          {activeFile.name}
+        </Value>
         <Labeling gray>
           size <span>{activeFile.size}</span>
         </Labeling>

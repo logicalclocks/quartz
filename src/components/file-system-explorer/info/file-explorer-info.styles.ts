@@ -21,6 +21,12 @@ export const FileExplorerInfoStyle = {
 };
 
 export const blockInfo = {
+  display: 'flex',
+  flexDirection: 'column',
+  // minWidth: '230px',
+  '> div': {
+    marginBottom: '8px',
+  },
   ' > div > span': {
     color: 'black',
     marginLeft: 0,

@@ -24,17 +24,26 @@ const FooterFileExplorer: FC<fileExplorerFooter> = ({
 }: fileExplorerFooter) => (
   <Flex sx={{ ...styles }} {...props}>
     <Box sx={{ ...boxStyles }}>
-      {value?.length > 0
-        ? value.map((el) => (
-            <Labeling
-              key={el.id}
-              bold
-              sx={{ textTransform: 'normal', color: 'primary' }}
-            >
-              {el.name}
-            </Labeling>
-          ))
-        : ''}
+      {value && value?.length > 0 ? (
+        value.map((el) => (
+          <Labeling
+            key={el.id}
+            bold
+            sx={{
+              textTransform: 'normal',
+              color: 'primary',
+              marginLeft: '0px',
+            }}
+          >
+            {el.name}
+            {/*<span style={{ color: 'gray' }}> ; </span>*/}
+          </Labeling>
+        ))
+      ) : (
+        <Labeling bold gray sx={{ textTransform: 'normal' }}>
+          pick a file
+        </Labeling>
+      )}
     </Box>
     <Box sx={{ ...boxButtonStyles }}>
       <Box>{secondaryButton}</Box>

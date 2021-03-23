@@ -42,17 +42,16 @@ const FileExplorer: FC<QuartzFileExplorerProps> = ({
       setActive(!active);
       setSelectedFile(!selectedFile);
       setActiveFile(itemInfo);
+      isFileSelected(itemInfo, !selectedFile);
     } else {
       setActive(!active);
       setActiveFile(itemInfo);
     }
     setActiveFolder(0);
     setColumns((prevState: any) => [...prevState.slice(0, index + 1)]);
-    isFileSelected(itemInfo, !selectedFile);
   };
 
   const selectActiveFile = () => {
-    // isFileSelected(itemInfo, selectedFile);
     setActiveFile(itemInfo);
   };
 

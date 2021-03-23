@@ -39,6 +39,7 @@ const FileSystemExplorer: FC<FileSystemExplorerProps> = ({
   const [columns, setColumns] = useState([data]);
   const [activeFile, setActiveFile] = useState(null);
   const [fileListValue, setFileListValue] = useState([]);
+  const [pathListValue, setPathListValue] = useState([]);
 
   const lastChildOfColumn = useRef(null);
 

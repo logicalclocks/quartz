@@ -29,7 +29,7 @@ const FileExplorerColumn: FC<FileExplorerColumnProps> = ({
   return (
     <Box
       sx={{
-        width: 190,
+        minWidth: '190px',
         borderRightColor: 'grayShade1',
         borderRightWidth: '3px',
         borderRightStyle: 'solid',
