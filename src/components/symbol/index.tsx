@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, useState } from 'react';
 import { Text } from '../../index';
 import styles from './symbol.styles';
 import { getSymbolIcon } from './utils';
@@ -34,9 +34,10 @@ const Symbol: FC<SymbolProps> = ({
   iconProps,
   mode = SymbolMode.single,
 }) => {
+  const [hover, setHover] = useState(false);
   const mainText = tooltipMainText || defaultTooltipText[mode];
 
-  const icon = getSymbolIcon(mode, inBasket);
+  const icon = getSymbolIcon(mode, inBasket, hover);
 
   return (
     <Tooltip
@@ -44,7 +45,14 @@ const Symbol: FC<SymbolProps> = ({
       mainText={mainText}
       secondaryText={tooltipSecondaryText}
     >
-      <Text height="18px" onClick={handleClick} sx={styles} {...iconProps}>
+      <Text
+        height="18px"
+        onMouseEnter={() => setHover(true)}
+        onMouseLeave={() => setHover(false)}
+        onClick={handleClick}
+        sx={styles}
+        {...iconProps}
+      >
         {icon}
       </Text>
     </Tooltip>
