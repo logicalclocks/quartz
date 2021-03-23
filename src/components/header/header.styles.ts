@@ -17,7 +17,7 @@ export const rightSectionStyles = {
       alignItems: 'center',
       justifyContent: 'center',
 
-      width: '50px',
+      // width: '50px',
 
       borderRightStyle: 'solid',
       borderRightWidth: '1px',
