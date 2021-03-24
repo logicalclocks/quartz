@@ -93,6 +93,7 @@ const NavigationItem: FC<NavigationItemProps> = (
       variant={getVariant(disabled, isActiveItem)}
       sx={styles}
       onClick={!disabled ? handleClick : undefined}
+      className={ key == 'oldui' ? 'oldui' : ''}
       {...restProps}
     >
       {icon && (

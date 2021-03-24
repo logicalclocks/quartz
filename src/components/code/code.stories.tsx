@@ -18,6 +18,15 @@ const argTypes = {
       summary: 'Code content',
     },
   },
+  title: {
+    control: {
+      type: 'text',
+    },
+
+    type: {
+      summary: 'Code title',
+    },
+  },
   copyButton: {
     control: {
       type: 'boolean',
@@ -25,6 +34,16 @@ const argTypes = {
     type: {
       required: false,
       summary: 'Show copy to clipboard button',
+    },
+    defaultValue: { summary: false },
+  },
+  downloadButton: {
+    control: {
+      type: 'boolean',
+    },
+    type: {
+      required: false,
+      summary: 'Show download to clipboard button',
     },
     defaultValue: { summary: false },
   },
