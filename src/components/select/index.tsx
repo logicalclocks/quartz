@@ -45,6 +45,7 @@ export interface SelectProps extends Omit<LabelProps, 'onChange' | 'children'> {
   additionalTexts?: string[];
   additionalComponents?: React.ReactNode[];
   noMathText?: string;
+  needSecondaryText?: boolean;
 }
 
 const Select: FC<SelectProps> = ({
@@ -72,6 +73,7 @@ const Select: FC<SelectProps> = ({
   additionalComponents,
   additionalTexts,
   noMathText = 'No result',
+  needSecondaryText = true,
   ...props
 }: SelectProps) => {
   const containerRef = useRef(null);
@@ -126,6 +128,7 @@ const Select: FC<SelectProps> = ({
         additionalTexts={additionalTexts}
         options={options}
         ref={containerRef}
+        needSecondaryText={needSecondaryText}
       >
         {isOpen && (
           <List sx={listStyles} width={listWidth} maxHeight={maxListHeight}>
