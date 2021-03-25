@@ -1,5 +1,5 @@
 import React, { FC, forwardRef, useMemo } from 'react';
-import { Box, BoxProps } from 'rebass';
+import { Box, BoxProps, Flex } from 'rebass';
 
 // Icons
 import ArrowsIcon from '../icons/arrows.icon';
@@ -19,7 +19,22 @@ export interface SelectLabelProps extends Omit<BoxProps, 'css'> {
   noDataMessage?: string;
   hasPlaceholder: boolean;
   intent: Intents;
+  additionalTexts?: string[];
 }
+
+const getAdditionalText = (
+  value: string[],
+  options: string[],
+  additionalTexts: string[],
+) => {
+  const index = options.indexOf(value[0]);
+
+  if (index > -1) {
+    return additionalTexts[index];
+  }
+
+  return '';
+};
 
 const getLabelText = (
   value: string[],
@@ -44,6 +59,7 @@ const SelectLabel: FC<SelectLabelProps> = forwardRef(
       isMulti,
       noDataMessage,
       intent,
+      additionalTexts,
       hasPlaceholder,
       ...props
     }: SelectLabelProps,
@@ -85,9 +101,16 @@ const SelectLabel: FC<SelectLabelProps> = forwardRef(
         >
           {content}
         </Labeling>
-        <Labeling px="5px" sx={valueStyles}>
-          {getLabelText(value, options, isMulti)}
-        </Labeling>
+        <Flex>
+          <Labeling px="5px" sx={valueStyles}>
+            {getLabelText(value, options, isMulti)}
+          </Labeling>
+          {!!additionalTexts?.length && !!value.length && (
+            <Labeling gray={true}>
+              {getAdditionalText(value, options, additionalTexts)}
+            </Labeling>
+          )}
+        </Flex>
         <ArrowsIcon />
         {children}
       </Box>

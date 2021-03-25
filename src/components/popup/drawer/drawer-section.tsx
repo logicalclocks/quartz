@@ -24,7 +24,7 @@ const DrawerSection: FC<DrawerSectionProps> = ({
 
   return (
     <Box
-      pt="16px"
+      pt="15px"
       pr="20px"
       pb="20px"
       pl="20px"
@@ -49,7 +49,7 @@ const DrawerSection: FC<DrawerSectionProps> = ({
         )}
       </Box>
       {children && (
-        <Box mt="17px" display="flex">
+        <Box mt="15px" display="flex">
           {children}
         </Box>
       )}
