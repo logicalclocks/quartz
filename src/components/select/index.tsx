@@ -1,4 +1,4 @@
-import React, { FC, useCallback, useRef } from 'react';
+import React, { FC, useCallback, useMemo, useRef, useState } from 'react';
 
 // Components
 import SelectLabel from './label';
@@ -15,7 +15,10 @@ import { listStyles, bottomActionStyles } from './select.styles';
 // Hooks
 import useDropdown from '../../utils/useDropdown';
 import useOnClickOutside from '../../utils/useClickOutside';
-import { Box } from 'rebass';
+import { Box, Flex } from 'rebass';
+import { Divider, Input } from '../../index';
+import useKeyUp from '../../utils/useKeyUp';
+import icons from '../../sources/icons';
 
 export interface SelectProps extends Omit<LabelProps, 'onChange' | 'children'> {
   value: string[];
@@ -36,6 +39,11 @@ export interface SelectProps extends Omit<LabelProps, 'onChange' | 'children'> {
   bottomActionText?: string;
   bottomActionHandler?: () => void;
   hasPlaceholder?: boolean;
+  hasSearch?: boolean;
+  searchPlaceholder?: string;
+  customFilter?: React.ReactNode;
+  additionalTexts?: string[];
+  additionalComponents?: React.ReactNode[];
 }
 
 const Select: FC<SelectProps> = ({
@@ -57,16 +65,62 @@ const Select: FC<SelectProps> = ({
   bottomActionHandler,
   bottomActionText,
   hasPlaceholder = true,
+  hasSearch = false,
+  searchPlaceholder = 'Find...',
+  customFilter,
+  additionalComponents,
+  additionalTexts,
   ...props
 }: SelectProps) => {
   const containerRef = useRef(null);
   const [isOpen, handleToggle, handleClickOutside] = useDropdown(false);
   useOnClickOutside<HTMLDivElement>(containerRef, handleClickOutside);
 
+  const [search, setSearch] = useState('');
+
+  const handleCloseOnEsc = useCallback(() => {
+    if (isOpen) {
+      handleToggle();
+    }
+  }, [isOpen, handleToggle]);
+
+  useKeyUp(handleCloseOnEsc);
+
+  const filteredOptions = useMemo(() => {
+    if (!search) {
+      return options;
+    }
+
+    return options.filter((value) =>
+      value.toLowerCase().includes(search.toLowerCase()),
+    );
+  }, [search, options]);
+
+  const filteredAdditionalTexts = useMemo(() => {
+    if (!search) {
+      return additionalTexts;
+    }
+
+    return additionalTexts?.filter((_, index) =>
+      options[index].toLowerCase().includes(search.toLowerCase()),
+    );
+  }, [search, additionalTexts, options]);
+
+  const filteredAdditionalComponents = useMemo(() => {
+    if (!search) {
+      return additionalComponents;
+    }
+
+    return additionalComponents?.filter((_, index) =>
+      options[index].toLowerCase().includes(search.toLowerCase()),
+    );
+  }, [search, additionalComponents, options]);
+
   // Handlers
   const handleLabelClick = useCallback(() => {
     if (!disabled) {
       handleToggle();
+      setSearch('');
     }
   }, [handleToggle, disabled]);
 
@@ -87,21 +141,69 @@ const Select: FC<SelectProps> = ({
         value={value}
         isMulti={isMulti}
         noDataMessage={noDataMessage}
+        additionalTexts={additionalTexts}
         options={options}
         ref={containerRef}
       >
         {isOpen && (
           <List sx={listStyles} width={listWidth} maxHeight={maxListHeight}>
+            <Flex>
+              {!!customFilter && customFilter}
+              {hasSearch && (
+                <Flex flex={1} ml="20px">
+                  <Box
+                    mt="20px"
+                    mr="-34px"
+                    sx={{
+                      svg: {
+                        width: '14px',
+                        height: '14px',
+
+                        path: {
+                          fill: 'gray',
+                        },
+                      },
+                      zIndex: 1,
+                    }}
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    {icons.glass}
+                  </Box>
+                  <Input
+                    pl="32px"
+                    m="10px"
+                    width="100%"
+                    value={search}
+                    placeholder={searchPlaceholder}
+                    onChange={({ target }) => setSearch(target.value)}
+                    onClick={(e) => e.stopPropagation()}
+                  />
+                </Flex>
+              )}
+            </Flex>
+            {(!!customFilter || hasSearch) && (
+              <Divider my={0} width="calc(100% + 20px)" />
+            )}
             {isMulti ? (
               // Multi choice
               <SelectListMulti
-                options={options}
                 value={value}
                 onChange={onChange}
+                onClose={handleToggle}
+                options={filteredOptions}
+                additionalTexts={filteredAdditionalTexts}
+                additionalComponents={filteredAdditionalComponents}
               />
             ) : (
               // Single choice
-              <SelectList options={options} value={value} onChange={onChange} />
+              <SelectList
+                value={value}
+                onChange={onChange}
+                onClose={handleToggle}
+                options={filteredOptions}
+                additionalTexts={filteredAdditionalTexts}
+                additionalComponents={filteredAdditionalComponents}
+              />
             )}
             {bottomActionText && (
               <Box sx={bottomActionStyles} onClick={bottomActionHandler}>

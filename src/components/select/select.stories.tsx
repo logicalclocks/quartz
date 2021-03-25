@@ -4,6 +4,9 @@ import React, { useState } from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
 
 import Select, { SelectProps } from './index';
+import { RadioGroup, Value } from '../../index';
+import Labeling from '../typography/labeling';
+import { Box } from 'rebass';
 
 export default {
   title: 'Quartz/Select',
@@ -14,30 +17,75 @@ const options = ['name', 'creation date', 'size', '# of rows', '# of features'];
 
 const Template: Story<SelectProps> = (props) => {
   const [value, setValue] = useState<string[]>([]);
+  const [customOptions, setOptions] = useState(options);
+
+  const [selected, setSelected] = useState('all');
 
   const handleChange = (data: string[]) => {
-    action('onCahnge')(data);
+    action('onChange')(data);
 
     setValue(data);
   };
 
-  return <Select {...props} value={value} onChange={handleChange} />;
+  const handleChangeFilter = (data: string) => {
+    setSelected(data);
+
+    if (data === 'all') {
+      setOptions(options);
+    } else {
+      setOptions(options.slice(3, 5));
+    }
+  };
+
+  return (
+    <Box width="600px">
+      <Select
+        {...props}
+        value={value}
+        maxListHeight="initial"
+        options={customOptions}
+        onChange={handleChange}
+        customFilter={
+          <RadioGroup
+            ml="10px"
+            value={selected}
+            flexDirection="row"
+            onChange={handleChangeFilter}
+            onClick={(e) => e.stopPropagation()}
+            options={['all', 'matching feature only']}
+          />
+        }
+      />
+    </Box>
+  );
 };
 
 export const Default = Template.bind({});
 
 Default.args = {
-  placeholder: 'choice',
-  width: '300px',
-  listWidth: '300px',
+  placeholder: 'placeholder',
+  width: '100%',
+  label: 'Label',
+  listWidth: '100%',
   variant: 'primary',
+  hasPlaceholder: false,
   isMulti: false,
-  options,
   noDataMessage: 'no labels',
+  hasSearch: true,
   bottomActionText: 'Add another label',
   bottomActionHandler: () => {
-    console.log('add');
+    action('on bottom action')();
   },
+  additionalTexts: ['text1', 'text2', 'text3', 'text4', 'text5'],
+  additionalComponents: [
+    <Value>text</Value>,
+    <Labeling bold gray>
+      text gray
+    </Labeling>,
+    null,
+    <Value>text</Value>,
+    <Value>text</Value>,
+  ],
 };
 
 Default.argTypes = {
@@ -47,6 +95,27 @@ Default.argTypes = {
   options: {
     type: { required: true, summary: 'Array of strings' },
     control: { type: 'array' },
+  },
+  searchPlaceholder: {
+    type: { required: false },
+    control: { type: 'text' },
+  },
+  hasSearch: {
+    type: { required: false },
+    control: { type: 'boolean' },
+    defaultValue: { summary: 'Has search input' },
+  },
+  additionalComponents: {
+    type: { required: false, summary: 'Array of components(right)' },
+    control: { type: 'array' },
+  },
+  additionalTexts: {
+    type: { required: false, summary: 'Array of text(after option)' },
+    control: { type: 'array' },
+  },
+  customFilter: {
+    type: { required: false, summary: 'Custom filter' },
+    control: { type: 'React.ReactNode' },
   },
   placeholder: {
     type: { required: true },

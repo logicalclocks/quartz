@@ -39,6 +39,7 @@ import DatePicker from './components/datepicker';
 import Divider from './components/divider';
 import Symbol from './components/symbol';
 import { SymbolMode } from './components/symbol';
+import Collapse from './components/collapse';
 
 // Popups
 import Drawer from './components/popup/drawer';
@@ -192,6 +193,7 @@ export {
   Labeling,
   StickySummary,
   SplitGraph,
+  Collapse,
   //  Icons
   FolderIcon,
   useOnClickOutside,
