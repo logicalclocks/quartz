@@ -16,7 +16,7 @@ import { listStyles, bottomActionStyles } from './select.styles';
 import useDropdown from '../../utils/useDropdown';
 import useOnClickOutside from '../../utils/useClickOutside';
 import { Box, Flex } from 'rebass';
-import { Divider, Input, Value } from '../../index';
+import { Divider, Input } from '../../index';
 import useKeyUp from '../../utils/useKeyUp';
 import icons from '../../sources/icons';
 
@@ -100,6 +100,26 @@ const Select: FC<SelectProps> = ({
     );
   }, [search, options]);
 
+  const filteredAdditionalTexts = useMemo(() => {
+    if (!search) {
+      return additionalTexts;
+    }
+
+    return additionalTexts?.filter((_, index) =>
+      options[index].toLowerCase().includes(search.toLowerCase()),
+    );
+  }, [search, additionalTexts, options]);
+
+  const filteredAdditionalComponents = useMemo(() => {
+    if (!search) {
+      return additionalComponents;
+    }
+
+    return additionalComponents?.filter((_, index) =>
+      options[index].toLowerCase().includes(search.toLowerCase()),
+    );
+  }, [search, additionalComponents, options]);
+
   // Handlers
   const handleLabelClick = useCallback(() => {
     if (!disabled) {
@@ -169,32 +189,26 @@ const Select: FC<SelectProps> = ({
             {(!!customFilter || hasSearch) && (
               <Divider my={0} width="calc(100% + 20px)" />
             )}
-            {!!filteredOptions.length ? (
-              isMulti ? (
-                // Multi choice
-                <SelectListMulti
-                  value={value}
-                  onChange={onChange}
-                  onClose={handleToggle}
-                  options={filteredOptions}
-                  additionalTexts={additionalTexts}
-                  additionalComponents={additionalComponents}
-                />
-              ) : (
-                // Single choice
-                <SelectList
-                  value={value}
-                  onChange={onChange}
-                  onClose={handleToggle}
-                  options={filteredOptions}
-                  additionalTexts={additionalTexts}
-                  additionalComponents={additionalComponents}
-                />
-              )
+            {isMulti ? (
+              // Multi choice
+              <SelectListMulti
+                value={value}
+                onChange={onChange}
+                onClose={handleToggle}
+                options={filteredOptions}
+                additionalTexts={filteredAdditionalTexts}
+                additionalComponents={filteredAdditionalComponents}
+              />
             ) : (
-              <Flex height="55px" alignItems="center" justifyContent="center">
-                <Value>{noMathText}</Value>
-              </Flex>
+              // Single choice
+              <SelectList
+                value={value}
+                onChange={onChange}
+                onClose={handleToggle}
+                options={filteredOptions}
+                additionalTexts={filteredAdditionalTexts}
+                additionalComponents={filteredAdditionalComponents}
+              />
             )}
             {bottomActionText && (
               <Box sx={bottomActionStyles} onClick={bottomActionHandler}>
