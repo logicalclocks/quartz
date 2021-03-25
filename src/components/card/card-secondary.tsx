@@ -15,6 +15,7 @@ export interface CardSecondaryProps
   children: React.ReactNode;
   placeholder?: string;
   contentProps?: Omit<RebassCardProps, 'css' | 'children'>;
+  readonly?: boolean;
 }
 
 const CardSecondary: FC<CardSecondaryProps> = ({
@@ -23,6 +24,7 @@ const CardSecondary: FC<CardSecondaryProps> = ({
   maxHeight,
   contentProps,
   placeholder,
+  readOnly,
   ...props
 }: CardSecondaryProps) => {
   const isShowHeader = !!title;
@@ -42,7 +44,13 @@ const CardSecondary: FC<CardSecondaryProps> = ({
       +(maxHeight as string).slice(0, (maxHeight as string).indexOf('px')) - 64;
 
   return (
-    <RebassCard {...props} maxHeight={maxHeight} sx={styles}>
+    <RebassCard
+      {...props}
+      maxHeight={maxHeight}
+      tx="variants"
+      variant={readOnly ? 'readOnly' : 'card'}
+      sx={styles}
+    >
       {isShowHeader && (
         <Box sx={cardHeaderStyles}>
           {title && (
