@@ -13,6 +13,7 @@ export enum SymbolMode {
 export interface SymbolProps {
   mode?: SymbolMode;
   inBasket: boolean;
+  possible?: boolean;
   handleClick: () => void;
   iconProps?: TextProps;
   tooltipMainText?: string;
@@ -32,25 +33,26 @@ const Symbol: FC<SymbolProps> = ({
   tooltipMainText,
   tooltipSecondaryText,
   iconProps,
+  possible = true,
   mode = SymbolMode.single,
 }) => {
   const [hover, setHover] = useState(false);
   const mainText = tooltipMainText || defaultTooltipText[mode];
 
-  const icon = getSymbolIcon(mode, inBasket, hover);
+  const icon = getSymbolIcon(mode, inBasket, hover, possible);
 
   return (
     <Tooltip
       {...tooltipProps}
-      mainText={mainText}
-      secondaryText={tooltipSecondaryText}
+      mainText={possible ? mainText : 'Contains no features'}
+      secondaryText={possible ? tooltipSecondaryText : ''}
     >
       <Text
         height="19px"
         onMouseEnter={() => setHover(true)}
         onMouseLeave={() => setHover(false)}
         onClick={handleClick}
-        sx={styles}
+        sx={styles(possible)}
         {...iconProps}
       >
         {icon}
