@@ -7,6 +7,7 @@ export const containerStyles = {
   borderWidth: '0 3px 3px 0',
   borderColor: 'gray',
   borderStyle: 'solid',
+  '-moz-padding-end': '8px',
 };
 
 export const tableStyles = {

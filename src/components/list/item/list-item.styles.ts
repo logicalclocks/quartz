@@ -25,6 +25,10 @@ export default (isActive: boolean) => ({
     visibility: 'hidden',
   },
 
+  '> div': {
+    minWidth: 28,
+  },
+
   ':hover > button:last-of-type': {
     visibility: 'visible',
   },

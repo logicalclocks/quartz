@@ -46,6 +46,10 @@ const getLabelText = (
     return '';
   }
 
+  if (value[0] === 'any' && value.length === 1) {
+    return 'any';
+  }
+
   return value.length === options.length && isMulti ? 'all' : value.join(', ');
 };
 
