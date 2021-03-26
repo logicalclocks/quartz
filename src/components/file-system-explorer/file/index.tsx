@@ -7,15 +7,16 @@ import { Checkbox } from '../../../index';
 
 export interface QuartzFileExplorerProps {
   name?: string;
-  isActive?: boolean;
-  index?: number;
-  selected?: boolean;
+  isActive: boolean;
+  index: number;
+  selected: boolean;
   activeFile?: object;
   mode?: string;
-  itemInfo?: object;
+  itemInfo: { [key: string]: string };
   setActiveFile?: any;
   isFileSected?: any;
   setColumns?: any;
+  setActive?: any;
   setActiveFolder?: any;
   isFileSelected?: any;
   setSelectedFile?: any;
@@ -24,7 +25,7 @@ export interface QuartzFileExplorerProps {
 const FileExplorer: FC<QuartzFileExplorerProps> = ({
   isActive,
   setActiveFolder,
-  activeFile,
+  // activeFile,
   setActiveFile,
   itemInfo,
   index,
@@ -32,8 +33,8 @@ const FileExplorer: FC<QuartzFileExplorerProps> = ({
   mode = 'oneFile',
   selected,
   isFileSelected,
-  ...props
-}: QuartzFileExplorerProps) => {
+}: // ...props
+QuartzFileExplorerProps) => {
   const [active, setActive] = useState(isActive);
   const [selectedFile, setSelectedFile] = useState(selected);
 

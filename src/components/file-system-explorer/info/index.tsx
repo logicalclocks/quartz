@@ -1,15 +1,19 @@
 import React, { FC } from 'react';
-import { Box, BoxProps } from 'rebass';
+import { Box, BoxProps, Flex } from 'rebass';
 
 import { Value } from '../../../index';
 import UploadButton from '../../file-button';
 
-import { FileExplorerInfoStyle, blockInfo } from './file-explorer-info.styles';
+import {
+  FileExplorerInfoStyle,
+  blockInfoStyles,
+  contentInfoStyles,
+} from './file-explorer-info.styles';
 import Labeling from '../../typography/labeling';
 
 export interface FileExplorerInfoProps extends Omit<BoxProps, 'css'> {
-  children?: Array[any];
-  activeFile?: object;
+  children?: string[];
+  activeFile?: { [key: string]: string };
 }
 
 const FileExplorerInfo: FC<FileExplorerInfoProps> = ({
@@ -24,26 +28,41 @@ const FileExplorerInfo: FC<FileExplorerInfoProps> = ({
     >
       <Box
         sx={{
-          ...blockInfo,
+          ...blockInfoStyles,
         }}
       >
         <Value as="h2" marginBottom="32px" textAlign="center">
-          {activeFile.name}
+          {activeFile?.name}
         </Value>
-        <Labeling gray>
-          size <span>{activeFile.size}</span>
-        </Labeling>
-        <Labeling gray>
-          creation <span>{activeFile.creation}</span>
-        </Labeling>
-        <Labeling gray>
-          last update <span>{activeFile.last_update}</span>
-        </Labeling>
-        <Labeling gray>
-          author <span>{activeFile.author}</span>
-        </Labeling>
+        <Flex
+          sx={{
+            '> div > div': {
+              height: '30px',
+            },
+          }}
+        >
+          <Box
+            sx={{
+              ...contentInfoStyles(true),
+            }}
+          >
+            <Labeling gray>size</Labeling>
+            <Labeling gray>creation</Labeling>
+            <Labeling gray>last update</Labeling>
+            <Labeling gray>author</Labeling>
+          </Box>
+          <Box
+            sx={{
+              ...contentInfoStyles(false),
+            }}
+          >
+            <Labeling>{activeFile?.size}</Labeling>
+            <Labeling>{activeFile?.creation}</Labeling>
+            <Labeling>{activeFile?.last_update}</Labeling>
+            <Labeling>{activeFile?.author}</Labeling>
+          </Box>
+        </Flex>
       </Box>
-
       {children}
       <UploadButton children="Download file" />
     </Box>

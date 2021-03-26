@@ -20,15 +20,31 @@ export const FileExplorerInfoStyle = {
   },
 };
 
-export const blockInfo = {
+export const blockInfoStyles = {
   display: 'flex',
   flexDirection: 'column',
-  // minWidth: '230px',
-  '> div': {
-    marginBottom: '8px',
-  },
   ' > div > span': {
     color: 'black',
     marginLeft: 0,
   },
 };
+
+export const contentInfoStyles = (side: boolean) => ({
+  display: 'flex',
+  flexDirection: 'column',
+  maxWidth: side ? '60px' : '80px',
+  textAlign: side ? 'right' : 'left',
+  marginRight: '4px',
+  div: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'flex-end',
+    marginBottom: '8px',
+  },
+  'div:last-child': {
+    height: 'auto',
+  },
+  'div:first-child': {
+    height: 'auto',
+  },
+});

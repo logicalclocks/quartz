@@ -1,4 +1,5 @@
 import { SxStyleProp } from 'rebass';
+import { CSSProperties } from 'react';
 
 export const fileButton = {
   display: 'flex',
@@ -25,7 +26,7 @@ export const fileButton = {
   },
 } as SxStyleProp;
 
-export const inputButton = {
+export const inputButton: CSSProperties = {
   position: 'absolute',
   display: 'none',
   width: '100%',

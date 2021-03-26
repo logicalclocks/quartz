@@ -4,7 +4,7 @@ import styles, { boxStyles, boxButtonStyles } from './footer.styles';
 import Labeling from '../../typography/labeling';
 
 export interface fileExplorerFooter {
-  value?: Array[];
+  value?: any[];
   mainButton: React.ReactNode;
   secondaryButton?: React.ReactNode;
 }

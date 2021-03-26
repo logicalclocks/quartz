@@ -7,7 +7,7 @@ import { fileButton, inputBox, inputButton } from './file-button.styles';
 
 export interface QuartzFileButtonProps extends Omit<ButtonProps, 'css'> {
   children: React.ReactNode | string;
-  mode: string;
+  mode?: string;
   intent?: 'secondary';
   href?: string;
 }

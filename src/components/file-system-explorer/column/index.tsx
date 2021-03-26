@@ -6,10 +6,10 @@ import FileExplorer from '../file';
 
 export interface FileExplorerColumnProps
   extends Omit<BoxProps, 'css' | 'action'> {
-  children?: Array[any];
+  children: any[];
   setColumns?: any;
   mode?: string;
-  index?: number;
+  index: number;
   setActiveFile?: object;
   setActive?: any;
   isFileSelected?: any;
@@ -36,7 +36,7 @@ const FileExplorerColumn: FC<FileExplorerColumnProps> = ({
         overflow: 'hidden',
       }}
     >
-      {children.map((item) => {
+      {children.map((item: { [key: string]: any }): any => {
         if (item) {
           if (item.type === 'folder') {
             return (

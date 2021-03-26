@@ -9,7 +9,7 @@ export interface QuartzFileExplorerFolderProps {
   children: Array<any>;
   name: string;
   id: number;
-  isActive: boolean;
+  isActive?: boolean;
   index: number;
   setColumns: any;
   isHasChildren: boolean;
@@ -22,15 +22,15 @@ const FolderExplorer: FC<QuartzFileExplorerFolderProps> = ({
   children,
   setActiveFile,
   isHasChildren,
-  isActive,
+  // isActive,
   setActiveFolder,
   activeFolder,
   index,
   name,
   id,
   setColumns,
-  ...props
-}: QuartzFileExplorerFolderProps) => {
+}: // ...props
+QuartzFileExplorerFolderProps) => {
   const handleClickFolder = () => {
     setActiveFolder(id);
     setActiveFile(null);
