@@ -86,6 +86,7 @@ Default.args = {
     <Value>text</Value>,
     <Value>text</Value>,
   ],
+  deletabled: false,
 };
 
 Default.argTypes = {
@@ -136,6 +137,11 @@ Default.argTypes = {
     type: { required: false },
     control: { type: 'boolean' },
     defaultValue: { summary: 'false' },
+  },
+  deletabled: {
+    type: { required: false },
+    control: { type: 'boolean' },
+    defaultValue: { summary: 'deletabled (need to select a value)' },
   },
   info: {
     control: {

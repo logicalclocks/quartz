@@ -46,6 +46,7 @@ export interface SelectProps extends Omit<LabelProps, 'onChange' | 'children'> {
   additionalComponents?: React.ReactNode[];
   noMathText?: string;
   needSecondaryText?: boolean;
+  deletabled?: boolean;
 }
 
 const Select: FC<SelectProps> = ({
@@ -74,6 +75,7 @@ const Select: FC<SelectProps> = ({
   additionalTexts,
   noMathText = 'No result',
   needSecondaryText = true,
+  deletabled,
   ...props
 }: SelectProps) => {
   const containerRef = useRef(null);
@@ -138,8 +140,10 @@ const Select: FC<SelectProps> = ({
       onClick={handleLabelClick}
     >
       <SelectLabel
+        deletabled={deletabled}
         hasPlaceholder={hasPlaceholder}
         intent={intent}
+        onChange={onChange}
         variant={disabled ? 'disabled' : variant}
         placeholder={placeholder}
         value={value}
