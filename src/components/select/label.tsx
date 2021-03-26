@@ -20,6 +20,7 @@ export interface SelectLabelProps extends Omit<BoxProps, 'css'> {
   hasPlaceholder: boolean;
   intent: Intents;
   additionalTexts?: string[];
+  needSecondaryText: boolean;
 }
 
 const getAdditionalText = (
@@ -65,6 +66,7 @@ const SelectLabel: FC<SelectLabelProps> = forwardRef(
       intent,
       additionalTexts,
       hasPlaceholder,
+      needSecondaryText,
       ...props
     }: SelectLabelProps,
     ref,
@@ -109,7 +111,7 @@ const SelectLabel: FC<SelectLabelProps> = forwardRef(
           <Labeling px="5px" sx={valueStyles}>
             {getLabelText(value, options, isMulti)}
           </Labeling>
-          {!!additionalTexts?.length && !!value.length && (
+          {!!additionalTexts?.length && !!value.length && needSecondaryText && (
             <Labeling gray={true}>
               {getAdditionalText(value, options, additionalTexts)}
             </Labeling>
