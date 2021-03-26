@@ -10,6 +10,8 @@ export interface RowGroupProps {
   components: ComponentType<any>[];
   componentsProps: any[];
   middleColumn: number;
+  onRowClick?: (event: any, index: number) => void;
+  index: number;
 }
 
 const RowGroup: FC<RowGroupProps> = ({
@@ -17,6 +19,8 @@ const RowGroup: FC<RowGroupProps> = ({
   components,
   componentsProps,
   middleColumn,
+  onRowClick,
+  index,
   ...props
 }: RowGroupProps) => {
   function getPosition(mc: number, key: number): TableItemPosition {
@@ -29,7 +33,13 @@ const RowGroup: FC<RowGroupProps> = ({
   );
 
   return (
-    <Box as="tr" {...props} sx={styles({ mode })} width="100%">
+    <Box
+      onClick={(e) => onRowClick && onRowClick(e, index)}
+      as="tr"
+      {...props}
+      sx={styles({ mode })}
+      width="100%"
+    >
       {components.map((component, index) => (
         <TableItem
           key={keys[index]}

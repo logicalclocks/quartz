@@ -13,6 +13,7 @@ export interface RowProps {
   groupProps: Record<string, any>[][];
   middleColumn: number;
   legend?: String[];
+  onRowClick?: (event: any, index: number) => void;
 }
 
 const Row: FC<RowProps> = ({
@@ -21,6 +22,7 @@ const Row: FC<RowProps> = ({
   groupProps,
   legend,
   middleColumn,
+  onRowClick,
   ...props
 }: RowProps) => {
   const keys = useMemo(
@@ -52,6 +54,8 @@ const Row: FC<RowProps> = ({
         )}
         {groupComponents.map((row, index) => (
           <TableRow
+            index={index}
+            onRowClick={onRowClick}
             key={keys[index]}
             mode={mode}
             components={row}
