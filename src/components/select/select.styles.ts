@@ -29,7 +29,23 @@ export const valueStyles = {
   textOverflow: 'ellipsis',
 };
 
-export const getLabelStyles = (intent: Intents) => ({
+export const deletabledStyles = {
+  borderStyle: 'solid',
+  borderWidth: '1px',
+  borderColor: 'transparent',
+  cursor: 'pointer',
+  transition: 'all .25s ease',
+
+  ':hover': {
+    borderColor: 'grayShade2',
+  },
+  svg: {
+    width: '16px',
+    height: '16px',
+  },
+};
+
+export const getLabelStyles = (intent: Intents, deletabled?: boolean) => ({
   position: 'relative',
 
   borderColor: getIntentColor(intent),
@@ -50,8 +66,10 @@ export const getLabelStyles = (intent: Intents) => ({
 
   transition: 'all 0.25s ease',
 
-  svg: {
-    minWidth: '8px',
-    ml: 'auto',
-  },
+  ...(!deletabled && {
+    svg: {
+      minWidth: '8px',
+      ml: 'auto',
+    },
+  }),
 });
