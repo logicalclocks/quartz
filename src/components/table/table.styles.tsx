@@ -3,42 +3,49 @@ import { SxStyleProp } from 'rebass';
 export const containerStyles = {
   overflow: 'auto',
   maxHeight: '100%',
-  maxWidth: 'fit-content',
   borderWidth: '0 3px 3px 0',
   borderColor: 'gray',
   borderStyle: 'solid',
+  marginRight: '20px',
 };
 
 export const tableStyles = {
   borderSpacing: '0',
   borderCollapse: 'separate',
-  backgroundColor: 'white',
+  backgroundColor: 'grayShade1',
   borderWidth: '0 1px 1px 0',
   borderColor: 'primary',
-  textAlign: 'right',
+  textAlign: 'left',
 };
 
 export const theadStyles = {
   zIndex: 1,
   padding: '8px',
-  borderWidth: '1px 1px 1px 0',
+  borderWidth: '1px 2px 1px 0',
   borderStyle: 'Solid',
-  borderColor: 'gray',
+  borderColor: 'grayShade1',
+  borderBottomColor: 'grey',
   color: 'black',
   fontFamily: 'label',
   fontWeight: 'label',
   fontSize: 'label',
   position: 'sticky',
   top: '0',
-
+  minWidth: '100px',
+  'th:first-child': {
+    minWidth: '18px',
+  },
   '> div': {
     display: 'flex',
   },
 
   backgroundColor: 'white',
   cursor: 'pointer',
-  '&:hover': {
+  'th:hover': {
     backgroundColor: 'primaryShade2',
+  },
+  'th:last-child:hover': {
+    backgroundColor: 'white',
   },
   '&.table-corner': {
     backgroundColor: 'grayShade2',
@@ -65,6 +72,16 @@ export const theadStyles = {
   },
 } as SxStyleProp;
 
+export const testStyles = {
+  width: '100%',
+  backgroundColor: 'white',
+  borderWidth: '1px 1px 1px 0',
+  borderStyle: 'Solid',
+  borderColor: 'grayShade1',
+  position: 'sticky',
+  top: 0,
+};
+
 export const trowStyles = {
   color: 'black',
   fontFamily: 'value',
@@ -77,7 +94,7 @@ export const trowStyles = {
       whiteSpace: 'nowrap',
     },
     th: {
-      backgroundColor: 'grayShade2',
+      backgroundColor: 'white',
     },
   },
   '&:last-child td, &:last-child th': {
@@ -98,9 +115,10 @@ export const trowStyles = {
     display: 'block',
   },
   td: {
-    borderWidth: '0 0 1px 0',
+    borderWidth: '0 1px 1px 0',
     borderStyle: 'Solid',
-    borderColor: 'grayShade2',
+    borderColor: 'grayShade1',
+    backgroundColor: 'white',
     whiteSpace: 'nowrap',
     '&:hover': {
       backgroundColor: 'grayShade2',

@@ -12,6 +12,7 @@ import {
   containerStyles,
   dropdownStyles,
   tableStyles,
+  testStyles,
   theadStyles,
   trowStyles,
 } from '../table.styles';
@@ -56,6 +57,13 @@ export const Thead: FC<TheadProps> = ({
       onClick={handleToggleList}
       ref={containerRef}
     >
+      <Box
+        as="th"
+        sx={{
+          width: '100%',
+        }}
+      />
+      {console.log(column)}
       <div>
         {column}
         {isPrimary && (
@@ -189,6 +197,7 @@ const ReadOnlyTable: FC<ReadOnlyTableProps> = ({
                   />
                 ),
             )}
+            <Box as="th" sx={{ ...testStyles }} />
           </Box>
         </Box>
         <Box as="tbody">
