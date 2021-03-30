@@ -3,8 +3,9 @@ import { SxStyleProp } from 'rebass';
 export const containerStyles = {
   overflow: 'auto',
   maxHeight: '100%',
-  borderWidth: '0 3px 3px 0',
-  borderColor: 'gray',
+  borderWidth: '1px',
+  borderColor: 'grayShade3',
+  borderTopColor: 'grey',
   borderStyle: 'solid',
   marginRight: '20px',
 };
@@ -21,22 +22,35 @@ export const tableStyles = {
 export const theadStyles = {
   zIndex: 1,
   padding: '8px',
-  borderWidth: '1px 2px 1px 0',
+  borderWidth: '0 1px 2px 0',
   borderStyle: 'Solid',
   borderColor: 'grayShade1',
   borderBottomColor: 'grey',
+  borderTopColor: 'grey',
   color: 'black',
   fontFamily: 'label',
   fontWeight: 'label',
   fontSize: 'label',
   position: 'sticky',
   top: '0',
-  minWidth: '100px',
+  minWidth: '92px',
+
   'th:first-child': {
-    minWidth: '18px',
+    borderTopColor: 'grey',
+    minWidth: '31px',
+    maxWidth: '31px',
+  },
+  'th:last-child': {
+    minWidth: '0px',
+    borderWidth: '0 0 2px 0',
+    borderStyle: 'Solid',
+    borderColor: 'grayShade1',
+    borderTopColor: 'grey',
+    borderBottomColor: 'grey',
   },
   '> div': {
     display: 'flex',
+    textOverflow: 'ellipsis',
   },
 
   backgroundColor: 'white',
@@ -50,8 +64,8 @@ export const theadStyles = {
   '&.table-corner': {
     backgroundColor: 'grayShade2',
     borderLeftColor: 'grayShade2',
-    borderTopColor: 'grayShade2',
-    borderWidth: '0 4px 4px 0',
+    borderTopColor: 'grey',
+    borderWidth: '0 1px 2px 0',
     left: '0',
     zIndex: '100',
     width: '40px',
@@ -72,7 +86,7 @@ export const theadStyles = {
   },
 } as SxStyleProp;
 
-export const testStyles = {
+export const lastTheadStyles = {
   width: '100%',
   backgroundColor: 'white',
   borderWidth: '1px 1px 1px 0',
@@ -94,7 +108,7 @@ export const trowStyles = {
       whiteSpace: 'nowrap',
     },
     th: {
-      backgroundColor: 'white',
+      backgroundColor: 'grayShade2',
     },
   },
   '&:last-child td, &:last-child th': {
@@ -105,20 +119,25 @@ export const trowStyles = {
   },
   th: {
     textAlign: 'center',
-    borderWidth: '0 1px 1px 1px',
+    borderWidth: '0 1px 1px 0',
     borderColor: 'gray',
     borderBottomColor: 'grayShade2',
+    minWidth: '92px',
     borderStyle: 'Solid',
     left: '0',
     position: 'sticky',
     backgroundColor: 'white',
     display: 'block',
+    ':first-child': {
+      maxWidth: '31px',
+      minWidth: '31px',
+    },
   },
   td: {
     borderWidth: '0 1px 1px 0',
     borderStyle: 'Solid',
     borderColor: 'grayShade1',
-    backgroundColor: 'white',
+    textOverflow: 'ellipsis',
     whiteSpace: 'nowrap',
     '&:hover': {
       backgroundColor: 'grayShade2',
@@ -128,7 +147,7 @@ export const trowStyles = {
     },
     '&:last-child': {
       borderRightStyle: 'Solid',
-      borderRightWidth: '1px',
+      borderRightWidth: '0px',
       borderRightColor: 'gray',
     },
     '&.static-column': {
@@ -136,14 +155,16 @@ export const trowStyles = {
       position: 'sticky',
       left: '40px',
       borderRightColor: 'gray',
-      borderRightWidth: '1px',
+      borderLeftColor: 'grayShade1',
+      borderRightWidth: '0',
     },
   },
 };
 
 export const dropdownStyles = {
   position: 'absolute',
+  width: '100% !important',
   left: '0',
-  top: '32px',
+  top: '37px',
   zIndex: '200',
 };

@@ -9,6 +9,7 @@ import KeysCollection from '../../../utils/KeysCollection';
 // Styles
 import {
   containerStyles,
+  lastTheadStyles,
   tableStyles,
   theadStyles,
   trowStyles,
@@ -119,6 +120,7 @@ const EditableTable: FC<EditableTableProps> = ({
                   />
                 ),
             )}
+            <Box as="th" sx={{ ...lastTheadStyles }} />
           </Box>
         </Box>
 
