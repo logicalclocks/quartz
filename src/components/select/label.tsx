@@ -7,9 +7,10 @@ import { Intents } from '../intents';
 // Components
 import Labeling from '../typography/labeling';
 // Styles
-import { valueStyles, getLabelStyles } from './select.styles';
+import { valueStyles, getLabelStyles, deletabledStyles } from './select.styles';
+import icons from '../../sources/icons';
 
-export interface SelectLabelProps extends Omit<BoxProps, 'css'> {
+export interface SelectLabelProps extends Omit<BoxProps, 'css' | 'onChange'> {
   variant: 'primary' | 'white' | 'disabled';
   placeholder: string;
   value: string[];
@@ -21,6 +22,8 @@ export interface SelectLabelProps extends Omit<BoxProps, 'css'> {
   intent: Intents;
   additionalTexts?: string[];
   needSecondaryText: boolean;
+  deletabled?: boolean;
+  onChange: (value: string[]) => void;
 }
 
 const getAdditionalText = (
@@ -46,6 +49,10 @@ const getLabelText = (
     return '';
   }
 
+  if (value[0] === 'any' && value.length === 1) {
+    return 'any';
+  }
+
   return value.length === options.length && isMulti ? 'all' : value.join(', ');
 };
 
@@ -57,8 +64,10 @@ const SelectLabel: FC<SelectLabelProps> = forwardRef(
       value,
       children,
       options,
+      onChange,
       isMulti,
       noDataMessage,
+      deletabled,
       intent,
       additionalTexts,
       hasPlaceholder,
@@ -91,7 +100,7 @@ const SelectLabel: FC<SelectLabelProps> = forwardRef(
       <Box
         {...props}
         // @ts-ignore
-        sx={getLabelStyles(intent)}
+        sx={getLabelStyles(intent, deletabled && value.length)}
         tx="variants.select"
         variant={variant}
         tabIndex={0}
@@ -113,6 +122,21 @@ const SelectLabel: FC<SelectLabelProps> = forwardRef(
             </Labeling>
           )}
         </Flex>
+        {deletabled && !!value.length && (
+          <Box
+            width="18px"
+            height="18px"
+            onClick={(e) => {
+              e.stopPropagation();
+
+              onChange([]);
+            }}
+            sx={deletabledStyles}
+            ml="auto"
+          >
+            {icons.cross}
+          </Box>
+        )}
         <ArrowsIcon />
         {children}
       </Box>
