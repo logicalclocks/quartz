@@ -52,7 +52,7 @@ const RowLeftContent: FC<RowLeftContentProps> = ({
     >
       <span>{index + 1}</span>
       <IconButton
-        pr="14px"
+        pr="20px"
         tooltipProps={{ position: TooltipPositions.right }}
         tooltip="remove"
         intent="ghost"
