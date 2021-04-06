@@ -39,6 +39,7 @@ export interface SelectProps extends Omit<LabelProps, 'onChange' | 'children'> {
   bottomActionText?: string;
   bottomActionHandler?: () => void;
   hasPlaceholder?: boolean;
+  swapPlaceholder?: boolean;
   hasSearch?: boolean;
   searchPlaceholder?: string;
   customFilter?: React.ReactNode;
@@ -60,6 +61,7 @@ const Select: FC<SelectProps> = ({
   value,
   isMulti,
   placeholder,
+  swapPlaceholder = false,
   maxListHeight = '150px',
   noDataMessage,
   info,
@@ -146,6 +148,7 @@ const Select: FC<SelectProps> = ({
         onChange={onChange}
         variant={disabled ? 'disabled' : variant}
         placeholder={placeholder}
+        swapPlaceholder={swapPlaceholder}
         value={value}
         isMulti={isMulti}
         noDataMessage={noDataMessage}
