@@ -14,9 +14,8 @@ export const containerStyles = {
 export const tableStyles = {
   borderSpacing: '0',
   borderCollapse: 'separate',
-  backgroundColor: 'grayShade1',
+  backgroundColor: 'grayShade2',
   borderWidth: '0 1px 1px 0',
-  borderColor: 'primary',
   textAlign: 'left',
 };
 
@@ -76,10 +75,11 @@ export const theadStyles = {
     backgroundColor: 'grayShade2',
   },
   '&.static-column': {
-    borderColor: 'primary',
-    borderWidth: '1px',
+    borderRightColor: 'primary',
+    borderBottomColor: 'grey',
+    borderWidth: '0 0 2px 0',
     position: 'sticky',
-    left: '40px',
+    left: '31px',
     zIndex: '100',
     '&.hover-column': {
       backgroundColor: 'primaryShade2',
@@ -154,10 +154,10 @@ export const trowStyles = {
     '&.static-column': {
       backgroundColor: 'white',
       position: 'sticky',
-      left: '40px',
-      borderRightColor: 'gray',
+      left: '31px',
+      borderRightColor: 'primary',
       borderLeftColor: 'grayShade1',
-      borderRightWidth: '0',
+      borderRightWidth: '1px',
     },
   },
 };
