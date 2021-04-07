@@ -13,7 +13,6 @@ import icons from '../../sources/icons';
 export interface SelectLabelProps extends Omit<BoxProps, 'css' | 'onChange'> {
   variant: 'primary' | 'white' | 'disabled';
   placeholder: string;
-  swapPlaceholder?: boolean;
   value: string[];
   options: string[];
   children: React.ReactNode;
@@ -64,7 +63,6 @@ const SelectLabel: FC<SelectLabelProps> = forwardRef(
       placeholder,
       value,
       children,
-      swapPlaceholder,
       options,
       onChange,
       isMulti,
@@ -108,28 +106,6 @@ const SelectLabel: FC<SelectLabelProps> = forwardRef(
         tabIndex={0}
         ref={ref}
       >
-        {swapPlaceholder && (
-          <Box>
-            <Flex>
-              <Labeling px="5px" sx={valueStyles}>
-                {getLabelText(value, options, isMulti)}
-              </Labeling>
-              {!!additionalTexts?.length &&
-                !!value.length &&
-                needSecondaryText && (
-                  <Labeling gray={true}>
-                    {getAdditionalText(value, options, additionalTexts)}
-                  </Labeling>
-                )}
-            </Flex>
-            <Labeling
-              minWidth="max-content"
-              gray={!hasPlaceholder && !!options.length ? true : !!value.length}
-            >
-              {content}
-            </Labeling>
-          </Box>
-        )}
         <Labeling
           minWidth="max-content"
           gray={!hasPlaceholder && !!options.length ? true : !!value.length}
