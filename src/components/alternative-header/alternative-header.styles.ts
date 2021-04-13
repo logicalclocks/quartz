@@ -18,7 +18,6 @@ export const underlineStyles = () => ({
   transition: 'left .2s',
   width: '110%',
   ml: '-5%',
-  pt: '10px',
 
   borderBottomWidth: '2px',
   borderBottomStyle: 'solid',
@@ -34,9 +33,6 @@ export const activeUnderlineTabStyles = (width: number, left: number) => ({
   position: 'absolute',
   transition: 'all .4s',
 
-  pt: '30px',
-
-  ml: '20px',
   left: `${left}px`,
   bottom: 0,
 

@@ -14,12 +14,14 @@ import { Value } from '../../index';
 
 export interface Tab {
   title: string;
+  count?: number;
   isActive: boolean;
   onCLick: () => void;
 }
 
 export interface AlternativeHeaderProps extends Omit<BoxProps, 'css'> {
   title?: string;
+  tabsWithCount?: boolean;
   rightTopContent?: React.ReactElement;
   rightBottomContent?: React.ReactElement;
   tabs: Tab[];
@@ -28,6 +30,7 @@ export interface AlternativeHeaderProps extends Omit<BoxProps, 'css'> {
 const AlternativeHeader: FC<AlternativeHeaderProps> = ({
   rightBottomContent,
   rightTopContent,
+  tabsWithCount,
   title,
   tabs,
   ...props
@@ -70,7 +73,12 @@ const AlternativeHeader: FC<AlternativeHeaderProps> = ({
         {rightTopContent && rightTopContent}
       </Flex>
 
-      <Flex mt="25px" justifyContent="space-between" width="100%">
+      <Flex
+        mt="25px"
+        justifyContent="space-between"
+        width="100%"
+        sx={{ position: 'relative' }}
+      >
         <Flex>
           {tabs.map((tab, index) => (
             <Box
@@ -81,13 +89,37 @@ const AlternativeHeader: FC<AlternativeHeaderProps> = ({
               key={tab.title}
               sx={tabStyles}
             >
-              <Value fontFamily="Inter">{tab.title}</Value>
+              <Flex alignItems="baseline" pb="10px">
+                <Value fontFamily="Inter">{tab.title}</Value>
+                {tabsWithCount && (
+                  <Flex ml="10px">
+                    <Flex
+                      alignItems="center"
+                      justifyContent="center"
+                      px="4px"
+                      py="2px"
+                      {...props}
+                      sx={{ borderRadius: '1px' }}
+                      as="span"
+                      variant="light"
+                      tx="variants.badges.primary"
+                    >
+                      <Value
+                        as="span"
+                        lineHeight="13px"
+                        style={!tab.count ? { color: 'gray' } : {}}
+                      >
+                        {tab.count || 0}
+                      </Value>
+                    </Flex>
+                  </Flex>
+                )}
+              </Flex>
               <Box sx={underlineStyles()} />
             </Box>
           ))}
-          <Box sx={activeUnderlineTabStyles(width, left)} />
         </Flex>
-
+        <Box sx={activeUnderlineTabStyles(width, left)} />
         <Flex>{rightBottomContent && rightBottomContent}</Flex>
       </Flex>
     </Flex>
