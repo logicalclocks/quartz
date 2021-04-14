@@ -65,7 +65,7 @@ const AlternativeHeader: FC<AlternativeHeaderProps> = ({
   }, [activeTabIndex]);
 
   return (
-    <Flex sx={styles} {...props}>
+    <Flex sx={styles(!!title || !!rightTopContent)} {...props}>
       <Flex justifyContent="space-between" width="100%" height="fit-content">
         <Value fontSize="20px" fontFamily="Inter" fontWeight="bold">
           {title && title}

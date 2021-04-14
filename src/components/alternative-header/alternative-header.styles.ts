@@ -41,20 +41,20 @@ export const activeUnderlineTabStyles = (width: number, left: number) => ({
   borderBottomStyle: 'solid',
 });
 
-export default {
-  p: '20px',
-  pb: 0,
+export default (topContent: boolean) =>
+  ({
+    p: topContent ? '20px' : '0px 20px 0px 10px',
+    pb: 0,
 
-  position: 'relative',
+    position: 'relative',
 
-  bg: 'white',
+    bg: 'white',
 
-  flexDirection: 'column',
+    flexDirection: 'column',
 
-  boxShadow: '0 -5px 0 #F5F5F5',
+    boxShadow: topContent ? '0 -5px 0 #F5F5F5' : '',
 
-  zIndex: 25,
+    zIndex: 25,
 
-  width: '100%',
-  height: '105px',
-} as SxStyleProp;
+    width: '100%',
+  } as SxStyleProp);
