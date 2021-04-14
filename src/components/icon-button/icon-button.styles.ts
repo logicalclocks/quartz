@@ -25,7 +25,9 @@ export default {
   },
 
   '> svg': {
-    fontSize: '20px',
+    width: '18px',
+    height: '12px',
+    // fontSize: '15px',
 
     ':nth-of-type(2)': {
       display: 'none',

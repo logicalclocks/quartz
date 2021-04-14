@@ -4,13 +4,13 @@ export default {
 
   borderWidth: '1px',
   borderStyle: 'solid',
-  borderColor: 'primary',
+  borderColor: 'grayShade2',
 
-  boxShadow: 'primary',
+  boxShadow: 'secondary',
 
   ':hover': {
     bg: 'primaryShade2',
-    borderColor: 'primary',
+    borderColor: 'grayShade2',
   },
 
   ':focus': {

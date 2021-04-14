@@ -51,6 +51,7 @@ export interface IThemeTransitions {
 export interface IThemeShadows {
   alert: string;
   primary: string;
+  secondary: string;
   disabled: string;
   cardInsetShadow: string;
   navigation: string;
