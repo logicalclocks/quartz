@@ -62,7 +62,7 @@ const AlternativeHeader: FC<AlternativeHeaderProps> = ({
       left: getUnderlineLeftPosition(tabRefs.current, activeTabIndex),
       width: getUnderlineWidth(tabRefs.current, activeTabIndex),
     });
-  }, [activeTabIndex]);
+  }, [activeTabIndex, tabsWithCount, tabs]);
 
   return (
     <Flex sx={styles(!!title || !!rightTopContent)} {...props}>
