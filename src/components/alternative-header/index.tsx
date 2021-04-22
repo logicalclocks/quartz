@@ -14,7 +14,7 @@ import { Value } from '../../index';
 
 export interface Tab {
   title: string;
-  altContent?: React.ReactElement;
+  altContent?: React.ReactElement | null;
   isActive: boolean;
   onCLick: () => void;
 }
