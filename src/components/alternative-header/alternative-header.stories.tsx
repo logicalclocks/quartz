@@ -27,24 +27,36 @@ const Template: Story<AlternativeHeaderProps> = (props) => {
       {
         title: 'tab',
         isActive: isActive('tab'),
-        count: 0,
         onCLick: () => setActive('tab'),
       },
       {
         title: 'another tab',
         isActive: isActive('another tab'),
-        count: 3,
+        altContent: (
+          <Value as="span" lineHeight="13px" style={{ color: 'gray' }}>
+            {0}
+          </Value>
+        ),
         onCLick: () => setActive('another tab'),
       },
       {
         title: 'one more tab',
         isActive: isActive('one more tab'),
-        count: 2,
+        altContent: (
+          <Value as="span" lineHeight="13px">
+            {3}
+          </Value>
+        ),
         onCLick: () => setActive('one more tab'),
       },
       {
         title: 'last tab',
         isActive: isActive('last tab'),
+        altContent: (
+          <Value as="span" lineHeight="13px">
+            altContent
+          </Value>
+        ),
         onCLick: () => setActive('last tab'),
       },
     ],
@@ -62,7 +74,6 @@ export const Default = Template.bind({});
 
 Default.args = {
   title: 'Cluster settings',
-  tabsWithCount: false,
   rightTopContent: (
     <Button intent="secondary" onClick={() => {}}>
       back to projects
@@ -95,15 +106,6 @@ Default.argTypes = {
 
     type: {
       summary: 'Tabs of header',
-    },
-  },
-  tabsWithCount: {
-    control: {
-      type: 'boolean',
-    },
-
-    type: {
-      summary: 'Tabs with count',
     },
   },
   buttonText: {

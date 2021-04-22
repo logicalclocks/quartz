@@ -14,14 +14,13 @@ import { Value } from '../../index';
 
 export interface Tab {
   title: string;
-  count?: number;
+  altContent?: React.ReactElement;
   isActive: boolean;
   onCLick: () => void;
 }
 
 export interface AlternativeHeaderProps extends Omit<BoxProps, 'css'> {
   title?: string;
-  tabsWithCount?: boolean;
   rightTopContent?: React.ReactElement;
   rightBottomContent?: React.ReactElement;
   tabs: Tab[];
@@ -30,7 +29,6 @@ export interface AlternativeHeaderProps extends Omit<BoxProps, 'css'> {
 const AlternativeHeader: FC<AlternativeHeaderProps> = ({
   rightBottomContent,
   rightTopContent,
-  tabsWithCount,
   title,
   tabs,
   ...props
@@ -62,7 +60,7 @@ const AlternativeHeader: FC<AlternativeHeaderProps> = ({
       left: getUnderlineLeftPosition(tabRefs.current, activeTabIndex),
       width: getUnderlineWidth(tabRefs.current, activeTabIndex),
     });
-  }, [activeTabIndex, tabsWithCount, tabs]);
+  }, [activeTabIndex, tabs]);
 
   return (
     <Flex sx={styles(!!title || !!rightTopContent)} {...props}>
@@ -91,7 +89,7 @@ const AlternativeHeader: FC<AlternativeHeaderProps> = ({
             >
               <Flex alignItems="baseline" pb="10px">
                 <Value fontFamily="Inter">{tab.title}</Value>
-                {tabsWithCount && (
+                {tab.altContent && (
                   <Flex ml="10px">
                     <Flex
                       alignItems="center"
@@ -104,13 +102,7 @@ const AlternativeHeader: FC<AlternativeHeaderProps> = ({
                       variant="light"
                       tx="variants.badges.primary"
                     >
-                      <Value
-                        as="span"
-                        lineHeight="13px"
-                        style={!tab.count ? { color: 'gray' } : {}}
-                      >
-                        {tab.count || 0}
-                      </Value>
+                      {tab.altContent}
                     </Flex>
                   </Flex>
                 )}
