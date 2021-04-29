@@ -6,45 +6,43 @@ import { fileButton, inputBox, inputButton } from './file-button.styles';
 
 export interface QuartzFileButtonProps extends Omit<ButtonProps, 'css'> {
   children: React.ReactNode | string;
-  mode?: string;
+  modeNFiles?: boolean;
   intent?: 'secondary';
   href?: string;
-  // ref?: any;
-  // value?: any;
-  onHandleUpload: () => void;
+  name?: string;
+  ref: any;
+  onHandleUpload: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  handleClick: (event: React.MouseEvent<HTMLElement>) => void;
 }
 
 const UploadButton: FC<QuartzFileButtonProps> = ({
   intent = 'secondary',
   children,
   href,
-  mode,
+  modeNFiles,
   ref,
+  name,
   value,
   onHandleUpload,
-  // handleClick,
+  handleClick,
   ...props
 }: QuartzFileButtonProps) => {
   // console.log('REF: ', ref, value);
-  const hiddenFileInput: any = ref;
 
   return (
     <Flex flexDirection="column">
-      <RebassButton
-        sx={{ ...fileButton }}
-        variant={`secondary`}
-        {...props}
-        onClick={onHandleUpload}
-      >
+      <RebassButton sx={{ ...fileButton }} variant={`secondary`} {...props}>
         <Box sx={{ ...inputBox }}>{icons.upload}</Box>
         <input
           type="file"
+          name={name}
           style={{
             ...inputButton,
           }}
-          ref={hiddenFileInput}
-          multiple={mode === 'nFiles'}
+          ref={ref}
+          multiple={modeNFiles}
           onChange={onHandleUpload}
+          onClick={handleClick}
         />
         {children}
       </RebassButton>
