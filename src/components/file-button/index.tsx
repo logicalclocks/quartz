@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, useRef } from 'react';
 import { Box, Button as RebassButton, ButtonProps, Flex } from 'rebass';
 import icons from '../../sources/icons';
 // Styles
@@ -31,7 +31,12 @@ const UploadButton: FC<QuartzFileButtonProps> = ({
 
   return (
     <Flex flexDirection="column">
-      <RebassButton sx={{ ...fileButton }} variant={`secondary`} {...props}>
+      <RebassButton
+        sx={{ ...fileButton }}
+        variant={`secondary`}
+        {...props}
+        onClick={handleClick}
+      >
         <Box sx={{ ...inputBox }}>{icons.upload}</Box>
         <input
           type="file"
@@ -42,7 +47,6 @@ const UploadButton: FC<QuartzFileButtonProps> = ({
           ref={ref}
           multiple={modeNFiles}
           onChange={onHandleUpload}
-          onClick={handleClick}
         />
         {children}
       </RebassButton>
