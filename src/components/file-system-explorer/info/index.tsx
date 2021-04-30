@@ -10,10 +10,11 @@ import {
   contentInfoStyles,
 } from './file-explorer-info.styles';
 import Labeling from '../../typography/labeling';
+import { ActiveFile } from '../index';
 
 export interface FileExplorerInfoProps extends Omit<BoxProps, 'css'> {
   children?: string[];
-  activeFile?: { [key: string]: string };
+  activeFile?: ActiveFile | null;
 }
 
 const FileExplorerInfo: FC<FileExplorerInfoProps> = ({

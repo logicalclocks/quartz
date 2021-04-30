@@ -1,8 +1,8 @@
 import React, { FC, useState } from 'react';
 import { Box, BoxProps } from 'rebass';
 
-import FolderExplorer from '../folder';
-import FileExplorer from '../file';
+import FolderItemExplorer from '../folder';
+import FileItemExplorer from '../file';
 
 export interface FileExplorerColumnProps
   extends Omit<BoxProps, 'css' | 'action'> {
@@ -13,6 +13,7 @@ export interface FileExplorerColumnProps
   setActiveFile?: object;
   setActive?: any;
   isFileSelected?: any;
+  selectPathListValue?: any;
 }
 
 const FileExplorerColumn: FC<FileExplorerColumnProps> = ({
@@ -22,6 +23,7 @@ const FileExplorerColumn: FC<FileExplorerColumnProps> = ({
   setColumns,
   setActiveFile,
   isFileSelected,
+  selectPathListValue,
   setActive,
 }: FileExplorerColumnProps) => {
   const [activeFolder, setActiveFolder] = useState(0);
@@ -40,21 +42,26 @@ const FileExplorerColumn: FC<FileExplorerColumnProps> = ({
         if (item) {
           if (item.type === 'folder') {
             return (
-              <FolderExplorer
+              <FolderItemExplorer
                 index={index}
                 id={item.id}
+                mode={mode}
                 name={item.name}
+                itemInfo={item}
                 children={item.children}
                 isHasChildren={item.children.length > 0}
+                selectPathListValue={selectPathListValue}
                 setColumns={setColumns}
                 setActiveFile={setActiveFile}
                 activeFolder={activeFolder}
                 setActiveFolder={setActiveFolder}
+                isActive={false}
+                selected={false}
               />
             );
           } else {
             return (
-              <FileExplorer
+              <FileItemExplorer
                 index={index}
                 mode={mode}
                 setActive={setActive}

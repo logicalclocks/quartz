@@ -2,24 +2,24 @@ import React, { FC } from 'react';
 import { Box, Flex } from 'rebass';
 import styles, { boxStyles, boxButtonStyles } from './footer.styles';
 import Labeling from '../../typography/labeling';
+import { ActiveFile } from '../index';
 
 export interface fileExplorerFooter {
   value?: any[];
   mainButton: React.ReactNode;
   secondaryButton?: React.ReactNode;
-}
-
-export interface FileExplorerFooterProps {
-  value?: string;
-  intent?: string;
-  mainButton: React.ReactNode;
-  secondaryButton?: React.ReactNode;
+  activeFile?: ActiveFile;
+  mode?: string;
+  columns: any[];
 }
 
 const FooterFileExplorer: FC<fileExplorerFooter> = ({
   value,
   mainButton,
   secondaryButton,
+  activeFile,
+  columns,
+  mode = 'oneFile',
   ...props
 }: fileExplorerFooter) => (
   <Flex sx={{ ...styles }} {...props}>
@@ -36,12 +36,15 @@ const FooterFileExplorer: FC<fileExplorerFooter> = ({
             }}
           >
             {el.name}
-            {/*<span style={{ color: 'gray' }}> ; </span>*/}
           </Labeling>
         ))
       ) : (
-        <Labeling bold gray sx={{ textTransform: 'normal' }}>
-          pick a file
+        <Labeling
+          bold
+          gray={!activeFile}
+          sx={{ textTransform: 'normal', color: activeFile ? 'primary' : '' }}
+        >
+          {activeFile ? activeFile.name : 'pick a file'}
         </Labeling>
       )}
     </Box>

@@ -16,7 +16,7 @@ const Template: Story<QuartzFileLoaderProps> = (props) => (
 export const Loader = Template.bind({});
 
 Loader.args = {
-  children: 'uploading to',
+  children: 'uploading to /files/jars',
 };
 
 Loader.argTypes = {

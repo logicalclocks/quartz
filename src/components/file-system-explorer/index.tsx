@@ -27,6 +27,16 @@ export interface FileSystemExplorerProps
   contentProps?: Omit<RebassCardProps, 'css' | 'children'>;
 }
 
+export interface ActiveFile {
+  author: string;
+  creation: string;
+  id: number;
+  last_update: string;
+  name: string;
+  size: string;
+  type: string;
+}
+
 const FileSystemExplorer: FC<FileSystemExplorerProps> = ({
   title = 'Select a file',
   shortcutActions,
@@ -37,21 +47,32 @@ const FileSystemExplorer: FC<FileSystemExplorerProps> = ({
   const contentRef = useRef<HTMLDivElement>();
 
   const [columns, setColumns] = useState([data]);
-  const [activeFile, setActiveFile] = useState(null);
-  const [fileListValue, setFileListValue] = useState([]);
-  const [pathListValue, setPathListValue] = useState([]);
+  const [activeFile, setActiveFile] = useState<ActiveFile>();
+  const [fileListValue, setFileListValue] = useState<any[]>([]);
+  const [pathListValue, setPathListValue] = useState<any[]>([]);
 
-  const lastChildOfColumn = useRef(null);
+  const lastChildOfColumn = useRef<any>();
 
   const scrollToRight = () => {
-    lastChildOfColumn.current?.scrollIntoView();
+    !!lastChildOfColumn ? lastChildOfColumn.current.scrollIntoView() : [];
   };
 
   const isFileSelected = (item: any, action: boolean) => {
     if (action) {
-      setFileListValue((prevState: any) => [...prevState, item]);
+      setFileListValue((prevState: any[]): any[] => [...prevState, item]);
     } else {
       setFileListValue((prevState) => [
+        ...prevState.filter((el) => el.id !== item.id),
+      ]);
+    }
+  };
+
+  const selectPathListValue = (item: any, action: boolean) => {
+    console.log('columns: ', columns, item);
+    if (action) {
+      setPathListValue((prevState: any[]): any[] => [...prevState, item]);
+    } else {
+      setPathListValue((prevState) => [
         ...prevState.filter((el) => el.id !== item.id),
       ]);
     }
@@ -86,6 +107,7 @@ const FileSystemExplorer: FC<FileSystemExplorerProps> = ({
             key={index}
             index={index}
             isFileSelected={isFileSelected}
+            selectPathListValue={selectPathListValue}
           />
         ))}
         {activeFile && <Info activeFile={activeFile} />}
@@ -94,7 +116,10 @@ const FileSystemExplorer: FC<FileSystemExplorerProps> = ({
       <Footer
         secondaryButton={<Button variant="file-secondary">Back</Button>}
         mainButton={<Button intent="primary">Select</Button>}
-        value={fileListValue}
+        value={mode === 'oneFolder' ? pathListValue : fileListValue}
+        activeFile={activeFile}
+        columns={columns}
+        mode={mode}
       />
     </RebassCard>
   );

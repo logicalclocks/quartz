@@ -7,7 +7,8 @@ export default {
   minHeight: '62px',
   width: '100%',
 
-  p: '20px',
+  px: '20px',
+  pt: '20px',
 
   boxSizing: 'border-box',
   borderTopWidth: '5px',

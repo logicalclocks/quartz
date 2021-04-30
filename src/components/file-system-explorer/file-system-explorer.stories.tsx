@@ -25,7 +25,7 @@ Default.args = {
   shortcutActions: (
     <React.Fragment>
       <Button padding="0" variant="inline" onClick={action('Shortcut action')}>
-        Go directly to Jupyter notebook directory
+        {'->'}Go directly to Jupyter notebook directory
       </Button>
     </React.Fragment>
   ),
@@ -44,7 +44,7 @@ Default.argTypes = {
   mode: {
     control: {
       type: 'select',
-      options: ['oneFile', 'nFiles'],
+      options: ['oneFile', 'nFiles', 'oneFolder'],
     },
     type: {
       summary: 'Mode: one file or n-files',

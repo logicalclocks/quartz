@@ -2,24 +2,23 @@
 import { action } from '@storybook/addon-actions';
 import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
-import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 
-import FileButton, { QuartzFileButtonProps } from '.';
+import FileButton, { QuartzFileButtonProps } from './index';
 
 export default {
   title: 'Quartz/Buttons',
   component: FileButton,
 } as Meta;
 
-const Template: Story<QuartzFileButtonProps> = (props) => (
+const FileButtonTemplate: Story<QuartzFileButtonProps> = (props) => (
   <FileButton {...props} />
 );
 
-export const File = Template.bind({});
+export const File = FileButtonTemplate.bind({});
 
 File.args = {
   intent: 'secondary',
-  children: 'Button',
+  children: 'Upload new file',
   mode: 'oneFile',
   onClick: action('onClick'),
 };
@@ -63,16 +62,6 @@ File.argTypes = {
     },
     type: {
       required: true,
-    },
-  },
-  icon: {
-    control: {
-      type: 'select',
-      options: [undefined, faCoffee],
-    },
-    type: {
-      summary:
-        'Put icon component from @fortawesome/free-solid-svg-icons package',
     },
   },
 };

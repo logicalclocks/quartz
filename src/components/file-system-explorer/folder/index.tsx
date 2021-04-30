@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, useState } from 'react';
 import { Box, Flex } from 'rebass';
 import icons from '../../../sources/icons';
 
@@ -10,28 +10,45 @@ export interface QuartzFileExplorerFolderProps {
   name: string;
   id: number;
   isActive?: boolean;
+  selected?: boolean;
   index: number;
+  mode?: string;
   setColumns: any;
   isHasChildren: boolean;
   setActiveFile: any;
   setActiveFolder: any;
   activeFolder: number;
+  selectPathListValue: any;
+  itemInfo: any;
 }
 
 const FolderExplorer: FC<QuartzFileExplorerFolderProps> = ({
   children,
   setActiveFile,
   isHasChildren,
-  // isActive,
+  selectPathListValue,
+  mode,
+  isActive,
+  selected,
   setActiveFolder,
   activeFolder,
   index,
   name,
+  itemInfo,
   id,
   setColumns,
 }: // ...props
 QuartzFileExplorerFolderProps) => {
+  const [active, setActive] = useState(isActive);
+  const [selectedFolder, setSelectedFolder] = useState(selected);
+
   const handleClickFolder = () => {
+    if (mode === 'oneFolder') {
+      setActive(!active);
+      setSelectedFolder(!selectedFolder);
+      selectPathListValue(itemInfo, !selectedFolder);
+    }
+    console.log('Active folder: ', activeFolder);
     setActiveFolder(id);
     setActiveFile(null);
     setColumns((prevState: any) => [
