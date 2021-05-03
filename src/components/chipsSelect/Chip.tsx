@@ -4,10 +4,11 @@ import { Box, Flex, FlexProps } from 'rebass';
 
 import { Labeling } from '../..';
 import { chipIconStyles } from './chips.styles';
+import { ChipsVariants } from './types';
 
 export interface ChipProps extends Omit<FlexProps, 'css'> {
   value: string;
-  variant?: 'primary' | 'white' | 'disabled';
+  variant?: ChipsVariants;
   disabled?: boolean;
   deletable?: boolean;
   onDelete: (value: string) => void;

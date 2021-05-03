@@ -1,6 +1,7 @@
 import { SxStyleProp } from 'rebass';
 import { ITheme } from '../../theme/types';
 import { Intents } from '../intents';
+import { ChipsSelectTypes } from './types';
 
 export const chipIconStyles = (showCross: boolean) => ({
   width: '10px',
@@ -16,12 +17,13 @@ const getIntentColor = (intent: Intents) => ({ inputIntents }: ITheme) => {
 export const getContainerStyles = (
   intent: Intents,
   disabled: boolean,
+  type: ChipsSelectTypes,
 ): SxStyleProp => ({
   position: 'relative',
   flexWrap: 'wrap',
   borderColor: getIntentColor(intent),
   outline: 'none',
-  cursor: disabled ? 'default' : 'text',
+  cursor: disabled || type === 'base' ? 'default' : 'text',
   minHeight: '32px',
   display: 'flex',
   alignItems: 'center',

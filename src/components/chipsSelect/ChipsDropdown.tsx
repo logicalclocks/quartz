@@ -5,6 +5,7 @@ import ListItem from '../list/item';
 import { Labeling, List } from '../../index';
 import useArrowsSelect from '../select/useArrowsSelect';
 import { listStyles } from './chips.styles';
+import { ChipsSelectTypes } from './types';
 
 export interface ChipsDropDownProps {
   value: string[];
@@ -12,17 +13,19 @@ export interface ChipsDropDownProps {
   search: string;
   position: number;
   options: string[];
+  type?: ChipsSelectTypes;
   onChange: (value: string[]) => void;
   onClose: () => void;
 }
 
 const ChipsDropDown: FC<ChipsDropDownProps> = ({
+  type,
   value,
   width,
   search,
   options,
-  position,
   onClose,
+  position,
   onChange,
 }) => {
   const handleClick = useCallback(
@@ -33,6 +36,7 @@ const ChipsDropDown: FC<ChipsDropDownProps> = ({
   );
 
   const fullOptions = useMemo(() => {
+    if (type !== 'editable') return options;
     return search === '' || options.includes(search) || value.includes(search)
       ? options
       : [...options, search];

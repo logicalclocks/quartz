@@ -42,8 +42,7 @@ Default.args = {
   placeholder: 'placeholder',
   noDataMessage: 'no options',
   disabled: false,
-  editable: true,
-  searchable: true,
+  type: 'editable',
   variant: 'primary',
   intent: 'default',
 };
@@ -81,13 +80,10 @@ Default.argTypes = {
     control: { type: 'boolean' },
     type: { required: false },
   },
-  editable: {
-    control: { type: 'boolean' },
+  type: {
     type: { required: false },
-  },
-  searchable: {
-    control: { type: 'boolean' },
-    type: { required: false },
+    control: { type: 'select', options: ['base', 'editable', 'searchable'] },
+    defaultValue: { summary: 'editable' },
   },
   variant: {
     type: { required: false },
@@ -97,7 +93,7 @@ Default.argTypes = {
   intent: {
     type: { required: false },
     control: { type: 'select', options: ['default', 'error'] },
-    defaultValue: { summary: 'primary' },
+    defaultValue: { summary: 'default' },
   },
   labelAction: {
     type: { required: false, summary: 'React Component' },

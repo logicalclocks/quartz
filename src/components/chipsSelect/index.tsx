@@ -5,21 +5,21 @@ import Label from '../label';
 import ChipsContainer from './ChipsContainer';
 import ChipsDropDown from './ChipsDropdown';
 import ChipsInfo from './ChipsInfo';
+import { ChipsSelectTypes, ChipsVariants } from './types';
 
 export interface ChipsProps {
   info?: string;
   label: string;
-  value: string[];
   width?: string;
+  value: string[];
   intent?: Intents;
   options: string[];
   disabled?: boolean;
-  editable?: boolean;
   placeholder: string;
-  searchable?: boolean;
   noDataMessage?: string;
-  variant?: 'primary' | 'white';
+  variant?: ChipsVariants;
   labelAction?: React.ReactNode;
+  type?: ChipsSelectTypes;
   onChange: (value: string[]) => void;
 }
 
@@ -27,16 +27,15 @@ const Chips: FC<ChipsProps> = ({
   info,
   label,
   value,
-  width = 'auto',
   options,
   onChange,
-  intent = 'default',
-  variant = 'primary',
-  disabled = false,
-  editable = true,
-  searchable = true,
-  placeholder,
   labelAction,
+  placeholder,
+  width = 'auto',
+  type = 'editable',
+  disabled = false,
+  intent = 'default',
+  variant = 'editable',
   noDataMessage = 'no options',
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -89,6 +88,7 @@ const Chips: FC<ChipsProps> = ({
       onClick={() => !disabled && handleToggle()}
     >
       <ChipsContainer
+        type={type}
         ref={containerRef}
         label={label}
         value={value}
@@ -96,22 +96,21 @@ const Chips: FC<ChipsProps> = ({
         intent={intent}
         options={options}
         disabled={disabled}
-        editable={editable}
         setSearch={setSearch}
-        searchable={searchable}
         placeholder={placeholder}
         noDataMessage={noDataMessage}
         onChange={handleChipsSelection}
-        variant={disabled ? 'disabled' : variant}
+        variant={disabled ? 'disabled' : (variant as ChipsVariants)}
       >
         {isOpen && (
           <ChipsDropDown
-            width={dropdrownWidth}
-            position={dropdrownPosition}
+            type={type}
             value={value}
             search={search}
             onClose={handleToggle}
+            width={dropdrownWidth}
             options={filteredOptions}
+            position={dropdrownPosition}
             onChange={handleValueChange}
           />
         )}

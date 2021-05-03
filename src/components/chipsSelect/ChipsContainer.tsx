@@ -6,6 +6,7 @@ import { getContainerStyles, inputStyles } from './chips.styles';
 import Chip from './Chip';
 import { Intents } from '../intents';
 import { Labeling } from '../..';
+import { ChipsSelectTypes, ChipsVariants } from './types';
 
 export interface ChipsContainerProps
   extends Omit<BoxProps, 'css' | 'onChange'> {
@@ -15,19 +16,19 @@ export interface ChipsContainerProps
   intent: Intents;
   options: string[];
   disabled: boolean;
-  editable?: boolean;
   placeholder: string;
-  searchable?: boolean;
   noDataMessage?: string;
   children: React.ReactNode;
   setSearch: (value: string) => void;
   onChange: (value: string[]) => void;
-  variant: 'primary' | 'white' | 'disabled';
+  type: ChipsSelectTypes;
+  variant: ChipsVariants;
 }
 
 const ChipsContainer: FC<ChipsContainerProps> = forwardRef(
   (
     {
+      type,
       value,
       label,
       intent,
@@ -36,10 +37,8 @@ const ChipsContainer: FC<ChipsContainerProps> = forwardRef(
       options,
       children,
       disabled,
-      editable,
       onChange,
       setSearch,
-      searchable,
       placeholder,
       noDataMessage,
       ...props
@@ -59,7 +58,7 @@ const ChipsContainer: FC<ChipsContainerProps> = forwardRef(
         {...props}
         width="auto"
         flexGrow="inherit"
-        sx={getContainerStyles(intent, disabled)}
+        sx={getContainerStyles(intent, disabled, type)}
         onClick={setInputFocus}
         tx="variants.chipsSelect.container"
         variant={variant}
@@ -88,17 +87,19 @@ const ChipsContainer: FC<ChipsContainerProps> = forwardRef(
               onDelete={handleDeleteChip}
             />
           ))}
-          <Input
-            ref={inputRef}
-            sx={inputStyles}
-            width="inherit"
-            mt="5px"
-            minWidth="100px"
-            value={search}
-            disabled={disabled}
-            placeholder={placeholder}
-            onChange={({ target }) => setSearch(target.value)}
-          />
+          {type !== 'base' && (
+            <Input
+              ref={inputRef}
+              sx={inputStyles}
+              width="inherit"
+              mt="5px"
+              minWidth="100px"
+              value={search}
+              disabled={disabled}
+              placeholder={placeholder}
+              onChange={({ target }) => setSearch(target.value)}
+            />
+          )}
         </Flex>
         <Flex>{children}</Flex>
       </Box>
