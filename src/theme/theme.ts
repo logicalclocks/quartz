@@ -47,6 +47,8 @@ import pagination from './pagination';
 import { ITheme } from './types';
 // Notifications
 import notification from './notifications';
+// Chip
+import chipsSelect from './chipsSelect';
 
 const theme: ITheme = {
   colors: {
@@ -124,6 +126,7 @@ const theme: ITheme = {
     select,
     callout,
     icon,
+    chipsSelect,
   },
   text: {
     inputInfo,
