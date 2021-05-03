@@ -43,6 +43,12 @@ const ChipsDropDown: FC<ChipsDropDownProps> = ({
       : [...options, search];
   }, [search, options]);
 
+  const message = useMemo(() => {
+    if (value.includes(search)) return 'value already selected';
+    if (fullOptions.length === 0) return 'no options available';
+    return null;
+  }, [value, search, fullOptions]);
+
   const { activeIndex } = useArrowsSelect(
     fullOptions,
     (val: string) => {
@@ -65,9 +71,9 @@ const ChipsDropDown: FC<ChipsDropDownProps> = ({
           {option}
         </ListItem>
       ))}
-      {fullOptions.length === 0 && (
+      {message && (
         <Box sx={messageStyles}>
-          <Labeling gray>no options available</Labeling>
+          <Labeling gray>{message}</Labeling>
         </Box>
       )}
     </List>
