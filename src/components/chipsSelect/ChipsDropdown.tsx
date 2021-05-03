@@ -4,8 +4,9 @@ import ListItem from '../list/item';
 
 import { Labeling, List } from '../../index';
 import useArrowsSelect from '../select/useArrowsSelect';
-import { listStyles } from './chips.styles';
+import { listStyles, messageStyles } from './chips.styles';
 import { ChipsSelectTypes } from './types';
+import { Box } from 'rebass';
 
 export interface ChipsDropDownProps {
   value: string[];
@@ -64,6 +65,11 @@ const ChipsDropDown: FC<ChipsDropDownProps> = ({
           {option}
         </ListItem>
       ))}
+      {fullOptions.length === 0 && (
+        <Box sx={messageStyles}>
+          <Labeling gray>no options available</Labeling>
+        </Box>
+      )}
     </List>
   );
 };

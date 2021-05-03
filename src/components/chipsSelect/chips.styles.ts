@@ -1,29 +1,29 @@
 import { SxStyleProp } from 'rebass';
 import { ITheme } from '../../theme/types';
 import { Intents } from '../intents';
-import { ChipsSelectTypes } from './types';
 
-export const chipIconStyles = (showCross: boolean) => ({
+export const chipIconStyles = {
   width: '10px',
   height: '10px',
   marginLeft: '4px',
-  cursor: showCross ? 'pointer' : 'default',
-});
+  cursor: 'pointer',
+};
+
+export const chipStyles = {
+  borderRadius: '1px',
+  whiteSpace: 'nowrap',
+  cursor: 'default',
+};
 
 const getIntentColor = (intent: Intents) => ({ inputIntents }: ITheme) => {
   return inputIntents[intent] ?? 'transparent';
 };
 
-export const getContainerStyles = (
-  intent: Intents,
-  disabled: boolean,
-  type: ChipsSelectTypes,
-): SxStyleProp => ({
+export const getContainerStyles = (intent: Intents): SxStyleProp => ({
   position: 'relative',
   flexWrap: 'wrap',
   borderColor: getIntentColor(intent),
   outline: 'none',
-  cursor: disabled || type === 'base' ? 'default' : 'text',
   minHeight: '32px',
   display: 'flex',
   alignItems: 'center',
@@ -52,3 +52,11 @@ export const listStyles = (parentHeight: number): SxStyleProp => ({
   left: 0,
   top: `${parentHeight}px`,
 });
+
+export const messageStyles = {
+  p: '10px',
+  borderTopWidth: '1px',
+  borderTopStyle: 'solid',
+  borderTopColor: 'grayShade3',
+  cursor: 'default',
+};

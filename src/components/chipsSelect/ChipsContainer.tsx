@@ -45,10 +45,6 @@ const ChipsContainer: FC<ChipsContainerProps> = forwardRef(
     }: ChipsContainerProps,
     ref,
   ) => {
-    const inputRef = useRef<HTMLInputElement>(null);
-
-    const setInputFocus = () => !disabled && inputRef?.current?.focus();
-
     const handleDeleteChip = (chip: string) => {
       onChange(value.filter((v) => v !== chip));
     };
@@ -58,8 +54,7 @@ const ChipsContainer: FC<ChipsContainerProps> = forwardRef(
         {...props}
         width="auto"
         flexGrow="inherit"
-        sx={getContainerStyles(intent, disabled, type)}
-        onClick={setInputFocus}
+        sx={getContainerStyles(intent)}
         tx="variants.chipsSelect.container"
         variant={variant}
         tabIndex={0}
@@ -89,7 +84,6 @@ const ChipsContainer: FC<ChipsContainerProps> = forwardRef(
           ))}
           {type !== 'base' && (
             <Input
-              ref={inputRef}
               sx={inputStyles}
               width="inherit"
               mt="5px"
