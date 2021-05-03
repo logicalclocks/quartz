@@ -1,4 +1,4 @@
-import React, { FC, forwardRef, useRef } from 'react';
+import React, { FC, forwardRef } from 'react';
 import { Box, BoxProps, Flex } from 'rebass';
 import { Input } from '@rebass/forms';
 

@@ -1,12 +1,12 @@
 import React, { FC, useCallback, useMemo } from 'react';
 
+import { Box } from 'rebass';
 import ListItem from '../list/item';
 
 import { Labeling, List } from '../../index';
 import useArrowsSelect from '../select/useArrowsSelect';
 import { listStyles, messageStyles } from './chips.styles';
 import { ChipsSelectTypes } from './types';
-import { Box } from 'rebass';
 
 export interface ChipsDropDownProps {
   value: string[];
