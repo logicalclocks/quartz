@@ -19,6 +19,7 @@ export interface ChipsProps {
   placeholder: string;
   noDataMessage?: string;
   variant?: ChipsVariants;
+  inlineLegend?: string;
   labelAction?: React.ReactNode;
   type?: ChipsSelectTypes;
   onChange: (value: string[]) => void;
@@ -32,6 +33,7 @@ const Chips: FC<ChipsProps> = ({
   onChange,
   labelAction,
   placeholder,
+  inlineLegend,
   width = 'auto',
   isMulti = true,
   type = 'editable',
@@ -104,6 +106,7 @@ const Chips: FC<ChipsProps> = ({
         placeholder={placeholder}
         noDataMessage={noDataMessage}
         onChange={handleChipsSelection}
+        inlineLegend={inlineLegend}
         variant={disabled ? 'disabled' : (variant as ChipsVariants)}
       >
         {isOpen && (

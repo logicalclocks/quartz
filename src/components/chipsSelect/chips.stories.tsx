@@ -46,24 +46,25 @@ Default.args = {
   variant: 'primary',
   intent: 'default',
   isMulti: true,
+  inlineLegend: '',
 };
 
 Default.argTypes = {
   info: {
-    type: { required: false, summary: 'Array of strings' },
-    control: { type: 'array' },
+    type: { required: false, summary: 'String' },
+    control: { type: 'text' },
   },
   value: {
     type: { required: true, summary: 'Array of strings' },
     control: { type: 'array' },
   },
   options: {
-    type: { required: true, summary: 'string' },
+    type: { required: true, summary: 'array of strings' },
     control: { type: 'array' },
   },
   label: {
-    type: { required: true, summary: 'string' },
-    control: { type: 'array' },
+    type: { required: true },
+    control: { type: 'text' },
   },
   width: {
     type: { required: false, summary: 'string' },
@@ -71,11 +72,15 @@ Default.argTypes = {
   },
   placeholder: {
     type: { required: true, summary: 'string' },
-    control: { type: 'array' },
+    control: { type: 'text' },
   },
   noDataMessage: {
     type: { required: false, summary: 'string' },
-    control: { type: 'array' },
+    control: { type: 'text' },
+  },
+  inlineLegend: {
+    type: { required: false, summary: 'String' },
+    control: { type: 'text' },
   },
   disabled: {
     control: { type: 'boolean' },

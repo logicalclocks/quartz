@@ -18,12 +18,13 @@ export interface ChipsContainerProps
   disabled: boolean;
   isMulti: boolean;
   placeholder: string;
+  inlineLegend?: string;
   noDataMessage?: string;
+  type: ChipsSelectTypes;
+  variant: ChipsVariants;
   children: React.ReactNode;
   setSearch: (value: string) => void;
   onChange: (value: string[]) => void;
-  type: ChipsSelectTypes;
-  variant: ChipsVariants;
 }
 
 const ChipsContainer: FC<ChipsContainerProps> = forwardRef(
@@ -42,6 +43,7 @@ const ChipsContainer: FC<ChipsContainerProps> = forwardRef(
       onChange,
       setSearch,
       placeholder,
+      inlineLegend,
       noDataMessage,
       ...props
     }: ChipsContainerProps,
@@ -62,6 +64,11 @@ const ChipsContainer: FC<ChipsContainerProps> = forwardRef(
         tabIndex={0}
         ref={ref}
       >
+        {inlineLegend && inlineLegend !== '' && (
+          <Labeling minWidth="max-content" gray mr="5px">
+            {inlineLegend}
+          </Labeling>
+        )}
         {value.length === 0 && options.length === 0 && noDataMessage && (
           <Labeling mr="5px" minWidth="max-content">
             {noDataMessage}
