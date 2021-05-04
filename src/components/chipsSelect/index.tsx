@@ -1,36 +1,39 @@
 import React, { FC, useEffect, useMemo, useRef, useState } from 'react';
 import { useDropdown, useOnClickOutside } from '../..';
 import { Intents } from '../intents';
-import Label from '../label';
+import Label, { LabelProps } from '../label';
 import ChipsContainer from './ChipsContainer';
 import ChipsDropDown from './ChipsDropdown';
 import ChipsInfo from './ChipsInfo';
 import { ChipsSelectTypes, ChipsVariants } from './types';
 
-export interface ChipsProps {
+export interface ChipsProps extends Omit<LabelProps, 'onChange' | 'children'> {
   info?: string;
-  label: string;
+  label?: string;
   width?: string;
   value: string[];
   intent?: Intents;
   options: string[];
   isMulti?: boolean;
+  inputWidth?: string;
   disabled?: boolean;
   placeholder: string;
-  noDataMessage?: string;
-  variant?: ChipsVariants;
   inlineLegend?: string;
-  labelAction?: React.ReactNode;
+  noDataMessage?: string;
+  maxListHeight?: string;
   type?: ChipsSelectTypes;
+  variant?: ChipsVariants;
+  labelAction?: React.ReactNode;
   onChange: (value: string[]) => void;
 }
 
 const Chips: FC<ChipsProps> = ({
   info,
-  label,
+  label = '',
   value,
   options,
   onChange,
+  inputWidth,
   labelAction,
   placeholder,
   inlineLegend,
@@ -40,7 +43,9 @@ const Chips: FC<ChipsProps> = ({
   disabled = false,
   intent = 'default',
   variant = 'editable',
+  maxListHeight = '150px',
   noDataMessage = 'no options',
+  ...props
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [search, setSearch] = useState('');
@@ -90,6 +95,7 @@ const Chips: FC<ChipsProps> = ({
       text={label}
       width={width}
       action={labelAction}
+      {...props}
       onClick={() => !disabled && handleToggle()}
     >
       <ChipsContainer
@@ -103,6 +109,7 @@ const Chips: FC<ChipsProps> = ({
         options={options}
         disabled={disabled}
         setSearch={setSearch}
+        inputWidth={inputWidth}
         placeholder={placeholder}
         noDataMessage={noDataMessage}
         onChange={handleChipsSelection}
@@ -116,6 +123,7 @@ const Chips: FC<ChipsProps> = ({
             search={search}
             onClose={handleToggle}
             width={dropdrownWidth}
+            maxHeight={maxListHeight}
             options={filteredOptions}
             position={dropdrownPosition}
             onChange={handleValueChange}

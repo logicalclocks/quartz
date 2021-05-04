@@ -20,6 +20,7 @@ export interface ChipsContainerProps
   placeholder: string;
   inlineLegend?: string;
   noDataMessage?: string;
+  inputWidth?: string;
   type: ChipsSelectTypes;
   variant: ChipsVariants;
   children: React.ReactNode;
@@ -45,6 +46,7 @@ const ChipsContainer: FC<ChipsContainerProps> = forwardRef(
       placeholder,
       inlineLegend,
       noDataMessage,
+      inputWidth = 'inherit',
       ...props
     }: ChipsContainerProps,
     ref,
@@ -95,9 +97,9 @@ const ChipsContainer: FC<ChipsContainerProps> = forwardRef(
           {type !== 'base' && (
             <Input
               sx={inputStyles}
-              width="inherit"
+              width={inputWidth}
               mt="5px"
-              minWidth="100px"
+              minWidth="50px"
               value={search}
               disabled={disabled}
               placeholder={placeholder}

@@ -14,6 +14,7 @@ export interface ChipsDropDownProps {
   search: string;
   position: number;
   options: string[];
+  maxHeight: string;
   type?: ChipsSelectTypes;
   onChange: (value: string[]) => void;
   onClose: () => void;
@@ -28,6 +29,7 @@ const ChipsDropDown: FC<ChipsDropDownProps> = ({
   onClose,
   position,
   onChange,
+  maxHeight,
 }) => {
   const handleClick = useCallback(
     (option: string) => () => {
@@ -59,7 +61,12 @@ const ChipsDropDown: FC<ChipsDropDownProps> = ({
   );
 
   return (
-    <List sx={listStyles(position)} width={width}>
+    <List
+      sx={listStyles(position)}
+      minWidth={width}
+      width="max-content"
+      maxHeight={maxHeight}
+    >
       {fullOptions.map((option, index) => (
         <ListItem
           key={option}

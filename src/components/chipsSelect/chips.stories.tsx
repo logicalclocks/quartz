@@ -11,7 +11,17 @@ export default {
   component: Chips,
 } as Meta;
 
-const options = ['integer', 'string', 'boolean', 'float', 'bigInt'];
+const options = [
+  'integer',
+  'string',
+  'boolean',
+  'float',
+  'bigInt',
+  'integer1',
+  'string1',
+  'boolean1',
+  'float1',
+];
 
 const Template: Story<ChipsProps> = (props) => {
   const [value, setValue] = useState<string[]>(['number']);
@@ -63,10 +73,18 @@ Default.argTypes = {
     control: { type: 'array' },
   },
   label: {
-    type: { required: true },
+    type: { required: false },
+    control: { type: 'text' },
+  },
+  maxListHeight: {
+    type: { required: false },
     control: { type: 'text' },
   },
   width: {
+    type: { required: false, summary: 'string' },
+    control: { type: 'array' },
+  },
+  inputWidth: {
     type: { required: false, summary: 'string' },
     control: { type: 'array' },
   },
