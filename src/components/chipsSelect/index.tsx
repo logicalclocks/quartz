@@ -14,6 +14,7 @@ export interface ChipsProps {
   value: string[];
   intent?: Intents;
   options: string[];
+  isMulti?: boolean;
   disabled?: boolean;
   placeholder: string;
   noDataMessage?: string;
@@ -32,6 +33,7 @@ const Chips: FC<ChipsProps> = ({
   labelAction,
   placeholder,
   width = 'auto',
+  isMulti = true,
   type = 'editable',
   disabled = false,
   intent = 'default',
@@ -52,7 +54,8 @@ const Chips: FC<ChipsProps> = ({
 
   const handleValueChange = (selection: string[]) => {
     setSearch('');
-    onChange([...value, ...selection]);
+    const newValue = isMulti ? [...value, ...selection] : selection;
+    onChange(newValue);
   };
 
   const handleChipsSelection = (selection: string[]) => {
@@ -88,12 +91,13 @@ const Chips: FC<ChipsProps> = ({
       onClick={() => !disabled && handleToggle()}
     >
       <ChipsContainer
-        type={type}
         ref={containerRef}
+        type={type}
         label={label}
         value={value}
         search={search}
         intent={intent}
+        isMulti={isMulti}
         options={options}
         disabled={disabled}
         setSearch={setSearch}

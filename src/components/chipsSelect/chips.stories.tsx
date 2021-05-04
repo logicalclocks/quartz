@@ -14,7 +14,7 @@ export default {
 const options = ['integer', 'string', 'boolean', 'float', 'bigInt'];
 
 const Template: Story<ChipsProps> = (props) => {
-  const [value, setValue] = useState<string[]>(['chips', 'select']);
+  const [value, setValue] = useState<string[]>(['number']);
   const [customOptions] = useState(options);
 
   const handleChange = (data: string[]) => {
@@ -45,6 +45,7 @@ Default.args = {
   type: 'editable',
   variant: 'primary',
   intent: 'default',
+  isMulti: true,
 };
 
 Default.argTypes = {
@@ -79,6 +80,10 @@ Default.argTypes = {
   disabled: {
     control: { type: 'boolean' },
     type: { required: false },
+  },
+  isMulti: {
+    control: { type: 'boolean' },
+    type: { required: true },
   },
   type: {
     type: { required: false },

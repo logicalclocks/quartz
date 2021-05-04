@@ -16,6 +16,7 @@ export interface ChipsContainerProps
   intent: Intents;
   options: string[];
   disabled: boolean;
+  isMulti: boolean;
   placeholder: string;
   noDataMessage?: string;
   children: React.ReactNode;
@@ -35,6 +36,7 @@ const ChipsContainer: FC<ChipsContainerProps> = forwardRef(
       search,
       variant,
       options,
+      isMulti,
       children,
       disabled,
       onChange,
@@ -75,6 +77,7 @@ const ChipsContainer: FC<ChipsContainerProps> = forwardRef(
           {value.map((selection: string) => (
             <Chip
               mt="5px"
+              boxed={isMulti}
               key={selection}
               value={selection}
               disabled={disabled}

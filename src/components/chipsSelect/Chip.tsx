@@ -8,6 +8,7 @@ import { ChipsVariants } from './types';
 
 export interface ChipProps extends Omit<FlexProps, 'css'> {
   value: string;
+  boxed: boolean;
   variant?: ChipsVariants;
   disabled?: boolean;
   deletable?: boolean;
@@ -16,9 +17,10 @@ export interface ChipProps extends Omit<FlexProps, 'css'> {
 
 const Chip: FC<ChipProps> = ({
   value,
-  disabled,
-  deletable = true,
   onDelete,
+  disabled,
+  boxed = true,
+  deletable = true,
   variant = 'primary',
   ...props
 }) => {
@@ -37,25 +39,25 @@ const Chip: FC<ChipProps> = ({
     [onDelete, value],
   );
 
-  const showCross = deletable && !disabled && hover;
+  const showCross = deletable && boxed && !disabled && hover;
 
   return (
     <Flex
       alignItems="center"
       justifyContent="center"
-      px="5px"
+      px={boxed ? '5px' : '3px'}
       py="3px"
       mr="5px"
       sx={chipStyles}
       as="span"
       tx="variants.chipsSelect.chip"
-      variant={variant}
+      variant={boxed ? variant : ''}
       onMouseEnter={() => handleHover(true)}
       onMouseLeave={() => handleHover(false)}
       onClick={(e) => e.stopPropagation()}
       {...props}
     >
-      {!showCross && <Box width="7px" />}
+      {!showCross && boxed && <Box width="7px" />}
       <Labeling as="span">{value}</Labeling>
       {showCross && (
         <FontAwesomeIcon
@@ -64,7 +66,7 @@ const Chip: FC<ChipProps> = ({
           onClick={handleDelete}
         />
       )}
-      {!showCross && <Box width="7px" />}
+      {!showCross && boxed && <Box width="7px" />}
     </Flex>
   );
 };
