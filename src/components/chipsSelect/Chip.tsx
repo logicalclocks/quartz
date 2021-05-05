@@ -54,7 +54,6 @@ const Chip: FC<ChipProps> = ({
       variant={boxed ? variant : ''}
       onMouseEnter={() => handleHover(true)}
       onMouseLeave={() => handleHover(false)}
-      onClick={(e) => e.stopPropagation()}
       {...props}
     >
       {!showCross && boxed && <Box width="7px" />}

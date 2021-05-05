@@ -1,4 +1,4 @@
-import React, { FC, forwardRef } from 'react';
+import React, { FC, forwardRef, useRef } from 'react';
 import { Box, BoxProps, Flex } from 'rebass';
 import { Input } from '@rebass/forms';
 
@@ -51,8 +51,16 @@ const ChipsContainer: FC<ChipsContainerProps> = forwardRef(
     }: ChipsContainerProps,
     ref,
   ) => {
+    const inputRef = useRef<HTMLDivElement>(null);
+
     const handleDeleteChip = (chip: string) => {
       onChange(value.filter((v) => v !== chip));
+    };
+
+    const handleContainerClick = () => {
+      if (inputRef?.current) {
+        inputRef.current.focus();
+      }
     };
 
     return (
@@ -65,6 +73,7 @@ const ChipsContainer: FC<ChipsContainerProps> = forwardRef(
         variant={variant}
         tabIndex={0}
         ref={ref}
+        onClick={handleContainerClick}
       >
         {inlineLegend && inlineLegend !== '' && (
           <Labeling minWidth="max-content" gray mr="5px">
@@ -96,6 +105,7 @@ const ChipsContainer: FC<ChipsContainerProps> = forwardRef(
           ))}
           {type !== 'base' && (
             <Input
+              ref={inputRef}
               sx={inputStyles}
               width={inputWidth}
               mt="5px"
