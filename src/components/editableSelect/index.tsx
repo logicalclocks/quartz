@@ -2,12 +2,13 @@ import React, { FC, useEffect, useMemo, useRef, useState } from 'react';
 import { useDropdown, useOnClickOutside } from '../..';
 import { Intents } from '../intents';
 import Label, { LabelProps } from '../label';
-import ChipsContainer from './ChipsContainer';
-import ChipsDropDown from './ChipsDropdown';
-import ChipsInfo from './ChipsInfo';
-import { ChipsSelectTypes, ChipsVariants } from './types';
+import EditableSelectContainer from './EditableSelectContainer';
+import EditableSelectDropdown from './EditableSelectDropdown';
+import EditableSelectInfo from './EditableSelectInfo';
+import { EditableSelectTypes, ChipsVariants } from './types';
 
-export interface ChipsProps extends Omit<LabelProps, 'onChange' | 'children'> {
+export interface EditableSelectProps
+  extends Omit<LabelProps, 'onChange' | 'children'> {
   info?: string;
   label?: string;
   width?: string;
@@ -21,13 +22,13 @@ export interface ChipsProps extends Omit<LabelProps, 'onChange' | 'children'> {
   inlineLegend?: string;
   noDataMessage?: string;
   maxListHeight?: string;
-  type?: ChipsSelectTypes;
+  type?: EditableSelectTypes;
   variant?: ChipsVariants;
   labelAction?: React.ReactNode;
   onChange: (value: string[]) => void;
 }
 
-const Chips: FC<ChipsProps> = ({
+const EditableSelect: FC<EditableSelectProps> = ({
   info,
   label = '',
   value,
@@ -98,7 +99,7 @@ const Chips: FC<ChipsProps> = ({
       {...props}
       onClick={() => !disabled && handleToggle()}
     >
-      <ChipsContainer
+      <EditableSelectContainer
         ref={containerRef}
         type={type}
         label={label}
@@ -117,7 +118,7 @@ const Chips: FC<ChipsProps> = ({
         variant={disabled ? 'disabled' : (variant as ChipsVariants)}
       >
         {isOpen && (
-          <ChipsDropDown
+          <EditableSelectDropdown
             type={type}
             value={value}
             search={search}
@@ -129,10 +130,10 @@ const Chips: FC<ChipsProps> = ({
             onChange={handleValueChange}
           />
         )}
-      </ChipsContainer>
-      {info && <ChipsInfo intent={intent}>{info}</ChipsInfo>}
+      </EditableSelectContainer>
+      {info && <EditableSelectInfo intent={intent}>{info}</EditableSelectInfo>}
     </Label>
   );
 };
 
-export default Chips;
+export default EditableSelect;

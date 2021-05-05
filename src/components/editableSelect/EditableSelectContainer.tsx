@@ -2,13 +2,13 @@ import React, { FC, forwardRef, useRef } from 'react';
 import { Box, BoxProps, Flex } from 'rebass';
 import { Input } from '@rebass/forms';
 
-import { getContainerStyles, inputStyles } from './chips.styles';
+import { getContainerStyles, inputStyles } from './editableSelect.styles';
 import Chip from './Chip';
 import { Intents } from '../intents';
 import { Labeling } from '../..';
-import { ChipsSelectTypes, ChipsVariants } from './types';
+import { EditableSelectTypes, ChipsVariants } from './types';
 
-export interface ChipsContainerProps
+export interface EditableSelectContainerProps
   extends Omit<BoxProps, 'css' | 'onChange'> {
   label: string;
   search: string;
@@ -21,14 +21,14 @@ export interface ChipsContainerProps
   inlineLegend?: string;
   noDataMessage?: string;
   inputWidth?: string;
-  type: ChipsSelectTypes;
+  type: EditableSelectTypes;
   variant: ChipsVariants;
   children: React.ReactNode;
   setSearch: (value: string) => void;
   onChange: (value: string[]) => void;
 }
 
-const ChipsContainer: FC<ChipsContainerProps> = forwardRef(
+const EditableSelectContainer: FC<EditableSelectContainerProps> = forwardRef(
   (
     {
       type,
@@ -48,7 +48,7 @@ const ChipsContainer: FC<ChipsContainerProps> = forwardRef(
       noDataMessage,
       inputWidth = 'inherit',
       ...props
-    }: ChipsContainerProps,
+    }: EditableSelectContainerProps,
     ref,
   ) => {
     const inputRef = useRef<HTMLDivElement>(null);
@@ -69,7 +69,7 @@ const ChipsContainer: FC<ChipsContainerProps> = forwardRef(
         width="auto"
         flexGrow="inherit"
         sx={getContainerStyles(intent)}
-        tx="variants.chipsSelect.container"
+        tx="variants.editableSelect.container"
         variant={variant}
         tabIndex={0}
         ref={ref}
@@ -122,4 +122,4 @@ const ChipsContainer: FC<ChipsContainerProps> = forwardRef(
     );
   },
 );
-export default ChipsContainer;
+export default EditableSelectContainer;

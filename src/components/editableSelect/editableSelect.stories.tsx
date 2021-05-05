@@ -4,11 +4,11 @@ import { Story, Meta } from '@storybook/react/types-6-0';
 import { action } from '@storybook/addon-actions';
 import { Box } from 'rebass';
 
-import Chips, { ChipsProps } from './index';
+import EditableSelect, { EditableSelectProps } from './index';
 
 export default {
-  title: 'Quartz/ChipsSelect',
-  component: Chips,
+  title: 'Quartz/EditableSelect',
+  component: EditableSelect,
 } as Meta;
 
 const options = [
@@ -23,7 +23,7 @@ const options = [
   'float1',
 ];
 
-const Template: Story<ChipsProps> = (props) => {
+const Template: Story<EditableSelectProps> = (props) => {
   const [value, setValue] = useState<string[]>(['number']);
   const [customOptions] = useState(options);
 
@@ -34,7 +34,7 @@ const Template: Story<ChipsProps> = (props) => {
 
   return (
     <Box width="600px">
-      <Chips
+      <EditableSelect
         {...props}
         value={value}
         options={customOptions}

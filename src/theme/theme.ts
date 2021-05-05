@@ -48,7 +48,7 @@ import { ITheme } from './types';
 // Notifications
 import notification from './notifications';
 // Chip
-import chipsSelect from './chipsSelect';
+import editableSelect from './editableSelect';
 
 const theme: ITheme = {
   colors: {
@@ -126,7 +126,7 @@ const theme: ITheme = {
     select,
     callout,
     icon,
-    chipsSelect,
+    editableSelect,
   },
   text: {
     inputInfo,

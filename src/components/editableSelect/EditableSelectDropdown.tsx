@@ -5,22 +5,22 @@ import ListItem from '../list/item';
 
 import { Labeling, List } from '../../index';
 import useArrowsSelect from '../select/useArrowsSelect';
-import { listStyles, messageStyles } from './chips.styles';
-import { ChipsSelectTypes } from './types';
+import { listStyles, messageStyles } from './editableSelect.styles';
+import { EditableSelectTypes } from './types';
 
-export interface ChipsDropDownProps {
+export interface EditableSelectDropdownProps {
   value: string[];
   width?: string;
   search: string;
   position: number;
   options: string[];
   maxHeight: string;
-  type?: ChipsSelectTypes;
+  type?: EditableSelectTypes;
   onChange: (value: string[]) => void;
   onClose: () => void;
 }
 
-const ChipsDropDown: FC<ChipsDropDownProps> = ({
+const EditableSelectDropdown: FC<EditableSelectDropdownProps> = ({
   type,
   value,
   width,
@@ -87,4 +87,4 @@ const ChipsDropDown: FC<ChipsDropDownProps> = ({
   );
 };
 
-export default ChipsDropDown;
+export default EditableSelectDropdown;

@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Box, Flex, FlexProps } from 'rebass';
 
 import { Labeling } from '../..';
-import { chipIconStyles, chipStyles } from './chips.styles';
+import { chipIconStyles, chipStyles } from './editableSelect.styles';
 import { ChipsVariants } from './types';
 
 export interface ChipProps extends Omit<FlexProps, 'css'> {
@@ -50,7 +50,7 @@ const Chip: FC<ChipProps> = ({
       mr="5px"
       sx={chipStyles}
       as="span"
-      tx="variants.chipsSelect.chip"
+      tx="variants.editableSelect.chip"
       variant={boxed ? variant : ''}
       onMouseEnter={() => handleHover(true)}
       onMouseLeave={() => handleHover(false)}

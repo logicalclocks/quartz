@@ -4,21 +4,21 @@ import { Text, TextProps } from 'rebass';
 // Types
 import { Intents } from '../intents';
 // Styles
-import styles from './chips-info.styles';
+import styles from './editableSelectInfo.styles';
 
-export interface ChipsInfoProps extends Omit<TextProps, 'css'> {
+export interface EditableSelectInfoProps extends Omit<TextProps, 'css'> {
   intent?: Intents;
   children: React.ReactNode;
 }
 
-const SelectInfo: FC<ChipsInfoProps> = ({
+const EditableSelectInfo: FC<EditableSelectInfoProps> = ({
   intent = 'error',
   children,
   ...props
-}: ChipsInfoProps) => (
+}: EditableSelectInfoProps) => (
   <Text as="span" variant={`selectInfo.${intent}`} sx={styles} {...props}>
     {children}
   </Text>
 );
 
-export default SelectInfo;
+export default EditableSelectInfo;

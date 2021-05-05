@@ -31,7 +31,7 @@ import Pagination from './components/pagination';
 import Tooltip from './components/tooltip';
 import TooltipPositions from './components/tooltip/positions';
 import Select from './components/select';
-import ChipsSelect from './components/chipsSelect';
+import EditableSelect from './components/editableSelect';
 import SplitGraph from './components/graphs/split-graph';
 import ToggleButton from './components/toggle-button';
 import NotificationsContainer from './components/notifications/index';
@@ -136,7 +136,7 @@ export {
   ListItem,
   Pagination,
   Select,
-  ChipsSelect,
+  EditableSelect,
   ThemeProvider,
   ToggleButton,
   Tooltip,
