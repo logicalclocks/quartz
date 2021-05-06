@@ -10,6 +10,7 @@ export interface RadioGroupProps
   extends Omit<RadioProps, 'label' | 'onChange' | 'options' | 'value'> {
   value: string | null;
   options: string[];
+  additionalTexts?: string[];
   onChange: (value: string) => void;
   flexDirection?: 'row' | 'column' | null;
 }
@@ -18,6 +19,7 @@ const RadioGroup: FC<RadioGroupProps> = ({
   options,
   value,
   onChange,
+  additionalTexts,
   flexDirection = 'column',
   ...props
 }: RadioGroupProps) => {
@@ -32,7 +34,7 @@ const RadioGroup: FC<RadioGroupProps> = ({
 
   return (
     <Flex flexDirection={flexDirection}>
-      {options?.map((option) => (
+      {options?.map((option, idx) => (
         <Radio
           {...props}
           key={option}
@@ -40,6 +42,7 @@ const RadioGroup: FC<RadioGroupProps> = ({
           checked={value === option}
           label={option}
           name={name}
+          addtionalText={additionalTexts?.[idx]}
           onChange={handleChange(option)}
         />
       ))}
