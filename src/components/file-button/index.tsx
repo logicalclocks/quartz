@@ -1,4 +1,4 @@
-import React, { FC, useRef } from 'react';
+import React, { FC } from 'react';
 import { Box, Button as RebassButton, ButtonProps, Flex } from 'rebass';
 import icons from '../../sources/icons';
 // Styles
@@ -27,8 +27,6 @@ const UploadButton: FC<QuartzFileButtonProps> = ({
   handleClick,
   ...props
 }: QuartzFileButtonProps) => {
-  // console.log('REF: ', ref, value);
-
   return (
     <Flex flexDirection="column">
       <RebassButton
