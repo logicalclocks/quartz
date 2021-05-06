@@ -5,6 +5,8 @@ import { fas } from '@fortawesome/free-solid-svg-icons';
 import { far } from '@fortawesome/free-regular-svg-icons';
 
 import Button from './components/button';
+import UploadButton from './components/file-button';
+import FileLoader from './components/file-loader';
 import Card from './components/card';
 import CardSecondary from './components/card/card-secondary';
 import Code from './components/code';
@@ -39,6 +41,7 @@ import DatePicker from './components/datepicker';
 import Divider from './components/divider';
 import Symbol from './components/symbol';
 import { SymbolMode } from './components/symbol';
+import Collapse from './components/collapse';
 
 // Popups
 import Drawer from './components/popup/drawer';
@@ -110,6 +113,8 @@ library.add(fas, far);
 
 export {
   Button,
+  UploadButton,
+  FileLoader,
   Card,
   CardSecondary,
   Code,
@@ -192,6 +197,7 @@ export {
   Labeling,
   StickySummary,
   SplitGraph,
+  Collapse,
   //  Icons
   FolderIcon,
   useOnClickOutside,

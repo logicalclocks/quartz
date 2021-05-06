@@ -1,7 +1,9 @@
 export const withoutBorder = { borderBottomColor: 'transparent' };
 
-export default {
+export default (isActive: boolean) => ({
   height: '35px',
+
+  bg: isActive ? 'grayShade3' : 'initial',
 
   display: 'flex',
   alignItems: 'center',
@@ -23,7 +25,11 @@ export default {
     visibility: 'hidden',
   },
 
+  '> div': {
+    minWidth: 28,
+  },
+
   ':hover > button:last-of-type': {
     visibility: 'visible',
   },
-};
+});

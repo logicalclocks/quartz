@@ -12,19 +12,22 @@ import icons from '../../sources/icons';
 export interface QuartzFileLoaderProps extends Omit<BoxProps, 'css'> {
   children: React.ReactNode | string;
   isLoading: boolean;
+  fileName: string;
+  located: string;
+  removeHandler: () => void;
   file: React.ReactNode;
 }
 
 const FileLoader: FC<QuartzFileLoaderProps> = ({
   children,
   isLoading,
-  file,
+  fileName,
   id,
+  removeHandler,
+                                                 file,
+  located,
   ...props
 }: QuartzFileLoaderProps) => {
-  const removeHandler = () => {
-    console.log(`remove`);
-  };
 
   return (
     <Flex {...props} sx={styles(isLoading)} key={id}>
@@ -36,7 +39,7 @@ const FileLoader: FC<QuartzFileLoaderProps> = ({
           <div />
         </Box>
       )}
-      <Text sx={{ ...fileNameBox(isLoading) }}>{file}</Text>
+      <Text sx={{ ...fileNameBox(isLoading) }}>{fileName}</Text>
       {' ' + children}
       <Box sx={{ ...loaderCross(isLoading) }} onClick={removeHandler}>
         {icons.cross}

@@ -11,6 +11,7 @@ import { getColumns, getRows } from './utils';
 import {
   containerStyles,
   dropdownStyles,
+  lastTheadStyles,
   tableStyles,
   theadStyles,
   trowStyles,
@@ -56,6 +57,12 @@ export const Thead: FC<TheadProps> = ({
       onClick={handleToggleList}
       ref={containerRef}
     >
+      <Box
+        as="th"
+        sx={{
+          width: '100%',
+        }}
+      />
       <div>
         {column}
         {isPrimary && (
@@ -189,9 +196,15 @@ const ReadOnlyTable: FC<ReadOnlyTableProps> = ({
                   />
                 ),
             )}
+            <Box as="th" sx={{ ...lastTheadStyles }} />
           </Box>
         </Box>
-        <Box as="tbody">
+        <Box
+          as="tbody"
+          sx={{
+            backgroundColor: 'white',
+          }}
+        >
           {getRows(props.values).map((row, i) => (
             <Box key={i} as="tr" sx={trowStyles}>
               <Box as="th">{i + 1}</Box>

@@ -103,7 +103,7 @@ const theme: ITheme = {
   },
   shadows: {
     primary: '0px 5px 15px rgba(33, 177, 130, 0.2)',
-    file: '0px 5px 15px rgba(144, 144, 144, 0.2)',
+    secondary: '0px 5px 15px rgba(144, 144, 144, 0.2)',
     explorer: '0px -1px 1px #E5E5E5',
     alert: '0px 5px 15px rgba(235, 87, 87, 0.25)',
     disabled: '0px 4px 15px rgba(0, 0, 0, 0.25)',

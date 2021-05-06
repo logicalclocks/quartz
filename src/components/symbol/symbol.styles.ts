@@ -1,9 +1,9 @@
 import { SxStyleProp } from 'rebass';
 
-export default {
+export default (possible: boolean): SxStyleProp => ({
   color: 'primaryShade1',
-  fontSize: '20px',
-  cursor: 'pointer',
+  fontSize: '15px',
+  cursor: possible ? 'pointer' : 'unset',
   textDecoration: 'none',
   fontStyle: 'normal',
-} as SxStyleProp;
+});

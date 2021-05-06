@@ -2,6 +2,7 @@
 import { action } from '@storybook/addon-actions';
 import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
+import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 
 import FileButton, { QuartzFileButtonProps } from './index';
 
@@ -62,6 +63,16 @@ File.argTypes = {
     },
     type: {
       required: true,
+    },
+  },
+  icon: {
+    control: {
+      type: 'select',
+      options: [undefined, faCoffee],
+    },
+    type: {
+      summary:
+        'Put icon component from @fortawesome/free-solid-svg-icons package',
     },
   },
 };

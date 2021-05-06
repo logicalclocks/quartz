@@ -1,72 +1,55 @@
-import React, { FC, useRef } from 'react';
-import { Box, Button as RebassButton, ButtonProps } from 'rebass';
+import React, { FC } from 'react';
+import { Box, Button as RebassButton, ButtonProps, Flex } from 'rebass';
 import icons from '../../sources/icons';
-
 // Styles
 import { fileButton, inputBox, inputButton } from './file-button.styles';
-import { IconDefinition } from '@fortawesome/fontawesome-common-types';
 
 export interface QuartzFileButtonProps extends Omit<ButtonProps, 'css'> {
   children: React.ReactNode | string;
-  mode?: string;
+  modeNFiles?: boolean;
   intent?: 'secondary';
   href?: string;
-  icon?: IconDefinition;
+  name?: string;
+  ref: any;
+  onHandleUpload: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  handleClick: (event: React.MouseEvent<HTMLElement>) => void;
 }
 
-const FileButton: FC<QuartzFileButtonProps> = ({
+const UploadButton: FC<QuartzFileButtonProps> = ({
   intent = 'secondary',
   children,
-  icon,
   href,
-  mode,
+  modeNFiles,
+  ref,
+  name,
+  value,
+  onHandleUpload,
+  handleClick,
   ...props
 }: QuartzFileButtonProps) => {
-  const hiddenFileInput: any = useRef();
-
-  const handleClick = () => {
-    // hiddenFileInput.current.click();
-    console.log('Download file');
-  };
-
-  //
-  // Handle the uploaded file
-  //
-  // const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-  //   const fileUploaded = event.target.files;
-  //   renderUploadFiles(fileUploaded);
-  // };
-  //
-  // const renderUploadFiles = (file: any) => {
-  //   const list = document.createElement('ul');
-  //   //for every file...
-  //   for (let x = 0; x < file.length; x++) {
-  //     //add to list
-  //     const li = document.createElement('li');
-  //     li.innerHTML = 'File ' + ':  ' + file[x].name;
-  //     list.append(li);
-  //   }
-  // };
-
   return (
-    <RebassButton
-      sx={{ ...fileButton }}
-      variant={`file-${intent}`}
-      {...props}
-      onClick={handleClick}
-    >
-      <Box sx={{ ...inputBox }}>{icons.upload}</Box>
-      <input
-        type="file"
-        style={{
-          ...inputButton,
-        }}
-        ref={hiddenFileInput}
-        multiple={mode === 'nFiles'}
-      />
-      {children}
-    </RebassButton>
+    <Flex flexDirection="column">
+      <RebassButton
+        sx={{ ...fileButton }}
+        variant={`secondary`}
+        {...props}
+        onClick={handleClick}
+      >
+        <Box sx={{ ...inputBox }}>{icons.upload}</Box>
+        <input
+          type="file"
+          name={name}
+          style={{
+            ...inputButton,
+          }}
+          ref={ref}
+          multiple={modeNFiles}
+          onChange={onHandleUpload}
+        />
+        {children}
+      </RebassButton>
+    </Flex>
   );
 };
 
-export default FileButton;
+export default UploadButton;

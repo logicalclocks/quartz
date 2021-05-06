@@ -43,6 +43,16 @@ const argTypes = {
       summary: 'Component',
     },
   },
+  hasScrollOnScreen: {
+    control: {
+      type: 'boolean',
+    },
+  },
+  errorsValue: {
+    control: {
+      type: 'text',
+    },
+  },
 };
 
 const Template: Story<StickySummaryProps> = (props) => (
