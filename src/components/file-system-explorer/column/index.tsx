@@ -11,6 +11,7 @@ export interface FileExplorerColumnProps
   mode?: string;
   index: number;
   setActiveFile?: object;
+  handleLoadMore: (path: string, columnIndex: number) => void;
   setActive?: any;
   isFileSelected?: any;
   selectPathListValue?: any;
@@ -23,6 +24,7 @@ const FileExplorerColumn: FC<FileExplorerColumnProps> = ({
   setColumns,
   setActiveFile,
   isFileSelected,
+  handleLoadMore,
   selectPathListValue,
   setActive,
 }: FileExplorerColumnProps) => {
@@ -40,16 +42,16 @@ const FileExplorerColumn: FC<FileExplorerColumnProps> = ({
     >
       {children.map((item: { [key: string]: any }): any => {
         if (item) {
-          if (item.type === 'folder') {
+          if (item.attributes.dir) {
             return (
               <FolderItemExplorer
                 index={index}
-                id={item.id}
+                id={item.attributes.id}
+                handleLoadMore={handleLoadMore}
                 mode={mode}
-                name={item.name}
+                name={item.attributes.name}
                 itemInfo={item}
-                children={item.children}
-                isHasChildren={item.children.length > 0}
+                // isHasChildren={item.children.length > 0}
                 selectPathListValue={selectPathListValue}
                 setColumns={setColumns}
                 setActiveFile={setActiveFile}

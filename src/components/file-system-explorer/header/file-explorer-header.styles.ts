@@ -11,9 +11,6 @@ export default {
   pt: '20px',
 
   boxSizing: 'border-box',
-  borderTopWidth: '5px',
-  borderTopStyle: 'solid',
-  borderTopColor: 'primary',
 
   // Title
   '> h4': {

@@ -12,7 +12,7 @@ export interface QuartzFileExplorerProps {
   selected: boolean;
   activeFile?: object;
   mode?: string;
-  itemInfo: { [key: string]: string };
+  itemInfo: { [key: string]: any };
   setActiveFile?: any;
   isFileSected?: any;
   setColumns?: any;
@@ -67,7 +67,7 @@ QuartzFileExplorerProps) => {
         sx={{
           width: '100%',
         }}
-        label={itemInfo.name}
+        label={itemInfo.attributes.name}
         checked={selectedFile}
         onChange={() => handleClickFile(mode)}
         variant="gray"
@@ -79,7 +79,7 @@ QuartzFileExplorerProps) => {
       onClick={() => handleClickFile(mode)}
       tabIndex={0}
     >
-      {itemInfo.name}
+      {itemInfo.attributes.name}
     </Flex>
   );
 };

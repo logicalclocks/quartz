@@ -29,7 +29,7 @@ export const boxButtonStyles = {
   display: 'flex',
   justifyContent: 'space-between',
   alignItems: 'center',
-  div: {
+  button: {
     ml: '20px',
   },
 };

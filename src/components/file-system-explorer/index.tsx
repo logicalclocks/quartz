@@ -8,7 +8,6 @@ import {
 
 import Footer from './footer';
 import Header from './header';
-import Button from '../button';
 import Column from './column';
 import Info from './info';
 
@@ -16,41 +15,64 @@ import Info from './info';
 import styles from './file-system-explorer.styles';
 
 //Data
-import { data } from './data';
+import { testData } from './data';
 
 export interface FileSystemExplorerProps
   extends Omit<RebassCardProps, 'css' | 'title'> {
   title?: string;
   link?: string;
   mode?: string;
+  data: any;
+  handleLoadMore: (path: string, columnIndex: number) => void;
   shortcutActions?: React.ReactNode;
   contentProps?: Omit<RebassCardProps, 'css' | 'children'>;
+  onClose: (key: any) => void;
+  handleSelectFile: (activeFile: any) => void;
 }
 
 export interface ActiveFile {
-  author: string;
-  creation: string;
-  id: number;
-  last_update: string;
-  name: string;
-  size: string;
   type: string;
+  href: string;
+  zipState: string;
+  attributes: {
+    accessTime: string;
+    dir: boolean;
+    group: string;
+    id: number;
+    modificationTime: string;
+    name: string;
+    owner: string;
+    parentId: number;
+    path: string;
+    permission: string;
+    size: number;
+    underConstruction: boolean;
+  };
 }
 
 const FileSystemExplorer: FC<FileSystemExplorerProps> = ({
   title = 'Select a file',
+  onClose = () => console.log('Close'),
   shortcutActions,
   mode = 'oneFile',
   contentProps,
+  handleLoadMore = () => console.log('load more in quartz'),
+  handleSelectFile = () => console.log('handleSelectFile in quartz'),
+  data = testData,
   ...props
 }: FileSystemExplorerProps) => {
   const contentRef = useRef<HTMLDivElement>();
 
-  const [columns, setColumns] = useState([data]);
-  const [activeFile, setActiveFile] = useState<ActiveFile>();
-  const [fileListValue, setFileListValue] = useState<any[]>([]);
-  const [pathListValue, setPathListValue] = useState<any[]>([]);
+  const [columns, setColumns] = useState(data);
 
+  useEffect(() => {
+    setColumns(data);
+  }, [data]);
+
+  const [activeFile, setActiveFile] = useState<ActiveFile>();
+  //@ts-ignore
+  const [fileListValue, setFileListValue] = useState<any[]>([]);
+  const [pathListValue, setPathListValue] = useState<string>('');
   const lastChildOfColumn = useRef<any>();
 
   const scrollToRight = () => {
@@ -67,15 +89,8 @@ const FileSystemExplorer: FC<FileSystemExplorerProps> = ({
     }
   };
 
-  const selectPathListValue = (item: any, action: boolean) => {
-    console.log('columns: ', columns, item);
-    if (action) {
-      setPathListValue((prevState: any[]): any[] => [...prevState, item]);
-    } else {
-      setPathListValue((prevState) => [
-        ...prevState.filter((el) => el.id !== item.id),
-      ]);
-    }
+  const selectPathListValue = (path: string) => {
+    setPathListValue(path);
   };
 
   useEffect(() => {
@@ -94,12 +109,15 @@ const FileSystemExplorer: FC<FileSystemExplorerProps> = ({
         }}
         ref={contentRef}
         height="100%"
+        minHeight="500px"
+        minWidth="965px"
         overflowY="initial"
         m="20px"
         {...contentProps}
       >
-        {columns.map((el, index) => (
+        {columns.map((el: any, index: any) => (
           <Column
+            handleLoadMore={handleLoadMore}
             setActiveFile={setActiveFile}
             mode={mode}
             children={el}
@@ -114,12 +132,12 @@ const FileSystemExplorer: FC<FileSystemExplorerProps> = ({
         <Box ref={lastChildOfColumn} />
       </Flex>
       <Footer
-        secondaryButton={<Button variant="file-secondary">Back</Button>}
-        mainButton={<Button intent="primary">Select</Button>}
-        value={mode === 'oneFolder' ? pathListValue : fileListValue}
+        onClose={onClose}
+        value={pathListValue}
         activeFile={activeFile}
         columns={columns}
         mode={mode}
+        handleSelectFile={handleSelectFile}
       />
     </RebassCard>
   );

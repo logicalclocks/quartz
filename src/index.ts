@@ -6,6 +6,7 @@ import { far } from '@fortawesome/free-regular-svg-icons';
 
 import Button from './components/button';
 import UploadButton from './components/file-button';
+import FileSystemExplorer from './components/file-system-explorer';
 import FileLoader from './components/file-loader';
 import Card from './components/card';
 import CardSecondary from './components/card/card-secondary';
@@ -115,6 +116,7 @@ export {
   Button,
   UploadButton,
   FileLoader,
+  FileSystemExplorer,
   Card,
   CardSecondary,
   Code,

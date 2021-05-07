@@ -58,7 +58,7 @@ export const loaderCross = (isLoading: boolean) => ({
           width: '20px',
           height: '20px',
           path: {
-            fill: 'blue',
+            fill: 'black',
           },
         }),
   },

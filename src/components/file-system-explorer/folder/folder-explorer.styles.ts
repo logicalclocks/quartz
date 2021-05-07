@@ -1,23 +1,20 @@
 import { SxStyleProp } from 'rebass';
 
-export const folderExplorerStyle = (
-  children: boolean,
-  active: number,
-  id: number,
-) =>
+export const folderExplorerStyle = (active: number, id: number) =>
   ({
     display: 'flex',
     position: 'relative',
     flexDirection: 'row',
 
     ':focus': {
-      backgroundColor: children ? '' : 'primaryShade2',
+      backgroundColor: 'grayShade2',
       outlineWidth: 0,
     },
 
-    backgroundColor: active === id && children ? 'grayShade2' : '',
+    backgroundColor: active === id ? 'grayShade2' : '',
 
     width: 190,
+    overflowX: 'hidden',
 
     py: '9px',
     px: '11px',

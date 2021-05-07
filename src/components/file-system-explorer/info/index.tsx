@@ -2,7 +2,6 @@ import React, { FC } from 'react';
 import { Box, BoxProps, Flex } from 'rebass';
 
 import { Value } from '../../../index';
-import UploadButton from '../../file-button';
 
 import {
   FileExplorerInfoStyle,
@@ -11,6 +10,7 @@ import {
 } from './file-explorer-info.styles';
 import Labeling from '../../typography/labeling';
 import { ActiveFile } from '../index';
+import { formatSizeUnits } from '../../../utils/getFormatSizeUnit';
 
 export interface FileExplorerInfoProps extends Omit<BoxProps, 'css'> {
   children?: string[];
@@ -33,7 +33,7 @@ const FileExplorerInfo: FC<FileExplorerInfoProps> = ({
         }}
       >
         <Value as="h2" marginBottom="32px" textAlign="center">
-          {activeFile?.name}
+          {activeFile?.attributes.name}
         </Value>
         <Flex
           sx={{
@@ -57,15 +57,15 @@ const FileExplorerInfo: FC<FileExplorerInfoProps> = ({
               ...contentInfoStyles(false),
             }}
           >
-            <Labeling>{activeFile?.size}</Labeling>
-            <Labeling>{activeFile?.creation}</Labeling>
-            <Labeling>{activeFile?.last_update}</Labeling>
-            <Labeling>{activeFile?.author}</Labeling>
+            {console.log('activeFile: ', activeFile)}
+            <Labeling>{formatSizeUnits(activeFile?.attributes.size)}</Labeling>
+            <Labeling>{activeFile?.attributes.accessTime}</Labeling>
+            <Labeling>{activeFile?.attributes.modificationTime}</Labeling>
+            <Labeling>{activeFile?.attributes.owner}</Labeling>
           </Box>
         </Flex>
       </Box>
       {children}
-      <UploadButton children="Download file" />
     </Box>
   );
 };

@@ -6,28 +6,27 @@ import icons from '../../../sources/icons';
 import { folderExplorerStyle } from './folder-explorer.styles';
 
 export interface QuartzFileExplorerFolderProps {
-  children: Array<any>;
   name: string;
   id: number;
   isActive?: boolean;
   selected?: boolean;
   index: number;
   mode?: string;
-  setColumns: any;
-  isHasChildren: boolean;
+  setColumns?: any;
+  isHasChildren?: boolean;
   setActiveFile: any;
   setActiveFolder: any;
   activeFolder: number;
   selectPathListValue: any;
+  handleLoadMore: (path: string, columnIndex: number) => void;
   itemInfo: any;
 }
 
 const FolderExplorer: FC<QuartzFileExplorerFolderProps> = ({
-  children,
   setActiveFile,
-  isHasChildren,
   selectPathListValue,
   mode,
+  handleLoadMore,
   isActive,
   selected,
   setActiveFolder,
@@ -36,38 +35,39 @@ const FolderExplorer: FC<QuartzFileExplorerFolderProps> = ({
   name,
   itemInfo,
   id,
-  setColumns,
-}: // ...props
-QuartzFileExplorerFolderProps) => {
+}: QuartzFileExplorerFolderProps) => {
   const [active, setActive] = useState(isActive);
   const [selectedFolder, setSelectedFolder] = useState(selected);
 
   const handleClickFolder = () => {
+    handleLoadMore(itemInfo.attributes.path, index);
     if (mode === 'oneFolder') {
       setActive(!active);
       setSelectedFolder(!selectedFolder);
-      selectPathListValue(itemInfo, !selectedFolder);
+      selectPathListValue(itemInfo.attributes.path, !selectedFolder);
     }
-    console.log('Active folder: ', activeFolder);
-    setActiveFolder(id);
-    setActiveFile(null);
-    setColumns((prevState: any) => [
-      ...prevState.slice(0, index + 1),
-      children,
-    ]);
+    if (mode === 'oneFile') {
+      setActiveFolder(id);
+      selectPathListValue('', !selectedFolder);
+      setActiveFile(null);
+    }
+    // setActiveFolder(id);
+    // selectPathListValue(itemInfo.attributes.path, !selectedFolder);
+    // setActiveFile(null);
   };
 
   return (
     <Flex
-      sx={{ ...folderExplorerStyle(isHasChildren, activeFolder, id) }}
+      sx={{ ...folderExplorerStyle(activeFolder, id) }}
       onClick={handleClickFolder}
       tabIndex={0}
     >
       <Box
         sx={{
-          height: '9px',
+          minWidth: '16px',
+          minHeight: '16px',
+          marginRight: '9px',
           svg: {
-            mr: '9px',
             path: {
               fill: 'black',
             },
@@ -76,7 +76,7 @@ QuartzFileExplorerFolderProps) => {
       >
         {icons.folder}
       </Box>
-      {name}
+      <Box>{name}</Box>
     </Flex>
   );
 };
