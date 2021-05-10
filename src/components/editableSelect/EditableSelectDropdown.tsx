@@ -16,6 +16,7 @@ export interface EditableSelectDropdownProps {
   options: string[];
   maxHeight: string;
   type?: EditableSelectTypes;
+  isMulti: boolean;
   onChange: (value: string[]) => void;
   onClose: () => void;
 }
@@ -25,6 +26,7 @@ const EditableSelectDropdown: FC<EditableSelectDropdownProps> = ({
   value,
   width,
   search,
+  isMulti,
   options,
   onClose,
   position,
@@ -46,7 +48,7 @@ const EditableSelectDropdown: FC<EditableSelectDropdownProps> = ({
   }, [search, options]);
 
   const message = useMemo(() => {
-    if (value.includes(search)) return 'value already selected';
+    if (isMulti && value.includes(search)) return 'value already selected';
     if (fullOptions.length === 0) return 'no options available';
     return null;
   }, [value, search, fullOptions]);

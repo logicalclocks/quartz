@@ -44,6 +44,9 @@ export const inputStyles = {
   outline: 'none',
   padding: 0,
   height: '21px',
+  fontSize: '12px',
+  fontFamily: 'Inter',
+  fontWeight: 500,
 } as SxStyleProp;
 
 export const listStyles = (parentHeight: number): SxStyleProp => ({

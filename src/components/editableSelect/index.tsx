@@ -49,19 +49,30 @@ const EditableSelect: FC<EditableSelectProps> = ({
   ...props
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const [search, setSearch] = useState('');
+  const [search, setSearch] = useState(isMulti ? '' : value[0] || '');
 
   const [isOpen, handleToggle, handleClickOutside] = useDropdown(false);
   useOnClickOutside<HTMLDivElement>(containerRef, handleClickOutside);
 
+  const unselectedOpts = useMemo(
+    () => options.filter((opt) => !value.includes(opt)),
+    [options, value],
+  );
+
   const filteredOptions = useMemo(() => {
-    const nonSelected = options.filter((opt) => !value.includes(opt));
-    const matchingSearch = nonSelected.filter((opt) => opt.includes(search));
-    return matchingSearch;
-  }, [search, options, value]);
+    const baseOptions = isMulti ? unselectedOpts : options;
+    const matching = baseOptions.filter((opt) => opt.includes(search));
+    if (!isMulti && value[0] && !options.includes(value[0])) {
+      // For single section display current search as option.
+      return [value[0], ...matching];
+    }
+    return matching;
+  }, [search, options, value, isMulti, unselectedOpts]);
 
   const handleValueChange = (selection: string[]) => {
-    setSearch('');
+    // Remove focus from input
+    if (containerRef.current) containerRef.current.focus();
+    setSearch(isMulti ? '' : selection[0]);
     const newValue = isMulti ? [...value, ...selection] : selection;
     onChange(newValue);
   };
@@ -72,8 +83,10 @@ const EditableSelect: FC<EditableSelectProps> = ({
   };
 
   useEffect(() => {
-    // Reopen dropdrown when typing after adding chip.
-    if (!isOpen && search !== '') handleToggle();
+    // Reopen dropdrown when typing.
+    if (!isOpen && search !== '') {
+      if (isMulti || search !== value[0]) handleToggle();
+    }
   }, [search]);
 
   const dropdrownWidth = useMemo(() => {
@@ -122,6 +135,7 @@ const EditableSelect: FC<EditableSelectProps> = ({
             type={type}
             value={value}
             search={search}
+            isMulti={isMulti}
             onClose={handleToggle}
             width={dropdrownWidth}
             maxHeight={maxListHeight}

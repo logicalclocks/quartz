@@ -1,4 +1,4 @@
-import React, { FC, forwardRef, useRef } from 'react';
+import React, { FC, forwardRef } from 'react';
 import { Box, BoxProps, Flex } from 'rebass';
 import { Input } from '@rebass/forms';
 
@@ -51,16 +51,8 @@ const EditableSelectContainer: FC<EditableSelectContainerProps> = forwardRef(
     }: EditableSelectContainerProps,
     ref,
   ) => {
-    const inputRef = useRef<HTMLDivElement>(null);
-
     const handleDeleteChip = (chip: string) => {
       onChange(value.filter((v) => v !== chip));
-    };
-
-    const handleContainerClick = () => {
-      if (inputRef?.current) {
-        inputRef.current.focus();
-      }
     };
 
     return (
@@ -73,7 +65,6 @@ const EditableSelectContainer: FC<EditableSelectContainerProps> = forwardRef(
         variant={variant}
         tabIndex={0}
         ref={ref}
-        onClick={handleContainerClick}
       >
         {inlineLegend && inlineLegend !== '' && (
           <Labeling minWidth="max-content" gray mr="5px">
@@ -92,23 +83,24 @@ const EditableSelectContainer: FC<EditableSelectContainerProps> = forwardRef(
           flexGrow={1}
           mt="-5px"
         >
-          {value.map((selection: string) => (
-            <Chip
-              mt="5px"
-              boxed={isMulti}
-              key={selection}
-              value={selection}
-              disabled={disabled}
-              variant={variant}
-              onDelete={handleDeleteChip}
-            />
-          ))}
+          {isMulti &&
+            value.map((selection: string) => (
+              <Chip
+                mt="5px"
+                boxed={isMulti}
+                key={selection}
+                value={selection}
+                disabled={disabled}
+                variant={variant}
+                onDelete={handleDeleteChip}
+              />
+            ))}
           {type !== 'base' && (
             <Input
-              ref={inputRef}
               sx={inputStyles}
               width={inputWidth}
               mt="5px"
+              ml={isMulti ? '0px' : '3px'}
               minWidth="50px"
               value={search}
               disabled={disabled}

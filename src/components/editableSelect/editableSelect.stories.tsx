@@ -24,7 +24,7 @@ const options = [
 ];
 
 const Template: Story<EditableSelectProps> = (props) => {
-  const [value, setValue] = useState<string[]>(['number']);
+  const [value, setValue] = useState<string[]>([]);
   const [customOptions] = useState(options);
 
   const handleChange = (data: string[]) => {
