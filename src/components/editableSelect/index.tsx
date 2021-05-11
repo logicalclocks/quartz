@@ -43,7 +43,7 @@ const EditableSelect: FC<EditableSelectProps> = ({
   type = 'editable',
   disabled = false,
   intent = 'default',
-  variant = 'editable',
+  variant = 'primary',
   maxListHeight = '150px',
   noDataMessage = 'no options',
   ...props
