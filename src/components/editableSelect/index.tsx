@@ -71,7 +71,7 @@ const EditableSelect: FC<EditableSelectProps> = ({
 
   const handleValueChange = (selection: string[]) => {
     // Remove focus from input
-    if (containerRef.current) containerRef.current.focus();
+    if (containerRef.current && !isMulti) containerRef.current.focus();
     setSearch(isMulti ? '' : selection[0]);
     const newValue = isMulti ? [...value, ...selection] : selection;
     onChange(newValue);
