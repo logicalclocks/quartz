@@ -53,14 +53,10 @@ const EditableSelectDropdown: FC<EditableSelectDropdownProps> = ({
     return null;
   }, [value, search, fullOptions]);
 
-  const { activeIndex } = useArrowsSelect(
-    fullOptions,
-    (val: string) => {
-      handleClick(val)();
-      onClose();
-    },
-    0,
-  );
+  const { activeIndex } = useArrowsSelect(fullOptions, (val: string) => {
+    handleClick(val)();
+    onClose();
+  });
 
   return (
     <List
