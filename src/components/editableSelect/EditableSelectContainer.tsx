@@ -1,4 +1,11 @@
-import React, { FC, forwardRef } from 'react';
+import React, {
+  FC,
+  forwardRef,
+  useCallback,
+  Dispatch,
+  useRef,
+  useEffect,
+} from 'react';
 import { Box, BoxProps, Flex } from 'rebass';
 import { Input } from '@rebass/forms';
 
@@ -7,6 +14,7 @@ import Chip from './Chip';
 import { Intents } from '../intents';
 import { Labeling } from '../..';
 import { EditableSelectTypes, ChipsVariants } from './types';
+import useKeyUp from '../../utils/useKeyUp';
 
 export interface EditableSelectContainerProps
   extends Omit<BoxProps, 'css' | 'onChange'> {
@@ -24,7 +32,7 @@ export interface EditableSelectContainerProps
   type: EditableSelectTypes;
   variant: ChipsVariants;
   children: React.ReactNode;
-  setSearch: (value: string) => void;
+  setSearch: Dispatch<React.SetStateAction<string>>;
   onChange: (value: string[]) => void;
 }
 
@@ -51,9 +59,24 @@ const EditableSelectContainer: FC<EditableSelectContainerProps> = forwardRef(
     }: EditableSelectContainerProps,
     ref,
   ) => {
+    const counterRef = useRef(1);
+
     const handleDeleteChip = (chip: string) => {
       onChange(value.filter((v) => v !== chip));
     };
+
+    const handleDelete = useCallback(() => {
+      if (search.length === 0) counterRef.current -= 1;
+      if (counterRef.current < 0 && value.length > 0) {
+        onChange(value.slice(0, -1));
+      }
+    }, [search, value, counterRef]);
+
+    useKeyUp(handleDelete, 'Backspace');
+
+    useEffect(() => {
+      counterRef.current = 0;
+    }, [value]);
 
     return (
       <Box
@@ -105,7 +128,10 @@ const EditableSelectContainer: FC<EditableSelectContainerProps> = forwardRef(
               value={search}
               disabled={disabled}
               placeholder={placeholder}
-              onChange={({ target }) => setSearch(target.value)}
+              onChange={({ target }) => {
+                counterRef.current = 1;
+                setSearch(target.value);
+              }}
             />
           )}
         </Flex>
