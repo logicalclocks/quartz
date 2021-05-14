@@ -36,9 +36,17 @@ const FileLoader: FC<QuartzFileLoaderProps> = ({
           <div />
         </Box>
       )}
-      <Text sx={{ ...fileNameBox(isLoading) }}>{fileName}</Text>
-      <Box sx={{ color: 'grayShade1', mx: '5px' }}>{children}</Box>
-      {located}
+      <Text sx={{ ...fileNameBox(isLoading) }}>
+        {fileName}{' '}
+        <Box
+          style={{
+            color: 'black',
+            display: 'inline',
+          }}
+        >
+          {children + ' ' + located + ' '}
+        </Box>
+      </Text>
       <Box sx={{ ...loaderCross(isLoading) }} onClick={removeHandler}>
         {icons.cross}
       </Box>

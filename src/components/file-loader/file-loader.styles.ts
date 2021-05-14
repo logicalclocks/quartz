@@ -44,7 +44,7 @@ export const loaderCross = (isLoading: boolean) => ({
   borderColor: 'transparent',
   cursor: 'pointer',
   mt: isLoading ? '1px' : '-1px',
-  ml: '15px',
+  ml: '10px',
   svg: {
     ...(isLoading
       ? {
@@ -74,4 +74,5 @@ export default (isLoading: boolean) => ({
   fontFamily: 'label',
   fontWeight: 'label',
   fontSize: 'label',
+  alignItems: 'center',
 });
