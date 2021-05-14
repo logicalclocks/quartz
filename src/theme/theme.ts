@@ -47,6 +47,8 @@ import pagination from './pagination';
 import { ITheme } from './types';
 // Notifications
 import notification from './notifications';
+// Chip
+import editableSelect from './editableSelect';
 
 const theme: ITheme = {
   colors: {
@@ -125,6 +127,7 @@ const theme: ITheme = {
     select,
     callout,
     icon,
+    editableSelect,
   },
   text: {
     inputInfo,
