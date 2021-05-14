@@ -18,6 +18,17 @@ export const fileExplorerStyle = (
       outlineWidth: 0,
     },
 
+    'div >label': {
+      overflowX: 'hidden',
+      '>input': {
+        minWidth: '16px',
+        minHeight: '16px',
+      },
+      span: {
+        minWidth: '18px',
+      },
+    },
+
     '> label': {
       m: 9,
     },

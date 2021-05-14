@@ -74,7 +74,6 @@ const FileSystemExplorer: FC<FileSystemExplorerProps> = ({
   const [fileListValue, setFileListValue] = useState<any[]>([]);
   const [pathListValue, setPathListValue] = useState<string>('');
   const lastChildOfColumn = useRef<any>();
-
   const scrollToRight = () => {
     !!lastChildOfColumn ? lastChildOfColumn.current.scrollIntoView() : [];
   };
@@ -83,8 +82,8 @@ const FileSystemExplorer: FC<FileSystemExplorerProps> = ({
     if (action) {
       setFileListValue((prevState: any[]): any[] => [...prevState, item]);
     } else {
-      setFileListValue((prevState) => [
-        ...prevState.filter((el) => el.id !== item.id),
+      setFileListValue((prevState: any[]): any[] => [
+        ...prevState.filter((name) => name !== item.attributes.name),
       ]);
     }
   };
@@ -126,6 +125,7 @@ const FileSystemExplorer: FC<FileSystemExplorerProps> = ({
             index={index}
             isFileSelected={isFileSelected}
             selectPathListValue={selectPathListValue}
+            fileListValue={fileListValue}
           />
         ))}
         {activeFile && <Info activeFile={activeFile} />}
@@ -133,6 +133,7 @@ const FileSystemExplorer: FC<FileSystemExplorerProps> = ({
       </Flex>
       <Footer
         onClose={onClose}
+        fileListValue={fileListValue}
         value={pathListValue}
         activeFile={activeFile}
         columns={columns}

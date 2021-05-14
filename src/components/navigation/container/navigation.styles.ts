@@ -24,8 +24,31 @@ export default {
 
     m: 0,
     p: 0,
+    '>li>div': {
+      display: 'flex',
+      flexDirection: 'row',
+      alignItems: 'center',
+      padding: '6px 16px',
+      height: '24px',
+      background: '#F5F5F5',
+      color: '#a0a0a0',
+      borderColor: 'grayShade2',
+      borderStyle: 'solid',
+      borderWidth: '1px',
+      borderRightWidth: '0px',
+      borderLeftWidth: '0px',
+      cursor: 'default',
+      paddingLeft: '0px',
+      ':hover': {
+        color: '#a0a0a0',
+      },
+    },
+    '>li:first-of-type>div': {
+      height: '0px',
+      padding: '0px',
+      borderWidth: '0px',
+    },
   },
-
   '> div': {
     width: '100%',
     fontSize: '12px',

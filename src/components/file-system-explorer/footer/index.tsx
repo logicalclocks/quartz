@@ -12,6 +12,7 @@ export interface fileExplorerFooter {
   mode?: string;
   columns: any[];
   handleSelectFile: (activeFile: any) => void;
+  fileListValue: Array<ActiveFile>[];
 }
 
 const FooterFileExplorer: FC<fileExplorerFooter> = ({
@@ -21,44 +22,78 @@ const FooterFileExplorer: FC<fileExplorerFooter> = ({
   mode = 'oneFile',
   onClose,
   handleSelectFile,
+  fileListValue,
   ...props
-}: fileExplorerFooter) => (
-  <Flex sx={{ ...styles }} {...props}>
-    <Box sx={{ ...boxStyles }}>
-      {value && !activeFile ? (
-        <Labeling
-          bold
-          sx={{
-            textTransform: 'normal',
-            color: 'primary',
-            marginLeft: '0px',
-          }}
+}: fileExplorerFooter) => {
+  const ExplorerMode = (mode: string) => {
+    switch (mode) {
+      case 'oneFile':
+        return activeFile ? activeFile.attributes.name : 'pick a file';
+
+      case 'nFiles': {
+        if (!!fileListValue.length) {
+          const newList = fileListValue.map((el: any) => {
+            return el.attributes.name;
+          });
+          return newList.join(' ; ');
+        } else return 'pick a file';
+      }
+
+      case 'oneFolder':
+        return !!value ? value : '/';
+      default:
+        return;
+    }
+  };
+  const ColorStyle = (mode: string) => {
+    switch (mode) {
+      case 'oneFile':
+        return activeFile ? 'primary' : 'gray';
+
+      case 'nFiles':
+        return !!fileListValue.length ? 'primary' : 'gray';
+
+      case 'oneFolder':
+        return 'primary';
+      default:
+        return 'gray';
+    }
+  };
+
+  return (
+    <Flex sx={{ ...styles }} {...props}>
+      <Box sx={{ ...boxStyles }}>
+        {mode && (
+          <Labeling
+            bold
+            sx={{
+              textTransform: 'normal',
+              color: ColorStyle(mode),
+              marginLeft: '0px',
+            }}
+          >
+            {ExplorerMode(mode)}
+          </Labeling>
+        )}
+      </Box>
+      <Box sx={{ ...boxButtonStyles }}>
+        <Button variant="file-secondary" onClick={() => onClose(false)}>
+          Back
+        </Button>
+        <Button
+          intent="primary"
+          disabled={!activeFile && mode !== 'oneFolder'}
+          onClick={() =>
+            mode === 'oneFile'
+              ? handleSelectFile(activeFile)
+              : handleSelectFile(fileListValue)
+          }
         >
-          {value}
-        </Labeling>
-      ) : (
-        <Labeling
-          bold
-          gray={!activeFile}
-          sx={{ textTransform: 'normal', color: activeFile ? 'primary' : '' }}
-        >
-          {activeFile ? activeFile.attributes.name : 'pick a file'}
-        </Labeling>
-      )}
-    </Box>
-    <Box sx={{ ...boxButtonStyles }}>
-      <Button variant="file-secondary" onClick={() => onClose(false)}>
-        Back
-      </Button>
-      <Button
-        intent="primary"
-        disabled={!activeFile}
-        onClick={() => handleSelectFile(activeFile)}
-      >
-        Select
-      </Button>
-    </Box>
-  </Flex>
-);
+          {!value && mode === 'oneFolder' ? 'Select root' : 'Select'}
+        </Button>
+      </Box>
+    </Flex>
+  );
+};
 
 export default FooterFileExplorer;

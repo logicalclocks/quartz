@@ -66,7 +66,6 @@ export const loaderCross = (isLoading: boolean) => ({
 
 export const fileNameBox = (isLoading: boolean) => ({
   color: isLoading ? 'primaryShade1' : 'primary',
-  mr: '5px',
 });
 
 export default (isLoading: boolean) => ({

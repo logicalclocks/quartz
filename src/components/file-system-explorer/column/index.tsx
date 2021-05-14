@@ -15,6 +15,7 @@ export interface FileExplorerColumnProps
   setActive?: any;
   isFileSelected?: any;
   selectPathListValue?: any;
+  fileListValue?: any[];
 }
 
 const FileExplorerColumn: FC<FileExplorerColumnProps> = ({
@@ -27,6 +28,7 @@ const FileExplorerColumn: FC<FileExplorerColumnProps> = ({
   handleLoadMore,
   selectPathListValue,
   setActive,
+  fileListValue,
 }: FileExplorerColumnProps) => {
   const [activeFolder, setActiveFolder] = useState(0);
 
@@ -72,8 +74,16 @@ const FileExplorerColumn: FC<FileExplorerColumnProps> = ({
                 setActiveFile={setActiveFile}
                 setActiveFolder={setActiveFolder}
                 itemInfo={item}
-                isActive={false}
-                selected={false}
+                isActive={
+                  fileListValue
+                    ? fileListValue.includes(item.attributes.name)
+                    : false
+                }
+                selected={
+                  fileListValue
+                    ? fileListValue.includes(item.attributes.name)
+                    : false
+                }
               />
             );
           }

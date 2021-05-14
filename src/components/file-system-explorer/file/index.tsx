@@ -14,7 +14,6 @@ export interface QuartzFileExplorerProps {
   mode?: string;
   itemInfo: { [key: string]: any };
   setActiveFile?: any;
-  isFileSected?: any;
   setColumns?: any;
   setActive?: any;
   setActiveFolder?: any;
@@ -64,9 +63,6 @@ QuartzFileExplorerProps) => {
     >
       <Checkbox
         m="10px"
-        sx={{
-          width: '100%',
-        }}
         label={itemInfo.attributes.name}
         checked={selectedFile}
         onChange={() => handleClickFile(mode)}
