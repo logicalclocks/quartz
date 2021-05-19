@@ -11,11 +11,16 @@ export const folderExplorerStyle = (active: number, id: number) =>
       outlineWidth: 0,
     },
 
-    backgroundColor: active === id ? 'grayShade2' : '',
+    backgroundColor: active === id ? 'grayShade2' : 'white',
 
-    width: 190,
+    width: '222px',
+    '>div:last-of-type': {
+      width: '176px',
+      textOverflow: 'ellipsis',
+      whiteSpace: 'nowrap',
+      overflow: 'hidden',
+    },
     overflowX: 'hidden',
-
     py: '9px',
     px: '11px',
 
@@ -27,7 +32,7 @@ export const folderExplorerStyle = (active: number, id: number) =>
     borderWidth: '1px',
     boxSizing: 'border-box',
 
-    fontFamily: 'label',
-    fontWeight: 'label',
-    fontSize: 'label',
+    fontFamily: 'text',
+    fontWeight: 'text',
+    fontSize: 'text',
   } as SxStyleProp);

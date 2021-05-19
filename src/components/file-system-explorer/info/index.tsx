@@ -11,6 +11,7 @@ import {
 import Labeling from '../../typography/labeling';
 import { ActiveFile } from '../index';
 import { formatSizeUnits } from '../../../utils/getFormatSizeUnit';
+import { format } from 'date-fns';
 
 export interface FileExplorerInfoProps extends Omit<BoxProps, 'css'> {
   children?: string[];
@@ -21,6 +22,10 @@ const FileExplorerInfo: FC<FileExplorerInfoProps> = ({
   children,
   activeFile,
 }: FileExplorerInfoProps) => {
+  const dateFormat = (date: string) => {
+    return format(new Date(date), 'DD-MM-YYYY HH:mm:ss');
+  };
+
   return (
     <Box
       sx={{
@@ -52,17 +57,24 @@ const FileExplorerInfo: FC<FileExplorerInfoProps> = ({
             <Labeling gray>last update</Labeling>
             <Labeling gray>author</Labeling>
           </Box>
-          <Box
-            sx={{
-              ...contentInfoStyles(false),
-            }}
-          >
-            {console.log('activeFile: ', activeFile)}
-            <Labeling>{formatSizeUnits(activeFile?.attributes.size)}</Labeling>
-            <Labeling>{activeFile?.attributes.accessTime}</Labeling>
-            <Labeling>{activeFile?.attributes.modificationTime}</Labeling>
-            <Labeling>{activeFile?.attributes.owner}</Labeling>
-          </Box>
+          {activeFile && (
+            <Box
+              sx={{
+                ...contentInfoStyles(false),
+              }}
+            >
+              <Labeling>
+                {formatSizeUnits(activeFile?.attributes.size)}
+              </Labeling>
+              <Labeling>
+                {dateFormat(activeFile?.attributes.accessTime)}
+              </Labeling>
+              <Labeling>
+                {dateFormat(activeFile?.attributes.modificationTime)}
+              </Labeling>
+              <Labeling>{activeFile?.attributes.owner}</Labeling>
+            </Box>
+          )}
         </Flex>
       </Box>
       {children}

@@ -1,4 +1,4 @@
-export default {
+const styles = (isOpen: boolean) => ({
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
@@ -26,10 +26,11 @@ export default {
     p: 0,
     '>li>div': {
       display: 'flex',
+      overflow: isOpen && 'hidden',
       flexDirection: 'row',
       alignItems: 'center',
-      padding: '6px 16px',
-      height: '24px',
+      padding: !isOpen ? '6px 16px' : '0px',
+      height: !isOpen ? '24px' : '1px',
       background: '#F5F5F5',
       color: '#a0a0a0',
       borderColor: 'grayShade2',
@@ -60,4 +61,6 @@ export default {
       textAlign: 'center',
     },
   },
-};
+});
+
+export default styles;

@@ -101,16 +101,16 @@ const FileSystemExplorer: FC<FileSystemExplorerProps> = ({
       <Header shortcutActions={shortcutActions} title={title} />
       <Flex
         sx={{
+          flex: 1,
           borderStyle: 'solid',
           borderColor: 'grayShade3',
           borderWidth: '1px',
-          overflowX: 'hidden',
+          overflowX: 'auto',
+          backgroundColor: 'grayShade3',
         }}
         ref={contentRef}
         height="100%"
-        minHeight="500px"
         minWidth="965px"
-        overflowY="initial"
         m="20px"
         {...contentProps}
       >

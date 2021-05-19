@@ -6,7 +6,6 @@ export const fileExplorerHeaderStyles = {
   flexDirection: 'column',
   alignItems: 'start',
   justifyContent: 'center',
-
   height: '62px',
   minHeight: '62px',
   width: '100%',
@@ -33,8 +32,10 @@ export const fileExplorerHeaderStyles = {
 export default {
   display: 'flex',
   flexDirection: 'column',
-
+  minHeight: 'calc(100vh - 45px)',
+  maxHeight: 'calc(100vh - 20px)',
   borderWidth: '1px',
+  borderBottomWidth: '0px',
   borderStyle: 'solid',
   boxSizing: 'border-box',
 } as SxStyleProp;

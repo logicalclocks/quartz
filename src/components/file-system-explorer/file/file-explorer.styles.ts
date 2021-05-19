@@ -6,12 +6,14 @@ export const fileExplorerStyle = (
   mode: string,
 ) =>
   ({
-    display: 'flex',
     position: 'relative',
-    flexDirection: 'row',
 
-    backgroundColor: !isActive ? 'white' : selected ? 'grayShade2' : '',
-    width: 190,
+    backgroundColor: !isActive ? 'white' : selected ? 'grayShade2' : 'white',
+    width: '222px',
+
+    textOverflow: 'ellipsis',
+    whiteSpace: 'nowrap',
+    overflow: 'hidden',
 
     ':focus': {
       backgroundColor: 'primaryShade2',
@@ -19,13 +21,22 @@ export const fileExplorerStyle = (
     },
 
     'div >label': {
-      overflowX: 'hidden',
+      overflow: 'hidden',
       '>input': {
         minWidth: '16px',
         minHeight: '16px',
       },
       span: {
         minWidth: '18px',
+      },
+      div: {
+        width: '172px',
+        textOverflow: 'ellipsis',
+        whiteSpace: 'nowrap',
+        overflow: 'hidden',
+        fontFamily: 'text',
+        fontWeight: 'text',
+        fontSize: 'text',
       },
     },
 
@@ -43,7 +54,7 @@ export const fileExplorerStyle = (
     borderWidth: '1px',
     boxSizing: 'border-box',
 
-    fontFamily: 'label',
-    fontWeight: 'label',
-    fontSize: 'label',
+    fontFamily: 'text',
+    fontWeight: 'text',
+    fontSize: 'text',
   } as SxStyleProp);

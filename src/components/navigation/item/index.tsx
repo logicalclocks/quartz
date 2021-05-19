@@ -32,7 +32,6 @@ const NavigationItem: FC<NavigationItemProps> = (
   props: NavigationItemProps,
 ) => {
   const { activePath, onActivate, trackBy } = useContext(NavigationContext);
-
   const theme = useTheme<ITheme>();
 
   const {

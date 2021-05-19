@@ -1,5 +1,5 @@
 import React, { FC, useState } from 'react';
-import { Flex } from 'rebass';
+import { Box } from 'rebass';
 
 // Styles
 import { fileExplorerStyle } from './file-explorer.styles';
@@ -56,7 +56,7 @@ QuartzFileExplorerProps) => {
   };
 
   return mode === 'nFiles' ? (
-    <Flex
+    <Box
       sx={{ ...fileExplorerStyle(active, selectedFile, mode) }}
       tabIndex={0}
       onClick={selectActiveFile}
@@ -68,15 +68,15 @@ QuartzFileExplorerProps) => {
         onChange={() => handleClickFile(mode)}
         variant="gray"
       />
-    </Flex>
+    </Box>
   ) : (
-    <Flex
+    <Box
       sx={{ ...fileExplorerStyle(active, selectedFile, mode) }}
       onClick={() => handleClickFile(mode)}
       tabIndex={0}
     >
       {itemInfo.attributes.name}
-    </Flex>
+    </Box>
   );
 };
 

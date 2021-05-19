@@ -35,11 +35,14 @@ const FileExplorerColumn: FC<FileExplorerColumnProps> = ({
   return (
     <Box
       sx={{
-        minWidth: '190px',
+        width: '225px',
+        minWidth: '225px',
         borderRightColor: 'grayShade1',
         borderRightWidth: '3px',
         borderRightStyle: 'solid',
-        overflow: 'hidden',
+        backgroundColor: 'grayShade3',
+        overflowY: 'auto',
+        overflowX: 'hidden',
       }}
     >
       {children.map((item: { [key: string]: any }): any => {

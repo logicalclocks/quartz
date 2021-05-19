@@ -5,7 +5,6 @@ export default {
   justifyContent: 'center',
 
   minHeight: '62px',
-  width: '100%',
 
   p: '20px',
 

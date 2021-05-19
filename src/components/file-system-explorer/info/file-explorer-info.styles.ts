@@ -3,7 +3,7 @@ export const FileExplorerInfoStyle = {
   flexDirection: 'column',
   alignItems: 'center',
   justifyContent: 'space-between',
-
+  backgroundColor: 'white',
   minHeight: '62px',
   width: '100%',
   minWidth: '230px',
@@ -11,21 +11,20 @@ export const FileExplorerInfoStyle = {
   p: '20px',
 
   boxSizing: 'border-box',
-
-  // Title
-  '> h4': {
-    fontFamily: 'subtitle',
-    fontWeight: 'subtitle',
-    fontSize: 'subtitle',
-  },
 };
 
 export const blockInfoStyles = {
   display: 'flex',
   flexDirection: 'column',
+  'div:first-of-type': { justifyContent: 'center' },
   ' > div > span': {
     color: 'black',
     marginLeft: 0,
+  },
+  '>h2': {
+    fontFamily: 'subtitle',
+    fontWeight: 'subtitle',
+    fontSize: 'subtitle',
   },
 };
 
