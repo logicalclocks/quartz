@@ -1,7 +1,11 @@
 import { useCallback, useEffect, useState } from 'react';
 
-const useArrowsSelect = (options: string[], callback: Function) => {
-  const [activeIndex, setActiveIndex] = useState(-1);
+const useArrowsSelect = (
+  options: string[],
+  callback: Function,
+  startingIndex = -1,
+) => {
+  const [activeIndex, setActiveIndex] = useState(startingIndex);
 
   const handleSelect = useCallback(
     (e) => {

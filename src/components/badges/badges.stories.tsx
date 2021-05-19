@@ -70,7 +70,7 @@ Default.argTypes = {
   variant: {
     control: {
       type: 'select',
-      options: ['light', 'bold', 'fail', 'success', 'label'],
+      options: ['light', 'bold', 'fail', 'warning', 'success', 'label'],
     },
     type: {
       required: false,
