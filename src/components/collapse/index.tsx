@@ -9,6 +9,8 @@ export interface CollapseProps extends Omit<BoxProps, 'css' | 'title'> {
   title: React.ReactNode;
   secondaryContent?: React.ReactNode;
   contentProps?: Omit<BoxProps, 'css' | 'children'>;
+  isOpenProps?: boolean;
+  openChange?: (value: boolean) => void;
 }
 
 const Collapse: FC<CollapseProps> = ({
@@ -16,12 +18,14 @@ const Collapse: FC<CollapseProps> = ({
   contentProps,
   secondaryContent,
   children,
+  isOpenProps = false,
+  openChange,
   ...props
 }) => {
   const ref = useRef<HTMLDivElement>(null);
 
   const [height, setHeight] = useState<number>(0);
-  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [isOpen, setOpen] = useState(isOpenProps);
 
   useEffect(() => {
     if (ref.current) {
@@ -31,9 +35,21 @@ const Collapse: FC<CollapseProps> = ({
     }
   }, [ref]);
 
+  useEffect(() => {
+    if (typeof openChange === 'function') {
+      openChange(isOpen);
+    }
+  }, [openChange, isOpen]);
+
+  useEffect(() => {
+    if (isOpen !== isOpenProps) {
+      setOpen(isOpenProps);
+    }
+  }, [isOpenProps]);
+
   return (
     <Box sx={containerStyles} {...props}>
-      <Flex sx={styles(isOpen)} onClick={() => setIsOpen(!isOpen)}>
+      <Flex sx={styles(isOpen)} onClick={() => setOpen((state) => !state)}>
         <Flex>
           <Box>{isOpen ? icons.arrow_up : icons.arrow_down}</Box>
           {title}
