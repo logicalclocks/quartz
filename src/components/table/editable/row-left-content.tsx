@@ -9,30 +9,19 @@ export interface RowLeftContentProps {
 }
 
 const styles = {
-  minWidth: '40px',
+  minWidth: '32px',
   boxSizing: 'content-box',
-
   '> div': {
     display: 'none',
     '> button': {
-      width: '40px',
+      width: '31px',
       height: 'auto',
+      padding: '9px 12px 9px 15px',
+      maxHeight: '35px',
     },
     svg: {
       fontSize: '13px',
     },
-  },
-
-  ':hover': {
-    padding: '0 !important',
-  },
-
-  ':hover > span': {
-    display: 'none',
-  },
-
-  ':hover > div': {
-    display: 'block',
   },
 };
 
@@ -47,11 +36,13 @@ const RowLeftContent: FC<RowLeftContentProps> = ({
       as="th"
       p="0 !important"
       py="9px !important"
+      id={String(index + 1)}
       sx={styles}
       onClick={handleDeleteRow}
     >
       <span>{index + 1}</span>
       <IconButton
+        py="9px !import"
         pr="20px"
         tooltipProps={{ position: TooltipPositions.right }}
         tooltip="remove"

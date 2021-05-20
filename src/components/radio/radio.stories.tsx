@@ -27,7 +27,7 @@ export const Default = Template.bind({});
 export const Group = GroupTemplate.bind({});
 
 Group.args = {
-  label: 'Validation',
+  // label: 'Validation',
 };
 
 Group.argTypes = {
@@ -62,7 +62,7 @@ Group.argTypes = {
   flexDirection: {
     control: {
       type: 'select',
-      options: ['row', 'column', null]
+      options: ['row', 'column', null],
     },
     type: {
       summary: 'Items display',
