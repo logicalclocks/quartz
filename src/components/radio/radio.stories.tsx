@@ -19,6 +19,7 @@ const GroupTemplate: Story<RadioGroupProps> = (props) => {
       onChange={setValue}
       mr="auto"
       options={['nullable', 'required', 'email', 'url']}
+      additionalTexts={['text1', 'text2', 'text3', 'text4']}
     />
   );
 };
@@ -59,6 +60,12 @@ Group.argTypes = {
       required: true,
     },
   },
+  additionalTexts: {
+    type: {
+      summary: 'Array of strings',
+      required: false,
+    },
+  },
   flexDirection: {
     control: {
       type: 'select',
@@ -85,6 +92,12 @@ Default.argTypes = {
   disabled: {
     control: {
       type: 'boolean',
+    },
+  },
+  additionalTexts: {
+    type: {
+      summary: 'Array of strings',
+      required: false,
     },
   },
   label: {

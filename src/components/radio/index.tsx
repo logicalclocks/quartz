@@ -9,11 +9,21 @@ import styles from './radio-styles';
 
 export interface RadioProps extends Omit<RebassRadioProps, 'css'> {
   label?: string;
+  addtionalText?: string;
 }
 
 const Radio: FC<RadioProps> = forwardRef(
   (
-    { label, name, id, disabled, onChange, checked, ...props }: RadioProps,
+    {
+      label,
+      addtionalText,
+      name,
+      id,
+      disabled,
+      onChange,
+      checked,
+      ...props
+    }: RadioProps,
     ref,
   ) => (
     <Flex
@@ -39,6 +49,11 @@ const Radio: FC<RadioProps> = forwardRef(
       {label && (
         <Labeling bold ml="8px">
           {label}
+        </Labeling>
+      )}
+      {addtionalText && (
+        <Labeling ml="5px" gray>
+          {addtionalText}
         </Labeling>
       )}
     </Flex>
