@@ -90,7 +90,7 @@ const theme: ITheme = {
     title: '24px',
     subtitle: '18px',
     label: '12px',
-    microlabel: '9px',
+    microlabel: '10px',
     value: '12px',
   },
   fontWeights: {

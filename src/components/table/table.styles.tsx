@@ -35,7 +35,7 @@ export const theadStyles = {
   top: '0',
   minWidth: '92px',
 
-  'th:first-child': {
+  'th:first-of-typed': {
     borderTopColor: 'grey',
     minWidth: '31px',
     maxWidth: '31px',
@@ -129,7 +129,7 @@ export const trowStyles = {
     position: 'sticky',
     backgroundColor: 'white',
     display: 'block',
-    ':first-child': {
+    ':first-of-typed': {
       maxWidth: '31px',
       minWidth: '31px',
     },

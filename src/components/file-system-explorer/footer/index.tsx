@@ -11,7 +11,7 @@ export interface fileExplorerFooter {
   onClose: (key: any) => void;
   mode?: string;
   columns: any[];
-  handleSelectFile: (activeFile: any) => void;
+  handleSelectFile: (activeFile: any, isDownload: boolean) => void;
   fileListValue: Array<ActiveFile>[];
 }
 
@@ -85,8 +85,8 @@ const FooterFileExplorer: FC<fileExplorerFooter> = ({
           disabled={!activeFile && mode !== 'oneFolder'}
           onClick={() =>
             mode === 'oneFile'
-              ? handleSelectFile(activeFile)
-              : handleSelectFile(fileListValue)
+              ? handleSelectFile(activeFile, false)
+              : handleSelectFile(fileListValue, false)
           }
         >
           {!value && mode === 'oneFolder' ? 'Select root' : 'Select'}

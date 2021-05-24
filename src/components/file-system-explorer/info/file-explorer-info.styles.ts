@@ -31,7 +31,7 @@ export const blockInfoStyles = {
 export const contentInfoStyles = (side: boolean) => ({
   display: 'flex',
   flexDirection: 'column',
-  maxWidth: side ? '60px' : '80px',
+  maxWidth: side ? '40px' : '90px',
   textAlign: side ? 'right' : 'left',
   marginRight: '4px',
   div: {
@@ -39,11 +39,21 @@ export const contentInfoStyles = (side: boolean) => ({
     flexDirection: 'column',
     justifyContent: 'flex-end',
     marginBottom: '8px',
+    fontFamily: side ? 'microlabel' : 'value',
+    fontWeight: side ? 'microlabel' : 'value',
+    fontSize: side ? 'microlabel' : 'value',
+  },
+  'div:nth-last-of-type(3)': {
+    paddingBottom: '7px',
+  },
+  'div:nth-last-of-type(2)': {
+    paddingBottom: '5px',
   },
   'div:last-child': {
-    height: 'auto',
+    height: '16px',
+    paddingBottom: '2px',
   },
-  'div:first-child': {
+  'div:first-of-typed': {
     height: 'auto',
   },
 });

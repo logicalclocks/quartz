@@ -12,18 +12,22 @@ import Labeling from '../../typography/labeling';
 import { ActiveFile } from '../index';
 import { formatSizeUnits } from '../../../utils/getFormatSizeUnit';
 import { format } from 'date-fns';
+import Button from '../../button';
+import icons from '../../../sources/icons';
 
 export interface FileExplorerInfoProps extends Omit<BoxProps, 'css'> {
   children?: string[];
   activeFile?: ActiveFile | null;
+  handleDownloadFile: () => void;
 }
 
 const FileExplorerInfo: FC<FileExplorerInfoProps> = ({
   children,
   activeFile,
+  handleDownloadFile,
 }: FileExplorerInfoProps) => {
   const dateFormat = (date: string) => {
-    return format(new Date(date), 'DD-MM-YYYY HH:mm:ss');
+    return format(new Date(date), 'YYYY-MM-DD - HH:mm:ss');
   };
 
   return (
@@ -77,6 +81,20 @@ const FileExplorerInfo: FC<FileExplorerInfoProps> = ({
           )}
         </Flex>
       </Box>
+      <Button intent="secondary" onClick={handleDownloadFile}>
+        <Flex alignItems="center" justifyContent="center">
+          <Flex
+            sx={{
+              mr: '11px',
+              height: '15px',
+              alignItems: 'center',
+            }}
+          >
+            {icons.download}
+          </Flex>
+          <Flex alignItems="center">Download File</Flex>
+        </Flex>
+      </Button>
       {children}
     </Box>
   );

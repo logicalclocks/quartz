@@ -50,6 +50,7 @@ const FileExplorerColumn: FC<FileExplorerColumnProps> = ({
           if (item.attributes.dir) {
             return (
               <FolderItemExplorer
+                key={item.attributes.id}
                 index={index}
                 id={item.attributes.id}
                 handleLoadMore={handleLoadMore}
@@ -70,6 +71,7 @@ const FileExplorerColumn: FC<FileExplorerColumnProps> = ({
             return (
               <FileItemExplorer
                 index={index}
+                key={item.attributes.id}
                 mode={mode}
                 setActive={setActive}
                 setColumns={setColumns}

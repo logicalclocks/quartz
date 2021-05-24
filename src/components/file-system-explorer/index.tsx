@@ -27,7 +27,8 @@ export interface FileSystemExplorerProps
   shortcutActions?: React.ReactNode;
   contentProps?: Omit<RebassCardProps, 'css' | 'children'>;
   onClose: (key: any) => void;
-  handleSelectFile: (activeFile: any) => void;
+  handleSelectFile: (activeFile: any, isDownload: boolean) => void;
+  handleDownloadFile: () => void;
 }
 
 export interface ActiveFile {
@@ -54,6 +55,7 @@ const FileSystemExplorer: FC<FileSystemExplorerProps> = ({
   title = 'Select a file',
   onClose = () => console.log('Close'),
   shortcutActions,
+  handleDownloadFile,
   mode = 'oneFile',
   contentProps,
   handleLoadMore = () => console.log('load more in quartz'),
@@ -94,6 +96,7 @@ const FileSystemExplorer: FC<FileSystemExplorerProps> = ({
 
   useEffect(() => {
     scrollToRight();
+    handleSelectFile(activeFile, true);
   }, [columns, activeFile]);
 
   return (
@@ -128,7 +131,12 @@ const FileSystemExplorer: FC<FileSystemExplorerProps> = ({
             fileListValue={fileListValue}
           />
         ))}
-        {activeFile && <Info activeFile={activeFile} />}
+        {activeFile && (
+          <Info
+            activeFile={activeFile}
+            handleDownloadFile={handleDownloadFile}
+          />
+        )}
         <Box ref={lastChildOfColumn} />
       </Flex>
       <Footer
