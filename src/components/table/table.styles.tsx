@@ -75,7 +75,7 @@ export const theadStyles = {
     backgroundColor: 'grayShade2',
   },
   '&.static-column': {
-    borderRightColor: 'green',
+    borderRightColor: 'primary',
     borderBottomColor: 'grey',
     borderWidth: '0 1px 2px 0',
     position: 'sticky',
@@ -164,7 +164,7 @@ export const trowStyles = {
       backgroundColor: 'white',
       position: 'sticky',
       left: '31px',
-      borderRightColor: 'green',
+      borderRightColor: 'primary',
       borderLeftColor: 'grayShade1',
       borderRightWidth: '1px',
     },

@@ -43,6 +43,7 @@ const RowLeftContent: FC<RowLeftContentProps> = ({
       <span>{index + 1}</span>
       <IconButton
         py="9px !import"
+        px="12px !important"
         pr="20px"
         tooltipProps={{ position: TooltipPositions.right }}
         tooltip="remove"
