@@ -10,7 +10,7 @@ import Portal from './Portal';
 
 export interface TooltipProps extends Omit<BoxProps, 'css'> {
   children: React.ReactNode;
-  mainText: string;
+  mainText?: string;
   secondaryText?: string;
   disabled?: boolean;
   visibleDefault?: boolean;

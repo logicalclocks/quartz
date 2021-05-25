@@ -26,13 +26,13 @@ export const spinner = {
     borderRightColor: 'transparent',
     borderTopColor: 'transparent',
     borderBottomColor: 'transparent',
-    ':nth-child(1)': {
+    ':nth-of-type(1)': {
       animationDelay: '-0.45s',
     },
-    ':nth-child(2)': {
+    ':nth-of-type(2)': {
       animationDelay: '-0.3s',
     },
-    ':nth-child(3)': {
+    ':nth-of-type(3)': {
       animationDelay: '-0.15s',
     },
   },

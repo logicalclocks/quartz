@@ -10,7 +10,7 @@ export interface QuartzFileButtonProps extends Omit<ButtonProps, 'css'> {
   intent?: 'secondary';
   href?: string;
   name?: string;
-  ref: any;
+  currentRef?: any;
   onHandleUpload: (event: React.ChangeEvent<HTMLInputElement>) => void;
   handleClick: (event: React.MouseEvent<HTMLElement>) => void;
 }
@@ -20,13 +20,15 @@ const UploadButton: FC<QuartzFileButtonProps> = ({
   children,
   href,
   modeNFiles,
-  ref,
+  currentRef,
   name,
   value,
   onHandleUpload,
   handleClick,
   ...props
 }: QuartzFileButtonProps) => {
+  console.log('ref: ', currentRef);
+
   return (
     <Flex flexDirection="column">
       <RebassButton
@@ -42,7 +44,7 @@ const UploadButton: FC<QuartzFileButtonProps> = ({
           style={{
             ...inputButton,
           }}
-          ref={ref}
+          ref={currentRef}
           multiple={modeNFiles}
           onChange={onHandleUpload}
         />

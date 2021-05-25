@@ -94,7 +94,7 @@ const NavigationItem: FC<NavigationItemProps> = (
           <Tooltip
             disabled={disableTooltip || !isOpen}
             position={TooltipPositions.right}
-            mainText={tooltipText}
+            secondaryText={tooltipText}
           >
             {icon}
           </Tooltip>
@@ -104,7 +104,7 @@ const NavigationItem: FC<NavigationItemProps> = (
         <Tooltip
           disabled={icon || disableTooltip}
           position={TooltipPositions.right}
-          mainText={tooltipText}
+          secondaryText={tooltipText}
         >
           <span style={disabled ? { color: theme.colors.gray } : {}}>
             {title}

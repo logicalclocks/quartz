@@ -12,6 +12,7 @@ export interface fileExplorerFooter {
   mode?: string;
   columns: any[];
   handleSelectFile: (activeFile: any, isDownload: boolean) => void;
+  handleSelectFolder: (path: string, isDownload: boolean) => void;
   fileListValue: Array<ActiveFile>[];
 }
 
@@ -22,6 +23,7 @@ const FooterFileExplorer: FC<fileExplorerFooter> = ({
   mode = 'oneFile',
   onClose,
   handleSelectFile,
+  handleSelectFolder,
   fileListValue,
   ...props
 }: fileExplorerFooter) => {
@@ -60,6 +62,23 @@ const FooterFileExplorer: FC<fileExplorerFooter> = ({
     }
   };
 
+  const handleSelect = (mode: string) => {
+    switch (mode) {
+      case 'oneFile':
+        return handleSelectFile(activeFile, false);
+
+      case 'nFiles':
+        return handleSelectFile(fileListValue, false);
+
+      case 'oneFolder':
+        console.log('oneFolder:', handleSelectFile);
+        console.log('value:', value);
+        return handleSelectFile(value || '/datasets/upload/', false);
+      default:
+        return 'gray';
+    }
+  };
+
   return (
     <Flex sx={{ ...styles }} {...props}>
       <Box sx={{ ...boxStyles }}>
@@ -83,11 +102,7 @@ const FooterFileExplorer: FC<fileExplorerFooter> = ({
         <Button
           intent="primary"
           disabled={!activeFile && mode !== 'oneFolder'}
-          onClick={() =>
-            mode === 'oneFile'
-              ? handleSelectFile(activeFile, false)
-              : handleSelectFile(fileListValue, false)
-          }
+          onClick={() => handleSelect(mode)}
         >
           {!value && mode === 'oneFolder' ? 'Select root' : 'Select'}
         </Button>
