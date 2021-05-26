@@ -91,7 +91,6 @@ const FileSystemExplorer: FC<FileSystemExplorerProps> = ({
   };
 
   const selectPathListValue = (path: string, isFolder: boolean) => {
-    console.log('selectPathListValue: ', path, isFolder);
     if (!isFolder) {
       setPathListValue(path);
     }
@@ -100,7 +99,6 @@ const FileSystemExplorer: FC<FileSystemExplorerProps> = ({
 
   useEffect(() => {
     scrollToRight();
-    // console.log('quartz', handleSelectFile, activeFile);
     handleSelectFile(activeFile, true);
   }, [columns]);
 

@@ -42,7 +42,6 @@ const FolderExplorer: FC<QuartzFileExplorerFolderProps> = ({
   const handleClickFolder = () => {
     handleLoadMore(itemInfo.attributes.path, index);
     if (mode === 'oneFolder') {
-      console.log('handleClickFolder: ', itemInfo, selectedFolder);
       setActive(!active);
       setSelectedFolder(!selectedFolder);
       selectPathListValue(itemInfo.attributes.path, selectedFolder);

@@ -61,7 +61,6 @@ const FooterFileExplorer: FC<fileExplorerFooter> = ({
   };
 
   const handleSelect = (mode: string) => {
-    console.log('mode: ', mode);
     switch (mode) {
       case 'oneFile':
         return handleSelectFile(activeFile, false);
@@ -70,11 +69,7 @@ const FooterFileExplorer: FC<fileExplorerFooter> = ({
         return handleSelectFile(fileListValue, false);
 
       case 'oneFolder':
-        console.log('value: ', value);
-        return handleSelectFile(
-          value || '/Projects/demo_fs_meb10000/Resources',
-          false,
-        );
+        return handleSelectFile(value || '/', false);
       default:
         return 'gray';
     }
