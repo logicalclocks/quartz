@@ -50,4 +50,13 @@ UserBadge.argTypes = {
     },
     defaultValue: { summary: true },
   },
+  secondaryText: {
+    control: {
+      type: 'text',
+    },
+    type: {
+      required: false,
+      summary: 'Secondary text that extends the badge',
+    },
+  },
 };
