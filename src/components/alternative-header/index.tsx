@@ -14,6 +14,7 @@ import { Value } from '../../index';
 
 export interface Tab {
   title: string;
+  altContent?: React.ReactElement | null;
   isActive: boolean;
   onCLick: () => void;
 }
@@ -59,10 +60,10 @@ const AlternativeHeader: FC<AlternativeHeaderProps> = ({
       left: getUnderlineLeftPosition(tabRefs.current, activeTabIndex),
       width: getUnderlineWidth(tabRefs.current, activeTabIndex),
     });
-  }, [activeTabIndex]);
+  }, [activeTabIndex, tabs]);
 
   return (
-    <Flex sx={styles} {...props}>
+    <Flex sx={styles(!!title || !!rightTopContent)} {...props}>
       <Flex justifyContent="space-between" width="100%" height="fit-content">
         <Value fontSize="20px" fontFamily="Inter" fontWeight="bold">
           {title && title}
@@ -70,7 +71,12 @@ const AlternativeHeader: FC<AlternativeHeaderProps> = ({
         {rightTopContent && rightTopContent}
       </Flex>
 
-      <Flex mt="25px" justifyContent="space-between" width="100%">
+      <Flex
+        mt="25px"
+        justifyContent="space-between"
+        width="100%"
+        sx={{ position: 'relative' }}
+      >
         <Flex>
           {tabs.map((tab, index) => (
             <Box
@@ -81,13 +87,31 @@ const AlternativeHeader: FC<AlternativeHeaderProps> = ({
               key={tab.title}
               sx={tabStyles}
             >
-              <Value fontFamily="Inter">{tab.title}</Value>
+              <Flex alignItems="baseline" pb="10px">
+                <Value fontFamily="Inter">{tab.title}</Value>
+                {tab.altContent && (
+                  <Flex ml="10px">
+                    <Flex
+                      alignItems="center"
+                      justifyContent="center"
+                      px="4px"
+                      py="2px"
+                      {...props}
+                      sx={{ borderRadius: '1px' }}
+                      as="span"
+                      variant="light"
+                      tx="variants.badges.primary"
+                    >
+                      {tab.altContent}
+                    </Flex>
+                  </Flex>
+                )}
+              </Flex>
               <Box sx={underlineStyles()} />
             </Box>
           ))}
-          <Box sx={activeUnderlineTabStyles(width, left)} />
         </Flex>
-
+        <Box sx={activeUnderlineTabStyles(width, left)} />
         <Flex>{rightBottomContent && rightBottomContent}</Flex>
       </Flex>
     </Flex>

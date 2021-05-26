@@ -6,7 +6,7 @@ import Value from '../typography/value';
 
 export interface BadgeProps extends Omit<FlexProps, 'css'> {
   value: string | number;
-  variant?: 'light' | 'bold' | 'fail' | 'success' | 'label';
+  variant?: 'light' | 'bold' | 'fail' | 'warning' | 'success' | 'label';
 }
 
 const Badge: FC<BadgeProps> = ({

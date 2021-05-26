@@ -18,7 +18,6 @@ export const underlineStyles = () => ({
   transition: 'left .2s',
   width: '110%',
   ml: '-5%',
-  pt: '10px',
 
   borderBottomWidth: '2px',
   borderBottomStyle: 'solid',
@@ -34,9 +33,6 @@ export const activeUnderlineTabStyles = (width: number, left: number) => ({
   position: 'absolute',
   transition: 'all .4s',
 
-  pt: '30px',
-
-  ml: '20px',
   left: `${left}px`,
   bottom: 0,
 
@@ -45,20 +41,20 @@ export const activeUnderlineTabStyles = (width: number, left: number) => ({
   borderBottomStyle: 'solid',
 });
 
-export default {
-  p: '20px',
-  pb: 0,
+export default (topContent: boolean) =>
+  ({
+    p: topContent ? '20px' : '0px 20px 0px 10px',
+    pb: 0,
 
-  position: 'relative',
+    position: 'relative',
 
-  bg: 'white',
+    bg: 'white',
 
-  flexDirection: 'column',
+    flexDirection: 'column',
 
-  boxShadow: '0 -5px 0 #F5F5F5',
+    boxShadow: topContent ? '0 -5px 0 #F5F5F5' : '',
 
-  zIndex: 25,
+    zIndex: 25,
 
-  width: '100%',
-  height: '105px',
-} as SxStyleProp;
+    width: '100%',
+  } as SxStyleProp);

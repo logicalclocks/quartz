@@ -33,6 +33,13 @@ const variants = {
 
     bg: 'labels.green',
   },
+  warning: {
+    '> span': {
+      color: 'black',
+    },
+
+    bg: 'labels.yellow',
+  },
 };
 
 export default variants;

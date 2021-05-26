@@ -32,16 +32,31 @@ const Template: Story<AlternativeHeaderProps> = (props) => {
       {
         title: 'another tab',
         isActive: isActive('another tab'),
+        altContent: (
+          <Value as="span" lineHeight="13px" style={{ color: 'gray' }}>
+            {0}
+          </Value>
+        ),
         onCLick: () => setActive('another tab'),
       },
       {
         title: 'one more tab',
         isActive: isActive('one more tab'),
+        altContent: (
+          <Value as="span" lineHeight="13px">
+            {3}
+          </Value>
+        ),
         onCLick: () => setActive('one more tab'),
       },
       {
         title: 'last tab',
         isActive: isActive('last tab'),
+        altContent: (
+          <Value as="span" lineHeight="13px">
+            altContent
+          </Value>
+        ),
         onCLick: () => setActive('last tab'),
       },
     ],
