@@ -27,7 +27,7 @@ const UploadButton: FC<QuartzFileButtonProps> = ({
   handleClick,
   ...props
 }: QuartzFileButtonProps) => {
-  console.log('ref: ', currentRef);
+  // console.log('ref: ', currentRef);
 
   return (
     <Flex flexDirection="column">

@@ -12,7 +12,6 @@ export interface fileExplorerFooter {
   mode?: string;
   columns: any[];
   handleSelectFile: (activeFile: any, isDownload: boolean) => void;
-  handleSelectFolder: (path: string, isDownload: boolean) => void;
   fileListValue: Array<ActiveFile>[];
 }
 
@@ -23,7 +22,6 @@ const FooterFileExplorer: FC<fileExplorerFooter> = ({
   mode = 'oneFile',
   onClose,
   handleSelectFile,
-  handleSelectFolder,
   fileListValue,
   ...props
 }: fileExplorerFooter) => {
@@ -63,6 +61,7 @@ const FooterFileExplorer: FC<fileExplorerFooter> = ({
   };
 
   const handleSelect = (mode: string) => {
+    console.log('mode: ', mode);
     switch (mode) {
       case 'oneFile':
         return handleSelectFile(activeFile, false);
@@ -71,9 +70,11 @@ const FooterFileExplorer: FC<fileExplorerFooter> = ({
         return handleSelectFile(fileListValue, false);
 
       case 'oneFolder':
-        console.log('oneFolder:', handleSelectFile);
-        console.log('value:', value);
-        return handleSelectFile(value || '/datasets/upload/', false);
+        console.log('value: ', value);
+        return handleSelectFile(
+          value || '/Projects/demo_fs_meb10000/Resources',
+          false,
+        );
       default:
         return 'gray';
     }

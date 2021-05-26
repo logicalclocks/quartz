@@ -28,7 +28,6 @@ export interface FileSystemExplorerProps
   contentProps?: Omit<RebassCardProps, 'css' | 'children'>;
   onClose: (key: any) => void;
   handleSelectFile?: (activeFile: any, isDownload: boolean) => void;
-  handleSelectFolder?: (path: string, isDownload: boolean) => void;
   handleDownloadFile: () => void;
 }
 
@@ -61,7 +60,6 @@ const FileSystemExplorer: FC<FileSystemExplorerProps> = ({
   contentProps,
   handleLoadMore = () => console.log('load more in quartz'),
   handleSelectFile = () => console.log('handleSelectFile in quartz'),
-  handleSelectFolder = () => console.log('handleSelectFolder in quartz'),
   data = testData,
   ...props
 }: FileSystemExplorerProps) => {
@@ -92,13 +90,17 @@ const FileSystemExplorer: FC<FileSystemExplorerProps> = ({
     }
   };
 
-  const selectPathListValue = (path: string) => {
+  const selectPathListValue = (path: string, isFolder: boolean) => {
+    console.log('selectPathListValue: ', path, isFolder);
+    if (!isFolder) {
+      setPathListValue(path);
+    }
     setPathListValue(path);
   };
 
   useEffect(() => {
     scrollToRight();
-    console.log('quartz', handleSelectFile, activeFile);
+    // console.log('quartz', handleSelectFile, activeFile);
     handleSelectFile(activeFile, true);
   }, [columns]);
 
@@ -150,7 +152,6 @@ const FileSystemExplorer: FC<FileSystemExplorerProps> = ({
         columns={columns}
         mode={mode}
         handleSelectFile={handleSelectFile}
-        handleSelectFolder={handleSelectFolder}
       />
     </RebassCard>
   );
