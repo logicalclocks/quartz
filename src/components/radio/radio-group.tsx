@@ -12,6 +12,9 @@ export interface RadioGroupProps
   options: string[];
   additionalTexts?: string[];
   onChange: (value: string) => void;
+  tooltipMessages?: {
+    [key: string]: string;
+  };
   flexDirection?: 'row' | 'column' | null;
 }
 
@@ -20,6 +23,7 @@ const RadioGroup: FC<RadioGroupProps> = ({
   value,
   onChange,
   additionalTexts,
+  tooltipMessages = {},
   flexDirection = 'column',
   ...props
 }: RadioGroupProps) => {
@@ -44,6 +48,7 @@ const RadioGroup: FC<RadioGroupProps> = ({
           name={name}
           addtionalText={additionalTexts?.[idx]}
           onChange={handleChange(option)}
+          tooltip={tooltipMessages[option]}
         />
       ))}
     </Flex>

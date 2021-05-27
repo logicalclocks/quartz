@@ -5,6 +5,7 @@ import styles from './label.styles';
 
 export interface LabelProps extends Omit<FlexProps, 'css' | 'action'> {
   action?: React.ReactNode;
+  pointer?: boolean;
   text?: string;
   align?: 'top' | 'left';
   children: React.ReactNode;
@@ -13,6 +14,7 @@ export interface LabelProps extends Omit<FlexProps, 'css' | 'action'> {
 const Label: FC<LabelProps> = ({
   action,
   text,
+  pointer = false,
   children,
   align = 'top',
   as = 'label',
@@ -23,7 +25,7 @@ const Label: FC<LabelProps> = ({
     as={as}
     {...props}
     variant="label"
-    sx={styles}
+    sx={{ ...styles, cursor: pointer ? 'pointer' : 'default' }}
   >
     {(text || action) && (
       <span>
