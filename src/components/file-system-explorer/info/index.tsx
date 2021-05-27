@@ -19,12 +19,14 @@ export interface FileExplorerInfoProps extends Omit<BoxProps, 'css'> {
   children?: string[];
   activeFile?: ActiveFile | null;
   handleDownloadFile: () => void;
+  handleSelectFile: (activeFile: any, isDownload: boolean) => void;
 }
 
 const FileExplorerInfo: FC<FileExplorerInfoProps> = ({
   children,
   activeFile,
   handleDownloadFile,
+  handleSelectFile,
 }: FileExplorerInfoProps) => {
   const dateFormat = (date: string) => {
     return format(new Date(date), 'YYYY-MM-DD - HH:mm:ss');
@@ -81,7 +83,13 @@ const FileExplorerInfo: FC<FileExplorerInfoProps> = ({
           )}
         </Flex>
       </Box>
-      <Button intent="secondary" onClick={handleDownloadFile}>
+      <Button
+        intent="secondary"
+        onClick={() => {
+          handleSelectFile(activeFile, true);
+          handleDownloadFile();
+        }}
+      >
         <Flex alignItems="center" justifyContent="center">
           <Flex
             sx={{

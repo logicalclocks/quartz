@@ -99,7 +99,8 @@ const FileSystemExplorer: FC<FileSystemExplorerProps> = ({
 
   useEffect(() => {
     scrollToRight();
-    handleSelectFile(activeFile, true);
+    // handleSelectFile(activeFile, true);
+    console.log('activeFile in quartz: ', activeFile);
   }, [columns]);
 
   return (
@@ -138,6 +139,7 @@ const FileSystemExplorer: FC<FileSystemExplorerProps> = ({
           <Info
             activeFile={activeFile}
             handleDownloadFile={handleDownloadFile}
+            handleSelectFile={handleSelectFile}
           />
         )}
         <Box ref={lastChildOfColumn} />

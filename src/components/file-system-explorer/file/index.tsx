@@ -43,7 +43,8 @@ QuartzFileExplorerProps) => {
       setSelectedFile(!selectedFile);
       setActiveFile(itemInfo);
       isFileSelected(itemInfo, !selectedFile);
-    } else {
+    }
+    if (mode !== 'oneFolder') {
       setActive(!active);
       setActiveFile(itemInfo);
     }

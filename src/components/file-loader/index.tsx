@@ -13,7 +13,7 @@ export interface QuartzFileLoaderProps extends Omit<BoxProps, 'css'> {
   children: React.ReactNode | string;
   isLoading: boolean;
   fileName: string;
-  located: string;
+  located: any;
   removeHandler: () => void;
 }
 
