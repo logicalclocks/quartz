@@ -77,7 +77,7 @@ export const theadStyles = {
   '&.static-column': {
     borderRightColor: 'primary',
     borderBottomColor: 'grey',
-    borderWidth: '0 0 2px 0',
+    borderWidth: '0 1px 2px 0',
     position: 'sticky',
     left: '31px',
     zIndex: '100',
@@ -110,6 +110,15 @@ export const trowStyles = {
     },
     th: {
       backgroundColor: 'grayShade2',
+    },
+    'th[id]': {
+      padding: '0 !important',
+      span: {
+        display: 'none',
+      },
+      div: {
+        display: 'inline-block',
+      },
     },
   },
   '&:last-child td, &:last-child th': {
