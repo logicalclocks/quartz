@@ -99,13 +99,6 @@ const FileSystemExplorer: FC<FileSystemExplorerProps> = ({
 
   useEffect(() => {
     scrollToRight();
-    if (mode !== 'nFiles') {
-      handleSelectFile(activeFile, true);
-    }
-    if (mode === 'nFiles' && fileListValue.length > 0) {
-      handleSelectFile(fileListValue, true);
-    }
-    console.log('activeFile in quartz: ', activeFile);
   }, [columns]);
 
   return (

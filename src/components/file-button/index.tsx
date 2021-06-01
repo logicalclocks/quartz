@@ -13,6 +13,7 @@ export interface QuartzFileButtonProps extends Omit<ButtonProps, 'css'> {
   currentRef?: any;
   onHandleUpload: (event: React.ChangeEvent<HTMLInputElement>) => void;
   handleClick: (event: React.MouseEvent<HTMLElement>) => void;
+  isDisabledUploadButton?: boolean;
 }
 
 const UploadButton: FC<QuartzFileButtonProps> = ({
@@ -25,11 +26,13 @@ const UploadButton: FC<QuartzFileButtonProps> = ({
   value,
   onHandleUpload,
   handleClick,
+  isDisabledUploadButton,
   ...props
 }: QuartzFileButtonProps) => {
   return (
     <Flex flexDirection="column">
       <RebassButton
+        disabled={isDisabledUploadButton}
         sx={{ ...fileButton }}
         variant={`secondary`}
         {...props}

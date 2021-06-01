@@ -39,7 +39,6 @@ QuartzFileExplorerProps) => {
 
   const handleClickFile = (mode: string) => {
     if (mode === 'nFiles') {
-      console.log('handleClickFile: ', !active, !selectedFile, itemInfo);
       setActive(!active);
       setSelectedFile(!selectedFile);
       setActiveFile(itemInfo);
