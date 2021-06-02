@@ -120,7 +120,7 @@ const EditableSelectContainer: FC<EditableSelectContainerProps> = forwardRef(
             ))}
           {type !== 'base' && (
             <Input
-              sx={inputStyles}
+              sx={inputStyles()}
               width={inputWidth}
               mt="5px"
               ml={isMulti ? '0px' : '3px'}
