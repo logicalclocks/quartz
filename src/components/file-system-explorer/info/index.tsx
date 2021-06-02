@@ -27,6 +27,7 @@ const FileExplorerInfo: FC<FileExplorerInfoProps> = ({
   handleDownloadFile,
 }: FileExplorerInfoProps) => {
   const dateFormat = (date: string) => {
+    // eslint-disable-next-line
     return format(new Date(date), 'YYYY-MM-DD - HH:mm:ss');
   };
 
