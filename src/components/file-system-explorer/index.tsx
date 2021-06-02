@@ -28,7 +28,7 @@ export interface FileSystemExplorerProps
   contentProps?: Omit<RebassCardProps, 'css' | 'children'>;
   onClose: (key: any) => void;
   handleSelectFile?: (activeFile: any, isDownload: boolean) => void;
-  handleDownloadFile: () => void;
+  handleDownloadFile: (file: any) => void;
 }
 
 export interface ActiveFile {

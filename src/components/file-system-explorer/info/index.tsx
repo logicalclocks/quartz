@@ -18,7 +18,7 @@ import icons from '../../../sources/icons';
 export interface FileExplorerInfoProps extends Omit<BoxProps, 'css'> {
   children?: string[];
   activeFile?: ActiveFile | null;
-  handleDownloadFile: () => void;
+  handleDownloadFile: (file: any) => void;
 }
 
 const FileExplorerInfo: FC<FileExplorerInfoProps> = ({
@@ -81,7 +81,12 @@ const FileExplorerInfo: FC<FileExplorerInfoProps> = ({
           )}
         </Flex>
       </Box>
-      <Button intent="secondary" onClick={handleDownloadFile}>
+      <Button
+        intent="secondary"
+        onClick={() => {
+          handleDownloadFile(activeFile);
+        }}
+      >
         <Flex alignItems="center" justifyContent="center">
           <Flex
             sx={{
