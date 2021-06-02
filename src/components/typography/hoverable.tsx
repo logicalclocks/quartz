@@ -6,8 +6,9 @@ export interface HoverableTextProps extends Omit<TextProps, 'css'> {}
 const styles = {
   cursor: 'pointer',
   ':hover': {
-    textDecoration: 'underline',
+    color: 'primary',
   },
+  transition: 'all .4s',
 };
 
 const HoverableText: FC<HoverableTextProps> = (props: HoverableTextProps) => (

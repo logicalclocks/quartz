@@ -15,6 +15,9 @@ export interface RadioGroupProps
     [key: string]: string;
   };
   onChange: (value: string) => void;
+  tooltipMessages?: {
+    [key: string]: string;
+  };
   flexDirection?: 'row' | 'column' | null;
 }
 
