@@ -1,5 +1,5 @@
 info @storybook/react v6.0.21
-info 
+info
 info clean outputDir..
 info => Copying prebuild dll's..
 info => Building manager..
@@ -19,9 +19,9 @@ WARN The built-in preset has been disabled in Storybook 6.0.
 info => Using default Webpack setup.
 info => Compiling preview..
 <s> [webpack.Progress] 0% compiling
-<s> [webpack.Progress] 10% building 0/0 modules 0 active 
+<s> [webpack.Progress] 10% building 0/0 modules 0 active
 <s> [webpack.Progress] 10% building 0/1 modules 1 active multi /Users/vincent/Lines/quartz/node_modules/@storybook/core/dist/server/common/polyfills.js /Users/vincent/Lines/quartz/node_modules/@storybook/core/dist/server/preview/globals.js /Users/vincent/Lines/quartz/.storybook/storybook-init-framework-entry.js /Users/vincent/Lines/quartz/node_modules/@storybook/addon-docs/dist/frameworks/common/config.js-generated-other-entry.js /Users/vincent/Lines/quartz/node_modules/@storybook/addon-docs/dist/frameworks/react/config.js-generated-other-entry.js /Users/vincent/Lines/quartz/node_modules/@storybook/addon-links/dist/preset/addDecorator.js-generated-other-entry.js /Users/vincent/Lines/quartz/node_modules/@storybook/addon-actions/dist/preset/addDecorator.js-generated-other-entry.js /Users/vincent/Lines/quartz/node_modules/@storybook/addon-actions/dist/preset/addArgs.js-generated-other-entry.js /Users/vincent/Lines/quartz/node_modules/@storybook/addon-backgrounds/dist/preset/defaultParameters.js-generated-other-entry.js /Users/vincent/Lines/quartz/.storybook/preview.js-generated-config-entry.js /Users/vincent/Lines/quartz/.storybook/generated-stories-entry.js
-<s> [webpack.Progress] 10% building 1/1 modules 0 active 
+<s> [webpack.Progress] 10% building 1/1 modules 0 active
 <s> [webpack.Progress] 10% building 1/2 modules 1 active /Users/vincent/Lines/quartz/node_modules/@storybook/addon-links/dist/preset/addDecorator.js-generated-other-entry.js
 <s> [webpack.Progress] 10% building 1/3 modules 2 active /Users/vincent/Lines/quartz/node_modules/@storybook/addon-actions/dist/preset/addDecorator.js-generated-other-entry.js
 <s> [webpack.Progress] 10% building 1/4 modules 3 active /Users/vincent/Lines/quartz/node_modules/@storybook/addon-actions/dist/preset/addArgs.js-generated-other-entry.js
@@ -55,7 +55,7 @@ info => Compiling preview..
 <s> [webpack.Progress] 11% building 15/18 modules 3 active /Users/vincent/Lines/quartz/node_modules/babel-loader/lib/index.js??ref--4-0!/Users/vincent/Lines/quartz/.storybook/generated-stories-entry.js
 <s> [webpack.Progress] 11% building 16/18 modules 2 active /Users/vincent/Lines/quartz/node_modules/babel-loader/lib/index.js??ref--4-0!/Users/vincent/Lines/quartz/.storybook/generated-stories-entry.js
 <s> [webpack.Progress] 12% building 17/18 modules 1 active /Users/vincent/Lines/quartz/node_modules/babel-loader/lib/index.js??ref--4-0!/Users/vincent/Lines/quartz/.storybook/preview.js-generated-config-entry.js
-<s> [webpack.Progress] 12% building 18/18 modules 0 active 
+<s> [webpack.Progress] 12% building 18/18 modules 0 active
 <s> [webpack.Progress] 12% building 18/19 modules 1 active /Users/vincent/Lines/quartz/src sync /^\.(?:(?:^|\/|(?:(?:(?!(?:^|\/)\.).)*?)\/)(?!\.)(?=.)[^/]*?\.stories\.mdx)$/
 <s> [webpack.Progress] 12% building 18/20 modules 2 active /Users/vincent/Lines/quartz/src sync /^\.(?:(?:^|\/|(?:(?:(?!(?:^|\/)\.).)*?)\/)(?!\.)(?=.)[^/]*?\.stories\.(js|jsx|ts|tsx))$/
 <s> [webpack.Progress] 12% building 18/21 modules 3 active /Users/vincent/Lines/quartz/node_modules/@storybook/addon-actions/dist/index.js
@@ -143,21 +143,21 @@ info => Compiling preview..
 <s> [webpack.Progress] 17% building 59/62 modules 3 active /Users/vincent/Lines/quartz/node_modules/@storybook/client-logger/dist/index.js
 <s> [webpack.Progress] 17% building 60/62 modules 2 active /Users/vincent/Lines/quartz/node_modules/@storybook/client-logger/dist/index.js
 <s> [webpack.Progress] 17% building 61/62 modules 1 active /Users/vincent/Lines/quartz/node_modules/@storybook/client-logger/dist/index.js
-<s> [webpack.Progress] 17% building 62/62 modules 0 active 
+<s> [webpack.Progress] 17% building 62/62 modules 0 active
 <s> [webpack.Progress] 17% building 62/63 modules 1 active delegated "ct80" from dll-reference storybook_docs_dll
-<s> [webpack.Progress] 17% building 63/63 modules 0 active 
+<s> [webpack.Progress] 17% building 63/63 modules 0 active
 <s> [webpack.Progress] 17% building 63/64 modules 1 active delegated "ax0f" from dll-reference storybook_docs_dll
-<s> [webpack.Progress] 17% building 64/64 modules 0 active 
+<s> [webpack.Progress] 17% building 64/64 modules 0 active
 <s> [webpack.Progress] 17% building 64/65 modules 1 active delegated "N4z3" from dll-reference storybook_docs_dll
-<s> [webpack.Progress] 17% building 65/65 modules 0 active 
+<s> [webpack.Progress] 17% building 65/65 modules 0 active
 <s> [webpack.Progress] 17% building 65/66 modules 1 active delegated "GFpt" from dll-reference storybook_docs_dll
-<s> [webpack.Progress] 17% building 66/66 modules 0 active 
+<s> [webpack.Progress] 17% building 66/66 modules 0 active
 <s> [webpack.Progress] 17% building 66/67 modules 1 active delegated "1Mu/" from dll-reference storybook_docs_dll
-<s> [webpack.Progress] 18% building 67/67 modules 0 active 
+<s> [webpack.Progress] 18% building 67/67 modules 0 active
 <s> [webpack.Progress] 18% building 67/68 modules 1 active delegated "oD4t" from dll-reference storybook_docs_dll
-<s> [webpack.Progress] 18% building 68/68 modules 0 active 
+<s> [webpack.Progress] 18% building 68/68 modules 0 active
 <s> [webpack.Progress] 18% building 68/69 modules 1 active delegated "2sZ7" from dll-reference storybook_docs_dll
-<s> [webpack.Progress] 18% building 69/69 modules 0 active 
+<s> [webpack.Progress] 18% building 69/69 modules 0 active
 <s> [webpack.Progress] 18% building 69/70 modules 1 active /Users/vincent/Lines/quartz/node_modules/@storybook/addon-docs/dist/blocks/index.js
 <s> [webpack.Progress] 18% building 69/71 modules 2 active /Users/vincent/Lines/quartz/node_modules/core-js/features/symbol/index.js
 <s> [webpack.Progress] 18% building 69/72 modules 3 active /Users/vincent/Lines/quartz/node_modules/@storybook/addon-docs/dist/lib/docgen/index.js
@@ -214,14 +214,14 @@ info => Compiling preview..
 <s> [webpack.Progress] 21% building 93/99 modules 6 active /Users/vincent/Lines/quartz/node_modules/babel-loader/lib/index.js??ref--4-0!/Users/vincent/Lines/quartz/src/theme/ThemeProvider.tsx
 <s> [webpack.Progress] 21% building 94/99 modules 5 active /Users/vincent/Lines/quartz/node_modules/babel-loader/lib/index.js??ref--4-0!/Users/vincent/Lines/quartz/src/theme/ThemeProvider.tsx
 <s> [webpack.Progress] 21% building 95/99 modules 4 active /Users/vincent/Lines/quartz/node_modules/babel-loader/lib/index.js??ref--4-0!/Users/vincent/Lines/quartz/src/theme/ThemeProvider.tsx
-<s> [webpack.Progress] 21% building 95/100 modules 5 active /Users/vincent/Lines/quartz/node_modules/babel-loader/lib/index.js??ref--4-0!/Users/vincent/Lines/quartz/node_modules/@storybook/source-loader/dist/index.js??ref--10!/Users/vincent/Lines/quartz/src/components/button/button.stories.tsx
-<s> [webpack.Progress] 21% building 95/101 modules 6 active /Users/vincent/Lines/quartz/node_modules/babel-loader/lib/index.js??ref--4-0!/Users/vincent/Lines/quartz/node_modules/@storybook/source-loader/dist/index.js??ref--10!/Users/vincent/Lines/quartz/src/components/card/card.stories.tsx
-<s> [webpack.Progress] 21% building 95/102 modules 7 active /Users/vincent/Lines/quartz/node_modules/babel-loader/lib/index.js??ref--4-0!/Users/vincent/Lines/quartz/node_modules/@storybook/source-loader/dist/index.js??ref--10!/Users/vincent/Lines/quartz/src/components/footer-button/footer-button.stories.tsx
-<s> [webpack.Progress] 21% building 95/103 modules 8 active /Users/vincent/Lines/quartz/node_modules/babel-loader/lib/index.js??ref--4-0!/Users/vincent/Lines/quartz/node_modules/@storybook/source-loader/dist/index.js??ref--10!/Users/vincent/Lines/quartz/src/components/icon-button/icon-button.stories.tsx
+<s> [webpack.Progress] 21% building 95/100 modules 5 active /Users/vincent/Lines/quartz/node_modules/babel-loader/lib/index.js??ref--4-0!/Users/vincent/Lines/quartz/node_modules/@storybook/source-loader/dist/index.js??ref--10!/Users/vincent/Lines/quartz/src/components/button/file-loader.stories.tsx
+<s> [webpack.Progress] 21% building 95/101 modules 6 active /Users/vincent/Lines/quartz/node_modules/babel-loader/lib/index.js??ref--4-0!/Users/vincent/Lines/quartz/node_modules/@storybook/source-loader/dist/index.js??ref--10!/Users/vincent/Lines/quartz/src/components/card/file-system-explorer.stories.tsx
+<s> [webpack.Progress] 21% building 95/102 modules 7 active /Users/vincent/Lines/quartz/node_modules/babel-loader/lib/index.js??ref--4-0!/Users/vincent/Lines/quartz/node_modules/@storybook/source-loader/dist/index.js??ref--10!/Users/vincent/Lines/quartz/src/components/footer-button/footer-file-loader.stories.tsx
+<s> [webpack.Progress] 21% building 95/103 modules 8 active /Users/vincent/Lines/quartz/node_modules/babel-loader/lib/index.js??ref--4-0!/Users/vincent/Lines/quartz/node_modules/@storybook/source-loader/dist/index.js??ref--10!/Users/vincent/Lines/quartz/src/components/icon-button/icon-file-loader.stories.tsx
 <s> [webpack.Progress] 21% building 95/104 modules 9 active delegated "ERkP" from dll-reference storybook_docs_dll
-<s> [webpack.Progress] 21% building 96/104 modules 8 active /Users/vincent/Lines/quartz/node_modules/babel-loader/lib/index.js??ref--4-0!/Users/vincent/Lines/quartz/node_modules/@storybook/source-loader/dist/index.js??ref--10!/Users/vincent/Lines/quartz/src/components/icon-button/icon-button.stories.tsx
-<s> [webpack.Progress] 21% building 97/104 modules 7 active /Users/vincent/Lines/quartz/node_modules/babel-loader/lib/index.js??ref--4-0!/Users/vincent/Lines/quartz/node_modules/@storybook/source-loader/dist/index.js??ref--10!/Users/vincent/Lines/quartz/src/components/icon-button/icon-button.stories.tsx
-<s> [webpack.Progress] 21% building 98/104 modules 6 active /Users/vincent/Lines/quartz/node_modules/babel-loader/lib/index.js??ref--4-0!/Users/vincent/Lines/quartz/node_modules/@storybook/source-loader/dist/index.js??ref--10!/Users/vincent/Lines/quartz/src/components/icon-button/icon-button.stories.tsx
+<s> [webpack.Progress] 21% building 96/104 modules 8 active /Users/vincent/Lines/quartz/node_modules/babel-loader/lib/index.js??ref--4-0!/Users/vincent/Lines/quartz/node_modules/@storybook/source-loader/dist/index.js??ref--10!/Users/vincent/Lines/quartz/src/components/icon-button/icon-file-loader.stories.tsx
+<s> [webpack.Progress] 21% building 97/104 modules 7 active /Users/vincent/Lines/quartz/node_modules/babel-loader/lib/index.js??ref--4-0!/Users/vincent/Lines/quartz/node_modules/@storybook/source-loader/dist/index.js??ref--10!/Users/vincent/Lines/quartz/src/components/icon-button/icon-file-loader.stories.tsx
+<s> [webpack.Progress] 21% building 98/104 modules 6 active /Users/vincent/Lines/quartz/node_modules/babel-loader/lib/index.js??ref--4-0!/Users/vincent/Lines/quartz/node_modules/@storybook/source-loader/dist/index.js??ref--10!/Users/vincent/Lines/quartz/src/components/icon-button/icon-file-loader.stories.tsx
 <s> [webpack.Progress] 21% building 98/105 modules 7 active /Users/vincent/Lines/quartz/node_modules/@storybook/addon-actions/dist/models/index.js
 <s> [webpack.Progress] 21% building 98/106 modules 8 active /Users/vincent/Lines/quartz/node_modules/@storybook/addon-actions/dist/preview/index.js
 <s> [webpack.Progress] 21% building 99/106 modules 7 active /Users/vincent/Lines/quartz/node_modules/@storybook/addon-actions/dist/preview/index.js
@@ -695,9 +695,9 @@ info => Compiling preview..
 <s> [webpack.Progress] 50% building 335/338 modules 3 active /Users/vincent/Lines/quartz/node_modules/uuid/dist/esm-browser/v3.js
 <s> [webpack.Progress] 50% building 336/338 modules 2 active /Users/vincent/Lines/quartz/node_modules/uuid/dist/esm-browser/v3.js
 <s> [webpack.Progress] 50% building 337/338 modules 1 active /Users/vincent/Lines/quartz/node_modules/uuid/dist/esm-browser/v3.js
-<s> [webpack.Progress] 50% building 338/338 modules 0 active 
+<s> [webpack.Progress] 50% building 338/338 modules 0 active
 <s> [webpack.Progress] 50% building 338/339 modules 1 active delegated "/Qos" from dll-reference storybook_docs_dll
-<s> [webpack.Progress] 50% building 339/339 modules 0 active 
+<s> [webpack.Progress] 50% building 339/339 modules 0 active
 <s> [webpack.Progress] 50% building 339/340 modules 1 active /Users/vincent/Lines/quartz/node_modules/doctrine/lib/utility.js
 <s> [webpack.Progress] 50% building 339/341 modules 2 active /Users/vincent/Lines/quartz/node_modules/doctrine/lib/typed.js
 <s> [webpack.Progress] 50% building 339/342 modules 3 active /Users/vincent/Lines/quartz/node_modules/babel-loader/lib/index.js??ref--4-0!/Users/vincent/Lines/quartz/src/theme/footer-buttons/index.ts
@@ -711,8 +711,8 @@ info => Compiling preview..
 <s> [webpack.Progress] 50% building 339/350 modules 11 active /Users/vincent/Lines/quartz/node_modules/uuid/dist/esm-browser/md5.js
 <s> [webpack.Progress] 50% building 339/351 modules 12 active /Users/vincent/Lines/quartz/node_modules/@storybook/theming/dist/themes/dark.js
 <s> [webpack.Progress] 50% building 339/352 modules 13 active /Users/vincent/Lines/quartz/node_modules/@storybook/theming/dist/animation.js
-<s> [webpack.Progress] 50% building 339/353 modules 14 active /Users/vincent/Lines/quartz/node_modules/babel-loader/lib/index.js??ref--4-0!/Users/vincent/Lines/quartz/src/components/button/button.styles.ts
-<s> [webpack.Progress] 50% building 339/354 modules 15 active /Users/vincent/Lines/quartz/node_modules/babel-loader/lib/index.js??ref--4-0!/Users/vincent/Lines/quartz/src/components/icon-button/icon-button.styles.ts
+<s> [webpack.Progress] 50% building 339/353 modules 14 active /Users/vincent/Lines/quartz/node_modules/babel-loader/lib/index.js??ref--4-0!/Users/vincent/Lines/quartz/src/components/button/file-loader.styles.ts
+<s> [webpack.Progress] 50% building 339/354 modules 15 active /Users/vincent/Lines/quartz/node_modules/babel-loader/lib/index.js??ref--4-0!/Users/vincent/Lines/quartz/src/components/icon-button/icon-file-loader.styles.ts
 <s> [webpack.Progress] 50% building 339/355 modules 16 active /Users/vincent/Lines/quartz/node_modules/@storybook/addon-docs/dist/frameworks/react/lib/inspection/acornParser.js
 <s> [webpack.Progress] 50% building 339/356 modules 17 active /Users/vincent/Lines/quartz/node_modules/@storybook/components/dist/controls/types.js
 <s> [webpack.Progress] 50% building 339/357 modules 18 active /Users/vincent/Lines/quartz/node_modules/@storybook/components/dist/controls/Array.js
@@ -722,8 +722,8 @@ info => Compiling preview..
 <s> [webpack.Progress] 50% building 339/361 modules 22 active /Users/vincent/Lines/quartz/node_modules/@storybook/components/dist/blocks/IconGallery.js
 <s> [webpack.Progress] 50% building 339/362 modules 23 active /Users/vincent/Lines/quartz/node_modules/uuid/dist/esm-browser/sha1.js
 <s> [webpack.Progress] 50% building 339/363 modules 24 active /Users/vincent/Lines/quartz/node_modules/@storybook/theming/dist/modules/syntax.js
-<s> [webpack.Progress] 50% building 339/364 modules 25 active /Users/vincent/Lines/quartz/node_modules/babel-loader/lib/index.js??ref--4-0!/Users/vincent/Lines/quartz/src/components/footer-button/footer-button.styles.ts
-<s> [webpack.Progress] 50% building 339/365 modules 26 active /Users/vincent/Lines/quartz/node_modules/babel-loader/lib/index.js??ref--4-0!/Users/vincent/Lines/quartz/src/components/card/card.styles.ts
+<s> [webpack.Progress] 50% building 339/364 modules 25 active /Users/vincent/Lines/quartz/node_modules/babel-loader/lib/index.js??ref--4-0!/Users/vincent/Lines/quartz/src/components/footer-button/footer-file-loader.styles.ts
+<s> [webpack.Progress] 50% building 339/365 modules 26 active /Users/vincent/Lines/quartz/node_modules/babel-loader/lib/index.js??ref--4-0!/Users/vincent/Lines/quartz/src/components/card/file-system-explorer.styles.ts
 <s> [webpack.Progress] 50% building 339/366 modules 27 active /Users/vincent/Lines/quartz/node_modules/@storybook/components/dist/blocks/ColorPalette.js
 <s> [webpack.Progress] 50% building 340/366 modules 26 active /Users/vincent/Lines/quartz/node_modules/@storybook/components/dist/blocks/ColorPalette.js
 <s> [webpack.Progress] 50% building 341/366 modules 25 active /Users/vincent/Lines/quartz/node_modules/@storybook/components/dist/blocks/ColorPalette.js
@@ -779,7 +779,7 @@ info => Compiling preview..
 <s> [webpack.Progress] 54% building 373/384 modules 11 active /Users/vincent/Lines/quartz/node_modules/@storybook/components/dist/controls/Number.js
 <s> [webpack.Progress] 54% building 374/384 modules 10 active /Users/vincent/Lines/quartz/node_modules/@storybook/components/dist/controls/Number.js
 <s> [webpack.Progress] 54% building 375/384 modules 9 active /Users/vincent/Lines/quartz/node_modules/@storybook/components/dist/controls/Number.js
-<s> [webpack.Progress] 55% building 376/384 modules 8 active /Users/vincent/Lines/quartz/node_modules/babel-loader/lib/index.js??ref--4-0!/Users/vincent/Lines/quartz/src/components/card/card.styles.ts
+<s> [webpack.Progress] 55% building 376/384 modules 8 active /Users/vincent/Lines/quartz/node_modules/babel-loader/lib/index.js??ref--4-0!/Users/vincent/Lines/quartz/src/components/card/file-system-explorer.styles.ts
 <s> [webpack.Progress] 55% building 376/385 modules 9 active /Users/vincent/Lines/quartz/node_modules/assert/assert.js
 <s> [webpack.Progress] 55% building 377/385 modules 8 active /Users/vincent/Lines/quartz/node_modules/assert/assert.js
 <s> [webpack.Progress] 55% building 378/385 modules 7 active /Users/vincent/Lines/quartz/node_modules/assert/assert.js
@@ -941,9 +941,9 @@ info => Compiling preview..
 <s> [webpack.Progress] 64% building 458/461 modules 3 active /Users/vincent/Lines/quartz/node_modules/escodegen/node_modules/source-map/lib/source-node.js
 <s> [webpack.Progress] 65% building 459/461 modules 2 active /Users/vincent/Lines/quartz/node_modules/escodegen/node_modules/source-map/lib/source-node.js
 <s> [webpack.Progress] 65% building 460/461 modules 1 active /Users/vincent/Lines/quartz/node_modules/escodegen/node_modules/source-map/lib/source-node.js
-<s> [webpack.Progress] 65% building 461/461 modules 0 active 
+<s> [webpack.Progress] 65% building 461/461 modules 0 active
 <s> [webpack.Progress] 65% building 461/462 modules 1 active delegated "jLkM" from dll-reference storybook_docs_dll
-<s> [webpack.Progress] 65% building 462/462 modules 0 active 
+<s> [webpack.Progress] 65% building 462/462 modules 0 active
 <s> [webpack.Progress] 65% building 462/463 modules 1 active /Users/vincent/Lines/quartz/node_modules/@storybook/core/dist/client/preview/url.js
 <s> [webpack.Progress] 65% building 462/464 modules 2 active /Users/vincent/Lines/quartz/node_modules/@storybook/core/dist/client/preview/loadCsf.js
 <s> [webpack.Progress] 65% building 462/465 modules 3 active /Users/vincent/Lines/quartz/node_modules/@storybook/core/dist/client/preview/StoryRenderer.js
@@ -961,7 +961,7 @@ info => Compiling preview..
 <s> [webpack.Progress] 66% building 468/471 modules 3 active /Users/vincent/Lines/quartz/node_modules/escodegen/node_modules/source-map/lib/quick-sort.js
 <s> [webpack.Progress] 66% building 469/471 modules 2 active /Users/vincent/Lines/quartz/node_modules/escodegen/node_modules/source-map/lib/quick-sort.js
 <s> [webpack.Progress] 66% building 470/471 modules 1 active /Users/vincent/Lines/quartz/node_modules/escodegen/node_modules/source-map/lib/binary-search.js
-<s> [webpack.Progress] 66% building 471/471 modules 0 active 
+<s> [webpack.Progress] 66% building 471/471 modules 0 active
 <s> [webpack.Progress] 66% building 471/472 modules 1 active /Users/vincent/Lines/quartz/node_modules/styled-system/dist/index.esm.js
 <s> [webpack.Progress] 66% building 471/473 modules 2 active /Users/vincent/Lines/quartz/node_modules/@styled-system/css/dist/index.esm.js
 <s> [webpack.Progress] 66% building 471/474 modules 3 active /Users/vincent/Lines/quartz/node_modules/@styled-system/should-forward-prop/dist/index.esm.js
@@ -971,13 +971,13 @@ info => Compiling preview..
 <s> [webpack.Progress] 66% building 473/476 modules 3 active /Users/vincent/Lines/quartz/node_modules/escodegen/node_modules/source-map/lib/base64.js
 <s> [webpack.Progress] 66% building 474/476 modules 2 active /Users/vincent/Lines/quartz/node_modules/escodegen/node_modules/source-map/lib/base64.js
 <s> [webpack.Progress] 67% building 475/476 modules 1 active /Users/vincent/Lines/quartz/node_modules/@storybook/core/dist/client/preview/NoDocs.js
-<s> [webpack.Progress] 67% building 476/476 modules 0 active 
+<s> [webpack.Progress] 67% building 476/476 modules 0 active
 <s> [webpack.Progress] 67% building 476/477 modules 1 active /Users/vincent/Lines/quartz/node_modules/@storybook/channel-postmessage/dist/index.js
-<s> [webpack.Progress] 67% building 477/477 modules 0 active 
+<s> [webpack.Progress] 67% building 477/477 modules 0 active
 <s> [webpack.Progress] 67% building 477/478 modules 1 active /Users/vincent/Lines/quartz/node_modules/core-js/modules/es.number.is-integer.js
 <s> [webpack.Progress] 67% building 477/479 modules 2 active /Users/vincent/Lines/quartz/node_modules/ansi-to-html/lib/ansi_to_html.js
 <s> [webpack.Progress] 67% building 478/479 modules 1 active /Users/vincent/Lines/quartz/node_modules/ansi-to-html/lib/ansi_to_html.js
-<s> [webpack.Progress] 67% building 479/479 modules 0 active 
+<s> [webpack.Progress] 67% building 479/479 modules 0 active
 <s> [webpack.Progress] 67% building 479/480 modules 1 active /Users/vincent/Lines/quartz/node_modules/@styled-system/color/dist/index.esm.js
 <s> [webpack.Progress] 67% building 479/481 modules 2 active /Users/vincent/Lines/quartz/node_modules/@styled-system/flexbox/dist/index.esm.js
 <s> [webpack.Progress] 67% building 479/482 modules 3 active /Users/vincent/Lines/quartz/node_modules/@styled-system/layout/dist/index.esm.js
@@ -1005,17 +1005,17 @@ info => Compiling preview..
 <s> [webpack.Progress] 68% building 490/493 modules 3 active /Users/vincent/Lines/quartz/node_modules/@styled-system/core/dist/index.esm.js
 <s> [webpack.Progress] 68% building 491/493 modules 2 active /Users/vincent/Lines/quartz/node_modules/@styled-system/core/dist/index.esm.js
 <s> [webpack.Progress] 69% building 492/493 modules 1 active /Users/vincent/Lines/quartz/node_modules/@styled-system/variant/dist/index.esm.js
-<s> [webpack.Progress] 69% building 493/493 modules 0 active 
+<s> [webpack.Progress] 69% building 493/493 modules 0 active
 <s> [webpack.Progress] 69% building 493/494 modules 1 active delegated "hQin" from dll-reference storybook_docs_dll
-<s> [webpack.Progress] 69% building 494/494 modules 0 active 
+<s> [webpack.Progress] 69% building 494/494 modules 0 active
 <s> [webpack.Progress] 69% building 494/495 modules 1 active delegated "dSaG" from dll-reference storybook_docs_dll
-<s> [webpack.Progress] 69% building 495/495 modules 0 active 
+<s> [webpack.Progress] 69% building 495/495 modules 0 active
 <s> [webpack.Progress] 69% building 495/496 modules 1 active /Users/vincent/Lines/quartz/node_modules/entities/index.js
-<s> [webpack.Progress] 69% building 496/496 modules 0 active 
+<s> [webpack.Progress] 69% building 496/496 modules 0 active
 <s> [webpack.Progress] 69% building 496/497 modules 1 active /Users/vincent/Lines/quartz/node_modules/entities/lib/encode.js
 <s> [webpack.Progress] 69% building 496/498 modules 2 active /Users/vincent/Lines/quartz/node_modules/entities/lib/decode.js
 <s> [webpack.Progress] 69% building 497/498 modules 1 active /Users/vincent/Lines/quartz/node_modules/entities/lib/decode.js
-<s> [webpack.Progress] 69% building 498/498 modules 0 active 
+<s> [webpack.Progress] 69% building 498/498 modules 0 active
 <s> [webpack.Progress] 69% building 498/499 modules 1 active /Users/vincent/Lines/quartz/node_modules/entities/lib/decode_codepoint.js
 <s> [webpack.Progress] 69% building 498/500 modules 2 active /Users/vincent/Lines/quartz/node_modules/entities/maps/xml.json
 <s> [webpack.Progress] 69% building 498/501 modules 3 active /Users/vincent/Lines/quartz/node_modules/entities/maps/entities.json
@@ -1023,10 +1023,10 @@ info => Compiling preview..
 <s> [webpack.Progress] 69% building 499/502 modules 3 active /Users/vincent/Lines/quartz/node_modules/entities/maps/legacy.json
 <s> [webpack.Progress] 69% building 500/502 modules 2 active /Users/vincent/Lines/quartz/node_modules/entities/maps/legacy.json
 <s> [webpack.Progress] 69% building 501/502 modules 1 active /Users/vincent/Lines/quartz/node_modules/entities/maps/entities.json
-<s> [webpack.Progress] 70% building 502/502 modules 0 active 
+<s> [webpack.Progress] 70% building 502/502 modules 0 active
 <s> [webpack.Progress] 69% building 502/503 modules 1 active /Users/vincent/Lines/quartz/node_modules/entities/maps/decode.json
-<s> [webpack.Progress] 70% building 503/503 modules 0 active 
-<s> [webpack.Progress] 70% building 503/503 modules 0 active 
+<s> [webpack.Progress] 70% building 503/503 modules 0 active
+<s> [webpack.Progress] 70% building 503/503 modules 0 active
 <s> [webpack.Progress] 70% finish module graph
 <s> [webpack.Progress] 70% finish module graph FlagDependencyExportsPlugin
 <s> [webpack.Progress] 70% finish module graph WasmFinalizeExportsPlugin
@@ -1116,12 +1116,12 @@ info => Compiling preview..
 <s> [webpack.Progress] 95% emitting HtmlWebpackPlugin
 <s> [webpack.Progress] 98% after emitting
 <s> [webpack.Progress] 98% after emitting SizeLimitsPlugin
-<s> [webpack.Progress] 100% 
+<s> [webpack.Progress] 100%
 
 info => Preview built (9.65 s)
 WARN asset size limit: The following asset(s) exceed the recommended size limit (244 KiB).
 WARN This can impact web performance.
-WARN Assets: 
+WARN Assets:
 WARN   vendors~main.cf21ed45a014fbd86fc1.bundle.js (1.2 MiB)
 WARN entrypoint size limit: The following entrypoint(s) combined asset size exceeds the recommended limit (244 KiB). This can impact web performance.
 WARN Entrypoints:
@@ -1129,8 +1129,8 @@ WARN   main (1.24 MiB)
 WARN       runtime~main.cf21ed45a014fbd86fc1.bundle.js
 WARN       vendors~main.cf21ed45a014fbd86fc1.bundle.js
 WARN       main.cf21ed45a014fbd86fc1.bundle.js
-WARN 
-WARN webpack performance recommendations: 
+WARN
+WARN webpack performance recommendations:
 WARN You can limit the size of your bundles by using import() or require.ensure to lazy load some parts of your application.
 WARN For more info visit https://webpack.js.org/guides/code-splitting/
 info => Output directory: /var/folders/ss/kbf06sg55213s9ppzk30mp6w0000gn/T/chromatic-41075mvCaFvs7hImc

@@ -7,9 +7,7 @@ import React, {
   useContext,
   useEffect,
   useMemo,
-  useState,
 } from 'react';
-import Lottie from 'lottie-react-web';
 
 // Context
 import NavigationContext from '../context/navigation.context';
@@ -18,6 +16,7 @@ import { NavigationItemProps } from '../types';
 import styles from './navigation-item.styles';
 import { Tooltip } from '../../../index';
 import TooltipPositions from '../../tooltip/positions';
+//@ts-ignore
 import { useTheme } from 'emotion-theming';
 import { ITheme } from '../../../theme/types';
 
@@ -33,7 +32,6 @@ const NavigationItem: FC<NavigationItemProps> = (
   props: NavigationItemProps,
 ) => {
   const { activePath, onActivate, trackBy } = useContext(NavigationContext);
-
   const theme = useTheme<ITheme>();
 
   const {
@@ -70,8 +68,6 @@ const NavigationItem: FC<NavigationItemProps> = (
     [children],
   );
 
-  const [isToggled, setToggled] = useState(false);
-
   // Handlers
   const handleClick = useCallback(() => {
     onClick();
@@ -81,9 +77,6 @@ const NavigationItem: FC<NavigationItemProps> = (
   useEffect(() => {
     if (isActive) {
       onActivate(key);
-      setToggled(true);
-    } else {
-      setToggled(false);
     }
   }, [isActive]);
 
@@ -93,7 +86,7 @@ const NavigationItem: FC<NavigationItemProps> = (
       variant={getVariant(disabled, isActiveItem)}
       sx={styles}
       onClick={!disabled ? handleClick : undefined}
-      className={ key == 'oldui' ? 'oldui' : ''}
+      className={key == 'oldui' ? 'oldui' : ''}
       {...restProps}
     >
       {icon && (
@@ -101,17 +94,9 @@ const NavigationItem: FC<NavigationItemProps> = (
           <Tooltip
             disabled={disableTooltip || !isOpen}
             position={TooltipPositions.right}
-            mainText={tooltipText}
+            secondaryText={tooltipText}
           >
-            <Lottie
-              width={22}
-              height={22}
-              direction={isToggled ? 1 : -1}
-              options={{
-                animationData: icon,
-                loop: false,
-              }}
-            />
+            {icon}
           </Tooltip>
         </div>
       )}
@@ -119,7 +104,7 @@ const NavigationItem: FC<NavigationItemProps> = (
         <Tooltip
           disabled={icon || disableTooltip}
           position={TooltipPositions.right}
-          mainText={tooltipText}
+          secondaryText={tooltipText}
         >
           <span style={disabled ? { color: theme.colors.gray } : {}}>
             {title}

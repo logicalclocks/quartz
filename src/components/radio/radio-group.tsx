@@ -11,6 +11,9 @@ export interface RadioGroupProps
   value: string | null;
   options: string[];
   additionalTexts?: string[];
+  tooltipMessages?: {
+    [key: string]: string;
+  };
   onChange: (value: string) => void;
   tooltipMessages?: {
     [key: string]: string;

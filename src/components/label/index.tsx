@@ -7,6 +7,7 @@ export interface LabelProps extends Omit<FlexProps, 'css' | 'action'> {
   action?: React.ReactNode;
   pointer?: boolean;
   text?: string;
+  pointer?: boolean;
   align?: 'top' | 'left';
   children: React.ReactNode;
 }
@@ -16,6 +17,7 @@ const Label: FC<LabelProps> = ({
   text,
   pointer = false,
   children,
+  pointer = false,
   align = 'top',
   as = 'label',
   ...props
