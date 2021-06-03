@@ -8,7 +8,6 @@ import styles, {
   codeHeaderStyles,
 } from './code.styles';
 import SyntaxHighlighter from 'react-syntax-highlighter';
-
 import icons from '../../sources/icons';
 import Value from '../typography/value';
 import { copyToClipboard, saveToFile } from '../../utils';
@@ -21,6 +20,7 @@ export interface CodeProps extends Omit<FlexProps, 'css' | 'title'> {
   isColorSyntax?: boolean;
   copyButton?: boolean;
   downloadButton?: boolean;
+  wrapLongLines?: boolean;
 }
 
 const Code: FC<CodeProps> = ({
@@ -30,6 +30,7 @@ const Code: FC<CodeProps> = ({
   isColorSyntax,
   copyButton = false,
   downloadButton = false,
+  wrapLongLines,
   element,
   ...props
 }: CodeProps) => {
@@ -89,7 +90,7 @@ const Code: FC<CodeProps> = ({
           element
         ) : (
           <SyntaxHighlighter
-            wrapLongLines
+            wrapLongLines={wrapLongLines}
             language={isColorSyntax ? language : 'text'}
             customStyle={{ ...boxStyles }}
           >

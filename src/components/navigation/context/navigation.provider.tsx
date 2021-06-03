@@ -14,6 +14,7 @@ export interface CategoriesProviderProps {
   children: React.ReactNode;
   onNavigate?: (node: TreeNode | null) => void;
   onBackCLick?: () => void;
+  takeActivePath?: any;
 }
 
 const NavigationProvider: FC<CategoriesProviderProps> = ({
@@ -22,6 +23,7 @@ const NavigationProvider: FC<CategoriesProviderProps> = ({
   children,
   onNavigate,
   onBackCLick,
+  takeActivePath,
 }: CategoriesProviderProps) => {
   const [activePath, setActivePath] = useState<string[]>([]);
   const [activeNode, setActiveNode] = useState<TreeNode | null>(null);
@@ -35,6 +37,7 @@ const NavigationProvider: FC<CategoriesProviderProps> = ({
       );
 
       setActivePath(path);
+      takeActivePath(path);
     },
     [tree],
   );

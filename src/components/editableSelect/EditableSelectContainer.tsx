@@ -82,7 +82,7 @@ const EditableSelectContainer: FC<EditableSelectContainerProps> = forwardRef(
       <Box
         {...props}
         width="auto"
-        // flexGrow="inherit"
+        flex="inherit"
         sx={getContainerStyles(intent)}
         tx="variants.editableSelect.container"
         variant={variant}
@@ -120,7 +120,7 @@ const EditableSelectContainer: FC<EditableSelectContainerProps> = forwardRef(
             ))}
           {type !== 'base' && (
             <Input
-              sx={inputStyles}
+              sx={inputStyles()}
               width={inputWidth}
               mt="5px"
               ml={isMulti ? '0px' : '3px'}

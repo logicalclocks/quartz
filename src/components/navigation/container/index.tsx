@@ -1,5 +1,5 @@
 import { Box } from 'rebass';
-import React, { FC, ReactElement, useMemo } from 'react';
+import React, { FC, ReactElement, useMemo, useState } from 'react';
 
 // Components
 import NavigationItem from '../item';
@@ -45,10 +45,16 @@ const Navigation: INavigation<NavigationProps> = ({
     () => (propsTree ? buildComponentsTree(propsTree) : children),
     [propsTree, children],
   );
+  const [activePath, setActivePath] = useState([]);
 
   return (
-    <Box as="aside" tx="navigation" variant="container" sx={styles}>
-      <NavigationProvider tree={tree} {...props}>
+    <Box
+      as="aside"
+      tx="navigation"
+      variant="container"
+      sx={styles(activePath.length > 1)}
+    >
+      <NavigationProvider tree={tree} {...props} takeActivePath={setActivePath}>
         <ul>{child}</ul>
         <div>{footer}</div>
       </NavigationProvider>

@@ -30,7 +30,7 @@ const getStyles = ({
   right,
 }: GetStylesParams): SxStyleProp => ({
   position: 'fixed',
-  zIndex: 31,
+  zIndex: 32,
 
   maxHeight: '100%',
 

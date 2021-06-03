@@ -1,10 +1,10 @@
 export default {
   bg: 'white',
-
-  borderColor: 'grayShade1',
+  boxShadow: 'secondary',
+  borderColor: 'grayShade2',
 
   ':hover': {
-    borderColor: 'black',
+    borderColor: 'grayShade2',
   },
 
   ':active': {
@@ -12,7 +12,7 @@ export default {
   },
 
   ':disabled': {
-    borderColor: 'grayShade1',
+    borderColor: 'grayShade2',
   },
 
   // Icon color
