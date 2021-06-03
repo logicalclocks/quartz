@@ -1,4 +1,5 @@
 import { SxStyleProp } from 'rebass';
+import { useTheme } from 'emotion-theming';
 import { ITheme } from '../../theme/types';
 import { Intents } from '../intents';
 
@@ -37,17 +38,33 @@ export const getContainerStyles = (intent: Intents): SxStyleProp => ({
   transition: 'all 0.25s ease',
 });
 
-export const inputStyles = {
-  flexGrow: 1,
-  border: 'none',
-  appearance: 'none',
-  outline: 'none',
-  padding: 0,
-  height: '21px',
-  fontSize: '12px',
-  fontFamily: 'Inter',
-  fontWeight: 500,
-} as SxStyleProp;
+export const inputStyles = (): SxStyleProp => {
+  const theme = useTheme<ITheme>();
+  return {
+    flexGrow: 1,
+    border: 'none',
+    appearance: 'none',
+    outline: 'none',
+    padding: 0,
+    height: '21px',
+    fontSize: '12px',
+    fontFamily: 'Inter',
+    fontWeight: 500,
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    '::placeholder': {
+      color: theme.colors.gray,
+      opacity: 1,
+    },
+    /* Internet Explorer 10-11 */
+    ':-ms-input-placeholder': {
+      color: theme.colors.gray,
+    },
+    /* Microsoft Edge */
+    '::-ms-input-placeholder': {
+      color: theme.colors.gray,
+    },
+  };
+};
 
 export const listStyles = (parentHeight: number): SxStyleProp => ({
   position: 'absolute',

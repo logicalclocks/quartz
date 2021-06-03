@@ -52,7 +52,7 @@ const argTypes = {
     },
     type: {
       required: false,
-      summary: 'tooltip main text',
+      summary: 'tooltip content text',
     },
   },
   tooltipSecondaryText: {

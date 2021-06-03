@@ -81,7 +81,8 @@ export const getPopupStyles = (
 export const getTooltipStyles = (position: TooltipPositions): SxStyleProp => ({
   position: 'relative',
   py: '5px',
-  px: '10px',
+  pr: '10px',
+  pl: '0px',
 
   display: 'flex',
   alignItems: 'center',
