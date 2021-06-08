@@ -7,7 +7,7 @@ export const containerStyles = {
   borderColor: 'grayShade3',
   borderTopColor: 'grey',
   borderStyle: 'solid',
-  '-moz-padding-end': '8px',
+  MozPaddingEnd: '8px',
   marginRight: '20px',
 };
 
