@@ -1,12 +1,13 @@
 import { Box, Flex } from 'rebass';
 import React, { FC, memo, useState } from 'react';
-import Select, { SelectProps } from '../select';
+import { SelectProps } from '../select';
 import ReactDatePicker from 'react-datepicker';
 
 import { ReactDatePickerProps } from 'react-datepicker';
 
 import 'react-datepicker/dist/react-datepicker.min.css';
 import styles from './datepicker.styles';
+import { Labeling, Value } from '../../index';
 
 export interface DatePickerProps {
   selectProps: SelectProps;
@@ -22,9 +23,35 @@ const DatePicker: FC<DatePickerProps & ReactDatePickerProps> = ({
 
   return (
     <Flex flexDirection="column" sx={styles(datePickerAlign)}>
-      <Box onClick={() => setOpen(!open)}>
-        <Select {...selectProps} />
-      </Box>
+      <Flex
+        alignItems="center"
+        onClick={() => setOpen(!open)}
+        sx={{
+          backgroundColor: 'white',
+          cursor: 'pointer',
+          height: '32px',
+          px: '5px',
+          borderColor: 'white',
+          borderWidth: '1px',
+          borderStyle: 'solid',
+          ':hover': {
+            borderColor: 'grayShade2',
+            borderWidth: '1px',
+            borderStyle: 'solid',
+          },
+        }}
+      >
+        <Labeling gray mr="5px">
+          {selectProps.noDataMessage}
+        </Labeling>
+        <Value
+          mr="5px"
+          sx={{ fontSize: 'text', fontWeight: 'text', fontFamily: 'text' }}
+        >
+          {selectProps.value}
+        </Value>
+        {/*<Select {...selectProps} />*/}
+      </Flex>
       <Box alignSelf={datePickerAlign === 'right' ? 'flex-end' : 'flex-start'}>
         <ReactDatePicker
           open={open}

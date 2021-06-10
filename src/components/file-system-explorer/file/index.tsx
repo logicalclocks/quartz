@@ -24,7 +24,6 @@ export interface QuartzFileExplorerProps {
 const FileExplorer: FC<QuartzFileExplorerProps> = ({
   isActive,
   setActiveFolder,
-  // activeFile,
   setActiveFile,
   itemInfo,
   index,
