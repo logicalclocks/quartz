@@ -11,7 +11,6 @@ export const spinner = {
   position: 'relative',
   width: '20px',
   height: '20px',
-  marginRight: '10px',
   '> div': {
     boxSizing: 'border-box',
     display: 'block',
@@ -22,7 +21,7 @@ export const spinner = {
     borderWidth: '3px',
     borderRadius: '50%',
     animation: `${ldsRing} 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite`,
-    borderLeftColor: 'primary',
+    borderLeftColor: 'white',
     borderRightColor: 'transparent',
     borderTopColor: 'transparent',
     borderBottomColor: 'transparent',

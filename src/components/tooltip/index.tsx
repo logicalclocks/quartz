@@ -50,7 +50,7 @@ const getStyles = (
       TooltipPositions.top,
       {
         left: dimensions.left + dimensions.width / 2,
-        bottom: dimensions.top + dimensions.height + space,
+        top: dimensions.top - dimensions.height / 2 - space,
       },
     ],
     [

@@ -12,6 +12,7 @@ export interface TinyPopupProps extends Omit<PopupProps, 'css' | 'children'> {
   title: string;
   secondaryText: string;
   mainButton?: Action<React.MouseEvent<HTMLButtonElement>>;
+  isLoading?: boolean;
   secondaryButton?: Action<React.MouseEvent<HTMLButtonElement>>;
   onClose?: () => void;
   children?: React.ReactNode;
@@ -24,6 +25,7 @@ const TinyPopup: FC<TinyPopupProps> = ({
   secondaryButton,
   onClose = () => {},
   disabledMainButton = false,
+  isLoading = false,
   children,
   ...props
 }: TinyPopupProps) => {
@@ -66,7 +68,11 @@ const TinyPopup: FC<TinyPopupProps> = ({
             </Button>
           )}
           {mainButton && (
-            <Button disabled={disabledMainButton} onClick={mainActionCallback}>
+            <Button
+              isLoading={isLoading}
+              disabled={disabledMainButton}
+              onClick={mainActionCallback}
+            >
               {mainActionTitle}
             </Button>
           )}

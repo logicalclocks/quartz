@@ -1,33 +1,52 @@
 import React, { FC } from 'react';
-import { Button as RebassButton, ButtonProps } from 'rebass';
+import { Box, Button as RebassButton, ButtonProps } from 'rebass';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { IconDefinition } from '@fortawesome/fontawesome-common-types';
 
 // Styles
 import styles from './button.styles';
+import { spinner } from '../file-loader/file-loader.styles';
 
 export interface QuartzButtonProps extends Omit<ButtonProps, 'css'> {
   children: React.ReactNode;
   intent?: 'primary' | 'secondary' | 'ghost' | 'inline' | 'alert';
   icon?: IconDefinition;
   href?: string;
+  isLoading?: boolean;
 }
 
 const Button: FC<QuartzButtonProps> = ({
   intent = 'primary',
   icon,
   children,
+  isLoading,
   href,
   ...props
 }: QuartzButtonProps) => {
   const component = (
-    <RebassButton sx={styles} variant={intent} {...props}>
+    <RebassButton
+      sx={styles}
+      pt={isLoading ? '4px' : '8px'}
+      pb={isLoading ? '4px' : '8px'}
+      maxHeight="33px"
+      variant={intent}
+      {...props}
+    >
       {icon && (
         <span>
           <FontAwesomeIcon icon={icon} size="sm" />
         </span>
       )}
-      {children}
+      {!isLoading ? (
+        children
+      ) : (
+        <Box sx={{ ...spinner, maxHeight: '20px' }}>
+          <div />
+          <div />
+          <div />
+          <div />
+        </Box>
+      )}
     </RebassButton>
   );
 
