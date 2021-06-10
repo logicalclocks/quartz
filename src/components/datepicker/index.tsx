@@ -8,6 +8,7 @@ import { ReactDatePickerProps } from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.min.css';
 import styles from './datepicker.styles';
 import { Labeling, Value } from '../../index';
+import ArrowsIcon from '../icons/arrows.icon';
 
 export interface DatePickerProps {
   selectProps: SelectProps;
@@ -50,7 +51,7 @@ const DatePicker: FC<DatePickerProps & ReactDatePickerProps> = ({
         >
           {selectProps.value}
         </Value>
-        {/*<Select {...selectProps} />*/}
+        <ArrowsIcon />
       </Flex>
       <Box alignSelf={datePickerAlign === 'right' ? 'flex-end' : 'flex-start'}>
         <ReactDatePicker
