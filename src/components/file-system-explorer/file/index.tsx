@@ -4,6 +4,7 @@ import { Box } from 'rebass';
 // Styles
 import { fileExplorerStyle } from './file-explorer.styles';
 import { Checkbox } from '../../../index';
+import Tooltip from '../../tooltip';
 
 export interface QuartzFileExplorerProps {
   name?: string;
@@ -33,7 +34,7 @@ const FileExplorer: FC<QuartzFileExplorerProps> = ({
   selected,
   isFileSelected,
 }: // ...props
-QuartzFileExplorerProps) => {
+  QuartzFileExplorerProps) => {
   const [active, setActive] = useState(isActive);
   const [selectedFile, setSelectedFile] = useState(selected);
 
@@ -56,29 +57,31 @@ QuartzFileExplorerProps) => {
     setActiveFile(itemInfo);
   };
 
-  return mode === 'nFiles' ? (
-    <Box
-      sx={{ ...fileExplorerStyle(active, selectedFile, mode) }}
-      tabIndex={0}
-      onClick={selectActiveFile}
-    >
-      <Checkbox
-        m="10px"
-        label={itemInfo.attributes.name}
-        checked={selectedFile}
-        onChange={() => handleClickFile(mode)}
-        variant="gray"
-      />
-    </Box>
-  ) : (
-    <Box
-      sx={{ ...fileExplorerStyle(active, selectedFile, mode) }}
-      onClick={() => handleClickFile(mode)}
-      tabIndex={0}
-    >
-      {itemInfo.attributes.name}
-    </Box>
-  );
+  return <Tooltip mainText={itemInfo.attributes.name}>
+    {mode === 'nFiles' ? (
+      <Box
+        sx={{ ...fileExplorerStyle(active, selectedFile, mode) }}
+        tabIndex={0}
+        onClick={selectActiveFile}
+      >
+        <Checkbox
+          m="10px"
+          label={itemInfo.attributes.name}
+          checked={selectedFile}
+          onChange={() => handleClickFile(mode)}
+          variant="gray"
+        />
+      </Box>
+    ) : (
+      <Box
+        sx={{ ...fileExplorerStyle(active, selectedFile, mode) }}
+        onClick={() => handleClickFile(mode)}
+        tabIndex={0}
+      >
+        {itemInfo.attributes.name}
+      </Box>
+    )}
+  </Tooltip>
 };
 
 export default FileExplorer;
