@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, Fragment } from 'react';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import { Button as RebassButton, ButtonProps } from 'rebass';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -40,13 +40,11 @@ const IconButton: FC<IconButtonProps> = ({
         disabled={disabled}
         {...props}
       >{(icon instanceof Element) ? 
-        <>
-          {icon}
-        </>:
-        <>
+        {icon}:
+        <Fragment>
           <FontAwesomeIcon icon={icon as IconProp} />
           <FontAwesomeIcon icon={hoverIcon as IconProp} />
-        </>}
+        </Fragment>}
       </RebassButton>
     </Tooltip>
   );
