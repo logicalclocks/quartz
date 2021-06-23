@@ -12,7 +12,7 @@ import styles from './icon-button.styles';
 export interface IconButtonProps extends Omit<ButtonProps, 'css'> {
   intent?: 'primary' | 'ghost' | 'ghost-white';
   tooltip: string;
-  icon: IconProp;
+  icon: IconProp | Element;
   disabled?: boolean;
   iconOnHover?: IconProp;
   href?: string;
@@ -39,9 +39,14 @@ const IconButton: FC<IconButtonProps> = ({
         variant={`icon-${intent}`}
         disabled={disabled}
         {...props}
-      >
-        <FontAwesomeIcon icon={icon} />
-        <FontAwesomeIcon icon={hoverIcon} />
+      >{(icon instanceof Element) ? 
+        <>
+          {icon}
+        </>:
+        <>
+          <FontAwesomeIcon icon={icon as IconProp} />
+          <FontAwesomeIcon icon={hoverIcon as IconProp} />
+        </>}
       </RebassButton>
     </Tooltip>
   );
