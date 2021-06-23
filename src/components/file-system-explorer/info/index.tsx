@@ -28,7 +28,7 @@ const FileExplorerInfo: FC<FileExplorerInfoProps> = ({
 }: FileExplorerInfoProps) => {
   const dateFormat = (date: string) => {
     // eslint-disable-next-line
-    return format(new Date(date), 'dd-MM-yyyy - HH:mm:ss');
+    return format(new Date(date), 'yyyy-MM-dd - HH:mm:ss');
   };
 
   return (
