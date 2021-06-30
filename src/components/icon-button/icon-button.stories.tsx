@@ -6,6 +6,7 @@ import { faEye } from '@fortawesome/free-regular-svg-icons';
 import { faEye as fasEye } from '@fortawesome/free-solid-svg-icons';
 
 import IconButton, { IconButtonProps } from '.';
+import { IconName } from '../icon/list';
 
 export default {
   title: 'Quartz/Buttons',
@@ -17,7 +18,7 @@ const Template: Story<IconButtonProps> = (props) => <IconButton {...props} />;
 export const IconButtons = Template.bind({});
 
 IconButtons.args = {
-  icon: fasEye,
+  icon: IconName.eye,
   intent: 'primary',
   tooltip: 'Tooltip',
   onClick: action('onClick'),
@@ -64,16 +65,5 @@ IconButtons.argTypes = {
       summary:
         'Icon name, icon SVG, or array like ["far", "eye"] ["fas", "eye"]',
     },
-  },
-  iconOnHover: {
-    control: {
-      type: 'select',
-      options: ['coffee', ['far', 'eye'], faEye],
-      default: undefined,
-    },
-    type: {
-      summary:
-        'Icon name, icon SVG, or array like ["far", "eye"] ["fas", "eye"]',
-    },
-  },
+  }
 };

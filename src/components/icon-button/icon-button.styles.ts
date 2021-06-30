@@ -25,20 +25,11 @@ export default {
   },
 
   '> svg': {
-    width: '18px',
-    height: '12px',
-    // fontSize: '15px',
-
-    ':nth-of-type(2)': {
-      display: 'none',
-    },
-  },
-
-  ':hover > svg': {
-    display: 'none',
-
-    ':nth-of-type(2)': {
-      display: 'block',
-    },
+    width: '16px',
+    height: '16px',
+    position: 'absolute',
+    path: {
+      fill: 'black'
+    }
   },
 } as SxStyleProp;
