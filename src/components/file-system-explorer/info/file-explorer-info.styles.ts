@@ -31,7 +31,7 @@ export const blockInfoStyles = {
 export const contentInfoStyles = (side: boolean) => ({
   display: 'flex',
   flexDirection: 'column',
-  maxWidth: side ? '40px' : '90px',
+  maxWidth: side ? '80px' : '180px',
   textAlign: side ? 'right' : 'left',
   marginRight: '4px',
   div: {
