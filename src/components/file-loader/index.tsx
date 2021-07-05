@@ -26,6 +26,7 @@ const FileLoader: FC<QuartzFileLoaderProps> = ({
   removeHandler,
   located,
   ...props
+<<<<<<< HEAD
 }: QuartzFileLoaderProps) => (
   <Flex {...props} sx={styles(isLoading)} key={id}>
     {isLoading && (
@@ -34,6 +35,33 @@ const FileLoader: FC<QuartzFileLoaderProps> = ({
         <div />
         <div />
         <div />
+=======
+}: QuartzFileLoaderProps) => {
+  return (
+    <Flex {...props} sx={styles(isLoading)} key={id}>
+      {isLoading && (
+        <Box sx={{ ...spinner }}>
+          <div />
+          <div />
+          <div />
+          <div />
+        </Box>
+      )}
+      <Text sx={{ ...fileNameBox(isLoading) }}>
+        {fileName}{' '}
+        <Box
+          style={{
+            color: 'black',
+            display: 'inline',
+            wordBreak: 'break-all',
+          }}
+        >
+          {children + ' ' + located + ' '}
+        </Box>
+      </Text>
+      <Box sx={{ ...loaderCross(isLoading) }} onClick={removeHandler}>
+        {icons.cross}
+>>>>>>> word break file upload job create
       </Box>
     )}
     <Text sx={{ ...fileNameBox(isLoading) }}>
