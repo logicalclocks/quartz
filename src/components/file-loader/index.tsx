@@ -42,6 +42,7 @@ const FileLoader: FC<QuartzFileLoaderProps> = ({
           style={{
             color: 'black',
             display: 'inline',
+            wordBreak: 'break-all',
           }}
         >
           {children + ' ' + located + ' '}
