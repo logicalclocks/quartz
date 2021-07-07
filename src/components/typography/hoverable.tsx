@@ -1,7 +1,8 @@
 import React, { FC } from 'react';
-import { Text, TextProps } from 'rebass';
+import { Text, TextProps, Link, LinkProps } from 'rebass';
 
 export interface HoverableTextProps extends Omit<TextProps, 'css'> {}
+export interface HoverableLinkProps extends Omit<LinkProps, 'css'> {}
 
 const styles = {
   cursor: 'pointer',
@@ -11,7 +12,18 @@ const styles = {
   transition: 'all .4s',
 };
 
-const HoverableText: FC<HoverableTextProps> = (props: HoverableTextProps) => (
-  <Text {...props} variant="title" sx={styles} />
-);
-export default HoverableText;
+export const HoverableText: FC<HoverableTextProps> = (
+  props: HoverableTextProps,
+) => {
+  let { sx } = { ...props };
+  sx = { ...sx, ...styles };
+  return <Text {...props} variant="title" sx={sx} />;
+};
+
+export const HoverableLink: FC<HoverableLinkProps> = (
+  props: HoverableLinkProps,
+) => {
+  let { sx } = { ...props };
+  sx = { ...sx, ...styles };
+  return <Link {...props} variant="title" sx={sx} />;
+};
