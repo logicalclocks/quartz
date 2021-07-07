@@ -33,7 +33,6 @@ export const theadStyles = {
   fontSize: 'label',
   position: 'sticky',
   top: '0',
-  minWidth: '92px',
 
   'th:first-of-typed': {
     borderTopColor: 'grey',
@@ -132,7 +131,6 @@ export const trowStyles = {
     borderWidth: '0 1px 1px 0',
     borderColor: 'gray',
     borderBottomColor: 'grayShade2',
-    minWidth: '92px',
     borderStyle: 'Solid',
     left: '0',
     position: 'sticky',

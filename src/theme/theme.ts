@@ -17,7 +17,7 @@ import inputs from './inputs';
 import inputIntents from './intents';
 // Navigation
 import navigation from './navigation';
-// List
+// ListF
 import list from './list';
 // Header
 import header from './header';
@@ -132,6 +132,7 @@ const theme: ITheme = {
     callout,
     icon,
     editableSelect,
+    ...typography,
   },
   text: {
     inputInfo,
