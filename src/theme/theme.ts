@@ -132,6 +132,7 @@ const theme: ITheme = {
     callout,
     icon,
     editableSelect,
+    ...typography,
   },
   text: {
     inputInfo,
