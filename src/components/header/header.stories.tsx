@@ -14,6 +14,7 @@ import Navigation from '../navigation/container';
 import { TreeNode } from '../navigation/types';
 import MenuButton from './menu-button';
 import User from '../user';
+import { IconName } from '../icon/list';
 
 export default {
   title: 'Quartz/Header',
@@ -98,8 +99,8 @@ Default.args = {
     </>
   ),
   actions: [
-    <IconButton icon="coffee" intent="ghost-white" tooltip="message" />,
-    <IconButton icon="pen" intent="ghost-white" tooltip="some" />,
+    <IconButton icon={IconName.table} intent="ghost-white" tooltip="message" />,
+    <IconButton icon={IconName.edit} intent="ghost-white" tooltip="some" />,
   ],
   children: (
     <>
