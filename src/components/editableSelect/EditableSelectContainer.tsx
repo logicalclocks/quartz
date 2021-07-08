@@ -5,6 +5,7 @@ import React, {
   Dispatch,
   useRef,
   useEffect,
+  KeyboardEvent,
 } from 'react';
 import { Box, BoxProps, Flex } from 'rebass';
 import { Input } from '@rebass/forms';
@@ -14,7 +15,6 @@ import Chip from './Chip';
 import { Intents } from '../intents';
 import { Labeling } from '../..';
 import { EditableSelectTypes, ChipsVariants } from './types';
-import useKeyUp from '../../utils/useKeyUp';
 
 export interface EditableSelectContainerProps
   extends Omit<BoxProps, 'css' | 'onChange'> {
@@ -72,8 +72,6 @@ const EditableSelectContainer: FC<EditableSelectContainerProps> = forwardRef(
       }
     }, [search, value, counterRef]);
 
-    useKeyUp(handleDelete, 'Backspace');
-
     useEffect(() => {
       counterRef.current = 0;
     }, [value]);
@@ -86,7 +84,6 @@ const EditableSelectContainer: FC<EditableSelectContainerProps> = forwardRef(
         sx={getContainerStyles(intent)}
         tx="variants.editableSelect.container"
         variant={variant}
-        tabIndex={0}
         ref={ref}
       >
         {inlineLegend && inlineLegend !== '' && (
@@ -131,6 +128,11 @@ const EditableSelectContainer: FC<EditableSelectContainerProps> = forwardRef(
               onChange={({ target }) => {
                 counterRef.current = 1;
                 setSearch(target.value);
+              }}
+              onKeyUp={(e: KeyboardEvent<HTMLInputElement>) => {
+                if (e.key === 'Backspace') {
+                  handleDelete();
+                }
               }}
             />
           )}
