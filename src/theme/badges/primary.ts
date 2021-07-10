@@ -40,6 +40,14 @@ const variants = {
 
     bg: 'labels.yellow',
   },
+  border: {
+    '> span': {
+      color: 'black',
+    },
+    bg: 'grayShade3',
+    border: '1px solid',
+    borderColor: 'grayShade1',
+  },
 };
 
 export default variants;
