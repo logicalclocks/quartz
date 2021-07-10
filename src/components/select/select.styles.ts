@@ -69,7 +69,6 @@ export const getLabelStyles = (intent: Intents, deletabled?: boolean) => ({
   ...(!deletabled && {
     svg: {
       minWidth: '8px',
-      ml: 'auto',
     },
   }),
 });
