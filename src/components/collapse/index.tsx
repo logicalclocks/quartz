@@ -22,18 +22,19 @@ const Collapse: FC<CollapseProps> = ({
   openChange,
   ...props
 }) => {
-  const ref = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const contentRef = useRef<HTMLDivElement>(null);
 
   const [height, setHeight] = useState<number>(0);
   const [isOpen, setOpen] = useState(isOpenProps);
 
   useEffect(() => {
-    if (ref.current) {
-      ref.current.style.maxHeight = 'none';
-      setHeight(ref.current.offsetHeight);
-      ref.current.style.maxHeight = '0px';
+    if (contentRef.current && containerRef.current) {
+      containerRef.current.style.maxHeight = 'none';
+      setHeight(contentRef.current.offsetHeight);
+      containerRef.current.style.maxHeight = '0px';
     }
-  }, [ref]);
+  }, [contentRef, containerRef]);
 
   useEffect(() => {
     if (typeof openChange === 'function') {
@@ -57,8 +58,14 @@ const Collapse: FC<CollapseProps> = ({
         {!!secondaryContent && <Labeling>{secondaryContent}</Labeling>}
       </Flex>
 
-      <Box ref={ref} sx={contentStyles(isOpen, height)} {...contentProps}>
-        {children}
+      <Box
+        ref={containerRef}
+        sx={contentStyles(isOpen, height)}
+        {...contentProps}
+      >
+        <Flex id="container" ref={contentRef} flexDirection="column">
+          {children}
+        </Flex>
       </Box>
     </Box>
   );
