@@ -73,7 +73,7 @@ const Template: Story<AlternativeHeaderProps> = (props) => {
 export const Default = Template.bind({});
 
 Default.args = {
-  title: 'Cluster settings',
+  title: 'sjflkndkjnvfdkjvfndjkvnfjkvndflvndfkjsvnfdjkvndfkjvnfkjn',
   rightTopContent: (
     <Button intent="secondary" onClick={() => {}}>
       back to projects
