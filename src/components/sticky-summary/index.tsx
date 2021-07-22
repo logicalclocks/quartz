@@ -7,7 +7,7 @@ import styles, {
 } from './sticky-summary.styles';
 import Title from '../typography/title';
 import Labeling from '../typography/labeling';
-import Value from '../typography/value';
+import Badge from '../badges/badge';
 
 export interface StickySummaryProps {
   title?: string;
@@ -33,7 +33,7 @@ const StickySummary: FC<StickySummaryProps> = ({
     <Flex sx={{ ...mainBoxStyles }}>
       <Box sx={{ ...boxStyles }}>
         {title && <Title sx={{ textTransform: 'normal' }}>{title}</Title>}
-        {errorsValue && <Value color="labels.red">{errorsValue}</Value>}
+        {errorsValue && <Badge variant="fail" value={errorsValue} />}
         {firstValue && !errorsValue && (
           <Labeling gray bold>
             {firstValue}
