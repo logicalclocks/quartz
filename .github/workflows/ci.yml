@@ -14,6 +14,7 @@ jobs:
       - name: Install-Build
         run: |
           npm install
+          mpm i react react-dom --no-save
           npm run predeploy
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@4.0.0
