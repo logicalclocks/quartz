@@ -17,8 +17,8 @@ const Badge: FC<BadgeProps> = ({
   <Flex
     alignItems="center"
     justifyContent="center"
-    px="6px"
-    py="3px"
+    px="7px"
+    py="4px"
     {...props}
     sx={{
       borderRadius: '2px',
@@ -27,7 +27,12 @@ const Badge: FC<BadgeProps> = ({
     tx="variants.badges.primary"
     variant={variant}
   >
-    <Value as="span" lineHeight="13px">
+    <Value
+      as="span"
+      lineHeight="13px"
+      fontFamily="IBM Plex Mono"
+      fontWeight="normal"
+    >
       {value}
     </Value>
   </Flex>

@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { Box, Flex } from 'rebass';
+import { Box, Flex, FlexProps } from 'rebass';
 import Labeling from '../typography/labeling';
 import styles from './callout.styles';
 import icons from '../../sources/icons';
@@ -11,7 +11,7 @@ export enum CalloutTypes {
   neutral = 'neutral',
 }
 
-export interface ICalloutProps {
+export interface ICalloutProps extends Omit<FlexProps, 'content' | 'css'> {
   type: CalloutTypes;
   content: string | React.ReactNode;
   cta?: React.ReactNode;
@@ -29,16 +29,17 @@ const Callout: FC<ICalloutProps> = ({
     sx={{ borderLeftWidth: cta ? '2px' : 0, ...styles }}
     {...props}
   >
-    <Flex justifyContent="space-between" alignItems="center">
-      <Box mt="-2px" mb="-3px">
+    <Flex justifyContent="space-between" alignItems="center" maxWidth="80%">
+      <Box mt="-2px" mb="-3px" mr="8px">
         {icons.info_block}
       </Box>
-      <Box ml="8px" as="pre">
+      <Box as="pre" mr="8px">
         <Labeling bold>{content}</Labeling>
       </Box>
     </Flex>
-
-    {cta && <Box>{cta}</Box>}
+    <Flex maxWidth="20%" justifyContent="right">
+      {cta && <Box>{cta}</Box>}
+    </Flex>
   </Flex>
 );
 

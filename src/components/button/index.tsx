@@ -20,8 +20,11 @@ const Button: FC<QuartzButtonProps> = ({
   href,
   ...props
 }: QuartzButtonProps) => {
+  const test = { ...props };
+  test.sx = { ...test.sx, ...styles };
+
   const component = (
-    <RebassButton sx={styles} variant={intent} {...props}>
+    <RebassButton variant={intent} {...test}>
       {icon && (
         <span>
           <FontAwesomeIcon icon={icon} size="sm" />
