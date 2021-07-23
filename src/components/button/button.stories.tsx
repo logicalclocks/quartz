@@ -19,7 +19,7 @@ Default.args = {
   intent: 'primary',
   children: 'Button',
   isLoading: false,
-  loaderOnly: false,
+  loadingOnly: false,
   onClick: action('onClick'),
 };
 
@@ -40,7 +40,7 @@ Default.argTypes = {
       type: 'boolean',
     },
   },
-  loaderOnly: {
+  loadingOnly: {
     control: {
       type: 'boolean',
     },

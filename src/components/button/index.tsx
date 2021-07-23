@@ -13,7 +13,7 @@ export interface QuartzButtonProps extends Omit<ButtonProps, 'css'> {
   icon?: IconDefinition;
   href?: string;
   isLoading?: boolean;
-  loaderOnly?: boolean;
+  loadingOnly?: boolean;
 }
 
 const Button: FC<QuartzButtonProps> = ({
@@ -23,7 +23,7 @@ const Button: FC<QuartzButtonProps> = ({
   href,
   disabled,
   isLoading,
-  loaderOnly,
+  loadingOnly,
   ...props
 }: QuartzButtonProps) => {
   const component = (
@@ -33,16 +33,16 @@ const Button: FC<QuartzButtonProps> = ({
       variant={intent}
       {...props}
     >
-      {icon && (!loaderOnly || !isLoading) && (
+      {icon && (!loadingOnly || !isLoading) && (
         <span>
           <FontAwesomeIcon icon={icon} size="sm" />
         </span>
       )}
-      {(!loaderOnly || !isLoading) && children}
+      {(!loadingOnly || !isLoading) && children}
       {isLoading && (
         <Spinner
           color={spinnerColor(intent)}
-          ml={loaderOnly ? '0px' : '15px'}
+          ml={loadingOnly ? '0px' : '15px'}
         />
       )}
     </RebassButton>
