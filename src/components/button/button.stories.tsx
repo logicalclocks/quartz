@@ -18,6 +18,8 @@ export const Default = Template.bind({});
 Default.args = {
   intent: 'primary',
   children: 'Button',
+  isLoading: false,
+  loaderOnly: false,
   onClick: action('onClick'),
 };
 
@@ -29,6 +31,16 @@ Default.argTypes = {
     },
   },
   disabled: {
+    control: {
+      type: 'boolean',
+    },
+  },
+  isLoading: {
+    control: {
+      type: 'boolean',
+    },
+  },
+  loaderOnly: {
     control: {
       type: 'boolean',
     },
