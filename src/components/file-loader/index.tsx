@@ -14,7 +14,8 @@ export interface QuartzFileLoaderProps extends Omit<BoxProps, 'css'> {
   isLoading: boolean;
   fileName: string;
   located: any;
-  removeHandler: () => void;
+  id: any;
+  removeHandler: (id: any) => void;
 }
 
 const FileLoader: FC<QuartzFileLoaderProps> = ({
@@ -25,33 +26,38 @@ const FileLoader: FC<QuartzFileLoaderProps> = ({
   removeHandler,
   located,
   ...props
-}: QuartzFileLoaderProps) => {
-  return (
-    <Flex {...props} sx={styles(isLoading)} key={id}>
-      {isLoading && (
-        <Box sx={{ ...spinner }}>
-          <div />
-          <div />
-          <div />
-          <div />
-        </Box>
-      )}
-      <Text sx={{ ...fileNameBox(isLoading) }}>
-        {fileName}{' '}
-        <Box
-          style={{
-            color: 'black',
-            display: 'inline',
-          }}
-        >
-          {children + ' ' + located + ' '}
-        </Box>
-      </Text>
-      <Box sx={{ ...loaderCross(isLoading) }} onClick={removeHandler}>
-        {icons.cross}
+}: QuartzFileLoaderProps) => (
+  <Flex {...props} sx={styles(isLoading)} key={id}>
+    {isLoading && (
+      <Box sx={{ ...spinner }}>
+        <div />
+        <div />
+        <div />
+        <div />
       </Box>
-    </Flex>
-  );
-};
+    )}
+    <Text sx={{ ...fileNameBox(isLoading) }}>
+      {fileName}
+{' '}
+      <Box
+        style={{
+          color: 'black',
+          display: 'inline',
+          wordBreak: 'break-all',
+        }}
+      >
+        {`${children} ${located} `}
+      </Box>
+    </Text>
+    <Box
+      sx={{ ...loaderCross(isLoading) }}
+      onClick={() => {
+        removeHandler(id);
+      }}
+    >
+      {icons.cross}
+    </Box>
+  </Flex>
+);
 
 export default FileLoader;
