@@ -116,6 +116,9 @@ import useDropdown from './utils/useDropdown';
 import useNavigation from './components/navigation/useNavigation';
 import useOnClickOutside from './utils/useClickOutside';
 
+// constants
+import dateFormat from './utils/dateFormat';
+
 library.add(fas, far);
 
 export {
@@ -217,4 +220,6 @@ export {
   SymbolMode,
   graphColors,
   theme,
+  // Constants
+  dateFormat,
 };
