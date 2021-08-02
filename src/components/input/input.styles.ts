@@ -4,7 +4,7 @@ import { Intents } from '../intents';
 const getIntentColor = (intent: Intents) => ({ inputIntents }: ITheme) =>
   inputIntents[intent] ?? 'transparent';
 
-const getStyles = (intent: Intents, isTextArea: boolean) => ({
+const getStyles = (intent: Intents, isTextArea: boolean, isCode: boolean) => ({
   width: '100%',
 
   borderWidth: '1px',
@@ -13,8 +13,9 @@ const getStyles = (intent: Intents, isTextArea: boolean) => ({
 
   outline: 'none',
 
-  px: '9px',
+  px: isCode ? '20px' : '8px',
   pt: isTextArea ? '4px' : undefined,
+  py: isCode ? '8px' : undefined,
 
   transition: 'all 0.25s ease',
 
