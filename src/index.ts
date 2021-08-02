@@ -27,6 +27,7 @@ import MenuButton from './components/header/menu-button';
 import Input from './components/input';
 import BlurInput from './components/table/editable/blur-input';
 import InputInfo from './components/input-info';
+import CodeInput from './components/code-input';
 import Label from './components/label';
 import List from './components/list/container';
 import ListItem from './components/list/item';
@@ -139,6 +140,7 @@ export {
   Input,
   BlurInput,
   InputInfo,
+  CodeInput,
   Label,
   Logo,
   List,
