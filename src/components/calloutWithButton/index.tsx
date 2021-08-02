@@ -10,6 +10,7 @@ export interface ICalloutWithButtonProps
   content: string;
   type: CalloutTypes;
   onClick: React.MouseEventHandler<HTMLButtonElement>;
+  disabledButton?: boolean;
 }
 
 const CalloutWithButton: FC<ICalloutWithButtonProps> = ({
@@ -17,6 +18,7 @@ const CalloutWithButton: FC<ICalloutWithButtonProps> = ({
   content,
   onClick,
   type,
+  disabledButton,
   ...props
 }: ICalloutWithButtonProps) => {
   // @ts-ignore
@@ -40,7 +42,12 @@ const CalloutWithButton: FC<ICalloutWithButtonProps> = ({
       content={content}
       cta={
         // eslint-disable-next-line react/jsx-wrap-multilines
-        <Button sx={buttonSx} variant="secondary" onClick={onClick}>
+        <Button
+          sx={buttonSx}
+          variant="secondary"
+          onClick={onClick}
+          disabled={disabledButton}
+        >
           {buttonContent}
         </Button>
       }
