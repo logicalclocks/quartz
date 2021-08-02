@@ -80,7 +80,6 @@ const Input: FC<InputProps> = forwardRef(
         <Box
           sx={{
             position: 'relative',
-            display: 'flex'
           }}
         >
           <Box
