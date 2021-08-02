@@ -26,7 +26,7 @@ export interface InputProps extends Omit<RebassInputProps, 'css'> {
   width?: string | number;
   labelProps?: Omit<LabelProps, 'action' | 'text' | 'children'>;
   labelAction?: React.ReactNode;
-  type?: 'text' | 'number' | 'textarea' | 'password' | 'code';
+  type?: 'text' | 'number' | 'textarea' | 'password';
   rows?: number;
   optional?: boolean;
   tooltipInfo?: string;
@@ -56,7 +56,6 @@ const Input: FC<InputProps> = forwardRef(
     ref,
   ) => {
     const isTextArea = type === 'textarea';
-    const isCode = type === 'code';
 
     const actions = (labelAction || tooltipInfo || optional) && (
       <Flex>
@@ -86,7 +85,7 @@ const Input: FC<InputProps> = forwardRef(
         >
           <Box
             ref={ref}
-            as={(isTextArea || isCode)? 'textarea' : 'input'}
+            as={isTextArea ? 'textarea' : 'input'}
             type={type}
             tx="inputs"
             rows={rows}
@@ -96,24 +95,11 @@ const Input: FC<InputProps> = forwardRef(
             pl={icon && '34px'}
             pr={iconPaddingRight}
             // @ts-ignore
-            sx={getStyles(intent, isTextArea, isCode)}
+            sx={getStyles(intent, isTextArea)}
             variant={readOnly ? 'disabled' : variant}
             placeholder={placeholder}
             {...props}
           />{' '}
-          <Box sx={{
-            width: '30px',
-            minWidth: '30px',
-            background: 'black',
-            color: 'white',
-            display: isCode ? 'block' : 'none',
-            padding: '8px',
-            lineHeight: '20px'
-          }}>1<br/>
-            2<br/>
-            3<br/>
-            4
-          </Box>
           {icon && <FontAwesomeIcon icon={icon} />}
           {rightIcon && rightIcon}
         </Box>

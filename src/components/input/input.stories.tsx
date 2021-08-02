@@ -90,7 +90,7 @@ const argTypes = {
   type: {
     control: {
       type: 'select',
-      options: ['textarea', 'text', 'number', 'code'],
+      options: ['textarea', 'text', 'number'],
     },
     type: {
       required: false,
