@@ -1,6 +1,5 @@
 import { Box, Flex } from 'rebass';
 import React, { FC, forwardRef } from 'react';
-import { InputProps as RebassInputProps } from 'rebass__forms';
 import {UnControlled} from 'react-codemirror2'
 import getStyles from './index.styles';
 
@@ -17,9 +16,9 @@ import Label, { LabelProps } from '../label';
 import { Labeling, Tooltip } from '../../index';
 import icons from '../../sources/icons';
 
-export interface InputProps extends Omit<RebassInputProps, 'css'> {
+export interface InputProps {
   label?: string;
-  placeholder?: string;
+  value?: string;
   // Use javascript for displaying JSON
   mode: 'javascript' | 'yaml'
   width?: string | number;
@@ -28,13 +27,14 @@ export interface InputProps extends Omit<RebassInputProps, 'css'> {
   optional?: boolean;
   tooltipInfo?: string;
   labelProps?: Omit<LabelProps, 'action' | 'text' | 'children'>;
+  onChange: (value: string) => void;
 }
 
 const CodeInput: FC<InputProps> = forwardRef(
   (
     {
       label = '',
-      placeholder,
+      value,
       mode,
       width = '300px',
       height = '600px',
@@ -42,7 +42,7 @@ const CodeInput: FC<InputProps> = forwardRef(
       optional,
       tooltipInfo,
       labelProps,
-      ...props
+      onChange,
     }: InputProps
   ) => {
 
@@ -68,11 +68,14 @@ const CodeInput: FC<InputProps> = forwardRef(
       <Box width={width} height={height} sx={getStyles()}>
         <Label action={actions} text={label} width={width} height={height} {...labelProps}>
           <UnControlled
-            value='const a = 10;'
+            value={value}
             options={{
-                mode: {name: "javascript", json: true},
+                mode: {name: mode, json: true},
                 theme: 'yeti',
                 lineNumbers: true
+            }}
+            onChange={(editor, data, value) => {
+              onChange(value);
             }}
           />
         </Label>

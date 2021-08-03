@@ -3,10 +3,7 @@ import { action } from '@storybook/addon-actions';
 import { Meta, Story } from '@storybook/react/types-6-0';
 import React from 'react';
 
-import Input, { InputProps } from '.';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Box } from 'rebass';
-import { Labeling } from '../../index';
+import { InputProps } from '.';
 import CodeInput from '.';
 
 
@@ -97,7 +94,8 @@ Default.argTypes = argTypes;
 
 Default.args = {
   label: 'Label',
-  placeholder: 'Placeholder',
+  mode: 'javascript',
+  value: 'const a = 100;',
   onChange: action('Input change'),
 };
 
