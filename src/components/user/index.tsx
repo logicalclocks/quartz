@@ -23,7 +23,6 @@ const User: FC<UserProps> = ({
   ${firstName ? firstName.charAt(0).toLocaleUpperCase() : ''}
   ${lastName ? lastName.charAt(0).toLocaleUpperCase() : ''}
   `;
-
   const hue = Math.round(((capitalisedName.charCodeAt(0) - 64) * 360) / 26);
   const color = (lightness: number) => `hsl(${hue}, 75%, ${lightness}%)`;
 
