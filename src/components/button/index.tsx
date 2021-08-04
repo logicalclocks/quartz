@@ -4,13 +4,16 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { IconDefinition } from '@fortawesome/fontawesome-common-types';
 
 // Styles
-import styles from './button.styles';
+import styles, { spinnerColor } from './button.styles';
+import Spinner from '../spinner';
 
 export interface QuartzButtonProps extends Omit<ButtonProps, 'css'> {
   children: React.ReactNode;
   intent?: 'primary' | 'secondary' | 'ghost' | 'inline' | 'alert';
   icon?: IconDefinition;
   href?: string;
+  isLoading?: boolean;
+  loadingOnly?: boolean;
 }
 
 const Button: FC<QuartzButtonProps> = ({
@@ -18,19 +21,33 @@ const Button: FC<QuartzButtonProps> = ({
   icon,
   children,
   href,
+  disabled,
+  isLoading,
+  loadingOnly,
   ...props
 }: QuartzButtonProps) => {
   const test = { ...props };
   test.sx = { ...test.sx, ...styles };
 
   const component = (
-    <RebassButton variant={intent} {...test}>
-      {icon && (
+    <RebassButton
+      sx={styles}
+      disabled={disabled || isLoading}
+      variant={intent}
+      {...props}
+    >
+      {icon && (!loadingOnly || !isLoading) && (
         <span>
           <FontAwesomeIcon icon={icon} size="sm" />
         </span>
       )}
-      {children}
+      {(!loadingOnly || !isLoading) && children}
+      {isLoading && (
+        <Spinner
+          color={spinnerColor(intent)}
+          ml={loadingOnly ? '0px' : '15px'}
+        />
+      )}
     </RebassButton>
   );
 
