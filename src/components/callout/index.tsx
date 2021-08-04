@@ -1,6 +1,5 @@
 import React, { FC } from 'react';
-import { Box, Flex, FlexProps } from 'rebass';
-import Labeling from '../typography/labeling';
+import { Box, Flex, FlexProps, Text } from 'rebass';
 import styles from './callout.styles';
 import icons from '../../sources/icons';
 
@@ -29,17 +28,30 @@ const Callout: FC<ICalloutProps> = ({
     sx={{ borderLeftWidth: cta ? '2px' : 0, ...styles }}
     {...props}
   >
-    <Flex justifyContent="space-between" alignItems="center" maxWidth="80%">
+    <Flex
+      justifyContent="space-between"
+      alignItems="center"
+      maxWidth={cta ? '80%' : '100%'}
+    >
       <Box mt="-2px" mb="-3px" mr="8px">
         {icons.info_block}
       </Box>
-      <Box as="pre" mr="8px">
-        <Labeling bold>{content}</Labeling>
+      <Box as="pre">
+        <Text
+          width="100%"
+          variant="labeling"
+          fontWeight="label"
+          sx={{ wordBreak: 'break-word' }}
+        >
+          {content}
+        </Text>
       </Box>
     </Flex>
-    <Flex maxWidth="20%" justifyContent="right">
-      {cta && <Box>{cta}</Box>}
-    </Flex>
+    {cta && (
+      <Flex ml="8px" maxWidth="20%" justifyContent="right">
+        <Box>{cta}</Box>
+      </Flex>
+    )}
   </Flex>
 );
 
