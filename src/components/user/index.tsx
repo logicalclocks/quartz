@@ -19,11 +19,12 @@ const User: FC<UserProps> = ({
   secondaryText,
   isTooltipActive = true,
 }: UserProps) => {
-  const capitalisedName = `
-  ${firstName ? firstName.charAt(0).toLocaleUpperCase() : ''}
-  ${lastName ? lastName.charAt(0).toLocaleUpperCase() : ''}
-  `;
+  // eslint-disable-next-line arrow-body-style
+  const getInitial = (word?: string) => {
+    return word ? word.charAt(0).toLocaleUpperCase() : '';
+  };
 
+  const capitalisedName = getInitial(firstName) + getInitial(lastName);
   const hue = Math.round(((capitalisedName.charCodeAt(0) - 64) * 360) / 26);
   const color = (lightness: number) => `hsl(${hue}, 75%, ${lightness}%)`;
 
