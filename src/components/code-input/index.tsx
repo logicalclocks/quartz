@@ -74,9 +74,8 @@ const CodeInput: FC<InputProps> = forwardRef(
                 theme: 'yeti',
                 lineNumbers: true
             }}
-            onChange={(editor, data, value) => {
-              onChange(value);
-            }}
+            onChange={() => {}}
+            onBeforeChange={(editor, data, value) => onChange(value)}
           />
         </Label>
       </Box>
