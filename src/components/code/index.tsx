@@ -1,5 +1,6 @@
 import React, { FC, useState } from 'react';
 import { Box, FlexProps, Flex } from 'rebass';
+import SyntaxHighlighter from 'react-syntax-highlighter';
 import Button from '../button';
 
 import styles, {
@@ -7,7 +8,6 @@ import styles, {
   buttonsStyles,
   codeHeaderStyles,
 } from './code.styles';
-import SyntaxHighlighter from 'react-syntax-highlighter';
 import icons from '../../sources/icons';
 import Value from '../typography/value';
 import { copyToClipboard, saveToFile } from '../../utils';
@@ -54,7 +54,7 @@ const Code: FC<CodeProps> = ({
   };
 
   return (
-    <Flex width="100%" sx={{ ...styles }}>
+    <Flex width="100%" sx={{ ...styles }} height="100%">
       <Flex width="100%" sx={{ ...codeHeaderStyles }}>
         {title ? (
           <Flex alignItems="center" ml="8px">
@@ -95,14 +95,12 @@ const Code: FC<CodeProps> = ({
           )}
         </Flex>
       </Flex>
-      <Flex width="100%" variant="code" {...props}>
-        {!!element ? (
-          element
-        ) : (
+      <Flex width="100%" variant="code" height="100%" {...props}>
+        {element || (
           <SyntaxHighlighter
             wrapLongLines={wrapLongLines}
             language={isColorSyntax ? language : 'text'}
-            customStyle={{ ...boxStyles }}
+            customStyle={{ ...boxStyles, height: '100%' }}
           >
             {content}
           </SyntaxHighlighter>
