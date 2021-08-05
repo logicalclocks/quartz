@@ -1,14 +1,13 @@
 import { SxStyleProp } from 'rebass';
 
 export const containerStyles = {
-  overflow: 'auto',
+  overflowX: 'scroll',
   maxHeight: '100%',
   borderWidth: '1px',
   borderColor: 'grayShade3',
   borderTopColor: 'grey',
   borderStyle: 'solid',
   '-moz-padding-end': '8px',
-  marginRight: '20px',
 };
 
 export const tableStyles = {

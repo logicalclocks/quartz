@@ -72,7 +72,7 @@ const EditableTable: FC<EditableTableProps> = ({
   }, [values.length]);
 
   return (
-    <Box {...props} sx={{ ...containerStyles, overflow: 'visible' }}>
+    <Box {...props} sx={{ ...containerStyles }}>
       <Box {...props} as="table" sx={tableStyles}>
         <Box as="thead" sx={theadStyles}>
           <Box as="tr">
