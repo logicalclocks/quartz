@@ -100,7 +100,7 @@ const Code: FC<CodeProps> = ({
           <SyntaxHighlighter
             wrapLongLines={wrapLongLines}
             language={isColorSyntax ? language : 'text'}
-            customStyle={{ ...boxStyles, height: '100%' }}
+            customStyle={{ ...boxStyles, height: 'calc(100% - 40px)' }}
           >
             {content}
           </SyntaxHighlighter>
