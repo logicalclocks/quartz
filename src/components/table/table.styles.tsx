@@ -30,7 +30,6 @@ export const theadStyles = {
   fontFamily: 'label',
   fontWeight: 'label',
   fontSize: 'label',
-  position: 'sticky',
   top: '0',
 
   'th:first-of-typed': {
