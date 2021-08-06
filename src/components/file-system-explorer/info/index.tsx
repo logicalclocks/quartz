@@ -10,10 +10,10 @@ import {
 } from './file-explorer-info.styles';
 import Labeling from '../../typography/labeling';
 import { ActiveFile } from '../index';
-import { formatSizeUnits } from '../../../utils/getFormatSizeUnit';
 import { format } from 'date-fns';
 import Button from '../../button';
 import icons from '../../../sources/icons';
+import formatSizeUnits from '../../../utils/getFormatSizeUnit';
 
 export interface FileExplorerInfoProps extends Omit<BoxProps, 'css'> {
   children?: string[];

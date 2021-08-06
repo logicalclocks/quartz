@@ -16,6 +16,12 @@ The DS is first experimented on Figma before being implemented:
 [https://www.figma.com/file/mvY1f3xMXUEd6szvT82FxB/Feature-Store?node-id=327%3A0](https://www.figma.com/file/mvY1f3xMXUEd6szvT82FxB/Feature-Store?node-id=327%3A0)
 
 
+## Github Pages
+
+An online version of the Storybook can be found here: [Quartz Storybook](https://logicalclocks.github.io/quartz).
+
+The version deployed corresponds to the `dev` branch and is updated on every new commit. 
+
 ## How to use the package?
 
 ### Installation
