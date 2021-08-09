@@ -134,9 +134,10 @@ export const trowStyles = {
     position: 'sticky',
     backgroundColor: 'white',
     display: 'block',
-    ':first-of-typed': {
+    '&:first-of-type': {
       maxWidth: '31px',
       minWidth: '31px',
+      zIndex: 1,
     },
   },
   td: {
