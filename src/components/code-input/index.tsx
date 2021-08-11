@@ -1,15 +1,13 @@
 import { Box, Flex } from 'rebass';
 import React, { FC, forwardRef } from 'react';
-import {UnControlled} from 'react-codemirror2'
+import { Controlled } from 'react-codemirror2';
 import getStyles from './index.styles';
-
 
 import 'codemirror/lib/codemirror.css';
 import 'codemirror/mode/javascript/javascript.js';
 import 'codemirror/mode/yaml/yaml.js';
 // Note for dark-mode, good theme candidates: shadowbox, tomorrow-night-bright, dracula
 import 'codemirror/theme/yeti.css';
-
 
 // Components
 import Label, { LabelProps } from '../label';
@@ -18,9 +16,9 @@ import icons from '../../sources/icons';
 
 export interface InputProps {
   label?: string;
-  value?: string;
+  value: string;
   // Use javascript for displaying JSON
-  mode: 'javascript' | 'yaml'
+  mode: 'javascript' | 'yaml';
   width?: string | number;
   height?: string | number;
   labelAction?: React.ReactNode;
@@ -31,21 +29,18 @@ export interface InputProps {
 }
 
 const CodeInput: FC<InputProps> = forwardRef(
-  (
-    {
-      label = '',
-      value,
-      mode,
-      width = '300px',
-      height = '600px',
-      labelAction,
-      optional,
-      tooltipInfo,
-      labelProps,
-      onChange,
-    }: InputProps
-  ) => {
-
+  ({
+    label = '',
+    value,
+    mode,
+    width = '300px',
+    height = '600px',
+    labelAction,
+    optional,
+    tooltipInfo,
+    labelProps,
+    onChange,
+  }: InputProps) => {
     const actions = (labelAction || tooltipInfo || optional) && (
       <Flex>
         {labelAction}
@@ -66,16 +61,24 @@ const CodeInput: FC<InputProps> = forwardRef(
 
     return (
       <Box width={width} height={height} sx={getStyles()}>
-        <Label action={actions} text={label} width={width} height={height} {...labelProps}>
-          <UnControlled
+        <Label
+          action={actions}
+          text={label}
+          width={width}
+          height={height}
+          {...labelProps}
+        >
+          <Controlled
             value={value}
             options={{
-                mode: {name: mode, json: true},
-                theme: 'yeti',
-                lineNumbers: true
+              mode: { name: mode, json: true },
+              theme: 'yeti',
+              lineNumbers: true,
             }}
             onChange={() => {}}
-            onBeforeChange={(editor, data, value) => onChange(value)}
+            onBeforeChange={(_editor, _data, val: string) => {
+              onChange(val);
+            }}
           />
         </Label>
       </Box>
