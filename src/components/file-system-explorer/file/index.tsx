@@ -3,7 +3,7 @@ import { Box } from 'rebass';
 
 // Styles
 import { fileExplorerStyle } from './file-explorer.styles';
-import { Checkbox } from '../../../index';
+import Checkbox from '../../checkbox';
 import Tooltip from '../../tooltip';
 
 export interface QuartzFileExplorerProps {

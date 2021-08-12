@@ -1,6 +1,6 @@
 import React, { FC, memo, useCallback } from 'react';
 import { Box } from 'rebass';
-import { IconButton } from '../../../index';
+import IconButton from '../../icon-button';
 import TooltipPositions from '../../tooltip/positions';
 
 export interface RowLeftContentProps {

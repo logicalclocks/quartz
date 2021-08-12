@@ -1,5 +1,6 @@
 import React, { FC, useEffect, useMemo, useRef, useState } from 'react';
-import { useDropdown, useOnClickOutside } from '../..';
+import useDropdown from '../../utils/useDropdown';
+import useOnClickOutside from '../../utils/useClickOutside';
 import { Intents } from '../intents';
 import Label, { LabelProps } from '../label';
 import EditableSelectContainer from './EditableSelectContainer';

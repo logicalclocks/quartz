@@ -1,11 +1,11 @@
 import React, { FC, useCallback } from 'react';
 
 // Components
+import { Box } from 'rebass';
 import ListItem from '../../list/item';
 // Types
 import { SelectListProps } from './list.types';
-import { Labeling } from '../../../index';
-import { Box } from 'rebass';
+import Labeling from '../../typography/labeling';
 import useArrowsSelect from '../useArrowsSelect';
 
 const SelectList: FC<SelectListProps> = ({
