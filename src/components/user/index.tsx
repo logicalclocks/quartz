@@ -52,7 +52,7 @@ const User: FC<UserProps> = ({
   return (
     <Tooltip
       disabled={!isTooltipActive}
-      mainText={lastName ? `${firstName} ${lastName}` : firstName}
+      mainText={firstName && lastName ? `${firstName} ${lastName}` : firstName}
       secondaryText={title}
     >
       {secondaryText ? (
