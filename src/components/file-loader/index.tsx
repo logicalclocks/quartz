@@ -2,12 +2,9 @@ import React, { FC } from 'react';
 import { Box, BoxProps, Flex, Text } from 'rebass';
 
 // Styles
-import styles, {
-  fileNameBox,
-  loaderCross,
-  spinner,
-} from './file-loader.styles';
+import styles, { fileNameBox, loaderCross } from './file-loader.styles';
 import icons from '../../sources/icons';
+import Spinner from '../spinner';
 
 export interface QuartzFileLoaderProps extends Omit<BoxProps, 'css'> {
   children: React.ReactNode | string;
@@ -28,14 +25,7 @@ const FileLoader: FC<QuartzFileLoaderProps> = ({
   ...props
 }: QuartzFileLoaderProps) => (
   <Flex {...props} sx={styles(isLoading)} key={id}>
-    {isLoading && (
-      <Box sx={{ ...spinner }}>
-        <div />
-        <div />
-        <div />
-        <div />
-      </Box>
-    )}
+    {isLoading && <Spinner marginRight="10px" />}
     <Text sx={{ ...fileNameBox(isLoading) }}>
       {fileName}
 {' '}
