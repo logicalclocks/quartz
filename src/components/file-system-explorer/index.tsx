@@ -14,7 +14,7 @@ import Info from './info';
 // Styles
 import styles from './file-system-explorer.styles';
 
-//Data
+// Data
 import { testData } from './data';
 
 export interface FileSystemExplorerProps

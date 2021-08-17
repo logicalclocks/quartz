@@ -6,8 +6,7 @@ import { Box, Flex } from 'rebass';
 import Labeling from '../typography/labeling';
 // Styles
 import styles from './checkbox-styles';
-import { Tooltip } from '../../index';
-import { TooltipProps } from '../tooltip';
+import Tooltip, { TooltipProps } from '../tooltip';
 
 export interface CheckboxProps extends Omit<RebassCheckboxProps, 'css'> {
   label?: string;

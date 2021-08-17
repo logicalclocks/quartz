@@ -5,7 +5,7 @@ import NotificationManager, {
 } from './notifications-manager';
 import styles from './notifications-styles';
 import icons from '../../sources/icons';
-import { Tooltip } from '../../index';
+import Tooltip from '../tooltip';
 
 const Notification: FC<SystemNotification> = ({
   id,

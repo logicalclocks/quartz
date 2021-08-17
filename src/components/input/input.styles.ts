@@ -13,7 +13,7 @@ const getStyles = (intent: Intents, isTextArea: boolean) => ({
 
   outline: 'none',
 
-  px: '9px',
+  px: '8px',
   pt: isTextArea ? '4px' : undefined,
 
   transition: 'all 0.25s ease',
