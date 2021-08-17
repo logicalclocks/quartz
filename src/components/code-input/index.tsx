@@ -18,7 +18,7 @@ export interface InputProps {
   label?: string;
   value: string;
   // Use javascript for displaying JSON
-  mode: 'javascript' | 'yaml';
+  mode: 'javascript' | 'yaml' | 'python';
   width?: string | number;
   height?: string | number;
   labelAction?: React.ReactNode;
@@ -71,7 +71,7 @@ const CodeInput: FC<InputProps> = forwardRef(
           <Controlled
             value={value}
             options={{
-              mode: { name: mode, json: true },
+              mode: mode === 'javascript' ? {name: mode, json: true} : {name: mode},
               theme: 'yeti',
               lineNumbers: true,
             }}
