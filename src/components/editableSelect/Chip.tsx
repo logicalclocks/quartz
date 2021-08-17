@@ -2,7 +2,7 @@ import React, { FC, useCallback, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Box, Flex, FlexProps } from 'rebass';
 
-import { Labeling } from '../..';
+import Labeling from '../typography/labeling';
 import { chipIconStyles, chipStyles } from './editableSelect.styles';
 import { ChipsVariants } from './types';
 

@@ -1,6 +1,7 @@
 import React, { FC, useCallback, useContext, useMemo } from 'react';
 import { Box } from 'rebass';
 import Slider from 'rc-slider';
+// @ts-ignore
 import { useTheme } from 'emotion-theming';
 import PickerHandler from '../handler';
 import PickerProvider from '../picker.provider';

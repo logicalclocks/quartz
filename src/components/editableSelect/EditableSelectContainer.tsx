@@ -13,7 +13,7 @@ import { Input } from '@rebass/forms';
 import { getContainerStyles, inputStyles } from './editableSelect.styles';
 import Chip from './Chip';
 import { Intents } from '../intents';
-import { Labeling } from '../..';
+import Labeling from '../typography/labeling';
 import { EditableSelectTypes, ChipsVariants } from './types';
 
 export interface EditableSelectContainerProps

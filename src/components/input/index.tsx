@@ -11,7 +11,8 @@ import InputInfo from '../input-info';
 import { Intents } from '../intents';
 // Styles
 import getStyles from './input.styles';
-import { Labeling, Tooltip } from '../../index';
+import Labeling from '../typography/labeling';
+import Tooltip from '../tooltip';
 import icons from '../../sources/icons';
 
 export interface InputProps extends Omit<RebassInputProps, 'css'> {

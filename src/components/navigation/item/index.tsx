@@ -9,15 +9,16 @@ import React, {
   useMemo,
 } from 'react';
 
+// @ts-ignore
+import { useTheme } from 'emotion-theming';
 // Context
 import NavigationContext from '../context/navigation.context';
 import { NavigationItemProps } from '../types';
 // Styles
 import styles from './navigation-item.styles';
-import { Tooltip } from '../../../index';
+import Tooltip from '../../tooltip';
 import TooltipPositions from '../../tooltip/positions';
-//@ts-ignore
-import { useTheme } from 'emotion-theming';
+
 import { ITheme } from '../../../theme/types';
 
 const getVariant = (isDisabled = false, isActive = false): string => {

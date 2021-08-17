@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
 import { Global, css } from '@emotion/core';
+// @ts-ignore
 import { ThemeProvider as EmotionThemeProvider } from 'emotion-theming';
 
 // Theme

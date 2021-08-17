@@ -7,7 +7,7 @@ import FooterButton from '../../footer-button';
 import DrawerSection, { DrawerSectionProps } from './drawer-section';
 // Types
 import Action from '../../action.type';
-import { Tooltip } from '../../../index';
+import Tooltip from '../../tooltip';
 import icons from '../../../sources/icons';
 
 type IDrawer<P> = FC<P> & {
