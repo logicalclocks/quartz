@@ -19,6 +19,7 @@ export interface PopupProps extends Omit<BoxProps, 'css'> {
   onBackdropClick?: (event: React.SyntheticEvent<HTMLDivElement>) => void;
   onClose?: () => void;
   disabledMainButton?: boolean;
+  footer?: React.ReactNode;
   disabledSecondaryButton?: boolean;
 }
 
@@ -33,6 +34,7 @@ const Popup: FC<PopupProps> = ({
   isOpen = false,
   onBackdropClick,
   closeOnBackdropClick = true,
+  footer,
   onClose = () => {},
   ...props
 }: PopupProps) => {
@@ -80,10 +82,15 @@ const Popup: FC<PopupProps> = ({
         variant={variant}
         {...props}
         sx={sx}
+        overflowX="visible"
       >
         {children}
+        {footer && (
+          <Box width="100%" backgroundColor="#F5F5F5">
+            {footer}
+          </Box>
+        )}
       </Box>
-
       {/* Backdrop */}
       {hasBackdrop && <Box sx={backdropStyles} onClick={handleBackdropClick} />}
     </React.Fragment>

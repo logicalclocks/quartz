@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 // Components
 import { Button } from 'rebass';
 // eslint-disable-next-line import/no-cycle
-import { Tooltip } from '../../../index';
+import Tooltip from '../../tooltip';
 import rowButtonStyles from './row-button.styles';
 
 export interface RowButtonProps {

@@ -11,7 +11,8 @@ import 'codemirror/theme/yeti.css';
 
 // Components
 import Label, { LabelProps } from '../label';
-import { Labeling, Tooltip } from '../../index';
+import Labeling from '../typography/labeling';
+import Tooltip from '../tooltip';
 import icons from '../../sources/icons';
 
 export interface InputProps {
@@ -71,7 +72,10 @@ const CodeInput: FC<InputProps> = forwardRef(
           <Controlled
             value={value}
             options={{
-              mode: mode === 'javascript' ? {name: mode, json: true} : {name: mode},
+              mode:
+                mode === 'javascript'
+                  ? { name: mode, json: true }
+                  : { name: mode },
               theme: 'yeti',
               lineNumbers: true,
             }}
