@@ -1,7 +1,8 @@
 import React, { FC } from 'react';
 import { Box, BoxProps, Flex } from 'rebass';
 
-import { Value } from '../../../index';
+import { format } from 'date-fns';
+import Value from '../../typography/value';
 
 import {
   FileExplorerInfoStyle,
@@ -10,7 +11,6 @@ import {
 } from './file-explorer-info.styles';
 import Labeling from '../../typography/labeling';
 import { ActiveFile } from '../index';
-import { format } from 'date-fns';
 import Button from '../../button';
 import icons from '../../../sources/icons';
 import formatSizeUnits from '../../../utils/getFormatSizeUnit';

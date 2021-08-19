@@ -3,7 +3,7 @@ import { Box } from 'rebass';
 import TableRow from '../group';
 import { Mode } from './types';
 import styles from './container.styles';
-import { Labeling } from '../../../index';
+import Labeling from '../../typography/labeling';
 import rowStyles from '../item/row-item.styles';
 import { TableItemPosition } from '../item/types';
 

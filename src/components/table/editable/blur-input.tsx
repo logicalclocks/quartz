@@ -6,11 +6,7 @@ interface TInputProps extends Omit<InputProps, 'onChange'> {
   defaultValue: string;
 }
 
-export const BlurInput: FC<TInputProps> = ({
-  defaultValue,
-  onChange,
-  ...props
-}) => {
+const BlurInput: FC<TInputProps> = ({ defaultValue, onChange, ...props }) => {
   const [value, setValue] = useState(defaultValue);
 
   const handleChange = useCallback(

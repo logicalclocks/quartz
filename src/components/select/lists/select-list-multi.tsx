@@ -1,13 +1,13 @@
 import React, { FC, useCallback } from 'react';
 
 // Components
+import { Box } from 'rebass';
 import Checkbox from '../../checkbox';
 import ListItem from '../../list/item';
 // Types
 import { SelectListProps } from './list.types';
-import { Labeling } from '../../../index';
+import Labeling from '../../typography/labeling';
 import useArrowsSelect from '../useArrowsSelect';
-import { Box } from 'rebass';
 
 const toggleValue = (value: string[], option: string) =>
   value.includes(option)

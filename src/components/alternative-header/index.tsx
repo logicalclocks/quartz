@@ -10,7 +10,7 @@ import styles, {
 // Utils
 import { getUnderlineLeftPosition, getUnderlineWidth } from './utils';
 // Components
-import { Value } from '../../index';
+import Value from '../typography/value';
 
 export interface Tab {
   title: string;
