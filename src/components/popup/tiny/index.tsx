@@ -24,6 +24,7 @@ const TinyPopup: FC<TinyPopupProps> = ({
   secondaryButton,
   onClose = () => {},
   disabledMainButton = false,
+  disabledSecondaryButton = false,
   children,
   ...props
 }: TinyPopupProps) => {
@@ -58,6 +59,7 @@ const TinyPopup: FC<TinyPopupProps> = ({
         <Box display="flex" ml="auto">
           {secondaryButton && (
             <Button
+              disabled={disabledSecondaryButton}
               intent="secondary"
               onClick={secondaryActionCallback}
               mr="11px"

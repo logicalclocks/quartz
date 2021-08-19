@@ -19,6 +19,7 @@ export interface PopupProps extends Omit<BoxProps, 'css'> {
   onBackdropClick?: (event: React.SyntheticEvent<HTMLDivElement>) => void;
   onClose?: () => void;
   disabledMainButton?: boolean;
+  disabledSecondaryButton?: boolean;
 }
 
 const Popup: FC<PopupProps> = ({

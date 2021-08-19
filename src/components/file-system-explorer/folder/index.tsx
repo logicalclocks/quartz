@@ -1,6 +1,7 @@
 import React, { FC, useState } from 'react';
 import { Box, Flex } from 'rebass';
 import icons from '../../../sources/icons';
+import Tooltip from '../../tooltip';
 
 // Styles
 import { folderExplorerStyle } from './folder-explorer.styles';
@@ -76,7 +77,9 @@ const FolderExplorer: FC<QuartzFileExplorerFolderProps> = ({
       >
         {icons.folder}
       </Box>
-      <Box>{name}</Box>
+      <Tooltip mainText={name}>
+        <Box>{name}</Box>
+      </Tooltip>
     </Flex>
   );
 };

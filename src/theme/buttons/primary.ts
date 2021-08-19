@@ -24,6 +24,7 @@ export default {
 
   ':disabled': {
     bg: 'gray',
+    color: 'white',
     borderWidth: '1px ',
     borderStyle: 'solid ',
     borderColor: 'gray',

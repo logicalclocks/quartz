@@ -3,7 +3,8 @@ import React, { FC, useCallback, useMemo } from 'react';
 import { Box } from 'rebass';
 import ListItem from '../list/item';
 
-import { Labeling, List } from '../../index';
+import Labeling from '../typography/labeling';
+import List from '../list/container';
 import useArrowsSelect from '../select/useArrowsSelect';
 import { listStyles, messageStyles } from './editableSelect.styles';
 import { EditableSelectTypes } from './types';

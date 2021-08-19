@@ -94,7 +94,7 @@ export const Default = Template.bind({});
 Default.args = {
   user: (
     <>
-      <User photo="" name="" />
+      <User firstName="" />
       <Label>Anna Lundström</Label>
     </>
   ),

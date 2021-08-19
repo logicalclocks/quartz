@@ -9,15 +9,16 @@ import React, {
   useMemo,
 } from 'react';
 
+// @ts-ignore
+import { useTheme } from 'emotion-theming';
 // Context
 import NavigationContext from '../context/navigation.context';
 import { NavigationItemProps } from '../types';
 // Styles
 import styles from './navigation-item.styles';
-import { Tooltip } from '../../../index';
+import Tooltip from '../../tooltip';
 import TooltipPositions from '../../tooltip/positions';
-//@ts-ignore
-import { useTheme } from 'emotion-theming';
+
 import { ITheme } from '../../../theme/types';
 
 const getVariant = (isDisabled = false, isActive = false): string => {
@@ -45,7 +46,8 @@ const NavigationItem: FC<NavigationItemProps> = (
     hasDivider,
     onClick = () => {},
     disabled,
-    tooltipText = '',
+    mainTooltipText = '',
+    secondaryTooltipText = '',
     href,
     ...restProps
   } = props;
@@ -56,7 +58,7 @@ const NavigationItem: FC<NavigationItemProps> = (
   const tx = `navigation.${isSubItem ? 'subItem' : 'item'}`;
   const display = children && isActiveItem && isOpen ? 'block' : 'none';
 
-  const disableTooltip = !tooltipText;
+  const disableTooltip = !mainTooltipText && !secondaryTooltipText;
 
   const childs = useMemo(
     () =>
@@ -94,7 +96,8 @@ const NavigationItem: FC<NavigationItemProps> = (
           <Tooltip
             disabled={disableTooltip || !isOpen}
             position={TooltipPositions.right}
-            secondaryText={tooltipText}
+            mainText={mainTooltipText}
+            secondaryText={secondaryTooltipText}
           >
             {icon}
           </Tooltip>
@@ -104,7 +107,8 @@ const NavigationItem: FC<NavigationItemProps> = (
         <Tooltip
           disabled={icon || disableTooltip}
           position={TooltipPositions.right}
-          secondaryText={tooltipText}
+          mainText={mainTooltipText}
+          secondaryText={secondaryTooltipText}
         >
           <span style={disabled ? { color: theme.colors.gray } : {}}>
             {title}

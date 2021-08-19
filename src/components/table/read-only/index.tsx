@@ -18,9 +18,12 @@ import {
 } from '../table.styles';
 
 // Hooks
-import { ListItem, Tooltip, useDropdown, useOnClickOutside } from '../../..';
+import ListItem from '../../list/item';
+import Tooltip from '../../tooltip';
 import List from '../../list/container';
 import icons from '../../../sources/icons';
+import useDropdown from '../../../utils/useDropdown';
+import useOnClickOutside from '../../../utils/useClickOutside';
 
 export interface TheadProps {
   column: string;

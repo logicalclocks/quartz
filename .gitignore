@@ -8,6 +8,7 @@ node_modules
 build
 dist
 .rpt2_cache
+storybook-static
 
 # misc
 .DS_Store
@@ -22,3 +23,5 @@ yarn-debug.log*
 yarn-error.log*
 
 .idea
+
+package-lock.json

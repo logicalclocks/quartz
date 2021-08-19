@@ -1,7 +1,8 @@
 import React, { FC } from 'react';
 import { Box, BoxProps, Flex } from 'rebass';
 
-import { Value } from '../../../index';
+import { format } from 'date-fns';
+import Value from '../../typography/value';
 
 import {
   FileExplorerInfoStyle,
@@ -10,10 +11,9 @@ import {
 } from './file-explorer-info.styles';
 import Labeling from '../../typography/labeling';
 import { ActiveFile } from '../index';
-import { formatSizeUnits } from '../../../utils/getFormatSizeUnit';
-import { format } from 'date-fns';
 import Button from '../../button';
 import icons from '../../../sources/icons';
+import formatSizeUnits from '../../../utils/getFormatSizeUnit';
 
 export interface FileExplorerInfoProps extends Omit<BoxProps, 'css'> {
   children?: string[];
@@ -28,7 +28,7 @@ const FileExplorerInfo: FC<FileExplorerInfoProps> = ({
 }: FileExplorerInfoProps) => {
   const dateFormat = (date: string) => {
     // eslint-disable-next-line
-    return format(new Date(date), 'YYYY-MM-DD - HH:mm:ss');
+    return format(new Date(date), 'yyyy-MM-dd - HH:mm:ss');
   };
 
   return (

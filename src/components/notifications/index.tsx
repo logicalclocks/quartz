@@ -1,11 +1,11 @@
 import React, { FC, useCallback, useEffect, useState } from 'react';
 
-import NotificationManager from './notifications-manager';
-// Types
-import { SystemNotification } from './notifications-manager';
+import { FlexProps } from 'rebass';
+import NotificationManager, {
+  SystemNotification,
+} from './notifications-manager';
 // Components
 import NotificationsItemsContainer from './notifications-container';
-import { FlexProps } from 'rebass';
 
 export interface NotificationContainerProps extends Omit<FlexProps, 'css'> {}
 

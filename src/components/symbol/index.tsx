@@ -1,14 +1,9 @@
 import React, { FC, useState } from 'react';
-import { Text } from '../../index';
 import styles from './symbol.styles';
 import { getSymbolIcon } from './utils';
-import { TextProps } from '../typography/text';
+import Text, { TextProps } from '../typography/text';
 import Tooltip, { TooltipProps } from '../tooltip';
-
-export enum SymbolMode {
-  'single',
-  'bulk',
-}
+import { SymbolMode } from './types';
 
 export interface SymbolProps {
   mode?: SymbolMode;

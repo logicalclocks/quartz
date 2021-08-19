@@ -1,4 +1,5 @@
 {
+  "homepage": "http://logicalclocks.github.io/quartz",
   "name": "@logicalclocks/quartz",
   "version": "1.2.0",
   "description": "Logical Clocks Design System Library",
@@ -21,10 +22,10 @@
     "test:lint": "eslint --ext .ts,.tsx ./",
     "test:unit": "cross-env CI=1 react-scripts test --env=jsdom",
     "test:watch": "react-scripts test --env=jsdom",
-    "predeploy": "cd example && npm install && npm run build",
-    "deploy": "gh-pages -d example/build",
-    "storybook": "start-storybook -p 6006",
+    "predeploy": "npm run build-storybook",
+    "deploy": "gh-pages -d storybook-static",
     "build-storybook": "build-storybook",
+    "storybook": "start-storybook -p 6006",
     "chromatic": "npx chromatic --project-token dqq8k95raoo"
   },
   "peerDependencies": {
@@ -91,9 +92,11 @@
     "@fortawesome/react-fontawesome": "^0.1.11",
     "@rebass/forms": "^4.0.6",
     "@styled-system/css": "^5.1.5",
+    "codemirror": "^5.62.2",
     "events": "^3.2.0",
     "rc-slider": "^9.5.3",
     "rc-tooltip": "^4.2.3",
+    "react-codemirror2": "^7.2.1",
     "react-datepicker": "^3.3.0",
     "react-spring": "^8.0.27",
     "react-syntax-highlighter": "^15.4.3",

@@ -45,6 +45,7 @@ export const loaderCross = (isLoading: boolean) => ({
   cursor: 'pointer',
   mt: isLoading ? '1px' : '-1px',
   ml: '10px',
+  width: '60px',
   svg: {
     ...(isLoading
       ? {

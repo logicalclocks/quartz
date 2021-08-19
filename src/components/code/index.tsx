@@ -20,6 +20,7 @@ export interface CodeProps extends Omit<FlexProps, 'css' | 'title'> {
   isColorSyntax?: boolean;
   copyButton?: boolean;
   downloadButton?: boolean;
+  downloadCallback?: () => void;
   wrapLongLines?: boolean;
 }
 
@@ -30,6 +31,7 @@ const Code: FC<CodeProps> = ({
   isColorSyntax,
   copyButton = false,
   downloadButton = false,
+  downloadCallback = undefined,
   wrapLongLines,
   element,
   ...props
@@ -41,6 +43,14 @@ const Code: FC<CodeProps> = ({
     setTimeout(() => {
       setCopied(false);
     }, 800);
+  };
+
+  const download = () => {
+    if (downloadCallback) {
+      downloadCallback();
+    } else {
+      saveToFile(title || 'download', content);
+    }
   };
 
   return (
@@ -59,7 +69,7 @@ const Code: FC<CodeProps> = ({
               <Button
                 intent="ghost"
                 sx={{ ...buttonsStyles }}
-                onClick={() => saveToFile(title || 'download', content)}
+                onClick={download}
               >
                 {icons.download}
                 <Value ml="5px" mt="1px">

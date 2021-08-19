@@ -1,6 +1,7 @@
 import React, { FC, useCallback, useMemo, useRef, useState } from 'react';
 
 // Components
+import { Box, Flex } from 'rebass';
 import SelectLabel from './label';
 import List from '../list/container';
 import Label, { LabelProps } from '../label';
@@ -15,8 +16,9 @@ import { listStyles, bottomActionStyles } from './select.styles';
 // Hooks
 import useDropdown from '../../utils/useDropdown';
 import useOnClickOutside from '../../utils/useClickOutside';
-import { Box, Flex } from 'rebass';
-import { Divider, Input, Value } from '../../index';
+import Divider from '../divider';
+import Input from '../input';
+import Value from '../typography/value';
 import useKeyUp from '../../utils/useKeyUp';
 import icons from '../../sources/icons';
 
