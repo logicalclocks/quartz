@@ -41,7 +41,7 @@ const Callout: FC<ICalloutProps> = ({
           width="100%"
           variant="labeling"
           fontWeight="label"
-          sx={{ wordBreak: 'break-word' }}
+          sx={{ whiteSpace: 'break-spaces' }}
         >
           {content}
         </Text>
