@@ -20,6 +20,15 @@ Loader.args = {
 };
 
 Loader.argTypes = {
+  disabled: {
+    type: {
+      required: false,
+    },
+    control: {
+      type: 'select',
+      options: [false, true],
+    },
+  },
   onClick: {
     table: {
       type: {
