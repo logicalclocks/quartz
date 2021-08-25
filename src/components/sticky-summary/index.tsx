@@ -8,7 +8,8 @@ import FormSummaryContainer, {
   FormSummaryContainerProps,
 } from '../form-summary-container';
 
-export interface StickySummaryProps extends FormSummaryContainerProps {
+export interface StickySummaryProps
+  extends Omit<FormSummaryContainerProps, 'children'> {
   title?: string;
   firstValue?: string;
   secondValue?: string;
