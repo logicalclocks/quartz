@@ -13,26 +13,27 @@ const Template: Story<UserProps> = (props) => <User {...props} />;
 export const UserBadge = Template.bind({});
 
 UserBadge.args = {
-  name: 'Name',
+  firstName: 'FirstName',
+  lastName: 'LastName',
 };
 
 UserBadge.argTypes = {
-  photo: {
+  firstName: {
     control: {
       type: 'text',
     },
     type: {
       required: true,
-      summary: 'Link to image',
+      summary: 'First name',
     },
   },
-  name: {
+  lastName: {
     control: {
       type: 'text',
     },
     type: {
-      required: true,
-      summary: 'User name',
+      required: false,
+      summary: 'Last name',
     },
   },
   title: {

@@ -1,14 +1,13 @@
 import { SxStyleProp } from 'rebass';
 
 export const containerStyles = {
-  overflow: 'auto',
+  overflowX: 'scroll',
   maxHeight: '100%',
   borderWidth: '1px',
   borderColor: 'grayShade3',
   borderTopColor: 'grey',
   borderStyle: 'solid',
   '-moz-padding-end': '8px',
-  marginRight: '20px',
 };
 
 export const tableStyles = {
@@ -31,7 +30,6 @@ export const theadStyles = {
   fontFamily: 'label',
   fontWeight: 'label',
   fontSize: 'label',
-  position: 'sticky',
   top: '0',
 
   'th:first-of-typed': {
@@ -136,9 +134,10 @@ export const trowStyles = {
     position: 'sticky',
     backgroundColor: 'white',
     display: 'block',
-    ':first-of-typed': {
+    '&:first-of-type': {
       maxWidth: '31px',
       minWidth: '31px',
+      zIndex: 1,
     },
   },
   td: {
