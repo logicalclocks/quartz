@@ -5,6 +5,7 @@ export const mainBoxStyles = {
   justifyContent: 'space-between',
   alignItems: 'center',
   width: 1274,
+  height: '100%',
   px: '20px',
   '& div': {
     ml: '20px',
@@ -42,8 +43,7 @@ export default (hasScrollOnScreen: boolean) => {
     bg: 'white',
     justifyContent: 'center',
     alignItems: 'center',
-
-    py: '20px',
+    height: '75px',
     zIndex: 1,
     backgroundColor: 'white',
   } as SxStyleProp;

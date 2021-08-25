@@ -1,8 +1,8 @@
 import React, { FC } from 'react';
-import { Flex } from 'rebass';
+import { Flex, FlexProps } from 'rebass';
 import styles, { mainBoxStyles } from './form-summary-container.styles';
 
-export interface FormSummaryContainerProps {
+export interface FormSummaryContainerProps extends Omit<FlexProps, 'css'> {
   hasScrollOnScreen?: boolean;
   children: any;
 }
