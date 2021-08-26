@@ -234,3 +234,4 @@ export type IThemeColors = import('./theme/types').IThemeColors;
 export type FGRow = import('./components/table/type').FGRow;
 export type FGItem = import('./components/table/type').FGItem;
 export type TreeNode = import('./components/navigation/types').TreeNode;
+export type TabItem = import('./components/form-tabs/index').TabItem;
