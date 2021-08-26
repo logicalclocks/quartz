@@ -11,6 +11,7 @@ import { Button } from '../..';
 import { TabState } from './tab/TabDescription';
 
 export interface TabItem {
+  id: string;
   title: string;
   optional: boolean;
   state?: TabState;
@@ -20,12 +21,14 @@ export interface TabItem {
 export interface FormTabsProps {
   tabs: TabItem[];
   submitButton: ReactNode;
+  onTabChange: (tabId: string) => void;
   hasScrollOnScreen?: boolean;
 }
 
 const FormTabs: FC<FormTabsProps> = ({
   tabs,
   submitButton,
+  onTabChange,
   hasScrollOnScreen = true,
   ...props
 }: FormTabsProps) => {
@@ -39,6 +42,7 @@ const FormTabs: FC<FormTabsProps> = ({
     const copy = [...tabArray.map((x) => x)];
     if (isValid) {
       copy[active] = { ...copy[active], state: TabState.valid };
+      onTabChange(copy[active + 1].id);
       setActive((act) => act + 1);
     } else {
       copy[active] = { ...copy[active], state: TabState.error };
@@ -47,8 +51,17 @@ const FormTabs: FC<FormTabsProps> = ({
   }, [setActive, active, setTabArray, tabArray]);
 
   const handleGoBack = useCallback(() => {
+    onTabChange(tabArray[active - 1].id);
     setActive((act) => act - 1);
-  }, [setActive]);
+  }, [active, onTabChange, setActive]);
+
+  const handleTabClick = useCallback(
+    (idx: number) => {
+      setActive(idx);
+      onTabChange(tabArray[idx].id);
+    },
+    [setActive, onTabChange],
+  );
 
   return (
     <FormSummaryContainer
@@ -58,10 +71,10 @@ const FormTabs: FC<FormTabsProps> = ({
     >
       <Flex sx={containerStyles}>
         <Flex sx={tabsStyles}>
-          {tabArray.map(({ title, optional, state }, idx) => (
+          {tabArray.map(({ title, optional, state, id }, idx) => (
             <Tab
-              key={title}
-              onClick={() => setActive(idx)}
+              key={id}
+              onClick={() => handleTabClick(idx)}
               title={title}
               active={idx === active}
               state={state || (optional ? TabState.optional : TabState.default)}
