@@ -73,6 +73,7 @@ import NavigationCategory from './components/navigation/category';
 import NavigationProvider from './components/navigation/context/navigation.provider';
 import NavigationContext from './components/navigation/context/navigation.context';
 import Logo from './components/logo';
+import FormTabs from './components/form-tabs';
 
 // Sticky Summary
 import StickySummary from './components/sticky-summary';
@@ -183,6 +184,7 @@ export {
   NavigationCategory,
   NavigationProvider,
   NavigationContext,
+  FormTabs,
   // Notifications
   NotificationsContainer,
   NotificationsManager,

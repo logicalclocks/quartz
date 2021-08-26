@@ -4,18 +4,16 @@ import { boxStyles, boxButtonStyles } from './sticky-summary.styles';
 import Title from '../typography/title';
 import Labeling from '../typography/labeling';
 import Value from '../typography/value';
-import FormSummaryContainer, {
-  FormSummaryContainerProps,
-} from '../form-summary-container';
+import FormSummaryContainer from '../form-summary-container';
 
-export interface StickySummaryProps
-  extends Omit<FormSummaryContainerProps, 'children'> {
+export interface StickySummaryProps {
   title?: string;
   firstValue?: string;
   secondValue?: string;
   mainButton: React.ReactNode;
   secondaryButton?: React.ReactNode;
   errorsValue?: string;
+  hasScrollOnScreen?: boolean;
 }
 
 const StickySummary: FC<StickySummaryProps> = ({

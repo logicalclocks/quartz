@@ -5,9 +5,7 @@ import {
   containerStyles,
   tabsStyles,
 } from './form-tabs.styles';
-import FormSummaryContainer, {
-  FormSummaryContainerProps,
-} from '../form-summary-container';
+import FormSummaryContainer from '../form-summary-container';
 import Tab from './tab/Tab';
 import { Button } from '../..';
 import { TabState } from './tab/TabDescription';
@@ -19,9 +17,10 @@ export interface TabItem {
   validationFn: () => boolean;
 }
 
-export interface FormTabsProps extends FormSummaryContainerProps {
+export interface FormTabsProps {
   tabs: TabItem[];
   submitButton: ReactNode;
+  hasScrollOnScreen?: boolean;
 }
 
 const FormTabs: FC<FormTabsProps> = ({
