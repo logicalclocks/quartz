@@ -49,6 +49,7 @@ export interface SelectProps extends Omit<LabelProps, 'onChange' | 'children'> {
   noMathText?: string;
   needSecondaryText?: boolean;
   deletabled?: boolean;
+  needSwap?: boolean;
 }
 
 const Select: FC<SelectProps> = ({
@@ -78,6 +79,7 @@ const Select: FC<SelectProps> = ({
   noMathText = 'No result',
   needSecondaryText = true,
   deletabled,
+  needSwap = false,
   ...props
 }: SelectProps) => {
   const containerRef = useRef(null);
@@ -155,6 +157,7 @@ const Select: FC<SelectProps> = ({
         options={options}
         ref={containerRef}
         needSecondaryText={needSecondaryText}
+        needSwap={needSwap}
       >
         {isOpen && (
           <List sx={listStyles} width={listWidth} maxHeight={maxListHeight}>

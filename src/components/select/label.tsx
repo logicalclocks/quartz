@@ -22,6 +22,7 @@ export interface SelectLabelProps extends Omit<BoxProps, 'css' | 'onChange'> {
   intent: Intents;
   additionalTexts?: string[];
   needSecondaryText: boolean;
+  needSwap: boolean;
   deletabled?: boolean;
   onChange: (value: string[]) => void;
 }
@@ -72,6 +73,7 @@ const SelectLabel: FC<SelectLabelProps> = forwardRef(
       additionalTexts,
       hasPlaceholder,
       needSecondaryText,
+      needSwap = false,
       ...props
     }: SelectLabelProps,
     ref,
@@ -97,7 +99,9 @@ const SelectLabel: FC<SelectLabelProps> = forwardRef(
     }, [value, options, hasPlaceholder, placeholder, noDataMessage]);
 
     return (
-      <Box
+      <Flex
+        alignItems="center"
+        justifyContent="space-between"
         {...props}
         // @ts-ignore
         sx={getLabelStyles(intent, deletabled && value.length)}
@@ -106,40 +110,54 @@ const SelectLabel: FC<SelectLabelProps> = forwardRef(
         tabIndex={0}
         ref={ref}
       >
-        <Labeling
-          minWidth="max-content"
-          gray={!hasPlaceholder && !!options.length ? true : !!value.length}
-        >
-          {content}
-        </Labeling>
-        <Flex>
-          <Labeling px="5px" sx={valueStyles}>
-            {getLabelText(value, options, isMulti)}
-          </Labeling>
-          {!!additionalTexts?.length && !!value.length && needSecondaryText && (
-            <Labeling gray={true}>
-              {getAdditionalText(value, options, additionalTexts)}
+        {needSwap ? (
+          <Flex>
+            <Flex>
+              <Labeling px="5px" sx={valueStyles}>
+                {getLabelText(value, options, isMulti)}
+              </Labeling>
+            </Flex>
+            <Labeling minWidth="max-content" gray>
+              {content}
             </Labeling>
-          )}
-        </Flex>
-        {deletabled && !!value.length && (
-          <Box
-            width="18px"
-            height="18px"
-            onClick={(e) => {
-              e.stopPropagation();
-
-              onChange([]);
-            }}
-            sx={deletabledStyles}
-            ml="auto"
-          >
-            {icons.cross}
-          </Box>
+          </Flex>
+        ) : (
+          <Flex>
+            <Labeling minWidth="max-content" gray>
+              {content}
+            </Labeling>
+            <Flex>
+              <Labeling px="5px" sx={valueStyles}>
+                {getLabelText(value, options, isMulti)}
+              </Labeling>
+              {!!additionalTexts?.length && needSecondaryText && (
+                <Labeling gray={true}>
+                  {getAdditionalText(value, options, additionalTexts)}
+                </Labeling>
+              )}
+            </Flex>
+          </Flex>
         )}
-        <ArrowsIcon />
+        <Flex>
+          {deletabled && (
+            <Box
+              width="18px"
+              height="18px"
+              onClick={(e) => {
+                e.stopPropagation();
+
+                onChange([]);
+              }}
+              sx={deletabledStyles}
+              ml="auto"
+            >
+              {icons.cross}
+            </Box>
+          )}
+          <ArrowsIcon />
+        </Flex>
         {children}
-      </Box>
+      </Flex>
     );
   },
 );
