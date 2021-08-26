@@ -28,7 +28,11 @@ const StickySummary: FC<StickySummaryProps> = ({
 }: StickySummaryProps) => (
   <FormSummaryContainer hasScrollOnScreen={hasScrollOnScreen} {...props}>
     <Box sx={{ ...boxStyles }}>
-      {title && <Title sx={{ textTransform: 'normal' }}>{title}</Title>}
+      {title && (
+        <Title uppercase sx={{ textTransform: 'normal' }}>
+          {title}
+        </Title>
+      )}
       {errorsValue && <Value color="labels.red">{errorsValue}</Value>}
       {firstValue && !errorsValue && (
         <Labeling gray bold>

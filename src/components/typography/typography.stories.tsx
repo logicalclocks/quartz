@@ -24,7 +24,7 @@ const Template: Story = () => (
       },
     }}
   >
-    <Title>Titrage/H1</Title>
+    <Title uppercase>Titrage/H1</Title>
     <Text>Text</Text>
     <HoverableText>hoverable</HoverableText>
     <Subtitle>Titrage/H2</Subtitle>
