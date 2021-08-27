@@ -5,6 +5,7 @@ export default {
 
   ':hover': {
     borderColor: 'grayShade2',
+    boxShadow: '0px 0px 0px white',
   },
 
   ':active': {

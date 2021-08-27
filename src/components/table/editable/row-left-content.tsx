@@ -1,6 +1,7 @@
 import React, { FC, memo, useCallback } from 'react';
 import { Box } from 'rebass';
-import IconButton from '../../icon-button';
+import { IconButton } from '../../../index';
+import { IconName } from '../../icon/list';
 import TooltipPositions from '../../tooltip/positions';
 
 export interface RowLeftContentProps {
@@ -48,7 +49,7 @@ const RowLeftContent: FC<RowLeftContentProps> = ({
         tooltipProps={{ position: TooltipPositions.right }}
         tooltip="remove"
         intent="ghost"
-        icon={['far', 'trash-alt']}
+        icon={IconName.bin}
       />
     </Box>
   );

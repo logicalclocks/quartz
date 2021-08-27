@@ -25,6 +25,7 @@ import FooterButton from './components/footer-button';
 import Header from './components/header';
 import AlternativeHeader from './components/alternative-header';
 import Icon from './components/icon';
+import { IconName, getIcon } from './components/icon/list';
 import IconButton from './components/icon-button';
 import MenuButton from './components/header/menu-button';
 import Input from './components/input';
@@ -141,6 +142,8 @@ export {
   Header,
   AlternativeHeader,
   Icon,
+  IconName,
+  getIcon,
   IconButton,
   MenuButton,
   Input,

@@ -7,6 +7,7 @@ import IconButton from '../icon-button';
 import Labeling from '../typography/labeling';
 // Styles
 import styles from './pagination.styles';
+import { IconName } from '../icon/list';
 
 export interface PaginationProps extends Omit<FlexProps, 'css' | 'onChange'> {
   totalPages: number;
@@ -74,7 +75,7 @@ const Pagination: FC<PaginationProps> = ({
       sx={styles}
     >
       <IconButton
-        icon="angle-left"
+        icon={IconName.arrow_left}
         intent="ghost-white"
         tooltip="prev page"
         disabled={disabled || currentPage <= 1}
@@ -110,7 +111,7 @@ const Pagination: FC<PaginationProps> = ({
       </Tooltip>
 
       <IconButton
-        icon="angle-right"
+        icon={IconName.arrow_right}
         intent="ghost-white"
         tooltip="next page"
         disabled={disabled || currentPage >= totalPages}

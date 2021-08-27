@@ -11,7 +11,5 @@ const Table: FC<TableProps> = ({
   variant = 'read-only',
   values,
   ...props
-}: TableProps) => (
-  <Box {...props} tx="table" variant={variant}></Box>
-);
+}: TableProps) => <Box {...props} tx="table" variant={variant} />;
 export default Table;
