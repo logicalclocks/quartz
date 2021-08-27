@@ -21,6 +21,7 @@ export interface TabItem {
 export interface FormTabsProps {
   tabs: TabItem[];
   submitButton: ReactNode;
+  initialTab?: string;
   onTabChange: (tabId: string) => void;
   hasScrollOnScreen?: boolean;
 }
@@ -29,10 +30,16 @@ const FormTabs: FC<FormTabsProps> = ({
   tabs,
   submitButton,
   onTabChange,
+  initialTab,
   hasScrollOnScreen = true,
   ...props
 }: FormTabsProps) => {
-  const [active, setActive] = useState<number>(0);
+  const initialActive = useMemo(() => {
+    const tabIdx = tabs.findIndex((t) => t.id === initialTab);
+    return Math.max(tabIdx, 0);
+  }, [initialTab, tabs]);
+
+  const [active, setActive] = useState<number>(initialActive);
   const [tabArray, setTabArray] = useState<TabItem[]>(tabs);
 
   const currentTab = useMemo(() => tabArray[active], [tabArray, active]);

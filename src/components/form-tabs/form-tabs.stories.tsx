@@ -69,6 +69,7 @@ Default.args = {
   submitButton: (
     <Button onClick={() => console.log('submit')}>Create feature</Button>
   ),
+  initialTab: 'title2',
 };
 
 Default.argTypes = argTypes;
