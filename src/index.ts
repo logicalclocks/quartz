@@ -16,6 +16,7 @@ import CardSecondary from './components/card/card-secondary';
 import Code from './components/code';
 import Checkbox from './components/checkbox';
 import Callout, { CalloutTypes } from './components/callout';
+import CalloutWithButton from './components/calloutWithButton';
 import CheckboxGroup from './components/checkbox/checkbox-group';
 import SplitGraph, { graphColors } from './components/graphs/split-graph';
 import Radio from './components/radio';
@@ -25,6 +26,7 @@ import FooterButton from './components/footer-button';
 import Header from './components/header';
 import AlternativeHeader from './components/alternative-header';
 import Icon from './components/icon';
+import { IconName, getIcon } from './components/icon/list';
 import IconButton from './components/icon-button';
 import MenuButton from './components/header/menu-button';
 import Input from './components/input';
@@ -81,6 +83,7 @@ import StickySummary from './components/sticky-summary';
 import Row from './components/row/container';
 import RowGroup from './components/row/group';
 import RowItem from './components/row/item';
+import RowButton from './components/row/button';
 
 // Picker
 import Picker from './components/picker/container';
@@ -134,12 +137,15 @@ export {
   Checkbox,
   Callout,
   CalloutTypes,
+  CalloutWithButton,
   CheckboxGroup,
   Dropdown,
   FooterButton,
   Header,
   AlternativeHeader,
   Icon,
+  IconName,
+  getIcon,
   IconButton,
   MenuButton,
   Input,
@@ -193,6 +199,7 @@ export {
   Row,
   RowGroup,
   RowItem,
+  RowButton,
   // Picker
   Picker,
   SingleRangeSlider,
