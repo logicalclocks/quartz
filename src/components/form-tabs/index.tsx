@@ -77,7 +77,7 @@ const FormTabs: FC<FormTabsProps> = ({
         break;
     }
     setTabArray(copy);
-  }, [setActive, active, setTabArray, tabArray]);
+  }, [setActive, active, setTabArray, tabArray, currentTab, onTabChange]);
 
   const handleGoBack = useCallback(() => {
     onTabChange(tabArray[active - 1].id);
