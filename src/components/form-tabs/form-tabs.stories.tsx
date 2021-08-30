@@ -1,7 +1,7 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
 import { Box } from 'rebass';
-import FormTabs, { FormTabsProps } from './index';
+import FormTabs, { FormTabsProps, ValidateOpts } from './index';
 import { Button } from '../..';
 
 export default {
@@ -32,25 +32,25 @@ const tabs = [
     id: 'title1',
     title: 'Title 1',
     optional: false,
-    validationFn: () => true,
+    validationFn: () => ValidateOpts.valid,
   },
   {
     id: 'title2',
     title: 'Title 2',
     optional: true,
-    validationFn: () => true,
+    validationFn: () => ValidateOpts.untouched,
   },
   {
     id: 'title3',
     title: 'Title 3',
     optional: false,
-    validationFn: () => true,
+    validationFn: () => ValidateOpts.error,
   },
   {
     id: 'summary',
     title: 'Summary',
     optional: false,
-    validationFn: () => true,
+    validationFn: () => ValidateOpts.error,
   },
 ];
 

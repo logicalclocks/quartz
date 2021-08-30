@@ -10,12 +10,18 @@ import Tab from './tab/Tab';
 import { Button } from '../..';
 import { TabState } from './tab/TabDescription';
 
+export enum ValidateOpts {
+  valid = 'valid',
+  error = 'error',
+  untouched = 'untouched',
+}
+
 export interface TabItem {
   id: string;
   title: string;
   optional: boolean;
   state?: TabState;
-  validationFn: () => boolean;
+  validationFn: () => ValidateOpts;
 }
 
 export interface FormTabsProps {
@@ -44,15 +50,31 @@ const FormTabs: FC<FormTabsProps> = ({
 
   const currentTab = useMemo(() => tabArray[active], [tabArray, active]);
 
-  const handleGoForward = useCallback(() => {
-    const isValid = currentTab.validationFn();
+  const handleGoForward = useCallback(async () => {
+    const validation = await currentTab.validationFn();
     const copy = [...tabArray.map((x) => x)];
-    if (isValid) {
-      copy[active] = { ...copy[active], state: TabState.valid };
-      onTabChange(copy[active + 1].id);
-      setActive((act) => act + 1);
-    } else {
-      copy[active] = { ...copy[active], state: TabState.error };
+    switch (validation) {
+      case ValidateOpts.error:
+        // INVALID: don't move to next tab and show error.
+        copy[active] = { ...copy[active], state: TabState.error };
+        break;
+      case ValidateOpts.untouched:
+        // UNTOUCHED: if optional, move to next tab. Otherwise show error.
+        if (currentTab.optional) {
+          onTabChange(copy[active + 1].id);
+          setActive((act) => act + 1);
+        } else {
+          copy[active] = { ...copy[active], state: TabState.error };
+        }
+        break;
+      case ValidateOpts.valid:
+        // VALID: move to next tab and show check mark.
+        copy[active] = { ...copy[active], state: TabState.valid };
+        onTabChange(copy[active + 1].id);
+        setActive((act) => act + 1);
+        break;
+      default:
+        break;
     }
     setTabArray(copy);
   }, [setActive, active, setTabArray, tabArray]);
