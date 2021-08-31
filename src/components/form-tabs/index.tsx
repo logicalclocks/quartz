@@ -53,31 +53,30 @@ const FormTabs: FC<FormTabsProps> = ({
   const handleGoForward = useCallback(async () => {
     const validation = await currentTab.validationFn();
     const copy = [...tabArray.map((x) => x)];
-    switch (validation) {
-      case ValidateOpts.error:
-        // INVALID: don't move to next tab and show error.
-        copy[active] = { ...copy[active], state: TabState.error };
-        break;
-      case ValidateOpts.untouched:
-        // UNTOUCHED: if optional, move to next tab. Otherwise show error.
-        if (currentTab.optional) {
-          onTabChange(copy[active + 1].id);
-          setActive((act) => act + 1);
-        } else {
-          copy[active] = { ...copy[active], state: TabState.error };
-        }
-        break;
-      case ValidateOpts.valid:
-        // VALID: move to next tab and show check mark.
-        copy[active] = { ...copy[active], state: TabState.valid };
+
+    // VALID: move to next tab and show check mark.
+    if (validation === ValidateOpts.valid) {
+      copy[active] = { ...copy[active], state: TabState.valid };
+      onTabChange(copy[active + 1].id);
+      setActive((act) => act + 1);
+    }
+
+    // UNTOUCHED: if optional, move to next tab. Otherwise show error.
+    if (validation === ValidateOpts.untouched) {
+      if (currentTab.optional) {
         onTabChange(copy[active + 1].id);
         setActive((act) => act + 1);
-        break;
-      default:
-        break;
+      } else {
+        copy[active] = { ...copy[active], state: TabState.error };
+      }
+    }
+
+    // INVALID: don't move to next tab and show error.
+    if (validation === ValidateOpts.error) {
+      copy[active] = { ...copy[active], state: TabState.error };
     }
     setTabArray(copy);
-  }, [setActive, active, setTabArray, tabArray, currentTab, onTabChange]);
+  }, [setActive, active, setTabArray, tabArray, onTabChange, currentTab]);
 
   const handleGoBack = useCallback(() => {
     onTabChange(tabArray[active - 1].id);
