@@ -75,53 +75,51 @@ const EditableTable: FC<EditableTableProps> = ({
     <Box {...props} sx={{ ...containerStyles }}>
       <Box {...props} as="table" sx={tableStyles}>
         <Box as="thead" sx={theadStyles}>
-          <Box as="tr">
-            <Box as="th" sx={theadStyles} className="table-corner" />
+          <Box as="th" sx={theadStyles} className="table-corner" />
 
-            {/* Static column */}
-            {staticColumn && (
-              <Thead
-                column={staticColumn.name}
-                isPartition={staticColumn.isPartition}
-                isPrimary={staticColumn.isPrimary}
-                actions={[
-                  {
-                    label: 'unfreeze',
-                    handler: () => {
-                      onFreeze();
-                    },
+          {/* Static column */}
+          {staticColumn && (
+            <Thead
+              column={staticColumn.name}
+              isPartition={staticColumn.isPartition}
+              isPrimary={staticColumn.isPrimary}
+              actions={[
+                {
+                  label: 'unfreeze',
+                  handler: () => {
+                    onFreeze();
                   },
-                  ...actions,
-                ]}
-              />
-            )}
+                },
+                ...actions,
+              ]}
+            />
+          )}
 
-            {columns.map(
-              (column) =>
-                column.name !== staticColumn?.name && (
-                  <Thead
-                    key={column.name}
-                    column={column.name}
-                    isPartition={column.isPartition}
-                    isPrimary={column.isPrimary}
-                    actions={
-                      hasFreezeButton
-                        ? [
-                            {
-                              label: 'freeze',
-                              handler: () => {
-                                onFreeze(column);
-                              },
-                            },
-                            ...actions,
-                          ]
-                        : actions
-                    }
-                  />
-                ),
-            )}
-            <Box as="th" sx={{ ...lastTheadStyles }} />
-          </Box>
+          {columns.map(
+            (column) =>
+              column.name !== staticColumn?.name && (
+                <Thead
+                  key={column.name}
+                  column={column.name}
+                  isPartition={column.isPartition}
+                isPrimary={column.isPrimary}
+                  actions={
+                    hasFreezeButton
+                      ? [
+                        {
+                          label: 'freeze',
+                          handler: () => {
+                            onFreeze(column);
+                          },
+                        },
+                        ...actions,
+                      ]
+                      : actions
+                  }
+              />
+            ),
+          )}
+          <Box as="th" sx={{ ...lastTheadStyles }} />
         </Box>
 
         <Box as="tbody">
@@ -137,7 +135,7 @@ const EditableTable: FC<EditableTableProps> = ({
                   p="0px !important"
                 >
                   {staticColumn.render({
-                    readOnly: row[staticColumn.name + 'readOnly'],
+                    readOnly: row[`${staticColumn.name}readOnly`],
                     onChange: handleChangeData(rowIndex, staticColumn.name),
                     value: row[staticColumn.name],
                   })}
