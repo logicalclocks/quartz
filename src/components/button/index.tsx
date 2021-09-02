@@ -26,13 +26,11 @@ const Button: FC<QuartzButtonProps> = ({
   loadingOnly,
   ...props
 }: QuartzButtonProps) => {
+  const test = { ...props };
+  test.sx = { ...test.sx, ...styles };
+
   const component = (
-    <RebassButton
-      sx={styles}
-      disabled={disabled || isLoading}
-      variant={intent}
-      {...props}
-    >
+    <RebassButton variant={intent} disabled={disabled || isLoading} {...test}>
       {icon && (!loadingOnly || !isLoading) && (
         <span>
           <FontAwesomeIcon icon={icon} size="sm" />
@@ -48,7 +46,7 @@ const Button: FC<QuartzButtonProps> = ({
     </RebassButton>
   );
 
-  if (!!href) {
+  if (href) {
     return (
       <a
         style={{

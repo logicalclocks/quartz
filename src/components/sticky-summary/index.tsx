@@ -3,8 +3,8 @@ import { Box } from 'rebass';
 import { boxStyles, boxButtonStyles } from './sticky-summary.styles';
 import Title from '../typography/title';
 import Labeling from '../typography/labeling';
-import Value from '../typography/value';
 import FormSummaryContainer from '../form-summary-container';
+import Badge from '../badges/badge';
 
 export interface StickySummaryProps {
   title?: string;
@@ -33,7 +33,7 @@ const StickySummary: FC<StickySummaryProps> = ({
           {title}
         </Title>
       )}
-      {errorsValue && <Value color="labels.red">{errorsValue}</Value>}
+      {errorsValue && <Badge variant="fail" value={errorsValue} />}
       {firstValue && !errorsValue && (
         <Labeling gray bold>
           {firstValue}
