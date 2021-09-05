@@ -1,4 +1,4 @@
-import React, { FC, ReactNode, useCallback, useMemo, useState } from 'react';
+import React, { FC, useCallback, useMemo, useState } from 'react';
 import { Flex } from 'rebass';
 import {
   summaryContainerStyles,
@@ -19,14 +19,15 @@ export enum ValidateOpts {
 export interface TabItem {
   id: string;
   title: string;
-  optional: boolean;
+  optional?: boolean;
+  submit?: boolean;
   state?: TabState;
   validationFn: () => ValidateOpts;
 }
 
 export interface FormTabsProps {
   tabs: TabItem[];
-  submitButton: ReactNode;
+  SubmitButton: FC<any>;
   initialTab?: string;
   onTabChange: (tabId: string) => void;
   hasScrollOnScreen?: boolean;
@@ -34,7 +35,7 @@ export interface FormTabsProps {
 
 const FormTabs: FC<FormTabsProps> = ({
   tabs,
-  submitButton,
+  SubmitButton,
   onTabChange,
   initialTab,
   hasScrollOnScreen = true,
@@ -91,6 +92,33 @@ const FormTabs: FC<FormTabsProps> = ({
     [setActive, onTabChange],
   );
 
+  const handleSubmit = useCallback(async () => {
+    /*
+      When trying to submit the form whe check all the previous tabs to see.
+      If they haven't been checked we trigger the validation and update the state.
+      If there's any wrong we return false;
+     */
+    let allValid = true;
+    const updated = await Promise.all(
+      tabArray.map(async (tab) => {
+        const validation = await tab.validationFn();
+        if (!tab.optional && !tab.submit) {
+          if (validation === ValidateOpts.valid) {
+            return { ...tab, state: TabState.valid };
+          }
+          if (validation === ValidateOpts.error) {
+            allValid = false;
+            return { ...tab, state: TabState.error };
+          }
+          return tab;
+        }
+        return tab;
+      }),
+    );
+    setTabArray(updated);
+    return allValid;
+  }, []);
+
   return (
     <FormSummaryContainer
       style={summaryContainerStyles}
@@ -116,7 +144,7 @@ const FormTabs: FC<FormTabsProps> = ({
             </Button>
           )}
           {active === tabs.length - 1 ? (
-            submitButton
+            <SubmitButton validateAll={handleSubmit} />
           ) : (
             <Button onClick={handleGoForward}>Next</Button>
           )}

@@ -27,6 +27,11 @@ const argTypes = {
   },
 };
 
+const handleSubmit = async (validateAll: any) => {
+  const isAllValid = await validateAll();
+  console.log('submit', isAllValid);
+};
+
 const tabs = [
   {
     id: 'title1',
@@ -50,6 +55,7 @@ const tabs = [
     id: 'summary',
     title: 'Summary',
     optional: false,
+    submit: true,
     validationFn: () => ValidateOpts.error,
   },
 ];
@@ -66,8 +72,8 @@ Default.args = {
   tabs,
   hasScrollOnScreen: false,
   onTabChange: (tab) => console.log('moved to:', tab),
-  submitButton: (
-    <Button onClick={() => console.log('submit')}>Create feature</Button>
+  SubmitButton: ({ validateAll }: { validateAll: () => boolean }) => (
+    <Button onClick={() => handleSubmit(validateAll)}>Create feature</Button>
   ),
   initialTab: 'title2',
 };
