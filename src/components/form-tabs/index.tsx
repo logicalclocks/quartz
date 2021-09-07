@@ -102,8 +102,13 @@ const FormTabs: FC<FormTabsProps> = ({
     const updated = await Promise.all(
       tabArray.map(async (tab) => {
         const validation = await tab.validationFn();
-        if (!tab.optional && !tab.submit) {
-          if (validation === ValidateOpts.valid) {
+        /*
+          For all the no-submit tabs we validate them.
+          If they are optional we only change their status if there is an error
+          For the rest we either set them as error or valid.
+         */
+        if (!tab.submit) {
+          if (!tab.optional && validation === ValidateOpts.valid) {
             return { ...tab, state: TabState.valid };
           }
           if (validation === ValidateOpts.error) {
