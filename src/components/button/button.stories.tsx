@@ -21,6 +21,7 @@ Default.args = {
   isLoading: false,
   loadingOnly: false,
   onClick: action('onClick'),
+  loadingColor: 'white',
 };
 
 Default.argTypes = {
@@ -33,6 +34,12 @@ Default.argTypes = {
   disabled: {
     control: {
       type: 'boolean',
+    },
+  },
+  loadingColor: {
+    control: {
+      type: 'select',
+      options: ['undefined','white', 'black', 'green', 'red'],
     },
   },
   isLoading: {

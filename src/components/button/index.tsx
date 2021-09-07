@@ -14,6 +14,7 @@ export interface QuartzButtonProps extends Omit<ButtonProps, 'css'> {
   href?: string;
   isLoading?: boolean;
   loadingOnly?: boolean;
+  loadingColor?:string;
 }
 
 const Button: FC<QuartzButtonProps> = ({
@@ -24,11 +25,12 @@ const Button: FC<QuartzButtonProps> = ({
   disabled,
   isLoading,
   loadingOnly,
+  loadingColor,
   ...props
 }: QuartzButtonProps) => {
   const test = { ...props };
   test.sx = { ...test.sx, ...styles };
-
+  console.log(loadingColor)
   const component = (
     <RebassButton variant={intent} disabled={disabled || isLoading} {...test}>
       {icon && (!loadingOnly || !isLoading) && (
@@ -39,8 +41,8 @@ const Button: FC<QuartzButtonProps> = ({
       {(!loadingOnly || !isLoading) && children}
       {isLoading && (
         <Spinner
-          color={spinnerColor(intent)}
-          ml={loadingOnly ? '0px' : '15px'}
+        color={loadingColor?loadingColor:spinnerColor(intent)}
+        ml={loadingOnly ? '0px' : '15px'}
         />
       )}
     </RebassButton>
