@@ -4,21 +4,20 @@ import { Box } from 'rebass';
 // Components
 import { TableProps } from '../index';
 // Utils
-import { getRows } from '../read-only/utils';
+import { getRows } from '../utils';
 import KeysCollection from '../../../utils/KeysCollection';
 // Styles
 import {
   containerStyles,
-  lastTheadStyles,
   tableStyles,
   theadStyles,
   trowStyles,
 } from '../table.styles';
 // Components
 import RowLeftContent from './row-left-content';
-import { Thead } from '../read-only';
 // types
 import { FGRow } from '../type';
+import Thead from '../thead';
 
 export interface TableColumn {
   name: string;
@@ -59,9 +58,7 @@ const EditableTable: FC<EditableTableProps> = ({
   }, []);
 
   const handleChangeData = useCallback(
-    (rowIndex: number, columnName: string) => (
-      value: string | string[] | boolean,
-    ) => {
+    (rowIndex: number, columnName: string) => (value: string | string[] | boolean) => {
       onChangeData(rowIndex, columnName, value);
     },
     [],
@@ -75,51 +72,49 @@ const EditableTable: FC<EditableTableProps> = ({
     <Box {...props} sx={{ ...containerStyles }}>
       <Box {...props} as="table" sx={tableStyles}>
         <Box as="thead" sx={theadStyles}>
-          <Box as="th" sx={theadStyles} className="table-corner" />
-
-          {/* Static column */}
-          {staticColumn && (
-            <Thead
-              column={staticColumn.name}
-              isPartition={staticColumn.isPartition}
-              isPrimary={staticColumn.isPrimary}
-              actions={[
-                {
-                  label: 'unfreeze',
-                  handler: () => {
-                    onFreeze();
+          <Box as="tr">
+            <Box as="th" className="table-corner" />
+            {/* Static column */}
+            {staticColumn && (
+              <Thead
+                column={staticColumn.name}
+                isPartition={staticColumn.isPartition}
+                isPrimary={staticColumn.isPrimary}
+                actions={[
+                  {
+                    label: 'unfreeze',
+                    handler: () => {
+                      onFreeze();
+                    },
                   },
-                },
-                ...actions,
-              ]}
-            />
-          )}
-
-          {columns.map(
-            (column) =>
-              column.name !== staticColumn?.name && (
-                <Thead
-                  key={column.name}
-                  column={column.name}
-                  isPartition={column.isPartition}
-                isPrimary={column.isPrimary}
-                  actions={
-                    hasFreezeButton
-                      ? [
-                        {
-                          label: 'freeze',
-                          handler: () => {
-                            onFreeze(column);
-                          },
-                        },
-                        ...actions,
-                      ]
-                      : actions
-                  }
+                  ...actions,
+                ]}
               />
-            ),
-          )}
-          <Box as="th" sx={{ ...lastTheadStyles }} />
+            )}
+
+            {columns.map(
+              (column) =>
+                column.name !== staticColumn?.name && (
+                  <Thead
+                    key={column.name}
+                    column={column.name}
+                    isPartition={column.isPartition}
+                    isPrimary={column.isPrimary}
+                    actions={
+                      hasFreezeButton
+                        ? [{
+                            label: 'freeze',
+                            handler: () => {
+                              onFreeze(column);
+                          }, },
+                          ...actions,
+                          ]
+                        : actions
+                    }
+                  />
+                ),
+            )}
+          </Box>
         </Box>
 
         <Box as="tbody">
@@ -152,7 +147,7 @@ const EditableTable: FC<EditableTableProps> = ({
                       p="0px !important"
                     >
                       {column.render({
-                        readOnly: row[column.name + 'readOnly'],
+                        readOnly: row[`${column.name}readOnly`],
                         onChange: handleChangeData(rowIndex, column.name),
                         value: row[column.name],
                       })}

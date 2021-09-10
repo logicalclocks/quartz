@@ -1,14 +1,14 @@
 import { SxStyleProp } from 'rebass';
 
 export const containerStyles = {
-  overflowX: 'scroll',
+  overflowX: 'auto',
   maxHeight: '100%',
   borderWidth: '1px',
   borderColor: 'grayShade3',
   borderTopColor: 'grey',
   borderStyle: 'solid',
   marginRight: '20px',
-  '-moz-padding-end': '8px',
+  width: 'fit-content',
 };
 
 export const tableStyles = {
@@ -31,43 +31,33 @@ export const theadStyles = {
   fontFamily: 'label',
   fontWeight: 'label',
   fontSize: 'label',
+  backgroundColor: 'white',
   top: '0',
-
-  'th:first-of-typed': {
-    borderTopColor: 'grey',
-    minWidth: '31px',
-    maxWidth: '31px',
-  },
-  'th:last-child': {
-    minWidth: '0px',
-    borderWidth: '0 0 2px 0',
-    borderStyle: 'Solid',
-    borderColor: 'grayShade1',
-    borderTopColor: 'grey',
-    borderBottomColor: 'grey',
+  cursor: 'pointer',
+  th: {
+    '&.table-corner': {
+      minWidth: '31px',
+      maxWidth: '31px',
+      backgroundColor: 'grayShade2',
+      borderLeftColor: 'grayShade2',
+      borderTopColor: 'grey',
+      borderWidth: '0 1px 2px 0',
+      left: '0',
+      zIndex: '100',
+      cursor: 'pointer',
+    },
+    '&:hover': {
+      backgroundColor: 'primaryShade2',
+    },
+    '&:last-child': {
+      minWidth: '0px',
+      borderWidth: '0 0 2px 0',
+      borderStyle: 'Solid',
+    },
   },
   '> div': {
     display: 'flex',
     textOverflow: 'ellipsis',
-  },
-
-  backgroundColor: 'white',
-  cursor: 'pointer',
-  'th:hover': {
-    backgroundColor: 'primaryShade2',
-  },
-  'th:last-child:hover': {
-    backgroundColor: 'white',
-  },
-  '&.table-corner': {
-    backgroundColor: 'grayShade2',
-    borderLeftColor: 'grayShade2',
-    borderTopColor: 'grey',
-    borderWidth: '0 1px 2px 0',
-    left: '0',
-    zIndex: '100',
-    width: '40px',
-    cursor: 'pointer',
   },
   '&.hover-column': {
     backgroundColor: 'grayShade2',
@@ -85,16 +75,6 @@ export const theadStyles = {
   },
 } as SxStyleProp;
 
-export const lastTheadStyles = {
-  width: '100%',
-  backgroundColor: 'white',
-  borderWidth: '1px 1px 1px 0',
-  borderStyle: 'Solid',
-  borderColor: 'grayShade1',
-  position: 'sticky',
-  top: 0,
-};
-
 export const trowStyles = {
   color: 'black',
   fontFamily: 'value',
@@ -106,47 +86,31 @@ export const trowStyles = {
       backgroundColor: 'primaryShade2',
       whiteSpace: 'nowrap',
     },
-    th: {
-      backgroundColor: 'grayShade2',
-    },
-    'th[id]': {
-      padding: '0 !important',
-      span: {
-        display: 'none',
-      },
-      div: {
-        display: 'inline-block',
-      },
-    },
   },
-  '&:last-child td, &:last-child th': {
+  '&:last-child td': {
     borderBottomColor: 'gray',
   },
-  'td, th': {
-    padding: '8px',
-  },
-  th: {
-    textAlign: 'center',
-    borderWidth: '0 1px 1px 0',
-    borderColor: 'gray',
-    borderBottomColor: 'grayShade2',
-    borderStyle: 'Solid',
-    left: '0',
-    position: 'sticky',
-    backgroundColor: 'white',
-    display: 'block',
-    '&:first-of-type': {
-      maxWidth: '31px',
-      minWidth: '31px',
-      zIndex: 1,
-    },
-  },
   td: {
+    padding: '8px',
     borderWidth: '0 1px 1px 0',
     borderStyle: 'Solid',
     borderColor: 'grayShade1',
     textOverflow: 'ellipsis',
     whiteSpace: 'nowrap',
+    '&:first-of-type': {
+      maxWidth: '32px',
+      minWidth: '32px',
+      zIndex: 1,
+      textAlign: 'center',
+      borderWidth: '0 1px 1px 0',
+      borderColor: 'gray',
+      borderBottomColor: 'grayShade2',
+      borderStyle: 'Solid',
+      left: '0',
+      position: 'sticky',
+      backgroundColor: 'white',
+      display: 'block',
+    },
     '&:hover': {
       backgroundColor: 'grayShade2',
     },

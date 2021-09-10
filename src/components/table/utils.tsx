@@ -1,5 +1,7 @@
 // Types
-import { FGItem, FGRow } from '../type';
+import { FGItem, FGRow } from './type';
+
+/* eslint-disable arrow-body-style */
 
 export const getColumns = (rows: Array<FGRow>) => {
   // All rows contains all columns
@@ -9,9 +11,9 @@ export const getColumns = (rows: Array<FGRow>) => {
 export const getRows = (rows: Array<FGRow>) => {
   return rows.map((row: FGRow) => {
     const newRow = {};
-    row.row.map((item: FGItem) => {
+    row.row.forEach((item: FGItem) => {
       newRow[item.columnName] = item.columnValue;
-      newRow[item.columnName + 'readOnly'] = item.readOnly;
+      newRow[`${item.columnName}readOnly`] = item.readOnly;
     });
     return newRow;
   });
