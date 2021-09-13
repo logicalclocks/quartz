@@ -47,8 +47,8 @@ const StickyPortal: FC<StickyPortalProps> = ({
     window.addEventListener('scroll', listenerAction, true);
     window.addEventListener('resize', listenerAction, true);
     return () => {
-      window.removeEventListener('scroll', listenerAction);
-      window.removeEventListener('resize', listenerAction);
+      window.removeEventListener('scroll', listenerAction, true);
+      window.removeEventListener('resize', listenerAction, true);
     };
   }, []);
 
