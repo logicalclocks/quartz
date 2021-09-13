@@ -7,9 +7,11 @@ import EditableSelectContainer from './EditableSelectContainer';
 import EditableSelectDropdown from './EditableSelectDropdown';
 import EditableSelectInfo from './EditableSelectInfo';
 import { EditableSelectTypes, ChipsVariants } from './types';
+import StickyPortal from '../sticky-portal/StickyPortal';
 
 export interface EditableSelectProps
   extends Omit<LabelProps, 'onChange' | 'children'> {
+  appendToBody?: boolean;
   info?: string;
   label?: string;
   width?: string;
@@ -39,6 +41,7 @@ const EditableSelect: FC<EditableSelectProps> = ({
   labelAction,
   placeholder,
   inlineLegend,
+  appendToBody = false,
   width = 'auto',
   isMulti = true,
   type = 'editable',
@@ -104,6 +107,18 @@ const EditableSelect: FC<EditableSelectProps> = ({
     return 33;
   }, [containerRef.current?.offsetHeight]);
 
+  const DropdownWrapper: FC<{ children: any; refEl: any }> = ({
+    children,
+    refEl,
+    // eslint-disable-next-line arrow-body-style
+  }) => {
+    return appendToBody ? (
+      <StickyPortal refEl={refEl}>{children}</StickyPortal>
+    ) : (
+      children
+    );
+  };
+
   return (
     <Label
       as="span"
@@ -132,18 +147,21 @@ const EditableSelect: FC<EditableSelectProps> = ({
         variant={disabled ? 'disabled' : (variant as ChipsVariants)}
       >
         {isOpen && (
-          <EditableSelectDropdown
-            type={type}
-            value={value}
-            search={search}
-            isMulti={isMulti}
-            onClose={handleToggle}
-            width={dropdrownWidth}
-            maxHeight={maxListHeight}
-            options={filteredOptions}
-            position={dropdrownPosition}
-            onChange={handleValueChange}
-          />
+          <DropdownWrapper refEl={containerRef?.current || undefined}>
+            <EditableSelectDropdown
+              type={type}
+              value={value}
+              search={search}
+              isMulti={isMulti}
+              onClose={handleToggle}
+              width={dropdrownWidth}
+              maxHeight={maxListHeight}
+              options={filteredOptions}
+              appendToBody={appendToBody}
+              position={dropdrownPosition}
+              onChange={handleValueChange}
+            />
+          </DropdownWrapper>
         )}
       </EditableSelectContainer>
       {info && <EditableSelectInfo intent={intent}>{info}</EditableSelectInfo>}

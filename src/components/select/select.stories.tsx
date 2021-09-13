@@ -69,6 +69,7 @@ Default.args = {
   listWidth: '100%',
   variant: 'primary',
   hasPlaceholder: false,
+  appendToBody: false,
   isMulti: false,
   noDataMessage: 'no labels',
   hasSearch: true,
@@ -163,6 +164,10 @@ Default.argTypes = {
     },
   },
   disabled: {
+    type: { required: false },
+    control: { type: 'boolean' },
+  },
+  appendToBody: {
     type: { required: false },
     control: { type: 'boolean' },
   },

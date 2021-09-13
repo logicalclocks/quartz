@@ -1,15 +1,25 @@
+import { SxStyleProp } from 'rebass';
 import { ITheme } from '../../theme/types';
 import { Intents } from '../intents';
 
-const getIntentColor = (intent: Intents) => ({ inputIntents }: ITheme) =>
-  inputIntents[intent] ?? 'transparent';
+const getIntentColor =
+  (intent: Intents) =>
+  ({ inputIntents }: ITheme) =>
+    inputIntents[intent] ?? 'transparent';
 
-export const listStyles = {
+export const listStyles = (
+  parentHeight: number,
+  appendToBody: boolean,
+): SxStyleProp => ({
   position: 'absolute',
   zIndex: 'popups',
   left: 0,
-  top: '33px',
-};
+  top: `${parentHeight}px`,
+  ...(appendToBody && {
+    marginTop: '2px !important',
+    marginLeft: '1px !important',
+  }),
+});
 
 export const bottomActionStyles = {
   p: '10px',
