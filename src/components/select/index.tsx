@@ -143,20 +143,22 @@ const Select: FC<SelectProps> = ({
     // eslint-disable-next-line arrow-body-style
   }) => {
     return appendToBody ? (
-      <StickyPortal refEl={refEl}>{children}</StickyPortal>
+      <StickyPortal handleClose={handleClickOutside} refEl={refEl}>
+        {children}
+      </StickyPortal>
     ) : (
       children
     );
   };
 
-  const dropdrownPosition = useMemo(() => {
+  const dropdrownPosition = useCallback(() => {
     if (containerRef?.current) {
       return containerRef.current.offsetHeight + 1;
     }
     return 33;
   }, [containerRef.current?.offsetHeight]);
 
-  const dropdrownWidth = useMemo(() => {
+  const dropdrownWidth = useCallback(() => {
     if (listWidth === '100%' && containerRef.current) {
       return `${containerRef.current.offsetWidth - 2}px`;
     }
@@ -194,8 +196,8 @@ const Select: FC<SelectProps> = ({
         {isOpen && (
           <DropdownWrapper refEl={containerRef?.current || undefined}>
             <List
-              sx={listStyles(dropdrownPosition, appendToBody)}
-              width={dropdrownWidth}
+              sx={listStyles(dropdrownPosition(), appendToBody)}
+              width={dropdrownWidth()}
               maxHeight={maxListHeight}
             >
               <Flex>

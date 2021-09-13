@@ -1,12 +1,19 @@
 import { createPortal } from 'react-dom';
-import { FC, useEffect, useRef } from 'react';
+import { FC, useCallback, useEffect, useRef } from 'react';
 
 export interface StickyPortalProps {
   children: any;
+  handleClose: () => void;
   refEl?: HTMLDivElement;
 }
 
-const StickyPortal: FC<StickyPortalProps> = ({ children, refEl }) => {
+const CONTENT_ID = 'portal-content';
+
+const StickyPortal: FC<StickyPortalProps> = ({
+  children,
+  refEl,
+  handleClose,
+}: StickyPortalProps) => {
   const rootElemRef = useRef(document.createElement('div'));
 
   useEffect(() => {
@@ -14,6 +21,7 @@ const StickyPortal: FC<StickyPortalProps> = ({ children, refEl }) => {
 
     const refElPos = refEl?.getBoundingClientRect();
     const content = rootElemRef.current.children[0] as HTMLElement;
+    content.setAttribute('id', CONTENT_ID);
 
     if (refElPos) {
       content.style.top = `${refElPos.top + refElPos.height}px`;
@@ -25,6 +33,24 @@ const StickyPortal: FC<StickyPortalProps> = ({ children, refEl }) => {
       }
     };
   }, [refEl]);
+
+  const listenerAction = useCallback(
+    (event: Event) => {
+      if ((event?.target as HTMLElement).id === CONTENT_ID) return;
+      if (typeof handleClose === 'function') handleClose();
+    },
+    [handleClose],
+  );
+
+  useEffect(() => {
+    // Close portal on outside interactions
+    window.addEventListener('scroll', listenerAction, true);
+    window.addEventListener('resize', listenerAction, true);
+    return () => {
+      document.body.removeEventListener('scroll', listenerAction);
+      document.body.removeEventListener('resize', listenerAction);
+    };
+  }, []);
 
   return createPortal(children, rootElemRef.current);
 };

@@ -1,4 +1,11 @@
-import React, { FC, useEffect, useMemo, useRef, useState } from 'react';
+import React, {
+  FC,
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from 'react';
 import useDropdown from '../../utils/useDropdown';
 import useOnClickOutside from '../../utils/useClickOutside';
 import { Intents } from '../intents';
@@ -93,14 +100,14 @@ const EditableSelect: FC<EditableSelectProps> = ({
     }
   }, [search]);
 
-  const dropdrownWidth = useMemo(() => {
+  const dropdrownWidth = useCallback(() => {
     if (containerRef.current) {
       return `${containerRef.current.offsetWidth - 2}px`;
     }
     return 'auto';
   }, [containerRef.current?.offsetWidth]);
 
-  const dropdrownPosition = useMemo(() => {
+  const dropdrownPosition = useCallback(() => {
     if (containerRef.current) {
       return containerRef.current.offsetHeight + 1;
     }
@@ -113,7 +120,9 @@ const EditableSelect: FC<EditableSelectProps> = ({
     // eslint-disable-next-line arrow-body-style
   }) => {
     return appendToBody ? (
-      <StickyPortal refEl={refEl}>{children}</StickyPortal>
+      <StickyPortal refEl={refEl} handleClose={handleClickOutside}>
+        {children}
+      </StickyPortal>
     ) : (
       children
     );
@@ -154,11 +163,11 @@ const EditableSelect: FC<EditableSelectProps> = ({
               search={search}
               isMulti={isMulti}
               onClose={handleToggle}
-              width={dropdrownWidth}
+              width={dropdrownWidth()}
               maxHeight={maxListHeight}
               options={filteredOptions}
               appendToBody={appendToBody}
-              position={dropdrownPosition}
+              position={dropdrownPosition()}
               onChange={handleValueChange}
             />
           </DropdownWrapper>
