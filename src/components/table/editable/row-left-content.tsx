@@ -1,4 +1,4 @@
-import React, { FC, memo, useCallback, useState } from 'react';
+import React, { FC, memo, useCallback } from 'react';
 import { Box } from 'rebass';
 import { IconButton } from '../../../index';
 import { IconName } from '../../icon/list';
