@@ -7,7 +7,7 @@ export interface StickyPortalProps {
   refEl?: HTMLDivElement;
 }
 
-const CONTENT_ID = 'portal-content';
+export const CONTENT_ID = 'portal-content';
 
 const StickyPortal: FC<StickyPortalProps> = ({
   children,
