@@ -21,7 +21,7 @@ import Input from '../input';
 import Value from '../typography/value';
 import useKeyUp from '../../utils/useKeyUp';
 import icons from '../../sources/icons';
-import StickyPortal from '../sticky-portal/StickyPortal';
+import StickyPortal, { CONTENT_ID } from '../sticky-portal/StickyPortal';
 
 export interface SelectProps extends Omit<LabelProps, 'onChange' | 'children'> {
   value: string[];
@@ -87,7 +87,11 @@ const Select: FC<SelectProps> = ({
 }: SelectProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [isOpen, handleToggle, handleClickOutside] = useDropdown(false);
-  useOnClickOutside<HTMLDivElement>(containerRef, handleClickOutside);
+  useOnClickOutside<HTMLDivElement>(
+    handleClickOutside,
+    [containerRef],
+    [CONTENT_ID],
+  );
 
   const [search, setSearch] = useState('');
 

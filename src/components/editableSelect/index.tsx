@@ -14,7 +14,7 @@ import EditableSelectContainer from './EditableSelectContainer';
 import EditableSelectDropdown from './EditableSelectDropdown';
 import EditableSelectInfo from './EditableSelectInfo';
 import { EditableSelectTypes, ChipsVariants } from './types';
-import StickyPortal from '../sticky-portal/StickyPortal';
+import StickyPortal, { CONTENT_ID } from '../sticky-portal/StickyPortal';
 
 export interface EditableSelectProps
   extends Omit<LabelProps, 'onChange' | 'children'> {
@@ -63,7 +63,12 @@ const EditableSelect: FC<EditableSelectProps> = ({
   const [search, setSearch] = useState(isMulti ? '' : value[0] || '');
 
   const [isOpen, handleToggle, handleClickOutside] = useDropdown(false);
-  useOnClickOutside<HTMLDivElement>(containerRef, handleClickOutside);
+
+  useOnClickOutside<HTMLDivElement>(
+    handleClickOutside,
+    [containerRef],
+    [CONTENT_ID],
+  );
 
   const unselectedOpts = useMemo(
     () => options.filter((opt) => !value.includes(opt)),
