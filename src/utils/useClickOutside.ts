@@ -1,16 +1,29 @@
 import { RefObject, useEffect } from 'react';
 
+/**
+ * Triggers the handler on on-click on any element diferent from those defined
+ * either inside the refs or the ids arrays.
+ */
 const useOnClickOutside = <T extends HTMLElement>(
-  ref: RefObject<T>,
   handler: () => void,
+  refs: RefObject<T>[],
+  ids?: string[],
 ) => {
   useEffect(() => {
     const listener = (event: Event) => {
-      // @ts-ignore
-      if (!ref?.current || ref?.current.contains(event.target)) {
+      // Do nothing if click happens on an  element contained in the ids array.
+      if (
+        (ids || []).some((id) => {
+          const el = document.getElementById(id);
+          return el?.contains(event.target as Node);
+        })
+      ) {
         return;
       }
-
+      // Do nothing if click happens on an  element contained in the refs array.
+      if (refs.some((r) => r?.current?.contains(event.target as Node))) {
+        return;
+      }
       handler();
     };
 
@@ -21,7 +34,7 @@ const useOnClickOutside = <T extends HTMLElement>(
       document.removeEventListener('mousedown', listener);
       document.removeEventListener('touchstart', listener);
     };
-  }, [ref, handler]);
+  }, [refs, ids, handler]);
 };
 
 export default useOnClickOutside;
