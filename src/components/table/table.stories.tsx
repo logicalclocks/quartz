@@ -10,12 +10,7 @@ import dummyValuesEditable from './editable/dummydata.json';
 import EditableTable, { EditableTableProps } from './editable';
 import { Button, Checkbox, Select } from '../../index';
 import BlurInput from './editable/blur-input';
-import {
-  ColumnIdentifier,
-  TableCellType,
-  TableHeader,
-  TableRowComponent,
-} from './type';
+import { TableCellType, TableHeader, TableRowComponent } from './type';
 
 export default {
   title: 'Quartz/Tables',
@@ -26,36 +21,28 @@ export default {
 
 const headers = [
   {
-    identifier: { name: 'away_team_id', isStatic: false },
+    identifier: { name: 'away_team_id' },
   },
   {
-    identifier: { name: 'score', isStatic: false },
+    identifier: { name: 'score' },
   },
   {
-    identifier: { name: 'dummycolumn_test1', isStatic: false },
+    identifier: { name: 'dummycolumn_test1' },
   },
   {
-    identifier: { name: 'dummycolumn_test2', isStatic: false },
+    identifier: { name: 'dummycolumn_test2' },
   },
   {
-    identifier: { name: 'home_team_id', isStatic: false },
+    identifier: { name: 'home_team_id' },
   },
 ];
 
 export const ReadOnly: Story<ReadOnlyTableProps> = (props) => {
-  const [staticColumn, setStaticColumn] = useState<ColumnIdentifier>();
-
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars-experimental
-  const handleChangeStaticColumn = (column: ColumnIdentifier) => {
-    setStaticColumn(column);
-  };
-
   return (
     <Box>
       <ReadOnlyTable
         {...props}
-        staticColumn={staticColumn}
-        // onFreeze={handleChangeStaticColumn}
+        initialStaticColumn="score"
         actions={[
           {
             label: 'go to stats',

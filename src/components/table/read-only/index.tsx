@@ -13,11 +13,11 @@ import {
 } from '../table.styles';
 
 import Thead from '../thead';
-import { ColumnIdentifier, TableCell, TableHeader } from '../type';
+import { TableCell, TableHeader } from '../type';
 import Label from '../../label';
 
 export interface ReadOnlyTableProps extends Omit<TableProps, 'value'> {
-  staticColumn?: ColumnIdentifier;
+  initialStaticColumn?: string;
   values: TableCell[][];
   columnHeaders: TableHeader[];
   actions: Array<{
@@ -29,12 +29,16 @@ export interface ReadOnlyTableProps extends Omit<TableProps, 'value'> {
 /* eslint-disable arrow-body-style */
 
 const ReadOnlyTable: FC<ReadOnlyTableProps> = ({
-  staticColumn,
+  initialStaticColumn,
   values,
   columnHeaders,
+  actions,
 }: ReadOnlyTableProps) => {
   const [hoverColumn, setHoverColumn] = useState<string>();
 
+  const [staticColumn, setStaticColumn] = useState<string | undefined>(
+    initialStaticColumn,
+  );
   const sortValues = (
     cells: TableCell[][],
     headers: TableHeader[],
@@ -56,10 +60,19 @@ const ReadOnlyTable: FC<ReadOnlyTableProps> = ({
             <Box as="th" className="table-corner" />
             {staticColumn && (
               <Thead
-                column={staticColumn.name}
+                column={staticColumn}
+                actions={[
+                  {
+                    label: 'unfreeze',
+                    handler: () => {
+                      setStaticColumn(undefined);
+                    },
+                  },
+                  ...actions,
+                ]}
                 headerRender={(() => {
                   const staticHeader = columnHeaders.find(
-                    (header) => header.identifier === staticColumn,
+                    (header) => header.identifier.name === staticColumn,
                   )!;
                   return (
                     // eslint-disable-next-line operator-linebreak
@@ -68,13 +81,13 @@ const ReadOnlyTable: FC<ReadOnlyTableProps> = ({
                   );
                 })()}
                 className={`static-column ${
-                  hoverColumn === staticColumn.name && 'hover-column'
+                  hoverColumn === staticColumn && 'hover-column'
                 }`}
               />
             )}
 
             {columnHeaders
-              .filter((header) => header.identifier !== staticColumn)
+              .filter((header) => header.identifier.name !== staticColumn)
               .map((header: TableHeader) => (
                 <Thead
                   key={header.identifier.name}
@@ -84,6 +97,15 @@ const ReadOnlyTable: FC<ReadOnlyTableProps> = ({
                     header.headerRender ||
                     (() => <Label>{header.identifier.name}</Label>)
                   }
+                  actions={[
+                    {
+                      label: 'freeze',
+                      handler: (column) => {
+                        setStaticColumn(column);
+                      },
+                    },
+                    ...actions,
+                  ]}
                   className={`${
                     hoverColumn === header.identifier.name && 'hover-column'
                   }`}
@@ -108,22 +130,21 @@ const ReadOnlyTable: FC<ReadOnlyTableProps> = ({
                 <Box
                   as="td"
                   className={`static-column ${
-                    hoverColumn === staticColumn.name && 'hover-column'
+                    hoverColumn === staticColumn && 'hover-column'
                   }`}
-                  onMouseEnter={() => setHoverColumn(staticColumn.name)}
+                  onMouseEnter={() => setHoverColumn(staticColumn)}
                   onMouseLeave={() => setHoverColumn(undefined)}
                 >
                   {
-                    row.find(
-                      (cell) => cell.identifierName === staticColumn.name,
-                    )?.value
+                    row.find((cell) => cell.identifierName === staticColumn)
+                      ?.value
                   }
                 </Box>
               )}
               {row
                 .filter((cell: TableCell) => {
                   return staticColumn
-                    ? cell.identifierName !== staticColumn.name
+                    ? cell.identifierName !== staticColumn
                     : true;
                 })
                 .map((cell: TableCell) => (

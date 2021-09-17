@@ -15,7 +15,6 @@ export interface TableHeader {
 
 export interface ColumnIdentifier {
   name: string;
-  isStatic?: boolean;
 }
 
 export interface TableRowComponent {

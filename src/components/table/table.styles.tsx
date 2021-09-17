@@ -35,6 +35,7 @@ export const theadStyles = {
   top: '0',
   cursor: 'pointer',
   th: {
+    position: 'sticky',
     '&.table-corner': {
       width: '31px',
       backgroundColor: 'grayShade2',
@@ -44,7 +45,6 @@ export const theadStyles = {
       left: '0',
       zIndex: '100',
       cursor: 'pointer',
-      position: 'sticky',
     },
     '&:hover': {
       backgroundColor: 'primaryShade2',
@@ -66,7 +66,6 @@ export const theadStyles = {
     borderRightColor: 'primary',
     borderBottomColor: 'grey',
     borderWidth: '0 1px 2px 0',
-    position: 'sticky',
     left: '31px',
     zIndex: '100',
     '&.hover-column': {

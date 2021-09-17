@@ -16,7 +16,6 @@ import {
 import RowLeftContent from './row-left-content';
 // types
 import {
-  ColumnIdentifier,
   TableCell,
   TableHeader,
   TableRowComponent,
@@ -26,7 +25,7 @@ import Label from '../../label';
 
 /* eslint-disable implicit-arrow-linebreak */
 export interface EditableTableProps extends Omit<TableProps, 'value'> {
-  staticColumn?: ColumnIdentifier;
+  initialStaticColumn?: string;
   values: TableCell[][];
   columnHeaders: TableHeader[];
   rowComponents: TableRowComponent[];
@@ -48,6 +47,7 @@ export interface EditableTableProps extends Omit<TableProps, 'value'> {
 const EditableTable: FC<EditableTableProps> = ({
   onChangeData,
   onDeleteRow,
+  initialStaticColumn,
   values,
   columnHeaders,
   rowComponents,
@@ -55,16 +55,9 @@ const EditableTable: FC<EditableTableProps> = ({
   hasFreezeButton = true,
   ...props
 }: EditableTableProps) => {
-  const [staticColumn, setStaticColumn] = useState<string>();
-
-  useEffect(() => {
-    const columnHeader = columnHeaders.find(
-      (header) => header.identifier.isStatic,
-    );
-    if (columnHeader) {
-      setStaticColumn(columnHeader.identifier.name);
-    }
-  }, [columnHeaders]);
+  const [staticColumn, setStaticColumn] = useState<string | undefined>(
+    initialStaticColumn,
+  );
 
   const handleChangeData = useCallback(
     (rowIndex: number, columnName: string) =>
@@ -127,6 +120,15 @@ const EditableTable: FC<EditableTableProps> = ({
                     (() => <Label>{staticHeader.identifier.name}</Label>)
                   );
                 })()}
+                actions={[
+                  {
+                    label: 'unfreeze',
+                    handler: () => {
+                      setStaticColumn(undefined);
+                    },
+                  },
+                  ...actions,
+                ]}
               />
             )}
 
@@ -141,6 +143,15 @@ const EditableTable: FC<EditableTableProps> = ({
                     header.headerRender ||
                     (() => <Label>{header.identifier.name}</Label>)
                   }
+                  actions={[
+                    {
+                      label: 'freeze',
+                      handler: (column) => {
+                        setStaticColumn(column);
+                      },
+                    },
+                    ...actions,
+                  ]}
                 />
               ))}
           </Box>
