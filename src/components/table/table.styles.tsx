@@ -43,7 +43,6 @@ export const theadStyles = {
       borderTopColor: 'grey',
       borderWidth: '0 1px 2px 0',
       left: '0',
-      zIndex: '100',
       cursor: 'pointer',
     },
     '&:hover': {

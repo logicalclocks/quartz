@@ -15,11 +15,7 @@ import {
 // Components
 import RowLeftContent from './row-left-content';
 // types
-import {
-  TableCell,
-  TableHeader,
-  TableRowComponent,
-} from '../type';
+import { TableCell, TableHeader, TableRowComponent } from '../type';
 import Thead from '../thead';
 import Label from '../../label';
 
@@ -120,15 +116,19 @@ const EditableTable: FC<EditableTableProps> = ({
                     (() => <Label>{staticHeader.identifier.name}</Label>)
                   );
                 })()}
-                actions={[
-                  {
-                    label: 'unfreeze',
-                    handler: () => {
-                      setStaticColumn(undefined);
-                    },
-                  },
-                  ...actions,
-                ]}
+                actions={
+                  hasFreezeButton
+                    ? [
+                      {
+                        label: 'unfreeze',
+                        handler: () => {
+                          setStaticColumn(undefined);
+                        },
+                      },
+                      ...actions,
+                    ]
+                    : actions
+                }
               />
             )}
 
@@ -143,15 +143,19 @@ const EditableTable: FC<EditableTableProps> = ({
                     header.headerRender ||
                     (() => <Label>{header.identifier.name}</Label>)
                   }
-                  actions={[
-                    {
-                      label: 'freeze',
-                      handler: (column) => {
-                        setStaticColumn(column);
-                      },
-                    },
-                    ...actions,
-                  ]}
+                  actions={
+                    hasFreezeButton
+                      ? [
+                        {
+                          label: 'freeze',
+                          handler: (column) => {
+                            setStaticColumn(column);
+                          },
+                        },
+                        ...actions,
+                      ]
+                      : actions
+                  }
                 />
               ))}
           </Box>
