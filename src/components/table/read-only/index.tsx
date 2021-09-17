@@ -4,9 +4,6 @@ import { Box } from 'rebass';
 // Components
 import { TableProps } from '../index';
 
-// Utils
-import { getColumns, getRows } from '../utils';
-
 // Styles
 import {
   containerStyles,
@@ -16,23 +13,40 @@ import {
 } from '../table.styles';
 
 import Thead from '../thead';
+import { ColumnIdentifier, TableCell, TableHeader } from '../type';
+import Label from '../../label';
 
 export interface ReadOnlyTableProps extends Omit<TableProps, 'value'> {
-  staticColumn?: string;
-  onFreeze: (column?: string) => void;
+  staticColumn?: ColumnIdentifier;
+  values: TableCell[][];
+  columnHeaders: TableHeader[];
   actions: Array<{
     label: string;
     handler: (column: string) => void;
   }>;
 }
 
+/* eslint-disable arrow-body-style */
+
 const ReadOnlyTable: FC<ReadOnlyTableProps> = ({
   staticColumn,
-  onFreeze,
-  actions,
-  ...props
+  values,
+  columnHeaders,
 }: ReadOnlyTableProps) => {
   const [hoverColumn, setHoverColumn] = useState<string>();
+
+  const sortValues = (
+    cells: TableCell[][],
+    headers: TableHeader[],
+  ): TableCell[][] => {
+    return cells.map((row) => {
+      return headers.map((header) => {
+        return row.find(
+          (cell) => cell.identifierName === header.identifier.name,
+        )!;
+      });
+    });
+  };
 
   return (
     <Box sx={containerStyles}>
@@ -42,54 +56,39 @@ const ReadOnlyTable: FC<ReadOnlyTableProps> = ({
             <Box as="th" className="table-corner" />
             {staticColumn && (
               <Thead
-                column={staticColumn}
-                isPrimary={
-                  props.values[0].row.find((r) => r.columnName === staticColumn)
-                    ?.isPrimary
-                }
-                isPartition={
-                  props.values[0].row.find((r) => r.columnName === staticColumn)
-                    ?.isPartition
-                }
+                column={staticColumn.name}
+                headerRender={(() => {
+                  const staticHeader = columnHeaders.find(
+                    (header) => header.identifier === staticColumn,
+                  )!;
+                  return (
+                    // eslint-disable-next-line operator-linebreak
+                    staticHeader.headerRender ||
+                    (() => <Label>{staticHeader.identifier.name}</Label>)
+                  );
+                })()}
                 className={`static-column ${
-                  hoverColumn === staticColumn && 'hover-column'
+                  hoverColumn === staticColumn.name && 'hover-column'
                 }`}
-                actions={[
-                  {
-                    label: 'unfreeze',
-                    handler: () => {
-                      onFreeze();
-                    },
-                  },
-                  ...actions,
-                ]}
               />
             )}
 
-            {getColumns(props.values).map((column: string) => column !== staticColumn && (
-                  <Thead
-                    key={column}
-                    column={column}
-                    isPrimary={
-                      props.values[0].row.find((r) => r.columnName === column)
-                        ?.isPrimary
-                    }
-                    isPartition={
-                      props.values[0].row.find((r) => r.columnName === column)
-                        ?.isPartition
-                    }
-                    className={`${hoverColumn === column && 'hover-column'}`}
-                    actions={[
-                      {
-                        label: 'freeze',
-                        handler: (column) => {
-                          onFreeze(column);
-                        },
-                      },
-                      ...actions,
-                    ]}
-                  />
-                  ))}
+            {columnHeaders
+              .filter((header) => header.identifier !== staticColumn)
+              .map((header: TableHeader) => (
+                <Thead
+                  key={header.identifier.name}
+                  column={header.identifier.name}
+                  headerRender={
+                    // eslint-disable-next-line operator-linebreak
+                    header.headerRender ||
+                    (() => <Label>{header.identifier.name}</Label>)
+                  }
+                  className={`${
+                    hoverColumn === header.identifier.name && 'hover-column'
+                  }`}
+                />
+              ))}
           </Box>
         </Box>
         <Box
@@ -98,38 +97,48 @@ const ReadOnlyTable: FC<ReadOnlyTableProps> = ({
             backgroundColor: 'white',
           }}
         >
-          {getRows(props.values).map((row, i) => (
-            <Box key={i} as="tr" sx={trowStyles}>
-              <Box as="td" id={String(i + 1)}>
-                <span>{i + 1}</span>
+          {sortValues(values, columnHeaders).map((row, index) => (
+            // eslint-disable-next-line react/no-array-index-key
+            <Box key={index} as="tr" sx={trowStyles}>
+              <Box as="td" id={String(index + 1)}>
+                <span>{index + 1}</span>
               </Box>
 
               {staticColumn && (
                 <Box
                   as="td"
                   className={`static-column ${
-                    hoverColumn === staticColumn && 'hover-column'
+                    hoverColumn === staticColumn.name && 'hover-column'
                   }`}
-                  onMouseEnter={() => setHoverColumn(staticColumn)}
-                  onMouseLeave={() => setHoverColumn('')}
+                  onMouseEnter={() => setHoverColumn(staticColumn.name)}
+                  onMouseLeave={() => setHoverColumn(undefined)}
                 >
-                  {row[staticColumn]}
+                  {
+                    row.find(
+                      (cell) => cell.identifierName === staticColumn.name,
+                    )?.value
+                  }
                 </Box>
               )}
-              {getColumns(props.values).map(
-                (column: string) =>
-                  column !== staticColumn && (
-                    <Box
-                      key={column}
-                      as="td"
-                      className={`${hoverColumn === column && 'hover-column'}`}
-                      onMouseEnter={() => setHoverColumn(column)}
-                      onMouseLeave={() => setHoverColumn('')}
-                    >
-                      {row[column]}
-                    </Box>
-                  ),
-              )}
+              {row
+                .filter((cell: TableCell) => {
+                  return staticColumn
+                    ? cell.identifierName !== staticColumn.name
+                    : true;
+                })
+                .map((cell: TableCell) => (
+                  <Box
+                    key={cell.identifierName}
+                    as="td"
+                    className={`${
+                      hoverColumn === cell.identifierName && 'hover-column'
+                    }`}
+                    onMouseEnter={() => setHoverColumn(cell.identifierName)}
+                    onMouseLeave={() => setHoverColumn(undefined)}
+                  >
+                    {cell.value}
+                  </Box>
+                ))}
             </Box>
           ))}
         </Box>

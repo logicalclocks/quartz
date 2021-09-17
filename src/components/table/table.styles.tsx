@@ -45,6 +45,7 @@ export const theadStyles = {
       left: '0',
       zIndex: '100',
       cursor: 'pointer',
+      position: 'fixed',
     },
     '&:hover': {
       backgroundColor: 'primaryShade2',
