@@ -36,8 +36,7 @@ export const theadStyles = {
   cursor: 'pointer',
   th: {
     '&.table-corner': {
-      minWidth: '31px',
-      maxWidth: '31px',
+      width: '31px',
       backgroundColor: 'grayShade2',
       borderLeftColor: 'grayShade2',
       borderTopColor: 'grey',
@@ -45,7 +44,7 @@ export const theadStyles = {
       left: '0',
       zIndex: '100',
       cursor: 'pointer',
-      position: 'fixed',
+      position: 'sticky',
     },
     '&:hover': {
       backgroundColor: 'primaryShade2',
@@ -112,6 +111,9 @@ export const trowStyles = {
       backgroundColor: 'white',
       display: 'block',
     },
+    'td:last-child': {
+      width: '100%',
+    },
     '&:hover': {
       backgroundColor: 'grayShade2',
     },
@@ -132,12 +134,4 @@ export const trowStyles = {
       borderRightWidth: '1px',
     },
   },
-};
-
-export const dropdownStyles = {
-  position: 'absolute',
-  width: '100% !important',
-  left: '0',
-  top: '37px',
-  zIndex: '200',
 };

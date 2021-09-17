@@ -5,6 +5,7 @@ export type TableCellType = string | string[] | boolean;
 export interface TableCell {
   identifierName: string;
   value: TableCellType;
+  readOnly?: boolean;
 }
 
 export interface TableHeader {
@@ -15,7 +16,6 @@ export interface TableHeader {
 export interface ColumnIdentifier {
   name: string;
   isStatic?: boolean;
-  readOnly?: boolean;
 }
 
 export interface TableRowComponent {
@@ -23,5 +23,6 @@ export interface TableRowComponent {
   render: (params: {
     value: TableCellType;
     onChange: (value: TableCellType) => void;
+    readOnly: boolean;
   }) => React.ReactElement;
 }

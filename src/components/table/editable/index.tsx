@@ -55,14 +55,14 @@ const EditableTable: FC<EditableTableProps> = ({
   hasFreezeButton = true,
   ...props
 }: EditableTableProps) => {
-  const [staticColumn, setStaticColumn] = useState<ColumnIdentifier>();
+  const [staticColumn, setStaticColumn] = useState<string>();
 
   useEffect(() => {
     const columnHeader = columnHeaders.find(
       (header) => header.identifier.isStatic,
     );
     if (columnHeader) {
-      setStaticColumn(columnHeader.identifier); // TODO also the cells identifiers
+      setStaticColumn(columnHeader.identifier.name);
     }
   }, [columnHeaders]);
 
@@ -94,7 +94,11 @@ const EditableTable: FC<EditableTableProps> = ({
 
     const onChange = handleChangeData(rowIndex, cell.identifierName);
     return component
-      ? component.render({ value: cell.value, onChange })
+      ? component.render({
+          value: cell.value,
+          onChange,
+          readOnly: cell.readOnly || false,
+        })
       : cell.value;
   };
 
@@ -112,10 +116,10 @@ const EditableTable: FC<EditableTableProps> = ({
             {/* Static column */}
             {staticColumn && (
               <Thead
-                column={staticColumn.name}
+                column={staticColumn}
                 headerRender={(() => {
                   const staticHeader = columnHeaders.find(
-                    (header) => header.identifier.name === staticColumn.name,
+                    (header) => header.identifier.name === staticColumn,
                   )!;
                   return (
                     // eslint-disable-next-line operator-linebreak
@@ -127,7 +131,7 @@ const EditableTable: FC<EditableTableProps> = ({
             )}
 
             {columnHeaders
-              .filter((header) => header.identifier !== staticColumn)
+              .filter((header) => header.identifier.name !== staticColumn)
               .map((header) => (
                 <Thead
                   key={header.identifier.name}
@@ -152,12 +156,12 @@ const EditableTable: FC<EditableTableProps> = ({
                 {staticColumn && (
                   <Box
                     // eslint-disable-next-line react/no-array-index-key
-                    key={`${rowIndex}-${staticColumn.name}`}
+                    key={`${rowIndex}-${staticColumn}`}
                     as="td"
                     p="0px !important"
                   >
                     {componentifyCell(
-                      row.find((c) => c.identifierName === staticColumn.name)!,
+                      row.find((c) => c.identifierName === staticColumn)!,
                       rowIndex,
                     )}
                   </Box>
@@ -166,7 +170,7 @@ const EditableTable: FC<EditableTableProps> = ({
                 {row
                   .filter((cell: TableCell) => {
                     return staticColumn
-                      ? cell.identifierName !== staticColumn.name
+                      ? cell.identifierName !== staticColumn
                       : true;
                   })
                   .map((cell: TableCell) => (

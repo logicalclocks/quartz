@@ -26,27 +26,19 @@ export default {
 
 const headers = [
   {
-    identifier: { name: 'away_team_id', isStatic: false, readOnly: false },
+    identifier: { name: 'away_team_id', isStatic: false },
   },
   {
-    identifier: { name: 'score', isStatic: false, readOnly: false },
+    identifier: { name: 'score', isStatic: false },
   },
   {
-    identifier: {
-      name: 'dummycolumn_test1',
-      isStatic: false,
-      readOnly: false,
-    },
+    identifier: { name: 'dummycolumn_test1', isStatic: false },
   },
   {
-    identifier: {
-      name: 'dummycolumn_test2',
-      isStatic: false,
-      readOnly: false,
-    },
+    identifier: { name: 'dummycolumn_test2', isStatic: false },
   },
   {
-    identifier: { name: 'home_team_id', isStatic: false, readOnly: false },
+    identifier: { name: 'home_team_id', isStatic: false },
   },
 ];
 
@@ -94,7 +86,7 @@ export const Editable: Story<EditableTableProps> = ({
 
   const addRowVals = columnHeaders.map(
     (header: TableHeader, index: number) => ({
-      identifier: header.identifier,
+      identifierName: header.identifier.name,
       value: vals[index] as TableCellType,
     }),
   );
@@ -158,20 +150,19 @@ export const Editable: Story<EditableTableProps> = ({
     columnName: string,
     value: string | string[] | boolean,
   ) => {
-    setData((prevData) => {
-      return prevData.map((oldData, rIndex) => ({
-        ...oldData,
-        row: oldData.map((r) => {
-          return r.identifierName.name === columnName && rIndex === rowInd
-            ? { ...r, columnValue: value }
-            : r;
-        }),
-      }));
+    setData((data2) => {
+      const prevData = data2.slice();
+      const cellIndex = prevData[rowInd].findIndex(
+        (cell) => cell.identifierName === columnName,
+      );
+      const cell = prevData[rowInd][cellIndex];
+      prevData[rowInd][cellIndex] = { ...cell, value };
+      return prevData;
     });
   };
 
   const handleAddRow = () => {
-    setData((prevData) => [addRowVals, ...prevData]);
+    setData((prevData) => [...prevData, addRowVals]);
   };
 
   return (
