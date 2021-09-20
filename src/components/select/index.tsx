@@ -21,12 +21,14 @@ import Input from '../input';
 import Value from '../typography/value';
 import useKeyUp from '../../utils/useKeyUp';
 import icons from '../../sources/icons';
+import StickyPortal, { CONTENT_ID } from '../sticky-portal/StickyPortal';
 
 export interface SelectProps extends Omit<LabelProps, 'onChange' | 'children'> {
   value: string[];
   options: string[];
   placeholder: string;
   isMulti?: boolean;
+  appendToBody?: boolean;
   label?: string;
   disabled?: boolean;
   width?: string | number;
@@ -59,7 +61,7 @@ const Select: FC<SelectProps> = ({
   variant = 'primary',
   options,
   disabled,
-  listWidth = 'max-content',
+  listWidth,
   value,
   isMulti,
   placeholder,
@@ -80,11 +82,16 @@ const Select: FC<SelectProps> = ({
   needSecondaryText = true,
   deletabled,
   needSwap = false,
+  appendToBody = false,
   ...props
 }: SelectProps) => {
-  const containerRef = useRef(null);
+  const containerRef = useRef<HTMLDivElement>(null);
   const [isOpen, handleToggle, handleClickOutside] = useDropdown(false);
-  useOnClickOutside<HTMLDivElement>(containerRef, handleClickOutside);
+  useOnClickOutside<HTMLDivElement>(
+    handleClickOutside,
+    [containerRef],
+    [CONTENT_ID],
+  );
 
   const [search, setSearch] = useState('');
 
@@ -134,6 +141,37 @@ const Select: FC<SelectProps> = ({
     }
   }, [handleToggle, disabled]);
 
+  const DropdownWrapper: FC<{ children: any; refEl: any }> = ({
+    children,
+    refEl,
+    // eslint-disable-next-line arrow-body-style
+  }) => {
+    return appendToBody ? (
+      <StickyPortal handleClose={handleClickOutside} refEl={refEl}>
+        {children}
+      </StickyPortal>
+    ) : (
+      children
+    );
+  };
+
+  const dropdrownPosition = useCallback(() => {
+    if (containerRef?.current) {
+      return containerRef.current.offsetHeight + 1;
+    }
+    return 33;
+  }, [containerRef.current?.offsetHeight]);
+
+  const dropdrownWidth = useCallback(() => {
+    if (listWidth === '100%' && containerRef.current) {
+      return `${containerRef.current.offsetWidth - 2}px`;
+    }
+    if (listWidth && listWidth !== '') {
+      return listWidth;
+    }
+    return 'max-content';
+  }, [containerRef.current?.offsetWidth, listWidth]);
+
   return (
     <Label
       action={labelAction}
@@ -160,77 +198,83 @@ const Select: FC<SelectProps> = ({
         needSwap={needSwap}
       >
         {isOpen && (
-          <List sx={listStyles} width={listWidth} maxHeight={maxListHeight}>
-            <Flex>
-              {!!customFilter && customFilter}
-              {hasSearch && (
-                <Flex flex={1} ml="20px">
-                  <Box
-                    mt="20px"
-                    mr="-34px"
-                    sx={{
-                      svg: {
-                        width: '14px',
-                        height: '14px',
+          <DropdownWrapper refEl={containerRef?.current || undefined}>
+            <List
+              sx={listStyles(dropdrownPosition(), appendToBody)}
+              width={dropdrownWidth()}
+              maxHeight={maxListHeight}
+            >
+              <Flex>
+                {!!customFilter && customFilter}
+                {hasSearch && (
+                  <Flex flex={1} ml="20px">
+                    <Box
+                      mt="20px"
+                      mr="-34px"
+                      sx={{
+                        svg: {
+                          width: '14px',
+                          height: '14px',
 
-                        path: {
-                          fill: 'gray',
+                          path: {
+                            fill: 'gray',
+                          },
                         },
-                      },
-                      zIndex: 1,
-                    }}
-                    onClick={(e) => e.stopPropagation()}
-                  >
-                    {icons.glass}
-                  </Box>
-                  <Input
-                    pl="32px"
-                    m="10px"
-                    width="100%"
-                    value={search}
-                    placeholder={searchPlaceholder}
-                    onChange={({ target }) => setSearch(target.value)}
-                    onClick={(e) => e.stopPropagation()}
+                        zIndex: 1,
+                      }}
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      {icons.glass}
+                    </Box>
+                    <Input
+                      pl="32px"
+                      m="10px"
+                      width="100%"
+                      value={search}
+                      placeholder={searchPlaceholder}
+                      onChange={({ target }) => setSearch(target.value)}
+                      onClick={(e) => e.stopPropagation()}
+                    />
+                  </Flex>
+                )}
+              </Flex>
+              {(!!customFilter || hasSearch) && (
+                <Divider my={0} width="calc(100% + 20px)" />
+              )}
+              {!!filteredOptions.length ? (
+                isMulti ? (
+                  // Multi choice
+                  <SelectListMulti
+                    value={value}
+                    onChange={onChange}
+                    onClose={handleToggle}
+                    options={filteredOptions}
+                    additionalTexts={filteredAdditionalTexts}
+                    additionalComponents={filteredAdditionalComponents}
                   />
+                ) : (
+                  // Single choice
+                  <SelectList
+                    value={value}
+                    onChange={onChange}
+                    onClose={handleToggle}
+                    options={filteredOptions}
+                    additionalTexts={filteredAdditionalTexts}
+                    additionalComponents={filteredAdditionalComponents}
+                  />
+                )
+              ) : (
+                <Flex height="55px" alignItems="center" justifyContent="center">
+                  <Value>{noMathText}</Value>
                 </Flex>
               )}
-            </Flex>
-            {(!!customFilter || hasSearch) && (
-              <Divider my={0} width="calc(100% + 20px)" />
-            )}
-            {!!filteredOptions.length ? (
-              isMulti ? (
-                // Multi choice
-                <SelectListMulti
-                  value={value}
-                  onChange={onChange}
-                  onClose={handleToggle}
-                  options={filteredOptions}
-                  additionalTexts={filteredAdditionalTexts}
-                  additionalComponents={filteredAdditionalComponents}
-                />
-              ) : (
-                // Single choice
-                <SelectList
-                  value={value}
-                  onChange={onChange}
-                  onClose={handleToggle}
-                  options={filteredOptions}
-                  additionalTexts={filteredAdditionalTexts}
-                  additionalComponents={filteredAdditionalComponents}
-                />
-              )
-            ) : (
-              <Flex height="55px" alignItems="center" justifyContent="center">
-                <Value>{noMathText}</Value>
-              </Flex>
-            )}
-            {bottomActionText && (
-              <Box sx={bottomActionStyles} onClick={bottomActionHandler}>
-                {bottomActionText}
-              </Box>
-            )}
-          </List>
+              {bottomActionText && (
+                <Box sx={bottomActionStyles} onClick={bottomActionHandler}>
+                  {bottomActionText}
+                </Box>
+              )}
+            </List>
+          </DropdownWrapper>
         )}
       </SelectLabel>
       {info && <SelectInfo intent={intent}>{info}</SelectInfo>}

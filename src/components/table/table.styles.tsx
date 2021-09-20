@@ -110,12 +110,12 @@ export const trowStyles = {
       backgroundColor: 'grayShade2',
     },
     'th[id]': {
-      padding: '0 !important',
       span: {
         display: 'none',
       },
       div: {
-        display: 'inline-block',
+        display: 'block',
+        height: '100%',
       },
     },
   },

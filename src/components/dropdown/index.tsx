@@ -22,7 +22,7 @@ const Dropdown: FC<DropdownProps> = ({
   ...props
 }: DropdownProps) => {
   const containerRef = useRef(null);
-  useOnClickOutside(containerRef, onClickOutside);
+  useOnClickOutside(onClickOutside, [containerRef]);
 
   if (!isOpen) {
     return null;

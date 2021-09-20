@@ -56,6 +56,7 @@ Default.args = {
   variant: 'primary',
   intent: 'default',
   isMulti: true,
+  appendToBody: false,
   inlineLegend: '',
 };
 
@@ -107,6 +108,10 @@ Default.argTypes = {
   isMulti: {
     control: { type: 'boolean' },
     type: { required: true },
+  },
+  appendToBody: {
+    control: { type: 'boolean' },
+    type: { required: false },
   },
   type: {
     type: { required: false },
