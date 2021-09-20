@@ -18,6 +18,7 @@ export interface EditableSelectDropdownProps {
   maxHeight: string;
   type?: EditableSelectTypes;
   isMulti: boolean;
+  appendToBody: boolean;
   onChange: (value: string[]) => void;
   onClose: () => void;
 }
@@ -33,6 +34,7 @@ const EditableSelectDropdown: FC<EditableSelectDropdownProps> = ({
   position,
   onChange,
   maxHeight,
+  appendToBody,
 }) => {
   const handleClick = useCallback(
     (option: string) => () => {
@@ -61,7 +63,7 @@ const EditableSelectDropdown: FC<EditableSelectDropdownProps> = ({
 
   return (
     <List
-      sx={listStyles(position)}
+      sx={listStyles(position, appendToBody)}
       minWidth={width}
       width="max-content"
       maxHeight={maxHeight}

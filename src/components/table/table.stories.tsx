@@ -147,9 +147,10 @@ export const Editable: Story<ReadOnlyTableProps> = ({ values }) => {
       name: 'home_team_id',
       render: ({ value, onChange }) => (
         <Select
+          appendToBody
           value={value}
           onChange={onChange}
-          options={['1', '2']}
+          options={['1', '2', '3', '4', '5', '6']}
           placeholder=""
         />
       ),
@@ -159,20 +160,22 @@ export const Editable: Story<ReadOnlyTableProps> = ({ values }) => {
   return (
     <>
       <Button onClick={handleAddRow}>Add</Button>
-      <EditableTable
-        columns={columns}
-        values={data}
-        onChangeData={handleChangeData}
-        onDeleteRow={handleRemoveRow}
-        actions={[
-          {
-            label: 'go to stats',
-            handler: (column) => {
-              console.log('go to stats of ' + column);
+      <Box width="500px">
+        <EditableTable
+          columns={columns}
+          values={data}
+          onChangeData={handleChangeData}
+          onDeleteRow={handleRemoveRow}
+          actions={[
+            {
+              label: 'go to stats',
+              handler: (column) => {
+                console.log('go to stats of ' + column);
+              },
             },
-          },
-        ]}
-      />
+          ]}
+        />
+      </Box>
     </>
   );
 };

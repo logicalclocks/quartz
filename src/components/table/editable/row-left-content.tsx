@@ -14,10 +14,14 @@ const styles = {
   boxSizing: 'content-box',
   '> div': {
     display: 'none',
+    height: '15px',
+    marginTop: '-9px',
     '> button': {
-      width: '31px',
-      height: 'auto',
-      padding: '9px 12px 9px 15px',
+      width: '30px',
+      height: '32px',
+      paddingTop: '16px',
+      paddingRight: '13px',
+      paddingLeft: '14px',
       maxHeight: '35px',
     },
     svg: {
@@ -39,12 +43,13 @@ const RowLeftContent: FC<RowLeftContentProps> = ({
       py="9px !important"
       id={String(index + 1)}
       sx={styles}
+      height="14px"
       onClick={handleDeleteRow}
     >
       <span>{index + 1}</span>
       <IconButton
         py="9px !import"
-        px="12px !important"
+        pt="12px !important"
         pr="20px"
         tooltipProps={{ position: TooltipPositions.right }}
         tooltip="remove"
