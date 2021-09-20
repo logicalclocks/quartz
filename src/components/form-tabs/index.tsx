@@ -1,14 +1,25 @@
-import React, { FC, useCallback, useMemo, useState } from 'react';
-import { Flex } from 'rebass';
+import React, {
+  FC,
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from 'react';
+import { Box, Flex } from 'rebass';
+import ResizeObserver from 'resize-observer-polyfill';
 import {
   summaryContainerStyles,
   containerStyles,
   tabsStyles,
+  buttonsContainerStyles,
+  gradientStyles,
 } from './form-tabs.styles';
 import FormSummaryContainer from '../form-summary-container';
 import Tab from './tab/Tab';
 import { Button } from '../..';
 import { TabState } from './tab/TabDescription';
+
 
 export enum ValidateOpts {
   valid = 'valid',
@@ -46,8 +57,16 @@ const FormTabs: FC<FormTabsProps> = ({
     return Math.max(tabIdx, 0);
   }, [initialTab, tabs]);
 
+  const tabsContainerRef = useRef<HTMLElement>(null);
+
+  const hasOverflow = useCallback(() => {
+    const el = tabsContainerRef?.current;
+    return el ? el.clientWidth !== el.scrollWidth : false;
+  }, [tabsContainerRef?.current]);
+
   const [active, setActive] = useState<number>(initialActive);
   const [tabArray, setTabArray] = useState<TabItem[]>(tabs);
+  const [isOverflown, setIsOverflown] = useState<boolean>(false);
 
   const currentTab = useMemo(() => tabArray[active], [tabArray, active]);
 
@@ -124,6 +143,17 @@ const FormTabs: FC<FormTabsProps> = ({
     return allValid;
   }, []);
 
+  useEffect(() => {
+    if (!tabsContainerRef.current) return;
+
+    const resizeObserver = new ResizeObserver(() => {
+      setIsOverflown(hasOverflow());
+    });
+    resizeObserver.observe(tabsContainerRef.current);
+    // eslint-disable-next-line consistent-return
+    return () => resizeObserver.disconnect();
+  }, [tabsContainerRef?.current]);
+
   return (
     <FormSummaryContainer
       style={summaryContainerStyles}
@@ -131,7 +161,7 @@ const FormTabs: FC<FormTabsProps> = ({
       {...props}
     >
       <Flex sx={containerStyles}>
-        <Flex sx={tabsStyles}>
+        <Flex ref={tabsContainerRef} sx={tabsStyles}>
           {tabArray.map(({ title, optional, state, id }, idx) => (
             <Tab
               key={id}
@@ -142,17 +172,20 @@ const FormTabs: FC<FormTabsProps> = ({
             />
           ))}
         </Flex>
-        <Flex>
-          {active > 0 && (
-            <Button intent="secondary" mr="20px" onClick={handleGoBack}>
-              Back
-            </Button>
-          )}
-          {active === tabs.length - 1 ? (
-            <SubmitButton validateAll={handleSubmit} />
-          ) : (
-            <Button onClick={handleGoForward}>Next</Button>
-          )}
+        <Flex sx={buttonsContainerStyles}>
+          {isOverflown && <Box sx={gradientStyles} />}
+          <Flex>
+            {active > 0 && (
+              <Button intent="secondary" mr="20px" onClick={handleGoBack}>
+                Back
+              </Button>
+            )}
+            {active === tabs.length - 1 ? (
+              <SubmitButton validateAll={handleSubmit} />
+            ) : (
+              <Button onClick={handleGoForward}>Next</Button>
+            )}
+          </Flex>
         </Flex>
       </Flex>
     </FormSummaryContainer>

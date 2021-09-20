@@ -52,6 +52,18 @@ const tabs = [
     validationFn: () => ValidateOpts.error,
   },
   {
+    id: 'title4',
+    title: 'Title 4',
+    optional: false,
+    validationFn: () => ValidateOpts.error,
+  },
+  {
+    id: 'title5',
+    title: 'Title 5',
+    optional: false,
+    validationFn: () => ValidateOpts.error,
+  },
+  {
     id: 'summary',
     title: 'Summary',
     optional: false,
