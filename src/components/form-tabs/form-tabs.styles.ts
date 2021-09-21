@@ -13,6 +13,7 @@ export const containerStyles = {
 
 export const tabsStyles = {
   overflowX: 'scroll',
+  paddingRight: '20px',
   marginLeft: '-20px !important',
   height: '100%',
   alignItems: 'center',
