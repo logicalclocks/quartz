@@ -1,4 +1,11 @@
-import React, { FC, useEffect, useMemo, useRef, useState } from 'react';
+import React, {
+  FC,
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from 'react';
 import useDropdown from '../../utils/useDropdown';
 import useOnClickOutside from '../../utils/useClickOutside';
 import { Intents } from '../intents';
@@ -7,9 +14,11 @@ import EditableSelectContainer from './EditableSelectContainer';
 import EditableSelectDropdown from './EditableSelectDropdown';
 import EditableSelectInfo from './EditableSelectInfo';
 import { EditableSelectTypes, ChipsVariants } from './types';
+import StickyPortal, { CONTENT_ID } from '../sticky-portal/StickyPortal';
 
 export interface EditableSelectProps
   extends Omit<LabelProps, 'onChange' | 'children'> {
+  appendToBody?: boolean;
   info?: string;
   label?: string;
   width?: string;
@@ -39,6 +48,7 @@ const EditableSelect: FC<EditableSelectProps> = ({
   labelAction,
   placeholder,
   inlineLegend,
+  appendToBody = false,
   width = 'auto',
   isMulti = true,
   type = 'editable',
@@ -53,7 +63,12 @@ const EditableSelect: FC<EditableSelectProps> = ({
   const [search, setSearch] = useState(isMulti ? '' : value[0] || '');
 
   const [isOpen, handleToggle, handleClickOutside] = useDropdown(false);
-  useOnClickOutside<HTMLDivElement>(containerRef, handleClickOutside);
+
+  useOnClickOutside<HTMLDivElement>(
+    handleClickOutside,
+    [containerRef],
+    [CONTENT_ID],
+  );
 
   const unselectedOpts = useMemo(
     () => options.filter((opt) => !value.includes(opt)),
@@ -90,19 +105,33 @@ const EditableSelect: FC<EditableSelectProps> = ({
     }
   }, [search]);
 
-  const dropdrownWidth = useMemo(() => {
+  const dropdrownWidth = useCallback(() => {
     if (containerRef.current) {
       return `${containerRef.current.offsetWidth - 2}px`;
     }
     return 'auto';
   }, [containerRef.current?.offsetWidth]);
 
-  const dropdrownPosition = useMemo(() => {
+  const dropdrownPosition = useCallback(() => {
     if (containerRef.current) {
       return containerRef.current.offsetHeight + 1;
     }
     return 33;
   }, [containerRef.current?.offsetHeight]);
+
+  const DropdownWrapper: FC<{ children: any; refEl: any }> = ({
+    children,
+    refEl,
+    // eslint-disable-next-line arrow-body-style
+  }) => {
+    return appendToBody ? (
+      <StickyPortal refEl={refEl} handleClose={handleClickOutside}>
+        {children}
+      </StickyPortal>
+    ) : (
+      children
+    );
+  };
 
   return (
     <Label
@@ -132,18 +161,21 @@ const EditableSelect: FC<EditableSelectProps> = ({
         variant={disabled ? 'disabled' : (variant as ChipsVariants)}
       >
         {isOpen && (
-          <EditableSelectDropdown
-            type={type}
-            value={value}
-            search={search}
-            isMulti={isMulti}
-            onClose={handleToggle}
-            width={dropdrownWidth}
-            maxHeight={maxListHeight}
-            options={filteredOptions}
-            position={dropdrownPosition}
-            onChange={handleValueChange}
-          />
+          <DropdownWrapper refEl={containerRef?.current || undefined}>
+            <EditableSelectDropdown
+              type={type}
+              value={value}
+              search={search}
+              isMulti={isMulti}
+              onClose={handleToggle}
+              width={dropdrownWidth()}
+              maxHeight={maxListHeight}
+              options={filteredOptions}
+              appendToBody={appendToBody}
+              position={dropdrownPosition()}
+              onChange={handleValueChange}
+            />
+          </DropdownWrapper>
         )}
       </EditableSelectContainer>
       {info && <EditableSelectInfo intent={intent}>{info}</EditableSelectInfo>}

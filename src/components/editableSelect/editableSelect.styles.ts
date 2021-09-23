@@ -17,9 +17,11 @@ export const chipStyles = {
   cursor: 'default',
 };
 
-const getIntentColor = (intent: Intents) => ({ inputIntents }: ITheme) => {
-  return inputIntents[intent] ?? 'transparent';
-};
+const getIntentColor =
+  (intent: Intents) =>
+  ({ inputIntents }: ITheme) => {
+    return inputIntents[intent] ?? 'transparent';
+  };
 
 export const getContainerStyles = (intent: Intents): SxStyleProp => ({
   position: 'relative',
@@ -67,11 +69,18 @@ export const inputStyles = (): SxStyleProp => {
   };
 };
 
-export const listStyles = (parentHeight: number): SxStyleProp => ({
+export const listStyles = (
+  parentHeight: number,
+  appendToBody: boolean,
+): SxStyleProp => ({
   position: 'absolute',
   zIndex: 'popups',
   left: 0,
   top: `${parentHeight}px`,
+  ...(appendToBody && {
+    marginTop: '2px !important',
+    marginLeft: '1px !important',
+  }),
 });
 
 export const messageStyles = {
