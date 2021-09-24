@@ -24,7 +24,7 @@ const Thead: FC<TheadProps> = ({
 }: TheadProps) => {
   const containerRef = useRef(null);
   const [isOpen, handleToggle, handleClickOutside] = useDropdown();
-  useOnClickOutside<HTMLDivElement>(containerRef, handleClickOutside);
+  useOnClickOutside<HTMLDivElement>(handleClickOutside, [containerRef]);
 
   const dropdownStyles = {
     position: 'absolute',
