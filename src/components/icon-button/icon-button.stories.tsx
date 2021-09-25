@@ -2,8 +2,6 @@ import React from 'react';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { action } from '@storybook/addon-actions';
 import { Story, Meta } from '@storybook/react/types-6-0';
-import { faEye } from '@fortawesome/free-regular-svg-icons';
-import { faEye as fasEye } from '@fortawesome/free-solid-svg-icons';
 
 import IconButton, { IconButtonProps } from '.';
 import { IconName } from '../icon/list';
@@ -62,8 +60,7 @@ IconButtons.argTypes = {
     },
     type: {
       required: true,
-      summary:
-        'Icon name, icon SVG, or array like ["far", "eye"] ["fas", "eye"]',
+      summary: 'Icon name',
     },
-  }
+  },
 };
