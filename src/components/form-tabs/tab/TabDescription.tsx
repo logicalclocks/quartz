@@ -24,7 +24,7 @@ const TabDescription: FC<TabDescriptionProps> = ({ state }) => {
       return icons.check;
     case TabState.error:
       return (
-        <Flex flexDirection="row">
+        <Flex flexDirection="row" ml="0px">
           {icons.error}
           <Label ml="4px" color="labels.red">
             changes required
