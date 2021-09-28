@@ -85,7 +85,9 @@ Default.args = {
   hasScrollOnScreen: false,
   onTabChange: (tab) => console.log('moved to:', tab),
   SubmitButton: ({ validateAll }: { validateAll: () => boolean }) => (
-    <Button onClick={() => handleSubmit(validateAll)}>Create feature</Button>
+    <Button onClick={() => handleSubmit(validateAll)} isLoading>
+      Create feature
+    </Button>
   ),
   initialTab: 'title2',
 };

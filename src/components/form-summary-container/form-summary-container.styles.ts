@@ -7,12 +7,6 @@ export const mainBoxStyles = {
   width: 1274,
   height: '100%',
   px: '20px',
-  '& div': {
-    ml: '20px',
-  },
-  'div: first-child': {
-    ml: '0px',
-  },
 };
 
 export default (hasScrollOnScreen: boolean) => {
