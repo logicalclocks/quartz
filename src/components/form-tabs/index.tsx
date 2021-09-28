@@ -84,6 +84,7 @@ const FormTabs: FC<FormTabsProps> = ({
     // UNTOUCHED: if optional, move to next tab. Otherwise show error.
     if (validation === ValidateOpts.untouched) {
       if (currentTab.optional) {
+        copy[active] = { ...copy[active], state: TabState.optional };
         onTabChange(copy[active + 1].id);
         setActive((act) => act + 1);
       } else {
