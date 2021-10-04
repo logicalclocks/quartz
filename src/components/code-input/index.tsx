@@ -15,6 +15,8 @@ import Label, { LabelProps } from '../label';
 import Labeling from '../typography/labeling';
 import Tooltip from '../tooltip';
 import icons from '../../sources/icons';
+import { Intents } from '../intents';
+import InputInfo from '../input-info';
 
 export interface InputProps {
   label?: string;
@@ -29,6 +31,8 @@ export interface InputProps {
   labelProps?: Omit<LabelProps, 'action' | 'text' | 'children'>;
   onChange: (value: string) => void;
   readOnly: boolean;
+  info?: string;
+  intent?: Intents;
 }
 
 const CodeInput: FC<InputProps> = forwardRef(
@@ -44,6 +48,8 @@ const CodeInput: FC<InputProps> = forwardRef(
     labelProps,
     onChange,
     readOnly = false,
+    info,
+    intent = 'default',
   }: InputProps) => {
     const actions = (labelAction || tooltipInfo || optional) && (
       <Flex>
@@ -64,13 +70,14 @@ const CodeInput: FC<InputProps> = forwardRef(
     );
 
     return (
-      <Box width={width} height={height} sx={getStyles()}>
+      <Box width={width} height={height} tx="inputs" sx={getStyles()}>
         <Label
           action={actions}
           text={label}
           width={width}
           height={height}
           {...labelProps}
+          mb="8px"
         >
           <Controlled
             value={value}
@@ -89,6 +96,7 @@ const CodeInput: FC<InputProps> = forwardRef(
             }}
           />
         </Label>
+        {info && <InputInfo intent={intent}>{info}</InputInfo>}
       </Box>
     );
   },

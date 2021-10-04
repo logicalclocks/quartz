@@ -82,11 +82,19 @@ const argTypes = {
     },
     defaultValue: { summary: 'javascript' },
   },
+  intent: {
+    control: {
+      type: 'select',
+      options: ['default', 'error'],
+    },
+    type: {
+      required: false,
+      summary: 'Select intent (error border)',
+    },
+  },
 };
 
-const Template: Story<InputProps> = (props) => (
-  <CodeInput {...props}/>
-);
+const Template: Story<InputProps> = (props) => <CodeInput {...props} />;
 
 export const Default = Template.bind({});
 
