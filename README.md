@@ -96,7 +96,7 @@ Run `npm ci` and then `npm run storybook`
 
 ## Build locally
 
-Run `npm install` and then `npm run build-dev`
+Run `npm ci` and then `npm run build-dev`
 
 ## Troubleshooting
 
