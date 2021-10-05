@@ -85,6 +85,10 @@ Put new component in
 
 Run `npm run build`
 
+## How to install?
+
+Run `npm ci`
+
 
 ## License
 
