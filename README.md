@@ -85,10 +85,6 @@ Put new component in
 
 Run `npm run build`
 
-## How to install?
-
-Run `npm ci`
-
 
 ## License
 
@@ -96,7 +92,7 @@ AGPL-3.0 Licence  © [logicalclocks](https://github.com/logicalclocks)
 
 ## Run locally
 
-Run `npm install` and then `npm run storybook`
+Run `npm ci` and then `npm run storybook`
 
 ## Build locally
 
