@@ -12,7 +12,7 @@ export const listStyles = (
   appendToBody: boolean,
 ): SxStyleProp => ({
   position: 'absolute',
-  zIndex: 'popups',
+  zIndex: 200,
   left: 0,
   top: `${parentHeight}px`,
   ...(appendToBody && {
