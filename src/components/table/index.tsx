@@ -1,10 +1,11 @@
 import React, { FC } from 'react';
 import { Box, BoxProps } from 'rebass';
-import { FGRow } from './type';
+import { TableCell, TableHeader } from './type';
 
 export interface TableProps extends Omit<BoxProps, 'css'> {
   variant?: 'read-only' | 'editable';
-  values: Array<FGRow>;
+  values: TableCell[][];
+  columnHeaders: Array<TableHeader>;
 }
 
 const Table: FC<TableProps> = ({

@@ -4,30 +4,27 @@ import { Box } from 'rebass';
 // Components
 import { TableProps } from '../index';
 // Utils
-import { getRows } from '../read-only/utils';
 import KeysCollection from '../../../utils/KeysCollection';
 // Styles
 import {
   containerStyles,
-  lastTheadStyles,
   tableStyles,
   theadStyles,
   trowStyles,
 } from '../table.styles';
 // Components
 import RowLeftContent from './row-left-content';
-import { Thead } from '../read-only';
 // types
-import { FGRow } from '../type';
+import { TableCell, TableHeader, TableRowComponent } from '../type';
+import Thead from '../thead';
+import Label from '../../label';
 
-export interface TableColumn {
-  name: string;
-  render: FC<any>;
-  isPrimary?: boolean;
-  isPartition?: boolean;
-}
-
+/* eslint-disable implicit-arrow-linebreak */
 export interface EditableTableProps extends Omit<TableProps, 'value'> {
+  initialStaticColumn?: string;
+  values: TableCell[][];
+  columnHeaders: TableHeader[];
+  rowComponents: TableRowComponent[];
   onChangeData: (
     rowIndex: number,
     columnName: string,
@@ -38,131 +35,174 @@ export interface EditableTableProps extends Omit<TableProps, 'value'> {
     label: string;
     handler: (column: string) => void;
   }>;
-  columns: TableColumn[];
-  values: FGRow[];
   hasFreezeButton?: boolean;
 }
+
+/* eslint-disable arrow-body-style */
 
 const EditableTable: FC<EditableTableProps> = ({
   onChangeData,
   onDeleteRow,
+  initialStaticColumn,
   values,
-  columns,
+  columnHeaders,
+  rowComponents,
   actions = [],
   hasFreezeButton = true,
   ...props
 }: EditableTableProps) => {
-  const [staticColumn, setStaticColumn] = useState<TableColumn>();
-
-  const onFreeze = useCallback((column?: TableColumn) => {
-    setStaticColumn(column);
-  }, []);
+  const [staticColumn, setStaticColumn] = useState<string | undefined>(
+    initialStaticColumn,
+  );
 
   const handleChangeData = useCallback(
-    (rowIndex: number, columnName: string) => (
-      value: string | string[] | boolean,
-    ) => {
-      onChangeData(rowIndex, columnName, value);
-    },
-    [],
+    (rowIndex: number, columnName: string) =>
+      (value: string | string[] | boolean) => {
+        onChangeData(rowIndex, columnName, value);
+      },
+    [onChangeData],
   );
+
+  const sortValues = (
+    cells: TableCell[][],
+    headers: TableHeader[],
+  ): TableCell[][] => {
+    return cells.map((row) => {
+      return headers.map((header) => {
+        return row.find(
+          (cell) => cell.identifierName === header.identifier.name,
+        )!;
+      });
+    });
+  };
+
+  const componentifyCell = (cell: TableCell, rowIndex: number) => {
+    const component: TableRowComponent | undefined = rowComponents.find(
+      (cpt) => cpt.identifier.name === cell.identifierName,
+    );
+
+    const onChange = handleChangeData(rowIndex, cell.identifierName);
+    return component
+      ? component.render({
+          value: cell.value,
+          onChange,
+          readOnly: cell.readOnly || false,
+        })
+      : cell.value;
+  };
 
   useEffect(() => {
     KeysCollection.generateKeys(values);
   }, [values.length]);
 
+  // @ts-ignore
   return (
     <Box {...props} sx={{ ...containerStyles }}>
       <Box {...props} as="table" sx={tableStyles}>
         <Box as="thead" sx={theadStyles}>
           <Box as="tr">
-            <Box as="th" sx={theadStyles} className="table-corner" />
-
+            <Box as="th" className="table-corner" />
             {/* Static column */}
             {staticColumn && (
               <Thead
-                column={staticColumn.name}
-                isPartition={staticColumn.isPartition}
-                isPrimary={staticColumn.isPrimary}
-                actions={[
-                  {
-                    label: 'unfreeze',
-                    handler: () => {
-                      onFreeze();
-                    },
-                  },
-                  ...actions,
-                ]}
+                column={staticColumn}
+                headerRender={(() => {
+                  const staticHeader = columnHeaders.find(
+                    (header) => header.identifier.name === staticColumn,
+                  )!;
+                  return (
+                    // eslint-disable-next-line operator-linebreak
+                    staticHeader.headerRender ||
+                    (() => <Label>{staticHeader.identifier.name}</Label>)
+                  );
+                })()}
+                actions={
+                  hasFreezeButton
+                    ? [
+                      {
+                        label: 'unfreeze',
+                        handler: () => {
+                          setStaticColumn(undefined);
+                        },
+                      },
+                      ...actions,
+                    ]
+                    : actions
+                }
               />
             )}
 
-            {columns.map(
-              (column) =>
-                column.name !== staticColumn?.name && (
-                  <Thead
-                    key={column.name}
-                    column={column.name}
-                    isPartition={column.isPartition}
-                    isPrimary={column.isPrimary}
-                    actions={
-                      hasFreezeButton
-                        ? [
-                            {
-                              label: 'freeze',
-                              handler: () => {
-                                onFreeze(column);
-                              },
-                            },
-                            ...actions,
-                          ]
-                        : actions
-                    }
-                  />
-                ),
-            )}
-            <Box as="th" sx={{ ...lastTheadStyles }} />
+            {columnHeaders
+              .filter((header) => header.identifier.name !== staticColumn)
+              .map((header) => (
+                <Thead
+                  key={header.identifier.name}
+                  column={header.identifier.name}
+                  headerRender={
+                    // eslint-disable-next-line operator-linebreak
+                    header.headerRender ||
+                    (() => <Label>{header.identifier.name}</Label>)
+                  }
+                  actions={
+                    hasFreezeButton
+                      ? [
+                        {
+                          label: 'freeze',
+                          handler: (column) => {
+                            setStaticColumn(column);
+                          },
+                        },
+                        ...actions,
+                      ]
+                      : actions
+                  }
+                />
+              ))}
           </Box>
         </Box>
 
         <Box as="tbody">
-          {getRows(values).map((row, rowIndex) => (
-            <Box key={KeysCollection.getKey(row)} as="tr" sx={trowStyles}>
-              <RowLeftContent onDelete={onDeleteRow} index={rowIndex} />
+          {sortValues(values, columnHeaders).map(
+            (row: TableCell[], rowIndex: number) => (
+              <Box key={KeysCollection.getKey(row)} as="tr" sx={trowStyles}>
+                <RowLeftContent onDelete={onDeleteRow} index={rowIndex} />
 
-              {/* Static column */}
-              {staticColumn && (
-                <Box
-                  key={`${rowIndex}-${staticColumn.name}`}
-                  as="td"
-                  p="0px !important"
-                >
-                  {staticColumn.render({
-                    readOnly: row[staticColumn.name + 'readOnly'],
-                    onChange: handleChangeData(rowIndex, staticColumn.name),
-                    value: row[staticColumn.name],
-                  })}
-                </Box>
-              )}
+                {/* Static column */}
+                {staticColumn && (
+                  <Box
+                    // eslint-disable-next-line react/no-array-index-key
+                    key={`${rowIndex}-${staticColumn}`}
+                    as="td"
+                    p="0px !important"
+                  >
+                    {componentifyCell(
+                      row.find((c) => c.identifierName === staticColumn)!,
+                      rowIndex,
+                    )}
+                  </Box>
+                )}
 
-              {columns.map(
-                (column) =>
-                  column.name !== staticColumn?.name && (
+                {row
+                  .filter((cell: TableCell) => {
+                    return staticColumn
+                      ? cell.identifierName !== staticColumn
+                      : true;
+                  })
+                  .map((cell: TableCell) => (
                     <Box
-                      key={`${KeysCollection.getKey(row)}-${column.name}`}
+                      key={`${KeysCollection.getKey(row)}-${
+                        cell.identifierName
+                      }`}
                       as="td"
                       sx={{ bg: 'grayShade3' }}
                       p="0px !important"
                     >
-                      {column.render({
-                        readOnly: row[column.name + 'readOnly'],
-                        onChange: handleChangeData(rowIndex, column.name),
-                        value: row[column.name],
-                      })}
+                      {componentifyCell(cell, rowIndex)}
                     </Box>
-                  ),
-              )}
-            </Box>
-          ))}
+                  ))}
+              </Box>
+            ),
+          )}
         </Box>
       </Box>
     </Box>

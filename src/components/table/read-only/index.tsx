@@ -1,205 +1,116 @@
-import React, { FC, useCallback, useRef, useState } from 'react';
+import React, { FC, useState } from 'react';
 import { Box } from 'rebass';
 
 // Components
 import { TableProps } from '../index';
 
-// Utils
-import { getColumns, getRows } from './utils';
-
 // Styles
 import {
   containerStyles,
-  dropdownStyles,
-  lastTheadStyles,
   tableStyles,
   theadStyles,
   trowStyles,
 } from '../table.styles';
 
-// Hooks
-import ListItem from '../../list/item';
-import Tooltip from '../../tooltip';
-import List from '../../list/container';
-import icons from '../../../sources/icons';
-import useDropdown from '../../../utils/useDropdown';
-import useOnClickOutside from '../../../utils/useClickOutside';
-
-export interface TheadProps {
-  column: string;
-  isPrimary?: boolean;
-  isPartition?: boolean;
-  className?: string;
-  actions: Array<{
-    label: string;
-    handler: (column: string) => void;
-  }>;
-}
-
-export const Thead: FC<TheadProps> = ({
-  column,
-  className,
-  actions,
-  isPrimary,
-  isPartition,
-}: TheadProps) => {
-  const containerRef = useRef(null);
-  const [isOpen, handleToggle, handleClickOutside] = useDropdown();
-  useOnClickOutside<HTMLDivElement>(handleClickOutside, [containerRef]);
-
-  const handleToggleList = useCallback(() => {
-    handleToggle();
-  }, [handleToggle]);
-
-  return (
-    <Box
-      key={`thead-th-${column}`}
-      as="th"
-      sx={theadStyles}
-      className={className}
-      onClick={handleToggleList}
-      ref={containerRef}
-    >
-      <Box
-        as="th"
-        sx={{
-          width: '100%',
-        }}
-      />
-      <div>
-        {column}
-        {isPrimary && (
-          <Tooltip mainText="primary key">
-            <Box
-              ml="5px"
-              sx={{
-                svg: {
-                  path: {
-                    fill: 'labels.green',
-                  },
-                },
-              }}
-              my="-5px"
-            >
-              {icons.primary}
-            </Box>
-          </Tooltip>
-        )}
-        {isPartition && (
-          <Tooltip mainText="partition key">
-            <Box
-              ml="5px"
-              sx={{
-                svg: {
-                  path: {
-                    fill: 'labels.green',
-                  },
-                },
-              }}
-              my="-5px"
-            >
-              {icons.partition}
-            </Box>
-          </Tooltip>
-        )}
-        {isOpen && (
-          <List sx={dropdownStyles}>
-            {actions.map((action) => (
-              <ListItem
-                key={action.label}
-                onClick={() => {
-                  action.handler(column);
-                }}
-              >
-                {action.label}
-              </ListItem>
-            ))}
-          </List>
-        )}
-      </div>
-    </Box>
-  );
-};
+import Thead from '../thead';
+import { TableCell, TableHeader } from '../type';
+import Label from '../../label';
 
 export interface ReadOnlyTableProps extends Omit<TableProps, 'value'> {
-  staticColumn?: string;
-  onFreeze: (column?: string) => void;
+  initialStaticColumn?: string;
+  values: TableCell[][];
+  columnHeaders: TableHeader[];
   actions: Array<{
     label: string;
     handler: (column: string) => void;
   }>;
 }
 
+/* eslint-disable arrow-body-style */
+
 const ReadOnlyTable: FC<ReadOnlyTableProps> = ({
-  staticColumn,
-  onFreeze,
+  initialStaticColumn,
+  values,
+  columnHeaders,
   actions,
-  ...props
 }: ReadOnlyTableProps) => {
   const [hoverColumn, setHoverColumn] = useState<string>();
+
+  const [staticColumn, setStaticColumn] = useState<string | undefined>(
+    initialStaticColumn,
+  );
+  const sortValues = (
+    cells: TableCell[][],
+    headers: TableHeader[],
+  ): TableCell[][] => {
+    return cells.map((row) => {
+      return headers.map((header) => {
+        return row.find(
+          (cell) => cell.identifierName === header.identifier.name,
+        )!;
+      });
+    });
+  };
 
   return (
     <Box sx={containerStyles}>
       <Box as="table" sx={tableStyles}>
         <Box as="thead" sx={theadStyles}>
           <Box as="tr">
-            <Box as="th" sx={theadStyles} className="table-corner" />
-
+            <Box as="th" className="table-corner" />
             {staticColumn && (
               <Thead
                 column={staticColumn}
-                isPrimary={
-                  props.values[0].row.find((r) => r.columnName === staticColumn)
-                    ?.isPrimary
-                }
-                isPartition={
-                  props.values[0].row.find((r) => r.columnName === staticColumn)
-                    ?.isPartition
-                }
-                className={
-                  'static-column ' +
-                  (hoverColumn == staticColumn && 'hover-column')
-                }
                 actions={[
                   {
                     label: 'unfreeze',
                     handler: () => {
-                      onFreeze();
+                      setStaticColumn(undefined);
                     },
                   },
                   ...actions,
                 ]}
+                headerRender={(() => {
+                  const staticHeader = columnHeaders.find(
+                    (header) => header.identifier.name === staticColumn,
+                  )!;
+                  return (
+                    // eslint-disable-next-line operator-linebreak
+                    staticHeader.headerRender ||
+                    (() => <Label>{staticHeader.identifier.name}</Label>)
+                  );
+                })()}
+                className={`static-column ${
+                  hoverColumn === staticColumn && 'hover-column'
+                }`}
               />
             )}
 
-            {getColumns(props.values).map(
-              (column: string) =>
-                column !== staticColumn && (
-                  <Thead
-                    key={column}
-                    column={column}
-                    isPrimary={
-                      props.values[0].row.find((r) => r.columnName === column)
-                        ?.isPrimary
-                    }
-                    isPartition={
-                      props.values[0].row.find((r) => r.columnName === column)
-                        ?.isPartition
-                    }
-                    className={'' + (hoverColumn == column && 'hover-column')}
-                    actions={[
-                      {
-                        label: 'freeze',
-                        handler: (column) => {
-                          onFreeze(column);
-                        },
+            {columnHeaders
+              .filter((header) => header.identifier.name !== staticColumn)
+              .map((header: TableHeader) => (
+                <Thead
+                  key={header.identifier.name}
+                  column={header.identifier.name}
+                  headerRender={
+                    // eslint-disable-next-line operator-linebreak
+                    header.headerRender ||
+                    (() => <Label>{header.identifier.name}</Label>)
+                  }
+                  actions={[
+                    {
+                      label: 'freeze',
+                      handler: (column) => {
+                        setStaticColumn(column);
                       },
-                      ...actions,
-                    ]}
-                  />
-                ),
-            )}
-            <Box as="th" sx={{ ...lastTheadStyles }} />
+                    },
+                    ...actions,
+                  ]}
+                  className={`${
+                    hoverColumn === header.identifier.name && 'hover-column'
+                  }`}
+                />
+              ))}
           </Box>
         </Box>
         <Box
@@ -208,36 +119,47 @@ const ReadOnlyTable: FC<ReadOnlyTableProps> = ({
             backgroundColor: 'white',
           }}
         >
-          {getRows(props.values).map((row, i) => (
-            <Box key={i} as="tr" sx={trowStyles}>
-              <Box as="th">{i + 1}</Box>
+          {sortValues(values, columnHeaders).map((row, index) => (
+            // eslint-disable-next-line react/no-array-index-key
+            <Box key={index} as="tr" sx={trowStyles}>
+              <Box as="td" id={String(index + 1)}>
+                <span>{index + 1}</span>
+              </Box>
+
               {staticColumn && (
                 <Box
                   as="td"
-                  className={
-                    'static-column ' +
-                    (hoverColumn == staticColumn && 'hover-column')
-                  }
+                  className={`static-column ${
+                    hoverColumn === staticColumn && 'hover-column'
+                  }`}
                   onMouseEnter={() => setHoverColumn(staticColumn)}
-                  onMouseLeave={() => setHoverColumn('')}
+                  onMouseLeave={() => setHoverColumn(undefined)}
                 >
-                  {row[staticColumn]}
+                  {
+                    row.find((cell) => cell.identifierName === staticColumn)
+                      ?.value
+                  }
                 </Box>
               )}
-              {getColumns(props.values).map(
-                (column: string) =>
-                  column !== staticColumn && (
-                    <Box
-                      key={column}
-                      as="td"
-                      className={'' + (hoverColumn == column && 'hover-column')}
-                      onMouseEnter={() => setHoverColumn(column)}
-                      onMouseLeave={() => setHoverColumn('')}
-                    >
-                      {row[column]}
-                    </Box>
-                  ),
-              )}
+              {row
+                .filter((cell: TableCell) => {
+                  return staticColumn
+                    ? cell.identifierName !== staticColumn
+                    : true;
+                })
+                .map((cell: TableCell) => (
+                  <Box
+                    key={cell.identifierName}
+                    as="td"
+                    className={`${
+                      hoverColumn === cell.identifierName && 'hover-column'
+                    }`}
+                    onMouseEnter={() => setHoverColumn(cell.identifierName)}
+                    onMouseLeave={() => setHoverColumn(undefined)}
+                  >
+                    {cell.value}
+                  </Box>
+                ))}
             </Box>
           ))}
         </Box>
