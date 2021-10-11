@@ -60,7 +60,7 @@ const EditableTable: FC<EditableTableProps> = ({
       (value: string | string[] | boolean) => {
         onChangeData(rowIndex, columnName, value);
       },
-    [],
+    [onChangeData],
   );
 
   const sortValues = (
