@@ -18,12 +18,14 @@ import formatSizeUnits from '../../../utils/getFormatSizeUnit';
 export interface FileExplorerInfoProps extends Omit<BoxProps, 'css'> {
   children?: string[];
   activeFile?: ActiveFile | null;
+  disableDownload: boolean;
   handleDownloadFile: (file: any) => void;
 }
 
 const FileExplorerInfo: FC<FileExplorerInfoProps> = ({
   children,
   activeFile,
+  disableDownload,
   handleDownloadFile,
 }: FileExplorerInfoProps) => {
   const dateFormat = (date: string) => {
@@ -82,25 +84,28 @@ const FileExplorerInfo: FC<FileExplorerInfoProps> = ({
           )}
         </Flex>
       </Box>
-      <Button
-        intent="secondary"
-        onClick={() => {
-          handleDownloadFile(activeFile);
-        }}
-      >
-        <Flex alignItems="center" justifyContent="center">
-          <Flex
-            sx={{
-              mr: '11px',
-              height: '15px',
-              alignItems: 'center',
-            }}
-          >
-            {icons.download}
+      {!disableDownload && (
+        <Button
+          intent="secondary"
+          onClick={() => {
+            handleDownloadFile(activeFile);
+          }}
+        >
+          <Flex alignItems="center" justifyContent="center">
+            <Flex
+              sx={{
+                mr: '11px',
+                height: '15px',
+                alignItems: 'center',
+              }}
+            >
+              {icons.download}
+            </Flex>
+            <Flex alignItems="center">Download File</Flex>
           </Flex>
-          <Flex alignItems="center">Download File</Flex>
-        </Flex>
-      </Button>
+        </Button>
+      )}
+
       {children}
     </Box>
   );
