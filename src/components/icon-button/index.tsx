@@ -15,6 +15,7 @@ export interface IconButtonProps extends Omit<ButtonProps, 'css'> {
   disabled?: boolean;
   href?: string;
   tooltipProps?: Omit<TooltipProps, 'children' | 'mainText'>;
+  onClickIcon?: React.MouseEventHandler<HTMLAnchorElement>;
 }
 
 const IconButton: FC<IconButtonProps> = ({
@@ -24,9 +25,9 @@ const IconButton: FC<IconButtonProps> = ({
   disabled,
   tooltipProps,
   href,
+  onClickIcon,
   ...props
 }: IconButtonProps) => {
-
   const component = (
     <Tooltip {...tooltipProps} disabled={disabled} mainText={tooltip}>
       <RebassButton
@@ -35,28 +36,35 @@ const IconButton: FC<IconButtonProps> = ({
         disabled={disabled}
         {...props}
       >
-        {getIcon(icon, "black")}
+        {getIcon(icon, 'black')}
       </RebassButton>
     </Tooltip>
   );
 
-  if (!!href) {
+  if (href) {
     return (
       <a
         style={{
           textDecoration: 'none',
         }}
-        onClick={(e) => {
-          e.preventDefault();
-        }}
+        onClick={onClickIcon}
         href={href}
       >
         {component}
       </a>
     );
   }
-
-  return component;
+  return (
+    <a
+      style={{
+        textDecoration: 'none',
+      }}
+      onClick={onClickIcon}
+      href={href}
+    >
+      {component}
+    </a>
+  );
 };
 
 export default IconButton;
