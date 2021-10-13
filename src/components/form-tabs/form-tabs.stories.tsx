@@ -1,4 +1,6 @@
 import React from 'react';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import { action } from '@storybook/addon-actions';
 import { Story, Meta } from '@storybook/react/types-6-0';
 import { Box } from 'rebass';
 import FormTabs, { FormTabsProps, ValidateOpts } from './index';
@@ -29,7 +31,7 @@ const argTypes = {
 
 const handleSubmit = async (validateAll: any) => {
   const isAllValid = await validateAll();
-  console.log('submit', isAllValid);
+  action('all tabs valid')(isAllValid);
 };
 
 const tabs = [
@@ -83,11 +85,9 @@ export const Default = Template.bind({});
 Default.args = {
   tabs,
   hasScrollOnScreen: false,
-  onTabChange: (tab) => console.log('moved to:', tab),
+  onTabChange: action('moved to'),
   SubmitButton: ({ validateAll }: { validateAll: () => boolean }) => (
-    <Button onClick={() => handleSubmit(validateAll)} isLoading>
-      Create feature
-    </Button>
+    <Button onClick={() => handleSubmit(validateAll)}>Create feature</Button>
   ),
   initialTab: 'title2',
 };
