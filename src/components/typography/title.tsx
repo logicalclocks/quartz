@@ -1,14 +1,16 @@
 import React, { FC } from 'react';
 import { Text, TextProps } from 'rebass';
 
-export interface TitleProps extends Omit<TextProps, 'css'> {}
+export interface TitleProps extends Omit<TextProps, 'css'> {
+  uppercase?: boolean;
+}
 
-const Title: FC<TitleProps> = (props: TitleProps) => (
+const Title: FC<TitleProps> = ({ uppercase = false, ...props }: TitleProps) => (
   <Text
     {...props}
     as="h1"
     variant="title"
-    sx={{ textTransform: 'uppercase', ...props.sx }}
+    sx={{ ...(uppercase && { textTransform: 'uppercase' }), ...props.sx }}
   />
 );
 export default Title;

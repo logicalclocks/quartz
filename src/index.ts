@@ -75,6 +75,7 @@ import NavigationCategory from './components/navigation/category';
 import NavigationProvider from './components/navigation/context/navigation.provider';
 import NavigationContext from './components/navigation/context/navigation.context';
 import Logo from './components/logo';
+import FormTabs from './components/form-tabs';
 
 // Sticky Summary
 import StickySummary from './components/sticky-summary';
@@ -189,6 +190,7 @@ export {
   NavigationCategory,
   NavigationProvider,
   NavigationContext,
+  FormTabs,
   // Notifications
   NotificationsContainer,
   NotificationsManager,
@@ -240,6 +242,7 @@ export type TableHeader = import('./components/table/type').TableHeader;
 export type ColumnIdentifier =
   import('./components/table/type').ColumnIdentifier;
 export type TreeNode = import('./components/navigation/types').TreeNode;
+export type TabItem = import('./components/form-tabs/index').TabItem;
 export type TableRowComponent =
   import('./components/table/type').TableRowComponent;
 export type TableCellType = import('./components/table/type').TableCellType;

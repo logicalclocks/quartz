@@ -1,12 +1,9 @@
 import React, { FC } from 'react';
-import { Box, Flex } from 'rebass';
-import styles, {
-  boxStyles,
-  boxButtonStyles,
-  mainBoxStyles,
-} from './sticky-summary.styles';
+import { Box } from 'rebass';
+import { boxStyles, boxButtonStyles } from './sticky-summary.styles';
 import Title from '../typography/title';
 import Labeling from '../typography/labeling';
+import FormSummaryContainer from '../form-summary-container';
 import Badge from '../badges/badge';
 
 export interface StickySummaryProps {
@@ -15,8 +12,8 @@ export interface StickySummaryProps {
   secondValue?: string;
   mainButton: React.ReactNode;
   secondaryButton?: React.ReactNode;
-  hasScrollOnScreen?: boolean;
   errorsValue?: string;
+  hasScrollOnScreen?: boolean;
 }
 
 const StickySummary: FC<StickySummaryProps> = ({
@@ -29,28 +26,30 @@ const StickySummary: FC<StickySummaryProps> = ({
   errorsValue,
   ...props
 }: StickySummaryProps) => (
-  <Flex sx={{ ...styles(hasScrollOnScreen) }} {...props}>
-    <Flex sx={{ ...mainBoxStyles }}>
-      <Box sx={{ ...boxStyles }}>
-        {title && <Title sx={{ textTransform: 'normal' }}>{title}</Title>}
-        {errorsValue && <Badge variant="fail" value={errorsValue} />}
-        {firstValue && !errorsValue && (
-          <Labeling gray bold>
-            {firstValue}
-          </Labeling>
-        )}
-        {secondValue && !errorsValue && (
-          <Labeling gray bold>
-            {secondValue}
-          </Labeling>
-        )}
-      </Box>
-      <Box sx={{ ...boxButtonStyles }}>
-        {secondaryButton && <Box>{secondaryButton}</Box>}
-        <Box>{mainButton}</Box>
-      </Box>
-    </Flex>
-  </Flex>
+  <FormSummaryContainer hasScrollOnScreen={hasScrollOnScreen} {...props}>
+    <Box sx={{ ...boxStyles }}>
+      {title && (
+        <Title uppercase sx={{ textTransform: 'normal' }}>
+          {title}
+        </Title>
+      )}
+      {errorsValue && <Badge variant="fail" value={errorsValue} />}
+      {firstValue && !errorsValue && (
+        <Labeling gray bold>
+          {firstValue}
+        </Labeling>
+      )}
+      {secondValue && !errorsValue && (
+        <Labeling gray bold>
+          {secondValue}
+        </Labeling>
+      )}
+    </Box>
+    <Box sx={{ ...boxButtonStyles }}>
+      {secondaryButton && <Box>{secondaryButton}</Box>}
+      <Box>{mainButton}</Box>
+    </Box>
+  </FormSummaryContainer>
 );
 
 export default StickySummary;
