@@ -6,7 +6,8 @@ import { SelectProps } from '../select';
 
 import 'react-datepicker/dist/react-datepicker.min.css';
 import styles from './datepicker.styles';
-import { Labeling, Value } from '../../index';
+import Labeling from '../typography/labeling';
+import Value from '../typography/value';
 import ArrowsIcon from '../icons/arrows.icon';
 
 export interface DatePickerProps {

@@ -3,10 +3,10 @@ import { action } from '@storybook/addon-actions';
 import React, { useState } from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
 
-import Select, { SelectProps } from './index';
-import { RadioGroup, Value } from '../../index';
-import Labeling from '../typography/labeling';
 import { Box } from 'rebass';
+import Select, { SelectProps } from './index';
+import { Popup, RadioGroup, Value } from '../../index';
+import Labeling from '../typography/labeling';
 
 export default {
   title: 'Quartz/Select',
@@ -38,25 +38,27 @@ const Template: Story<SelectProps> = (props) => {
   };
 
   return (
-    <Box width="600px">
-      <Select
-        {...props}
-        value={value}
-        maxListHeight="initial"
-        options={customOptions}
-        onChange={handleChange}
-        customFilter={
-          <RadioGroup
-            ml="10px"
-            value={selected}
-            flexDirection="row"
-            onChange={handleChangeFilter}
-            onClick={(e) => e.stopPropagation()}
-            options={['all', 'matching feature only']}
-          />
-        }
-      />
-    </Box>
+    <Popup isOpen>
+      <Box width="300px" height="60px" m="20px">
+        <Select
+          {...props}
+          value={value}
+          maxListHeight="initial"
+          options={customOptions}
+          onChange={handleChange}
+          customFilter={
+            <RadioGroup
+              ml="10px"
+              value={selected}
+              flexDirection="row"
+              onChange={handleChangeFilter}
+              onClick={(e) => e.stopPropagation()}
+              options={['all', 'matching feature only']}
+            />
+          }
+        />
+      </Box>
+    </Popup>
   );
 };
 

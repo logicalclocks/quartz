@@ -4,8 +4,9 @@ import { Controlled } from 'react-codemirror2';
 import getStyles from './index.styles';
 
 import 'codemirror/lib/codemirror.css';
-import 'codemirror/mode/javascript/javascript.js';
-import 'codemirror/mode/yaml/yaml.js';
+import 'codemirror/mode/javascript/javascript';
+import 'codemirror/mode/yaml/yaml';
+import 'codemirror/mode/sql/sql';
 // Note for dark-mode, good theme candidates: shadowbox, tomorrow-night-bright, dracula
 import 'codemirror/theme/yeti.css';
 
@@ -14,12 +15,14 @@ import Label, { LabelProps } from '../label';
 import Labeling from '../typography/labeling';
 import Tooltip from '../tooltip';
 import icons from '../../sources/icons';
+import { Intents } from '../intents';
+import InputInfo from '../input-info';
 
 export interface InputProps {
   label?: string;
   value: string;
   // Use javascript for displaying JSON
-  mode: 'javascript' | 'yaml' | 'python';
+  mode: 'javascript' | 'yaml' | 'python' | 'sql';
   width?: string | number;
   height?: string | number;
   labelAction?: React.ReactNode;
@@ -27,6 +30,9 @@ export interface InputProps {
   tooltipInfo?: string;
   labelProps?: Omit<LabelProps, 'action' | 'text' | 'children'>;
   onChange: (value: string) => void;
+  readOnly: boolean;
+  info?: string;
+  intent?: Intents;
 }
 
 const CodeInput: FC<InputProps> = forwardRef(
@@ -41,6 +47,9 @@ const CodeInput: FC<InputProps> = forwardRef(
     tooltipInfo,
     labelProps,
     onChange,
+    readOnly = false,
+    info,
+    intent = 'default',
   }: InputProps) => {
     const actions = (labelAction || tooltipInfo || optional) && (
       <Flex>
@@ -61,13 +70,14 @@ const CodeInput: FC<InputProps> = forwardRef(
     );
 
     return (
-      <Box width={width} height={height} sx={getStyles()}>
+      <Box width={width} height={height} tx="inputs" sx={getStyles()}>
         <Label
           action={actions}
           text={label}
           width={width}
           height={height}
           {...labelProps}
+          mb="8px"
         >
           <Controlled
             value={value}
@@ -78,6 +88,7 @@ const CodeInput: FC<InputProps> = forwardRef(
                   : { name: mode },
               theme: 'yeti',
               lineNumbers: true,
+              readOnly,
             }}
             onChange={() => {}}
             onBeforeChange={(_editor, _data, val: string) => {
@@ -85,6 +96,7 @@ const CodeInput: FC<InputProps> = forwardRef(
             }}
           />
         </Label>
+        {info && <InputInfo intent={intent}>{info}</InputInfo>}
       </Box>
     );
   },
