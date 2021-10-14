@@ -10,7 +10,7 @@ import { IconName, getIcon } from '../icon/list';
 
 export interface IconButtonProps extends Omit<ButtonProps, 'css'> {
   intent?: 'primary' | 'ghost' | 'ghost-white';
-  tooltip: string;
+  tooltip?: string;
   icon: IconName;
   disabled?: boolean;
   href?: string;
@@ -28,8 +28,22 @@ const IconButton: FC<IconButtonProps> = ({
   onClickIcon,
   ...props
 }: IconButtonProps) => {
-  const component = (
-    <Tooltip {...tooltipProps} disabled={disabled} mainText={tooltip}>
+  let component;
+  if (tooltip) {
+    component = (
+      <Tooltip {...tooltipProps} disabled={disabled} mainText={tooltip}>
+        <RebassButton
+          sx={styles}
+          variant={`icon-${intent}`}
+          disabled={disabled}
+          {...props}
+        >
+          {getIcon(icon, 'black')}
+        </RebassButton>
+      </Tooltip>
+    );
+  } else {
+    component = (
       <RebassButton
         sx={styles}
         variant={`icon-${intent}`}
@@ -38,8 +52,8 @@ const IconButton: FC<IconButtonProps> = ({
       >
         {getIcon(icon, 'black')}
       </RebassButton>
-    </Tooltip>
-  );
+    );
+  }
 
   if (href) {
     return (
