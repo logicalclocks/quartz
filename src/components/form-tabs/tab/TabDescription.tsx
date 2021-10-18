@@ -1,5 +1,6 @@
 import React, { FC, memo } from 'react';
 import { Flex } from 'rebass';
+// eslint-disable-next-line import/no-cycle
 import { Label } from '../../..';
 import icons from './icons';
 
