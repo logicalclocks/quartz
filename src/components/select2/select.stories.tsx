@@ -62,7 +62,7 @@ const Template: Story<SelectProps> = (props) => {
 
   return (
     <Popup isOpen>
-      <Box width="300px" height="60px" m="20px">
+      <Box height="60px" m="20px">
         <Select
           {...props}
           value={value}
@@ -90,9 +90,8 @@ export const Default = Template.bind({});
 
 Default.args = {
   placeholder: 'placeholder',
-  width: '100%',
   label: 'Label',
-  listWidth: '100%',
+  format: 'fit',
   variant: 'primary',
   hasPlaceholder: false,
   appendToBody: true,
@@ -171,6 +170,16 @@ Default.argTypes = {
       summary: 'Select intent (error border)',
     },
   },
+  format: {
+    control: {
+      type: 'select',
+      options: ['fit', 'fill'],
+    },
+    type: {
+      required: false,
+      summary: 'Width behaviour of select and dropdown',
+    },
+  },
   disabled: {
     type: { required: false },
     control: { type: 'boolean' },
@@ -179,22 +188,12 @@ Default.argTypes = {
     type: { required: false },
     control: { type: 'boolean' },
   },
-  width: {
-    type: { required: false },
-    control: { type: 'text' },
-    defaultValue: { summary: 'auto' },
-  },
   labelAction: {
     type: {
       required: false,
       summary: 'React Component',
     },
     control: {},
-  },
-  listWidth: {
-    type: { required: false },
-    control: { type: 'text' },
-    defaultValue: { summary: 'max-content' },
   },
   variant: {
     type: { required: false },

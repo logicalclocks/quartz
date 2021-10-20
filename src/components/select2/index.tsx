@@ -17,7 +17,7 @@ import SelectList from './lists/select-list';
 import SelectListMulti from './lists/select-list-multi';
 // Types
 import { Intents } from '../intents';
-import { SelectOpt } from './types';
+import { SelectFormat, SelectOpt } from './types';
 // Styles
 import { listStyles, bottomActionStyles } from './select.styles';
 // Hooks
@@ -26,17 +26,26 @@ import useOnClickOutside from '../../utils/useClickOutside';
 
 export interface SelectProps
   extends Omit<LabelProps, 'onChange' | 'children' | 'value'> {
+  // Default value
   value: SelectOpt[]; // TODO: Remove array
+  // Options to be passed. Check the interface to see the available fields.
   options: SelectOpt[];
+  // How the Select and dropdown should behave in terms of width.
+  // [fit]: max dropdown content width
+  // [fill]: fill container
+  format: 'fit' | 'fill';
+  // Placeholder for the select box
   placeholder: string;
+  // Whether it allows multiple selection.
   isMulti?: boolean;
+  // Appends the dropdown directly into the body. Useful when inside popups,
   appendToBody?: boolean;
+  // Label for the select
   label?: string;
+  // Disable selection
   disabled?: boolean;
-  width?: string | number;
   maxListHeight?: string;
   labelAction?: React.ReactNode;
-  listWidth?: string | number;
   variant?: 'primary' | 'white';
   info?: string;
   intent?: Intents;
@@ -55,32 +64,31 @@ export interface SelectProps
 }
 
 const Select: FC<SelectProps> = ({
-  labelAction,
-  label,
-  width = '180px',
-  variant = 'primary',
-  options,
-  disabled,
-  listWidth,
-  value,
-  isMulti,
-  placeholder,
-  maxListHeight = '150px',
-  noDataMessage,
   info,
-  intent = 'default',
+  label,
+  value,
+  options,
+  isMulti,
+  disabled,
   onChange,
-  bottomActionHandler,
-  bottomActionText,
-  hasPlaceholder = true,
-  hasSearch = false,
-  searchPlaceholder = 'Find...',
-  customFilter,
-  noMatchText = 'No result',
-  needSecondaryText = true,
   deletabled,
+  placeholder,
+  labelAction,
+  customFilter,
+  noDataMessage,
+  format = 'fit',
+  bottomActionText,
   needSwap = false,
+  hasSearch = false,
+  intent = 'default',
+  variant = 'primary',
+  bottomActionHandler,
   appendToBody = false,
+  hasPlaceholder = true,
+  maxListHeight = '150px',
+  needSecondaryText = true,
+  noMatchText = 'No result',
+  searchPlaceholder = 'Find...',
   ...props
 }: SelectProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -144,20 +152,27 @@ const Select: FC<SelectProps> = ({
   }, []);
 
   const dropdrownWidth = useCallback(() => {
-    if (listWidth === '100%' && containerRef.current) {
+    if (
+      // eslint-disable-next-line operator-linebreak
+      (format as SelectFormat) === SelectFormat.fill &&
+      containerRef.current
+    ) {
       return `${containerRef.current.offsetWidth - 2}px`;
     }
-    if (listWidth && listWidth !== '') {
-      return listWidth;
-    }
     return 'max-content';
-  }, [listWidth]);
+  }, [format]);
+
+  const selectWidth = useCallback(() => {
+    if ((format as SelectFormat) === SelectFormat.fit) return 'max-content';
+    return 'inherit';
+  }, [format]);
 
   return (
     <Label
+      id="pollo"
       action={labelAction}
       text={label}
-      width={width}
+      width={selectWidth()}
       {...props}
       as="span"
       onClick={handleLabelClick}

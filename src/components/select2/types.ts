@@ -4,3 +4,8 @@ export interface SelectOpt {
   additionalText?: string;
   additionalComponent?: React.ReactNode;
 }
+
+export enum SelectFormat {
+  fit = 'fit',
+  fill = 'fill',
+}
