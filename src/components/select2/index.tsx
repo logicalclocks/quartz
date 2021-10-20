@@ -46,7 +46,7 @@ export interface SelectProps
   disabled?: boolean;
   maxListHeight?: string;
   labelAction?: React.ReactNode;
-  variant?: 'primary' | 'white';
+  color?: 'primary' | 'white';
   info?: string;
   intent?: Intents;
   onChange: (value: SelectOpt[]) => void;
@@ -79,9 +79,9 @@ const Select: FC<SelectProps> = ({
   format = 'fit',
   bottomActionText,
   needSwap = false,
+  color = 'primary',
   hasSearch = false,
   intent = 'default',
-  variant = 'primary',
   bottomActionHandler,
   appendToBody = false,
   hasPlaceholder = true,
@@ -182,7 +182,7 @@ const Select: FC<SelectProps> = ({
         hasPlaceholder={hasPlaceholder}
         intent={intent}
         onChange={onChange}
-        variant={disabled ? 'disabled' : variant}
+        variant={disabled ? 'disabled' : color}
         placeholder={placeholder}
         value={value}
         isMulti={isMulti}

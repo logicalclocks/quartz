@@ -92,7 +92,7 @@ Default.args = {
   placeholder: 'placeholder',
   label: 'Label',
   format: 'fit',
-  variant: 'primary',
+  color: 'primary',
   hasPlaceholder: false,
   appendToBody: true,
   isMulti: false,
@@ -195,7 +195,7 @@ Default.argTypes = {
     },
     control: {},
   },
-  variant: {
+  color: {
     type: { required: false },
     control: { type: 'select', options: ['primary', 'white'] },
     defaultValue: { summary: 'primary' },
