@@ -7,23 +7,28 @@ import { Box } from 'rebass';
 import Select, { SelectProps } from './index';
 import { Popup, RadioGroup, Value } from '../../index';
 import Labeling from '../typography/labeling';
+import { SelectOpt } from './types';
 
 export default {
-  title: 'Quartz/Select',
+  title: 'Quartz/Select2',
   component: Select,
 } as Meta;
 
-const options = ['name', 'creation date', 'size', '# of rows', '# of features'];
+const options = [
+  { key: 1, label: 'One', additionalText: 'add_one' },
+  { key: 2, label: 'Two' },
+  { key: 3, label: 'Three', additionalText: 'add_three' },
+  { key: 4, label: 'Four', additionalText: 'add_four' },
+];
 
 const Template: Story<SelectProps> = (props) => {
-  const [value, setValue] = useState<string[]>([]);
+  const [value, setValue] = useState<SelectOpt[]>([]);
   const [customOptions, setOptions] = useState(options);
 
   const [selected, setSelected] = useState('all');
 
-  const handleChange = (data: string[]) => {
+  const handleChange = (data: SelectOpt[]) => {
     action('onChange')(data);
-
     setValue(data);
   };
 
@@ -47,6 +52,7 @@ const Template: Story<SelectProps> = (props) => {
           options={customOptions}
           onChange={handleChange}
           customFilter={
+            // eslint-disable-next-line react/jsx-wrap-multilines
             <RadioGroup
               ml="10px"
               value={selected}
@@ -79,7 +85,6 @@ Default.args = {
   bottomActionHandler: () => {
     action('on bottom action')();
   },
-  additionalTexts: ['text1', 'text2', 'text3', 'text4', 'text5'],
   additionalComponents: [
     <Value>text</Value>,
     <Labeling bold gray>
@@ -111,10 +116,6 @@ Default.argTypes = {
   },
   additionalComponents: {
     type: { required: false, summary: 'Array of components(right)' },
-    control: { type: 'array' },
-  },
-  additionalTexts: {
-    type: { required: false, summary: 'Array of text(after option)' },
     control: { type: 'array' },
   },
   customFilter: {

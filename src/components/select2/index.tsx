@@ -6,26 +6,28 @@ import SelectLabel from './label';
 import List from '../list/container';
 import Label, { LabelProps } from '../label';
 import SelectInfo from './info';
-// List types
-import SelectList from './lists/select-list';
-import SelectListMulti from './lists/select-list-multi';
-// Types
-import { Intents } from '../intents';
-// Styles
-import { listStyles, bottomActionStyles } from './select.styles';
-// Hooks
-import useDropdown from '../../utils/useDropdown';
-import useOnClickOutside from '../../utils/useClickOutside';
 import Divider from '../divider';
 import Input from '../input';
 import Value from '../typography/value';
 import useKeyUp from '../../utils/useKeyUp';
 import icons from '../../sources/icons';
 import StickyPortal, { CONTENT_ID } from '../sticky-portal/StickyPortal';
+// List types
+import SelectList from './lists/select-list';
+import SelectListMulti from './lists/select-list-multi';
+// Types
+import { Intents } from '../intents';
+import { SelectOpt } from './types';
+// Styles
+import { listStyles, bottomActionStyles } from './select.styles';
+// Hooks
+import useDropdown from '../../utils/useDropdown';
+import useOnClickOutside from '../../utils/useClickOutside';
 
-export interface SelectProps extends Omit<LabelProps, 'onChange' | 'children'> {
-  value: string[];
-  options: string[];
+export interface SelectProps
+  extends Omit<LabelProps, 'onChange' | 'children' | 'value'> {
+  value: SelectOpt[]; // TODO: Remove array
+  options: SelectOpt[];
   placeholder: string;
   isMulti?: boolean;
   appendToBody?: boolean;
@@ -38,7 +40,7 @@ export interface SelectProps extends Omit<LabelProps, 'onChange' | 'children'> {
   variant?: 'primary' | 'white';
   info?: string;
   intent?: Intents;
-  onChange: (value: string[]) => void;
+  onChange: (value: SelectOpt[]) => void;
   noDataMessage?: string;
   bottomActionText?: string;
   bottomActionHandler?: () => void;
@@ -46,9 +48,8 @@ export interface SelectProps extends Omit<LabelProps, 'onChange' | 'children'> {
   hasSearch?: boolean;
   searchPlaceholder?: string;
   customFilter?: React.ReactNode;
-  additionalTexts?: string[];
   additionalComponents?: React.ReactNode[];
-  noMathText?: string;
+  noMatchText?: string;
   needSecondaryText?: boolean;
   deletabled?: boolean;
   needSwap?: boolean;
@@ -77,8 +78,7 @@ const Select: FC<SelectProps> = ({
   searchPlaceholder = 'Find...',
   customFilter,
   additionalComponents,
-  additionalTexts,
-  noMathText = 'No result',
+  noMatchText = 'No result',
   needSecondaryText = true,
   deletabled,
   needSwap = false,
@@ -96,41 +96,25 @@ const Select: FC<SelectProps> = ({
   const [search, setSearch] = useState('');
 
   const handleCloseOnEsc = useCallback(() => {
-    if (isOpen) {
-      handleToggle();
-    }
+    if (isOpen) handleToggle();
   }, [isOpen, handleToggle]);
 
   useKeyUp(handleCloseOnEsc);
 
   const filteredOptions = useMemo(() => {
-    if (!search) {
-      return options;
-    }
-
-    return options.filter((value) =>
-      value.toLowerCase().includes(search.toLowerCase()),
-    );
+    if (!search) return options;
+    return options.filter((opt) => {
+      const searchString = search.toLowerCase().trim();
+      return opt.label.toLowerCase().includes(searchString);
+    });
   }, [search, options]);
 
-  const filteredAdditionalTexts = useMemo(() => {
-    if (!search) {
-      return additionalTexts;
-    }
-
-    return additionalTexts?.filter((_, index) =>
-      options[index].toLowerCase().includes(search.toLowerCase()),
-    );
-  }, [search, additionalTexts, options]);
-
   const filteredAdditionalComponents = useMemo(() => {
-    if (!search) {
-      return additionalComponents;
-    }
-
-    return additionalComponents?.filter((_, index) =>
-      options[index].toLowerCase().includes(search.toLowerCase()),
-    );
+    if (!search) return additionalComponents;
+    return additionalComponents?.filter((_, index) => {
+      const searchString = search.toLowerCase().trim();
+      options[index].label.toLowerCase().includes(searchString);
+    });
   }, [search, additionalComponents, options]);
 
   // Handlers
@@ -141,15 +125,22 @@ const Select: FC<SelectProps> = ({
     }
   }, [handleToggle, disabled]);
 
+  const AppendedToBody = useCallback(
+    ({ refEl, children }) => (
+      <StickyPortal handleClose={handleClickOutside} refEl={refEl}>
+        {children}
+      </StickyPortal>
+    ),
+    [handleClickOutside],
+  );
+
   const DropdownWrapper: FC<{ children: any; refEl: any }> = ({
     children,
     refEl,
     // eslint-disable-next-line arrow-body-style
   }) => {
     return appendToBody ? (
-      <StickyPortal handleClose={handleClickOutside} refEl={refEl}>
-        {children}
-      </StickyPortal>
+      <AppendedToBody refEl={refEl}>{children}</AppendedToBody>
     ) : (
       children
     );
@@ -160,7 +151,7 @@ const Select: FC<SelectProps> = ({
       return containerRef.current.offsetHeight + 1;
     }
     return 33;
-  }, [containerRef.current?.offsetHeight]);
+  }, []);
 
   const dropdrownWidth = useCallback(() => {
     if (listWidth === '100%' && containerRef.current) {
@@ -170,7 +161,7 @@ const Select: FC<SelectProps> = ({
       return listWidth;
     }
     return 'max-content';
-  }, [containerRef.current?.offsetWidth, listWidth]);
+  }, [listWidth]);
 
   return (
     <Label
@@ -191,7 +182,6 @@ const Select: FC<SelectProps> = ({
         value={value}
         isMulti={isMulti}
         noDataMessage={noDataMessage}
-        additionalTexts={additionalTexts}
         options={options}
         ref={containerRef}
         needSecondaryText={needSecondaryText}
@@ -241,7 +231,8 @@ const Select: FC<SelectProps> = ({
               {(!!customFilter || hasSearch) && (
                 <Divider my={0} width="calc(100% + 20px)" />
               )}
-              {!!filteredOptions.length ? (
+              {/* eslint-disable-next-line no-nested-ternary */}
+              {filteredOptions.length ? (
                 isMulti ? (
                   // Multi choice
                   <SelectListMulti
@@ -249,7 +240,6 @@ const Select: FC<SelectProps> = ({
                     onChange={onChange}
                     onClose={handleToggle}
                     options={filteredOptions}
-                    additionalTexts={filteredAdditionalTexts}
                     additionalComponents={filteredAdditionalComponents}
                   />
                 ) : (
@@ -259,13 +249,12 @@ const Select: FC<SelectProps> = ({
                     onChange={onChange}
                     onClose={handleToggle}
                     options={filteredOptions}
-                    additionalTexts={filteredAdditionalTexts}
                     additionalComponents={filteredAdditionalComponents}
                   />
                 )
               ) : (
                 <Flex height="55px" alignItems="center" justifyContent="center">
-                  <Value>{noMathText}</Value>
+                  <Value>{noMatchText}</Value>
                 </Flex>
               )}
               {bottomActionText && (

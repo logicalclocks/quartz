@@ -1,10 +1,10 @@
 import React from 'react';
+import { SelectOpt } from '../types';
 
 export interface SelectListProps {
-  options: string[];
-  value: string[];
-  onChange: (value: string[]) => void;
-  additionalTexts?: string[];
+  options: SelectOpt[];
+  value: SelectOpt[];
+  onChange: (value: SelectOpt[]) => void;
   additionalComponents?: React.ReactNode[];
   onClose: () => void;
 }

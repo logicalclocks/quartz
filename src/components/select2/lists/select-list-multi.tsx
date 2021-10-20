@@ -4,27 +4,30 @@ import React, { FC, useCallback } from 'react';
 import { Box } from 'rebass';
 import Checkbox from '../../checkbox';
 import ListItem from '../../list/item';
-// Types
-import { SelectListProps } from './list.types';
+// Hook
 import Labeling from '../../typography/labeling';
 import useArrowsSelect from '../useArrowsSelect';
+// Types
+import { SelectListProps } from './list.types';
+import { SelectOpt } from '../types';
 
-const toggleValue = (value: string[], option: string) =>
-  value.includes(option)
-    ? value.filter((o) => o !== option)
-    : [...value, option];
+const toggleValue = (value: SelectOpt[], option: SelectOpt) => {
+  if (value.includes(option)) return value.filter((o) => o !== option);
+  return [...value, option];
+};
 
 const SelectListMulti: FC<SelectListProps> = ({
   options,
   value,
-  additionalTexts,
   onChange,
   additionalComponents,
 }: SelectListProps) => {
   const handleClick = useCallback(
-    (option: string) => (event?: React.MouseEvent<HTMLDivElement>) => {
-      event?.preventDefault();
-      event?.stopPropagation();
+    (option: SelectOpt) => (event?: React.MouseEvent<HTMLDivElement>) => {
+      if (event) {
+        event.preventDefault();
+        event.stopPropagation();
+      }
 
       onChange(toggleValue(value, option));
     },
@@ -32,18 +35,18 @@ const SelectListMulti: FC<SelectListProps> = ({
   );
 
   const handleSelectOnly = useCallback(
-    (option: string) => (event: React.MouseEvent<HTMLButtonElement>) => {
+    (option: SelectOpt) => (event: React.MouseEvent<HTMLButtonElement>) => {
       event.preventDefault();
       event.stopPropagation();
-
       onChange([option]);
     },
-    [],
+    [onChange],
   );
 
-  const { activeIndex } = useArrowsSelect(options, (value: string) =>
-    handleClick(value)(),
-  );
+  // eslint-disable-next-line arrow-body-style
+  const { activeIndex } = useArrowsSelect(options, (val: SelectOpt) => {
+    return handleClick(val)();
+  });
 
   const handleCheck = useCallback(() => {}, []);
 
@@ -51,6 +54,7 @@ const SelectListMulti: FC<SelectListProps> = ({
     <React.Fragment>
       {options?.map((option, index) => (
         <ListItem
+          // eslint-disable-next-line react/no-array-index-key
           key={`${option} - ${index}`}
           isActive={index === activeIndex}
           onClick={handleClick(option)}
@@ -65,10 +69,10 @@ const SelectListMulti: FC<SelectListProps> = ({
             checked={value.includes(option)}
             onChange={handleCheck}
           />
-          {option}
-          {!!additionalTexts && !!additionalTexts[index] && (
+          {option.label}
+          {options[index]?.additionalText && (
             <Labeling ml="8px" gray>
-              {additionalTexts[index]}
+              {options[index].additionalText}
             </Labeling>
           )}
           {!!additionalComponents && !!additionalComponents[index] && (

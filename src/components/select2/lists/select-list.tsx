@@ -1,30 +1,28 @@
 import React, { FC, useCallback } from 'react';
-
 // Components
 import { Box } from 'rebass';
 import ListItem from '../../list/item';
+import Labeling from '../../typography/labeling';
+// Hook
+import useArrowsSelect from '../useArrowsSelect';
 // Types
 import { SelectListProps } from './list.types';
-import Labeling from '../../typography/labeling';
-import useArrowsSelect from '../useArrowsSelect';
+import { SelectOpt } from '../types';
 
 const SelectList: FC<SelectListProps> = ({
   options,
   value,
   onClose,
   onChange,
-  additionalTexts,
   additionalComponents,
 }: SelectListProps) => {
   const handleClick = useCallback(
-    (option: string) => () => {
-      onChange([option]);
-    },
-    [value, onChange],
+    (option: SelectOpt) => () => onChange([option]),
+    [onChange],
   );
 
-  const { activeIndex } = useArrowsSelect(options, (value: string) => {
-    handleClick(value)();
+  const { activeIndex } = useArrowsSelect(options, (val: SelectOpt) => {
+    handleClick(val)();
     onClose();
   });
 
@@ -32,15 +30,15 @@ const SelectList: FC<SelectListProps> = ({
     <React.Fragment>
       {options?.map((option, index) => (
         <ListItem
-          key={`${option} - ${index}`}
+          key={option.key}
           isActive={index === activeIndex}
           variant={value.includes(option) ? 'active' : undefined}
           onClick={handleClick(option)}
         >
-          {option}
-          {!!additionalTexts && !!additionalTexts[index] && (
+          {option.label}
+          {options[index]?.additionalText && (
             <Labeling ml="8px" gray>
-              {additionalTexts[index]}
+              {options[index].additionalText}
             </Labeling>
           )}
           {!!additionalComponents && !!additionalComponents[index] && (

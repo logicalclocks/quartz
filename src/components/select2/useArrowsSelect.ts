@@ -1,7 +1,8 @@
 import { useCallback, useEffect, useState } from 'react';
+import { SelectOpt } from './types';
 
 const useArrowsSelect = (
-  options: string[],
+  options: SelectOpt[],
   callback: Function,
   startingIndex = -1,
 ) => {

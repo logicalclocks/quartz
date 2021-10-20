@@ -3,58 +3,42 @@ import { Box, BoxProps, Flex } from 'rebass';
 
 // Icons
 import ArrowsIcon from '../icons/arrows.icon';
-import { Intents } from '../intents';
+import icons from '../../sources/icons';
 // Components
 import Labeling from '../typography/labeling';
 // Styles
 import { valueStyles, getLabelStyles, deletabledStyles } from './select.styles';
-import icons from '../../sources/icons';
+import { Intents } from '../intents';
+// Types
+import { SelectOpt } from './types';
 
-export interface SelectLabelProps extends Omit<BoxProps, 'css' | 'onChange'> {
+export interface SelectLabelProps
+  extends Omit<BoxProps, 'css' | 'onChange' | 'value'> {
   variant: 'primary' | 'white' | 'disabled';
   placeholder: string;
-  value: string[];
-  options: string[];
+  value: SelectOpt[];
+  options: SelectOpt[];
   children: React.ReactNode;
   isMulti?: boolean;
   noDataMessage?: string;
   hasPlaceholder: boolean;
   intent: Intents;
-  additionalTexts?: string[];
   needSecondaryText: boolean;
   needSwap: boolean;
   deletabled?: boolean;
-  onChange: (value: string[]) => void;
+  onChange: (value: SelectOpt[]) => void;
 }
 
-const getAdditionalText = (
-  value: string[],
-  options: string[],
-  additionalTexts: string[],
-) => {
-  const index = options.indexOf(value[0]);
-
-  if (index > -1) {
-    return additionalTexts[index];
-  }
-
-  return '';
-};
-
 const getLabelText = (
-  value: string[],
-  options: string[],
+  value: SelectOpt[],
+  options: SelectOpt[],
   isMulti?: boolean,
 ) => {
-  if (!options.length && !value.length) {
-    return '';
-  }
-
-  if (value[0] === 'any' && value.length === 1) {
-    return 'any';
-  }
-
-  return value.length === options.length && isMulti ? 'all' : value.join(', ');
+  if (!options.length && !value.length) return '';
+  if (value[0]?.key === 'any' && value.length === 1) return 'any';
+  return value.length === options.length && isMulti
+    ? 'all'
+    : value.map((x) => x.label).join(', ');
 };
 
 const SelectLabel: FC<SelectLabelProps> = forwardRef(
@@ -70,7 +54,6 @@ const SelectLabel: FC<SelectLabelProps> = forwardRef(
       noDataMessage,
       deletabled,
       intent,
-      additionalTexts,
       hasPlaceholder,
       needSecondaryText,
       needSwap = false,
@@ -130,10 +113,8 @@ const SelectLabel: FC<SelectLabelProps> = forwardRef(
               <Labeling px="5px" sx={valueStyles}>
                 {getLabelText(value, options, isMulti)}
               </Labeling>
-              {!!additionalTexts?.length && needSecondaryText && (
-                <Labeling gray={true}>
-                  {getAdditionalText(value, options, additionalTexts)}
-                </Labeling>
+              {!isMulti && value[0]?.additionalText && needSecondaryText && (
+                <Labeling gray>{value[0].additionalText}</Labeling>
               )}
             </Flex>
           </Flex>
