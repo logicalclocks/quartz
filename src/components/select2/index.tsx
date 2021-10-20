@@ -49,7 +49,7 @@ export interface SelectProps
   maxListHeight?: string;
   labelAction?: React.ReactNode;
   color?: 'primary' | 'white';
-  info?: string;
+  message?: string;
   intent?: Intents;
   onChange: (value: SelectOpt[]) => void;
   noDataMessage?: string;
@@ -65,11 +65,11 @@ export interface SelectProps
 }
 
 const Select: FC<SelectProps> = ({
-  info,
   label,
   value,
   options,
   isMulti,
+  message,
   disabled,
   onChange,
   deletabled,
@@ -270,7 +270,7 @@ const Select: FC<SelectProps> = ({
           </DropdownWrapper>
         )}
       </SelectLabel>
-      {info && <SelectInfo intent={intent}>{info}</SelectInfo>}
+      {message && <SelectInfo intent={intent}>{message}</SelectInfo>}
     </Label>
   );
 };

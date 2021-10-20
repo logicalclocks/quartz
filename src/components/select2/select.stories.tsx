@@ -148,7 +148,7 @@ Default.argTypes = {
     type: { required: false },
     control: { type: 'boolean' },
   },
-  info: {
+  message: {
     control: {
       type: 'text',
     },
