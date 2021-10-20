@@ -42,6 +42,8 @@ export interface SelectProps
   appendToBody?: boolean;
   // Label for the select
   label?: string;
+  // Placement of the label
+  labelMode?: 'default' | 'inline' | 'none';
   // Disable selection
   disabled?: boolean;
   maxListHeight?: string;
@@ -83,6 +85,7 @@ const Select: FC<SelectProps> = ({
   intent = 'default',
   bottomActionHandler,
   appendToBody = false,
+  labelMode = 'default',
   maxListHeight = '150px',
   needSecondaryText = true,
   noMatchText = 'No result',
@@ -169,13 +172,14 @@ const Select: FC<SelectProps> = ({
     <Label
       id="pollo"
       action={labelAction}
-      text={label}
+      text={labelMode === 'default' ? label : ''}
       width={selectWidth()}
       {...props}
       as="span"
       onClick={handleLabelClick}
     >
       <SelectLabel
+        label={labelMode === 'inline' ? label : ''}
         deletabled={deletabled}
         intent={intent}
         onChange={onChange}

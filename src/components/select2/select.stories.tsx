@@ -93,6 +93,7 @@ Default.args = {
   label: 'Label',
   format: 'fit',
   color: 'primary',
+  labelMode: 'default',
   appendToBody: true,
   isMulti: false,
   noDataMessage: 'no labels',
@@ -106,7 +107,7 @@ Default.args = {
 
 Default.argTypes = {
   value: {
-    type: { required: true, summary: 'Array of strings' },
+    type: { required: true, summary: 'Array of objects' },
   },
   options: {
     type: { required: true, summary: 'Array of strings' },
@@ -119,7 +120,6 @@ Default.argTypes = {
   hasSearch: {
     type: { required: false },
     control: { type: 'boolean' },
-    defaultValue: { summary: 'Has search input' },
   },
   customFilter: {
     type: { required: false, summary: 'Custom filter' },
@@ -143,12 +143,10 @@ Default.argTypes = {
   isMulti: {
     type: { required: false },
     control: { type: 'boolean' },
-    defaultValue: { summary: 'false' },
   },
   deletabled: {
     type: { required: false },
     control: { type: 'boolean' },
-    defaultValue: { summary: 'deletabled (need to select a value)' },
   },
   info: {
     control: {
@@ -177,6 +175,16 @@ Default.argTypes = {
     type: {
       required: false,
       summary: 'Width behaviour of select and dropdown',
+    },
+  },
+  labelMode: {
+    control: {
+      type: 'select',
+      options: ['default', 'inline', 'none'],
+    },
+    type: {
+      required: false,
+      summary: 'Placement of the label',
     },
   },
   disabled: {

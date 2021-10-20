@@ -25,6 +25,7 @@ export interface SelectLabelProps
   needSecondaryText: boolean;
   needSwap: boolean;
   deletabled?: boolean;
+  label?: string;
   onChange: (value: SelectOpt[]) => void;
 }
 
@@ -43,6 +44,7 @@ const getLabelText = (
 const SelectLabel: FC<SelectLabelProps> = forwardRef(
   (
     {
+      label,
       variant,
       placeholder,
       value,
@@ -63,8 +65,8 @@ const SelectLabel: FC<SelectLabelProps> = forwardRef(
       if (!options.length && !value.length) return noDataMessage;
       if (!options.length) return noDataMessage;
       if (!value.length) return placeholder;
-      return '';
-    }, [value, options, placeholder, noDataMessage]);
+      return label || '';
+    }, [options.length, value.length, noDataMessage, placeholder, label]);
 
     return (
       <Flex
