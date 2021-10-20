@@ -43,7 +43,7 @@ const RowLeftContent: FC<RowLeftContentProps> = ({
         tooltipProps={{ position: TooltipPositions.right }}
         tooltip="remove"
         intent="ghost"
-        icon={IconName.bin}
+        icon={IconName.trash}
       />
     </Box>
   );
