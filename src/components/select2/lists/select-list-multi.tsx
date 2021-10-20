@@ -20,7 +20,6 @@ const SelectListMulti: FC<SelectListProps> = ({
   options,
   value,
   onChange,
-  additionalComponents,
 }: SelectListProps) => {
   const handleClick = useCallback(
     (option: SelectOpt) => (event?: React.MouseEvent<HTMLDivElement>) => {
@@ -54,12 +53,11 @@ const SelectListMulti: FC<SelectListProps> = ({
     <React.Fragment>
       {options?.map((option, index) => (
         <ListItem
-          // eslint-disable-next-line react/no-array-index-key
-          key={`${option} - ${index}`}
+          key={option.key}
           isActive={index === activeIndex}
           onClick={handleClick(option)}
           action={
-            !additionalComponents?.length
+            !option.additionalComponent
               ? ['only', handleSelectOnly(option)]
               : undefined
           }
@@ -75,14 +73,14 @@ const SelectListMulti: FC<SelectListProps> = ({
               {options[index].additionalText}
             </Labeling>
           )}
-          {!!additionalComponents && !!additionalComponents[index] && (
+          {option.additionalComponent && (
             <Box
               sx={{
                 position: 'absolute',
                 right: '10px',
               }}
             >
-              {additionalComponents[index]}
+              {option.additionalComponent}
             </Box>
           )}
         </ListItem>

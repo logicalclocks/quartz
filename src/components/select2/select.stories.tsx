@@ -15,11 +15,29 @@ export default {
 } as Meta;
 
 const options = [
-  { key: 1, label: 'One', additionalText: 'add_one' },
-  { key: 2, label: 'Two' },
+  {
+    key: 1,
+    label: 'One',
+    additionalText: 'add_one',
+    additionalComponent: <Value>text</Value>,
+  },
+  {
+    key: 2,
+    label: 'Two',
+    additionalComponent: (
+      <Labeling bold gray>
+        text
+      </Labeling>
+    ),
+  },
   { key: 3, label: 'Three', additionalText: 'add_three' },
-  { key: 4, label: 'Four', additionalText: 'add_four' },
-];
+  {
+    key: 4,
+    label: 'Four',
+    additionalText: 'add_four',
+    additionalComponent: <Value>text</Value>,
+  },
+] as SelectOpt[];
 
 const Template: Story<SelectProps> = (props) => {
   const [value, setValue] = useState<SelectOpt[]>([]);
@@ -77,7 +95,7 @@ Default.args = {
   listWidth: '100%',
   variant: 'primary',
   hasPlaceholder: false,
-  appendToBody: false,
+  appendToBody: true,
   isMulti: false,
   noDataMessage: 'no labels',
   hasSearch: true,
@@ -85,15 +103,6 @@ Default.args = {
   bottomActionHandler: () => {
     action('on bottom action')();
   },
-  additionalComponents: [
-    <Value>text</Value>,
-    <Labeling bold gray>
-      text gray
-    </Labeling>,
-    null,
-    <Value>text</Value>,
-    <Value>text</Value>,
-  ],
   deletabled: false,
 };
 
@@ -113,10 +122,6 @@ Default.argTypes = {
     type: { required: false },
     control: { type: 'boolean' },
     defaultValue: { summary: 'Has search input' },
-  },
-  additionalComponents: {
-    type: { required: false, summary: 'Array of components(right)' },
-    control: { type: 'array' },
   },
   customFilter: {
     type: { required: false, summary: 'Custom filter' },

@@ -14,7 +14,6 @@ const SelectList: FC<SelectListProps> = ({
   value,
   onClose,
   onChange,
-  additionalComponents,
 }: SelectListProps) => {
   const handleClick = useCallback(
     (option: SelectOpt) => () => onChange([option]),
@@ -41,8 +40,8 @@ const SelectList: FC<SelectListProps> = ({
               {options[index].additionalText}
             </Labeling>
           )}
-          {!!additionalComponents && !!additionalComponents[index] && (
-            <Box ml="auto">{additionalComponents[index]}</Box>
+          {option.additionalComponent && (
+            <Box ml="auto">{option.additionalComponent}</Box>
           )}
         </ListItem>
       ))}

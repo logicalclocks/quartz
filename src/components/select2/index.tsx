@@ -48,7 +48,6 @@ export interface SelectProps
   hasSearch?: boolean;
   searchPlaceholder?: string;
   customFilter?: React.ReactNode;
-  additionalComponents?: React.ReactNode[];
   noMatchText?: string;
   needSecondaryText?: boolean;
   deletabled?: boolean;
@@ -77,7 +76,6 @@ const Select: FC<SelectProps> = ({
   hasSearch = false,
   searchPlaceholder = 'Find...',
   customFilter,
-  additionalComponents,
   noMatchText = 'No result',
   needSecondaryText = true,
   deletabled,
@@ -108,14 +106,6 @@ const Select: FC<SelectProps> = ({
       return opt.label.toLowerCase().includes(searchString);
     });
   }, [search, options]);
-
-  const filteredAdditionalComponents = useMemo(() => {
-    if (!search) return additionalComponents;
-    return additionalComponents?.filter((_, index) => {
-      const searchString = search.toLowerCase().trim();
-      options[index].label.toLowerCase().includes(searchString);
-    });
-  }, [search, additionalComponents, options]);
 
   // Handlers
   const handleLabelClick = useCallback(() => {
@@ -240,7 +230,6 @@ const Select: FC<SelectProps> = ({
                     onChange={onChange}
                     onClose={handleToggle}
                     options={filteredOptions}
-                    additionalComponents={filteredAdditionalComponents}
                   />
                 ) : (
                   // Single choice
@@ -249,7 +238,6 @@ const Select: FC<SelectProps> = ({
                     onChange={onChange}
                     onClose={handleToggle}
                     options={filteredOptions}
-                    additionalComponents={filteredAdditionalComponents}
                   />
                 )
               ) : (
