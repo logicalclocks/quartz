@@ -157,14 +157,14 @@ Default.argTypes = {
       summary: 'Message text (validation error)',
     },
   },
-  intent: {
+  state: {
     control: {
       type: 'select',
       options: ['default', 'error'],
     },
     type: {
       required: false,
-      summary: 'Select intent (error border)',
+      summary: 'Select state (error border)',
     },
   },
   format: {

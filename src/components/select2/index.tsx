@@ -50,7 +50,7 @@ export interface SelectProps
   labelAction?: React.ReactNode;
   color?: 'primary' | 'white';
   message?: string;
-  intent?: Intents;
+  state?: Intents;
   onChange: (value: SelectOpt[]) => void;
   noDataMessage?: string;
   bottomActionText?: string;
@@ -82,7 +82,7 @@ const Select: FC<SelectProps> = ({
   needSwap = false,
   color = 'primary',
   hasSearch = false,
-  intent = 'default',
+  state = 'default',
   bottomActionHandler,
   appendToBody = false,
   labelMode = 'default',
@@ -181,7 +181,7 @@ const Select: FC<SelectProps> = ({
       <SelectLabel
         label={labelMode === 'inline' ? label : ''}
         deletabled={deletabled}
-        intent={intent}
+        intent={state}
         onChange={onChange}
         variant={disabled ? 'disabled' : color}
         placeholder={placeholder}
@@ -270,7 +270,7 @@ const Select: FC<SelectProps> = ({
           </DropdownWrapper>
         )}
       </SelectLabel>
-      {message && <SelectInfo intent={intent}>{message}</SelectInfo>}
+      {message && <SelectInfo intent={state}>{message}</SelectInfo>}
     </Label>
   );
 };
