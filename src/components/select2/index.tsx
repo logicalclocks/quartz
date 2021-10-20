@@ -53,7 +53,6 @@ export interface SelectProps
   noDataMessage?: string;
   bottomActionText?: string;
   bottomActionHandler?: () => void;
-  hasPlaceholder?: boolean;
   hasSearch?: boolean;
   searchPlaceholder?: string;
   customFilter?: React.ReactNode;
@@ -84,7 +83,6 @@ const Select: FC<SelectProps> = ({
   intent = 'default',
   bottomActionHandler,
   appendToBody = false,
-  hasPlaceholder = true,
   maxListHeight = '150px',
   needSecondaryText = true,
   noMatchText = 'No result',
@@ -179,7 +177,6 @@ const Select: FC<SelectProps> = ({
     >
       <SelectLabel
         deletabled={deletabled}
-        hasPlaceholder={hasPlaceholder}
         intent={intent}
         onChange={onChange}
         variant={disabled ? 'disabled' : color}

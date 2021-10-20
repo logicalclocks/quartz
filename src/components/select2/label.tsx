@@ -21,7 +21,6 @@ export interface SelectLabelProps
   children: React.ReactNode;
   isMulti?: boolean;
   noDataMessage?: string;
-  hasPlaceholder: boolean;
   intent: Intents;
   needSecondaryText: boolean;
   needSwap: boolean;
@@ -54,7 +53,6 @@ const SelectLabel: FC<SelectLabelProps> = forwardRef(
       noDataMessage,
       deletabled,
       intent,
-      hasPlaceholder,
       needSecondaryText,
       needSwap = false,
       ...props
@@ -62,24 +60,11 @@ const SelectLabel: FC<SelectLabelProps> = forwardRef(
     ref,
   ) => {
     const content = useMemo(() => {
-      if (!options.length && !value.length) {
-        return noDataMessage;
-      }
-
-      if (!options.length) {
-        return noDataMessage;
-      }
-
-      if (!value.length) {
-        return placeholder;
-      }
-
-      if (value.length && hasPlaceholder) {
-        return placeholder;
-      }
-
-      return hasPlaceholder ? placeholder : '';
-    }, [value, options, hasPlaceholder, placeholder, noDataMessage]);
+      if (!options.length && !value.length) return noDataMessage;
+      if (!options.length) return noDataMessage;
+      if (!value.length) return placeholder;
+      return '';
+    }, [value, options, placeholder, noDataMessage]);
 
     return (
       <Flex

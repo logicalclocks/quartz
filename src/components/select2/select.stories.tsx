@@ -93,7 +93,6 @@ Default.args = {
   label: 'Label',
   format: 'fit',
   color: 'primary',
-  hasPlaceholder: false,
   appendToBody: true,
   isMulti: false,
   noDataMessage: 'no labels',
