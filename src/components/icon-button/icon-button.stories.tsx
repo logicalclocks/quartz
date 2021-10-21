@@ -35,6 +35,7 @@ IconButtons.argTypes = {
     control: {
       type: 'text',
       default: 'Tooltip',
+      required: false,
     },
     type: {
       required: true,
