@@ -8,6 +8,7 @@ import Select, { SelectProps } from './index';
 import { Popup, RadioGroup, Value } from '../../index';
 import Labeling from '../typography/labeling';
 import { SelectOpt } from './types';
+import value from '../../theme/typography/value';
 
 export default {
   title: 'Quartz/Select2',
@@ -40,7 +41,7 @@ const options = [
 ] as SelectOpt[];
 
 const Template: Story<SelectProps> = (props) => {
-  const [value, setValue] = useState<SelectOpt[]>([]);
+  const [val, setValue] = useState<SelectOpt[]>([]);
   const [customOptions, setOptions] = useState(options);
 
   const [selected, setSelected] = useState('all');
@@ -65,7 +66,7 @@ const Template: Story<SelectProps> = (props) => {
       <Box height="60px" m="20px">
         <Select
           {...props}
-          value={value}
+          value={val}
           maxListHeight="initial"
           options={customOptions}
           onChange={handleChange}
@@ -89,6 +90,7 @@ const Template: Story<SelectProps> = (props) => {
 export const Default = Template.bind({});
 
 Default.args = {
+  value: [],
   placeholder: 'placeholder',
   label: 'Label',
   format: 'fit',
@@ -107,45 +109,74 @@ Default.args = {
 
 Default.argTypes = {
   value: {
-    type: { required: true, summary: 'Array of objects' },
+    type: { required: true, summary: 'Current selection' },
+    control: { type: 'array' },
   },
   options: {
     type: { required: true, summary: 'Array of strings' },
     control: { type: 'array' },
   },
   searchPlaceholder: {
-    type: { required: false },
+    type: {
+      required: false,
+      summary: 'Placeholder for the search bar, if applicable',
+    },
     control: { type: 'text' },
   },
+  bottomActionText: {
+    type: {
+      required: false,
+      summary:
+        'text to be placed in the action button at the end of the dropdown, if applicable',
+    },
+    control: { type: 'text' },
+  },
+  bottomActionHandler: {
+    type: {
+      required: false,
+      summary:
+        'callback action for the button at the end of the dropdown, if applicable',
+    },
+    control: { type: 'function' },
+  },
   hasSearch: {
-    type: { required: false },
+    type: { required: false, summary: 'Adds a search bar inside the dropdown' },
     control: { type: 'boolean' },
   },
   customFilter: {
-    type: { required: false, summary: 'Custom filter' },
+    type: {
+      required: false,
+      summary: 'Custom filter to be placed inside the dropdown',
+    },
     control: { type: 'React.ReactNode' },
   },
   placeholder: {
-    type: { required: true },
+    type: {
+      required: true,
+      summary: 'Text to be displayed when no selection is being made',
+    },
     control: { type: 'text' },
   },
   noDataMessage: {
-    type: { required: false },
+    type: {
+      required: false,
+      summary: 'Text to be displayed when there is no options available',
+    },
     control: { type: 'text' },
   },
   onChange: {
     type: { required: true, summary: 'Change callback function' },
   },
   label: {
-    type: { required: true },
+    type: { required: true, summary: 'Label of the component' },
     control: { type: 'text' },
   },
   isMulti: {
-    type: { required: false },
+    type: { required: false, summary: 'Allow multiple selection' },
     control: { type: 'boolean' },
   },
   deletabled: {
-    type: { required: false },
+    type: { required: false, summary: 'Allow current selection to be removed' },
     control: { type: 'boolean' },
   },
   message: {
@@ -188,22 +219,26 @@ Default.argTypes = {
     },
   },
   disabled: {
-    type: { required: false },
+    type: { required: false, summary: 'Disables the component' },
     control: { type: 'boolean' },
   },
   appendToBody: {
-    type: { required: false },
+    type: {
+      required: false,
+      summary:
+        'Appends the dropdown directly to the body. Helps when inside popups',
+    },
     control: { type: 'boolean' },
   },
   labelAction: {
     type: {
       required: false,
-      summary: 'React Component',
+      summary: 'React Component to be placed next to the label',
     },
     control: {},
   },
   color: {
-    type: { required: false },
+    type: { required: false, summary: 'color of the select' },
     control: { type: 'select', options: ['primary', 'white'] },
     defaultValue: { summary: 'primary' },
   },
