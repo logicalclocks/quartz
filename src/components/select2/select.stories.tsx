@@ -5,10 +5,9 @@ import { Story, Meta } from '@storybook/react/types-6-0';
 
 import { Box } from 'rebass';
 import Select, { SelectProps } from './index';
-import { Popup, RadioGroup, Value } from '../../index';
+import { Button, Popup, RadioGroup, Value } from '../../index';
 import Labeling from '../typography/labeling';
 import { SelectOpt } from './types';
-import value from '../../theme/typography/value';
 
 export default {
   title: 'Quartz/Select2',
@@ -104,7 +103,13 @@ Default.args = {
   bottomActionHandler: () => {
     action('on bottom action')();
   },
+  info: 'Here goes some extra info',
   deletabled: false,
+  labelAction: (
+    <Button p="0 0 0 10px" intent="inline">
+      reference
+    </Button>
+  ),
 };
 
 Default.argTypes = {
@@ -120,6 +125,13 @@ Default.argTypes = {
     type: {
       required: false,
       summary: 'Placeholder for the search bar, if applicable',
+    },
+    control: { type: 'text' },
+  },
+  info: {
+    type: {
+      required: false,
+      summary: 'If present, shows an info icon with the text as tooltip',
     },
     control: { type: 'text' },
   },

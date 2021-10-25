@@ -11,6 +11,7 @@ import Input from '../input';
 import Value from '../typography/value';
 import useKeyUp from '../../utils/useKeyUp';
 import icons from '../../sources/icons';
+import Tooltip from '../tooltip';
 import StickyPortal, { CONTENT_ID } from '../sticky-portal/StickyPortal';
 // List types
 import SelectList from './lists/select-list';
@@ -62,6 +63,7 @@ export interface SelectProps
   needSecondaryText?: boolean;
   deletabled?: boolean;
   needSwap?: boolean;
+  info?: string;
 }
 
 const Select: FC<SelectProps> = ({
@@ -69,6 +71,7 @@ const Select: FC<SelectProps> = ({
   value,
   options,
   isMulti,
+  info,
   message,
   disabled,
   onChange,
@@ -168,10 +171,26 @@ const Select: FC<SelectProps> = ({
     return 'inherit';
   }, [format]);
 
+  const labelActions = useMemo(() => {
+    if (info && info !== '') {
+      return (
+        <Flex flexDirection="row" width="100%" justifyContent="space-between">
+          <Tooltip mainText={info}>
+            <Box mt="-6px" mb="-3px">
+              {icons.info_block}
+            </Box>
+          </Tooltip>
+          {labelAction}
+        </Flex>
+      );
+    }
+    return labelAction;
+  }, [labelAction, info]);
+
   return (
     <Label
       id="pollo"
-      action={labelAction}
+      action={labelActions}
       text={labelMode === 'default' ? label : ''}
       width={selectWidth()}
       {...props}
