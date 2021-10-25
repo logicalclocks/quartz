@@ -8,7 +8,7 @@ import TooltipPositions from '../tooltip/positions';
 
 export interface DotProps extends Omit<FlexProps, 'css'> {
   mainText: string;
-  variant?: 'green' | 'black';
+  variant?: 'green' | 'black' | 'white';
   secondaryText?: string;
   position?: TooltipPositions;
 }
@@ -39,6 +39,7 @@ const Dot: FC<DotProps> = ({
         fontFamily: 'Inter',
         borderRadius: '50%',
         userSelect: 'none',
+        ...(variant === 'white' && { border: 'solid 2px black' }),
       }}
     />
   </Tooltip>

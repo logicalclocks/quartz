@@ -10,11 +10,12 @@ import { IconName, getIcon } from '../icon/list';
 
 export interface IconButtonProps extends Omit<ButtonProps, 'css'> {
   intent?: 'primary' | 'ghost' | 'ghost-white';
-  tooltip: string;
+  tooltip?: string;
   icon: IconName;
   disabled?: boolean;
   href?: string;
   tooltipProps?: Omit<TooltipProps, 'children' | 'mainText'>;
+  onClickIcon?: React.MouseEventHandler<HTMLAnchorElement>;
 }
 
 const IconButton: FC<IconButtonProps> = ({
@@ -24,39 +25,60 @@ const IconButton: FC<IconButtonProps> = ({
   disabled,
   tooltipProps,
   href,
+  onClickIcon,
   ...props
 }: IconButtonProps) => {
-
-  const component = (
-    <Tooltip {...tooltipProps} disabled={disabled} mainText={tooltip}>
+  let component;
+  if (tooltip) {
+    component = (
+      <Tooltip {...tooltipProps} disabled={disabled} mainText={tooltip}>
+        <RebassButton
+          sx={styles}
+          variant={`icon-${intent}`}
+          disabled={disabled}
+          {...props}
+        >
+          {getIcon(icon, 'black')}
+        </RebassButton>
+      </Tooltip>
+    );
+  } else {
+    component = (
       <RebassButton
         sx={styles}
         variant={`icon-${intent}`}
         disabled={disabled}
         {...props}
       >
-        {getIcon(icon, "black")}
+        {getIcon(icon, 'black')}
       </RebassButton>
-    </Tooltip>
-  );
+    );
+  }
 
-  if (!!href) {
+  if (href) {
     return (
       <a
         style={{
           textDecoration: 'none',
         }}
-        onClick={(e) => {
-          e.preventDefault();
-        }}
+        onClick={onClickIcon}
         href={href}
       >
         {component}
       </a>
     );
   }
-
-  return component;
+  return (
+    <a
+      style={{
+        textDecoration: 'none',
+      }}
+      onClick={onClickIcon}
+      href={href}
+    >
+      {component}
+    </a>
+  );
 };
 
 export default IconButton;

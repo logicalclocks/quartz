@@ -235,10 +235,14 @@ export {
 
 export type ITheme = import('./theme/types').ITheme;
 export type TooltipProps = import('./components/tooltip').TooltipProps;
-export type TableColumn = import('./components/table/editable').TableColumn;
 export type CardProps = import('./components/card').CardProps;
 export type IThemeColors = import('./theme/types').IThemeColors;
-export type FGRow = import('./components/table/type').FGRow;
-export type FGItem = import('./components/table/type').FGItem;
+export type TableCell = import('./components/table/type').TableCell;
+export type TableHeader = import('./components/table/type').TableHeader;
+export type ColumnIdentifier =
+  import('./components/table/type').ColumnIdentifier;
 export type TreeNode = import('./components/navigation/types').TreeNode;
 export type TabItem = import('./components/form-tabs/index').TabItem;
+export type TableRowComponent =
+  import('./components/table/type').TableRowComponent;
+export type TableCellType = import('./components/table/type').TableCellType;
