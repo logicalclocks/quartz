@@ -12,8 +12,14 @@ import { SelectListProps } from './list.types';
 import { SelectOpt } from '../types';
 
 const toggleValue = (value: SelectOpt[], option: SelectOpt) => {
-  if (value.includes(option)) return value.filter((o) => o !== option);
-  return [...value, option];
+  let result;
+  const exists = value.find((x) => x.key === option.key);
+  if (exists) {
+    result = value.filter((x) => x.key !== option.key);
+  } else {
+    result = [...value, option];
+  }
+  return result.map((x) => ({ key: x.key, label: x.label }));
 };
 
 const SelectListMulti: FC<SelectListProps> = ({
@@ -27,7 +33,6 @@ const SelectListMulti: FC<SelectListProps> = ({
         event.preventDefault();
         event.stopPropagation();
       }
-
       onChange(toggleValue(value, option));
     },
     [value, onChange],

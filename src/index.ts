@@ -248,3 +248,4 @@ export type TabItem = import('./components/form-tabs/index').TabItem;
 export type TableRowComponent =
   import('./components/table/type').TableRowComponent;
 export type TableCellType = import('./components/table/type').TableCellType;
+export type SelectOpt = import('./components/select2/types').SelectOpt;

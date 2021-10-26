@@ -27,14 +27,15 @@ import useOnClickOutside from '../../utils/useClickOutside';
 
 export interface SelectProps
   extends Omit<LabelProps, 'onChange' | 'children' | 'value'> {
-  // Default value
-  value: SelectOpt[]; // TODO: Remove array
+  // Value of the select. Needs to match one of the keys of the options.
+  // Array if isMulti
+  value: (string | number) | (string | number)[];
   // Options to be passed. Check the interface to see the available fields.
   options: SelectOpt[];
   // How the Select and dropdown should behave in terms of width.
   // [fit]: max dropdown content width
   // [fill]: fill container
-  format: 'fit' | 'fill';
+  format?: 'fit' | 'fill';
   // Placeholder for the select box
   placeholder: string;
   // Whether it allows multiple selection.
@@ -52,7 +53,7 @@ export interface SelectProps
   color?: 'primary' | 'white';
   message?: string;
   state?: Intents;
-  onChange: (value: SelectOpt[]) => void;
+  onChange: (value: SelectOpt | SelectOpt[]) => void;
   noDataMessage?: string;
   bottomActionText?: string;
   bottomActionHandler?: () => void;
@@ -187,6 +188,19 @@ const Select: FC<SelectProps> = ({
     return labelAction;
   }, [labelAction, info]);
 
+  const arrayValue = useMemo(
+    // eslint-disable-next-line no-nested-ternary
+    () => (Array.isArray(value) ? value : value && value !== '' ? [value] : []),
+    [value],
+  );
+
+  const selectedOption = useMemo(() => {
+    const mapped = arrayValue
+      .map((val) => options.find((x) => x.key === val))
+      .filter((x) => x);
+    return mapped as SelectOpt[];
+  }, [arrayValue, options]);
+
   return (
     <Label
       id="pollo"
@@ -204,7 +218,7 @@ const Select: FC<SelectProps> = ({
         onChange={onChange}
         variant={disabled ? 'disabled' : color}
         placeholder={placeholder}
-        value={value}
+        value={selectedOption}
         isMulti={isMulti}
         noDataMessage={noDataMessage}
         options={options}
@@ -261,7 +275,7 @@ const Select: FC<SelectProps> = ({
                 isMulti ? (
                   // Multi choice
                   <SelectListMulti
-                    value={value}
+                    value={selectedOption}
                     onChange={onChange}
                     onClose={handleToggle}
                     options={filteredOptions}
@@ -269,7 +283,7 @@ const Select: FC<SelectProps> = ({
                 ) : (
                   // Single choice
                   <SelectList
-                    value={value}
+                    value={selectedOption}
                     onChange={onChange}
                     onClose={handleToggle}
                     options={filteredOptions}

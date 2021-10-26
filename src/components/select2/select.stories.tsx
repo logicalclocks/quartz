@@ -40,14 +40,15 @@ const options = [
 ] as SelectOpt[];
 
 const Template: Story<SelectProps> = (props) => {
-  const [val, setValue] = useState<SelectOpt[]>([]);
+  const [val, setValue] = useState<(string | number)[]>([]);
   const [customOptions, setOptions] = useState(options);
 
   const [selected, setSelected] = useState('all');
 
-  const handleChange = (data: SelectOpt[]) => {
+  const handleChange = (data: SelectOpt | SelectOpt[]) => {
+    const asArray = Array.isArray(data) ? data : [data];
     action('onChange')(data);
-    setValue(data);
+    setValue(asArray.map((x: SelectOpt) => x.key));
   };
 
   const handleChangeFilter = (data: string) => {
@@ -89,7 +90,7 @@ const Template: Story<SelectProps> = (props) => {
 export const Default = Template.bind({});
 
 Default.args = {
-  value: [],
+  value: '',
   placeholder: 'placeholder',
   label: 'Label',
   format: 'fit',
@@ -114,7 +115,7 @@ Default.args = {
 
 Default.argTypes = {
   value: {
-    type: { required: true, summary: 'Current selection' },
+    type: { required: true, summary: 'Current selection. Matches option.key' },
     control: { type: 'array' },
   },
   options: {

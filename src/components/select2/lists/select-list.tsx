@@ -16,7 +16,10 @@ const SelectList: FC<SelectListProps> = ({
   onChange,
 }: SelectListProps) => {
   const handleClick = useCallback(
-    (option: SelectOpt) => () => onChange([option]),
+    (option: SelectOpt) => () => {
+      const selection = { key: option.key, label: option.label };
+      onChange(selection);
+    },
     [onChange],
   );
 

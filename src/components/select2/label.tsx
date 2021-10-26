@@ -26,7 +26,7 @@ export interface SelectLabelProps
   needSwap: boolean;
   deletabled?: boolean;
   label?: string;
-  onChange: (value: SelectOpt[]) => void;
+  onChange: (value: SelectOpt | SelectOpt[]) => void;
 }
 
 const getLabelText = (
@@ -114,7 +114,7 @@ const SelectLabel: FC<SelectLabelProps> = forwardRef(
               onClick={(e) => {
                 e.stopPropagation();
 
-                onChange([]);
+                onChange(isMulti ? ([] as SelectOpt[]) : ({} as SelectOpt));
               }}
               sx={deletabledStyles}
               ml="auto"

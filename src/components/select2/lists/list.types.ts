@@ -3,6 +3,6 @@ import { SelectOpt } from '../types';
 export interface SelectListProps {
   options: SelectOpt[];
   value: SelectOpt[];
-  onChange: (value: SelectOpt[]) => void;
+  onChange: (value: SelectOpt | SelectOpt[]) => void;
   onClose: () => void;
 }
