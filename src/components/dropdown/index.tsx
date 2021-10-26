@@ -1,4 +1,3 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { FC, useRef } from 'react';
 
 // Components
@@ -7,7 +6,17 @@ import List, { ListProps } from '../list/container';
 // Hooks
 import useOnClickOutside from '../../utils/useClickOutside';
 // Types
-import { DropdownItem } from './types';
+import IconButton from '../icon-button';
+import { IconName } from '../icon/list';
+
+export interface DropdownItem<Metadata = {}> {
+  value: string | number;
+  icon?: IconName;
+  id?: string | number;
+  hasDivider?: boolean;
+  metadata?: Metadata;
+  onClick: (item: DropdownItem) => void;
+}
 
 export interface DropdownProps extends Omit<ListProps, 'css'> {
   items: DropdownItem[];
@@ -39,7 +48,7 @@ const Dropdown: FC<DropdownProps> = ({
             key={id || value}
             onClick={() => onClick(item)}
           >
-            {icon && <FontAwesomeIcon icon={icon} />}
+            {icon && <IconButton icon={icon} />}
             {value}
           </ListItem>
         );

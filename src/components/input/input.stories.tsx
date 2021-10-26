@@ -6,7 +6,8 @@ import React from 'react';
 import Input, { InputProps } from '.';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Box } from 'rebass';
-import { Labeling } from '../../index';
+import { IconButton, Labeling } from '../../index';
+import { IconName } from '../icon/list';
 
 export default {
   title: 'Quartz/Input',
@@ -132,7 +133,7 @@ const Template: Story<InputProps> = (props) => (
   <Input
     icon="coffee"
     iconPaddingRight="40px"
-    rightIcon={
+    rightIcon={(
       <Box
         sx={{
           right: '10px',
@@ -146,12 +147,12 @@ const Template: Story<InputProps> = (props) => (
         }}
       >
         <FontAwesomeIcon icon="apple-alt" />
-        <FontAwesomeIcon icon="plus" />
+        <IconButton icon={IconName.plus} />
         <Labeling display="initial" gray>
           P
         </Labeling>
       </Box>
-    }
+    )}
     {...props}
   />
 );

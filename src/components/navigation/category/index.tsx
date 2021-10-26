@@ -1,6 +1,5 @@
 import { Box } from 'rebass';
 import React, { FC, memo, useCallback, useContext } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 // Components
 import NavigationItem from '../item';
@@ -10,6 +9,8 @@ import styles from './navigation-category.styles';
 import NavigationContext from '../context/navigation.context';
 // Types
 import { NavigationItemProps } from '../types';
+import IconButton from '../../icon-button';
+import { IconName } from '../../icon/list';
 
 export interface NavigationCategoryProps
   extends Omit<NavigationItemProps, 'isSubItem'> {
@@ -31,7 +32,11 @@ const NavigationCategory: FC<NavigationCategoryProps> = ({
     <NavigationItem title={title} {...props}>
       <Box sx={styles} tx="navigation" variant="category">
         <div onClick={handleBackClick} role="button" tabIndex={-1}>
-          <FontAwesomeIcon icon="arrow-left" />
+          <IconButton
+            icon={IconName.arrow_left}
+            intent="ghost-white"
+            tooltip="prev page"
+          />
           Back
         </div>
         {children}
