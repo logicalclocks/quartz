@@ -1,6 +1,6 @@
 import { SxStyleProp } from 'rebass';
 
-export default {
+export default (disabled: boolean): SxStyleProp => ({
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
@@ -28,8 +28,6 @@ export default {
     width: '16px',
     height: '16px',
     position: 'absolute',
-    path: {
-      fill: 'black'
-    }
+    path: { fill: disabled ? 'gray' : 'black' },
   },
-} as SxStyleProp;
+});
