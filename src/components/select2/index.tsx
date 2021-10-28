@@ -175,7 +175,12 @@ const Select: FC<SelectProps> = ({
   const labelActions = useMemo(() => {
     if (info && info !== '') {
       return (
-        <Flex flexDirection="row" width="100%" justifyContent="space-between">
+        <Flex
+          mr="-8px"
+          flexDirection="row"
+          width="100%"
+          justifyContent="space-between"
+        >
           <Tooltip mainText={info}>
             <Box mt="-6px" mb="-3px">
               {icons.info_block}
@@ -185,7 +190,16 @@ const Select: FC<SelectProps> = ({
         </Flex>
       );
     }
-    return labelAction;
+    return (
+      <Flex
+        mr="-8px"
+        flexDirection="row"
+        width="100%"
+        justifyContent="flex-end"
+      >
+        {labelAction}
+      </Flex>
+    );
   }, [labelAction, info]);
 
   const arrayValue = useMemo(
@@ -203,7 +217,6 @@ const Select: FC<SelectProps> = ({
 
   return (
     <Label
-      id="pollo"
       action={labelActions}
       text={labelMode === 'default' ? label : ''}
       width={selectWidth()}
