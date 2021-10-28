@@ -177,8 +177,8 @@ const Select: FC<SelectProps> = ({
       return (
         <Flex
           mr="-8px"
+          flexGrow={1}
           flexDirection="row"
-          width="100%"
           justifyContent="space-between"
         >
           <Tooltip mainText={info}>
@@ -194,8 +194,8 @@ const Select: FC<SelectProps> = ({
       <Flex
         mr="-8px"
         flexDirection="row"
-        width="100%"
         justifyContent="flex-end"
+        flexGrow={1}
       >
         {labelAction}
       </Flex>
