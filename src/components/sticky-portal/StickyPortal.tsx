@@ -17,10 +17,11 @@ const StickyPortal: FC<StickyPortalProps> = ({
   const rootElemRef = useRef(document.createElement('div'));
 
   useEffect(() => {
+    const element = rootElemRef.current;
     document.body.appendChild(rootElemRef.current);
 
     const refElPos = refEl?.getBoundingClientRect();
-    const content = rootElemRef.current.children[0] as HTMLElement;
+    const content = element.children[0] as HTMLElement;
     content.setAttribute('id', CONTENT_ID);
 
     if (refElPos) {
@@ -28,8 +29,8 @@ const StickyPortal: FC<StickyPortalProps> = ({
       content.style.left = `${refElPos.left}px`;
     }
     return () => {
-      if (rootElemRef.current) {
-        document.body.removeChild(rootElemRef.current);
+      if (element) {
+        document.body.removeChild(element);
       }
     };
   }, [refEl]);
