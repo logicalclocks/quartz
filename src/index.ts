@@ -39,6 +39,7 @@ import Pagination from './components/pagination';
 import Tooltip from './components/tooltip';
 import TooltipPositions from './components/tooltip/positions';
 import Select from './components/select';
+import Select2 from './components/select2';
 import EditableSelect from './components/editableSelect';
 import ToggleButton from './components/toggle-button';
 import NotificationsContainer from './components/notifications/index';
@@ -159,6 +160,7 @@ export {
   ListItem,
   Pagination,
   Select,
+  Select2,
   EditableSelect,
   ThemeProvider,
   ToggleButton,
@@ -246,3 +248,4 @@ export type TabItem = import('./components/form-tabs/index').TabItem;
 export type TableRowComponent =
   import('./components/table/type').TableRowComponent;
 export type TableCellType = import('./components/table/type').TableCellType;
+export type SelectOpt = import('./components/select2/types').SelectOpt;
