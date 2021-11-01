@@ -57,7 +57,7 @@ Loader.argTypes = {
       summary: 'Upload destination',
     },
   },
-  file: {
+  fileName: {
     control: {
       type: 'text',
     },
