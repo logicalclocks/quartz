@@ -23,6 +23,8 @@ export interface FileSystemExplorerProps
   link?: string;
   mode?: string;
   data: any;
+  disableDownload?: boolean;
+  validExtensions?: string[];
   handleLoadMore: (path: string, columnIndex: number) => void;
   shortcutActions?: React.ReactNode;
   contentProps?: Omit<RebassCardProps, 'css' | 'children'>;
@@ -60,6 +62,8 @@ const FileSystemExplorer: FC<FileSystemExplorerProps> = ({
   contentProps,
   handleLoadMore = () => console.log('load more in quartz'),
   handleSelectFile = () => console.log('handleSelectFile in quartz'),
+  disableDownload = false,
+  validExtensions,
   data = testData,
   ...props
 }: FileSystemExplorerProps) => {
@@ -121,6 +125,7 @@ const FileSystemExplorer: FC<FileSystemExplorerProps> = ({
       >
         {columns.map((el: any, index: any) => (
           <Column
+            validExtensions={validExtensions}
             handleLoadMore={handleLoadMore}
             setActiveFile={setActiveFile}
             mode={mode}
@@ -136,6 +141,7 @@ const FileSystemExplorer: FC<FileSystemExplorerProps> = ({
         {activeFile && (
           <Info
             activeFile={activeFile}
+            disableDownload={disableDownload}
             handleDownloadFile={handleDownloadFile}
           />
         )}

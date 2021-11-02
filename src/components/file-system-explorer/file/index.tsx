@@ -20,6 +20,7 @@ export interface QuartzFileExplorerProps {
   setActiveFolder?: any;
   isFileSelected?: any;
   setSelectedFile?: any;
+  isValidExtension: boolean;
 }
 
 const FileExplorer: FC<QuartzFileExplorerProps> = ({
@@ -33,8 +34,9 @@ const FileExplorer: FC<QuartzFileExplorerProps> = ({
   mode = 'oneFile',
   selected,
   isFileSelected,
+  isValidExtension,
 }: // ...props
-  QuartzFileExplorerProps) => {
+QuartzFileExplorerProps) => {
   const [active, setActive] = useState(isActive);
   const [selectedFile, setSelectedFile] = useState(selected);
 
@@ -57,31 +59,38 @@ const FileExplorer: FC<QuartzFileExplorerProps> = ({
     setActiveFile(itemInfo);
   };
 
-  return <Tooltip mainText={itemInfo.attributes.name}>
-    {mode === 'nFiles' ? (
-      <Box
-        sx={{ ...fileExplorerStyle(active, selectedFile, mode) }}
-        tabIndex={0}
-        onClick={selectActiveFile}
-      >
-        <Checkbox
-          m="10px"
-          label={itemInfo.attributes.name}
-          checked={selectedFile}
-          onChange={() => handleClickFile(mode)}
-          variant="gray"
-        />
-      </Box>
-    ) : (
-      <Box
-        sx={{ ...fileExplorerStyle(active, selectedFile, mode) }}
-        onClick={() => handleClickFile(mode)}
-        tabIndex={0}
-      >
-        {itemInfo.attributes.name}
-      </Box>
-    )}
-  </Tooltip>
+  return (
+    <Tooltip mainText={itemInfo.attributes.name}>
+      {mode === 'nFiles' ? (
+        <Box
+          sx={{
+            ...fileExplorerStyle(active, selectedFile, mode, isValidExtension),
+          }}
+          tabIndex={0}
+          onClick={() => isValidExtension && selectActiveFile()}
+        >
+          <Checkbox
+            m="10px"
+            disabled={!isValidExtension}
+            label={itemInfo.attributes.name}
+            checked={selectedFile}
+            onChange={() => handleClickFile(mode)}
+            variant="gray"
+          />
+        </Box>
+      ) : (
+        <Box
+          sx={{
+            ...fileExplorerStyle(active, selectedFile, mode, isValidExtension),
+          }}
+          onClick={() => isValidExtension && handleClickFile(mode)}
+          tabIndex={0}
+        >
+          {itemInfo.attributes.name}
+        </Box>
+      )}
+    </Tooltip>
+  );
 };
 
 export default FileExplorer;

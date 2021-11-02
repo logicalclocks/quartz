@@ -16,6 +16,7 @@ export interface FileExplorerColumnProps
   isFileSelected?: any;
   selectPathListValue?: any;
   fileListValue?: any[];
+  validExtensions?: string[];
 }
 
 const FileExplorerColumn: FC<FileExplorerColumnProps> = ({
@@ -29,6 +30,7 @@ const FileExplorerColumn: FC<FileExplorerColumnProps> = ({
   selectPathListValue,
   setActive,
   fileListValue,
+  validExtensions,
 }: FileExplorerColumnProps) => {
   const [activeFolder, setActiveFolder] = useState(0);
 
@@ -46,6 +48,13 @@ const FileExplorerColumn: FC<FileExplorerColumnProps> = ({
       }}
     >
       {children.map((item: { [key: string]: any }): any => {
+        const isValidExtension = () => {
+          if (!validExtensions || validExtensions?.length === 0) return true;
+          const splits = item.attributes.name.split('.');
+          const extension = splits[splits.length - 1];
+          return validExtensions.includes(`.${extension}`);
+        };
+
         if (item) {
           if (item.attributes.dir) {
             return (
@@ -67,31 +76,31 @@ const FileExplorerColumn: FC<FileExplorerColumnProps> = ({
                 selected={false}
               />
             );
-          } else {
-            return (
-              <FileItemExplorer
-                index={index}
-                key={item.attributes.id}
-                mode={mode}
-                setActive={setActive}
-                setColumns={setColumns}
-                isFileSelected={isFileSelected}
-                setActiveFile={setActiveFile}
-                setActiveFolder={setActiveFolder}
-                itemInfo={item}
-                isActive={
-                  fileListValue
-                    ? fileListValue.includes(item.attributes.name)
-                    : false
-                }
-                selected={
-                  fileListValue
-                    ? fileListValue.includes(item.attributes.name)
-                    : false
-                }
-              />
-            );
           }
+          return (
+            <FileItemExplorer
+              index={index}
+              key={item.attributes.id}
+              mode={mode}
+              setActive={setActive}
+              setColumns={setColumns}
+              isFileSelected={isFileSelected}
+              setActiveFile={setActiveFile}
+              setActiveFolder={setActiveFolder}
+              itemInfo={item}
+              isActive={
+                fileListValue
+                  ? fileListValue.includes(item.attributes.name)
+                  : false
+              }
+              selected={
+                fileListValue
+                  ? fileListValue.includes(item.attributes.name)
+                  : false
+              }
+              isValidExtension={isValidExtension()}
+            />
+          );
         }
       })}
     </Box>
