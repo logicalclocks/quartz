@@ -140,7 +140,7 @@ const EditableSelect: FC<EditableSelectProps> = ({
       width={width}
       action={labelAction}
       {...props}
-      onClick={() => !disabled && handleToggle()}
+      onClick={() => !disabled && !isOpen && handleToggle()}
     >
       <EditableSelectContainer
         ref={containerRef}
