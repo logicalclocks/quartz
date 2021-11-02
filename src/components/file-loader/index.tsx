@@ -41,13 +41,13 @@ const FileLoader: FC<QuartzFileLoaderProps> = ({
     <Flex {...props} sx={styles(isLoading)} key={id}>
       {/* If isLoading, show spinner + uploading percent */}
       {isLoading && (
-        <>
+        <Flex sx={{ alignItems: 'center' }}>
           <Spinner marginRight="10px" />
           <Text color="primary">{`${uploadProgress}%`}</Text>
           <Text color="primary" marginX="8px">
             •
           </Text>
-        </>
+        </Flex>
       )}
       {/* Filename and location */}
       <Text sx={{ ...fileNameBox(isLoading) }}>
