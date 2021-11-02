@@ -29,6 +29,12 @@ export const fileNameBox = (isLoading: boolean) => ({
   color: isLoading ? 'primaryShade1' : 'primary',
 });
 
+export const statusAndLocationBox = (isLoadig: boolean) => ({
+  color: isLoadig ? 'gray' : 'black',
+  display: 'inline',
+  wordBreak: 'break-all',
+});
+
 export default (isLoading: boolean) => ({
   overflow: 'hidden',
   color: isLoading ? 'gray' : 'black',
