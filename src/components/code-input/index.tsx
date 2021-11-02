@@ -6,6 +6,7 @@ import getStyles from './index.styles';
 import 'codemirror/lib/codemirror.css';
 import 'codemirror/mode/javascript/javascript';
 import 'codemirror/mode/yaml/yaml';
+import 'codemirror/mode/python/python';
 import 'codemirror/mode/sql/sql';
 // Note for dark-mode, good theme candidates: shadowbox, tomorrow-night-bright, dracula
 import 'codemirror/theme/yeti.css';

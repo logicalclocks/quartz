@@ -74,7 +74,7 @@ const argTypes = {
   mode: {
     control: {
       type: 'select',
-      options: ['javascript', 'yaml'],
+      options: ['javascript', 'yaml', 'python'],
     },
     type: {
       required: false,

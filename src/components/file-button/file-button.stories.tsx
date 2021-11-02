@@ -21,6 +21,7 @@ File.args = {
   intent: 'secondary',
   children: 'Upload new file',
   mode: 'oneFile',
+  validExtensions: ['.py', '.ipynb'],
   onClick: action('onClick'),
 };
 
@@ -40,6 +41,12 @@ File.argTypes = {
     control: {
       type: 'select',
       options: ['oneFile', 'nFiles'],
+    },
+  },
+  validExtensions: {
+    control: {
+      type: 'array',
+      summary: 'array of valid file extensions',
     },
   },
   destination: {

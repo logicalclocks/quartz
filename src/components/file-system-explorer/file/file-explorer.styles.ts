@@ -1,9 +1,11 @@
 import { SxStyleProp } from 'rebass';
 
+// eslint-disable-next-line import/prefer-default-export
 export const fileExplorerStyle = (
   isActive: boolean,
   selected: boolean,
   mode: string,
+  isValidExtension = true,
 ) =>
   ({
     position: 'relative',
@@ -16,7 +18,7 @@ export const fileExplorerStyle = (
     overflow: 'hidden',
 
     ':focus': {
-      backgroundColor: 'primaryShade2',
+      ...(isValidExtension && { backgroundColor: 'primaryShade2' }),
       outlineWidth: 0,
     },
 
@@ -46,7 +48,7 @@ export const fileExplorerStyle = (
 
     p: mode === 'nFiles' ? 0 : 9,
 
-    cursor: 'pointer',
+    cursor: isValidExtension ? 'pointer' : 'default',
 
     borderRadius: 0,
     borderColor: 'grayShade2',
@@ -57,4 +59,6 @@ export const fileExplorerStyle = (
     fontFamily: 'text',
     fontWeight: 'text',
     fontSize: 'text',
+
+    ...(!isValidExtension && { color: 'gray' }),
   } as SxStyleProp);

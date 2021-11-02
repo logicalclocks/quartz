@@ -75,6 +75,7 @@ export const getLabelStyles = (intent: Intents, deletabled?: boolean) => ({
   pr: '5px',
 
   transition: 'all 0.25s ease',
+  minHeight: '32px',
 
   ...(!deletabled && {
     svg: {
