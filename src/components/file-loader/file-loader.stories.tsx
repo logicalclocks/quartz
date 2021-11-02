@@ -16,10 +16,40 @@ const Template: Story<QuartzFileLoaderProps> = (props) => (
 export const Loader = Template.bind({});
 
 Loader.args = {
-  children: 'uploading to /files/jars',
+  fileName: 'TestFile.pdf',
+  located: '/files/jars',
+  totalChunks: 23,
+  uploadedChunks: 3,
 };
 
 Loader.argTypes = {
+  fileName: {
+    control: {
+      type: 'text',
+    },
+    type: {
+      required: true,
+      summary: 'File name',
+    },
+  },
+  isLoading: {
+    type: {
+      required: true,
+    },
+    control: {
+      type: 'select',
+      options: [true, false],
+    },
+  },
+  located: {
+    control: {
+      type: 'text',
+    },
+    type: {
+      required: true,
+      summary: 'Upload destination',
+    },
+  },
   disabled: {
     type: {
       required: false,
@@ -39,31 +69,22 @@ Loader.argTypes = {
       required: true,
     },
   },
-  isLoading: {
+  totalChunk: {
     type: {
-      required: true,
+      required: false,
+      summary: 'Total number of chunks',
     },
     control: {
-      type: 'select',
-      options: [true, false],
+      type: 'number',
     },
   },
-  children: {
-    control: {
-      type: 'text',
-    },
+  uploadedChunk: {
     type: {
-      required: true,
-      summary: 'Upload destination',
+      required: false,
+      summary: 'Uploaded number of chunks',
     },
-  },
-  fileName: {
     control: {
-      type: 'text',
-    },
-    type: {
-      required: true,
-      summary: 'File name',
+      type: 'number',
     },
   },
 };

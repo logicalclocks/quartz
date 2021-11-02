@@ -2,18 +2,25 @@ import React, { FC } from 'react';
 import { Box, BoxProps, Flex, Text } from 'rebass';
 
 // Styles
-import styles, { fileNameBox, loaderCross } from './file-loader.styles';
+import styles, {
+  fileNameBox,
+  statusAndLocationBox,
+  loaderCross,
+} from './file-loader.styles';
 import icons from '../../sources/icons';
 import Spinner from '../spinner';
 
 export interface QuartzFileLoaderProps extends Omit<BoxProps, 'css'> {
+  id: any;
   children: React.ReactNode | string;
   isLoading: boolean;
   fileName: string;
   located: any;
-  id: any;
   disabled?: boolean;
   removeHandler: (id: any) => void;
+  // for showing uploading percent
+  totalChunks: number;
+  uploadedChunks: number;
 }
 
 const FileLoader: FC<QuartzFileLoaderProps> = ({
@@ -24,33 +31,44 @@ const FileLoader: FC<QuartzFileLoaderProps> = ({
   removeHandler,
   disabled,
   located,
+  totalChunks,
+  uploadedChunks,
   ...props
-}: QuartzFileLoaderProps) => (
-  <Flex {...props} sx={styles(isLoading)} key={id}>
-    {isLoading && <Spinner marginRight="10px" />}
-    <Text sx={{ ...fileNameBox(isLoading) }}>
-      {fileName}{' '}
-      <Box
-        style={{
-          color: 'black',
-          display: 'inline',
-          wordBreak: 'break-all',
-        }}
-      >
-        {`${children} ${located} `}
-      </Box>
-    </Text>
-    {!disabled && (
-      <Box
-        sx={{ ...loaderCross(isLoading) }}
-        onClick={() => {
-          removeHandler(id);
-        }}
-      >
-        {icons.cross}
-      </Box>
-    )}
-  </Flex>
-);
+}: QuartzFileLoaderProps) => {
+  const uploadProgress = Math.floor((uploadedChunks / totalChunks) * 100) || 0;
+
+  return (
+    <Flex {...props} sx={styles(isLoading)} key={id}>
+      {/* If isLoading, show spinner + uploading percent */}
+      {isLoading && (
+        <>
+          <Spinner marginRight="10px" />
+          <Text color="primary">{`${uploadProgress}%`}</Text>
+          <Text color="primary" marginX="8px">
+            •
+          </Text>
+        </>
+      )}
+      {/* Filename and location */}
+      <Text sx={{ ...fileNameBox(isLoading) }}>
+        {`${fileName} `}
+        <Box sx={{ ...statusAndLocationBox(isLoading) }}>
+          {`${isLoading ? 'uploading to' : 'located in'} ${located} `}
+        </Box>
+      </Text>
+      {/* If not disabled, show cross icon */}
+      {!disabled && (
+        <Box
+          sx={{ ...loaderCross(isLoading) }}
+          onClick={() => {
+            removeHandler(id);
+          }}
+        >
+          <Flex>{icons.cross}</Flex>
+        </Box>
+      )}
+    </Flex>
+  );
+};
 
 export default FileLoader;
