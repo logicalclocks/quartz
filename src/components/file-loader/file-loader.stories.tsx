@@ -18,8 +18,7 @@ export const Loader = Template.bind({});
 Loader.args = {
   fileName: 'TestFile.pdf',
   located: '/files/jars',
-  totalChunks: 23,
-  uploadedChunks: 3,
+  percentage: 0,
 };
 
 Loader.argTypes = {
@@ -50,6 +49,17 @@ Loader.argTypes = {
       summary: 'Upload destination',
     },
   },
+  percentage: {
+    type: {
+      required: false,
+      summary: 'Uploading progress',
+    },
+    control: {
+      type: 'number',
+      min: 0,
+      max: 100,
+    },
+  },
   disabled: {
     type: {
       required: false,
@@ -59,7 +69,7 @@ Loader.argTypes = {
       options: [false, true],
     },
   },
-  onClick: {
+  removeHandler: {
     table: {
       type: {
         summary: 'On click callback function',
@@ -67,24 +77,6 @@ Loader.argTypes = {
     },
     type: {
       required: true,
-    },
-  },
-  totalChunk: {
-    type: {
-      required: false,
-      summary: 'Total number of chunks',
-    },
-    control: {
-      type: 'number',
-    },
-  },
-  uploadedChunk: {
-    type: {
-      required: false,
-      summary: 'Uploaded number of chunks',
-    },
-    control: {
-      type: 'number',
     },
   },
 };
