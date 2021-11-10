@@ -22,4 +22,5 @@ export interface TreeNode extends NavigationItemProps {
   icon?: any;
   href?: string;
   children?: TreeNode[];
+  hideBack?: boolean;
 }

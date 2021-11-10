@@ -14,11 +14,13 @@ import { NavigationItemProps } from '../types';
 export interface NavigationCategoryProps
   extends Omit<NavigationItemProps, 'isSubItem'> {
   onBackClick?: () => void;
+  hideBack?: boolean;
 }
 
 const NavigationCategory: FC<NavigationCategoryProps> = ({
   children,
   title,
+  hideBack = false,
   ...props
 }: NavigationCategoryProps) => {
   const { onBack } = useContext(NavigationContext);
@@ -30,10 +32,12 @@ const NavigationCategory: FC<NavigationCategoryProps> = ({
   return (
     <NavigationItem title={title} {...props}>
       <Box sx={styles} tx="navigation" variant="category">
-        <div onClick={handleBackClick} role="button" tabIndex={-1}>
-          <FontAwesomeIcon icon="arrow-left" />
-          Back
-        </div>
+        {!hideBack && (
+          <div onClick={handleBackClick} role="button" tabIndex={-1}>
+            <FontAwesomeIcon icon="arrow-left" />
+            Back
+          </div>
+        )}
         {children}
       </Box>
     </NavigationItem>
