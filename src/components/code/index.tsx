@@ -114,7 +114,6 @@ const Code: FC<CodeProps> = ({
             language={isColorSyntax ? language : 'text'}
             customStyle={{
               ...boxStyles,
-              height: 'calc(100% - 40px)',
               paddingLeft: showLineNumbers ? '0px' : '20px',
             }}
           >
