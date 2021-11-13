@@ -47,6 +47,16 @@ const argTypes = {
     },
     defaultValue: { summary: false },
   },
+  showLineNumbers: {
+    control: {
+      type: 'boolean',
+    },
+    type: {
+      required: false,
+      summary: 'Show line numbers',
+    },
+    defaultValue: { summary: false },
+  },
 };
 
 const Template: Story<CodeProps> = (props) => (
