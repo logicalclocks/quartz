@@ -10,7 +10,6 @@ export const boxStyles = {
   fontWeight: 'text',
   marginTop: 0,
   marginBottom: 0,
-  padding: 20,
 };
 
 export const codeHeaderStyles = {
@@ -21,6 +20,13 @@ export const codeHeaderStyles = {
   fontFamily: 'Inter',
   fontWeight: 700,
   fontSize: 'value',
+};
+
+export const lineNumberStyles = {
+  paddingLeft: '5px',
+  paddingRight: '5px',
+  marginRight: '10px',
+  textAlign: 'right',
 };
 
 export const buttonsStyles = {

@@ -1,11 +1,14 @@
 import React, { FC, useState } from 'react';
 import { Box, FlexProps, Flex } from 'rebass';
 import SyntaxHighlighter from 'react-syntax-highlighter';
+import { useTheme } from 'emotion-theming';
 import Button from '../button';
+import { ITheme } from '../../theme/types';
 
 import styles, {
   boxStyles,
   buttonsStyles,
+  lineNumberStyles,
   codeHeaderStyles,
 } from './code.styles';
 import icons from '../../sources/icons';
@@ -22,6 +25,7 @@ export interface CodeProps extends Omit<FlexProps, 'css' | 'title'> {
   downloadButton?: boolean;
   downloadCallback?: () => void;
   wrapLongLines?: boolean;
+  showLineNumbers?: boolean;
 }
 
 const Code: FC<CodeProps> = ({
@@ -33,10 +37,13 @@ const Code: FC<CodeProps> = ({
   downloadButton = false,
   downloadCallback = undefined,
   wrapLongLines,
+  showLineNumbers,
   element,
   ...props
 }: CodeProps) => {
   const [copied, setCopied] = useState(false);
+
+  const theme = useTheme<ITheme>();
 
   const useCodeKey = () => {
     setCopied(copyToClipboard(content));
@@ -99,8 +106,16 @@ const Code: FC<CodeProps> = ({
         {element || (
           <SyntaxHighlighter
             wrapLongLines={wrapLongLines}
+            showLineNumbers={showLineNumbers}
+            lineNumberStyle={{
+              ...lineNumberStyles,
+              background: theme.colors.grayShade1,
+            }}
             language={isColorSyntax ? language : 'text'}
-            customStyle={{ ...boxStyles, height: 'calc(100% - 40px)' }}
+            customStyle={{
+              ...boxStyles,
+              paddingLeft: showLineNumbers ? '0px' : '20px',
+            }}
           >
             {content}
           </SyntaxHighlighter>
