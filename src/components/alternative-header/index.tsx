@@ -24,7 +24,7 @@ export interface AlternativeHeaderProps extends Omit<BoxProps, 'css'> {
   rightTopContent?: React.ReactElement;
   rightBottomContent?: React.ReactElement;
   tabs: Tab[];
-  withBase: boolean;
+  withBase?: boolean;
 }
 
 const AlternativeHeader: FC<AlternativeHeaderProps> = ({
