@@ -24,6 +24,7 @@ export interface AlternativeHeaderProps extends Omit<BoxProps, 'css'> {
   rightTopContent?: React.ReactElement;
   rightBottomContent?: React.ReactElement;
   tabs: Tab[];
+  withBase: boolean;
 }
 
 const AlternativeHeader: FC<AlternativeHeaderProps> = ({
@@ -31,6 +32,7 @@ const AlternativeHeader: FC<AlternativeHeaderProps> = ({
   rightTopContent,
   title,
   tabs,
+  withBase,
   ...props
 }: AlternativeHeaderProps) => {
   const tabRefs = useRef<HTMLDivElement[]>([]);
@@ -77,6 +79,18 @@ const AlternativeHeader: FC<AlternativeHeaderProps> = ({
         width="100%"
         sx={{ position: 'relative' }}
       >
+        {withBase && (
+          <Flex
+            sx={{
+              position: 'absolute',
+              height: '1px',
+              backgroundColor: 'grayShade2',
+              width: '100%',
+              bottom: '0px',
+              zIndex: -1,
+            }}
+          />
+        )}
         <Flex>
           {tabs.map((tab, index) => (
             <Box
