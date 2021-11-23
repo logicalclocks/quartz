@@ -2,44 +2,57 @@ import React, { FC } from 'react';
 import { Box, BoxProps, Flex, Text } from 'rebass';
 
 // Styles
-import styles, { fileNameBox, loaderCross } from './file-loader.styles';
+import styles, {
+  fileNameBox,
+  statusAndLocationBox,
+  loaderCross,
+} from './file-loader.styles';
 import icons from '../../sources/icons';
 import Spinner from '../spinner';
 
 export interface QuartzFileLoaderProps extends Omit<BoxProps, 'css'> {
-  children: React.ReactNode | string;
-  isLoading: boolean;
-  fileName: string;
-  located: any;
   id: any;
+  fileName: string;
+  isLoading: boolean;
+  percentage: number; // for showing uploading progress
+  located: any;
   disabled?: boolean;
+  children?: React.ReactNode | string;
   removeHandler: (id: any) => void;
 }
 
 const FileLoader: FC<QuartzFileLoaderProps> = ({
-  children,
-  isLoading,
-  fileName,
   id,
-  removeHandler,
-  disabled,
+  fileName,
+  isLoading,
   located,
+  percentage,
+  disabled,
+  children,
+  removeHandler,
   ...props
 }: QuartzFileLoaderProps) => (
   <Flex {...props} sx={styles(isLoading)} key={id}>
-    {isLoading && <Spinner marginRight="10px" />}
+    {/* If isLoading, show spinner + uploading progress */}
+    {isLoading && (
+      <Flex sx={{ alignItems: 'center' }}>
+        <Spinner marginRight="10px" />
+        <Text color="primary">
+          {`${percentage ? Math.floor(percentage) : 0}%`}
+        </Text>
+        <Text color="primary" marginX="8px">
+          •
+        </Text>
+      </Flex>
+    )}
+    {/* Filename and location */}
     <Text sx={{ ...fileNameBox(isLoading) }}>
-      {fileName}{' '}
-      <Box
-        style={{
-          color: 'black',
-          display: 'inline',
-          wordBreak: 'break-all',
-        }}
-      >
-        {`${children} ${located} `}
+      {`${fileName} `}
+      <Box sx={{ ...statusAndLocationBox(isLoading) }}>
+        {`${isLoading ? 'uploading to' : 'located in'} ${located} `}
       </Box>
     </Text>
+    {/* If not disabled, show cross icon */}
     {!disabled && (
       <Box
         sx={{ ...loaderCross(isLoading) }}
@@ -47,7 +60,7 @@ const FileLoader: FC<QuartzFileLoaderProps> = ({
           removeHandler(id);
         }}
       >
-        {icons.cross}
+        <Flex>{icons.cross}</Flex>
       </Box>
     )}
   </Flex>
