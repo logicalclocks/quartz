@@ -16,11 +16,15 @@ export interface NavigationItemProps extends Omit<BoxProps, 'css' | 'id'> {
   href?: string;
 }
 
-export interface TreeNode extends NavigationItemProps {
-  id: string;
-  title: string;
-  icon?: any;
-  href?: string;
+export interface RecursiveNode extends NavigationItemProps {
   children?: TreeNode[];
   hideBack?: boolean;
 }
+
+export interface ComponentNode {
+  id: string;
+  component: React.ReactElement;
+  hideBack?: boolean;
+}
+
+export type TreeNode = ComponentNode | RecursiveNode;

@@ -11,6 +11,7 @@ import Navigation, { NavigationProps } from './container';
 import { TreeNode } from './types';
 import useNavigation from './useNavigation';
 import icons from '../../sources/icons';
+import Bar from '../bar';
 
 export default {
   title: 'Quartz/Navigation',
@@ -138,6 +139,77 @@ export const TreeObject: Story<NavigationProps> = () => {
           title: 'Activity',
           icon: icons.folder,
           id: '9',
+        },
+      ],
+    },
+    {
+      title: 'Training Datasets',
+      id: '10',
+      hasDivider: true,
+    },
+    { title: 'Source', id: '11' },
+    { title: 'Jobs', id: '12' },
+  ];
+
+  return (
+    <Box height="100vh">
+      <Navigation
+        onNavigate={action('On Navigate')}
+        tree={tree}
+        footer={<Footer />}
+      />
+    </Box>
+  );
+};
+
+export const CustomTreeObject: Story<NavigationProps> = () => {
+  const tree: TreeNode[] = [
+    {
+      title: 'Home',
+      icon: icons.folder,
+      id: '1',
+      children: [
+        {
+          id: '32',
+          title: 'Owerview 2',
+        },
+      ],
+      secondaryTooltipText: 'Home',
+    },
+    {
+      title: 'Feature Groups',
+      icon: icons.folder,
+      id: '2',
+      disabled: true,
+      secondaryTooltipText: 'Feature Groups',
+      hideBack: true,
+      children: [
+        {
+          title: 'Overview',
+          id: '3',
+          children: [
+            {
+              title: 'Feature List',
+              id: '4',
+              icon: icons.folder,
+            },
+            {
+              id: '5',
+              component: (
+                <Box p="10px">
+                  <h4>This is a custom component!</h4>
+                  <Bar value={0.99} />
+                </Box>
+              ),
+            },
+            {
+              title: 'Schematised Tags',
+              id: '5',
+              icon: icons.folder,
+              onClick: action('Tags Click'),
+              isActive: true,
+            },
+          ],
         },
       ],
     },
