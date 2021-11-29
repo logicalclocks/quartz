@@ -49,6 +49,7 @@ import Divider from './components/divider';
 import Symbol from './components/symbol';
 import { SymbolMode } from './components/symbol/types';
 import Collapse from './components/collapse';
+import PerformanceCard from './components/performance-card';
 
 // Popups
 import Drawer from './components/popup/drawer';
@@ -61,6 +62,7 @@ import usePopup from './utils/usePopup';
 import Bar from './components/bar';
 import ProgressBar from './components/bar/progress';
 import FreshnessBar from './components/bar/freshness';
+import PerformanceBar from './components/performance-bar';
 
 // Badges
 import User from './components/user';
@@ -170,6 +172,7 @@ export {
   RadioGroup,
   DatePicker,
   Divider,
+  PerformanceCard,
   // Popups
   usePopup,
   Popup,
@@ -180,6 +183,7 @@ export {
   Bar,
   ProgressBar,
   FreshnessBar,
+  PerformanceBar,
   // Badges
   User,
   TextValueBadge,
