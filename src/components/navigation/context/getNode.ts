@@ -16,7 +16,7 @@ const getNode = (
   }
 
   if (isComponentNode(tree)) {
-    return null;
+    return tree;
   }
 
   const { children } = tree;

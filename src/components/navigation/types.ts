@@ -21,7 +21,7 @@ export interface RecursiveNode extends NavigationItemProps {
   hideBack?: boolean;
 }
 
-export interface ComponentNode {
+export interface ComponentNode extends Omit<NavigationItemProps, 'title'> {
   id: string;
   component: React.ReactElement;
   hideBack?: boolean;
