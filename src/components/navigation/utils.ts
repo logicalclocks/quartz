@@ -1,5 +1,7 @@
 import { ComponentNode, TreeNode } from './types';
 
-export default function isComponentNode(tree: TreeNode): tree is ComponentNode {
+const isComponentNode = (tree: TreeNode): tree is ComponentNode => {
   return 'component' in tree;
-}
+};
+
+export default isComponentNode;
