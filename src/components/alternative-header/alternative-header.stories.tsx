@@ -60,7 +60,7 @@ const Template: Story<AlternativeHeaderProps> = (props) => {
         onCLick: () => setActive('last tab'),
       },
     ],
-    [active, setActive],
+    [isActive],
   );
 
   return (
@@ -142,6 +142,15 @@ Default.argTypes = {
 
     type: {
       summary: 'Card width (string or number px, %)',
+    },
+  },
+  withBase: {
+    control: {
+      type: 'boolean',
+    },
+
+    type: {
+      summary: 'Adds a line under the menu',
     },
   },
 };
