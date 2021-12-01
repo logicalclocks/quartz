@@ -1,15 +1,22 @@
 import { TreeNode } from '../types';
+import isComponentNode from '../utils';
+
+type ReturnType = TreeNode | null;
 
 const getNode = (
   tree: TreeNode[] | TreeNode,
   key: string,
   value?: string,
-): TreeNode | null => {
+): ReturnType => {
   if (Array.isArray(tree)) {
-    return tree.reduce(
-      (acc: null | TreeNode, node) => acc || getNode(node, key, value),
+    return tree.reduce<ReturnType>(
+      (acc, node) => acc || getNode(node, key, value),
       null,
     );
+  }
+
+  if (isComponentNode(tree)) {
+    return tree;
   }
 
   const { children } = tree;

@@ -2,6 +2,7 @@ import React from 'react';
 import NavigationCategory from '../category';
 import NavigationItem from '../item';
 import { TreeNode } from '../types';
+import isComponentNode from '../utils';
 
 const buildComponentsTree = (
   tree: TreeNode[] | TreeNode,
@@ -9,6 +10,12 @@ const buildComponentsTree = (
 ): any => {
   if (Array.isArray(tree)) {
     return tree.map((node) => buildComponentsTree(node, isFirstLevel));
+  }
+
+  if (isComponentNode(tree)) {
+    return React.cloneElement(tree.component!, {
+      key: tree.id,
+    });
   }
 
   if (Array.isArray(tree.children)) {
