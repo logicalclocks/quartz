@@ -1,7 +1,7 @@
 const variants = {
-  bold: {
+  default: {
     '> span': {
-      color: 'white',
+      color: 'grayShade3',
     },
     bg: 'gray',
   },
@@ -35,18 +35,16 @@ const variants = {
   },
   warning: {
     '> span': {
-      color: 'black',
+      color: 'grayShade3',
     },
 
-    bg: 'labels.yellow',
+    bg: 'labels.orange',
   },
-  border: {
+  notice: {
     '> span': {
       color: 'black',
     },
-    bg: 'grayShade3',
-    border: '1px solid',
-    borderColor: 'grayShade1',
+    bg: 'labels.yellow',
   },
 };
 

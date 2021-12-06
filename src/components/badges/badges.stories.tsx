@@ -4,6 +4,7 @@ import Badge, { BadgeProps } from './badge';
 import Dot, { DotProps } from './dot';
 import TextValueBadge, { TextValueBadgeProps } from './text-value-badge';
 import ProjectBadge, { ProjectBadgeProps } from './project-badge';
+import { IconName } from '../icon/list';
 
 export default {
   title: 'Quartz/Badges',
@@ -14,8 +15,8 @@ const Template: Story<TextValueBadgeProps> = (props) => (
   <TextValueBadge {...props} />
 );
 
+export const Default = (props: BadgeProps) => <Badge {...props} />;
 export const TextValue = Template.bind({});
-export const Default: Story<BadgeProps> = (props) => <Badge {...props} />;
 export const DotBadge: Story<DotProps> = (props) => <Dot p="5px" {...props} />;
 export const ProjectBadgeBadge: Story<ProjectBadgeProps> = (props) => (
   <ProjectBadge p="5px" {...props} />
@@ -55,7 +56,10 @@ TextValue.argTypes = {
 };
 
 Default.args = {
-  value: 'azirona',
+  value: 'arizona',
+  mode: 'default',
+  variant: 'default',
+  loading: false
 };
 
 Default.argTypes = {
@@ -67,18 +71,50 @@ Default.argTypes = {
       required: true,
     },
   },
+  icon: {
+    options: ['download', 'card', 'birth', 'lock'],
+    mapping: {
+      download: IconName.download,
+      card: IconName.card,
+      birth: IconName.birth,
+      lock: IconName.lock,
+    },
+    control: {
+      type: 'select',
+    },
+    type: {
+      required: false,
+    },
+  },
   variant: {
     control: {
       type: 'select',
       options: [
         'light',
-        'bold',
+        'default',
         'fail',
         'warning',
         'success',
         'label',
-        'border',
+        'notice',
       ],
+    },
+    type: {
+      required: false,
+    },
+  },
+  mode: {
+    control: {
+      type: 'select',
+      options: ['default', 'bordered'],
+    },
+    type: {
+      required: false,
+    },
+  },
+  loading: {
+    control: {
+      type: 'boolean',
     },
     type: {
       required: false,
