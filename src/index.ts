@@ -64,10 +64,7 @@ import FreshnessBar from './components/bar/freshness';
 
 // Badges
 import User from './components/user';
-import TextValueBadge from './components/badges/text-value-badge';
-import Badge from './components/badges/badge';
-import Dot from './components/badges/dot';
-import ProjectBadge from './components/badges/project-badge';
+import { Badge, TextValueBadge, Dot, ProjectBadge } from './components/badges';
 
 // Navigation
 import Navigation from './components/navigation/container';
@@ -237,6 +234,7 @@ export {
 
 export type ITheme = import('./theme/types').ITheme;
 export type TooltipProps = import('./components/tooltip').TooltipProps;
+export type BadgeProps = import('./components/badges').BadgeProps;
 export type CardProps = import('./components/card').CardProps;
 export type IThemeColors = import('./theme/types').IThemeColors;
 export type TableCell = import('./components/table/type').TableCell;
