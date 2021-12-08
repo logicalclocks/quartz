@@ -13,6 +13,8 @@ export interface TinyPopupProps extends Omit<PopupProps, 'css' | 'children'> {
   secondaryText: string;
   mainButton?: Action<React.MouseEvent<HTMLButtonElement>>;
   secondaryButton?: Action<React.MouseEvent<HTMLButtonElement>>;
+  tertiaryButton?: Action<React.MouseEvent<HTMLButtonElement>>;
+  disabledTertiaryButton?: boolean;
   onClose?: () => void;
   children?: React.ReactNode;
   contentHeight?: string;
@@ -23,15 +25,18 @@ const TinyPopup: FC<TinyPopupProps> = ({
   secondaryText,
   mainButton,
   secondaryButton,
+  tertiaryButton,
   onClose = () => {},
   disabledMainButton = false,
   disabledSecondaryButton = false,
+  disabledTertiaryButton = false,
   children,
   contentHeight,
   ...props
 }: TinyPopupProps) => {
   const [mainActionTitle, mainActionCallback] = mainButton || [];
   const [secondaryActionTitle, secondaryActionCallback] = secondaryButton || [];
+  const [tertiaryActionTitle, tertiaryActionCallback] = tertiaryButton || [];
 
   return (
     <Popup
@@ -59,12 +64,22 @@ const TinyPopup: FC<TinyPopupProps> = ({
       <Box sx={contentHeight ? { height: contentHeight } : {}}>{children}</Box>
       <Box display="flex" mt="auto">
         <Box display="flex" ml="auto">
+          {tertiaryButton && (
+            <Button
+              disabled={disabledTertiaryButton}
+              intent="secondary"
+              onClick={tertiaryActionCallback}
+              mr="20px"
+            >
+              {tertiaryActionTitle}
+            </Button>
+          )}
           {secondaryButton && (
             <Button
               disabled={disabledSecondaryButton}
               intent="secondary"
               onClick={secondaryActionCallback}
-              mr="11px"
+              mr="20px"
             >
               {secondaryActionTitle}
             </Button>
