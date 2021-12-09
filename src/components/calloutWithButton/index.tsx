@@ -11,6 +11,7 @@ export interface ICalloutWithButtonProps
   type: CalloutTypes;
   onClick: React.MouseEventHandler<HTMLButtonElement>;
   disabledButton?: boolean;
+  isButtonLoading?: boolean;
 }
 
 const CalloutWithButton: FC<ICalloutWithButtonProps> = ({
@@ -19,6 +20,7 @@ const CalloutWithButton: FC<ICalloutWithButtonProps> = ({
   onClick,
   type,
   disabledButton,
+  isButtonLoading,
   ...props
 }: ICalloutWithButtonProps) => {
   // @ts-ignore
@@ -47,6 +49,7 @@ const CalloutWithButton: FC<ICalloutWithButtonProps> = ({
           variant="secondary"
           onClick={onClick}
           disabled={disabledButton}
+          isLoading={isButtonLoading}
         >
           {buttonContent}
         </Button>
