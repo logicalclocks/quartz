@@ -30,11 +30,11 @@ export const PerformanceCard1 = Template.bind({});
 PerformanceCard1.args = {
   bars: [
     {
-      type: 'gray',
+      variant: 'perf.gray',
       proportion: 0.8,
     },
     {
-      type: 'green',
+      variant: 'perf.green',
       proportion: 0.2,
     },
   ],
@@ -45,7 +45,7 @@ export const PerformanceCard2 = Template.bind({});
 PerformanceCard2.args = {
   bars: [
     {
-      type: 'orange',
+      variant: 'perf.orange',
       proportion: 1,
     },
   ],
@@ -56,15 +56,15 @@ export const PerformanceCard3 = Template.bind({});
 PerformanceCard3.args = {
   bars: [
     {
-      type: 'green',
+      variant: 'perf.green',
       proportion: 0.7,
     },
     {
-      type: 'gray',
+      variant: 'perf.gray',
       proportion: 0.15,
     },
     {
-      type: 'black',
+      variant: 'perf.black',
       proportion: 0.15,
     },
   ],

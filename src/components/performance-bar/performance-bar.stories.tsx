@@ -17,19 +17,19 @@ export const Mix = Template.bind({});
 Mix.args = {
   bars: [
     {
-      type: 'black',
+      variant: 'perf.black',
       proportion: 0.1,
     },
     {
-      type: 'gray',
+      variant: 'perf.gray',
       proportion: 0.2,
     },
     {
-      type: 'green',
+      variant: 'perf.green',
       proportion: 0.5,
     },
     {
-      type: 'orange',
+      variant: 'perf.orange',
       proportion: 0.2,
     },
   ],
@@ -40,7 +40,7 @@ export const Black = Template.bind({});
 Black.args = {
   bars: [
     {
-      type: 'black',
+      variant: 'perf.black',
       proportion: 1,
     },
   ],
@@ -51,7 +51,7 @@ export const Gray = Template.bind({});
 Gray.args = {
   bars: [
     {
-      type: 'gray',
+      variant: 'perf.gray',
       proportion: 1,
     },
   ],
@@ -62,7 +62,7 @@ export const Green = Template.bind({});
 Green.args = {
   bars: [
     {
-      type: 'green',
+      variant: 'perf.green',
       proportion: 1,
     },
   ],
@@ -73,7 +73,7 @@ export const Orange = Template.bind({});
 Orange.args = {
   bars: [
     {
-      type: 'orange',
+      variant: 'perf.orange',
       proportion: 1,
     },
   ],

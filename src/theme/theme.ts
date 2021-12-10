@@ -37,6 +37,7 @@ import select from './select';
 import selectInfo from './select-info';
 // Bar
 import bar from './bar';
+import perf from './perf';
 // Code
 import code from './code';
 import callout from './callout';
@@ -127,6 +128,7 @@ const theme: ITheme = {
     badges,
     popup,
     bar,
+    perf,
     code,
     select,
     callout,

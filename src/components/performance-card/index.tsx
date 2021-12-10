@@ -8,8 +8,8 @@ import PerformanceBar from '../performance-bar';
 import * as s from './performance-card.styles';
 
 interface Bar {
-  type: 'black' | 'gray' | 'green' | 'orange';
   proportion: number;
+  variant: 'perf.black' | 'perf.gray' | 'perf.green' | 'perf.orange';
 }
 
 export interface PerformanceCardProps extends Omit<CardProps, 'css'> {
