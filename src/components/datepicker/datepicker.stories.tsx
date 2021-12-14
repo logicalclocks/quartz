@@ -4,6 +4,8 @@ import { Story, Meta } from '@storybook/react/types-6-0';
 // Components
 import DatePicker, { DatePickerProps } from './index';
 
+import { DATE_TIME } from '../../constants';
+
 export default {
   title: 'Quartz/DatePicker',
   component: DatePicker,
@@ -32,7 +34,7 @@ export const Default = Template.bind({});
 
 Default.args = {
   showTimeSelect: true,
-  dateFormat: 'MMMM d, yyyy h:mm aa',
+  dateFormat: DATE_TIME.DATE_TIME_FULL_MONTH,
   excludeTimes: [new Date()],
 };
 
