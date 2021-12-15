@@ -122,7 +122,7 @@ import useNavigation from './components/navigation/useNavigation';
 import useOnClickOutside from './utils/useClickOutside';
 
 // constants
-import dateFormat from './utils/dateFormat';
+import * as constants from './constants';
 
 library.add(fas, far);
 
@@ -233,7 +233,7 @@ export {
   graphColors,
   theme,
   // Constants
-  dateFormat,
+  constants,
 };
 
 export type ITheme = import('./theme/types').ITheme;
