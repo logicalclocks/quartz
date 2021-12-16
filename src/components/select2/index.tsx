@@ -173,6 +173,10 @@ const Select: FC<SelectProps> = ({
   }, [format]);
 
   const labelActions = useMemo(() => {
+    if (!labelAction) {
+      return null;
+    }
+
     if (info && info !== '') {
       return (
         <Flex
