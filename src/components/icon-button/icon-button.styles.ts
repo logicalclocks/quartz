@@ -7,6 +7,7 @@ export default (disabled: boolean): SxStyleProp => ({
 
   height: '32px',
   width: '32px',
+  position: 'relative',
 
   borderWidth: '1px',
   borderStyle: 'solid',
