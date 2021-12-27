@@ -21,6 +21,7 @@ export interface IThemeColors {
     yellowLight: string;
     green: string;
     skyblue: string;
+    darkblue: string;
     blue: string;
     redShade3: string;
     orangeShade3: string;

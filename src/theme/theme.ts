@@ -74,6 +74,7 @@ const theme: ITheme = {
       yellowLight: '#FFF8B3',
       green: '#21B182',
       skyblue: '#56CCF2',
+      darkblue: '#186781',
       blue: '#41B7DC',
       redShade3: '#F8DEDE',
       orangeShade3: '#FDF0E4',
