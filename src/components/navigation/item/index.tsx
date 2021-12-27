@@ -74,7 +74,7 @@ const NavigationItem: FC<NavigationItemProps> = (
   const handleClick = useCallback(() => {
     onClick();
     onActivate(key);
-  }, [disabled]);
+  }, [key, onActivate, onClick]);
 
   useEffect(() => {
     if (isActive) {
