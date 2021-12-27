@@ -1,3 +1,4 @@
-import blink from './blink';
+import Blink, { BlinkProps } from './blink';
 
-export default blink;
+export type { BlinkProps };
+export default Blink;

@@ -2,7 +2,7 @@ import { Story, Meta } from '@storybook/react/types-6-0';
 import React from 'react';
 import Badge, { BadgeProps } from './badge';
 import Dot, { DotProps } from './dot';
-import Blink, { BlinkProps } from './blink/blink';
+import Blink, { BlinkProps } from './blink';
 import TextValueBadge, { TextValueBadgeProps } from './text-value-badge';
 import ProjectBadge, { ProjectBadgeProps } from './project-badge';
 import { IconName } from '../icon/list';
