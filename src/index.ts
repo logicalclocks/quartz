@@ -93,6 +93,7 @@ import MultiRangeSlider from './components/picker/multi-range-slider';
 
 // Table
 import Table from './components/table';
+import HolyTable from './components/holy-table';
 import ReadOnlyTable from './components/table/read-only';
 import EditableTable from './components/table/editable';
 import BlurInput from './components/table/editable/blur-input';
@@ -213,6 +214,7 @@ export {
   Table,
   EditableTable,
   ReadOnlyTable,
+  HolyTable,
   //  Typography
   Value,
   Text,
@@ -242,6 +244,7 @@ export type BadgeProps = import('./components/badges').BadgeProps;
 export type CardProps = import('./components/card').CardProps;
 export type IThemeColors = import('./theme/types').IThemeColors;
 export type TableCell = import('./components/table/type').TableCell;
+export type HolyTableProps = import('./components/holy-table').HolyTableProps;
 export type TableHeader = import('./components/table/type').TableHeader;
 export type ColumnIdentifier =
   import('./components/table/type').ColumnIdentifier;
