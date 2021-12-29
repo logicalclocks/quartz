@@ -2,9 +2,9 @@ import Cell from './cell/cell';
 import Row from './row';
 import HolyTable from './holy-table';
 
-type HolyTable = typeof HolyTable;
+type IHolyTable = typeof HolyTable;
 
-interface HolyTableComponent extends HolyTable {
+interface HolyTableComponent extends IHolyTable {
   Cell: typeof Cell;
   Row: typeof Row;
 }

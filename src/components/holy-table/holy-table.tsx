@@ -27,7 +27,7 @@ const HolyTable: FC<Props> = ({
   >
     <Box as="table" sx={styles} {...props}>
       <Box as="thead">
-        {!!legend && (
+        {legend && (
           <Box as="tr" width="100%">
             {legend.map((name, index) => (
               // there was no other way for generating keys :()

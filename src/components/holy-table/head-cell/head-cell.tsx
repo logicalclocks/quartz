@@ -1,8 +1,8 @@
 import React, { ReactNode, useContext } from 'react';
 import { BoxProps } from 'rebass';
 import Labeling from '../../typography/labeling';
-import styles from './styles';
 import HolyTableContext from '../holy-table.context';
+import styles from './styles';
 
 interface Props extends Omit<BoxProps, 'css'> {
   index: number;
@@ -11,17 +11,13 @@ interface Props extends Omit<BoxProps, 'css'> {
 
 const HeadCell = ({ sx, index, children, ...props }: Props) => {
   const { middleColumn } = useContext(HolyTableContext);
+  const shouldCellFillSpace = index === middleColumn;
 
   return (
-    <Labeling
-      sx={styles(index === middleColumn)}
-      gray
-      pb="4px"
-      as="th"
-      {...props}
-    >
+    <Labeling as="th" gray pb="4px" sx={styles(shouldCellFillSpace)} {...props}>
       {children}
     </Labeling>
   );
 };
+
 export default HeadCell;

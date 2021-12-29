@@ -10,7 +10,7 @@ export default {
 } as Meta;
 
 export const HolyTableExample: Story = (props: Omit<Props, 'children'>) => (
-  <Box>
+  <Box width="700px">
     <HolyTable {...props} legend={['name', 'hex', 'rgb']}>
       <HolyTable.Row>
         <HolyTable.Cell>Black</HolyTable.Cell>
