@@ -2,6 +2,7 @@ import { Story, Meta } from '@storybook/react/types-6-0';
 import React from 'react';
 import Badge, { BadgeProps } from './badge';
 import Dot, { DotProps } from './dot';
+import Blink, { BlinkProps } from './blink';
 import TextValueBadge, { TextValueBadgeProps } from './text-value-badge';
 import ProjectBadge, { ProjectBadgeProps } from './project-badge';
 import { IconName } from '../icon/list';
@@ -18,6 +19,7 @@ const Template: Story<TextValueBadgeProps> = (props) => (
 export const Default = (props: BadgeProps) => <Badge {...props} />;
 export const TextValue = Template.bind({});
 export const DotBadge: Story<DotProps> = (props) => <Dot p="5px" {...props} />;
+export const BlinkBadge: Story<BlinkProps> = (props) => <Blink {...props} />;
 export const ProjectBadgeBadge: Story<ProjectBadgeProps> = (props) => (
   <ProjectBadge p="5px" {...props} />
 );
@@ -59,7 +61,7 @@ Default.args = {
   value: 'arizona',
   mode: 'default',
   variant: 'default',
-  loading: false
+  loading: false,
 };
 
 Default.argTypes = {
@@ -181,6 +183,31 @@ ProjectBadgeBadge.argTypes = {
   isLock: {
     control: {
       type: 'boolean',
+    },
+    type: {
+      required: false,
+    },
+  },
+};
+
+BlinkBadge.args = {
+  text: 'something is loading...',
+  variant: 'gray',
+};
+
+BlinkBadge.argTypes = {
+  text: {
+    control: {
+      type: 'text',
+    },
+    type: {
+      required: false,
+    },
+  },
+  variant: {
+    control: {
+      type: 'select',
+      options: ['green', 'red', 'gray'],
     },
     type: {
       required: false,
