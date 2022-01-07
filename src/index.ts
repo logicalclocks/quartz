@@ -50,6 +50,7 @@ import Symbol from './components/symbol';
 import { SymbolMode } from './components/symbol/types';
 import Collapse from './components/collapse';
 import PerformanceCard from './components/performance-card';
+import Slider from './components/slider';
 
 // Popups
 import Drawer from './components/popup/drawer';
@@ -171,6 +172,7 @@ export {
   DatePicker,
   Divider,
   PerformanceCard,
+  Slider,
   // Popups
   usePopup,
   Popup,
@@ -241,6 +243,7 @@ export {
 export type ITheme = import('./theme/types').ITheme;
 export type TooltipProps = import('./components/tooltip').TooltipProps;
 export type BadgeProps = import('./components/badges').BadgeProps;
+export type SliderProps = import('./components/slider').SliderProps;
 export type CardProps = import('./components/card').CardProps;
 export type IThemeColors = import('./theme/types').IThemeColors;
 export type TableCell = import('./components/table/type').TableCell;
