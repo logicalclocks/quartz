@@ -10,6 +10,7 @@ import Footer from './footer';
 import Header from './header';
 import Column from './column';
 import Info from './info';
+import EmptyFolderInfo from './empty-folder-info';
 
 // Styles
 import styles from './file-system-explorer.styles';
@@ -70,13 +71,22 @@ const FileSystemExplorer: FC<FileSystemExplorerProps> = ({
   const contentRef = useRef<HTMLDivElement>();
 
   const [columns, setColumns] = useState(data);
+  const [isEmptyFolder, setIsEmptyFolder] = useState<boolean>(false);
 
   useEffect(() => {
-    setColumns(data);
+    if (Array.isArray(data)) {
+      if (Array.isArray(data[data.length - 1]) && data[data.length - 1].length === 0) {
+        setIsEmptyFolder(true);
+        setColumns(data.slice(0, -1));
+      } else {
+        setIsEmptyFolder(false);
+        setColumns(data);
+      }
+    }
   }, [data]);
 
   const [activeFile, setActiveFile] = useState<ActiveFile>();
-  //@ts-ignore
+  // @ts-ignore
   const [fileListValue, setFileListValue] = useState<any[]>([]);
   const [pathListValue, setPathListValue] = useState<string>('');
   const lastChildOfColumn = useRef<any>();
@@ -136,8 +146,10 @@ const FileSystemExplorer: FC<FileSystemExplorerProps> = ({
             isFileSelected={isFileSelected}
             selectPathListValue={selectPathListValue}
             fileListValue={fileListValue}
+            setIsEmptyFolder={setIsEmptyFolder}
           />
         ))}
+        {isEmptyFolder && <EmptyFolderInfo />}
         {activeFile && (
           <Info
             activeFile={activeFile}
