@@ -21,7 +21,7 @@ export interface QuartzFileExplorerProps {
   isFileSelected?: any;
   setSelectedFile?: any;
   isValidExtension: boolean;
-  setIsEmptyFolder?: any;
+  setIsEmptyFolder: (value: boolean) => void;
 }
 
 const FileExplorer: FC<QuartzFileExplorerProps> = ({

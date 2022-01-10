@@ -17,7 +17,7 @@ export interface FileExplorerColumnProps
   selectPathListValue?: any;
   fileListValue?: any[];
   validExtensions?: string[];
-  setIsEmptyFolder?: any;
+  setIsEmptyFolder: (value: boolean) => void;
 }
 
 const FileExplorerColumn: FC<FileExplorerColumnProps> = ({

@@ -75,7 +75,10 @@ const FileSystemExplorer: FC<FileSystemExplorerProps> = ({
 
   useEffect(() => {
     if (Array.isArray(data)) {
-      if (Array.isArray(data[data.length - 1]) && data[data.length - 1].length === 0) {
+      const lastElement = data[data.length - 1];
+
+      if (Array.isArray(lastElement) && lastElement.length === 0) {
+        // if last element's length is 0, consider it is empty folder
         setIsEmptyFolder(true);
         setColumns(data.slice(0, -1));
       } else {

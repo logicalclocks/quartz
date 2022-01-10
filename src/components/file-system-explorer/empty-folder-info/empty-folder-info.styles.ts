@@ -13,6 +13,6 @@ export default {
     fontFamily: 'subtitle',
     fontWeight: 'subtitle',
     fontSize: 'subtitle',
-    color: '#A0A0A0',
+    color: 'gray',
   },
 };
