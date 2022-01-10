@@ -2,7 +2,7 @@ name: Deploy Storybook to Github Pages
 
 on:
   push:
-    branches: 
+    branches:
       - dev
 jobs:
   build-and-deploy:
@@ -13,12 +13,12 @@ jobs:
 
       - name: Install 💽
         run: |
-          npm install
-          npm i react react-dom --no-save
+          yarn install
+          yarn add react react-dom --no-save
 
       - name: Build 🤖
         run: |
-          npm run predeploy
+          yarn run predeploy
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@4.0.0
