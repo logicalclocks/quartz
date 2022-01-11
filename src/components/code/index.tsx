@@ -27,6 +27,7 @@ export interface CodeProps extends Omit<FlexProps, 'css' | 'title'> {
   wrapLongLines?: boolean;
   showLineNumbers?: boolean;
   copyCallback?: () => boolean;
+  padding?: string;
 }
 
 const Code: FC<CodeProps> = ({
@@ -41,6 +42,7 @@ const Code: FC<CodeProps> = ({
   showLineNumbers,
   copyCallback = undefined,
   element,
+  padding = '20px',
   ...props
 }: CodeProps) => {
   const [copied, setCopied] = useState(false);
@@ -67,7 +69,7 @@ const Code: FC<CodeProps> = ({
   };
 
   return (
-    <Flex width="100%" sx={{ ...styles }} height="100%">
+    <Flex width="100%" sx={{ ...styles, p: padding }} height="100%">
       <Flex width="100%" sx={{ ...codeHeaderStyles }}>
         {title ? (
           <Flex alignItems="center" ml="8px">
