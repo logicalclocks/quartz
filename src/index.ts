@@ -113,7 +113,7 @@ import {
 } from './components/typography/hoverable';
 
 // Icons
-import FolderIcon from './components/icons/folder.icon';
+import Icons from './sources/icons';
 // Theme
 import ThemeProvider from './theme/ThemeProvider';
 import theme from './theme/theme';
@@ -230,7 +230,7 @@ export {
   SplitGraph,
   Collapse,
   //  Icons
-  FolderIcon,
+  Icons,
   useOnClickOutside,
   Symbol,
   SymbolMode,
