@@ -1,8 +1,10 @@
 import React from 'react';
 
 export const copyToClipboard = async (content: string): Promise<boolean> => {
-  await navigator.clipboard.writeText(content);
-  return true;
+  return navigator.clipboard
+    .writeText(content)
+    .then(() => true)
+    .catch(() => false);
 };
 
 export const saveToFile = (
