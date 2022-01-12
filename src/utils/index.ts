@@ -1,12 +1,7 @@
 import React from 'react';
 
-export const copyToClipboard = (content: string): boolean => {
-  const dummy = document.createElement('textarea');
-  document.body.appendChild(dummy);
-  dummy.value = content;
-  dummy.select();
-  document.execCommand('copy');
-  document.body.removeChild(dummy);
+export const copyToClipboard = async (content: string): Promise<boolean> => {
+  await navigator.clipboard.writeText(content);
   return true;
 };
 

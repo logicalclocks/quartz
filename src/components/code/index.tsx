@@ -26,7 +26,7 @@ export interface CodeProps extends Omit<FlexProps, 'css' | 'title'> {
   downloadCallback?: () => void;
   wrapLongLines?: boolean;
   showLineNumbers?: boolean;
-  copyCallback?: () => boolean;
+  copyCallback?: () => Promise<boolean>;
   padding?: string;
 }
 
@@ -49,12 +49,14 @@ const Code: FC<CodeProps> = ({
 
   const theme = useTheme<ITheme>();
 
-  const useCodeKey = () => {
+  const useCodeKey = async () => {
+    let success = false;
     if (copyCallback) {
-      setCopied(copyCallback());
+      success = await copyCallback();
     } else {
-      setCopied(copyToClipboard(content));
+      success = await copyToClipboard(content);
     }
+    setCopied(success);
     setTimeout(() => {
       setCopied(false);
     }, 800);
