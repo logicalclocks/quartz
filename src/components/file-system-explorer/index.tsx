@@ -89,7 +89,6 @@ const FileSystemExplorer: FC<FileSystemExplorerProps> = ({
   }, [data]);
 
   const [activeFile, setActiveFile] = useState<ActiveFile>();
-  // @ts-ignore
   const [fileListValue, setFileListValue] = useState<any[]>([]);
   const [pathListValue, setPathListValue] = useState<string>('');
   const lastChildOfColumn = useRef<any>();
