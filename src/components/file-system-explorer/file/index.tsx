@@ -21,6 +21,7 @@ export interface QuartzFileExplorerProps {
   isFileSelected?: any;
   setSelectedFile?: any;
   isValidExtension: boolean;
+  setIsEmptyFolder: (value: boolean) => void;
 }
 
 const FileExplorer: FC<QuartzFileExplorerProps> = ({
@@ -35,12 +36,14 @@ const FileExplorer: FC<QuartzFileExplorerProps> = ({
   selected,
   isFileSelected,
   isValidExtension,
+  setIsEmptyFolder,
 }: // ...props
 QuartzFileExplorerProps) => {
   const [active, setActive] = useState(isActive);
   const [selectedFile, setSelectedFile] = useState(selected);
 
   const handleClickFile = (mode: string) => {
+    setIsEmptyFolder(false);
     if (mode === 'nFiles') {
       setActive(!active);
       setSelectedFile(!selectedFile);
