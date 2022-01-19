@@ -1,22 +1,30 @@
-import { IconProp, SizeProp } from '@fortawesome/fontawesome-svg-core';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { FC } from 'react';
 import { Box, BoxProps } from 'rebass';
+import { IThemeColors, theme } from '../..';
+import { getIcon, IconName, IconSize } from './list';
+
+type Colors = keyof IThemeColors;
 
 export interface IconProps extends Omit<BoxProps, 'css'> {
-  size?: SizeProp;
-  icon: IconProp;
-  variant?: 'primary';
+  icon: IconName;
+  size?: IconSize;
+  color?: Colors;
 }
 
+export enum IconColors {
+  default,
+  primary
+}
+
+
 const Icon: FC<IconProps> = ({
-  size,
   icon,
-  variant = 'primary',
+  size = IconSize.lg,
+  color = "black",
   ...props
 }: IconProps) => (
-  <Box as="span" {...props} tx="icon" variant={variant}>
-    <FontAwesomeIcon icon={icon} size={size} />
+  <Box as="span" {...props} tx="icon">
+    { getIcon(icon, theme.colors[color.toString()], size) }
   </Box>
 );
 

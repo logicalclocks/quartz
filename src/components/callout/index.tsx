@@ -2,6 +2,9 @@ import React, { FC } from 'react';
 import { Box, Flex, FlexProps, Text } from 'rebass';
 import styles from './callout.styles';
 import icons from '../../sources/icons';
+import Icon from '../icon';
+import { IconName } from '../..';
+import { IconSize } from '../icon/list';
 
 export enum CalloutTypes {
   valid = 'valid',
@@ -34,7 +37,7 @@ const Callout: FC<ICalloutProps> = ({
       maxWidth={cta ? '80%' : '100%'}
     >
       <Box mt="-2px" mb="-3px" mr="8px">
-        {icons.info_block}
+        <Icon color="primary" icon={IconName.cpu}/>
       </Box>
       <Box as="pre">
         <Text
