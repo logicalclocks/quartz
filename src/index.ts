@@ -1,3 +1,4 @@
+import { Flex, Box } from 'rebass';
 import { library } from '@fortawesome/fontawesome-svg-core';
 
 // Font Awesome icons
@@ -238,13 +239,15 @@ export {
   theme,
   // Constants
   constants,
+  // Rebass,
+  Flex,
+  Box,
 };
 
 export type ITheme = import('./theme/types').ITheme;
 export type TooltipProps = import('./components/tooltip').TooltipProps;
 export type BadgeProps = import('./components/badges').BadgeProps;
 export type SliderProps = import('./components/slider').SliderProps;
-export type CardProps = import('./components/card').CardProps;
 export type IThemeColors = import('./theme/types').IThemeColors;
 export type TableCell = import('./components/table/type').TableCell;
 export type HolyTableProps = import('./components/holy-table').HolyTableProps;
@@ -257,3 +260,6 @@ export type TableRowComponent =
   import('./components/table/type').TableRowComponent;
 export type TableCellType = import('./components/table/type').TableCellType;
 export type SelectOpt = import('./components/select2/types').SelectOpt;
+
+// Rebass types
+export type { SxStyleProp, FlexProps, BoxProps, CardProps } from 'rebass';
