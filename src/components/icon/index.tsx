@@ -11,12 +11,6 @@ export interface IconProps extends Omit<BoxProps, 'css'> {
   color?: Colors;
 }
 
-export enum IconColors {
-  default,
-  primary
-}
-
-
 const Icon: FC<IconProps> = ({
   icon,
   size = IconSize.lg,
