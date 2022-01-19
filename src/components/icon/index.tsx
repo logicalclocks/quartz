@@ -12,6 +12,7 @@ export interface IconProps extends Omit<BoxProps, 'css'> {
   color?: Colors;
 }
 
+
 const Icon: FC<IconProps> = ({
   icon,
   size = "lg",
