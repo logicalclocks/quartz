@@ -15,9 +15,10 @@ import 'codemirror/theme/yeti.css';
 import Label, { LabelProps } from '../label';
 import Labeling from '../typography/labeling';
 import Tooltip from '../tooltip';
-import icons from '../../sources/icons';
 import { Intents } from '../intents';
 import InputInfo from '../input-info';
+import Icon from '../icon';
+import { IconName } from '../icon/list';
 
 export interface InputProps {
   label?: string;
@@ -63,7 +64,7 @@ const CodeInput: FC<InputProps> = forwardRef(
         {tooltipInfo && (
           <Tooltip mainText={tooltipInfo}>
             <Box mt="-6px" mb="-3px">
-              {icons.info_block}
+              <Icon icon={IconName.info_block} />
             </Box>
           </Tooltip>
         )}

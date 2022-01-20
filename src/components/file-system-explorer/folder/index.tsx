@@ -1,6 +1,7 @@
 import React, { FC, useState } from 'react';
 import { Box, Flex } from 'rebass';
-import icons from '../../../sources/icons';
+import { IconName } from '../../..';
+import Icon from '../../icon';
 import Tooltip from '../../tooltip';
 
 // Styles
@@ -68,14 +69,9 @@ const FolderExplorer: FC<QuartzFileExplorerFolderProps> = ({
           minWidth: '16px',
           minHeight: '16px',
           marginRight: '9px',
-          svg: {
-            path: {
-              fill: 'black',
-            },
-          },
         }}
       >
-        {icons.folder}
+        <Icon color="primary" size="sm" icon={IconName.folder} />
       </Box>
       <Tooltip mainText={name}>
         <Box>{name}</Box>

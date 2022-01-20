@@ -7,8 +7,9 @@ import styles, {
   statusAndLocationBox,
   loaderCross,
 } from './file-loader.styles';
-import icons from '../../sources/icons';
 import Spinner from '../spinner';
+import Icon from '../icon';
+import { IconName } from '../..';
 
 export interface QuartzFileLoaderProps extends Omit<BoxProps, 'css'> {
   id: any;
@@ -60,7 +61,7 @@ const FileLoader: FC<QuartzFileLoaderProps> = ({
           removeHandler(id);
         }}
       >
-        <Flex>{icons.cross}</Flex>
+        <Flex><Icon size="sm" icon={IconName.cross} /></Flex>
       </Box>
     )}
   </Flex>

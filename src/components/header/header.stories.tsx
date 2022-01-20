@@ -6,7 +6,6 @@ import { Box } from 'rebass';
 
 // Components
 import { IconButton, Label, List, ListItem } from '../../index';
-import FolderIcon from '../icons/folder.icon';
 import Subtitle from '../typography/subtitle';
 import Header, { HeaderProps } from './index';
 import Navigation from '../navigation/container';
@@ -15,6 +14,7 @@ import { TreeNode } from '../navigation/types';
 import MenuButton from './menu-button';
 import User from '../user';
 import { IconName } from '../icon/list';
+import Icon from '../icon';
 
 export default {
   title: 'Quartz/Header',
@@ -104,7 +104,7 @@ Default.args = {
   ],
   children: (
     <>
-      <FolderIcon />
+      <Icon icon={ IconName.folder }/>
       <Subtitle ml="16px">PROJECT ACME</Subtitle>
     </>
   ),

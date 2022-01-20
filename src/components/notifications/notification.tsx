@@ -4,8 +4,9 @@ import NotificationManager, {
   SystemNotification,
 } from './notifications-manager';
 import styles from './notifications-styles';
-import icons from '../../sources/icons';
 import Tooltip from '../tooltip';
+import Icon from '../icon';
+import { IconName } from '../..';
 
 const Notification: FC<SystemNotification> = ({
   id,
@@ -72,7 +73,7 @@ const Notification: FC<SystemNotification> = ({
               },
             }}
           >
-            {icons.cross}
+            <Icon icon={IconName.cross} />
           </Box>
         </Tooltip>
       </Flex>

@@ -12,8 +12,9 @@ import {
 import Labeling from '../../typography/labeling';
 import { ActiveFile } from '../index';
 import Button from '../../button';
-import icons from '../../../sources/icons';
 import formatSizeUnits from '../../../utils/getFormatSizeUnit';
+import { IconName } from '../../..';
+import Icon from '../../icon';
 
 export interface FileExplorerInfoProps extends Omit<BoxProps, 'css'> {
   children?: string[];
@@ -99,7 +100,7 @@ const FileExplorerInfo: FC<FileExplorerInfoProps> = ({
                 alignItems: 'center',
               }}
             >
-              {icons.download}
+              <Icon size="sm" icon={IconName.folder} />
             </Flex>
             <Flex alignItems="center">Download File</Flex>
           </Flex>
