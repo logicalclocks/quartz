@@ -1,24 +1,25 @@
 import React, { FC } from 'react';
 import { Box, BoxProps } from 'rebass';
-import { IThemeColors, theme } from '../..';
-import { getIcon, IconName, IconSize } from './list';
+import { theme } from '../..';
+import { Colors, IconSizes } from '../../theme/types';
+import { getIcon, IconName } from './list';
+import _ from 'lodash';
 
-type Colors = keyof IThemeColors;
 
 export interface IconProps extends Omit<BoxProps, 'css'> {
   icon: IconName;
-  size?: IconSize;
+  size?: IconSizes;
   color?: Colors;
 }
 
 const Icon: FC<IconProps> = ({
   icon,
-  size = IconSize.lg,
+  size = "lg",
   color = "black",
   ...props
 }: IconProps) => (
   <Box as="span" {...props} tx="icon">
-    { getIcon(icon, theme.colors[color.toString()], size) }
+    { getIcon(icon, _.get(theme.colors, color), theme.iconSizes[size]) }
   </Box>
 );
 
