@@ -10,7 +10,6 @@ import Divider from '../divider';
 import Input from '../input';
 import Value from '../typography/value';
 import useKeyUp from '../../utils/useKeyUp';
-import icons from '../../sources/icons';
 import Tooltip from '../tooltip';
 import StickyPortal, { CONTENT_ID } from '../sticky-portal/StickyPortal';
 // List types
@@ -24,6 +23,8 @@ import { listStyles, bottomActionStyles } from './select.styles';
 // Hooks
 import useDropdown from '../../utils/useDropdown';
 import useOnClickOutside from '../../utils/useClickOutside';
+import Icon from '../icon';
+import { IconName } from '../..';
 
 export interface SelectProps
   extends Omit<LabelProps, 'onChange' | 'children' | 'value'> {
@@ -186,8 +187,8 @@ const Select: FC<SelectProps> = ({
           justifyContent="space-between"
         >
           <Tooltip mainText={info}>
-            <Box mt="-6px" mb="-3px">
-              {icons.info_block}
+            <Box mb="-3px">
+              <Icon size="md" icon={IconName.info_block} />
             </Box>
           </Tooltip>
           {labelAction}
@@ -261,16 +262,12 @@ const Select: FC<SelectProps> = ({
                         svg: {
                           width: '14px',
                           height: '14px',
-
-                          path: {
-                            fill: 'gray',
-                          },
                         },
                         zIndex: 1,
                       }}
                       onClick={(e) => e.stopPropagation()}
                     >
-                      {icons.glass}
+                       <Icon size="md" color="gray" icon={IconName.glass} />
                     </Box>
                     <Input
                       pl="32px"

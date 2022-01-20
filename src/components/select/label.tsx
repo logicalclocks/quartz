@@ -1,14 +1,14 @@
 import React, { FC, forwardRef, useMemo } from 'react';
 import { Box, BoxProps, Flex } from 'rebass';
 
-// Icons
-import ArrowsIcon from '../icons/arrows.icon';
 import { Intents } from '../intents';
 // Components
 import Labeling from '../typography/labeling';
 // Styles
 import { valueStyles, getLabelStyles, deletabledStyles } from './select.styles';
-import icons from '../../sources/icons';
+// Icons
+import Icon from '../icon';
+import { IconName } from '../..';
 
 export interface SelectLabelProps extends Omit<BoxProps, 'css' | 'onChange'> {
   variant: 'primary' | 'white' | 'disabled';
@@ -151,10 +151,10 @@ const SelectLabel: FC<SelectLabelProps> = forwardRef(
               sx={deletabledStyles}
               ml="auto"
             >
-              {icons.cross}
+              <Icon icon={IconName.cross} />
             </Box>
           )}
-          <ArrowsIcon />
+          <Icon icon={IconName.arrow_up_down} size='sm' />
         </Flex>
         {children}
       </Flex>

@@ -20,8 +20,9 @@ import Divider from '../divider';
 import Input from '../input';
 import Value from '../typography/value';
 import useKeyUp from '../../utils/useKeyUp';
-import icons from '../../sources/icons';
 import StickyPortal, { CONTENT_ID } from '../sticky-portal/StickyPortal';
+import { IconName } from '../..';
+import Icon from '../icon';
 
 export interface SelectProps extends Omit<LabelProps, 'onChange' | 'children'> {
   value: string[];
@@ -215,16 +216,12 @@ const Select: FC<SelectProps> = ({
                         svg: {
                           width: '14px',
                           height: '14px',
-
-                          path: {
-                            fill: 'gray',
-                          },
                         },
                         zIndex: 1,
                       }}
                       onClick={(e) => e.stopPropagation()}
                     >
-                      {icons.glass}
+                      <Icon color='gray' icon={IconName.glass} />
                     </Box>
                     <Input
                       pl="32px"

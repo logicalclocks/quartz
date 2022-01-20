@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 import { Box, Button as RebassButton, ButtonProps } from 'rebass';
-import icons from '../../sources/icons';
+import { IconName } from '../..';
+import Icon from '../icon';
 
 // Styles
 import { fileButton } from './file-button.styles';
@@ -32,7 +33,7 @@ const FileButton: FC<QuartzFileButtonProps> = ({
           },
         }}
       >
-        {icons.folder}
+        <Icon color="primary" size="sm" icon={IconName.folder} />
       </Box>
       {children}
     </RebassButton>

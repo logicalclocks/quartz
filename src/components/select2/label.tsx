@@ -1,9 +1,6 @@
 import React, { FC, forwardRef, useMemo } from 'react';
 import { Box, BoxProps, Flex } from 'rebass';
 
-// Icons
-import ArrowsIcon from '../icons/arrows.icon';
-import icons from '../../sources/icons';
 // Components
 import Labeling from '../typography/labeling';
 // Styles
@@ -11,6 +8,9 @@ import { valueStyles, getLabelStyles, deletabledStyles } from './select.styles';
 import { Intents } from '../intents';
 // Types
 import { SelectOpt } from './types';
+// Icons
+import Icon from '../icon';
+import { IconName } from '../..';
 
 export interface SelectLabelProps
   extends Omit<BoxProps, 'css' | 'onChange' | 'value'> {
@@ -119,10 +119,10 @@ const SelectLabel: FC<SelectLabelProps> = forwardRef(
               sx={deletabledStyles}
               ml="auto"
             >
-              {icons.cross}
+               <Icon icon={IconName.cross} size='md' />
             </Box>
           )}
-          <ArrowsIcon />
+          <Icon icon={IconName.arrow_up_down} size='sm' />
         </Flex>
         {children}
       </Flex>

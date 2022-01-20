@@ -112,8 +112,6 @@ import {
   HoverableLink,
 } from './components/typography/hoverable';
 
-// Icons
-import Icons from './sources/icons';
 // Theme
 import ThemeProvider from './theme/ThemeProvider';
 import theme from './theme/theme';
@@ -229,8 +227,6 @@ export {
   StickySummary,
   SplitGraph,
   Collapse,
-  //  Icons
-  Icons,
   useOnClickOutside,
   Symbol,
   SymbolMode,

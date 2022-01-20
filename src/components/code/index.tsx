@@ -11,9 +11,10 @@ import styles, {
   lineNumberStyles,
   codeHeaderStyles,
 } from './code.styles';
-import icons from '../../sources/icons';
 import Value from '../typography/value';
 import { copyToClipboard, saveToFile } from '../../utils';
+import Icon from '../icon';
+import { IconName } from '../..';
 
 export interface CodeProps extends Omit<FlexProps, 'css' | 'title'> {
   title?: React.ReactElement | string;
@@ -78,8 +79,8 @@ const Code: FC<CodeProps> = ({
                 sx={{ ...buttonsStyles }}
                 onClick={download}
               >
-                {icons.download}
-                <Value ml="5px" mt="1px">
+                <Icon size="sm" icon={IconName.download} />
+                <Value>
                   download
                 </Value>
               </Button>
@@ -93,8 +94,8 @@ const Code: FC<CodeProps> = ({
                 onClick={useCodeKey}
                 disabled={copied}
               >
-                {icons.copy}
-                <Value ml="5px" mt="1px">
+                <Icon size="sm" icon={IconName.copy} />
+                <Value>
                   {!copied ? 'copy' : 'copied'}
                 </Value>
               </Button>

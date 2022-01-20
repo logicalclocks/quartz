@@ -2,8 +2,9 @@ import { Box, BoxProps, Flex } from 'rebass';
 import React, { FC, memo, useEffect, useRef, useState } from 'react';
 
 import Labeling from '../typography/labeling';
-import icons from '../../sources/icons';
 import styles, { contentStyles, containerStyles } from './collapse.styles';
+import Icon from '../icon';
+import { IconName } from '../..';
 
 export interface CollapseProps extends Omit<BoxProps, 'css' | 'title'> {
   title: React.ReactNode;
@@ -52,7 +53,13 @@ const Collapse: FC<CollapseProps> = ({
     <Box sx={containerStyles} {...props}>
       <Flex sx={styles(isOpen)} onClick={() => setOpen((state) => !state)}>
         <Flex>
-          <Box>{isOpen ? icons.arrow_up : icons.arrow_down}</Box>
+          <Box>
+            {isOpen ? (
+              <Icon color="primary" icon={IconName.arrow_up} />
+            ) : (
+              <Icon color="primary" icon={IconName.arrow_down} />
+            )}
+          </Box>
           {title}
         </Flex>
         {!!secondaryContent && <Labeling>{secondaryContent}</Labeling>}

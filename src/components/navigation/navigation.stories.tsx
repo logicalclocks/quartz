@@ -10,8 +10,9 @@ import Navigation, { NavigationProps } from './container';
 // Types
 import { TreeNode } from './types';
 import useNavigation from './useNavigation';
-import icons from '../../sources/icons';
 import Bar from '../bar';
+import { IconName } from '../icon/list';
+import Icon from '../icon';
 
 export default {
   title: 'Quartz/Navigation',
@@ -85,7 +86,7 @@ export const TreeObject: Story<NavigationProps> = () => {
   const tree: TreeNode[] = [
     {
       title: 'Home',
-      icon: icons.folder,
+      icon: <Icon color="primary" icon={IconName.folder} />,
       id: '1',
       children: [
         {
@@ -97,7 +98,7 @@ export const TreeObject: Story<NavigationProps> = () => {
     },
     {
       title: 'Feature Groups',
-      icon: icons.folder,
+      icon: <Icon color="primary" icon={IconName.folder} />,
       id: '2',
       disabled: true,
       secondaryTooltipText: 'Feature Groups',
@@ -110,12 +111,12 @@ export const TreeObject: Story<NavigationProps> = () => {
             {
               title: 'Feature List',
               id: '4',
-              icon: icons.folder,
+              icon: <Icon color="primary" icon={IconName.folder} />,
             },
             {
               title: 'Schematised Tags',
               id: '5',
-              icon: icons.folder,
+              icon: <Icon color="primary" icon={IconName.folder} />,
               onClick: action('Tags Click'),
               isActive: true,
             },
@@ -132,12 +133,12 @@ export const TreeObject: Story<NavigationProps> = () => {
         },
         {
           title: 'Data',
-          icon: icons.folder,
+          icon: <Icon color="primary" icon={IconName.folder} />,
           id: '8',
         },
         {
           title: 'Activity',
-          icon: icons.folder,
+          icon: <Icon color="primary" icon={IconName.folder} />,
           id: '9',
         },
       ],
@@ -166,7 +167,7 @@ export const CustomTreeObject: Story<NavigationProps> = () => {
   const tree: TreeNode[] = [
     {
       title: 'Home',
-      icon: icons.folder,
+      icon: <Icon color="primary" icon={IconName.folder} />,
       id: '1',
       children: [
         {
@@ -178,7 +179,7 @@ export const CustomTreeObject: Story<NavigationProps> = () => {
     },
     {
       title: 'Feature Groups',
-      icon: icons.folder,
+      icon: <Icon color="primary" icon={IconName.folder} />,
       id: '2',
       disabled: true,
       secondaryTooltipText: 'Feature Groups',
@@ -191,7 +192,7 @@ export const CustomTreeObject: Story<NavigationProps> = () => {
             {
               title: 'Feature List',
               id: '4',
-              icon: icons.folder,
+              icon: <Icon color="primary" icon={IconName.folder} />,
             },
             {
               id: '5',
@@ -205,7 +206,7 @@ export const CustomTreeObject: Story<NavigationProps> = () => {
             {
               title: 'Schematised Tags',
               id: '5',
-              icon: icons.folder,
+              icon: <Icon color="primary" icon={IconName.folder} />,
               onClick: action('Tags Click'),
               isActive: true,
             },
