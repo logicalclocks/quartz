@@ -29,6 +29,14 @@ export interface IThemeColors {
   };
 }
 
+type NestedKeyOf<ObjectType extends object> = 
+{[Key in keyof ObjectType & (string | number)]: ObjectType[Key] extends object 
+? `${Key}` | `${Key}.${NestedKeyOf<ObjectType[Key]>}`
+: `${Key}`
+}[keyof ObjectType & (string | number)];
+
+export type Colors = NestedKeyOf<IThemeColors>;
+
 export type Fonts =
   | 'text'
   | 'title'
@@ -48,6 +56,8 @@ export type IThemeFontSizes = {
 export type IThemeFontWeights = {
   [key in Fonts]: number;
 };
+
+export type IconSizes = keyof IThemeIconSizes;
 
 export interface IThemeTransitions {
   button: string;
@@ -86,6 +96,15 @@ interface IZIndeces {
   notifications: number;
 }
 
+interface IThemeIconSizes {
+  xxs: string,
+  xs: string,
+  sm: string,
+  md: string,
+  lg: string,
+  xl: string
+}
+
 export type Variants = IThemeVariants | INestedThemeVariants;
 
 export interface ITheme {
@@ -101,6 +120,7 @@ export interface ITheme {
   inputs: Variants;
   pagination: Variants;
   inputIntents: IInputIntent;
+  iconSizes: IThemeIconSizes;
   navigation: Variants;
   notification: Variants;
   zIndices: IZIndeces;

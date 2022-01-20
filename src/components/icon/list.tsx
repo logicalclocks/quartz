@@ -1,4 +1,6 @@
 import React, { ReactElement } from 'react';
+import { theme } from '../..';
+import { IconSizes } from '../../theme/types';
 
 // Instructions to add a new icons
 // 1. Add new icon name IconName enum
@@ -68,19 +70,10 @@ export enum IconName {
   block,
 }
 
-export enum IconSize {
-  xxs = '8px',
-  xs = '12px',
-  sm = '16px',
-  md = '20px',
-  lg = '24px',
-  xl = '36px',
-}
-
 export function getIcon(
   iconName: IconName,
-  color: string = "black",
-  size: IconSize = IconSize.lg,
+  color: string = theme.colors.black,
+  size: string = theme.iconSizes.lg,
 ): ReactElement<any, any> {
   switch (iconName) {
     case IconName.terminal:
