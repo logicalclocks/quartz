@@ -256,8 +256,9 @@ export type TableRowComponent =
   import('./components/table/type').TableRowComponent;
 export type TableCellType = import('./components/table/type').TableCellType;
 export type SelectOpt = import('./components/select2/types').SelectOpt;
+export type CardProps = import('./components/card').CardProps;
 
 // Rebass components
 export { Flex, Box } from 'rebass';
 // Rebass types
-export type { SxStyleProp, FlexProps, BoxProps, CardProps } from 'rebass';
+export type { SxStyleProp, FlexProps, BoxProps } from 'rebass';
