@@ -62,6 +62,7 @@ export enum IconName {
   server,
   cpu,
   time,
+  menu,
 }
 
 export function getIcon(
@@ -1031,6 +1032,20 @@ export function getIcon(
             d="M20 12C20 16.4183 16.4183 20 12 20C7.58172 20 4 16.4183 4 12C4 7.58172 7.58172 4 12 4C16.4183 4 20 7.58172 20 12ZM12 18C15.3137 18 18 15.3137 18 12C18 8.68629 15.3137 6 12 6C8.68629 6 6 8.68629 6 12C6 15.3137 8.68629 18 12 18Z"
             fill={color}
           />
+        </svg>
+      );
+    case IconName.menu:
+      return (
+        <svg
+          width="5"
+          height="21"
+          viewBox="0 0 5 21"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <rect width="5" height="4.84615" fill={color} />
+          <rect y="8.0769" width="5" height="4.84616" fill={color} />
+          <rect y="16.1538" width="5" height="4.84616" fill={color} />
         </svg>
       );
     default:
