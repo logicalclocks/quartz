@@ -244,6 +244,9 @@ export type ITheme = import('./theme/types').ITheme;
 export type TooltipProps = import('./components/tooltip').TooltipProps;
 export type BadgeProps = import('./components/badges').BadgeProps;
 export type SliderProps = import('./components/slider').SliderProps;
+export type EditableSelectProps =
+  import('./components/editableSelect').EditableSelectProps;
+export type Select2Props = import('./components/select2').SelectProps;
 export type IThemeColors = import('./theme/types').IThemeColors;
 export type TableCell = import('./components/table/type').TableCell;
 export type HolyTableProps = import('./components/holy-table').HolyTableProps;
@@ -257,6 +260,9 @@ export type TableRowComponent =
 export type TableCellType = import('./components/table/type').TableCellType;
 export type SelectOpt = import('./components/select2/types').SelectOpt;
 export type CardProps = import('./components/card').CardProps;
+export type ButtonProps = import('./components/button').QuartzButtonProps;
+export type PerformanceCardProps =
+  import('./components/performance-card').PerformanceCardProps;
 
 // Rebass components
 export { Flex, Box } from 'rebass';
