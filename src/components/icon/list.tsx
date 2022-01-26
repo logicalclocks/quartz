@@ -62,6 +62,7 @@ export enum IconName {
   server,
   cpu,
   time,
+  commit,
 }
 
 export function getIcon(
@@ -1029,6 +1030,23 @@ export function getIcon(
             fillRule="evenodd"
             clipRule="evenodd"
             d="M20 12C20 16.4183 16.4183 20 12 20C7.58172 20 4 16.4183 4 12C4 7.58172 7.58172 4 12 4C16.4183 4 20 7.58172 20 12ZM12 18C15.3137 18 18 15.3137 18 12C18 8.68629 15.3137 6 12 6C8.68629 6 6 8.68629 6 12C6 15.3137 8.68629 18 12 18Z"
+            fill={color}
+          />
+        </svg>
+      );
+    case IconName.commit:
+      return (
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fillRule="evenodd"
+            clipRule="evenodd"
+            d="M14 12C14 10.8954 13.1046 10 12 10C10.8954 10 10 10.8954 10 12C10 13.1046 10.8954 14 12 14C13.1046 14 14 13.1046 14 12ZM16 12C16 10.1362 14.7252 8.57006 13 8.12602L13 3L11 3L11 8.12602C9.27477 8.57006 8 10.1362 8 12C8 13.8638 9.27477 15.4299 11 15.874L11 21L13 21L13 15.874C14.7252 15.4299 16 13.8638 16 12Z"
             fill={color}
           />
         </svg>
