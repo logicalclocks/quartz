@@ -28,10 +28,10 @@ const RadioGroup: FC<RadioGroupProps> = ({
   ...props
 }: RadioGroupProps) => {
   const handleChange = useCallback(
-    (value: string) => () => {
-      onChange(value);
+    (newValue: string) => () => {
+      onChange(newValue);
     },
-    [value, onChange],
+    [onChange],
   );
 
   const name = randomString();
@@ -42,7 +42,8 @@ const RadioGroup: FC<RadioGroupProps> = ({
         <Radio
           {...props}
           key={option}
-          mt={flexDirection === 'column' ? 2 : 0}
+          mt={flexDirection === 'column' ? 2 : 'initial'}
+          mr={flexDirection === 'row' ? '20px' : 'initial'}
           checked={value === option}
           label={option}
           name={name}
