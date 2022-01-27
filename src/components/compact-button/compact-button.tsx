@@ -39,8 +39,8 @@ const CompactButton: FC<Props> = ({
   href,
   children,
   isActive,
+  indicator,
   sx = {},
-  indicator = '',
   newTab = false,
   mode = 'default',
   ...props
@@ -54,7 +54,7 @@ const CompactButton: FC<Props> = ({
       alignItems="center"
       justifyContent="center"
       sx={styles.flex}
-      flexDirection={flexDirections[indicator] || 'row'}
+      flexDirection={flexDirections[indicator ?? 'horizontal']}
     >
       {!!icon && <FontAwesomeIcon icon={icon} size="xs" />}
       {indicator && !icon && <span data-active={isActive} />}

@@ -1,11 +1,12 @@
 export default {
   default: {
-    border: '1px solid #F5F5F5',
+    border: '1px solid',
+    borderColor: 'grayShade3',
     borderRadius: '2px',
-    backgroundColor: '#F5F5F5',
+    backgroundColor: 'grayShade3',
     cursor: 'pointer',
     boxShadow: 'none',
-    color: '#272727',
+    color: 'black',
     lineHeight: '15px',
     fontSize: '12px',
     fontWeight: 'bold',
@@ -13,28 +14,28 @@ export default {
     px: '6px',
 
     ':hover': {
-      backgroundColor: '#F5F5F5',
-      borderColor: '#CBCBCB',
+      backgroundColor: 'grayShade3',
+      borderColor: 'grayShade1',
     },
 
     span: {
       width: '4px',
       height: '4px',
       borderRadius: '50%',
-      backgroundColor: '#A0A0A0',
+      backgroundColor: 'gray',
 
       '&[data-active="true"]': {
-        backgroundColor: '#21B182',
+        backgroundColor: 'primary',
       },
     },
   },
   highlight: {
-    backgroundColor: '#E6F2EE',
-    borderColor: '#E6F2EE',
+    backgroundColor: 'primaryShade2',
+    borderColor: 'primaryShade2',
 
     ':hover': {
-      backgroundColor: '#E6F2EE',
-      borderColor: '#21B182',
+      backgroundColor: 'primaryShade2',
+      borderColor: 'primary',
     },
   },
   flex: {
