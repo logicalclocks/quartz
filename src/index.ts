@@ -5,6 +5,7 @@ import { fas } from '@fortawesome/free-solid-svg-icons';
 import { far } from '@fortawesome/free-regular-svg-icons';
 
 import Button from './components/button';
+import CompactButton from './components/compact-button';
 import UploadButton from './components/file-button';
 import FileSystemExplorer from './components/file-system-explorer';
 import FileLoader from './components/file-loader';
@@ -142,6 +143,7 @@ export {
   CalloutTypes,
   CalloutWithButton,
   CheckboxGroup,
+  CompactButton,
   Dropdown,
   FooterButton,
   Header,
@@ -261,6 +263,8 @@ export type TableCellType = import('./components/table/type').TableCellType;
 export type SelectOpt = import('./components/select2/types').SelectOpt;
 export type CardProps = import('./components/card').CardProps;
 export type ButtonProps = import('./components/button').QuartzButtonProps;
+export type CompactButtonProps =
+  import('./components/compact-button').CompactButtonProps;
 export type PerformanceCardProps =
   import('./components/performance-card').PerformanceCardProps;
 
