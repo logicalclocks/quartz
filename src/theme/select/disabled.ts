@@ -4,4 +4,6 @@ export default {
   borderColor: 'transparent',
 
   cursor: 'default',
+
+  pointerEvents: 'none',
 };
