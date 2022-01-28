@@ -10,6 +10,7 @@ export default {
     lineHeight: '15px',
     fontSize: '12px',
     fontWeight: 'bold',
+    fontFamily: 'Inter',
     py: '4px',
     px: '6px',
 
