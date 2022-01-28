@@ -14,7 +14,7 @@ const InputValidation: FC<InputValidationProps> = ({
 
   return (
     <Flex alignItems="center">
-      {icon}
+      <Flex height="16px">{icon}</Flex>
       <Text
         pl="10px"
         fontSize="12px"
