@@ -5,5 +5,5 @@ export default {
 
   cursor: 'default',
 
-  pointerEvents: 'none',
+  'pointer-events': 'none',
 };
