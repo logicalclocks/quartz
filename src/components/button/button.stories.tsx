@@ -5,6 +5,7 @@ import { Story, Meta } from '@storybook/react/types-6-0';
 import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 
 import Button, { QuartzButtonProps } from '.';
+import { IconName } from '../..';
 
 export default {
   title: 'Quartz/Buttons',
@@ -66,7 +67,7 @@ Default.argTypes = {
   icon: {
     control: {
       type: 'select',
-      options: [undefined, faCoffee],
+      options: [undefined, IconName.upload],
     },
     type: {
       summary:

@@ -10,7 +10,7 @@ import InputInfo from '../input-info';
 // Types
 import { Intents } from '../intents';
 // Styles
-import getStyles from './input.styles';
+import getStyles, { getIconStyle } from './input.styles';
 import Labeling from '../typography/labeling';
 import Tooltip from '../tooltip';
 import Icon from '../icon';
@@ -20,7 +20,7 @@ export interface InputProps extends Omit<RebassInputProps, 'css'> {
   variant?: 'primary' | 'white';
   intent?: Intents;
   info?: string;
-  icon?: IconProp;
+  icon?: IconName;
   rightIcon?: React.ReactElement;
   iconPaddingRight?: string;
   label?: string;
@@ -101,7 +101,7 @@ const Input: FC<InputProps> = forwardRef(
             placeholder={placeholder}
             {...props}
           />{' '}
-          {icon && <FontAwesomeIcon icon={icon} />}
+          {icon && <Icon icon={icon} color="gray" size="md" sx={getIconStyle}/>}
           {rightIcon && rightIcon}
         </Box>
         {info && <InputInfo intent={intent}>{info}</InputInfo>}

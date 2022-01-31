@@ -1,10 +1,11 @@
 import React, { FC, useCallback, useState } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Box, Flex, FlexProps } from 'rebass';
 
 import Labeling from '../typography/labeling';
 import { chipIconStyles, chipStyles } from './editableSelect.styles';
 import { ChipsVariants } from './types';
+import { IconName } from '../..';
+import Icon from '../icon';
 
 export interface ChipProps extends Omit<FlexProps, 'css'> {
   value: string;
@@ -59,11 +60,7 @@ const Chip: FC<ChipProps> = ({
       {!showCross && boxed && <Box width="7px" />}
       <Labeling as="span">{value}</Labeling>
       {showCross && (
-        <FontAwesomeIcon
-          icon="times"
-          style={chipIconStyles}
-          onClick={handleDelete}
-        />
+        <Icon icon={IconName.cross} size="xs" onClick={handleDelete} style={chipIconStyles}/>
       )}
       {!showCross && boxed && <Box width="7px" />}
     </Flex>

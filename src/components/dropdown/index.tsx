@@ -8,6 +8,7 @@ import List, { ListProps } from '../list/container';
 import useOnClickOutside from '../../utils/useClickOutside';
 // Types
 import { DropdownItem } from './types';
+import Icon from '../icon';
 
 export interface DropdownProps extends Omit<ListProps, 'css'> {
   items: DropdownItem[];
@@ -39,7 +40,7 @@ const Dropdown: FC<DropdownProps> = ({
             key={id || value}
             onClick={() => onClick(item)}
           >
-            {icon && <FontAwesomeIcon icon={icon} />}
+            {icon && <Icon icon={icon} size="sm"/>}
             {value}
           </ListItem>
         );
