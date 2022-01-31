@@ -11,6 +11,7 @@ export interface Props extends Omit<FlexProps, 'css' | 'onChange'> {
   value: number;
   range: [number, number];
   step: number;
+  disabled?: boolean;
   onChange: (value: number) => void;
   // eslint-disable-next-line react/require-default-props
   formatDisplayValue?: (value: number) => string;
@@ -23,6 +24,7 @@ const Slider = ({
   onChange,
   range,
   step,
+  disabled,
   formatDisplayValue = (displayValue) => displayValue.toString(),
   ...flexProps
 }: Props) => {
@@ -44,6 +46,7 @@ const Slider = ({
         </Flex>
       </Flex>
       <RcSlider
+        disabled={disabled}
         value={value}
         onChange={onChange}
         min={range[0]}
