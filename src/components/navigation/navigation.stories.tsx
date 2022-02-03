@@ -3,7 +3,6 @@ import { Box } from 'rebass';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { action } from '@storybook/addon-actions';
 import { Story, Meta } from '@storybook/react/types-6-0';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 // Components
 import Navigation, { NavigationProps } from './container';
@@ -32,7 +31,7 @@ export const Footer = () => {
           width: '50px',
         }}
       >
-        <FontAwesomeIcon icon="coffee" />
+        <Icon icon={IconName.hopworks }/>
         <span>HFS</span>
         <span>V 2.0</span>
       </Box>
@@ -48,7 +47,7 @@ export const Footer = () => {
         mx: '40px',
       }}
     >
-      <FontAwesomeIcon icon="coffee" />
+        <Icon icon={IconName.hopworks }/>
       <span>Hopsworks Feature Store version 2.0</span>
     </Box>
   );

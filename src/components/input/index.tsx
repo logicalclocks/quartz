@@ -1,8 +1,6 @@
 import { Box, Flex } from 'rebass';
 import React, { FC, forwardRef } from 'react';
-import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import { InputProps as RebassInputProps } from 'rebass__forms';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 // Components
 import Label, { LabelProps } from '../label';

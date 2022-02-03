@@ -2,9 +2,9 @@
 import { action } from '@storybook/addon-actions';
 import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
-import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 
 import FileButton, { QuartzFileButtonProps } from './index';
+import { IconName } from '../..';
 
 export default {
   title: 'Quartz/Buttons',
@@ -75,11 +75,11 @@ File.argTypes = {
   icon: {
     control: {
       type: 'select',
-      options: [undefined, faCoffee],
+      options: [undefined, IconName.download],
     },
     type: {
       summary:
-        'Put icon component from @fortawesome/free-solid-svg-icons package',
+        'Put icon component from IconName',
     },
   },
 };

@@ -2,7 +2,6 @@
 import { action } from '@storybook/addon-actions';
 import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
-import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 
 import Button, { QuartzButtonProps } from '.';
 import { IconName } from '../..';
@@ -71,7 +70,7 @@ Default.argTypes = {
     },
     type: {
       summary:
-        'Put icon component from @fortawesome/free-solid-svg-icons package',
+        'Put icon component from IconName',
     },
   },
 };

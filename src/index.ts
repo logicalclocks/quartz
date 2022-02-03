@@ -1,8 +1,3 @@
-import { library } from '@fortawesome/fontawesome-svg-core';
-
-// Font Awesome icons
-import { fas } from '@fortawesome/free-solid-svg-icons';
-import { far } from '@fortawesome/free-regular-svg-icons';
 
 import Button from './components/button';
 import CompactButton from './components/compact-button';
@@ -125,7 +120,6 @@ import useOnClickOutside from './utils/useClickOutside';
 // constants
 import * as constants from './constants';
 
-library.add(fas, far);
 
 export {
   Button,

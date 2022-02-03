@@ -1,7 +1,5 @@
 import React, { FC } from 'react';
 import { Button as RebassButton, ButtonProps, Flex } from 'rebass';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { IconDefinition } from '@fortawesome/fontawesome-common-types';
 
 // Styles
 import styles, { spinnerColor } from './button.styles';

@@ -86,6 +86,10 @@
   ],
   "dependencies": {
     "@emotion/core": "^10.0.35",
+    "@fortawesome/fontawesome-svg-core": "^1.2.36",
+    "@fortawesome/free-regular-svg-icons": "^5.15.4",
+    "@fortawesome/free-solid-svg-icons": "^5.15.4",
+    "@fortawesome/react-fontawesome": "^0.1.17",
     "@rebass/forms": "^4.0.6",
     "@styled-system/css": "^5.1.5",
     "codemirror": "^5.62.2",
