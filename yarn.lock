@@ -3487,10 +3487,10 @@
     "@types/rebass" "*"
     "@types/styled-system" "*"
 
-"@types/rebass@*", "@types/rebass@^4.0.6":
-  "integrity" "sha512-1GN4RF4vPpM/PTjodmqgG3rMbx+RAYqv/c6DQSmtjC6CPjpl/EPZRFh2NBkl7/2/AVeTQtWvcC609Ly6xmOVEw=="
-  "resolved" "https://registry.npmjs.org/@types/rebass/-/rebass-4.0.9.tgz"
-  "version" "4.0.9"
+"@types/rebass@*", "@types/rebass@^4.0.10":
+  "integrity" "sha512-Bp9Y2Bc7wrZr2NYHrqWOVRHdL5I5CRIaOiG9hlnwHH5hFRf8/FJsiJmCMsBhlsma312Jc6xWL+XUtSnfio+wOA=="
+  "resolved" "https://registry.npmjs.org/@types/rebass/-/rebass-4.0.10.tgz"
+  "version" "4.0.10"
   dependencies:
     "@types/react" "*"
     "@types/styled-components" "*"
