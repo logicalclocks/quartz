@@ -1,10 +1,9 @@
 import React, { FC, memo, useMemo } from 'react';
 import { Flex } from 'rebass';
-// eslint-disable-next-line import/no-cycle
-import { Label } from '../../..';
-// eslint-disable-next-line import/no-cycle
-import TabDescription, { TabState } from './TabDescription';
+import TabDescription from './TabDescription';
 import styles from './tab.styles';
+import Label from '../../label';
+import { TabState } from '../types';
 
 export interface TabProps {
   title: string;

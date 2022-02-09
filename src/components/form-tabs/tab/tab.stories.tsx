@@ -4,7 +4,7 @@ import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
 import { Flex } from 'rebass';
 import Tab, { TabProps } from './Tab';
-import { TabState } from './TabDescription';
+import { TabState } from '../types';
 
 export default {
   title: 'Quartz/FormTabs/Tab',

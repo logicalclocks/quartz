@@ -17,13 +17,9 @@ import {
   gradientStyles,
 } from './form-tabs.styles';
 import FormSummaryContainer from '../form-summary-container';
-// eslint-disable-next-line import/no-cycle
 import Tab from './tab/Tab';
-// eslint-disable-next-line import/no-cycle
-import { Button } from '../..';
-// eslint-disable-next-line import/no-cycle
-import { TabState } from './tab/TabDescription';
-
+import Button from '../button';
+import { TabState } from './types';
 
 export enum ValidateOpts {
   valid = 'valid',

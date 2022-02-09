@@ -1,15 +1,8 @@
 import React, { FC, memo } from 'react';
 import { Flex } from 'rebass';
-// eslint-disable-next-line import/no-cycle
-import { Label } from '../../..';
+import Label from '../../label';
 import icons from './icons';
-
-export enum TabState {
-  valid = 'valid',
-  error = 'error',
-  default = 'default',
-  optional = 'optional',
-}
+import { TabState } from '../types';
 
 export interface TabDescriptionProps {
   state: TabState;
