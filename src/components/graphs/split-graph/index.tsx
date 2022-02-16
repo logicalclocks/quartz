@@ -3,6 +3,7 @@ import { Box, Flex } from 'rebass';
 import { progressBarStyles, circleStyles } from './split-graph.styles';
 import Label from '../../label';
 import Labeling from '../../typography/labeling';
+import { Badge } from '../../badges';
 
 export const graphColors = [
   '#FFADAD',
@@ -18,6 +19,7 @@ export const graphColors = [
 export interface SplitGraphValue {
   label: string;
   value: number;
+  trainSplit?: boolean;
 }
 
 export interface SplitGraphProps {
@@ -34,13 +36,13 @@ const SplitGraph: FC<SplitGraphProps> = ({
     setSelected(ind);
   };
 
-  const sum = useMemo(() => values.reduce((acc, val) => acc + val.value, 0), [
-    values,
-  ]);
+  const sum = useMemo(
+    () => values.reduce((acc, val) => acc + val.value, 0),
+    [values],
+  );
 
   const colors = useMemo(
-    () =>
-      Array(Math.ceil(values.length / graphColors.length))
+    () => Array(Math.ceil(values.length / graphColors.length))
         .fill(0)
         .reduce((acc) => acc.concat(graphColors), []),
     [values],
@@ -51,7 +53,7 @@ const SplitGraph: FC<SplitGraphProps> = ({
       <Flex width="100%" height="10px">
         {values.map((value, ind) => (
           <Box
-            key={'bar-' + ind}
+            key={`bar-${ind}`}
             onMouseEnter={handleSelect(ind)}
             onMouseLeave={() => setSelected(null)}
             sx={progressBarStyles(
@@ -65,7 +67,7 @@ const SplitGraph: FC<SplitGraphProps> = ({
       <Flex mt="25px" flexDirection="column">
         {values.map((value, ind) => (
           <Flex
-            key={'data-' + ind}
+            key={`data-${ind}`}
             mb="7px"
             width="fit-content"
             onMouseEnter={handleSelect(ind)}
@@ -77,9 +79,12 @@ const SplitGraph: FC<SplitGraphProps> = ({
               sx={circleStyles(colors[ind], ind === selectedIndex)}
             />
             <Label mr="5px">{value.label}</Label>
-            <Labeling gray>
-              {Math.ceil((value.value / sum) * 100) + '%'}
+            <Labeling gray mr="8px">
+              {`${Math.ceil((value.value / sum) * 100)}%`}
             </Labeling>
+            {value.trainSplit && (
+              <Badge mt="-3px" variant="default" value="train split" />
+            )}
           </Flex>
         ))}
       </Flex>
