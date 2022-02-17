@@ -27,6 +27,24 @@ const argTypes = {
       summary: 'Code title',
     },
   },
+  language: {
+    control: {
+      type: 'text',
+    },
+
+    type: {
+      summary:
+        'Language of code to add proper coloring, isColorSyntax should be set to true',
+    },
+  },
+  isColorSyntax: {
+    control: {
+      type: 'boolean',
+    },
+    type: {
+      summary: 'Sets language coloring',
+    },
+  },
   copyButton: {
     control: {
       type: 'boolean',
@@ -44,6 +62,15 @@ const argTypes = {
     type: {
       required: false,
       summary: 'Show download to clipboard button',
+    },
+    defaultValue: { summary: false },
+  },
+  wrapLongLines: {
+    control: {
+      type: 'boolean',
+    },
+    type: {
+      summary: 'Wrap long lines',
     },
     defaultValue: { summary: false },
   },
