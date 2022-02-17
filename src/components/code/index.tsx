@@ -4,7 +4,7 @@ import SyntaxHighlighter from 'react-syntax-highlighter';
 import { useTheme } from 'emotion-theming';
 import Button from '../button';
 import { ITheme } from '../../theme/types';
-import BriefViewer from '../brief-viewer';
+import ExpandViewer from '../expand-viewer';
 
 import styles, {
   boxStyles,
@@ -53,10 +53,10 @@ const Code: FC<CodeProps> = ({
 }: CodeProps) => {
   const contentLines = content.split('\n');
 
-  // if it's expandable render it inside BriefViewer
+  // if it's expandable render it inside ExpandViewer
   if (expandable && contentLines.length > CONTENT_UPPER_BOUND)
     return (
-      <BriefViewer
+      <ExpandViewer
         title="Code snippet expanded view"
         /** currently merging with built-in javascript spread, if we need deep merging we may use lodash merge function instead */
         popupProps={{ ...defaultPopupProps, ...popupProps }}

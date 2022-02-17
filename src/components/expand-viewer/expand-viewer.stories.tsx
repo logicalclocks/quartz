@@ -1,11 +1,11 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
 import { Box } from 'rebass';
-import BriefViewer, { BriefViewerProps } from './index';
+import ExpandViewer, { ExpandViewerProps } from './index';
 
 export default {
-  title: 'Quartz/BriefViewer',
-  component: BriefViewer,
+  title: 'Quartz/ExpandViewer',
+  component: ExpandViewer,
 } as Meta;
 
 const argTypes = {
@@ -41,9 +41,9 @@ const argTypes = {
 };
 
 // Default
-const Template: Story<BriefViewerProps> = (props) => (
+const Template: Story<ExpandViewerProps> = (props) => (
   <Box width="700px">
-    <BriefViewer {...props} />
+    <ExpandViewer {...props} />
   </Box>
 );
 

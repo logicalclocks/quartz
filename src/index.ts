@@ -52,7 +52,7 @@ import { SymbolMode } from './components/symbol/types';
 import Collapse from './components/collapse';
 import PerformanceCard from './components/performance-card';
 import Slider from './components/slider';
-import BriefViewer from './components/brief-viewer';
+import ExpandViewer from './components/expand-viewer';
 
 // Popups
 import Drawer from './components/popup/drawer';
@@ -176,7 +176,7 @@ export {
   Divider,
   PerformanceCard,
   Slider,
-  BriefViewer,
+  ExpandViewer,
   // Popups
   usePopup,
   Popup,

@@ -6,18 +6,18 @@ import { useTheme } from 'emotion-theming';
 import { Box, Flex } from 'rebass';
 import Value from '../typography/value';
 import Subtitle from '../typography/subtitle';
-import { expandViewButtonStyle } from './brief-viewer.styles';
+import { expandViewButtonStyle } from './expand-viewer.styles';
 import { ITheme } from '../../theme/types';
 
-// BriefViewer
-export interface BriefViewerProps {
+// ExpandViewer
+export interface ExpandViewerProps {
   title?: string;
   NormalComponent: FC;
   BriefComponent: FC;
   popupProps?: Omit<PopupProps, 'children' | 'isOpen' | 'onClose'>;
 }
 
-const BriefViewer: FC<BriefViewerProps> = ({
+const ExpandViewer: FC<ExpandViewerProps> = ({
   title,
   NormalComponent,
   BriefComponent,
@@ -66,7 +66,7 @@ const BriefViewer: FC<BriefViewerProps> = ({
   );
 };
 
-export default BriefViewer;
+export default ExpandViewer;
 interface ExpandButtonProps {
   onClick: () => void;
 }
