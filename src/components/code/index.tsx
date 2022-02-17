@@ -61,7 +61,7 @@ const Code: FC<CodeProps> = ({
         /** currently merging with built-in javascript spread, if we need deep merging we may use lodash merge function instead */
         popupProps={{ ...defaultPopupProps, ...popupProps }}
         NormalComponent={() => (
-          <NormalCode
+          <CodeSnippet
             content={content}
             title={title}
             language={language}
@@ -78,7 +78,7 @@ const Code: FC<CodeProps> = ({
           />
         )}
         BriefComponent={() => (
-          <BriefCode
+          <CodeSnippet
             content={contentLines.slice(0, CONTENT_UPPER_BOUND).join('\n')}
             title={title}
             language={language}
@@ -94,7 +94,7 @@ const Code: FC<CodeProps> = ({
 
   // if it's not expandable then render it Normaly
   return (
-    <NormalCode
+    <CodeSnippet
       content={content}
       title={title}
       language={language}
@@ -110,10 +110,11 @@ const Code: FC<CodeProps> = ({
 export default Code;
 
 // Normal Code Component
-interface NormalCodeProps extends Omit<CodeProps, 'popupProps' | 'expandable'> {
+interface CodeSnippetProps
+  extends Omit<CodeProps, 'popupProps' | 'expandable'> {
   maxHeightOfCode?: string;
 }
-const NormalCode: FC<NormalCodeProps> = ({
+const CodeSnippet: FC<CodeSnippetProps> = ({
   title,
   content,
   language,
@@ -148,65 +149,10 @@ const NormalCode: FC<NormalCodeProps> = ({
       <Flex
         width="100%"
         variant="code"
+        maxHeight={maxHeightOfCode}
         {...props}
         p={0}
-        maxHeight={maxHeightOfCode}
       >
-        <SyntaxHighlighter
-          wrapLongLines={wrapLongLines}
-          showLineNumbers={showLineNumbers}
-          lineNumberStyle={{
-            ...lineNumberStyles,
-            background: theme.colors.grayShade1,
-          }}
-          language={language}
-          customStyle={{
-            ...boxStyles,
-            paddingLeft: showLineNumbers ? '0px' : '20px',
-          }}
-        >
-          {content}
-        </SyntaxHighlighter>
-      </Flex>
-    </Flex>
-  );
-};
-
-// Brief Code Component
-interface BriefCodeProps extends Omit<CodeProps, 'popupProps' | 'expandable'> {}
-
-const BriefCode: FC<BriefCodeProps> = ({
-  title,
-  content,
-  language,
-  copyButton,
-  downloadButton,
-  downloadCallback,
-  wrapLongLines,
-  showLineNumbers,
-  copyCallback,
-  ...props
-}) => {
-  const theme = useTheme<ITheme>();
-
-  return (
-    <Flex width="100%" sx={{ ...styles }} height="100%">
-      <Flex width="100%" sx={{ ...codeHeaderStyles }}>
-        <Box flexGrow={1} ml="8px" my={1}>
-          {title}
-        </Box>
-        {downloadButton && (
-          <DownloadButton
-            content={content}
-            downloadCallback={downloadCallback}
-            title={title}
-          />
-        )}
-        {copyButton && (
-          <CopyButton content={content} copyCallback={copyCallback} />
-        )}
-      </Flex>
-      <Flex width="100%" variant="code" {...props} p={0}>
         <SyntaxHighlighter
           wrapLongLines={wrapLongLines}
           showLineNumbers={showLineNumbers}
