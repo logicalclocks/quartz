@@ -43,10 +43,10 @@ const Code: FC<CodeProps> = ({
   language = 'text',
   copyButton = false,
   downloadButton = false,
-  downloadCallback = undefined,
+  downloadCallback,
   wrapLongLines,
   showLineNumbers,
-  copyCallback = undefined,
+  copyCallback,
   expandable = false,
   popupProps = defaultPopupProps,
   ...props
@@ -116,13 +116,13 @@ interface NormalCodeProps extends Omit<CodeProps, 'popupProps' | 'expandable'> {
 const NormalCode: FC<NormalCodeProps> = ({
   title,
   content,
-  language = 'text',
-  copyButton = false,
-  downloadButton = false,
-  downloadCallback = undefined,
+  language,
+  copyButton,
+  downloadButton,
+  downloadCallback,
   wrapLongLines,
   showLineNumbers,
-  copyCallback = undefined,
+  copyCallback,
   maxHeightOfCode,
   ...props
 }) => {
@@ -178,13 +178,13 @@ interface BriefCodeProps extends Omit<CodeProps, 'popupProps' | 'expandable'> {}
 const BriefCode: FC<BriefCodeProps> = ({
   title,
   content,
-  language = 'text',
-  copyButton = false,
-  downloadButton = false,
-  downloadCallback = undefined,
+  language,
+  copyButton,
+  downloadButton,
+  downloadCallback,
   wrapLongLines,
   showLineNumbers,
-  copyCallback = undefined,
+  copyCallback,
   ...props
 }) => {
   const theme = useTheme<ITheme>();
