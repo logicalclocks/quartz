@@ -75,16 +75,6 @@ const argTypes = {
     },
     defaultValue: { summary: false },
   },
-  padding: {
-    control: {
-      type: 'text',
-    },
-    type: {
-      required: false,
-      summary: '',
-    },
-    defaultValue: { summary: '20px' },
-  },
   expandable: {
     control: {
       type: 'boolean',
