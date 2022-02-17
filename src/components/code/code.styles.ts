@@ -15,7 +15,6 @@ export const boxStyles = {
 export const codeHeaderStyles = {
   backgroundColor: 'grayShade2',
   color: 'gray',
-  justifyContent: 'space-between',
   alignItems: 'center',
   fontFamily: 'Inter',
   fontWeight: 700,
@@ -58,8 +57,6 @@ export const buttonsStyles = {
 };
 
 export default {
-  p: '20px',
-  justifyContent: 'space-between',
-  alignItems: 'center',
+  justifyContent: 'flex-start',
   flexDirection: 'column',
 } as SxStyleProp;

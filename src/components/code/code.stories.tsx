@@ -33,16 +33,7 @@ const argTypes = {
     },
 
     type: {
-      summary:
-        'Language of code to add proper coloring, isColorSyntax should be set to true',
-    },
-  },
-  isColorSyntax: {
-    control: {
-      type: 'boolean',
-    },
-    type: {
-      summary: 'Sets language coloring',
+      summary: 'Language of code to add proper coloring',
     },
   },
   copyButton: {
@@ -84,8 +75,41 @@ const argTypes = {
     },
     defaultValue: { summary: false },
   },
+  padding: {
+    control: {
+      type: 'text',
+    },
+    type: {
+      required: false,
+      summary: '',
+    },
+    defaultValue: { summary: '20px' },
+  },
+  expandable: {
+    control: {
+      type: 'boolean',
+    },
+    type: {
+      required: false,
+      summary:
+        'Limit the content to 12 number of lines and add an expandable button to show the full content on popup',
+    },
+    defaultValue: { summary: false },
+  },
+  popupProps: {
+    control: {
+      type: 'object',
+    },
+    type: {
+      required: false,
+      summary:
+        'Setting custom style for the popup when showing the expanded version',
+    },
+    defaultValue: { width: '700px', height: '500px' },
+  },
 };
 
+// Default
 const Template: Story<CodeProps> = (props) => (
   <Box width="700px">
     <Code {...props} />
@@ -100,3 +124,43 @@ Default.args = {
 };
 
 Default.argTypes = argTypes;
+
+// Expandable
+const TemplateExpandable: Story<CodeProps> = (props) => (
+  <Box width="700px">
+    <Code {...props} />
+  </Box>
+);
+
+export const Expandable = TemplateExpandable.bind({});
+
+const content = `#!/bin/bash
+
+## a verrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrry loooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooong line
+set -e
+
+if [ $# -lt 1 ] ; then
+  echo "Usage: <prog> hostname [admin_port port]"
+fi
+
+admin_port=16005
+port=14005
+if [ $# -eq 3 ] ; then
+  admin_port=$2
+  port=$3
+fi
+
+cd ..
+mvn -Dglassfish.port=$port -Dglassfish.admin_port=$admin_port -Dglassfish.hostname=$1 clean install -Pdeploy
+cd scripts
+./jim-bbc1-scp.sh
+`;
+
+Expandable.args = {
+  content: content,
+  title: 'cargo.sh',
+  expandable: true,
+  wrapLongLines: true,
+};
+
+Expandable.argTypes = argTypes;
