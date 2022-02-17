@@ -1,7 +1,7 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
 import { Box } from 'rebass';
-import Code, { CodeProps } from './index';
+import Code, { CodeProps, defaultPopupProps } from './index';
 
 export default {
   title: 'Quartz/Code',
@@ -95,7 +95,7 @@ const argTypes = {
       summary:
         'Setting custom style for the popup when showing the expanded version',
     },
-    defaultValue: { width: '700px', height: '500px' },
+    defaultValue: defaultPopupProps,
   },
 };
 

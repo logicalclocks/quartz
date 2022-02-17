@@ -33,8 +33,9 @@ export interface CodeProps extends Omit<FlexProps, 'css' | 'title'> {
   popupProps?: Omit<PopupProps, 'children' | 'isOpen' | 'onClose'>;
 }
 
-const defaultPopupProps = {
-  width: '700px',
+export const defaultPopupProps = {
+  width: 'calc(100vw - 80px)',
+  height: 'calc(100vh - 80px)',
 };
 
 const Code: FC<CodeProps> = ({
@@ -149,7 +150,7 @@ const CodeSnippet: FC<CodeSnippetProps> = ({
       <Flex
         width="100%"
         variant="code"
-        maxHeight={maxHeightOfCode}
+        height={maxHeightOfCode}
         {...props}
         p={0}
       >
