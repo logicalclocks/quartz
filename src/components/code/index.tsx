@@ -64,6 +64,7 @@ const Code: FC<CodeProps> = ({
         NormalComponent={() => (
           <CodeSnippet
             content={content}
+            contentToShow={content}
             title={title}
             language={language}
             copyButton={copyButton}
@@ -80,7 +81,10 @@ const Code: FC<CodeProps> = ({
         )}
         BriefComponent={() => (
           <CodeSnippet
-            content={contentLines.slice(0, CONTENT_UPPER_BOUND).join('\n')}
+            content={content}
+            contentToShow={contentLines
+              .slice(0, CONTENT_UPPER_BOUND)
+              .join('\n')}
             title={title}
             language={language}
             copyButton={copyButton}
@@ -113,11 +117,13 @@ export default Code;
 // Normal Code Component
 interface CodeSnippetProps
   extends Omit<CodeProps, 'popupProps' | 'expandable'> {
+  contentToShow: string;
   maxHeightOfCode?: string;
 }
 const CodeSnippet: FC<CodeSnippetProps> = ({
   title,
   content,
+  contentToShow,
   language,
   copyButton,
   downloadButton,
@@ -167,7 +173,7 @@ const CodeSnippet: FC<CodeSnippetProps> = ({
             paddingLeft: showLineNumbers ? '0px' : '20px',
           }}
         >
-          {content}
+          {contentToShow}
         </SyntaxHighlighter>
       </Flex>
     </Flex>
