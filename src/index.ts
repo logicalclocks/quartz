@@ -112,6 +112,9 @@ import {
 import ThemeProvider from './theme/ThemeProvider';
 import theme from './theme/theme';
 
+// Icons
+import Icons from './sources/icons';
+
 // Hooks
 import useDropdown from './utils/useDropdown';
 import useNavigation from './components/navigation/useNavigation';
@@ -230,6 +233,7 @@ export {
   theme,
   // Constants
   constants,
+  Icons
 };
 
 export type ITheme = import('./theme/types').ITheme;

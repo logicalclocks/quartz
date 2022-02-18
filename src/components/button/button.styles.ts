@@ -1,4 +1,4 @@
-import { Flex, SxStyleProp } from 'rebass';
+import { SxStyleProp } from 'rebass';
 import buttonsStyles from '../../theme/buttons';
 
 export default {

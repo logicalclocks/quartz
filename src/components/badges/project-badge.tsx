@@ -4,6 +4,7 @@ import { Flex, FlexProps } from 'rebass';
 // Components
 import Value from '../typography/value';
 import Icon from '../icon';
+import { IconName } from '../..';
 
 export interface ProjectBadgeProps extends Omit<FlexProps, 'css'> {
   value: string | number;
@@ -32,7 +33,7 @@ const ProjectBadge: FC<ProjectBadgeProps> = ({
     <Value as="span" lineHeight="13px">
       {value}
     </Value>
-    {isLock && <Icon ml="5px" fontSize="10px" icon="lock" />}
+    {isLock && <Icon ml="5px" icon={IconName.lock} />}
   </Flex>
 );
 

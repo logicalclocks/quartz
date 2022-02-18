@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { Button as RebassButton, ButtonProps, Flex } from 'rebass';
+import { Button as RebassButton, ButtonProps } from 'rebass';
 
 // Styles
 import styles, { spinnerColor } from './button.styles';
