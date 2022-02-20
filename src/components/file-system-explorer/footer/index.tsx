@@ -5,7 +5,7 @@ import Labeling from '../../typography/labeling';
 import { ActiveFile } from '../index';
 import Button from '../../button';
 
-export interface fileExplorerFooter {
+export interface FileExplorerFooter {
   value?: string;
   activeFile?: ActiveFile;
   onClose: (key: any) => void;
@@ -13,9 +13,10 @@ export interface fileExplorerFooter {
   columns: any[];
   handleSelectFile: (activeFile: any, isDownload: boolean) => void;
   fileListValue: Array<ActiveFile>[];
+  rootDir: string;
 }
 
-const FooterFileExplorer: FC<fileExplorerFooter> = ({
+const FooterFileExplorer: FC<FileExplorerFooter> = ({
   value,
   activeFile,
   columns,
@@ -23,26 +24,26 @@ const FooterFileExplorer: FC<fileExplorerFooter> = ({
   onClose,
   handleSelectFile,
   fileListValue,
+  rootDir,
   ...props
-}: fileExplorerFooter) => {
+}: FileExplorerFooter) => {
   const ExplorerMode = (mode: string) => {
     switch (mode) {
       case 'oneFile':
         return activeFile ? activeFile.attributes.name : 'pick a file';
 
       case 'nFiles': {
-        if (!!fileListValue.length) {
-          const newList = fileListValue.map((el: any) => {
-            return el.attributes.name;
-          });
+        if (fileListValue.length) {
+          const newList = fileListValue.map((el: any) => el.attributes.name);
           return newList.join(' ; ');
-        } else return 'pick a file';
+        }
+        return 'pick a file';
       }
 
       case 'oneFolder':
-        return !!value ? value : '/';
+        return value || rootDir;
       default:
-        return;
+        return rootDir;
     }
   };
   const ColorStyle = (mode: string) => {
@@ -51,7 +52,7 @@ const FooterFileExplorer: FC<fileExplorerFooter> = ({
         return activeFile ? 'primary' : 'gray';
 
       case 'nFiles':
-        return !!fileListValue.length ? 'primary' : 'gray';
+        return fileListValue.length ? 'primary' : 'gray';
 
       case 'oneFolder':
         return 'primary';
@@ -69,7 +70,7 @@ const FooterFileExplorer: FC<fileExplorerFooter> = ({
         return handleSelectFile(fileListValue, false);
 
       case 'oneFolder':
-        return handleSelectFile(value || '/', false);
+        return handleSelectFile(value || rootDir, false);
       default:
         return 'gray';
     }
