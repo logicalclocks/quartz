@@ -269,6 +269,7 @@ export type CompactButtonProps =
   import('./components/compact-button').CompactButtonProps;
 export type PerformanceCardProps =
   import('./components/performance-card').PerformanceCardProps;
+export type { ExpandViewerProps } from './components/expand-viewer';
 
 // Rebass components
 export { Flex, Box } from 'rebass';
