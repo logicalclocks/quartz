@@ -64,7 +64,6 @@ const Code: FC<CodeProps> = ({
         NormalComponent={() => (
           <CodeSnippet
             content={content}
-            contentToShow={content}
             title={title}
             language={language}
             copyButton={copyButton}
@@ -117,7 +116,7 @@ export default Code;
 // Normal Code Component
 interface CodeSnippetProps
   extends Omit<CodeProps, 'popupProps' | 'expandable'> {
-  contentToShow: string;
+  contentToShow?: string;
   maxHeightOfCode?: string;
 }
 const CodeSnippet: FC<CodeSnippetProps> = ({
@@ -173,7 +172,7 @@ const CodeSnippet: FC<CodeSnippetProps> = ({
             paddingLeft: showLineNumbers ? '0px' : '20px',
           }}
         >
-          {contentToShow}
+          {contentToShow ?? content}
         </SyntaxHighlighter>
       </Flex>
     </Flex>
