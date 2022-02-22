@@ -211,7 +211,7 @@ const CopyButton: FC<Pick<CodeProps, 'copyCallback' | 'content'>> = ({
 }) => {
   const [copied, setCopied] = useState(false);
 
-  const useCodeKey = async () => {
+  const handleCopyClicked = async () => {
     let success = false;
     if (copyCallback) {
       success = await copyCallback();
@@ -229,7 +229,7 @@ const CopyButton: FC<Pick<CodeProps, 'copyCallback' | 'content'>> = ({
       <Button
         intent="ghost"
         sx={{ ...buttonsStyles }}
-        onClick={useCodeKey}
+        onClick={handleCopyClicked}
         disabled={copied}
       >
         {icons.copy}
