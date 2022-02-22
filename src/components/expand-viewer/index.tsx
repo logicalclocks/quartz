@@ -9,7 +9,6 @@ import Subtitle from '../typography/subtitle';
 import { expandViewButtonStyle } from './expand-viewer.styles';
 import { ITheme } from '../../theme/types';
 
-// ExpandViewer
 export interface ExpandViewerProps {
   title?: string;
   NormalComponent: FC;
@@ -57,7 +56,7 @@ const ExpandViewer: FC<ExpandViewerProps> = ({
               icon={IconName.cross}
               intent="ghost"
               onClick={() => setExpanded(false)}
-            ></IconButton>
+            />
           </Flex>
           <NormalComponent />
         </Box>
