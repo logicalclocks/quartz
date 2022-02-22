@@ -137,8 +137,8 @@ const CodeSnippet: FC<CodeSnippetProps> = ({
   const theme = useTheme<ITheme>();
 
   return (
-    <Flex width="100%" sx={{ ...styles }} height="100%">
-      <Flex width="100%" sx={{ ...codeHeaderStyles }}>
+    <Flex width="100%" sx={styles} height="100%">
+      <Flex width="100%" sx={codeHeaderStyles}>
         <Box flexGrow={1} ml="8px" my={1}>
           {title}
         </Box>
@@ -194,7 +194,7 @@ const DownloadButton: FC<
 
   return (
     <Box>
-      <Button intent="ghost" sx={{ ...buttonsStyles }} onClick={download}>
+      <Button intent="ghost" sx={buttonsStyles} onClick={download}>
         {icons.download}
         <Value ml="5px" mt="1px">
           download
@@ -234,7 +234,7 @@ const CopyButton: FC<Pick<CodeProps, 'copyCallback' | 'content'>> = ({
       >
         {icons.copy}
         <Value ml="5px" mt="1px">
-          {!copied ? 'copy' : 'copied'}
+          {copied ? 'copied' : 'copy'}
         </Value>
       </Button>
     </Box>
