@@ -227,7 +227,7 @@ const CopyButton: FC<Pick<CodeProps, 'copyCallback' | 'content'>> = ({
     <Box>
       <Button
         intent="ghost"
-        sx={{ ...buttonsStyles }}
+        sx={buttonsStyles}
         onClick={handleCopyClicked}
         disabled={copied}
       >

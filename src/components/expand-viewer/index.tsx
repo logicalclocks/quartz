@@ -3,10 +3,10 @@ import Popup, { PopupProps } from '../popup';
 import IconButton from '../icon-button';
 import { getIcon, IconName } from '../icon/list';
 import { useTheme } from 'emotion-theming';
-import { Box, Flex } from 'rebass';
+import { Box, Button as RebassButton, Flex } from 'rebass';
 import Value from '../typography/value';
 import Subtitle from '../typography/subtitle';
-import { expandViewButtonStyle } from './expand-viewer.styles';
+import expandViewButtonStyle from './expand-viewer.styles';
 import { ITheme } from '../../theme/types';
 
 export interface ExpandViewerProps {
@@ -71,17 +71,9 @@ interface ExpandButtonProps {
 }
 const ExpandButton: FC<ExpandButtonProps> = ({ onClick }) => {
   const theme = useTheme<ITheme>();
-  const [isHovered, setIsHovered] = useState(false);
   return (
-    <button
-      style={expandViewButtonStyle(theme, isHovered)}
-      onClick={onClick}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-    >
-      <Value as="span" color="primary">
-        expand view
-      </Value>
+    <RebassButton variant="ghost" sx={expandViewButtonStyle} onClick={onClick}>
+      <Value>expand view</Value>
       <Flex
         as="span"
         sx={{
@@ -94,6 +86,6 @@ const ExpandButton: FC<ExpandButtonProps> = ({ onClick }) => {
       >
         {getIcon(IconName.arrows_maximize, theme.colors.primary)}
       </Flex>
-    </button>
+    </RebassButton>
   );
 };
