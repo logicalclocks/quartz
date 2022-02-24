@@ -17,6 +17,7 @@ export default {
 
   '> div:first-of-type': {
     boxSizing: 'border-box',
+    display: 'flex',
 
     outline: 'none',
 
@@ -32,7 +33,8 @@ export default {
     fontSize: '12px',
 
     svg: {
-      mr: '11px',
+      mr: '12px',
+      mt: '-6px',
     },
   },
 };
