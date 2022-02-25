@@ -13,8 +13,8 @@
     "node": ">=14.0.0"
   },
   "scripts": {
-    "build": "microbundle-crl --no-compress --format modern,cjs",
-    "build-dev": "run-s build && rm -rf node_modules/rebass node_modules/react node_modules/emotion-theming",
+    "build": "microbundle-crl --compress --format modern,cjs",
+    "build-dev": "microbundle-crl --no-compress --format modern,cjs",
     "start": "microbundle-crl watch --no-compress --format modern,cjs",
     "prepare": "run-s build",
     "prepack": "run-s build",
