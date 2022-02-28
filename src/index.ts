@@ -47,6 +47,7 @@ import { SymbolMode } from './components/symbol/types';
 import Collapse from './components/collapse';
 import PerformanceCard from './components/performance-card';
 import Slider from './components/slider';
+import ExpandViewer from './components/expand-viewer';
 
 // Popups
 import Drawer from './components/popup/drawer';
@@ -170,6 +171,7 @@ export {
   Divider,
   PerformanceCard,
   Slider,
+  ExpandViewer,
   // Popups
   usePopup,
   Popup,
@@ -261,6 +263,7 @@ export type CompactButtonProps =
   import('./components/compact-button').CompactButtonProps;
 export type PerformanceCardProps =
   import('./components/performance-card').PerformanceCardProps;
+export type { ExpandViewerProps } from './components/expand-viewer';
 
 // Rebass components
 export { Flex, Box } from 'rebass';

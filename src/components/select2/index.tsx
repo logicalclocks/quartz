@@ -207,11 +207,10 @@ const Select: FC<SelectProps> = ({
     );
   }, [labelAction, info]);
 
-  const arrayValue = useMemo(
-    // eslint-disable-next-line no-nested-ternary
-    () => (Array.isArray(value) ? value : value && value !== '' ? [value] : []),
-    [value],
-  );
+  const arrayValue = useMemo(() => {
+    if (Array.isArray(value)) return value;
+    return value !== undefined && value !== '' ? [value] : [];
+  }, [value]);
 
   const selectedOption = useMemo(() => {
     const mapped = arrayValue

@@ -43,6 +43,7 @@ export enum IconName {
   arrow_left,
   arrow_right,
   arrow_up_down,
+  arrows_maximize,
   validate,
   data_validation,
   ingest,
@@ -1191,6 +1192,26 @@ export function getIcon(
           />
         </svg>
       );
+   case IconName.arrows_maximize:
+      return (
+        <svg
+          width="18"
+          height="18"
+          viewBox="0 0 18 18"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fillRule="evenodd"
+            clipRule="evenodd"
+            d="M17.0001 1L9.00008 9M17.0001 1V6M17.0001 1H12.0001M1.00008 17L9.00008 9M1.00008 17H6M1.00008 17L1 12M9.00008 9L17.0001 17M17.0001 17L1.00008 1M17.0001 17V12M17.0001 17H12.0001M1.00008 1H6.00008M1.00008 1V6"
+            stroke={color}
+            stroke-width="2"
+            stroke-linecap="round"
+            fill={color}
+          />
+        </svg>
+      );
     case IconName.contact:
       return (
         <svg
@@ -1284,7 +1305,6 @@ export function getIcon(
           />
         </svg>
       );
-
     default:
       return <svg />;
   }

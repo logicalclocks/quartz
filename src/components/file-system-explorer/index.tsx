@@ -26,6 +26,7 @@ export interface FileSystemExplorerProps
   data: any;
   disableDownload?: boolean;
   validExtensions?: string[];
+  rootDir?: string;
   handleLoadMore: (path: string, columnIndex: number) => void;
   shortcutActions?: React.ReactNode;
   contentProps?: Omit<RebassCardProps, 'css' | 'children'>;
@@ -60,6 +61,7 @@ const FileSystemExplorer: FC<FileSystemExplorerProps> = ({
   shortcutActions,
   handleDownloadFile,
   mode = 'oneFile',
+  rootDir = '/',
   contentProps,
   handleLoadMore = () => console.log('load more in quartz'),
   handleSelectFile = () => console.log('handleSelectFile in quartz'),
@@ -169,6 +171,7 @@ const FileSystemExplorer: FC<FileSystemExplorerProps> = ({
         columns={columns}
         mode={mode}
         handleSelectFile={handleSelectFile}
+        rootDir={rootDir}
       />
     </RebassCard>
   );
