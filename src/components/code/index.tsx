@@ -4,6 +4,7 @@ import SyntaxHighlighter from 'react-syntax-highlighter';
 import { useTheme } from 'emotion-theming';
 import Button from '../button';
 import { ITheme } from '../../theme/types';
+import ExpandViewer from '../expand-viewer';
 
 import styles, {
   boxStyles,
@@ -14,42 +15,202 @@ import styles, {
 import icons from '../../sources/icons';
 import Value from '../typography/value';
 import { copyToClipboard, saveToFile } from '../../utils';
+import { PopupProps } from '../popup';
+
+const CONTENT_UPPER_BOUND = 12;
 
 export interface CodeProps extends Omit<FlexProps, 'css' | 'title'> {
   title?: React.ReactElement | string;
   content: string;
   language?: string;
-  element?: React.ReactElement;
-  isColorSyntax?: boolean;
   copyButton?: boolean;
   downloadButton?: boolean;
   downloadCallback?: () => void;
   wrapLongLines?: boolean;
   showLineNumbers?: boolean;
   copyCallback?: () => Promise<boolean>;
-  padding?: string;
+  expandable?: boolean;
+  popupProps?: Omit<PopupProps, 'children' | 'isOpen' | 'onClose'>;
 }
+
+export const defaultPopupProps = {
+  width: 'calc(100vw - 80px)',
+  height: 'calc(100vh - 80px)',
+};
 
 const Code: FC<CodeProps> = ({
   title,
   content,
-  language,
-  isColorSyntax,
+  language = 'text',
   copyButton = false,
   downloadButton = false,
-  downloadCallback = undefined,
+  downloadCallback,
   wrapLongLines,
   showLineNumbers,
-  copyCallback = undefined,
-  element,
-  padding = '20px',
+  copyCallback,
+  expandable = false,
+  popupProps = defaultPopupProps,
   ...props
 }: CodeProps) => {
-  const [copied, setCopied] = useState(false);
+  const contentLines = content.split('\n');
 
+  // if it's expandable render it inside ExpandViewer
+  if (expandable && contentLines.length > CONTENT_UPPER_BOUND)
+    return (
+      <ExpandViewer
+        title="Code snippet expanded view"
+        /** currently merging with built-in javascript spread, if we need deep merging we may use lodash merge function instead */
+        popupProps={{ ...defaultPopupProps, ...popupProps }}
+        NormalComponent={() => (
+          <CodeSnippet
+            content={content}
+            title={title}
+            language={language}
+            copyButton={copyButton}
+            downloadButton={downloadButton}
+            downloadCallback={downloadCallback}
+            wrapLongLines={wrapLongLines}
+            maxHeightOfCode={
+              popupProps.height || popupProps.maxHeight
+                ? `calc(${popupProps.height ?? popupProps.maxHeight} - 143px)`
+                : '100%'
+            }
+            {...props}
+          />
+        )}
+        BriefComponent={() => (
+          <CodeSnippet
+            content={content}
+            contentToShow={contentLines
+              .slice(0, CONTENT_UPPER_BOUND)
+              .join('\n')}
+            title={title}
+            language={language}
+            copyButton={copyButton}
+            downloadButton={downloadButton}
+            downloadCallback={downloadCallback}
+            wrapLongLines={wrapLongLines}
+            {...props}
+          />
+        )}
+      />
+    );
+
+  // if it's not expandable then render it Normaly
+  return (
+    <CodeSnippet
+      content={content}
+      title={title}
+      language={language}
+      copyButton={copyButton}
+      downloadButton={downloadButton}
+      downloadCallback={downloadCallback}
+      wrapLongLines={wrapLongLines}
+      {...props}
+    />
+  );
+};
+
+export default Code;
+
+// Normal Code Component
+interface CodeSnippetProps
+  extends Omit<CodeProps, 'popupProps' | 'expandable'> {
+  contentToShow?: string;
+  maxHeightOfCode?: string;
+}
+const CodeSnippet: FC<CodeSnippetProps> = ({
+  title,
+  content,
+  contentToShow,
+  language,
+  copyButton,
+  downloadButton,
+  downloadCallback,
+  wrapLongLines,
+  showLineNumbers,
+  copyCallback,
+  maxHeightOfCode,
+  ...props
+}) => {
   const theme = useTheme<ITheme>();
 
-  const useCodeKey = async () => {
+  return (
+    <Flex width="100%" sx={styles} height="100%">
+      <Flex width="100%" sx={codeHeaderStyles}>
+        <Box flexGrow={1} ml="8px" my={1}>
+          {title}
+        </Box>
+        {downloadButton && (
+          <DownloadButton
+            content={content}
+            downloadCallback={downloadCallback}
+            title={title}
+          />
+        )}
+        {copyButton && (
+          <CopyButton content={content} copyCallback={copyCallback} />
+        )}
+      </Flex>
+      <Flex
+        width="100%"
+        variant="code"
+        height={maxHeightOfCode}
+        {...props}
+        p={0}
+      >
+        <SyntaxHighlighter
+          wrapLongLines={wrapLongLines}
+          showLineNumbers={showLineNumbers}
+          lineNumberStyle={{
+            ...lineNumberStyles,
+            background: theme.colors.grayShade1,
+          }}
+          language={language}
+          customStyle={{
+            ...boxStyles,
+            paddingLeft: showLineNumbers ? '0px' : '20px',
+          }}
+        >
+          {contentToShow ?? content}
+        </SyntaxHighlighter>
+      </Flex>
+    </Flex>
+  );
+};
+
+// Download Button
+const DownloadButton: FC<
+  Pick<CodeProps, 'content' | 'downloadCallback' | 'title'>
+> = ({ content, downloadCallback, title }) => {
+  const download = () => {
+    if (downloadCallback) {
+      downloadCallback();
+    } else {
+      saveToFile(title || 'download', content);
+    }
+  };
+
+  return (
+    <Box>
+      <Button intent="ghost" sx={buttonsStyles} onClick={download}>
+        {icons.download}
+        <Value ml="5px" mt="1px">
+          download
+        </Value>
+      </Button>
+    </Box>
+  );
+};
+
+// Copy Button
+const CopyButton: FC<Pick<CodeProps, 'copyCallback' | 'content'>> = ({
+  copyCallback,
+  content,
+}) => {
+  const [copied, setCopied] = useState(false);
+
+  const handleCopyClicked = async () => {
     let success = false;
     if (copyCallback) {
       success = await copyCallback();
@@ -62,77 +223,19 @@ const Code: FC<CodeProps> = ({
     }, 800);
   };
 
-  const download = () => {
-    if (downloadCallback) {
-      downloadCallback();
-    } else {
-      saveToFile(title || 'download', content);
-    }
-  };
-
   return (
-    <Flex width="100%" sx={{ ...styles, p: padding }} height="100%">
-      <Flex width="100%" sx={{ ...codeHeaderStyles }}>
-        {title ? (
-          <Flex alignItems="center" ml="8px">
-            {title}
-          </Flex>
-        ) : (
-          <div />
-        )}
-        <Flex>
-          {downloadButton && (
-            <Box>
-              <Button
-                intent="ghost"
-                sx={{ ...buttonsStyles }}
-                onClick={download}
-              >
-                {icons.download}
-                <Value ml="5px" mt="1px">
-                  download
-                </Value>
-              </Button>
-            </Box>
-          )}
-          {copyButton && (
-            <Box>
-              <Button
-                intent="ghost"
-                sx={{ ...buttonsStyles }}
-                onClick={useCodeKey}
-                disabled={copied}
-              >
-                {icons.copy}
-                <Value ml="5px" mt="1px">
-                  {!copied ? 'copy' : 'copied'}
-                </Value>
-              </Button>
-            </Box>
-          )}
-        </Flex>
-      </Flex>
-      <Flex width="100%" variant="code" height="100%" {...props}>
-        {element || (
-          <SyntaxHighlighter
-            wrapLongLines={wrapLongLines}
-            showLineNumbers={showLineNumbers}
-            lineNumberStyle={{
-              ...lineNumberStyles,
-              background: theme.colors.grayShade1,
-            }}
-            language={isColorSyntax ? language : 'text'}
-            customStyle={{
-              ...boxStyles,
-              paddingLeft: showLineNumbers ? '0px' : '20px',
-            }}
-          >
-            {content}
-          </SyntaxHighlighter>
-        )}
-      </Flex>
-    </Flex>
+    <Box>
+      <Button
+        intent="ghost"
+        sx={buttonsStyles}
+        onClick={handleCopyClicked}
+        disabled={copied}
+      >
+        {icons.copy}
+        <Value ml="5px" mt="1px">
+          {copied ? 'copied' : 'copy'}
+        </Value>
+      </Button>
+    </Box>
   );
 };
-
-export default Code;

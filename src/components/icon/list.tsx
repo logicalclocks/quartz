@@ -35,6 +35,7 @@ export enum IconName {
   arrow_up,
   arrow_left,
   arrow_right,
+  arrows_maximize,
   validate,
   data_validation,
   ingest,
@@ -1065,6 +1066,26 @@ export function getIcon(
             fillRule="evenodd"
             clipRule="evenodd"
             d="M14.6916 7.89397C12.787 6.64268 10.2033 6.85439 8.52862 8.5291C6.85391 10.2038 6.64219 12.7875 7.89348 14.6921L14.6916 7.89397ZM9.30763 16.1063C11.2122 17.3578 13.7961 17.1462 15.4709 15.4714C17.1457 13.7966 17.3574 11.2127 16.1058 9.30812L9.30763 16.1063ZM16.8851 7.11489C14.187 4.41678 9.81251 4.41678 7.1144 7.11489C4.41629 9.813 4.41629 14.1875 7.1144 16.8856C9.81251 19.5837 14.187 19.5837 16.8851 16.8856C19.5832 14.1875 19.5832 9.813 16.8851 7.11489Z"
+            fill={color}
+          />
+        </svg>
+      );
+    case IconName.arrows_maximize:
+      return (
+        <svg
+          width="18"
+          height="18"
+          viewBox="0 0 18 18"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fillRule="evenodd"
+            clipRule="evenodd"
+            d="M17.0001 1L9.00008 9M17.0001 1V6M17.0001 1H12.0001M1.00008 17L9.00008 9M1.00008 17H6M1.00008 17L1 12M9.00008 9L17.0001 17M17.0001 17L1.00008 1M17.0001 17V12M17.0001 17H12.0001M1.00008 1H6.00008M1.00008 1V6"
+            stroke={color}
+            stroke-width="2"
+            stroke-linecap="round"
             fill={color}
           />
         </svg>
