@@ -43,7 +43,6 @@ const Code: FC<CodeProps> = ({
   language = 'text',
   copyButton = false,
   downloadButton = false,
-  showLineNumbers,
   expandable = false,
   popupProps = defaultPopupProps,
   ...props
@@ -55,7 +54,10 @@ const Code: FC<CodeProps> = ({
     return (
       <ExpandViewer
         title="Code snippet expanded view"
-        /** currently merging with built-in javascript spread, if we need deep merging we may use lodash merge function instead */
+        /**
+         * currently merging with built-in javascript spread
+         * if we need deep merging we may use lodash merge function instead
+         */
         popupProps={{ ...defaultPopupProps, ...popupProps }}
         NormalComponent={() => (
           <CodeSnippet
