@@ -67,7 +67,11 @@ Default.args = {
   title: 'Title',
   firstValue: 'value 1',
   secondValue: 'value 2',
-  mainButton: <Button intent="primary">main</Button>,
+  mainButton: (
+    <Button intent="primary" isLoading>
+      main
+    </Button>
+  ),
   secondaryButton: <Button intent="secondary">secondary</Button>,
 };
 

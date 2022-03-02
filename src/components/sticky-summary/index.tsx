@@ -47,7 +47,7 @@ const StickySummary: FC<StickySummaryProps> = ({
     </Box>
     <Box sx={{ ...boxButtonStyles }}>
       {secondaryButton && <Box>{secondaryButton}</Box>}
-      <Box>{mainButton}</Box>
+      <Box ml="20px">{mainButton}</Box>
     </Box>
   </FormSummaryContainer>
 );
