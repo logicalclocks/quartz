@@ -147,7 +147,7 @@ cd scripts
 `;
 
 Expandable.args = {
-  content: content,
+  content,
   title: 'cargo.sh',
   expandable: true,
   wrapLongLines: true,

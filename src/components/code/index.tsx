@@ -39,15 +39,10 @@ export const defaultPopupProps = {
 };
 
 const Code: FC<CodeProps> = ({
-  title,
   content,
   language = 'text',
   copyButton = false,
   downloadButton = false,
-  downloadCallback,
-  wrapLongLines,
-  showLineNumbers,
-  copyCallback,
   expandable = false,
   popupProps = defaultPopupProps,
   ...props
@@ -55,21 +50,21 @@ const Code: FC<CodeProps> = ({
   const contentLines = content.split('\n');
 
   // if it's expandable render it inside ExpandViewer
-  if (expandable && contentLines.length > CONTENT_UPPER_BOUND)
+  if (expandable && contentLines.length > CONTENT_UPPER_BOUND) {
     return (
       <ExpandViewer
         title="Code snippet expanded view"
-        /** currently merging with built-in javascript spread, if we need deep merging we may use lodash merge function instead */
+        /**
+         * currently merging with built-in javascript spread
+         * if we need deep merging we may use lodash merge function instead
+         */
         popupProps={{ ...defaultPopupProps, ...popupProps }}
         NormalComponent={() => (
           <CodeSnippet
             content={content}
-            title={title}
             language={language}
             copyButton={copyButton}
             downloadButton={downloadButton}
-            downloadCallback={downloadCallback}
-            wrapLongLines={wrapLongLines}
             maxHeightOfCode={
               popupProps.height || popupProps.maxHeight
                 ? `calc(${popupProps.height ?? popupProps.maxHeight} - 143px)`
@@ -84,28 +79,23 @@ const Code: FC<CodeProps> = ({
             contentToShow={contentLines
               .slice(0, CONTENT_UPPER_BOUND)
               .join('\n')}
-            title={title}
             language={language}
             copyButton={copyButton}
             downloadButton={downloadButton}
-            downloadCallback={downloadCallback}
-            wrapLongLines={wrapLongLines}
             {...props}
           />
         )}
       />
     );
+  }
 
   // if it's not expandable then render it Normaly
   return (
     <CodeSnippet
       content={content}
-      title={title}
       language={language}
       copyButton={copyButton}
       downloadButton={downloadButton}
-      downloadCallback={downloadCallback}
-      wrapLongLines={wrapLongLines}
       {...props}
     />
   );
