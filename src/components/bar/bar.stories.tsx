@@ -1,9 +1,11 @@
 import React from 'react';
+import { Box } from 'rebass';
 import { Story, Meta } from '@storybook/react/types-6-0';
 
 import Bar, { BarProps } from './index';
 import ProgressBar, { ProgressBarProps } from './progress';
 import FreshnessBar, { FreshnessBarProps } from './freshness';
+import ProgressBar2C, { ProgressBar2Props } from './progress-bar-2';
 
 export default {
   title: 'Quartz/Bars',
@@ -111,4 +113,41 @@ Freshness.argTypes = {
       required: true,
     },
   },
+};
+
+// ProgressBar2
+export const ProgressBar2: Story<ProgressBar2Props> = (props) => (
+  <Box width="700px">
+    <ProgressBar2C {...props} />
+  </Box>
+);
+
+ProgressBar2.argTypes = {
+  isAnimating: {
+    control: {
+      type: 'boolean',
+    },
+  },
+  animationDuration: {
+    control: {
+      type: 'number',
+    },
+  },
+  incrementDuration: {
+    control: {
+      type: 'number',
+    },
+  },
+  minimum: {
+    control: {
+      type: 'number',
+    },
+  },
+};
+
+ProgressBar2.args = {
+  isAnimating: true,
+  animationDuration: undefined,
+  incrementDuration: undefined,
+  minimum: undefined,
 };
