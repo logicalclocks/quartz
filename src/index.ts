@@ -66,6 +66,7 @@ import Bar from './components/bar';
 import ProgressBar from './components/bar/progress';
 import FreshnessBar from './components/bar/freshness';
 import PerformanceBar from './components/performance-bar';
+import ProgressBar2 from './components/bar/progress-bar-2';
 
 // Badges
 import User from './components/user';
@@ -188,6 +189,7 @@ export {
   ProgressBar,
   FreshnessBar,
   PerformanceBar,
+  ProgressBar2,
   // Badges
   User,
   TextValueBadge,
@@ -270,6 +272,7 @@ export type CompactButtonProps =
 export type PerformanceCardProps =
   import('./components/performance-card').PerformanceCardProps;
 export type { ExpandViewerProps } from './components/expand-viewer';
+export type { ProgressBar2Props } from './components/bar/progress-bar-2';
 
 // Rebass components
 export { Flex, Box } from 'rebass';
