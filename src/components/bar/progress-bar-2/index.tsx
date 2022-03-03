@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import React, { FC } from 'react';
 import { useNProgress } from '@tanem/react-nprogress';
 
 import Bar from './Bar';
