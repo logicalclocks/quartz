@@ -16,7 +16,7 @@ const Bar: React.FC<{
     }}
   >
     <Flex
-      variant="perf.green"
+      variant={variant}
       sx={{
         position: 'absolute',
         width: '100%',

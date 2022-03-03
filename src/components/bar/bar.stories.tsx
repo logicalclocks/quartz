@@ -143,6 +143,11 @@ ProgressBar2.argTypes = {
       type: 'number',
     },
   },
+  variant: {
+    control: {
+      type: 'text',
+    },
+  },
 };
 
 ProgressBar2.args = {
@@ -150,4 +155,5 @@ ProgressBar2.args = {
   animationDuration: undefined,
   incrementDuration: undefined,
   minimum: undefined,
+  variant: 'perf.green',
 };
