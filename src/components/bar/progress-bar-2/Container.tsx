@@ -3,9 +3,10 @@ import { Flex } from 'rebass';
 
 const Container: React.FC = ({ children }) => (
   <Flex
-    style={{
+    sx={{
       position: 'relative',
       height: '8px',
+      width: '100%',
     }}
   >
     {children}
