@@ -92,6 +92,7 @@
     "@fortawesome/react-fontawesome": "^0.1.11",
     "@rebass/forms": "^4.0.6",
     "@styled-system/css": "^5.1.5",
+    "@tanem/react-nprogress": "^4.0.8",
     "codemirror": "^5.62.2",
     "events": "^3.2.0",
     "rc-slider": "^9.7.5",
