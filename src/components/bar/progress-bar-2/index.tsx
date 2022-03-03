@@ -17,20 +17,28 @@ export interface ProgressBar2Props extends Options {
  */
 const ProgressBar2: FC<ProgressBar2Props> = ({
   variant = 'perf.green',
-  ...options
+  animationDuration = 200,
+  incrementDuration = 800,
+  isAnimating = false,
+  minimum = 0.08,
 }) => {
-  const { animationDuration, progress } = useNProgress(options);
+  const { animationDuration: animDuration, progress } = useNProgress({
+    animationDuration,
+    incrementDuration,
+    isAnimating,
+    minimum,
+  });
 
   return (
     <Container>
       <Bar
         variant={variant}
-        animationDuration={animationDuration}
+        animationDuration={animDuration}
         progress={progress}
       />
       <Bar
         variant="perf.gray"
-        animationDuration={animationDuration}
+        animationDuration={animDuration}
         progress={1 - progress}
       />
     </Container>
