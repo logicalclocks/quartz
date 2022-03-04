@@ -40,6 +40,9 @@ Default.argTypes = {
     control: {
       type: 'boolean',
     },
+    table: {
+      defaultValue: { summary: false },
+    },
   },
   animationDuration: {
     type: { name: 'number', required: false },
@@ -47,6 +50,9 @@ Default.argTypes = {
     description: 'Number indicating the animation duration in ms.',
     control: {
       type: 'number',
+    },
+    table: {
+      defaultValue: { summary: 200 },
     },
   },
   incrementDuration: {
@@ -56,6 +62,9 @@ Default.argTypes = {
       'Number indicating the length of time between progress bar increments in ms.',
     control: {
       type: 'number',
+    },
+    table: {
+      defaultValue: { summary: 800 },
     },
   },
   minimum: {
@@ -68,6 +77,9 @@ Default.argTypes = {
       min: 0.01,
       max: 1,
       step: 0.1,
+    },
+    table: {
+      defaultValue: { summary: 0.08 },
     },
   },
   variant: {
@@ -82,6 +94,9 @@ Default.argTypes = {
         'perf.orange': 'Orange',
         'perf.black': 'Black',
       },
+    },
+    table: {
+      defaultValue: { summary: 'perf.green' },
     },
   },
 };
