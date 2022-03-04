@@ -50,6 +50,7 @@ Default.argTypes = {
     description: 'Number indicating the animation duration in ms.',
     control: {
       type: 'number',
+      step: 25,
     },
     table: {
       defaultValue: { summary: 200 },
@@ -62,6 +63,7 @@ Default.argTypes = {
       'Number indicating the length of time between progress bar increments in ms.',
     control: {
       type: 'number',
+      step: 100,
     },
     table: {
       defaultValue: { summary: 800 },
