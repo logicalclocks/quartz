@@ -1,9 +1,9 @@
 import React, { FC } from 'react';
 import { useNProgress } from '@tanem/react-nprogress';
+import { Options } from '@tanem/react-nprogress/dist/types';
 
 import Bar from './Bar';
 import Container from './Container';
-import { Options } from '@tanem/react-nprogress/dist/types';
 
 export interface ProgressBar2Props extends Options {
   variant?: 'perf.black' | 'perf.green' | 'perf.orange';
