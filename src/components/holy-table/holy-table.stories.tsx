@@ -27,12 +27,22 @@ export const HolyTableExample: Story = (props: Omit<Props, 'children'>) => (
 );
 
 HolyTableExample.args = {
+  standalone: false,
   padded: true,
   bordered: true,
   hoverable: true,
+  rowHeight: '50px',
 };
 
 HolyTableExample.argTypes = {
+  standalone: {
+    control: {
+      type: 'boolean',
+    },
+    type: {
+      required: false,
+    },
+  },
   padded: {
     control: {
       type: 'boolean',
@@ -61,6 +71,14 @@ HolyTableExample.argTypes = {
     control: {
       type: 'select',
       options: [0, 1, 2],
+    },
+    type: {
+      required: false,
+    },
+  },
+  rowHeight: {
+    control: {
+      type: 'text',
     },
     type: {
       required: false,

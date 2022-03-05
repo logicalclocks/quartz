@@ -8,15 +8,16 @@ interface Props extends Omit<BoxProps, 'css'> {
 }
 
 const Row: FC<Props> = ({ sx, children, ...props }: Props) => {
-  const { bordered, hoverable } = useContext(HolyTableContext);
+  const { bordered, hoverable, rowHeight, standalone } =
+    useContext(HolyTableContext);
 
   const style = {
-    ...styles(bordered, hoverable),
+    ...styles(bordered, hoverable, standalone),
     ...sx,
   };
 
   return (
-    <Box as="tr" sx={style} width="100%" {...props}>
+    <Box as="tr" sx={style} width="100%" height={rowHeight} {...props}>
       {children}
     </Box>
   );
