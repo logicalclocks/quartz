@@ -4,13 +4,11 @@ type ContextProps = {
   bordered: boolean;
   padded: boolean;
   hoverable: boolean;
+  rowHeight: string;
+  standalone: boolean;
   middleColumn?: number;
 };
 
-const HolyTableContext = createContext<ContextProps>({
-  bordered: true,
-  padded: true,
-  hoverable: true,
-});
+const HolyTableContext = createContext<ContextProps>({} as ContextProps);
 
 export default HolyTableContext;

@@ -11,6 +11,8 @@ export interface Props {
   padded?: boolean;
   hoverable?: boolean;
   middleColumn?: number;
+  standalone?: boolean;
+  rowHeight?: string;
 }
 
 const HolyTable: FC<Props> = ({
@@ -20,10 +22,12 @@ const HolyTable: FC<Props> = ({
   bordered = true,
   padded = true,
   hoverable = true,
+  standalone = false,
+  rowHeight = '50px',
   ...props
 }) => (
   <HolyTableContext.Provider
-    value={{ bordered, padded, hoverable, middleColumn }}
+    value={{ bordered, padded, hoverable, middleColumn, rowHeight, standalone }}
   >
     <Box as="table" sx={styles} {...props}>
       <Box as="thead">

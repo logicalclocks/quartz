@@ -13,9 +13,19 @@ function createBorder(side: BorderSides): { [key: string]: string } {
   };
 }
 
-const borders = {
-  ...createBorder(BorderSides.top),
-  ...createBorder(BorderSides.bottom),
+const getBordersForTable = (standalone: boolean) => {
+  const integratedBorders = {
+    ...createBorder(BorderSides.top),
+    ...createBorder(BorderSides.bottom),
+  };
+
+  const standaloneBorders = {
+    ...integratedBorders,
+    ...createBorder(BorderSides.right),
+    ...createBorder(BorderSides.left),
+  };
+
+  return standalone ? standaloneBorders : integratedBorders;
 };
 
 const hover = {
@@ -24,8 +34,12 @@ const hover = {
   },
 };
 
-export default (bordered: boolean, hoverable: boolean) => ({
+export default (
+  bordered: boolean,
+  hoverable: boolean,
+  standalone: boolean,
+) => ({
   bg: 'white',
-  ...(bordered ? borders : {}),
+  ...(bordered ? getBordersForTable(standalone) : {}),
   ...(hoverable ? hover : {}),
 });

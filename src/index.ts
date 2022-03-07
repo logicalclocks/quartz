@@ -52,6 +52,7 @@ import { SymbolMode } from './components/symbol/types';
 import Collapse from './components/collapse';
 import PerformanceCard from './components/performance-card';
 import Slider from './components/slider';
+import ExpandViewer from './components/expand-viewer';
 
 // Popups
 import Drawer from './components/popup/drawer';
@@ -65,6 +66,7 @@ import Bar from './components/bar';
 import ProgressBar from './components/bar/progress';
 import FreshnessBar from './components/bar/freshness';
 import PerformanceBar from './components/performance-bar';
+import ProgressBar2 from './components/bar/progress-bar-2';
 
 // Badges
 import User from './components/user';
@@ -175,6 +177,7 @@ export {
   Divider,
   PerformanceCard,
   Slider,
+  ExpandViewer,
   // Popups
   usePopup,
   Popup,
@@ -186,6 +189,7 @@ export {
   ProgressBar,
   FreshnessBar,
   PerformanceBar,
+  ProgressBar2,
   // Badges
   User,
   TextValueBadge,
@@ -267,6 +271,8 @@ export type CompactButtonProps =
   import('./components/compact-button').CompactButtonProps;
 export type PerformanceCardProps =
   import('./components/performance-card').PerformanceCardProps;
+export type { ExpandViewerProps } from './components/expand-viewer';
+export type { ProgressBar2Props } from './components/bar/progress-bar-2';
 
 // Rebass components
 export { Flex, Box } from 'rebass';

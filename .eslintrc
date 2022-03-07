@@ -3,12 +3,9 @@
   "extends": [
     "standard",
     "standard-react",
-    "plugin:prettier/recommended",
-    "prettier/standard",
-    "prettier/react",
-    "prettier",
     "airbnb-typescript",
-    "plugin:@typescript-eslint/eslint-recommended"
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:prettier/recommended"
   ],
   "plugins": [
     "react-hooks"
@@ -43,6 +40,7 @@
     "react/jsx-props-no-spreading": 0,
     "jsx-a11y/click-events-have-key-events": 0,
     "linebreak-style": 0,
+    "react/require-default-props": "off",
     "prettier/prettier": [
       "error",
       {
