@@ -19,7 +19,6 @@ import styles from './file-system-explorer.styles';
 export interface FileSystemExplorerProps
   extends Omit<RebassCardProps, 'css' | 'title' | 'data'> {
   title?: string;
-  link?: string;
   mode?: FileExplorerMode;
   data: FileExplorData[][];
   disableDownload?: boolean;
