@@ -5,6 +5,8 @@ import { Story, Meta } from '@storybook/react/types-6-0';
 
 import FileSystemExplorer, { FileSystemExplorerProps } from '.';
 import Button from '../button';
+// Data
+import testData from './test-data';
 
 export default {
   title: 'Quartz/FileSystemExplorer',
@@ -22,6 +24,7 @@ Default.args = {
   width: '830px',
   // children: '',
   height: '100%',
+  data: testData,
   shortcutActions: (
     <React.Fragment>
       <Button padding="0" variant="inline" onClick={action('Shortcut action')}>

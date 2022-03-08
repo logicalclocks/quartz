@@ -19,9 +19,7 @@ export interface ActiveFile {
 }
 
 export type FileExplorData = {
-  type: string;
-  href: string;
-  accepted: boolean;
+  accepted?: boolean;
   attributes: {
     accessTime: string;
     dir: boolean;
@@ -36,18 +34,21 @@ export type FileExplorData = {
     size: number;
     underConstruction: boolean;
   };
-  datasetType: string;
-  description: string;
-  id: number;
-  name: string;
-  permission: string;
-  publicDataset: number;
-  searchable: boolean;
-  shared: boolean;
-  sharedWith: number;
+  datasetType?: string;
+  description?: string;
+  href: string;
+  id?: number;
+  name?: string;
+  permission?: string;
+  publicDataset?: number;
+  searchable?: boolean;
+  shared?: boolean;
+  sharedWith?: number;
+  type: string;
   tags: {
     href: string;
   };
+  zipState?: string;
 };
 
 export enum FileExplorerMode {
