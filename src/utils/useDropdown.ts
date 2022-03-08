@@ -7,13 +7,13 @@ const useDropdown = (isInitialOpen = false): UseDropdown => {
 
   const handleClickOutside = useCallback(() => {
     setOpen(false);
-  }, [setOpen, isOpen]);
+  }, [setOpen]);
 
   const handleToggle = useCallback(
     (state?: boolean) => {
       setOpen((currentState) => state ?? !currentState);
     },
-    [isOpen, setOpen],
+    [setOpen],
   );
 
   return [isOpen, handleToggle, handleClickOutside];

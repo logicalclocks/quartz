@@ -124,10 +124,10 @@ const Select: FC<SelectProps> = ({
   // Handlers
   const handleLabelClick = useCallback(() => {
     if (!disabled) {
-      handleToggle();
+      if (!isOpen) handleToggle();
       setSearch('');
     }
-  }, [handleToggle, disabled]);
+  }, [handleToggle, disabled, isOpen]);
 
   const dropdrownPosition = useCallback(() => {
     if (containerRef?.current) {
@@ -224,7 +224,7 @@ const Select: FC<SelectProps> = ({
       >
         {isOpen && (
           <DropdownWrapper
-            refEl={containerRef?.current || undefined}
+            refEl={containerRef?.current}
             appendToBody={appendToBody}
             handleClickOutside={handleClickOutside}
           >
@@ -251,7 +251,6 @@ const Select: FC<SelectProps> = ({
                         },
                         zIndex: 1,
                       }}
-                      onClick={(e) => e.stopPropagation()}
                     >
                       {icons.glass}
                     </Box>
@@ -262,7 +261,6 @@ const Select: FC<SelectProps> = ({
                       value={search}
                       placeholder={searchPlaceholder}
                       onChange={({ target }) => setSearch(target.value)}
-                      onClick={(e) => e.stopPropagation()}
                     />
                   </Flex>
                 )}
@@ -284,7 +282,10 @@ const Select: FC<SelectProps> = ({
                   // Single choice
                   <SelectList
                     value={selectedOption}
-                    onChange={onChange}
+                    onChange={(option) => {
+                      handleToggle();
+                      onChange(option);
+                    }}
                     onClose={handleToggle}
                     options={filteredOptions}
                   />
