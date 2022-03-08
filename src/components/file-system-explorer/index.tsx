@@ -8,23 +8,20 @@ import {
 
 import Footer from './footer';
 import Header from './header';
-import Column from './column';
+import FileExplorerColumn from './file-explorer-column';
 import Info from './info';
 import EmptyFolderInfo from './empty-folder-info';
-import { ActiveFile } from './types';
+import { ActiveFile, FileExplorData, FileExplorerMode } from './types';
 
 // Styles
 import styles from './file-system-explorer.styles';
 
-// Data
-import { testData } from './data';
-
 export interface FileSystemExplorerProps
-  extends Omit<RebassCardProps, 'css' | 'title'> {
+  extends Omit<RebassCardProps, 'css' | 'title' | 'data'> {
   title?: string;
   link?: string;
-  mode?: string;
-  data: any;
+  mode?: FileExplorerMode;
+  data: FileExplorData[][];
   disableDownload?: boolean;
   validExtensions?: string[];
   rootDir?: string;
@@ -41,14 +38,14 @@ const FileSystemExplorer: FC<FileSystemExplorerProps> = ({
   onClose = () => console.log('Close'),
   shortcutActions,
   handleDownloadFile,
-  mode = 'oneFile',
+  mode = FileExplorerMode.oneFile,
   rootDir = '/',
   contentProps,
   handleLoadMore = () => console.log('load more in quartz'),
   handleSelectFile = () => console.log('handleSelectFile in quartz'),
   disableDownload = false,
   validExtensions,
-  data = testData,
+  data,
   ...props
 }: FileSystemExplorerProps) => {
   const contentRef = useRef<HTMLDivElement>();
@@ -76,7 +73,7 @@ const FileSystemExplorer: FC<FileSystemExplorerProps> = ({
   const [pathListValue, setPathListValue] = useState<string>('');
   const lastChildOfColumn = useRef<any>();
   const scrollToRight = () => {
-    !!lastChildOfColumn ? lastChildOfColumn.current.scrollIntoView() : [];
+    if (lastChildOfColumn) lastChildOfColumn.current.scrollIntoView();
   };
 
   const isFileSelected = (item: any, action: boolean) => {
@@ -118,21 +115,21 @@ const FileSystemExplorer: FC<FileSystemExplorerProps> = ({
         m="20px"
         {...contentProps}
       >
-        {columns.map((el: any, index: any) => (
-          <Column
+        {columns.map((el, index: any) => (
+          <FileExplorerColumn
             validExtensions={validExtensions}
             handleLoadMore={handleLoadMore}
             setActiveFile={setActiveFile}
             mode={mode}
-            children={el}
             setColumns={setColumns}
-            key={index}
             index={index}
             isFileSelected={isFileSelected}
             selectPathListValue={selectPathListValue}
             fileListValue={fileListValue}
             setIsEmptyFolder={setIsEmptyFolder}
-          />
+          >
+            {el}
+          </FileExplorerColumn>
         ))}
         {isEmptyFolder && <EmptyFolderInfo />}
         {activeFile && (
