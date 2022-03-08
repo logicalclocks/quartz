@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import { Box, Flex } from 'rebass';
 import styles, { boxStyles, boxButtonStyles } from './footer.styles';
 import Labeling from '../../typography/labeling';
-import { ActiveFile } from '../index';
+import { ActiveFile } from '../types';
 import Button from '../../button';
 
 export interface FileExplorerFooter {

@@ -11,6 +11,7 @@ import Header from './header';
 import Column from './column';
 import Info from './info';
 import EmptyFolderInfo from './empty-folder-info';
+import { ActiveFile } from './types';
 
 // Styles
 import styles from './file-system-explorer.styles';
@@ -33,26 +34,6 @@ export interface FileSystemExplorerProps
   onClose: (key: any) => void;
   handleSelectFile?: (activeFile: any, isDownload: boolean) => void;
   handleDownloadFile: (file: any) => void;
-}
-
-export interface ActiveFile {
-  type: string;
-  href: string;
-  zipState: string;
-  attributes: {
-    accessTime: string;
-    dir: boolean;
-    group: string;
-    id: number;
-    modificationTime: string;
-    name: string;
-    owner: string;
-    parentId: number;
-    path: string;
-    permission: string;
-    size: number;
-    underConstruction: boolean;
-  };
 }
 
 const FileSystemExplorer: FC<FileSystemExplorerProps> = ({
