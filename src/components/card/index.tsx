@@ -1,13 +1,9 @@
 import React, { FC, memo, useRef } from 'react';
-import {
-  Box,
-  Flex,
-  Card as RebassCard,
-  CardProps as RebassCardProps,
-} from 'rebass';
+import { Box, Card as RebassCard, CardProps as RebassCardProps } from 'rebass';
 
 // Styles
-import styles, { cardHeaderStyles } from './card.styles';
+import styles from './card.styles';
+import CardHeader from '../card-header';
 
 export interface CardProps extends Omit<RebassCardProps, 'css' | 'title'> {
   title?: React.ReactElement | string;
@@ -16,6 +12,7 @@ export interface CardProps extends Omit<RebassCardProps, 'css' | 'title'> {
   children?: React.ReactNode;
   contentProps?: Omit<RebassCardProps, 'css' | 'children'>;
   readOnly?: boolean;
+  withoutShadow?: boolean;
 }
 
 const Card: FC<CardProps> = ({
@@ -25,6 +22,7 @@ const Card: FC<CardProps> = ({
   maxHeight,
   readOnly,
   contentProps,
+  withoutShadow = false,
   ...props
 }: CardProps) => {
   const isShowHeader = title || actions;
@@ -47,14 +45,12 @@ const Card: FC<CardProps> = ({
     >
       {/* Header */}
       {isShowHeader && (
-        <Box sx={cardHeaderStyles}>
-          {title && (
-            <Flex alignItems="center" as="h4">
-              {title}
-            </Flex>
-          )}
-          {actions && <div>{actions}</div>}
-        </Box>
+        <CardHeader
+          title={title}
+          actions={actions}
+          withShadow={!withoutShadow}
+          withBorderBottom
+        />
       )}
       {/* Content */}
       {!!children && (
