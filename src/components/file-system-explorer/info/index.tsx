@@ -10,7 +10,7 @@ import {
   contentInfoStyles,
 } from './file-explorer-info.styles';
 import Labeling from '../../typography/labeling';
-import { ActiveFile } from '../index';
+import { ActiveFile } from '../types';
 import Button from '../../button';
 import icons from '../../../sources/icons';
 import formatSizeUnits from '../../../utils/getFormatSizeUnit';
