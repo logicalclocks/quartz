@@ -1,5 +1,7 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { action } from '@storybook/addon-actions';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import { ArgTypes } from '@storybook/addons';
 import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
 
@@ -43,100 +45,57 @@ Secondary.args = {
   children: 'content',
 };
 
+const argTypes = {
+  children: {
+    type: {
+      name: 'string',
+      required: true,
+    },
+    control: {
+      type: 'object',
+    },
+    description: 'Card content',
+  },
+  title: {
+    type: {
+      name: 'string',
+      required: false,
+    },
+    description: 'Card title',
+    control: {
+      type: 'text',
+    },
+  },
+  height: {
+    control: {
+      type: 'text',
+    },
+
+    description: 'Card height (string or number px, %)',
+  },
+
+  width: {
+    control: {
+      type: 'text',
+    },
+    description: 'Card width (string or number px, %)',
+  },
+} as ArgTypes;
+
 Default.argTypes = {
-  children: {
-    control: {
-      type: 'text',
-    },
-    type: {
-      summary: 'Card content',
-      required: true,
-    },
-  },
-  title: {
-    control: {
-      type: 'text',
-    },
-
-    type: {
-      summary: 'Card title',
-    },
-  },
+  ...argTypes,
   actions: {
     control: {
       type: 'text',
     },
-
-    type: {
-      summary: 'Any Components to show in the right side',
-    },
+    description: 'Any Components to show in the right side',
   },
-  height: {
+  withoutShadow: {
+    defaultValue: false,
     control: {
-      type: 'text',
-    },
-
-    type: {
-      summary: 'Card height (string or number px, %)',
-    },
-  },
-
-  width: {
-    control: {
-      type: 'text',
-    },
-
-    type: {
-      summary: 'Card width (string or number px, %)',
+      type: 'boolean',
     },
   },
 };
 
-Secondary.argTypes = {
-  children: {
-    control: {
-      type: 'text',
-    },
-    type: {
-      summary: 'Card content',
-      required: true,
-    },
-  },
-  title: {
-    control: {
-      type: 'text',
-    },
-
-    type: {
-      summary: 'Card title',
-    },
-  },
-  actions: {
-    control: {
-      type: 'text',
-    },
-
-    type: {
-      summary: 'Any Components to show in the right side',
-    },
-  },
-  height: {
-    control: {
-      type: 'text',
-    },
-
-    type: {
-      summary: 'Card height (string or number px, %)',
-    },
-  },
-
-  width: {
-    control: {
-      type: 'text',
-    },
-
-    type: {
-      summary: 'Card width (string or number px, %)',
-    },
-  },
-};
+Secondary.argTypes = argTypes;
