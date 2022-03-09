@@ -131,6 +131,8 @@ import * as constants from './constants';
 
 library.add(fas, far);
 
+export { useTheme } from 'emotion-theming';
+
 export {
   Button,
   UploadButton,
