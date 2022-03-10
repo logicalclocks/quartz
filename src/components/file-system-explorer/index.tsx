@@ -116,6 +116,7 @@ const FileSystemExplorer: FC<FileSystemExplorerProps> = ({
       >
         {columns.map((el, index: any) => (
           <FileExplorerColumn
+            items={el}
             validExtensions={validExtensions}
             handleLoadMore={handleLoadMore}
             setActiveFile={setActiveFile}
@@ -126,9 +127,7 @@ const FileSystemExplorer: FC<FileSystemExplorerProps> = ({
             selectPathListValue={selectPathListValue}
             fileListValue={fileListValue}
             setIsEmptyFolder={setIsEmptyFolder}
-          >
-            {el}
-          </FileExplorerColumn>
+          />
         ))}
         {isEmptyFolder && <EmptyFolderInfo />}
         {activeFile && (
