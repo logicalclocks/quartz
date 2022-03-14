@@ -3,11 +3,11 @@ import { Box, BoxProps } from 'rebass';
 
 import FolderItemExplorer from '../folder';
 import FileItemExplorer from '../file';
-import { FileExplorerMode } from '../types';
+import { FileExplorData, FileExplorerMode } from '../types';
 
 export interface FileExplorerColumnProps
   extends Omit<BoxProps, 'css' | 'action'> {
-  children: any[];
+  items: FileExplorData[];
   setColumns?: any;
   mode?: FileExplorerMode;
   index: number;
@@ -22,7 +22,7 @@ export interface FileExplorerColumnProps
 }
 
 const FileExplorerColumn: FC<FileExplorerColumnProps> = ({
-  children,
+  items,
   mode,
   index,
   setColumns,
@@ -50,7 +50,7 @@ const FileExplorerColumn: FC<FileExplorerColumnProps> = ({
         overflowX: 'hidden',
       }}
     >
-      {children.map((item: { [key: string]: any }): any => {
+      {items.map((item: { [key: string]: any }): any => {
         const isValidExtension = () => {
           if (!validExtensions || validExtensions?.length === 0) return true;
           const splits = item.attributes.name.split('.');
