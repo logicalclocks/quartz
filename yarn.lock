@@ -2431,7 +2431,7 @@ __metadata:
     "@tanem/react-nprogress": ^4.0.8
     "@types/node": ^12.12.38
     "@types/rc-slider": ^8.6.6
-    "@types/react": ^16.14.23
+    "@types/react": ^16.14.0
     "@types/react-datepicker": ^3.1.8
     "@types/react-dom": ^16.9.14
     "@types/rebass": ^4.0.10
@@ -2474,8 +2474,8 @@ __metadata:
     resize-observer-polyfill: ^1.5.1
     typescript: ^4.6.2
   peerDependencies:
-    react: ^16.13.1
-    react-dom: ^16.13.1
+    react: ^16.14.0
+    react-dom: ^16.14.0
   languageName: unknown
   linkType: soft
 
@@ -4744,7 +4744,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:^16, @types/react@npm:^16.14.23":
+"@types/react@npm:^16":
   version: 16.14.23
   resolution: "@types/react@npm:16.14.23"
   dependencies:
@@ -4752,6 +4752,17 @@ __metadata:
     "@types/scheduler": "*"
     csstype: ^3.0.2
   checksum: 2c765e87c25421c23c6a813ec2b27a909bb051a2d84c07a0d5368ef22dca0e1dbb02489a79274316ad900bcbb1bec9a7153908c7012db4e8bb4a1c3f704330f5
+  languageName: node
+  linkType: hard
+
+"@types/react@npm:^16.14.0":
+  version: 16.14.24
+  resolution: "@types/react@npm:16.14.24"
+  dependencies:
+    "@types/prop-types": "*"
+    "@types/scheduler": "*"
+    csstype: ^3.0.2
+  checksum: 823f3fc6219f59dff7a005ca33adbac70e7ef7a5e15a844c40ba36247c007bd1e1fbfc784052336f60ecbee09f06b7c6c7433e8cece3a87247061bbac74b2576
   languageName: node
   linkType: hard
 
