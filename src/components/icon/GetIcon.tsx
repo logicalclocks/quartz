@@ -1,6 +1,6 @@
 import { useTheme } from 'emotion-theming';
 import React, { FC } from 'react';
-import { Box, BoxProps } from 'rebass';
+import { Flex, BoxProps } from 'rebass';
 import { IThemeColors } from '../..';
 import { IconName, getIcon } from './list';
 import { ITheme } from '../../theme/types';
@@ -23,7 +23,7 @@ const GetIcon: FC<GetIconProps> = ({
   const theme = useTheme<ITheme>();
   const themeColor = path<string>(split('.', color), theme.colors)!;
   return (
-    <Box
+    <Flex
       sx={{
         svg: {
           width: typeof size === 'number' ? `${size}px` : size,
@@ -34,7 +34,7 @@ const GetIcon: FC<GetIconProps> = ({
       {...props}
     >
       {getIcon(icon, themeColor)}
-    </Box>
+    </Flex>
   );
 };
 
