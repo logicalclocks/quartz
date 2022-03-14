@@ -15,7 +15,7 @@ const CardHeader: FC<CardHeaderProps> = ({
   withBorderBottom = false,
   ...props
 }) => (
-  <Box {...props} sx={{ ...props.sx, ...styles(withShadow, withBorderBottom) }}>
+  <Box {...props} sx={{ ...styles(withShadow, withBorderBottom), ...props.sx }}>
     {title && (
       <Flex alignItems="center" as="h4">
         {title}
