@@ -4672,19 +4672,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:^16, @types/react@npm:^16.14.23":
-  version: 16.14.24
-  resolution: "@types/react@npm:16.14.24"
-
-  dependencies:
-    "@types/prop-types": "*"
-    "@types/scheduler": "*"
-    csstype: ^3.0.2
-  checksum: 823f3fc6219f59dff7a005ca33adbac70e7ef7a5e15a844c40ba36247c007bd1e1fbfc784052336f60ecbee09f06b7c6c7433e8cece3a87247061bbac74b2576
-  languageName: node
-  linkType: hard
-
-"@types/react@npm:^16.14.0":
+"@types/react@npm:^16, @types/react@npm:^16.14.0":
   version: 16.14.24
   resolution: "@types/react@npm:16.14.24"
   dependencies:
@@ -18219,7 +18207,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prismjs@npm:^1.21.0, prismjs@npm:^1.25.0, prismjs@npm:~1.27.0":
+"prismjs@npm:^1.21.0, prismjs@npm:^1.27.0, prismjs@npm:~1.27.0":
   version: 1.27.0
   resolution: "prismjs@npm:1.27.0"
   checksum: 85c7f4a3e999073502cc9e1882af01e3709706369ec254b60bff1149eda701f40d02512acab956012dc7e61cfd61743a3a34c1bd0737e8dbacd79141e5698bbc
@@ -19125,17 +19113,17 @@ __metadata:
   linkType: hard
 
 "react-syntax-highlighter@npm:^15.4.3":
-  version: 15.4.5
-  resolution: "react-syntax-highlighter@npm:15.4.5"
+  version: 15.5.0
+  resolution: "react-syntax-highlighter@npm:15.5.0"
   dependencies:
     "@babel/runtime": ^7.3.1
     highlight.js: ^10.4.1
     lowlight: ^1.17.0
-    prismjs: ^1.25.0
-    refractor: ^3.2.0
+    prismjs: ^1.27.0
+    refractor: ^3.6.0
   peerDependencies:
     react: ">= 0.14.0"
-  checksum: 120bac5cfbd65eb47e513b8057e3cb71843ce15241bbf933c1818c294965b87d8e074c7929a8fc2ced66c3e3f38c4cc6bf04365a8345e3a382cd524d0093949f
+  checksum: c082b48f30f8ba8d0c55ed1d761910630860077c7ff5793c4c912adcb5760df06436ed0ad62be0de28113aac9ad2af55eccd995f8eee98df53382e4ced2072fb
   languageName: node
   linkType: hard
 
@@ -19326,7 +19314,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"refractor@npm:^3.1.0, refractor@npm:^3.2.0":
+"refractor@npm:^3.1.0, refractor@npm:^3.6.0":
   version: 3.6.0
   resolution: "refractor@npm:3.6.0"
   dependencies:
@@ -21576,8 +21564,8 @@ __metadata:
   linkType: hard
 
 "terser@npm:^5.0.0, terser@npm:^5.3.4, terser@npm:^5.7.0":
-  version: 5.12.0
-  resolution: "terser@npm:5.12.0"
+  version: 5.12.1
+  resolution: "terser@npm:5.12.1"
   dependencies:
     acorn: ^8.5.0
     commander: ^2.20.0
@@ -21585,7 +21573,7 @@ __metadata:
     source-map-support: ~0.5.20
   bin:
     terser: bin/terser
-  checksum: 1d0426bcb602f29cc87561feb8067b2f84d92ef954756714eeb8593cb4c69192297fd8b8a0dc6d64caedd510fb04be790a7c321ccbf67e51eaed8e9cf16d35e8
+  checksum: dd33af5d87a1159bcc38f354707505f1449a33d1491c512e9536f11fea7c3474cdc40e2e5fdf75f58658cfaab8ef47cb7454acd6406b2ce487675cb1978c6275
   languageName: node
   linkType: hard
 
