@@ -2443,7 +2443,7 @@ __metadata:
     "@types/node": ^12.12.38
     "@types/ramda": ^0.28.1
     "@types/rc-slider": ^8.6.6
-    "@types/react": ^16.14.23
+    "@types/react": ^16.14.0
     "@types/react-datepicker": ^3.1.8
     "@types/react-dom": ^16.9.14
     "@types/rebass": ^4.0.10
@@ -2487,8 +2487,8 @@ __metadata:
     resize-observer-polyfill: ^1.5.1
     typescript: ^4.6.2
   peerDependencies:
-    react: ^16.13.1
-    react-dom: ^16.13.1
+    react: ^16.14.0
+    react-dom: ^16.14.0
   languageName: unknown
   linkType: soft
 
@@ -4673,6 +4673,18 @@ __metadata:
   linkType: hard
 
 "@types/react@npm:^16, @types/react@npm:^16.14.23":
+  version: 16.14.24
+  resolution: "@types/react@npm:16.14.24"
+
+  dependencies:
+    "@types/prop-types": "*"
+    "@types/scheduler": "*"
+    csstype: ^3.0.2
+  checksum: 823f3fc6219f59dff7a005ca33adbac70e7ef7a5e15a844c40ba36247c007bd1e1fbfc784052336f60ecbee09f06b7c6c7433e8cece3a87247061bbac74b2576
+  languageName: node
+  linkType: hard
+
+"@types/react@npm:^16.14.0":
   version: 16.14.24
   resolution: "@types/react@npm:16.14.24"
   dependencies:

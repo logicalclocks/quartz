@@ -14,7 +14,6 @@ jobs:
       - name: Install 💽
         run: |
           yarn install
-          yarn add react react-dom --no-save
 
       - name: Build 🤖
         run: |
