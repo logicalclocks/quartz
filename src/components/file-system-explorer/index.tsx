@@ -116,6 +116,7 @@ const FileSystemExplorer: FC<FileSystemExplorerProps> = ({
       >
         {columns.map((el, index: any) => (
           <FileExplorerColumn
+            items={el}
             validExtensions={validExtensions}
             handleLoadMore={handleLoadMore}
             setActiveFile={setActiveFile}
