@@ -12,7 +12,7 @@ import Value from '../typography/value';
 import useKeyUp from '../../utils/useKeyUp';
 import icons from '../../sources/icons';
 import Tooltip from '../tooltip';
-import StickyPortal, { CONTENT_ID } from '../sticky-portal/StickyPortal';
+import { CONTENT_ID } from '../sticky-portal/StickyPortal';
 // List types
 import SelectList from './lists/select-list';
 import SelectListMulti from './lists/select-list-multi';
@@ -24,6 +24,7 @@ import { listStyles, bottomActionStyles } from './select.styles';
 // Hooks
 import useDropdown from '../../utils/useDropdown';
 import useOnClickOutside from '../../utils/useClickOutside';
+import DropdownWrapper from './dropdown';
 
 export interface SelectProps
   extends Omit<LabelProps, 'onChange' | 'children' | 'value'> {
@@ -123,31 +124,10 @@ const Select: FC<SelectProps> = ({
   // Handlers
   const handleLabelClick = useCallback(() => {
     if (!disabled) {
-      handleToggle();
+      if (!isOpen) handleToggle();
       setSearch('');
     }
-  }, [handleToggle, disabled]);
-
-  const AppendedToBody = useCallback(
-    ({ refEl, children }) => (
-      <StickyPortal handleClose={handleClickOutside} refEl={refEl}>
-        {children}
-      </StickyPortal>
-    ),
-    [handleClickOutside],
-  );
-
-  const DropdownWrapper: FC<{ children: any; refEl: any }> = ({
-    children,
-    refEl,
-    // eslint-disable-next-line arrow-body-style
-  }) => {
-    return appendToBody ? (
-      <AppendedToBody refEl={refEl}>{children}</AppendedToBody>
-    ) : (
-      children
-    );
-  };
+  }, [handleToggle, disabled, isOpen]);
 
   const dropdrownPosition = useCallback(() => {
     if (containerRef?.current) {
@@ -243,7 +223,11 @@ const Select: FC<SelectProps> = ({
         needSwap={needSwap}
       >
         {isOpen && (
-          <DropdownWrapper refEl={containerRef?.current || undefined}>
+          <DropdownWrapper
+            refEl={containerRef?.current}
+            appendToBody={appendToBody}
+            handleClickOutside={handleClickOutside}
+          >
             <List
               sx={listStyles(dropdrownPosition(), appendToBody)}
               width={dropdrownWidth()}
@@ -267,7 +251,6 @@ const Select: FC<SelectProps> = ({
                         },
                         zIndex: 1,
                       }}
-                      onClick={(e) => e.stopPropagation()}
                     >
                       {icons.glass}
                     </Box>
@@ -278,7 +261,6 @@ const Select: FC<SelectProps> = ({
                       value={search}
                       placeholder={searchPlaceholder}
                       onChange={({ target }) => setSearch(target.value)}
-                      onClick={(e) => e.stopPropagation()}
                     />
                   </Flex>
                 )}
@@ -300,7 +282,10 @@ const Select: FC<SelectProps> = ({
                   // Single choice
                   <SelectList
                     value={selectedOption}
-                    onChange={onChange}
+                    onChange={(option) => {
+                      handleToggle();
+                      onChange(option);
+                    }}
                     onClose={handleToggle}
                     options={filteredOptions}
                   />

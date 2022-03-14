@@ -126,6 +126,9 @@ import useDropdown from './utils/useDropdown';
 import useNavigation from './components/navigation/useNavigation';
 import useOnClickOutside from './utils/useClickOutside';
 
+// enums
+import { FileExplorerMode } from './components/file-system-explorer/types';
+
 // constants
 import * as constants from './constants';
 
@@ -211,6 +214,8 @@ export {
   // Hooks
   useDropdown,
   useNavigation,
+  // Enums
+  FileExplorerMode,
   // Row
   Row,
   RowGroup,
@@ -275,6 +280,8 @@ export type PerformanceCardProps =
   import('./components/performance-card').PerformanceCardProps;
 export type { ExpandViewerProps } from './components/expand-viewer';
 export type { ProgressBar2Props } from './components/bar/progress-bar-2';
+export type { FileSystemExplorerProps } from './components/file-system-explorer';
+export type { FileExplorData } from './components/file-system-explorer/types';
 
 // Rebass components
 export { Flex, Box } from 'rebass';

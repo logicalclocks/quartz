@@ -5,6 +5,8 @@ import { Story, Meta } from '@storybook/react/types-6-0';
 
 import FileSystemExplorer, { FileSystemExplorerProps } from '.';
 import Button from '../button';
+// Data
+import testData from './test-data';
 
 export default {
   title: 'Quartz/FileSystemExplorer',
@@ -18,10 +20,7 @@ const Template: Story<FileSystemExplorerProps> = (props) => (
 export const Default = Template.bind({});
 
 Default.args = {
-  title: 'Select a file',
-  width: '830px',
-  // children: '',
-  height: '100%',
+  data: testData,
   shortcutActions: (
     <React.Fragment>
       <Button padding="0" variant="inline" onClick={action('Shortcut action')}>
@@ -29,52 +28,97 @@ Default.args = {
       </Button>
     </React.Fragment>
   ),
+  width: '830px',
+  height: '100%',
 };
 
 Default.argTypes = {
   title: {
+    type: { name: 'string', required: false },
+    description: 'Card title',
     control: {
       type: 'text',
     },
-
-    type: {
-      summary: 'Card title',
+    table: {
+      defaultValue: {
+        summary: 'Select a file',
+      },
     },
   },
   mode: {
+    type: { name: 'string', required: false },
+    defaultValue: 'oneFile',
+    description:
+      'There are three modes to pick, "oneFile" for selecting just one file, "nFiles" for selecting many files and "oneFolder" for selecting one Folder',
+    options: ['oneFile', 'nFiles', 'oneFolder'],
     control: {
       type: 'select',
-      options: ['oneFile', 'nFiles', 'oneFolder'],
     },
-    type: {
-      summary: 'Mode: one file or n-files',
-    },
-  },
-  actions: {
-    control: {
-      type: 'text',
-    },
-    type: {
-      summary: 'Shortcut: label and destination',
+    table: {
+      defaultValue: {
+        summary: 'oneFile',
+      },
     },
   },
-  height: {
+  shortcutActions: {
     control: {
-      type: 'text',
+      type: 'select',
     },
-
-    type: {
-      summary: 'Card height (string or number px, %)',
+    description: 'Shortcut: label and destination',
+    options: ['GoToJupyter', 'Italic'],
+    mapping: {
+      GoToJupyter: (
+        <Button
+          padding="0"
+          variant="inline"
+          onClick={action('Shortcut action')}
+        >
+          {'->'}Go directly to Jupyter notebook directory
+        </Button>
+      ),
+      Italic: (
+        <Button
+          padding="0"
+          variant="inline"
+          onClick={action('Shortcut action')}
+        >
+          <i>{'->'}Go directly to Jupyter notebook directory</i>
+        </Button>
+      ),
+    },
+    table: {
+      defaultValue: { summary: 'undefined' },
     },
   },
 
-  width: {
+  data: {
+    type: { name: 'string', required: true },
     control: {
-      type: 'text',
+      type: 'array',
     },
+  },
 
-    type: {
-      summary: 'Card width (string or number px, %)',
+  disableDownload: {
+    type: { name: 'boolean', required: false },
+    description: 'Disables downloading of files',
+    defaultValue: false,
+    control: {
+      type: 'boolean',
+    },
+    table: {
+      defaultValue: { summary: false },
+    },
+  },
+
+  validExtensions: {
+    type: { name: 'string', required: false },
+    description: 'Array of valid extensions of files to see and download.',
+    defaultValue: [],
+    control: {
+      type: 'object',
+    },
+    table: {
+      defaultValue: { summary: undefined },
     },
   },
 };

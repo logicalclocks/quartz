@@ -3,12 +3,13 @@ import { Box, BoxProps } from 'rebass';
 
 import FolderItemExplorer from '../folder';
 import FileItemExplorer from '../file';
+import { FileExplorerMode } from '../types';
 
 export interface FileExplorerColumnProps
   extends Omit<BoxProps, 'css' | 'action'> {
   children: any[];
   setColumns?: any;
-  mode?: string;
+  mode?: FileExplorerMode;
   index: number;
   setActiveFile?: object;
   handleLoadMore: (path: string, columnIndex: number) => void;
@@ -105,6 +106,7 @@ const FileExplorerColumn: FC<FileExplorerColumnProps> = ({
             />
           );
         }
+        return null;
       })}
     </Box>
   );
