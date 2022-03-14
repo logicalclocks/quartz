@@ -29,6 +29,7 @@ import Header from './components/header';
 import AlternativeHeader from './components/alternative-header';
 import Icon from './components/icon';
 import { IconName, getIcon } from './components/icon/list';
+import GetIcon from './components/icon/GetIcon';
 import IconButton from './components/icon-button';
 import MenuButton from './components/header/menu-button';
 import Input from './components/input';
@@ -160,6 +161,7 @@ export {
   Icon,
   IconName,
   getIcon,
+  GetIcon,
   IconButton,
   MenuButton,
   Input,
@@ -285,6 +287,7 @@ export type { ProgressBar2Props } from './components/bar/progress-bar-2';
 export type { CardHeaderProps } from './components/card-header';
 export type { FileSystemExplorerProps } from './components/file-system-explorer';
 export type { FileExplorData } from './components/file-system-explorer/types';
+export type { GetIconProps } from './components/icon/GetIcon';
 
 // Rebass components
 export { Flex, Box } from 'rebass';
