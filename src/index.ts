@@ -13,6 +13,7 @@ import FileLoader from './components/file-loader';
 // Card
 import Card from './components/card';
 import CardSecondary from './components/card/card-secondary';
+import CardHeader from './components/card-header';
 
 import Code from './components/code';
 import Checkbox from './components/checkbox';
@@ -126,10 +127,15 @@ import useDropdown from './utils/useDropdown';
 import useNavigation from './components/navigation/useNavigation';
 import useOnClickOutside from './utils/useClickOutside';
 
+// enums
+import { FileExplorerMode } from './components/file-system-explorer/types';
+
 // constants
 import * as constants from './constants';
 
 library.add(fas, far);
+
+export { useTheme } from 'emotion-theming';
 
 export {
   Button,
@@ -138,6 +144,7 @@ export {
   FileSystemExplorer,
   Card,
   CardSecondary,
+  CardHeader,
   Code,
   InputValidation,
   Checkbox,
@@ -209,6 +216,8 @@ export {
   // Hooks
   useDropdown,
   useNavigation,
+  // Enums
+  FileExplorerMode,
   // Row
   Row,
   RowGroup,
@@ -273,6 +282,9 @@ export type PerformanceCardProps =
   import('./components/performance-card').PerformanceCardProps;
 export type { ExpandViewerProps } from './components/expand-viewer';
 export type { ProgressBar2Props } from './components/bar/progress-bar-2';
+export type { CardHeaderProps } from './components/card-header';
+export type { FileSystemExplorerProps } from './components/file-system-explorer';
+export type { FileExplorData } from './components/file-system-explorer/types';
 
 // Rebass components
 export { Flex, Box } from 'rebass';

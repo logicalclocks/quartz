@@ -10,13 +10,14 @@
   "module": "dist/index.modern.js",
   "source": "src/index.ts",
   "engines": {
-    "node": ">=10"
+    "node": ">=14.0.0"
   },
   "scripts": {
-    "build": "microbundle-crl --no-compress --format modern,cjs",
-    "build-dev": "run-s build && rm -rf node_modules/rebass node_modules/react node_modules/emotion-theming",
+    "build": "microbundle-crl --compress --format modern,cjs",
+    "build-dev": "microbundle-crl --no-compress --format modern,cjs",
     "start": "microbundle-crl watch --no-compress --format modern,cjs",
     "prepare": "run-s build",
+    "prepack": "run-s build",
     "test": "run-s test:unit test:lint test:build",
     "test:build": "run-s build",
     "test:lint": "eslint --ext .ts,.tsx ./",
@@ -29,36 +30,26 @@
     "chromatic": "npx chromatic --project-token dqq8k95raoo"
   },
   "peerDependencies": {
-    "emotion-theming": "^10.0.27",
     "react": "^16.13.1",
-    "react-datepicker": "^3.3.0",
-    "react-dom": "^16.13.1",
-    "rebass": "^4.0.7"
+    "react-dom": "^16.13.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.11.4",
-    "@storybook/addon-actions": "^6.0.20",
-    "@storybook/addon-essentials": "^6.0.20",
-    "@storybook/addon-links": "^6.0.20",
-    "@storybook/react": "^6.0.20",
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.5.0",
-    "@testing-library/user-event": "^7.2.1",
-    "@types/jest": "^25.1.4",
+    "@babel/core": "^7.17.5",
+    "@storybook/addon-actions": "^6.4.19",
+    "@storybook/addon-essentials": "^6.4.19",
+    "@storybook/addon-links": "^6.4.19",
+    "@storybook/react": "^6.4.19",
     "@types/node": "^12.12.38",
     "@types/rc-slider": "^8.6.6",
-    "@types/react": "^16.9.27",
-    "@types/react-datepicker": "^3.1.2",
-    "@types/react-dom": "^16.9.7",
+    "@types/react": "^16.14.23",
+    "@types/react-datepicker": "^3.1.8",
+    "@types/react-dom": "^16.9.14",
     "@types/rebass": "^4.0.10",
-    "@types/rebass__forms": "^4.0.4",
-    "@typescript-eslint/eslint-plugin": "^4.2.0",
-    "@typescript-eslint/parser": "^2.26.0",
-    "babel-eslint": "^10.0.3",
-    "babel-loader": "^8.1.0",
-    "chromatic": "^5.1.0",
-    "cross-env": "^7.0.2",
-    "emotion-theming": "^10.0.27",
+    "@types/rebass__forms": "^4.0.6",
+    "@typescript-eslint/eslint-plugin": "^4.33.0",
+    "@typescript-eslint/parser": "^2.34.0",
+    "chromatic": "^5.10.2",
+    "cross-env": "^7.0.3",
     "eslint": "^6.8.0",
     "eslint-config-airbnb-typescript": "^10.0.0",
     "eslint-config-prettier": "^8.4.0",
@@ -76,24 +67,27 @@
     "microbundle-crl": "^0.13.10",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.5.1",
-    "react-is": "^16.13.1",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
     "react-scripts": "^3.4.1",
-    "rebass": "^4.0.7",
-    "typescript": "^3.7.5"
+    "typescript": "^4.6.2"
   },
   "files": [
     "dist"
   ],
   "dependencies": {
-    "@emotion/core": "^10.0.35",
-    "@fortawesome/fontawesome-svg-core": "^1.2.30",
-    "@fortawesome/free-regular-svg-icons": "^5.14.0",
-    "@fortawesome/free-solid-svg-icons": "^5.14.0",
-    "@fortawesome/react-fontawesome": "^0.1.11",
+    "@emotion/core": "^10.3.1",
+    "@fortawesome/fontawesome-common-types": "^0.3.0",
+    "@fortawesome/fontawesome-svg-core": "^1.3.0",
+    "@fortawesome/free-regular-svg-icons": "^6.0.0",
+    "@fortawesome/free-solid-svg-icons": "^6.0.0",
+    "@fortawesome/react-fontawesome": "^0.1.17",
     "@rebass/forms": "^4.0.6",
     "@styled-system/css": "^5.1.5",
     "@tanem/react-nprogress": "^4.0.8",
-    "codemirror": "^5.62.2",
+    "codemirror": "^5.65.2",
+    "date-fns": "^2.28.0",
+    "emotion-theming": "^10.3.0",
     "events": "^3.2.0",
     "rc-slider": "^9.7.5",
     "rc-tooltip": "^4.2.3",
@@ -101,6 +95,8 @@
     "react-datepicker": "^3.3.0",
     "react-spring": "^8.0.27",
     "react-syntax-highlighter": "^15.4.3",
-    "react-table": "^7.6.0"
-  }
+    "rebass": "^4.0.7",
+    "resize-observer-polyfill": "^1.5.1"
+  },
+  "packageManager": "yarn@3.1.1"
 }
