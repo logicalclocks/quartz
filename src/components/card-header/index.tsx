@@ -1,8 +1,8 @@
 import React, { FC } from 'react';
-import { Box, Flex } from 'rebass';
+import { Box, BoxProps, Flex } from 'rebass';
 import styles from './card-header.styles';
 
-export interface CardHeaderProps {
+export interface CardHeaderProps extends Omit<BoxProps, 'title' | 'css'> {
   title?: React.ReactElement | string;
   actions?: React.ReactNode;
   withShadow?: boolean;
@@ -13,8 +13,9 @@ const CardHeader: FC<CardHeaderProps> = ({
   actions,
   withShadow = false,
   withBorderBottom = false,
+  ...props
 }) => (
-  <Box sx={styles(withShadow, withBorderBottom)}>
+  <Box {...props} sx={{ ...props.sx, ...styles(withShadow, withBorderBottom) }}>
     {title && (
       <Flex alignItems="center" as="h4">
         {title}
