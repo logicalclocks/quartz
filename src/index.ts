@@ -13,6 +13,7 @@ import FileLoader from './components/file-loader';
 // Card
 import Card from './components/card';
 import CardSecondary from './components/card/card-secondary';
+import CardHeader from './components/card-header';
 
 import Code from './components/code';
 import Checkbox from './components/checkbox';
@@ -141,6 +142,7 @@ export {
   FileSystemExplorer,
   Card,
   CardSecondary,
+  CardHeader,
   Code,
   InputValidation,
   Checkbox,
@@ -278,6 +280,7 @@ export type PerformanceCardProps =
   import('./components/performance-card').PerformanceCardProps;
 export type { ExpandViewerProps } from './components/expand-viewer';
 export type { ProgressBar2Props } from './components/bar/progress-bar-2';
+export type { CardHeaderProps } from './components/card-header';
 export type { FileSystemExplorerProps } from './components/file-system-explorer';
 export type { FileExplorData } from './components/file-system-explorer/types';
 
