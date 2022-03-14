@@ -127,9 +127,7 @@ const FileSystemExplorer: FC<FileSystemExplorerProps> = ({
             selectPathListValue={selectPathListValue}
             fileListValue={fileListValue}
             setIsEmptyFolder={setIsEmptyFolder}
-          >
-            {el}
-          </FileExplorerColumn>
+          />
         ))}
         {isEmptyFolder && <EmptyFolderInfo />}
         {activeFile && (
