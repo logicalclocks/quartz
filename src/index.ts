@@ -53,6 +53,7 @@ import { SymbolMode } from './components/symbol/types';
 import Collapse from './components/collapse';
 import PerformanceCard from './components/performance-card';
 import Slider from './components/slider';
+import RangeSlider from './components/range-slider';
 import ExpandViewer from './components/expand-viewer';
 
 // Popups
@@ -184,6 +185,7 @@ export {
   Divider,
   PerformanceCard,
   Slider,
+  RangeSlider,
   ExpandViewer,
   // Popups
   usePopup,
@@ -259,6 +261,7 @@ export type ITheme = import('./theme/types').ITheme;
 export type TooltipProps = import('./components/tooltip').TooltipProps;
 export type BadgeProps = import('./components/badges').BadgeProps;
 export type SliderProps = import('./components/slider').SliderProps;
+export type RangeSliderProps = import('./components/range-slider').RangeSliderProps;
 export type EditableSelectProps =
   import('./components/editableSelect').EditableSelectProps;
 export type Select2Props = import('./components/select2').SelectProps;

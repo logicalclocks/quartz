@@ -1,21 +1,27 @@
 import { Meta, Story } from '@storybook/react/types-6-0';
 import React, { useState } from 'react';
 import { Box } from 'rebass';
-import Slider, { Props } from './slider';
+import RangeSlider, { Props } from './range-slider';
+import Value from '../typography/value';
+import Divider from '../divider';
+import Labeling from '../typography/labeling';
 
 export default {
-  title: 'Quartz/Slider',
-  component: Slider,
+  title: 'Quartz/RangeSlider',
+  component: RangeSlider,
 } as Meta;
 
 export const DefaultSlider: Story<Pick<Props, 'label' | 'step' | 'range'>> = (
   props,
 ) => {
-  const [value, setValue] = useState(0);
+  const [value, setValue] = useState([2, 4]);
 
   return (
     <Box width="700px">
-      <Slider value={value} onChange={setValue} {...props} />
+      <RangeSlider value={value} onChange={setValue} {...props} />
+      <Divider />
+      <Labeling>Current value:</Labeling>
+      <Value>[{value.join(', ')}]</Value>
     </Box>
   );
 };
@@ -29,11 +35,14 @@ DefaultSlider.args = {
 export const WithCustomDisplayValue: Story<
   Pick<Props, 'label' | 'step' | 'range' | 'formatDisplayValue'>
 > = (props) => {
-  const [value, setValue] = useState(0);
+  const [value, setValue] = useState([128, 256]);
 
   return (
     <Box width="700px">
-      <Slider value={value} onChange={setValue} {...props} />
+      <RangeSlider value={value} onChange={setValue} {...props} />
+      <Divider />
+      <Labeling>Current value:</Labeling>
+      <Value>[{value.join(', ')}]</Value>
     </Box>
   );
 };
@@ -44,4 +53,3 @@ WithCustomDisplayValue.args = {
   range: [0, 1024],
   formatDisplayValue: (value) => `${value} MB`,
 };
-
