@@ -259,7 +259,7 @@ export {
   constants,
 };
 
-export type ITheme = import('./theme/types').ITheme;
+export type { ITheme, IThemeColors, IThemeIconSizes } from './theme/types';
 export type TooltipProps = import('./components/tooltip').TooltipProps;
 export type BadgeProps = import('./components/badges').BadgeProps;
 export type SliderProps = import('./components/slider').SliderProps;
@@ -267,7 +267,6 @@ export type RangeSliderProps = import('./components/range-slider').RangeSliderPr
 export type EditableSelectProps =
   import('./components/editableSelect').EditableSelectProps;
 export type Select2Props = import('./components/select2').SelectProps;
-export type IThemeColors = import('./theme/types').IThemeColors;
 export type TableCell = import('./components/table/type').TableCell;
 export type HolyTableProps = import('./components/holy-table').HolyTableProps;
 export type TableHeader = import('./components/table/type').TableHeader;

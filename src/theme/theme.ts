@@ -105,6 +105,14 @@ const theme: ITheme = {
     microlabel: 700,
     value: 700,
   },
+  iconSizes: {
+    xxs: '8px',
+    xs: '12px',
+    sm: '16px',
+    md: '20px',
+    lg: '24px',
+    xl: '36px',
+  },
   transitions: {
     button: 'all .25s ease',
   },
