@@ -27,7 +27,8 @@
     "deploy": "gh-pages -d storybook-static",
     "build-storybook": "build-storybook",
     "storybook": "start-storybook -p 6006",
-    "chromatic": "npx chromatic --project-token dqq8k95raoo"
+    "chromatic": "npx chromatic --project-token dqq8k95raoo",
+    "semantic-release": "semantic-release"
   },
   "peerDependencies": {
     "react": "^16.14.0",
@@ -106,6 +107,9 @@
       "snqb-semver",
       "dev"
     ]
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "packageManager": "yarn@3.1.1"
 }
