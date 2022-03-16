@@ -1,10 +1,10 @@
 import { useTheme } from 'emotion-theming';
 import React, { FC } from 'react';
 import { Flex, BoxProps } from 'rebass';
-import { IThemeColors } from '../..';
+import { IThemeColors, IThemeIconSizes } from '../..';
 import { IconName, getIcon } from './list';
 import { ITheme } from '../../theme/types';
-import { path, split } from 'ramda';
+import { path, split, prop } from 'ramda';
 
 export interface GetIconProps extends Omit<BoxProps, 'css' | 'color'> {
   icon: IconName;
@@ -12,12 +12,12 @@ export interface GetIconProps extends Omit<BoxProps, 'css' | 'color'> {
     | Exclude<keyof IThemeColors, 'labels'>
     | `labels.${keyof IThemeColors['labels']}`;
   /** width of the svg, height will scale accordingly */
-  size?: number | string;
+  size?: keyof IThemeIconSizes;
 }
 const GetIcon: FC<GetIconProps> = ({
   icon,
   color = 'black',
-  size = 18,
+  size = 'lg',
   ...props
 }) => {
   const theme = useTheme<ITheme>();
@@ -26,7 +26,7 @@ const GetIcon: FC<GetIconProps> = ({
     <Flex
       sx={{
         svg: {
-          width: typeof size === 'number' ? `${size}px` : size,
+          width: prop(size, theme.iconSizes),
           height: 'auto',
         },
         ...props.sx,

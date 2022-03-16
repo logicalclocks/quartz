@@ -87,21 +87,29 @@ interface IZIndeces {
 }
 
 export type Variants = IThemeVariants | INestedThemeVariants;
-
+export interface IThemeIconSizes {
+  xxs: string;
+  xs: string;
+  sm: string;
+  md: string;
+  lg: string;
+  xl: string;
+}
 export interface ITheme {
+  buttons: Variants;
   colors: IThemeColors;
   fonts: IThemeFonts;
   fontSizes: IThemeFontSizes;
   fontWeights: IThemeFontWeights;
-  shadows: IThemeShadows;
-  transitions: IThemeTransitions;
-  variants: Variants;
-  text: Variants;
-  buttons: Variants;
-  inputs: Variants;
-  pagination: Variants;
+  iconSizes: IThemeIconSizes;
   inputIntents: IInputIntent;
+  inputs: Variants;
   navigation: Variants;
   notification: Variants;
+  pagination: Variants;
+  shadows: IThemeShadows;
+  text: Variants;
+  transitions: IThemeTransitions;
+  variants: Variants;
   zIndices: IZIndeces;
 }

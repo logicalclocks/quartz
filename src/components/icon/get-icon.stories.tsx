@@ -5,6 +5,7 @@ import GetIcon, { GetIconProps } from './GetIcon';
 import { IconName } from '../icon/list';
 import { Box, Flex } from 'rebass';
 import Tooltip from '../tooltip';
+import theme from '../../theme/theme';
 
 export default {
   title: 'Quartz/GetIcon',
@@ -47,7 +48,7 @@ export const Default = Template.bind({});
 
 Default.args = {
   color: 'black',
-  size: 50,
+  size: 'lg',
 };
 
 Default.argTypes = {
@@ -55,15 +56,16 @@ Default.argTypes = {
     description: 'Icon name - Hover over above icons to see the name',
   },
   size: {
-    type: { name: 'number', required: false },
-    defaultValue: 18,
+    type: { name: 'string', required: false },
+    defaultValue: 'lg',
     description:
-      'Number indicating the width of the svg icon, height will scale accordingly.',
+      'String indicating the width of the svg icon, height will scale accordingly.',
+    options: Object.keys(theme.iconSizes),
     control: {
-      type: 'number',
+      type: 'select',
     },
     table: {
-      defaultValue: { summary: '18px' },
+      defaultValue: { summary: 'lg' },
     },
   },
   color: {
