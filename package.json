@@ -103,8 +103,8 @@
   },
   "release": {
     "branches": [
-      "dev",
-      "snqb-semver"
+      "snqb-semver",
+      "dev"
     ]
   },
   "packageManager": "yarn@3.1.1"
