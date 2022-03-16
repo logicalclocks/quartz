@@ -1,7 +1,7 @@
 {
   "homepage": "http://logicalclocks.github.io/quartz",
   "name": "@logicalclocks/quartz",
-  "version": "1.2.0",
+  "version": "1.3.2",
   "description": "Logical Clocks Design System Library",
   "author": "logicalclocks",
   "license": "MIT",
@@ -100,6 +100,12 @@
     "react-syntax-highlighter": "^15.4.3",
     "rebass": "^4.0.7",
     "resize-observer-polyfill": "^1.5.1"
+  },
+  "release": {
+    "branches": [
+      "dev",
+      "snqb-semver"
+    ]
   },
   "packageManager": "yarn@3.1.1"
 }
