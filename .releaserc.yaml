@@ -1,0 +1,3 @@
+branches: ["dev", "snqb-semver"]
+dryRun: false
+debug: false
