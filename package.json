@@ -105,5 +105,8 @@
   "publishConfig": {
     "access": "public"
   },
+  "release": {
+    "branches": ["dev"]
+  },
   "packageManager": "yarn@3.1.1"
 }
