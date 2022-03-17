@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { Range as RCRangeSlider } from 'rc-slider';
 import { FlexProps, Flex } from 'rebass';
 import { useTheme } from 'emotion-theming';
@@ -29,6 +29,14 @@ const RangeSlider = ({
 }: Props) => {
   const theme = useTheme<ITheme>();
 
+  const handleStyle = useMemo(
+    () => ({
+      borderColor: theme.colors.primary,
+      boxShadow: `0 0 5px ${theme.colors.primary}`,
+    }),
+    [theme.colors.primary],
+  );
+
   return (
     <Flex flexDirection="column" {...flexProps}>
       <Flex alignItems="center" mb="10px">
@@ -41,7 +49,9 @@ const RangeSlider = ({
           py="2px"
           sx={{ borderRadius: '2px' }}
         >
-          <Value color="primary">{value.map(formatDisplayValue).join('-')}</Value>
+          <Value color="primary">
+            {value.map(formatDisplayValue).join('-')}
+          </Value>
         </Flex>
       </Flex>
       <RCRangeSlider
@@ -59,12 +69,8 @@ const RangeSlider = ({
             backgroundColor: theme.colors.primary,
           },
         ]}
-        handleStyle={[
-          {
-            borderColor: theme.colors.primary,
-            boxShadow: `0 0 5px ${theme.colors.primary}`,
-          },
-        ]}
+        // we have to handles, so we need two styles for that
+        handleStyle={[handleStyle, handleStyle]}
       />
     </Flex>
   );
