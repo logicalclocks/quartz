@@ -69,7 +69,7 @@ const RangeSlider = ({
             backgroundColor: theme.colors.primary,
           },
         ]}
-        // we have to handles, so we need two styles for that
+        // we have two handles, so we need two styles for that
         handleStyle={[handleStyle, handleStyle]}
       />
     </Flex>
