@@ -137,7 +137,7 @@ import * as constants from './constants';
 
 library.add(fas, far);
 
-export { useTheme } from 'emotion-theming';
+export { default as useTheme } from './theme/useTheme';
 
 export {
   Button,
