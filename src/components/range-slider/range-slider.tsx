@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import { Range as RCRangeSlider } from 'rc-slider';
 import { FlexProps, Flex } from 'rebass';
 import { useTheme } from 'emotion-theming';
