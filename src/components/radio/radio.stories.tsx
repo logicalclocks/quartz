@@ -56,7 +56,7 @@ Group.argTypes = {
   },
   options: {
     type: {
-      summary: 'Array of strings',
+      summary: 'Array of strings or Array of { key, text }',
       required: true,
     },
   },

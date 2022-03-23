@@ -263,7 +263,8 @@ export type { ITheme, IThemeColors, IThemeIconSizes } from './theme/types';
 export type TooltipProps = import('./components/tooltip').TooltipProps;
 export type BadgeProps = import('./components/badges').BadgeProps;
 export type SliderProps = import('./components/slider').SliderProps;
-export type RangeSliderProps = import('./components/range-slider').RangeSliderProps;
+export type RangeSliderProps =
+  import('./components/range-slider').RangeSliderProps;
 export type EditableSelectProps =
   import('./components/editableSelect').EditableSelectProps;
 export type Select2Props = import('./components/select2').SelectProps;
@@ -290,6 +291,11 @@ export type { CardHeaderProps } from './components/card-header';
 export type { FileSystemExplorerProps } from './components/file-system-explorer';
 export type { FileExplorData } from './components/file-system-explorer/types';
 export type { GetIconProps } from './components/icon/GetIcon';
+export type { RadioProps } from './components/radio';
+export type {
+  RadioGroupProps,
+  RadioGroupOption,
+} from './components/radio/radio-group';
 
 // Rebass components
 export { Flex, Box } from 'rebass';
