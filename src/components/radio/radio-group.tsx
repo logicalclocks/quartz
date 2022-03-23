@@ -9,12 +9,12 @@ import randomString from '../../utils/randomString';
 export type RadioGroupOption = {
   key: string;
   text: string;
+  additionalText?: string;
 };
 export interface RadioGroupProps
   extends Omit<RadioProps, 'label' | 'onChange' | 'options' | 'value'> {
   value: string | null;
   options: string[] | RadioGroupOption[];
-  additionalTexts?: string[];
   onChange: (value: string) => void;
   tooltipMessages?: {
     [key: string]: string;
@@ -26,7 +26,6 @@ const RadioGroup: FC<RadioGroupProps> = ({
   options,
   value,
   onChange,
-  additionalTexts,
   tooltipMessages = {},
   flexDirection = 'column',
   ...props
@@ -46,7 +45,7 @@ const RadioGroup: FC<RadioGroupProps> = ({
 
   return (
     <Flex flexDirection={flexDirection}>
-      {mappedOptions?.map(({ key, text }, idx) => (
+      {mappedOptions?.map(({ key, text, additionalText }) => (
         <Radio
           {...props}
           key={key}
@@ -55,7 +54,7 @@ const RadioGroup: FC<RadioGroupProps> = ({
           checked={value === key}
           label={text}
           name={name}
-          addtionalText={additionalTexts?.[idx]}
+          addtionalText={additionalText}
           onChange={handleChange(key)}
           tooltip={tooltipMessages[key]}
         />
