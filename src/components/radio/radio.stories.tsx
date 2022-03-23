@@ -18,7 +18,12 @@ const GroupTemplate: Story<RadioGroupProps> = (props) => {
       value={value}
       onChange={setValue}
       mr="auto"
-      options={['nullable', 'required', 'email', 'url']}
+      options={[
+        { key: 'nullable', text: 'nullable' },
+        { key: 'required', text: 'REQUIRED' },
+        { key: 'email', text: 'email' },
+        { key: 'url', text: 'url' },
+      ]}
       additionalTexts={['text1', 'text2', 'text3', 'text4']}
     />
   );
