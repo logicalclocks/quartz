@@ -6,11 +6,15 @@ import Radio, { RadioProps } from './index';
 // Utils
 import randomString from '../../utils/randomString';
 
+export type RadioGroupOption = {
+  key: string;
+  text: string;
+  additionalText?: string;
+};
 export interface RadioGroupProps
   extends Omit<RadioProps, 'label' | 'onChange' | 'options' | 'value'> {
   value: string | null;
-  options: string[];
-  additionalTexts?: string[];
+  options: string[] | RadioGroupOption[];
   onChange: (value: string) => void;
   tooltipMessages?: {
     [key: string]: string;
@@ -22,7 +26,6 @@ const RadioGroup: FC<RadioGroupProps> = ({
   options,
   value,
   onChange,
-  additionalTexts,
   tooltipMessages = {},
   flexDirection = 'column',
   ...props
@@ -36,20 +39,24 @@ const RadioGroup: FC<RadioGroupProps> = ({
 
   const name = randomString();
 
+  const mappedOptions = options.map((val) =>
+    typeof val === 'string' ? { key: val, text: val } : val,
+  );
+
   return (
     <Flex flexDirection={flexDirection}>
-      {options?.map((option, idx) => (
+      {mappedOptions?.map(({ key, text, additionalText }) => (
         <Radio
           {...props}
-          key={option}
+          key={key}
           mt={flexDirection === 'column' ? 2 : 'initial'}
           mr={flexDirection === 'row' ? '20px' : 'initial'}
-          checked={value === option}
-          label={option}
+          checked={value === key}
+          label={text}
           name={name}
-          addtionalText={additionalTexts?.[idx]}
-          onChange={handleChange(option)}
-          tooltip={tooltipMessages[option]}
+          addtionalText={additionalText}
+          onChange={handleChange(key)}
+          tooltip={tooltipMessages[key]}
         />
       ))}
     </Flex>
