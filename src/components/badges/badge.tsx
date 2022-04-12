@@ -59,7 +59,7 @@ const Badge: FC<BadgeProps> = ({
   icon,
   ...props
 }: BadgeProps) => {
-  const theme = useTheme<ITheme>();
+  const theme = useTheme();
 
   const borderColor = getBorderColor(theme, variant);
   const borderStyle = loading

@@ -3,7 +3,6 @@ import { Box, FlexProps, Flex } from 'rebass';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { useTheme } from 'emotion-theming';
 import Button from '../button';
-import { ITheme } from '../../theme/types';
 import ExpandViewer from '../expand-viewer';
 
 import styles, {
@@ -12,10 +11,10 @@ import styles, {
   lineNumberStyles,
   codeHeaderStyles,
 } from './code.styles';
-import icons from '../../sources/icons';
 import Value from '../typography/value';
 import { copyToClipboard, saveToFile } from '../../utils';
 import { PopupProps } from '../popup';
+import { GetIcon, IconName } from '../icon';
 
 const CONTENT_UPPER_BOUND = 12;
 
@@ -123,7 +122,7 @@ const CodeSnippet: FC<CodeSnippetProps> = ({
   maxHeightOfCode,
   ...props
 }) => {
-  const theme = useTheme<ITheme>();
+  const theme = useTheme();
 
   return (
     <Flex width="100%" sx={styles} height="100%">
@@ -184,7 +183,7 @@ const DownloadButton: FC<
   return (
     <Box>
       <Button intent="ghost" sx={buttonsStyles} onClick={download}>
-        {icons.download}
+        <GetIcon icon={IconName.download} />
         <Value ml="5px" mt="1px">
           download
         </Value>
@@ -221,7 +220,7 @@ const CopyButton: FC<Pick<CodeProps, 'copyCallback' | 'content'>> = ({
         onClick={handleCopyClicked}
         disabled={copied}
       >
-        {icons.copy}
+        <GetIcon icon={IconName.copy} />
         <Value ml="5px" mt="1px">
           {copied ? 'copied' : 'copy'}
         </Value>

@@ -10,7 +10,6 @@ import PickerContext, {
   PickerContextDefault,
 } from '../picker.context';
 import styles from './single-range-slider.styles';
-import { ITheme } from '../../../theme/types';
 import 'rc-slider/assets/index.css';
 
 export interface SingleRangeSliderProps {
@@ -30,7 +29,7 @@ const SingleRangeSlider: FC<SingleRangeSliderProps> = ({
   ...props
 }: SingleRangeSliderProps) => {
   const [context, setContext] = useContext(PickerContext);
-  const theme = useTheme<ITheme>();
+  const theme = useTheme();
 
   const boxProps = useMemo(() => {
     return {

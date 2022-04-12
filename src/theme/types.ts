@@ -29,6 +29,11 @@ export interface IThemeColors {
   };
 }
 
+type LabelColor = keyof IThemeColors['labels'];
+export type Colors = keyof IThemeColors | `labels.${LabelColor}`;
+
+export type IconSizes = keyof IThemeIconSizes;
+
 export type Fonts =
   | 'text'
   | 'title'

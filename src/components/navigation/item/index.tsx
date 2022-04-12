@@ -19,8 +19,6 @@ import styles from './navigation-item.styles';
 import Tooltip from '../../tooltip';
 import TooltipPositions from '../../tooltip/positions';
 
-import { ITheme } from '../../../theme/types';
-
 const getVariant = (isDisabled = false, isActive = false): string => {
   if (isDisabled) {
     return 'disabled';
@@ -33,7 +31,7 @@ const NavigationItem: FC<NavigationItemProps> = (
   props: NavigationItemProps,
 ) => {
   const { activePath, onActivate, trackBy } = useContext(NavigationContext);
-  const theme = useTheme<ITheme>();
+  const theme = useTheme();
 
   const {
     // @ts-ignore

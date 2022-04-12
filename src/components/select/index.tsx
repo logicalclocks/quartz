@@ -1,27 +1,27 @@
 import React, { FC, useCallback, useMemo, useRef, useState } from 'react';
-
 // Components
 import { Box, Flex } from 'rebass';
-import SelectLabel from './label';
-import List from '../list/container';
+import useOnClickOutside from '../../utils/useClickOutside';
+// Hooks
+import useDropdown from '../../utils/useDropdown';
+import useKeyUp from '../../utils/useKeyUp';
+import Divider from '../divider';
+import { GetIcon, IconName } from '../icon';
+import Input from '../input';
+// Types
+import { Intents } from '../intents';
 import Label, { LabelProps } from '../label';
+import List from '../list/container';
+import StickyPortal, { CONTENT_ID } from '../sticky-portal/StickyPortal';
+import Value from '../typography/value';
 import SelectInfo from './info';
+import SelectLabel from './label';
 // List types
 import SelectList from './lists/select-list';
 import SelectListMulti from './lists/select-list-multi';
-// Types
-import { Intents } from '../intents';
 // Styles
-import { listStyles, bottomActionStyles } from './select.styles';
-// Hooks
-import useDropdown from '../../utils/useDropdown';
-import useOnClickOutside from '../../utils/useClickOutside';
-import Divider from '../divider';
-import Input from '../input';
-import Value from '../typography/value';
-import useKeyUp from '../../utils/useKeyUp';
-import icons from '../../sources/icons';
-import StickyPortal, { CONTENT_ID } from '../sticky-portal/StickyPortal';
+import { bottomActionStyles, listStyles } from './select.styles';
+
 
 export interface SelectProps extends Omit<LabelProps, 'onChange' | 'children'> {
   value: string[];
@@ -224,7 +224,7 @@ const Select: FC<SelectProps> = ({
                       }}
                       onClick={(e) => e.stopPropagation()}
                     >
-                      {icons.glass}
+                      <GetIcon color='gray' icon={IconName.glass} />
                     </Box>
                     <Input
                       pl="32px"

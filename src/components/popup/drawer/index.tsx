@@ -8,7 +8,7 @@ import DrawerSection, { DrawerSectionProps } from './drawer-section';
 // Types
 import Action from '../../action.type';
 import Tooltip from '../../tooltip';
-import icons from '../../../sources/icons';
+import { GetIcon, IconName } from '../../icon';
 
 type IDrawer<P> = FC<P> & {
   Section: FC<DrawerSectionProps>;
@@ -75,7 +75,7 @@ const Drawer: IDrawer<DrawerProps> = ({
                   },
                 }}
               >
-                {icons.cross}
+                <GetIcon icon={IconName.cross} />
               </Box>
             </Tooltip>
             <Box ml="auto" display="flex">

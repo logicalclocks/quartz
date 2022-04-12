@@ -1,9 +1,3 @@
-import { library } from '@fortawesome/fontawesome-svg-core';
-
-// Font Awesome icons
-import { fas } from '@fortawesome/free-solid-svg-icons';
-import { far } from '@fortawesome/free-regular-svg-icons';
-
 import Button from './components/button';
 import CompactButton from './components/compact-button';
 import UploadButton from './components/file-button';
@@ -27,7 +21,6 @@ import Dropdown from './components/dropdown';
 import FooterButton from './components/footer-button';
 import Header from './components/header';
 import AlternativeHeader from './components/alternative-header';
-import Icon from './components/icon';
 import { IconName, getIcon } from './components/icon/list';
 import GetIcon from './components/icon/GetIcon';
 import IconButton from './components/icon-button';
@@ -118,8 +111,6 @@ import {
   HoverableLink,
 } from './components/typography/hoverable';
 
-// Icons
-import Icons from './sources/icons';
 // Theme
 import ThemeProvider from './theme/ThemeProvider';
 import theme from './theme/theme';
@@ -135,9 +126,7 @@ import { FileExplorerMode } from './components/file-system-explorer/types';
 // constants
 import * as constants from './constants';
 
-library.add(fas, far);
-
-export { default as useTheme } from './theme/useTheme';
+export { default as useTheme } from 'emotion-theming';
 
 export {
   Button,
@@ -159,7 +148,6 @@ export {
   FooterButton,
   Header,
   AlternativeHeader,
-  Icon,
   IconName,
   getIcon,
   GetIcon,
@@ -249,7 +237,6 @@ export {
   SplitGraph,
   Collapse,
   //  Icons
-  Icons,
   useOnClickOutside,
   Symbol,
   SymbolMode,

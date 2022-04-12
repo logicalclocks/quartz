@@ -3,9 +3,9 @@ export default {
 
   color: 'labels.red',
 
-  borderColor: 'labels.red',
+  borderColor: 'grayShade2',
 
-  boxShadow: 'alert',
+  boxShadow: 'secondary',
 
   ':hover': {
     bg: 'labels.redShade3',

@@ -4,7 +4,6 @@ import { Range } from 'rc-slider';
 // @ts-ignore
 import { useTheme } from 'emotion-theming';
 import PickerHandler from '../handler';
-import { ITheme } from '../../../theme/types';
 import styles from './multi-range-slider.styles';
 import 'rc-slider/assets/index.css';
 import PickerProvider from '../picker.provider';
@@ -30,7 +29,7 @@ const MultiRangeSlider: FC<MultiRangeSliderProps> = ({
   ...props
 }: MultiRangeSliderProps) => {
   const [context, setContext] = useContext(PickerContext);
-  const theme = useTheme<ITheme>();
+  const theme = useTheme();
   const trackStyle = useMemo(() => {
     return value.reduce((curr: any, _item, index) => {
       const val =

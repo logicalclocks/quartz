@@ -4,9 +4,9 @@ import { Meta, Story } from '@storybook/react/types-6-0';
 import React from 'react';
 
 import Input, { InputProps } from '.';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Box } from 'rebass';
 import { Labeling } from '../../index';
+import { GetIcon, IconName } from '../icon';
 
 export default {
   title: 'Quartz/Input',
@@ -130,7 +130,7 @@ const argTypes = {
 
 const Template: Story<InputProps> = (props) => (
   <Input
-    icon="coffee"
+    icon={IconName.glass}
     iconPaddingRight="40px"
     rightIcon={
       <Box
@@ -145,8 +145,7 @@ const Template: Story<InputProps> = (props) => (
           fontSize: '14px',
         }}
       >
-        <FontAwesomeIcon icon="apple-alt" />
-        <FontAwesomeIcon icon="plus" />
+        <GetIcon icon={IconName.plus} />
         <Labeling display="initial" gray>
           P
         </Labeling>

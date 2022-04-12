@@ -5,9 +5,8 @@ import { ITheme } from '../../theme/types';
 import { Intents } from '../intents';
 
 export const chipIconStyles = {
-  width: '10px',
-  height: '10px',
   marginLeft: '4px',
+  marginTop: '2px',
   cursor: 'pointer',
 };
 
@@ -42,7 +41,7 @@ export const getContainerStyles = (intent: Intents): SxStyleProp => ({
 });
 
 export const inputStyles = (): SxStyleProp => {
-  const theme = useTheme<ITheme>();
+  const theme = useTheme();
   return {
     flexGrow: 1,
     border: 'none',

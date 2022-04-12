@@ -1,8 +1,8 @@
 import React, { FC, memo } from 'react';
 import { Flex } from 'rebass';
 import Label from '../../label';
-import icons from './icons';
 import { TabState } from '../types';
+import { GetIcon, IconName } from '../../icon';
 
 export interface TabDescriptionProps {
   state: TabState;
@@ -15,11 +15,11 @@ const TabDescription: FC<TabDescriptionProps> = ({ state }) => {
     case TabState.optional:
       return <Label color="gray">optional</Label>;
     case TabState.valid:
-      return icons.check;
+      return <GetIcon icon={IconName.validate} color="primary" size="sm" />;
     case TabState.error:
       return (
         <Flex flexDirection="row">
-          {icons.error}
+          <GetIcon icon={IconName.error} color="labels.red" size="sm" />
           <Label ml="4px" color="labels.red">
             changes required
           </Label>

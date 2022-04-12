@@ -1,11 +1,11 @@
 import React, { FC, memo, useCallback, useEffect, useState } from 'react';
 import { Box, Flex } from 'rebass';
+import { GetIcon, IconName } from '../icon';
+import Tooltip from '../tooltip';
 import NotificationManager, {
-  SystemNotification,
+  SystemNotification
 } from './notifications-manager';
 import styles from './notifications-styles';
-import icons from '../../sources/icons';
-import Tooltip from '../tooltip';
 
 const Notification: FC<SystemNotification> = ({
   id,
@@ -72,7 +72,7 @@ const Notification: FC<SystemNotification> = ({
               },
             }}
           >
-            {icons.cross}
+            <GetIcon icon={IconName.cross} />
           </Box>
         </Tooltip>
       </Flex>
