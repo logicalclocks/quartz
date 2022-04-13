@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
 
 import GetIcon, { GetIconProps } from './GetIcon';
@@ -6,6 +6,8 @@ import { IconName } from '../icon/list';
 import { Box, Flex } from 'rebass';
 import Tooltip from '../tooltip';
 import theme from '../../theme/theme';
+import Labeling from '../typography/labeling';
+import Input from '../input';
 
 export default {
   title: 'Quartz/GetIcon',
@@ -17,31 +19,47 @@ const allIcons = Object.values(IconName);
 const Template: Story<GetIconProps> = (props) => {
   const [copiedIcon, setCopiedIcon] = useState('');
   const [search, setSearch] = useState('');
-  
+
+  const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearch(e.target.value);
+  };
+
+  const filteredIcons = useMemo(() => {
+    const icons = allIcons.slice(0, allIcons.length / 2) as string[];
+
+    return icons.filter((icon) => icon.includes(search));
+  }, [search]);
+
   return (
     <Flex flexWrap="wrap" width="700px" sx={{ gap: '10px' }}>
-      <Box fontSize={20} mb={20} width="100%">
-        List of all icons - hover over each icon to see the name of tooltip
-        Click on Icon to copy the icon name
-      </Box>
-      {(allIcons.slice(0, allIcons.length / 2) as string[]).map((icon, i) => {
-        return (
-          <Tooltip
-            delayed={false}
-            mainText={icon}
-            secondaryText={copiedIcon === icon ? 'copied' : 'copy'}
+      <Input
+        placeholder="anything specific? e.g. 'glass'"
+        width="100%"
+        mb={2}
+        value={search}
+        onChange={handleSearch}
+        icon={IconName.glass}
+      />
+
+      {filteredIcons.map((icon) => (
+        <Tooltip
+          delayed={false}
+          mainText={icon}
+          secondaryText={copiedIcon === icon ? 'copied' : 'copy'}
+        >
+          <Box
+            onClick={() => {
+              navigator.clipboard.writeText(icon);
+              setCopiedIcon(icon);
+            }}
           >
-            <Box
-              onClick={() => {
-                navigator.clipboard.writeText(icon);
-                setCopiedIcon(icon);
-              }}
-            >
-              <GetIcon {...props} icon={i} />
-            </Box>
-          </Tooltip>
-        );
-      })}
+            <GetIcon {...props} icon={IconName[icon]} />
+          </Box>
+        </Tooltip>
+      ))}
+      <Box mt={1} width="100%">
+        <Labeling gray>^ just click to copy.</Labeling>
+      </Box>
     </Flex>
   );
 };
