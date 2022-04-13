@@ -30,7 +30,7 @@ export interface IThemeColors {
 }
 
 type LabelColor = keyof IThemeColors['labels'];
-export type Colors = keyof IThemeColors | `labels.${LabelColor}`;
+export type Color = keyof IThemeColors | `labels.${LabelColor}`;
 
 export type IconSizes = keyof IThemeIconSizes;
 

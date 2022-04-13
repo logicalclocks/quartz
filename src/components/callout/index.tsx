@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { Box, Flex, FlexProps, Text } from 'rebass';
 import styles from './callout.styles';
-import { Colors } from '../../theme/types';
+import { Color } from '../../theme/types';
 import { GetIcon, IconName } from '../icon';
 
 export enum CalloutTypes {
@@ -11,15 +11,12 @@ export enum CalloutTypes {
   neutral = 'neutral',
 }
 
-const typeToColor = (type: CalloutTypes): Colors => {
-  return {
-    valid: 'primary' as const,
-    error: 'labels.red' as const,
-    warning: 'labels.orange' as const,
-    neutral: 'black' as const,
-  }[type];
+const calloutColors: Record<CalloutTypes, Color> = {
+  valid: 'primary',
+  error: 'labels.red',
+  warning: 'labels.orange',
+  neutral: 'black',
 };
-
 export interface ICalloutProps extends Omit<FlexProps, 'content' | 'css'> {
   type: CalloutTypes;
   content: string | React.ReactNode;
@@ -44,7 +41,7 @@ const Callout: FC<ICalloutProps> = ({
       maxWidth={cta ? '80%' : '100%'}
     >
       <Box mt="-2px" mb="-3px" mr="8px">
-        <GetIcon color={typeToColor(type)} icon={IconName.info_block} />
+        <GetIcon color={calloutColors[type]} icon={IconName.info_block} />
       </Box>
       <Box as="pre">
         <Text

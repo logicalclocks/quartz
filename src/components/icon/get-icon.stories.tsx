@@ -16,6 +16,8 @@ const allIcons = Object.values(IconName);
 
 const Template: Story<GetIconProps> = (props) => {
   const [copiedIcon, setCopiedIcon] = useState('');
+  const [search, setSearch] = useState('');
+  
   return (
     <Flex flexWrap="wrap" width="700px" sx={{ gap: '10px' }}>
       <Box fontSize={20} mb={20} width="100%">

@@ -2,12 +2,12 @@ import { useTheme } from 'emotion-theming';
 import { path, prop, split } from 'ramda';
 import React, { FC } from 'react';
 import { BoxProps, Flex } from 'rebass';
-import { Colors, IconSizes } from '../../theme/types';
+import { Color, IconSizes } from '../../theme/types';
 import { getIcon, IconName } from './list';
 
 export interface GetIconProps extends Omit<BoxProps, 'css' | 'color'> {
   icon: IconName;
-  color?: Colors;
+  color?: Color;
   /** width of the svg, height will scale accordingly */
   size?: IconSizes;
 }
