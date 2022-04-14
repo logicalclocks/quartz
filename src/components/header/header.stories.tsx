@@ -4,13 +4,12 @@ import { Box } from 'rebass';
 
 // Components
 import { IconButton, Label, List, ListItem } from '../../index';
-import FolderIcon from '../icons/folder.icon';
 import Subtitle from '../typography/subtitle';
 import Header, { HeaderProps } from './index';
 // Types
 import MenuButton from './menu-button';
 import User from '../user';
-import { IconName } from '../icon/list';
+import { GetIcon, IconName } from '../icon';
 
 import { Default as NavigationStory } from '../navigation/navigation.stories';
 
@@ -41,7 +40,7 @@ Default.args = {
   ],
   children: (
     <>
-      <FolderIcon />
+      <GetIcon icon={IconName.folder }/>
       <Subtitle ml="16px">PROJECT ACME</Subtitle>
     </>
   ),

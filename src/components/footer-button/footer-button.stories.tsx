@@ -1,10 +1,10 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { action } from '@storybook/addon-actions';
 import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
 
 import FooterButton, { QuartzFooterButtonProps } from '.';
+import { GetIcon, IconName } from '../icon';
 
 export default {
   title: 'Quartz/Buttons',
@@ -22,7 +22,7 @@ Footer.args = {
   children: (
     <>
       <span>Open Feature Group’s Page</span>
-      <FontAwesomeIcon icon="arrow-right" />
+      <GetIcon icon={IconName.arrow_right}/>
     </>
   ),
   onClick: action('onClick'),

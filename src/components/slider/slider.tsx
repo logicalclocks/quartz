@@ -2,7 +2,6 @@ import React from 'react';
 import RcSlider from 'rc-slider';
 import { FlexProps, Flex } from 'rebass';
 import { useTheme } from 'emotion-theming';
-import { ITheme } from '../../theme/types';
 import Labeling from '../typography/labeling';
 import Value from '../typography/value';
 
@@ -28,7 +27,7 @@ const Slider = ({
   formatDisplayValue = (displayValue) => displayValue.toString(),
   ...flexProps
 }: Props) => {
-  const theme = useTheme<ITheme>();
+  const theme = useTheme();
 
   return (
     <Flex flexDirection="column" {...flexProps}>

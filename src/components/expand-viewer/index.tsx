@@ -7,7 +7,6 @@ import { Box, Button as RebassButton, Flex } from 'rebass';
 import Value from '../typography/value';
 import Subtitle from '../typography/subtitle';
 import expandViewButtonStyle from './expand-viewer.styles';
-import { ITheme } from '../../theme/types';
 
 export interface ExpandViewerProps {
   title?: string;
@@ -70,7 +69,7 @@ interface ExpandButtonProps {
   onClick: () => void;
 }
 const ExpandButton: FC<ExpandButtonProps> = ({ onClick }) => {
-  const theme = useTheme<ITheme>();
+  const theme = useTheme();
   return (
     <RebassButton variant="ghost" sx={expandViewButtonStyle} onClick={onClick}>
       <Value>expand view</Value>

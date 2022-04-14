@@ -36,4 +36,13 @@ const getStyles = (intent: Intents, isTextArea: boolean) => ({
   },
 });
 
+export const getIconStyle = {
+  left: '8px',
+  position: 'absolute',
+  top: '16px',
+  transform: 'translateY(-50%)',
+
+  fontSize: '14px',
+}
+
 export default getStyles;
