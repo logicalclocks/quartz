@@ -1,7 +1,7 @@
 import React, { FC, useState } from 'react';
 import { Box, FlexProps, Flex } from 'rebass';
 import SyntaxHighlighter from 'react-syntax-highlighter';
-import { useTheme } from 'emotion-theming';
+import { useTheme } from '../../theme/theme';
 import Button from '../button';
 import ExpandViewer from '../expand-viewer';
 

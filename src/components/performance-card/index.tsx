@@ -1,10 +1,7 @@
 import React, { FC } from 'react';
 import { Card, CardProps } from 'rebass';
-// @ts-ignore
-import { useTheme } from 'emotion-theming';
 
 import PerformanceBar from '../performance-bar';
-
 import * as s from './performance-card.styles';
 
 interface Bar {

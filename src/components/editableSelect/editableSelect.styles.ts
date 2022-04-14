@@ -1,6 +1,5 @@
 import { SxStyleProp } from 'rebass';
-// @ts-ignore
-import { useTheme } from 'emotion-theming';
+import { useTheme } from '../../theme/theme';
 import { ITheme } from '../../theme/types';
 import { Intents } from '../intents';
 

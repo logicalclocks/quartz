@@ -113,7 +113,7 @@ import {
 
 // Theme
 import ThemeProvider from './theme/ThemeProvider';
-import theme from './theme/theme';
+import theme, { useTheme } from './theme/theme';
 
 // Hooks
 import useDropdown from './utils/useDropdown';
@@ -125,8 +125,6 @@ import { FileExplorerMode } from './components/file-system-explorer/types';
 
 // constants
 import * as constants from './constants';
-
-export { default as useTheme } from 'emotion-theming';
 
 export {
   Button,
@@ -242,6 +240,7 @@ export {
   SymbolMode,
   graphColors,
   theme,
+  useTheme,
   // Constants
   constants,
 };

@@ -8,9 +8,8 @@ import React, {
   useEffect,
   useMemo,
 } from 'react';
+import { useTheme } from '../../../theme/theme';
 
-// @ts-ignore
-import { useTheme } from 'emotion-theming';
 // Context
 import NavigationContext from '../context/navigation.context';
 import { NavigationItemProps } from '../types';

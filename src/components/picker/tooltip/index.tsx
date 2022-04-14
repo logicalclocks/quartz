@@ -1,8 +1,7 @@
 import React, { FC, Fragment } from 'react';
 import { css, Global } from '@emotion/core';
-// @ts-ignore
-import { useTheme } from 'emotion-theming';
 import Tooltip from 'rc-tooltip';
+import { useTheme } from '../../../theme/theme';
 import Value from '../../typography/value';
 
 interface ITooltipWrapperProps {
