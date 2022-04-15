@@ -13,8 +13,8 @@
     "node": ">=14.0.0"
   },
   "scripts": {
-    "build": "microbundle --compress --format modern,cjs --jsx React.createElement",
-    "build-dev": "microbundle --no-compress --format modern,cjs --jsx React.createElement",
+    "build": "microbundle --compress --format modern,cjs --jsx React.createElement --external react,react-dom",
+    "build-dev": "microbundle --no-compress --format modern,cjs --jsx React.createElement --external react,react-dom",
     "start": "microbundle watch --no-compress --format modern,cjs --jsx React.createElement",
     "prepare": "run-s build",
     "prepack": "run-s build",

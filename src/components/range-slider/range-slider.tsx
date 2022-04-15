@@ -1,7 +1,7 @@
 import React from 'react';
 import { Range as RCRangeSlider } from 'rc-slider';
 import { FlexProps, Flex } from 'rebass';
-import { useTheme } from 'emotion-theming';
+import { useTheme } from '../../theme/theme';
 import Labeling from '../typography/labeling';
 import Value from '../typography/value';
 

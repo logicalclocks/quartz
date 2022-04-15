@@ -1,8 +1,7 @@
 import React, { FC, useCallback, useContext, useMemo } from 'react';
 import { Box } from 'rebass';
 import { Range } from 'rc-slider';
-// @ts-ignore
-import { useTheme } from 'emotion-theming';
+import { useTheme } from '../../../theme/theme';
 import PickerHandler from '../handler';
 import styles from './multi-range-slider.styles';
 import 'rc-slider/assets/index.css';

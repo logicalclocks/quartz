@@ -1,3 +1,4 @@
+import { useTheme as useEmotionTheme } from 'emotion-theming';
 // Button themes
 import buttons from './buttons';
 import iconButtons from './icon-buttons';
@@ -172,5 +173,7 @@ const theme: ITheme = {
   pagination,
   notification,
 };
+
+export const useTheme = () => useEmotionTheme<ITheme>();
 
 export default theme;

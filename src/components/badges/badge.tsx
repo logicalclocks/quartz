@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
-import { useTheme } from 'emotion-theming';
 import { Flex, FlexProps } from 'rebass';
+import { useTheme } from '../../theme/theme';
 import { getIcon, IconName } from '../icon/list';
 import Value from '../typography/value';
 import getBorderAnimation from './animation';
