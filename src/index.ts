@@ -66,7 +66,13 @@ import ProgressBar2 from './components/bar/progress-bar-2';
 
 // Badges
 import User from './components/user';
-import { Badge, TextValueBadge, Dot, ProjectBadge } from './components/badges';
+import {
+  Badge,
+  Blink,
+  TextValueBadge,
+  Dot,
+  ProjectBadge,
+} from './components/badges';
 
 // Navigation
 import Navigation from './components/navigation/container';
@@ -191,6 +197,7 @@ export {
   User,
   TextValueBadge,
   Badge,
+  Blink,
   ProjectBadge,
   Dot,
   // Navigation
@@ -247,7 +254,7 @@ export {
 
 export type { ITheme, IThemeColors, IThemeIconSizes } from './theme/types';
 export type TooltipProps = import('./components/tooltip').TooltipProps;
-export type BadgeProps = import('./components/badges').BadgeProps;
+export type { BadgeProps, BlinkProps } from './components/badges';
 export type SliderProps = import('./components/slider').SliderProps;
 export type RangeSliderProps =
   import('./components/range-slider').RangeSliderProps;
