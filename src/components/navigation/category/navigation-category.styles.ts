@@ -31,10 +31,5 @@ export default {
     fontFamily: 'Inter',
     fontWeight: 'bold',
     fontSize: '12px',
-
-    svg: {
-      mr: '12px',
-      mt: '-6px',
-    },
   },
 };

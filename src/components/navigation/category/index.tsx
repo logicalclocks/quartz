@@ -3,13 +3,13 @@ import React, { FC, memo, useCallback, useContext } from 'react';
 
 // Components
 import NavigationItem from '../item';
+import Labeling from '../../typography/labeling';
 // Styles
 import styles from './navigation-category.styles';
 // Content
 import NavigationContext from '../context/navigation.context';
 // Types
 import { NavigationItemProps } from '../types';
-import { GetIcon, IconName } from '../../icon';
 
 export interface NavigationCategoryProps
   extends Omit<NavigationItemProps, 'isSubItem'> {
@@ -34,8 +34,7 @@ const NavigationCategory: FC<NavigationCategoryProps> = ({
       <Box sx={styles} tx="navigation" variant="category">
         {!hideBack && (
           <div onClick={handleBackClick} role="button" tabIndex={-1}>
-            <GetIcon icon={IconName.arrow_left} />
-            Back
+            <Labeling bold>{'<- Back'}</Labeling>
           </div>
         )}
         {children}
