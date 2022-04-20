@@ -183,7 +183,7 @@ const DownloadButton: FC<
   return (
     <Box>
       <Button intent="ghost" sx={buttonsStyles} onClick={download}>
-        <GetIcon icon={IconName.download} />
+        <GetIcon size="md" icon={IconName.download} />
         <Value ml="5px" mt="1px">
           download
         </Value>
@@ -220,7 +220,7 @@ const CopyButton: FC<Pick<CodeProps, 'copyCallback' | 'content'>> = ({
         onClick={handleCopyClicked}
         disabled={copied}
       >
-        <GetIcon icon={IconName.copy} />
+        <GetIcon size="md" icon={IconName.copy} />
         <Value ml="5px" mt="1px">
           {copied ? 'copied' : 'copy'}
         </Value>

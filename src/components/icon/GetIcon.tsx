@@ -24,7 +24,7 @@ const GetIcon: FC<GetIconProps> = ({
       sx={{
         svg: {
           width: prop(size, theme.iconSizes),
-          height: 'auto',
+          height: prop(size, theme.iconSizes),
         },
         ...props.sx,
       }}
