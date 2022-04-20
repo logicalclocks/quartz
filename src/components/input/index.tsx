@@ -98,7 +98,7 @@ const Input: FC<InputProps> = forwardRef(
             placeholder={placeholder}
             {...props}
           />{' '}
-          {icon && <GetIcon icon={icon} color="gray" size="md" sx={getIconStyle}/>}
+          {icon && <GetIcon icon={icon} color="gray" size="sm" sx={getIconStyle}/>}
           {rightIcon && rightIcon}
         </Box>
         {info && <InputInfo intent={intent}>{info}</InputInfo>}

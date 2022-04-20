@@ -5,13 +5,21 @@ import React from 'react';
 
 import Input, { InputProps } from '.';
 import { Box } from 'rebass';
-import { Labeling } from '../../index';
 import { GetIcon, IconName } from '../icon';
 
 export default {
   title: 'Quartz/Input',
   component: Input,
 } as Meta;
+
+const rightIconMapping = {
+  none: null,
+  example: (
+    <Box sx={{ position: 'absolute', right: '8px', top: '8px' }}>
+      <GetIcon size="sm" icon={IconName.eye} />
+    </Box>
+  ),
+};
 
 const argTypes = {
   onChange: {
@@ -107,53 +115,35 @@ const argTypes = {
     },
   },
   icon: {
+    options: Object.values(IconName).filter((x) => typeof x === 'string'),
+    mapping: IconName,
     control: {
       type: 'select',
-      options: [undefined, 'search', 'coffee'],
     },
     type: {
       required: false,
-      summary: 'Left icon',
+      summary: 'Left icon. Receives IconName',
     },
   },
   rightIcon: {
+    options: ['none', 'example'],
+    mapping: rightIconMapping,
     control: {
       type: 'select',
-      options: [undefined, 'search', 'coffee'],
     },
     type: {
       required: false,
-      summary: 'Right icon',
+      summary: `
+        Right icon. 
+        Receives JSX element. Wants an absolute position, as the parent is relative.
+        Should not really be called rightIcon(or exist), but it is a long story :)`,
     },
   },
 };
 
-const Template: Story<InputProps> = (props) => (
-  <Input
-    icon={IconName.glass}
-    iconPaddingRight="40px"
-    rightIcon={
-      <Box
-        sx={{
-          right: '10px',
-          position: 'absolute',
-          top: '16px',
-          transform: 'translateY(-50%)',
-          path: {
-            fill: 'gray',
-          },
-          fontSize: '14px',
-        }}
-      >
-        <GetIcon icon={IconName.plus} />
-        <Labeling display="initial" gray>
-          P
-        </Labeling>
-      </Box>
-    }
-    {...props}
-  />
-);
+const Template: Story<InputProps> = (props) => {
+  return <Input icon={IconName.glass} iconPaddingRight="40px" {...props} />;
+};
 
 export const Default = Template.bind({});
 
