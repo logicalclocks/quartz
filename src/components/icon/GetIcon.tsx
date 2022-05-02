@@ -19,19 +19,22 @@ const GetIcon: FC<GetIconProps> = ({
 }) => {
   const theme = useTheme();
   const themeColor = path<string>(split('.', color), theme.colors)!;
+  const iconSize = prop(size, theme.iconSizes);
 
   return (
     <Box
       {...props}
       sx={{
         svg: {
-          width: prop(size, theme.iconSizes),
-          height: prop(size, theme.iconSizes),
+          width: iconSize,
+          height: iconSize,
         },
+        width: iconSize,
+        height: iconSize,
         ...props.sx,
       }}
     >
-      {getIcon(icon, themeColor, prop(size, theme.iconSizes))}
+      {getIcon(icon, themeColor, iconSize)}
     </Box>
   );
 };

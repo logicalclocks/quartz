@@ -136,7 +136,7 @@ const SelectLabel: FC<SelectLabelProps> = forwardRef(
             </Flex>
           </Flex>
         )}
-        <Flex>
+        <Flex alignItems="center">
           {deletabled && (
             <Box
               width="18px"
@@ -149,10 +149,10 @@ const SelectLabel: FC<SelectLabelProps> = forwardRef(
               sx={deletabledStyles}
               ml="auto"
             >
-              <GetIcon icon={IconName.cross} size='sm' />
+              <GetIcon icon={IconName.cross} size="sm" />
             </Box>
           )}
-          <GetIcon icon={IconName.arrow_up_down} size='sm' />
+          <GetIcon icon={IconName.arrow_up_down} size="sm" />
         </Flex>
         {children}
       </Flex>
