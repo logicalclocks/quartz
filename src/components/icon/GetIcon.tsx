@@ -1,6 +1,6 @@
 import { path, prop, split } from 'ramda';
 import React, { FC } from 'react';
-import { Box, BoxProps } from 'rebass';
+import { BoxProps, Flex } from 'rebass';
 import { useTheme } from '../../theme/theme';
 import { Color, IconSizes } from '../../theme/types';
 import { getIcon, IconName } from './list';
@@ -19,20 +19,21 @@ const GetIcon: FC<GetIconProps> = ({
 }) => {
   const theme = useTheme();
   const themeColor = path<string>(split('.', color), theme.colors)!;
+  const iconSize = prop(size, theme.iconSizes);
 
   return (
-    <Box
+    <Flex
       {...props}
       sx={{
         svg: {
-          width: prop(size, theme.iconSizes),
-          height: prop(size, theme.iconSizes),
+          width: iconSize,
+          height: iconSize,
         },
         ...props.sx,
       }}
     >
-      {getIcon(icon, themeColor, prop(size, theme.iconSizes))}
-    </Box>
+      {getIcon(icon, themeColor, iconSize)}
+    </Flex>
   );
 };
 
