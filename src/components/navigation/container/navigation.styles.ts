@@ -2,7 +2,7 @@ const styles = (isOpen: boolean) => ({
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
-  justifyContent: 'space-between',
+  justifyContent: 'flex-start',
 
   borderRightStyle: 'solid',
   borderRightWidth: '1px',
@@ -21,6 +21,7 @@ const styles = (isOpen: boolean) => ({
 
     display: 'flex',
     flexDirection: 'column',
+    flex: 1,
 
     m: 0,
     p: 0,
