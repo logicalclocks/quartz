@@ -155,6 +155,7 @@ export const TreeObject: Story<NavigationProps> = () => {
       <Navigation
         onNavigate={action('On Navigate')}
         tree={tree}
+        header={'Header'}
         footer={<Footer />}
       />
     </Box>
