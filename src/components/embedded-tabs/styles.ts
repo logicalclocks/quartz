@@ -2,16 +2,22 @@ import { SxStyleProp } from 'rebass';
 import * as R from 'ramda';
 
 export const tabsList = {
-  verticalAlign: 'middle',
+  /* It is `inline-table` to have the ability to collapse borders */
   display: 'inline-table',
+  verticalAlign: 'middle',
   borderCollapse: 'collapse',
+
+  '> div:not(:last-child)': {
+    marginRight: '20px'
+  }
 } as SxStyleProp;
 
-/* this one is needed to have the line that spans across the whole width */
+/* this one is needed to have the line that spans across the rest of the width. Couldn't find any other solution. */
 export const tabsLineEnding = {
   display: 'table-cell',
   width: '100%',
-  borderBottom: '1px solid gray',
+  borderBottom: '1px solid',
+  borderBottomColor: 'gray',
   pointerEvents: 'none',
 };
 
@@ -31,7 +37,8 @@ export const tab = {
   p: 10,
 
   backgroundColor: 'grayShade3',
-  border: '1px solid gray',
+  border: '1px solid',
+  borderColor: ' gray',
 
   whiteSpace: 'nowrap',
   userSelect: 'none',
