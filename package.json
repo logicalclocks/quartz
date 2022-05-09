@@ -29,7 +29,8 @@
     "storybook": "start-storybook -p 6006",
     "chromatic": "npx chromatic --project-token dqq8k95raoo",
     "semantic-release": "semantic-release",
-    "commit": "cz"
+    "commit": "cz",
+    "publish-local": "yarn dlx yalc publish"
   },
   "peerDependencies": {
     "react": "^16.14.0",
