@@ -11,13 +11,12 @@ export interface Props {
   disabled?: boolean;
 }
 
-const getStyles = ({ active, disabled }: any): SxStyleProp => {
-  return {
+const getStyles = ({ active, disabled }: Props) =>
+  ({
     ...S.tab,
-    ...(active && S.activeTab),
-    ...(disabled && S.disabledTab),
-  };
-};
+    ...(active ? S.activeTab : {}),
+    ...(disabled ? S.disabledTab : {}),
+  } as SxStyleProp);
 
 const Tab: FC<Props> = (props) => {
   const propagatedProps = R.pick(['disabled', 'onClick'], props);

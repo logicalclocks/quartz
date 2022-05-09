@@ -4,12 +4,6 @@ import * as S from './styles';
 import Tab, { Props as EmbeddedTabItem } from './Tab';
 import * as R from 'ramda';
 
-export enum ValidateOpts {
-  valid = 'valid',
-  error = 'error',
-  untouched = 'untouched',
-}
-
 export interface Props extends Omit<BoxProps, 'css'> {
   tabs: EmbeddedTabItem[];
   initialTab?: number;
@@ -50,7 +44,8 @@ const EmbeddedTabs: FC<Props> = ({
           {...tabProps}
         />
       ))}
-      <Box tabIndex={-1} sx={S.tabsLineEnding}></Box>
+      {/* This box is needed to draw the horizontal line up to the full width, it's a stylistic decision */}
+      <Box tabIndex={-1} sx={S.tabsLineEnding} />
     </Box>
   );
 };
