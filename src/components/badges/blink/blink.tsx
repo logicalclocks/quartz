@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { FlexProps, Flex } from 'rebass';
-import { Labeling } from '../../..';
+import Labeling from '../../typography/labeling';
 // Styles
 import styles from './blink.styles';
 
