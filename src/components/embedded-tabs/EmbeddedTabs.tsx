@@ -2,7 +2,6 @@ import React, { FC, useState } from 'react';
 import { Box, BoxProps } from 'rebass';
 import * as S from './styles';
 import Tab, { Props as EmbeddedTabItem } from './Tab';
-import * as R from 'ramda';
 
 export interface Props extends Omit<BoxProps, 'css'> {
   tabs: EmbeddedTabItem[];
@@ -17,13 +16,13 @@ const EmbeddedTabs: FC<Props> = ({
   sx = {},
   ...boxProps
 }: Props) => {
-  const [active, setActive] = useState(R.clamp(0, tabs.length - 1, initialTab));
+  const [activeIndex, setActiveIndex] = useState(initialTab);
 
-  const handleTabClick = (index: number) => {
-    setActive(index);
+  const handleTabClick = (newIndex: number) => {
+    setActiveIndex(newIndex);
 
     if (onTabChange) {
-      onTabChange(index);
+      onTabChange(newIndex);
     }
   };
 
@@ -33,7 +32,7 @@ const EmbeddedTabs: FC<Props> = ({
         <Tab
           key={title}
           title={title}
-          active={index === active}
+          active={index === activeIndex}
           onClick={() => {
             if (onTabClick) {
               onTabClick();
