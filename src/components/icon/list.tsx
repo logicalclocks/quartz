@@ -91,6 +91,9 @@ export enum IconName {
   deployments,
   jupyter,
   datasets,
+  favouriteEmpty,
+  favouriteFilled,
+  correlation,
 }
 
 export function getIcon(
@@ -1463,14 +1466,14 @@ export function getIcon(
           fill="none"
         >
           <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
+            fillRule="evenodd"
+            clipRule="evenodd"
             d="M12 12.5859L16.7071 17.293C17.0976 17.6836 17.0976 18.3167 16.7071 18.7073C16.3166 19.0978 15.6834 19.0978 15.2929 18.7073L12 15.4144L8.70711 18.7073C8.31658 19.0978 7.68342 19.0978 7.29289 18.7073C6.90237 18.3167 6.90237 17.6836 7.29289 17.293L12 12.5859Z"
             fill={color}
           />
           <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
+            fillRule="evenodd"
+            clipRule="evenodd"
             d="M12 11.4141L7.29289 6.70696C6.90237 6.31643 6.90237 5.68327 7.29289 5.29274C7.68342 4.90222 8.31658 4.90222 8.70711 5.29274L12 8.58564L15.2929 5.29274C15.6834 4.90222 16.3166 4.90222 16.7071 5.29274C17.0976 5.68327 17.0976 6.31643 16.7071 6.70696L12 11.4141Z"
             fill={color}
           />
@@ -1486,14 +1489,14 @@ export function getIcon(
           fill="none"
         >
           <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
+            fillRule="evenodd"
+            clipRule="evenodd"
             d="M12 21L7.29289 16.2929C6.90237 15.9024 6.90237 15.2692 7.29289 14.8787C7.68342 14.4882 8.31658 14.4882 8.70711 14.8787L12 18.1716L15.2929 14.8787C15.6834 14.4882 16.3166 14.4882 16.7071 14.8787C17.0976 15.2692 17.0976 15.9024 16.7071 16.2929L12 21Z"
             fill={color}
           />
           <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
+            fillRule="evenodd"
+            clipRule="evenodd"
             d="M12 3L16.7071 7.70711C17.0976 8.09763 17.0976 8.7308 16.7071 9.12132C16.3166 9.51185 15.6834 9.51185 15.2929 9.12132L12 5.82843L8.70711 9.12132C8.31658 9.51185 7.68342 9.51185 7.29289 9.12132C6.90237 8.7308 6.90237 8.09763 7.29289 7.70711L12 3Z"
             fill={color}
           />
@@ -1593,6 +1596,84 @@ export function getIcon(
             fillRule="evenodd"
             clipRule="evenodd"
             d="M12.5 7V8.5H19C19.2761 8.5 19.5 8.72386 19.5 9V10.25H4.5V7C4.5 6.72386 4.72386 6.5 5 6.5H12C12.2761 6.5 12.5 6.72386 12.5 7ZM4.5 11.75V18C4.5 18.2761 4.72386 18.5 5 18.5H19C19.2761 18.5 19.5 18.2761 19.5 18V11.75H4.5ZM21 9C21 7.89543 20.1046 7 19 7H14C14 5.89543 13.1046 5 12 5H5C3.89543 5 3 5.89543 3 7V18C3 19.1046 3.89543 20 5 20H19C20.1046 20 21 19.1046 21 18V9Z"
+            fill={color}
+          />
+        </svg>
+      );
+    case IconName.favouriteFilled:
+      return (
+        <svg
+          width={size}
+          height={size}
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M12.0003 15.9505L8.29261 18L9.00075 13.6585L6 10.584L10.1456 9.95053L12.0003 6L13.8544 9.95053L18 10.584L14.9998 13.6585L15.7086 18L12.0003 15.9505Z"
+            fill={color}
+          />
+        </svg>
+      );
+    case IconName.favouriteEmpty:
+      return (
+        <svg
+          width={size}
+          height={size}
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M12.3631 15.7941L12.0003 15.5936L11.6375 15.7941L9.28145 17.0964L9.74097 14.2793L9.80192 13.9056L9.53748 13.6347L7.55639 11.6049L10.2588 11.1919L10.6544 11.1315L10.8245 10.7693L12.0002 8.265L13.1755 10.7692L13.3455 11.1315L13.7412 11.1919L16.4438 11.6049L14.4631 13.6347L14.1986 13.9057L14.2596 14.2794L14.7195 17.0965L12.3631 15.7941Z"
+            stroke={color}
+            strokeWidth="1.5"
+          />
+        </svg>
+      );
+    case IconName.correlation:
+      return (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width={size}
+          height={size}
+          viewBox="0 0 24 24"
+          fill="none"
+        >
+          <path
+            fillRule="evenodd"
+            clipRule="evenodd"
+            d="M17.5 18.5L18.5 18.5L18.5 17.5L17.5 17.5L17.5 18.5ZM16 19C16 19.5523 16.4477 20 17 20L19 20C19.5523 20 20 19.5523 20 19L20 17C20 16.4477 19.5523 16 19 16L17 16C16.4477 16 16 16.4477 16 17L16 19Z"
+            fill={color}
+          />
+          <path
+            fillRule="evenodd"
+            clipRule="evenodd"
+            d="M11.5 18.5L12.5 18.5L12.5 17.5L11.5 17.5L11.5 18.5ZM10 19C10 19.5523 10.4477 20 11 20L13 20C13.5523 20 14 19.5523 14 19L14 17C14 16.4477 13.5523 16 13 16L11 16C10.4477 16 10 16.4477 10 17L10 19Z"
+            fill={color}
+          />
+          <path
+            fillRule="evenodd"
+            clipRule="evenodd"
+            d="M11.5 12.5L12.5 12.5L12.5 11.5L11.5 11.5L11.5 12.5ZM10 13C10 13.5523 10.4477 14 11 14L13 14C13.5523 14 14 13.5523 14 13L14 11C14 10.4477 13.5523 10 13 10L11 10C10.4477 10 10 10.4477 10 11L10 13Z"
+            fill={color}
+          />
+          <path
+            fillRule="evenodd"
+            clipRule="evenodd"
+            d="M5.5 18.5L6.5 18.5L6.5 17.5L5.5 17.5L5.5 18.5ZM4 19C4 19.5523 4.44772 20 5 20L7 20C7.55228 20 8 19.5523 8 19L8 17C8 16.4477 7.55228 16 7 16L5 16C4.44772 16 4 16.4477 4 17L4 19Z"
+            fill={color}
+          />
+          <path
+            fillRule="evenodd"
+            clipRule="evenodd"
+            d="M5.5 12.5L6.5 12.5L6.5 11.5L5.5 11.5L5.5 12.5ZM4 13C4 13.5523 4.44772 14 5 14L7 14C7.55228 14 8 13.5523 8 13L8 11C8 10.4477 7.55228 10 7 10L5 10C4.44772 10 4 10.4477 4 11L4 13Z"
+            fill={color}
+          />
+          <path
+            fillRule="evenodd"
+            clipRule="evenodd"
+            d="M5.5 6.5L6.5 6.5L6.5 5.5L5.5 5.5L5.5 6.5ZM4 7C4 7.55228 4.44772 8 5 8L7 8C7.55228 8 8 7.55228 8 7L8 5C8 4.44772 7.55228 4 7 4L5 4C4.44772 4 4 4.44772 4 5L4 7Z"
             fill={color}
           />
         </svg>
