@@ -252,6 +252,8 @@ export {
   constants,
 };
 
+export { default as EmbeddedTabs } from './components/embedded-tabs';
+
 export type { ITheme, IThemeColors, IThemeIconSizes } from './theme/types';
 export type TooltipProps = import('./components/tooltip').TooltipProps;
 export type { BadgeProps, BlinkProps } from './components/badges';
@@ -289,6 +291,10 @@ export type {
   RadioGroupProps,
   RadioGroupOption,
 } from './components/radio/radio-group';
+export type {
+  EmbeddedTabsItem,
+  EmbeddedTabsProps,
+} from './components/embedded-tabs';
 
 // Rebass components
 export { Flex, Box } from 'rebass';
