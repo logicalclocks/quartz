@@ -28,19 +28,14 @@ const DatePicker: FC<DatePickerProps & ReactDatePickerProps> = ({
         alignItems="center"
         onClick={() => setOpen(!open)}
         sx={{
-          backgroundColor: 'white',
-          cursor: 'pointer',
           height: '32px',
           px: '5px',
-          borderColor: 'white',
           borderWidth: '1px',
           borderStyle: 'solid',
-          ':hover': {
-            borderColor: 'grayShade2',
-            borderWidth: '1px',
-            borderStyle: 'solid',
-          },
+          ...(open ? { borderColor: 'grayShade1' } : {}),
         }}
+        variant={selectProps.variant ?? 'white'}
+        tx="variants.select"
       >
         <Labeling gray mr="5px">
           {selectProps.noDataMessage}
@@ -51,7 +46,7 @@ const DatePicker: FC<DatePickerProps & ReactDatePickerProps> = ({
         >
           {selectProps.value}
         </Value>
-        <GetIcon icon={IconName.arrow_up_down} size='sm' />
+        <GetIcon icon={IconName.arrow_up_down} size="sm" />
       </Flex>
       <Box alignSelf={datePickerAlign === 'right' ? 'flex-end' : 'flex-start'}>
         <ReactDatePicker
