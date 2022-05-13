@@ -30,8 +30,8 @@ const HolyTable: FC<Props> = ({
     value={{ bordered, padded, hoverable, middleColumn, rowHeight, standalone }}
   >
     <Box as="table" sx={styles} {...props}>
-      <Box as="thead">
-        {legend && (
+      {legend && (
+        <Box as="thead">
           <Box as="tr" width="100%">
             {legend.map((name, index) => (
               // there was no other way for generating keys :()
@@ -41,8 +41,8 @@ const HolyTable: FC<Props> = ({
               </HeadCell>
             ))}
           </Box>
-        )}
-      </Box>
+        </Box>
+      )}
       <Box as="tbody">{children}</Box>
     </Box>
   </HolyTableContext.Provider>
