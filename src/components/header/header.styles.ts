@@ -40,7 +40,7 @@ export const leftSectionStyles = {
   alignItems: 'center',
   justifyContent: 'center',
 
-  width: '115px',
+  width: '53px',
   height: '39px',
 
   bg: 'primary',
