@@ -1,11 +1,13 @@
 import { Meta, Story } from '@storybook/react/types-6-0';
 import React, { useState } from 'react';
-import { Box } from 'rebass';
+import { Box, Flex } from 'rebass';
 import Labeling from '../typography/labeling';
 import EmbeddedTabs, {
   EmbeddedTabsProps,
   ControlledEmbeddedTabsProps,
 } from '.';
+import Button from '../button';
+import Subtitle from '../typography/subtitle';
 
 export default {
   title: 'Quartz/EmbeddedTabs',
@@ -53,7 +55,13 @@ export const Controlled: Story<ControlledEmbeddedTabsProps> = (props) => {
         onTabChange={setActiveTab}
       />
       <Box mt={3}>
-        <Labeling bold>Active tab: {tabs[activeTab].title}</Labeling>
+        <Labeling bold>
+          This component is controlled. Active tab: {tabs[activeTab].title}{' '}
+        </Labeling>
+        <Flex mt={2} sx={{ gap: '10px' }}>
+          <Button onClick={() => setActiveTab(2)}>Jump to Statistics</Button>
+          <Button onClick={() => setActiveTab(1)}>Jump to Results</Button>
+        </Flex>
       </Box>
     </Box>
   );
