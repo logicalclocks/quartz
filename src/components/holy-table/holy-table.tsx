@@ -30,20 +30,29 @@ const HolyTable: FC<Props> = ({
     value={{ bordered, padded, hoverable, middleColumn, rowHeight, standalone }}
   >
     <Box as="table" sx={styles} {...props}>
-      {legend && (
-        <Box as="thead">
-          <Box as="tr" width="100%">
-            {legend.map((name, index) => (
-              // there was no other way for generating keys :()
-              // eslint-disable-next-line react/no-array-index-key
-              <HeadCell key={name + index} index={index}>
-                {name}
-              </HeadCell>
-            ))}
+      {legend ? (
+        /* the logic is that if there is a `legend`, then this is a very simple table and we can insert `tbody` and `thead`.//
+           otherwise, we want to be able to put our own `thead` and `tbody` with custom children
+
+           so, there are two ways to do this:
+        */
+        <>
+          <Box as="thead">
+            <Box as="tr" width="100%">
+              {legend.map((name, index) => (
+                // there was no other way for generating keys :()
+                // eslint-disable-next-line react/no-array-index-key
+                <HeadCell key={name + index} fillSpace={middleColumn === index}>
+                  {name}
+                </HeadCell>
+              ))}
+            </Box>
           </Box>
-        </Box>
+          <Box as="tbody">{children}</Box>
+        </>
+      ) : (
+        children
       )}
-      <Box as="tbody">{children}</Box>
     </Box>
   </HolyTableContext.Provider>
 );
