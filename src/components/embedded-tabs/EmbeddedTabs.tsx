@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react';
+import React, { useState } from 'react';
 import { Box, BoxProps } from 'rebass';
 import * as S from './styles';
 import Tab, { Props as EmbeddedTabItem } from './Tab';
@@ -9,13 +9,7 @@ export interface Props extends Omit<BoxProps, 'css'> {
   onTabChange?: (tabIndex: number) => void;
 }
 
-const EmbeddedTabs: FC<Props> = ({
-  tabs,
-  onTabChange,
-  initialTab = 0,
-  sx = {},
-  ...boxProps
-}: Props) => {
+const EmbeddedTabs = ({ onTabChange, initialTab = 0, ...restProps }: Props) => {
   const [activeIndex, setActiveIndex] = useState(initialTab);
 
   const handleTabClick = (newIndex: number) => {
@@ -27,12 +21,40 @@ const EmbeddedTabs: FC<Props> = ({
   };
 
   return (
+    <Controlled
+      activeTab={activeIndex}
+      onTabChange={handleTabClick}
+      {...restProps}
+    />
+  );
+};
+
+export default EmbeddedTabs;
+
+export interface ControlledProps extends Omit<Props, 'initialTab'> {
+  activeTab: number;
+}
+
+export const Controlled = ({
+  tabs,
+  onTabChange,
+  sx = {},
+  activeTab,
+  ...boxProps
+}: ControlledProps) => {
+  const handleTabClick = (newIndex: number) => {
+    if (onTabChange) {
+      onTabChange(newIndex);
+    }
+  };
+
+  return (
     <Box sx={{ ...S.tabsList, ...sx }} {...boxProps}>
       {tabs.map(({ title, onClick: onTabClick, ...tabProps }, index) => (
         <Tab
           key={title}
           title={title}
-          active={index === activeIndex}
+          active={index === activeTab}
           onClick={() => {
             if (onTabClick) {
               onTabClick();
@@ -48,5 +70,3 @@ const EmbeddedTabs: FC<Props> = ({
     </Box>
   );
 };
-
-export default EmbeddedTabs;
