@@ -1,20 +1,16 @@
-import React, { ReactNode, useContext } from 'react';
+import React, { ReactNode } from 'react';
 import { BoxProps } from 'rebass';
 import Labeling from '../../typography/labeling';
-import HolyTableContext from '../holy-table.context';
 import styles from './styles';
 
 interface Props extends Omit<BoxProps, 'css'> {
-  index: number;
+  fillSpace?: boolean;
   children: ReactNode;
 }
 
-const HeadCell = ({ sx, index, children, ...props }: Props) => {
-  const { middleColumn } = useContext(HolyTableContext);
-  const shouldCellFillSpace = index === middleColumn;
-
+const HeadCell = ({ sx, fillSpace = false, children, ...props }: Props) => {
   return (
-    <Labeling as="th" gray pb="4px" sx={styles(shouldCellFillSpace)} {...props}>
+    <Labeling as="th" gray pb="4px" sx={styles(fillSpace)} {...props}>
       {children}
     </Labeling>
   );
