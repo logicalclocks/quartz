@@ -9,6 +9,7 @@ import React, {
   useMemo,
 } from 'react';
 import { useTheme } from '../../../theme/theme';
+import * as R from 'ramda';
 
 // Context
 import NavigationContext from '../context/navigation.context';
@@ -46,6 +47,7 @@ const NavigationItem: FC<NavigationItemProps> = (
     mainTooltipText = '',
     secondaryTooltipText = '',
     href,
+    sx,
     ...restProps
   } = props;
   const isOpen =
@@ -83,7 +85,7 @@ const NavigationItem: FC<NavigationItemProps> = (
     <Box
       tx={tx}
       variant={getVariant(disabled, isActiveItem)}
-      sx={styles}
+      sx={R.mergeDeepLeft(styles, sx ?? {}) as object}
       onClick={!disabled ? handleClick : undefined}
       className={key == 'oldui' ? 'oldui' : ''}
       {...restProps}
