@@ -62,8 +62,7 @@ IconButtons.argTypes = {
     },
     type: {
       required: true,
-      summary:
-        'Icon name, icon SVG, or array like ["far", "eye"] ["fas", "eye"]',
+      summary: 'Use an icon from IconName. E.g. IconName.glass',
     },
   },
 };

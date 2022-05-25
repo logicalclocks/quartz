@@ -8,9 +8,8 @@ import React, {
   useEffect,
   useMemo,
 } from 'react';
+import { useTheme } from '../../../theme/theme';
 
-// @ts-ignore
-import { useTheme } from 'emotion-theming';
 // Context
 import NavigationContext from '../context/navigation.context';
 import { NavigationItemProps } from '../types';
@@ -18,8 +17,6 @@ import { NavigationItemProps } from '../types';
 import styles from './navigation-item.styles';
 import Tooltip from '../../tooltip';
 import TooltipPositions from '../../tooltip/positions';
-
-import { ITheme } from '../../../theme/types';
 
 const getVariant = (isDisabled = false, isActive = false): string => {
   if (isDisabled) {
@@ -33,7 +30,7 @@ const NavigationItem: FC<NavigationItemProps> = (
   props: NavigationItemProps,
 ) => {
   const { activePath, onActivate, trackBy } = useContext(NavigationContext);
-  const theme = useTheme<ITheme>();
+  const theme = useTheme();
 
   const {
     // @ts-ignore

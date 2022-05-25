@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
-import { useTheme } from 'emotion-theming';
 import { Flex, FlexProps } from 'rebass';
+import { useTheme } from '../../theme/theme';
 import { getIcon, IconName } from '../icon/list';
 import Value from '../typography/value';
 import getBorderAnimation from './animation';
@@ -59,7 +59,7 @@ const Badge: FC<BadgeProps> = ({
   icon,
   ...props
 }: BadgeProps) => {
-  const theme = useTheme<ITheme>();
+  const theme = useTheme();
 
   const borderColor = getBorderColor(theme, variant);
   const borderStyle = loading

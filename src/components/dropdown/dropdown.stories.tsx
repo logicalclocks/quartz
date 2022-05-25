@@ -5,6 +5,7 @@ import { Box } from 'rebass';
 import { Story, Meta } from '@storybook/react/types-6-0';
 
 import Dropdown, { DropdownProps } from './index';
+import { IconName } from '../icon';
 
 export default {
   title: 'Quartz/Dropdown',
@@ -32,7 +33,7 @@ Default.args = {
     },
     {
       value: 'Create New Project',
-      icon: 'plus',
+      icon: IconName.plus,
       metadata: {},
       onClick: action('onClick'),
     },

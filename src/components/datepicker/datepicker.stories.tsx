@@ -18,6 +18,7 @@ const Template: Story<DatePickerProps> = (props) => {
     <DatePicker
       {...props}
       selectProps={{
+        ...props.selectProps,
         value: [new Date(startDate).toISOString()],
         options: [],
         onChange: () => {},

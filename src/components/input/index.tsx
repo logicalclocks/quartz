@@ -1,8 +1,6 @@
 import { Box, Flex } from 'rebass';
 import React, { FC, forwardRef } from 'react';
-import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import { InputProps as RebassInputProps } from 'rebass__forms';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 // Components
 import Label, { LabelProps } from '../label';
@@ -10,16 +8,16 @@ import InputInfo from '../input-info';
 // Types
 import { Intents } from '../intents';
 // Styles
-import getStyles from './input.styles';
+import getStyles, { getIconStyle } from './input.styles';
 import Labeling from '../typography/labeling';
 import Tooltip from '../tooltip';
-import icons from '../../sources/icons';
+import { GetIcon, IconName } from '../icon';
 
 export interface InputProps extends Omit<RebassInputProps, 'css'> {
   variant?: 'primary' | 'white';
   intent?: Intents;
   info?: string;
-  icon?: IconProp;
+  icon?: IconName;
   rightIcon?: React.ReactElement;
   iconPaddingRight?: string;
   label?: string;
@@ -69,7 +67,7 @@ const Input: FC<InputProps> = forwardRef(
         {tooltipInfo && (
           <Tooltip mainText={tooltipInfo}>
             <Box mt="-6px" mb="-3px">
-              {icons.info_block}
+              <GetIcon icon={IconName.info_block}/>
             </Box>
           </Tooltip>
         )}
@@ -100,7 +98,7 @@ const Input: FC<InputProps> = forwardRef(
             placeholder={placeholder}
             {...props}
           />{' '}
-          {icon && <FontAwesomeIcon icon={icon} />}
+          {icon && <GetIcon icon={icon} color="gray" size="sm" sx={getIconStyle}/>}
           {rightIcon && rightIcon}
         </Box>
         {info && <InputInfo intent={intent}>{info}</InputInfo>}

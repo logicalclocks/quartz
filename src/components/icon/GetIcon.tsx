@@ -1,18 +1,15 @@
-import { useTheme } from 'emotion-theming';
+import { path, prop, split } from 'ramda';
 import React, { FC } from 'react';
-import { Flex, BoxProps } from 'rebass';
-import { IThemeColors, IThemeIconSizes } from '../..';
-import { IconName, getIcon } from './list';
-import { ITheme } from '../../theme/types';
-import { path, split, prop } from 'ramda';
+import { BoxProps, Flex } from 'rebass';
+import { useTheme } from '../../theme/theme';
+import { Color, IconSizes } from '../../theme/types';
+import { getIcon, IconName } from './list';
 
 export interface GetIconProps extends Omit<BoxProps, 'css' | 'color'> {
   icon: IconName;
-  color?:
-    | Exclude<keyof IThemeColors, 'labels'>
-    | `labels.${keyof IThemeColors['labels']}`;
+  color?: Color;
   /** width of the svg, height will scale accordingly */
-  size?: keyof IThemeIconSizes;
+  size?: IconSizes;
 }
 const GetIcon: FC<GetIconProps> = ({
   icon,
@@ -20,20 +17,22 @@ const GetIcon: FC<GetIconProps> = ({
   size = 'lg',
   ...props
 }) => {
-  const theme = useTheme<ITheme>();
+  const theme = useTheme();
   const themeColor = path<string>(split('.', color), theme.colors)!;
+  const iconSize = prop(size, theme.iconSizes);
+
   return (
     <Flex
+      {...props}
       sx={{
         svg: {
-          width: prop(size, theme.iconSizes),
-          height: 'auto',
+          width: iconSize,
+          height: iconSize,
         },
         ...props.sx,
       }}
-      {...props}
     >
-      {getIcon(icon, themeColor)}
+      {getIcon(icon, themeColor, iconSize)}
     </Flex>
   );
 };

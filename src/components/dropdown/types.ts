@@ -1,8 +1,8 @@
-import { IconProp } from '@fortawesome/fontawesome-svg-core';
+import { IconName } from '../icon';
 
 export interface DropdownItem<Metadata = {}> {
   value: string | number;
-  icon?: IconProp;
+  icon?: IconName;
   id?: string | number;
   hasDivider?: boolean;
   metadata?: Metadata;

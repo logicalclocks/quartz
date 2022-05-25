@@ -1,9 +1,9 @@
 import { Box } from 'rebass';
 import React, { FC, memo, useCallback, useContext } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 // Components
 import NavigationItem from '../item';
+import Labeling from '../../typography/labeling';
 // Styles
 import styles from './navigation-category.styles';
 // Content
@@ -34,8 +34,7 @@ const NavigationCategory: FC<NavigationCategoryProps> = ({
       <Box sx={styles} tx="navigation" variant="category">
         {!hideBack && (
           <div onClick={handleBackClick} role="button" tabIndex={-1}>
-            <FontAwesomeIcon icon="arrow-left" />
-            Back
+            <Labeling bold>{'<- Back'}</Labeling>
           </div>
         )}
         {children}

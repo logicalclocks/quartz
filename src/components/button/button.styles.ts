@@ -26,6 +26,10 @@ export default {
 
   '> span': {
     mr: '8px',
+    display: 'flex',
+    height: '15px',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 } as SxStyleProp;
 

@@ -1,8 +1,8 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
-import { faPlus } from '@fortawesome/free-solid-svg-icons';
 
 import CompactButton, { CompactButtonProps } from '.';
+import { GetIcon, IconName } from '../icon';
 
 export default {
   title: 'Quartz/CompactButton',
@@ -44,10 +44,10 @@ CompactButtonTemplate.argTypes = {
   icon: {
     control: {
       type: 'select',
-      options: [undefined, faPlus],
+      options: [undefined, <GetIcon icon={IconName.plus} />],
     },
     type: {
-      summary: 'Take icons from @fortawesome/free-solid-svg-icons',
+      summary: 'Put icon component from IconName',
     },
   },
 };

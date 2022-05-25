@@ -3,15 +3,14 @@ import { Box } from 'rebass';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { action } from '@storybook/addon-actions';
 import { Story, Meta } from '@storybook/react/types-6-0';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 // Components
 import Navigation, { NavigationProps } from './container';
 // Types
 import { TreeNode } from './types';
 import useNavigation from './useNavigation';
-import icons from '../../sources/icons';
 import Bar from '../bar';
+import { GetIcon, IconName } from '../icon';
 
 export default {
   title: 'Quartz/Navigation',
@@ -31,7 +30,7 @@ export const Footer = () => {
           width: '50px',
         }}
       >
-        <FontAwesomeIcon icon="coffee" />
+        <GetIcon icon={IconName.hopworks} />
         <span>HFS</span>
         <span>V 2.0</span>
       </Box>
@@ -47,7 +46,7 @@ export const Footer = () => {
         mx: '40px',
       }}
     >
-      <FontAwesomeIcon icon="coffee" />
+      <GetIcon icon={IconName.hopworks} />
       <span>Hopsworks Feature Store version 2.0</span>
     </Box>
   );
@@ -85,7 +84,7 @@ export const TreeObject: Story<NavigationProps> = () => {
   const tree: TreeNode[] = [
     {
       title: 'Home',
-      icon: icons.folder,
+      icon: <GetIcon icon={IconName.folder} />,
       id: '1',
       children: [
         {
@@ -97,7 +96,7 @@ export const TreeObject: Story<NavigationProps> = () => {
     },
     {
       title: 'Feature Groups',
-      icon: icons.folder,
+      icon: <GetIcon icon={IconName.folder} />,
       id: '2',
       disabled: true,
       secondaryTooltipText: 'Feature Groups',
@@ -110,12 +109,12 @@ export const TreeObject: Story<NavigationProps> = () => {
             {
               title: 'Feature List',
               id: '4',
-              icon: icons.folder,
+              icon: <GetIcon icon={IconName.folder} />,
             },
             {
               title: 'Schematised Tags',
               id: '5',
-              icon: icons.folder,
+              icon: <GetIcon icon={IconName.folder} />,
               onClick: action('Tags Click'),
               isActive: true,
             },
@@ -132,12 +131,12 @@ export const TreeObject: Story<NavigationProps> = () => {
         },
         {
           title: 'Data',
-          icon: icons.folder,
+          icon: <GetIcon icon={IconName.folder} />,
           id: '8',
         },
         {
           title: 'Activity',
-          icon: icons.folder,
+          icon: <GetIcon icon={IconName.folder} />,
           id: '9',
         },
       ],
@@ -156,6 +155,7 @@ export const TreeObject: Story<NavigationProps> = () => {
       <Navigation
         onNavigate={action('On Navigate')}
         tree={tree}
+        header={'Header'}
         footer={<Footer />}
       />
     </Box>
@@ -166,7 +166,7 @@ export const CustomTreeObject: Story<NavigationProps> = () => {
   const tree: TreeNode[] = [
     {
       title: 'Home',
-      icon: icons.folder,
+      icon: <GetIcon icon={IconName.folder} />,
       id: '1',
       children: [
         {
@@ -178,7 +178,7 @@ export const CustomTreeObject: Story<NavigationProps> = () => {
     },
     {
       title: 'Feature Groups',
-      icon: icons.folder,
+      icon: <GetIcon icon={IconName.folder} />,
       id: '2',
       disabled: true,
       secondaryTooltipText: 'Feature Groups',
@@ -191,7 +191,7 @@ export const CustomTreeObject: Story<NavigationProps> = () => {
             {
               title: 'Feature List',
               id: '4',
-              icon: icons.folder,
+              icon: <GetIcon icon={IconName.folder} />,
             },
             {
               id: '5',
@@ -205,7 +205,7 @@ export const CustomTreeObject: Story<NavigationProps> = () => {
             {
               title: 'Schematised Tags',
               id: '5',
-              icon: icons.folder,
+              icon: <GetIcon icon={IconName.folder} />,
               onClick: action('Tags Click'),
               isActive: true,
             },

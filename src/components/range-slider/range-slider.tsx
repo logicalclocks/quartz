@@ -1,8 +1,7 @@
 import React from 'react';
 import { Range as RCRangeSlider } from 'rc-slider';
 import { FlexProps, Flex } from 'rebass';
-import { useTheme } from 'emotion-theming';
-import { ITheme } from '../../theme/types';
+import { useTheme } from '../../theme/theme';
 import Labeling from '../typography/labeling';
 import Value from '../typography/value';
 
@@ -32,7 +31,7 @@ const RangeSlider = ({
   formatDisplayValue = (displayValue) => displayValue.toString(),
   ...flexProps
 }: Props) => {
-  const theme = useTheme<ITheme>();
+  const theme = useTheme();
 
   const handleStyle = buildHandleStyle(theme.colors.primary);
 

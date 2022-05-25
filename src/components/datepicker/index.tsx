@@ -8,7 +8,7 @@ import 'react-datepicker/dist/react-datepicker.min.css';
 import styles from './datepicker.styles';
 import Labeling from '../typography/labeling';
 import Value from '../typography/value';
-import ArrowsIcon from '../icons/arrows.icon';
+import { GetIcon, IconName } from '../icon';
 
 export interface DatePickerProps {
   selectProps: SelectProps;
@@ -28,19 +28,14 @@ const DatePicker: FC<DatePickerProps & ReactDatePickerProps> = ({
         alignItems="center"
         onClick={() => setOpen(!open)}
         sx={{
-          backgroundColor: 'white',
-          cursor: 'pointer',
           height: '32px',
           px: '5px',
-          borderColor: 'white',
           borderWidth: '1px',
           borderStyle: 'solid',
-          ':hover': {
-            borderColor: 'grayShade2',
-            borderWidth: '1px',
-            borderStyle: 'solid',
-          },
+          ...(open ? { borderColor: 'grayShade1' } : {}),
         }}
+        variant={selectProps.variant ?? 'white'}
+        tx="variants.select"
       >
         <Labeling gray mr="5px">
           {selectProps.noDataMessage}
@@ -51,7 +46,7 @@ const DatePicker: FC<DatePickerProps & ReactDatePickerProps> = ({
         >
           {selectProps.value}
         </Value>
-        <ArrowsIcon />
+        <GetIcon icon={IconName.arrow_up_down} size="sm" />
       </Flex>
       <Box alignSelf={datePickerAlign === 'right' ? 'flex-end' : 'flex-start'}>
         <ReactDatePicker

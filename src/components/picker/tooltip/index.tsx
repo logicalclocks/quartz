@@ -1,10 +1,8 @@
 import React, { FC, Fragment } from 'react';
 import { css, Global } from '@emotion/core';
-// @ts-ignore
-import { useTheme } from 'emotion-theming';
 import Tooltip from 'rc-tooltip';
+import { useTheme } from '../../../theme/theme';
 import Value from '../../typography/value';
-import { ITheme } from '../../../theme/types';
 
 interface ITooltipWrapperProps {
   value: number;
@@ -18,7 +16,7 @@ const TooltipWrapper: FC<ITooltipWrapperProps> = (
   props: ITooltipWrapperProps,
 ) => {
   const { value, index, children } = props;
-  const theme = useTheme<ITheme>();
+  const theme = useTheme();
 
   return (
     <Fragment>

@@ -1,16 +1,19 @@
 import React, { FC } from 'react';
 import { Button as RebassButton, ButtonProps } from 'rebass';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { IconDefinition } from '@fortawesome/fontawesome-common-types';
+import * as R from 'ramda';
 
 // Styles
 import styles, { spinnerColor } from './button.styles';
 import Spinner from '../spinner';
 
+import { GetIcon, IconName } from '../icon';
+import { Color } from '../../theme/types';
+
+type Intent = 'primary' | 'secondary' | 'ghost' | 'inline' | 'alert';
 export interface QuartzButtonProps extends Omit<ButtonProps, 'css'> {
   children: React.ReactNode;
-  intent?: 'primary' | 'secondary' | 'ghost' | 'inline' | 'alert';
-  icon?: IconDefinition;
+  intent?: Intent;
+  icon?: IconName;
   href?: string;
   isLoading?: boolean;
   loadingOnly?: boolean;
@@ -32,9 +35,7 @@ const Button: FC<QuartzButtonProps> = ({
   const component = (
     <RebassButton variant={intent} disabled={disabled || isLoading} {...test}>
       {icon && (!loadingOnly || !isLoading) && (
-        <span>
-          <FontAwesomeIcon icon={icon} size="sm" />
-        </span>
+        <GetIcon icon={icon} size="md" color={buttonIntentToColor(intent)} />
       )}
       {(!loadingOnly || !isLoading) && children}
       {isLoading && (
@@ -66,3 +67,16 @@ const Button: FC<QuartzButtonProps> = ({
 };
 
 export default Button;
+
+const intentToColor: { [intent in Intent]?: Color } = {
+  primary: 'white',
+  alert: 'labels.red',
+  /* [others]: 'primary' */
+}
+
+const buttonIntentToColor = (intent: Intent): Color => {
+  const getColor = R.propOr(intent, 'primary');
+
+  return getColor(intentToColor);
+}
+

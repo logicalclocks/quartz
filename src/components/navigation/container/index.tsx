@@ -21,6 +21,7 @@ type INavigation<P> = FC<P> & {
 export interface NavigationProps {
   children?: React.ReactNode;
   footer?: React.ReactNode;
+  header?: React.ReactNode;
   trackBy?: string;
   tree?: TreeNode[];
   onNavigate?: (node: TreeNode | null) => void;
@@ -29,6 +30,7 @@ export interface NavigationProps {
 
 const Navigation: INavigation<NavigationProps> = ({
   footer,
+  header,
   children,
   tree: propsTree,
   ...props
@@ -55,8 +57,9 @@ const Navigation: INavigation<NavigationProps> = ({
       sx={styles(activePath.length > 1)}
     >
       <NavigationProvider tree={tree} {...props} takeActivePath={setActivePath}>
+        {!!header && <div>{header}</div>}
         <ul>{child}</ul>
-        <div>{footer}</div>
+        {!!footer && <div>{footer}</div>}
       </NavigationProvider>
     </Box>
   );

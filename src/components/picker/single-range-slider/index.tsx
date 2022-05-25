@@ -1,8 +1,7 @@
 import React, { FC, useCallback, useContext, useMemo } from 'react';
 import { Box } from 'rebass';
 import Slider from 'rc-slider';
-// @ts-ignore
-import { useTheme } from 'emotion-theming';
+import { useTheme } from '../../../theme/theme';
 import PickerHandler from '../handler';
 import PickerProvider from '../picker.provider';
 import PickerContext, {
@@ -10,7 +9,6 @@ import PickerContext, {
   PickerContextDefault,
 } from '../picker.context';
 import styles from './single-range-slider.styles';
-import { ITheme } from '../../../theme/types';
 import 'rc-slider/assets/index.css';
 
 export interface SingleRangeSliderProps {
@@ -30,7 +28,7 @@ const SingleRangeSlider: FC<SingleRangeSliderProps> = ({
   ...props
 }: SingleRangeSliderProps) => {
   const [context, setContext] = useContext(PickerContext);
-  const theme = useTheme<ITheme>();
+  const theme = useTheme();
 
   const boxProps = useMemo(() => {
     return {

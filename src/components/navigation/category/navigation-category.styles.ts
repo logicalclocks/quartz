@@ -17,6 +17,7 @@ export default {
 
   '> div:first-of-type': {
     boxSizing: 'border-box',
+    display: 'flex',
 
     outline: 'none',
 
@@ -30,9 +31,5 @@ export default {
     fontFamily: 'Inter',
     fontWeight: 'bold',
     fontSize: '12px',
-
-    svg: {
-      mr: '11px',
-    },
   },
 };

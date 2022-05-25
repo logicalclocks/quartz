@@ -1,7 +1,6 @@
 import React, { FC, memo, CSSProperties } from 'react';
 import { Button, ButtonProps, Flex, Box } from 'rebass';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { IconDefinition } from '@fortawesome/fontawesome-common-types';
+import { GetIcon, IconName } from '../icon';
 
 import styles from './styles';
 
@@ -11,7 +10,7 @@ type LinkRelatedProps = Pick<Props, 'href' | 'newTab'>;
 export interface Props extends Omit<ButtonProps, 'css'> {
   newTab?: boolean;
   isActive?: boolean;
-  icon?: IconDefinition;
+  icon?: IconName;
   indicator?: Indicator;
   mode?: 'default' | 'highlight';
 }
@@ -56,7 +55,7 @@ const CompactButton: FC<Props> = ({
       sx={styles.flex}
       flexDirection={flexDirections[indicator ?? 'horizontal']}
     >
-      {!!icon && <FontAwesomeIcon icon={icon} size="xs" />}
+      {!!icon && <GetIcon icon={icon} size="xs" />}
       {indicator && !icon && <span data-active={isActive} />}
 
       <Box>{children}</Box>

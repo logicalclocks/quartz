@@ -1,9 +1,3 @@
-import { library } from '@fortawesome/fontawesome-svg-core';
-
-// Font Awesome icons
-import { fas } from '@fortawesome/free-solid-svg-icons';
-import { far } from '@fortawesome/free-regular-svg-icons';
-
 import Button from './components/button';
 import CompactButton from './components/compact-button';
 import UploadButton from './components/file-button';
@@ -27,7 +21,6 @@ import Dropdown from './components/dropdown';
 import FooterButton from './components/footer-button';
 import Header from './components/header';
 import AlternativeHeader from './components/alternative-header';
-import Icon from './components/icon';
 import { IconName, getIcon } from './components/icon/list';
 import GetIcon from './components/icon/GetIcon';
 import IconButton from './components/icon-button';
@@ -73,7 +66,13 @@ import ProgressBar2 from './components/bar/progress-bar-2';
 
 // Badges
 import User from './components/user';
-import { Badge, TextValueBadge, Dot, ProjectBadge } from './components/badges';
+import {
+  Badge,
+  Blink,
+  TextValueBadge,
+  Dot,
+  ProjectBadge,
+} from './components/badges';
 
 // Navigation
 import Navigation from './components/navigation/container';
@@ -118,11 +117,9 @@ import {
   HoverableLink,
 } from './components/typography/hoverable';
 
-// Icons
-import Icons from './sources/icons';
 // Theme
 import ThemeProvider from './theme/ThemeProvider';
-import theme from './theme/theme';
+import theme, { useTheme } from './theme/theme';
 
 // Hooks
 import useDropdown from './utils/useDropdown';
@@ -134,10 +131,6 @@ import { FileExplorerMode } from './components/file-system-explorer/types';
 
 // constants
 import * as constants from './constants';
-
-library.add(fas, far);
-
-export { useTheme } from 'emotion-theming';
 
 export {
   Button,
@@ -159,7 +152,6 @@ export {
   FooterButton,
   Header,
   AlternativeHeader,
-  Icon,
   IconName,
   getIcon,
   GetIcon,
@@ -205,6 +197,7 @@ export {
   User,
   TextValueBadge,
   Badge,
+  Blink,
   ProjectBadge,
   Dot,
   // Navigation
@@ -249,19 +242,21 @@ export {
   SplitGraph,
   Collapse,
   //  Icons
-  Icons,
   useOnClickOutside,
   Symbol,
   SymbolMode,
   graphColors,
   theme,
+  useTheme,
   // Constants
   constants,
 };
 
+export { default as EmbeddedTabs } from './components/embedded-tabs';
+
 export type { ITheme, IThemeColors, IThemeIconSizes } from './theme/types';
 export type TooltipProps = import('./components/tooltip').TooltipProps;
-export type BadgeProps = import('./components/badges').BadgeProps;
+export type { BadgeProps, BlinkProps } from './components/badges';
 export type SliderProps = import('./components/slider').SliderProps;
 export type RangeSliderProps =
   import('./components/range-slider').RangeSliderProps;
@@ -296,6 +291,10 @@ export type {
   RadioGroupProps,
   RadioGroupOption,
 } from './components/radio/radio-group';
+export type {
+  EmbeddedTabsItem,
+  EmbeddedTabsProps,
+} from './components/embedded-tabs';
 
 // Rebass components
 export { Flex, Box } from 'rebass';
