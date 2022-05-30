@@ -109,3 +109,4 @@ You can use the library locally with the help of [yalc](https://github.com/wclr/
 Just run `yarn publish-local` here and then do a `yalc link @logicalclocks/quartz` wherever you wanna use it.
 
 To publish changes you can do `yarn dlx yalc push`. After that, the changes will be "published" to the local registry.
+
