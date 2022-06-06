@@ -24,7 +24,7 @@ const Header: FC<HeaderProps> = ({
   <Box sx={styles} variant="header">
     {/* Left Section */}
     <Box sx={leftSectionStyles} onClick={logoAction}>
-      <Logo withName={true} />
+      <Logo withName={true} height={35} width={160}/>
     </Box>
     <Box
       sx={{
