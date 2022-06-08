@@ -40,9 +40,13 @@ const Callout: FC<ICalloutProps> = ({
       alignItems="center"
       maxWidth={cta ? '80%' : '100%'}
     >
-      <Box mt="-2px" mb="-3px" mr="8px">
-        <GetIcon color={calloutColors[type]} icon={IconName.info_block} />
-      </Box>
+      <GetIcon
+        size="sm"
+        mr="12px"
+        ml="5px"
+        color={calloutColors[type]}
+        icon={IconName.info_block}
+      />
       <Box as="pre">
         <Text
           width="100%"

@@ -6,7 +6,6 @@ import React from 'react';
 import { InputProps } from '.';
 import CodeInput from '.';
 
-
 export default {
   title: 'Quartz/CodeInput',
   component: CodeInput,
@@ -104,6 +103,7 @@ Default.args = {
   label: 'Label',
   mode: 'javascript',
   value: 'const a = 100;',
+  tooltipInfo: 'some tooltip',
   onChange: action('Input change'),
 };
 
