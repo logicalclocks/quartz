@@ -153,6 +153,7 @@ Default.args = {
   label: 'Label',
   placeholder: 'Placeholder',
   onChange: action('Input change'),
+  tooltipInfo: 'tooltip info',
 };
 
 Default.argTypes = argTypes;

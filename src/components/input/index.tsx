@@ -66,9 +66,7 @@ const Input: FC<InputProps> = forwardRef(
         )}
         {tooltipInfo && (
           <Tooltip mainText={tooltipInfo}>
-            <Box mt="-6px" mb="-3px">
-              <GetIcon icon={IconName.info_block}/>
-            </Box>
+            <GetIcon ml="3px" mt="3px" size="xs" icon={IconName.info_block} />
           </Tooltip>
         )}
       </Flex>
@@ -98,7 +96,9 @@ const Input: FC<InputProps> = forwardRef(
             placeholder={placeholder}
             {...props}
           />{' '}
-          {icon && <GetIcon icon={icon} color="gray" size="sm" sx={getIconStyle}/>}
+          {icon && (
+            <GetIcon icon={icon} color="gray" size="sm" sx={getIconStyle} />
+          )}
           {rightIcon && rightIcon}
         </Box>
         {info && <InputInfo intent={intent}>{info}</InputInfo>}

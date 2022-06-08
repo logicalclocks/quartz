@@ -166,9 +166,7 @@ const Select: FC<SelectProps> = ({
           justifyContent="space-between"
         >
           <Tooltip mainText={info}>
-            <Box mb="-3px">
-              <GetIcon size="md" icon={IconName.info_block} />
-            </Box>
+            <GetIcon mx="5px" mt="3px" size="xs" icon={IconName.info_block} />
           </Tooltip>
           {labelAction}
         </Flex>
@@ -252,7 +250,7 @@ const Select: FC<SelectProps> = ({
                         zIndex: 1,
                       }}
                     >
-                       <GetIcon size="md" color="gray" icon={IconName.glass} />
+                      <GetIcon size="md" color="gray" icon={IconName.glass} />
                     </Box>
                     <Input
                       pl="32px"

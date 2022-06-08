@@ -62,9 +62,7 @@ const CodeInput: FC<InputProps> = forwardRef(
         )}
         {tooltipInfo && (
           <Tooltip mainText={tooltipInfo}>
-            <Box mt="-6px" mb="-3px">
-              <GetIcon icon={IconName.info_block} />
-            </Box>
+            <GetIcon mt="3px" ml="3px" size="xs" icon={IconName.info_block} />
           </Tooltip>
         )}
       </Flex>
