@@ -14,6 +14,7 @@ export interface ProjectBadgeProps extends Omit<FlexProps, 'css'> {
 const ProjectBadge: FC<ProjectBadgeProps> = ({
   value,
   isLock,
+  sx,
   ...props
 }: ProjectBadgeProps) => (
   <Flex
@@ -25,6 +26,7 @@ const ProjectBadge: FC<ProjectBadgeProps> = ({
     sx={{
       borderRadius: '2px',
       border: '1px solid #CBCBCB',
+      ...sx,
     }}
     as="span"
     tx="variants.badges.primary"
