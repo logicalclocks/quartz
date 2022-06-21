@@ -1,14 +1,14 @@
 {
   "parser": "@typescript-eslint/parser",
   "extends": [
-    "standard",
-    "standard-react",
+    "airbnb",
     "airbnb-typescript",
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:prettier/recommended"
   ],
   "plugins": [
-    "react-hooks"
+    "react-hooks",
+    "@typescript-eslint"
   ],
   "env": {
     "node": true
@@ -36,7 +36,6 @@
     "import/export": 0,
     "no-unused-vars": "off",
     "@typescript-eslint/no-unused-vars": "off",
-    "@typescript-eslint/no-unused-vars-experimental": "error",
     "react/jsx-props-no-spreading": 0,
     "jsx-a11y/click-events-have-key-events": 0,
     "linebreak-style": 0,
