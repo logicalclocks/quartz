@@ -6,10 +6,7 @@
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:prettier/recommended"
   ],
-  "plugins": [
-    "react-hooks",
-    "@typescript-eslint"
-  ],
+  "plugins": ["react-hooks", "@typescript-eslint"],
   "env": {
     "node": true
   },
@@ -36,6 +33,7 @@
     "import/export": 0,
     "no-unused-vars": "off",
     "@typescript-eslint/no-unused-vars": "off",
+    "@typescript-eslint/no-use-before-define": "off",
     "react/jsx-props-no-spreading": 0,
     "jsx-a11y/click-events-have-key-events": 0,
     "linebreak-style": 0,
@@ -46,6 +44,23 @@
         "endOfLine": "auto"
       }
     ],
-    "object-curly-newline": "off"
+    "object-curly-newline": "off",
+    "no-restricted-exports": "off",
+    "react/jsx-no-bind": "off",
+    "no-shadow": "off",
+    "import/no-cycle": "off",
+    "react/jsx-boolean-value": "off",
+    "@typescript-eslint/no-shadow": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/no-explicit-any": ["off"],
+    "no-console": "off",
+    "@typescript-eslint/no-non-null-assertion": "off",
+    "func-names": "off",
+    "react/jsx-uses-react": "off",
+    "react/react-in-jsx-scope": "off",
+    "import/prefer-default-export": "off",
+    "react/function-component-definition": "off",
+    "no-use-before-define": "off",
+    "no-underscore-dangle": "off"
   }
 }

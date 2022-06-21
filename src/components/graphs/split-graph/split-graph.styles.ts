@@ -6,7 +6,7 @@ export const progressBarStyles = (
   isSelected: boolean,
 ): SxStyleProp => ({
   bg: color,
-  width: percent + '%',
+  width: `${percent}%`,
   marginRight: '2px',
   border: isSelected ? '1px solid #272727' : null,
 });

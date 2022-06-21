@@ -119,7 +119,7 @@ const SelectLabel: FC<SelectLabelProps> = forwardRef(
               <GetIcon icon={IconName.cross} />
             </Box>
           )}
-          <GetIcon icon={IconName.arrow_up_down} size='sm' />
+          <GetIcon icon={IconName.arrow_up_down} size="sm" />
         </Flex>
         {children}
       </Flex>

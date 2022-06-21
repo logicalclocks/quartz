@@ -22,11 +22,9 @@ export const Default = Template.bind({});
 Default.args = {
   data: testData,
   shortcutActions: (
-    <React.Fragment>
-      <Button padding="0" variant="inline" onClick={action('Shortcut action')}>
-        {'->'}Go directly to Jupyter notebook directory
-      </Button>
-    </React.Fragment>
+    <Button padding="0" variant="inline" onClick={action('Shortcut action')}>
+      {'->'}Go directly to Jupyter notebook directory
+    </Button>
   ),
   width: '830px',
   height: '100%',

@@ -8,5 +8,4 @@ export default {
   '> div': {
     flexGrow: 1,
   },
-
 } as SxStyleProp;

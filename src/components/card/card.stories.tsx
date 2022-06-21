@@ -30,11 +30,9 @@ Default.args = {
   children: '',
   height: '270px',
   actions: (
-    <React.Fragment>
-      <Button variant="inline" pr="0" onClick={action('Card action')}>
-        naked button
-      </Button>
-    </React.Fragment>
+    <Button variant="inline" pr="0" onClick={action('Card action')}>
+      naked button
+    </Button>
   ),
 };
 

@@ -1,10 +1,10 @@
 import React, { useCallback } from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
+import { Flex } from 'rebass';
 import NotificationManager from './notifications-manager';
 // Components
 import NotificationsContainer from './index';
 import { Button, Label, Labeling } from '../../index';
-import { Flex } from 'rebass';
 
 export default {
   title: 'Quartz/NotificationsContainer',

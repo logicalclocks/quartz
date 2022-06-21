@@ -19,9 +19,7 @@ const ThemeProvider: FC<ThemeProviderProps> = ({
         @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@700&display=swap');
       `}
     />
-    <EmotionThemeProvider theme={defaultTheme}>
-      {children}
-    </EmotionThemeProvider>
+    <EmotionThemeProvider theme={defaultTheme}>{children}</EmotionThemeProvider>
   </React.Fragment>
 );
 

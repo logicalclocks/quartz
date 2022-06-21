@@ -3,8 +3,7 @@ import { action } from '@storybook/addon-actions';
 import { Meta, Story } from '@storybook/react/types-6-0';
 import React from 'react';
 
-import { InputProps } from '.';
-import CodeInput from '.';
+import CodeInput, { InputProps } from '.';
 
 export default {
   title: 'Quartz/CodeInput',

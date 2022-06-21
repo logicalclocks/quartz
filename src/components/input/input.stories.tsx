@@ -3,8 +3,8 @@ import { action } from '@storybook/addon-actions';
 import { Meta, Story } from '@storybook/react/types-6-0';
 import React from 'react';
 
-import Input, { InputProps } from '.';
 import { Box } from 'rebass';
+import Input, { InputProps } from '.';
 import { GetIcon, IconName } from '../icon';
 
 export default {

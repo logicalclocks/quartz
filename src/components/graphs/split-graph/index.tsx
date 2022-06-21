@@ -42,7 +42,8 @@ const SplitGraph: FC<SplitGraphProps> = ({
   );
 
   const colors = useMemo(
-    () => Array(Math.ceil(values.length / graphColors.length))
+    () =>
+      Array(Math.ceil(values.length / graphColors.length))
         .fill(0)
         .reduce((acc) => acc.concat(graphColors), []),
     [values],

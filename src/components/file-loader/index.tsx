@@ -60,7 +60,9 @@ const FileLoader: FC<QuartzFileLoaderProps> = ({
           removeHandler(id);
         }}
       >
-        <Flex><GetIcon size="sm" icon={IconName.cross} /></Flex>
+        <Flex>
+          <GetIcon size="sm" icon={IconName.cross} />
+        </Flex>
       </Box>
     )}
   </Flex>

@@ -22,7 +22,6 @@ import SelectListMulti from './lists/select-list-multi';
 // Styles
 import { bottomActionStyles, listStyles } from './select.styles';
 
-
 export interface SelectProps extends Omit<LabelProps, 'onChange' | 'children'> {
   value: string[];
   options: string[];
@@ -224,7 +223,7 @@ const Select: FC<SelectProps> = ({
                       }}
                       onClick={(e) => e.stopPropagation()}
                     >
-                      <GetIcon color='gray' icon={IconName.glass} />
+                      <GetIcon color="gray" icon={IconName.glass} />
                     </Box>
                     <Input
                       pl="32px"
@@ -241,7 +240,7 @@ const Select: FC<SelectProps> = ({
               {(!!customFilter || hasSearch) && (
                 <Divider my={0} width="calc(100% + 20px)" />
               )}
-              {!!filteredOptions.length ? (
+              {filteredOptions.length ? (
                 isMulti ? (
                   // Multi choice
                   <SelectListMulti

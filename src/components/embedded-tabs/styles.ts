@@ -8,8 +8,8 @@ export const tabsList = {
   borderCollapse: 'collapse',
 
   '> div:not(:last-child)': {
-    marginRight: '20px'
-  }
+    marginRight: '20px',
+  },
 } as SxStyleProp;
 
 /* this one is needed to have the line that spans across the rest of the width. Couldn't find any other solution. */

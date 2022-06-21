@@ -8,8 +8,8 @@ import React, {
   useEffect,
   useMemo,
 } from 'react';
-import { useTheme } from '../../../theme/theme';
 import * as R from 'ramda';
+import { useTheme } from '../../../theme/theme';
 
 // Context
 import NavigationContext from '../context/navigation.context';
@@ -126,7 +126,7 @@ const NavigationItem: FC<NavigationItemProps> = (
         outline: 'none',
       }}
     >
-      {!!href ? (
+      {href ? (
         <a
           style={{
             textDecoration: 'none',
