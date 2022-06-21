@@ -49,7 +49,7 @@ const CardSecondary: FC<CardSecondaryProps> = ({
       maxHeight={maxHeight}
       tx="variants"
       variant={readOnly ? 'readOnly' : 'card'}
-      sx={styles}
+      sx={{ ...styles, ...props.sx }}
     >
       {isShowHeader && (
         <Box sx={cardHeaderStyles}>
