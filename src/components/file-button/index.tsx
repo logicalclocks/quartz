@@ -40,7 +40,9 @@ const UploadButton: FC<QuartzFileButtonProps> = ({
         {...props}
         onClick={handleClick}
       >
-        <Box sx={{ ...inputBox }}><GetIcon color="primary" size="sm" icon={IconName.upload} /></Box>
+        <Box sx={{ ...inputBox }}>
+          <GetIcon color="primary" size="sm" icon={IconName.upload} />
+        </Box>
         <input
           type="file"
           name={name}

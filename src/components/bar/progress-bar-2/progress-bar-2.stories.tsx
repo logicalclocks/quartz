@@ -1,7 +1,7 @@
 import { Box, Button, Flex } from 'rebass';
 import { Meta, Story } from '@storybook/react/types-6-0';
-import ProgressBar2C, { ProgressBar2Props } from '.';
 import { useState } from 'react';
+import ProgressBar2C, { ProgressBar2Props } from '.';
 
 export default {
   title: 'Quartz/ProgressBar2',

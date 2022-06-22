@@ -72,11 +72,10 @@ const intentToColor: { [intent in Intent]?: Color } = {
   primary: 'white',
   alert: 'labels.red',
   /* [others]: 'primary' */
-}
+};
 
 const buttonIntentToColor = (intent: Intent): Color => {
   const getColor = R.propOr(intent, 'primary');
 
   return getColor(intentToColor);
-}
-
+};

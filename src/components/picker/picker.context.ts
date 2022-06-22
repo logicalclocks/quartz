@@ -15,8 +15,7 @@ export const PickerContextDefault = [
   () => {},
 ];
 
-const PickerContext = React.createContext<Array<IPickerContext | any>>(
-  PickerContextDefault,
-);
+const PickerContext =
+  React.createContext<Array<IPickerContext | any>>(PickerContextDefault);
 
 export default PickerContext;

@@ -40,7 +40,7 @@ Default.args = {
   ],
   children: (
     <>
-      <GetIcon icon={IconName.folder }/>
+      <GetIcon icon={IconName.folder} />
       <Subtitle ml="16px">PROJECT ACME</Subtitle>
     </>
   ),

@@ -119,14 +119,14 @@ const EditableTable: FC<EditableTableProps> = ({
                 actions={
                   hasFreezeButton
                     ? [
-                      {
-                        label: 'unfreeze',
-                        handler: () => {
-                          setStaticColumn(undefined);
+                        {
+                          label: 'unfreeze',
+                          handler: () => {
+                            setStaticColumn(undefined);
+                          },
                         },
-                      },
-                      ...actions,
-                    ]
+                        ...actions,
+                      ]
                     : actions
                 }
               />
@@ -146,14 +146,14 @@ const EditableTable: FC<EditableTableProps> = ({
                   actions={
                     hasFreezeButton
                       ? [
-                        {
-                          label: 'freeze',
-                          handler: (column) => {
-                            setStaticColumn(column);
+                          {
+                            label: 'freeze',
+                            handler: (column) => {
+                              setStaticColumn(column);
+                            },
                           },
-                        },
-                        ...actions,
-                      ]
+                          ...actions,
+                        ]
                       : actions
                   }
                 />

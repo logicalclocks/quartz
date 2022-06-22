@@ -55,9 +55,11 @@ const Pagination: FC<PaginationProps> = ({
     );
   };
 
-  const handlePageClick = (sum: number = 1) => () => {
-    onChange(formatValue(currentPage + sum));
-  };
+  const handlePageClick =
+    (sum: number = 1) =>
+    () => {
+      onChange(formatValue(currentPage + sum));
+    };
 
   useEffect(() => {
     if (current !== String(currentPage)) {

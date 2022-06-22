@@ -1,9 +1,9 @@
 import React, { useMemo, useState } from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
 
-import GetIcon, { GetIconProps } from './GetIcon';
-import { IconName } from '../icon/list';
 import { Box, Flex } from 'rebass';
+import GetIcon, { GetIconProps } from './GetIcon';
+import { IconName } from './list';
 import Tooltip from '../tooltip';
 import theme from '../../theme/theme';
 import Labeling from '../typography/labeling';

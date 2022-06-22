@@ -22,7 +22,7 @@ Footer.args = {
   children: (
     <>
       <span>Open Feature Group’s Page</span>
-      <GetIcon icon={IconName.arrow_right}/>
+      <GetIcon icon={IconName.arrow_right} />
     </>
   ),
   onClick: action('onClick'),

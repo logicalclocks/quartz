@@ -16,8 +16,8 @@ export const saveToFile = (
     if (content) {
       const file = new Blob([content]);
 
-      const a = document.createElement('a'),
-        url = URL.createObjectURL(file);
+      const a = document.createElement('a');
+      const url = URL.createObjectURL(file);
       a.href = url;
       a.download = fileName;
       document.body.appendChild(a);

@@ -8,6 +8,7 @@ import { Intents } from '../intents';
 import Labeling from '../typography/labeling';
 // Styles
 import { valueStyles, getLabelStyles, deletabledStyles } from './select.styles';
+
 export interface SelectLabelProps extends Omit<BoxProps, 'css' | 'onChange'> {
   variant: 'primary' | 'white' | 'disabled';
   placeholder: string;

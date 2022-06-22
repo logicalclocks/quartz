@@ -44,4 +44,3 @@ WithCustomDisplayValue.args = {
   range: [0, 1024],
   formatDisplayValue: (value) => `${value} MB`,
 };
-

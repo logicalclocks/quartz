@@ -38,12 +38,10 @@ const Popup: FC<PopupProps> = ({
   onClose = () => {},
   ...props
 }: PopupProps) => {
-  const sx = useMemo(() => getStyles({ left, top, bottom, right }), [
-    left,
-    top,
-    bottom,
-    right,
-  ]);
+  const sx = useMemo(
+    () => getStyles({ left, top, bottom, right }),
+    [left, top, bottom, right],
+  );
   const openRef = useRef<boolean>(isOpen);
 
   useKeyUp(() => {

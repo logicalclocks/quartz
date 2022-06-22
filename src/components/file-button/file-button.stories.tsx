@@ -78,8 +78,7 @@ File.argTypes = {
       options: [undefined, IconName.download],
     },
     type: {
-      summary:
-        'Put icon component from IconName',
+      summary: 'Put icon component from IconName',
     },
   },
 };

@@ -8,9 +8,8 @@ export interface UseNavigation extends NavigationContextValue {
 }
 
 const useNavigation = (): UseNavigation => {
-  const { activePath, activeNode, ...contextData } = useContext(
-    NavigationContext,
-  );
+  const { activePath, activeNode, ...contextData } =
+    useContext(NavigationContext);
 
   return {
     isOpen: activePath.length > 1,
