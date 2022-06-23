@@ -24,6 +24,12 @@
     }
   },
   "rules": {
+    /* quartz is a library with peer dependencies, so we do not need this rule to trigger on extraneous deps specified in `package.json/peerDependencies` */
+    "import/no-extraneous-dependencies": [
+      "error",
+      { "peerDependencies": false }
+    ],
+    
     "react-hooks/exhaustive-deps": "error",
     "space-before-function-paren": 0,
     "react/prop-types": 0,

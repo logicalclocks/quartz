@@ -7,7 +7,6 @@ import React, {
   useState,
 } from 'react';
 import { Box, Flex } from 'rebass';
-// eslint-disable-next-line import/no-extraneous-dependencies
 import ResizeObserver from 'resize-observer-polyfill';
 import {
   summaryContainerStyles,
