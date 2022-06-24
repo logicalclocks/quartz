@@ -1,9 +1,6 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
 import { action } from '@storybook/addon-actions';
-// eslint-disable-next-line import/no-extraneous-dependencies
-import { ArgTypes } from '@storybook/addons';
 import React from 'react';
-import { Story, Meta } from '@storybook/react/types-6-0';
+import { Story, Meta, ArgTypes } from '@storybook/react/types-6-0';
 
 import Card, { CardProps } from '.';
 import Button from '../button';

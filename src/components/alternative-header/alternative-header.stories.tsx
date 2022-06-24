@@ -139,7 +139,6 @@ Default.argTypes = {
     control: {
       type: 'text',
     },
-
     type: {
       summary: 'Card width (string or number px, %)',
     },

@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
-// eslint-disable-next-line import/no-extraneous-dependencies
 import { action } from '@storybook/addon-actions';
 import { Box } from 'rebass';
 

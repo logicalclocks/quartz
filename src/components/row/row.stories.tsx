@@ -1,7 +1,6 @@
 import React from 'react';
 import { Box } from 'rebass';
 import { Story, Meta } from '@storybook/react/types-6-0';
-// eslint-disable-next-line import/no-extraneous-dependencies
 import { action } from '@storybook/addon-actions';
 import Row, { RowProps } from './container';
 import RowGroup, { RowGroupProps } from './group';

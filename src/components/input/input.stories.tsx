@@ -1,4 +1,3 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
 import { action } from '@storybook/addon-actions';
 import { Meta, Story } from '@storybook/react/types-6-0';
 import React from 'react';
