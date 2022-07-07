@@ -20,7 +20,6 @@ import RadioGroup from './components/radio/radio-group';
 import Dropdown from './components/dropdown';
 import FooterButton from './components/footer-button';
 import Header from './components/header';
-import AlternativeHeader from './components/alternative-header';
 import { IconName, getIcon } from './components/icon/list';
 import GetIcon from './components/icon/GetIcon';
 import IconButton from './components/icon-button';
@@ -132,6 +131,8 @@ import { FileExplorerMode } from './components/file-system-explorer/types';
 // constants
 import * as constants from './constants';
 
+export * from './components/alternative-header';
+
 export {
   Button,
   UploadButton,
@@ -151,7 +152,6 @@ export {
   Dropdown,
   FooterButton,
   Header,
-  AlternativeHeader,
   IconName,
   getIcon,
   GetIcon,
