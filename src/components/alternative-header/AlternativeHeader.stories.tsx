@@ -17,17 +17,17 @@ const Template: Story<AlternativeHeaderProps> = (props) => {
       {
         title: 'tab',
         isActive: active === 'tab',
-        onCLick: () => setActive('tab'),
+        onClick: () => setActive('tab'),
       },
       {
         title: 'another tab',
         isActive: active === 'another tab',
-        onCLick: () => setActive('another tab'),
+        onClick: () => setActive('another tab'),
       },
       {
         title: 'one more tab',
         isActive: active === 'one more tab',
-        onCLick: () => setActive('one more tab'),
+        onClick: () => setActive('one more tab'),
       },
       {
         title: 'last tab',
@@ -37,7 +37,7 @@ const Template: Story<AlternativeHeaderProps> = (props) => {
             altContent
           </Value>
         ),
-        onCLick: () => setActive('last tab'),
+        onClick: () => setActive('last tab'),
       },
     ],
     [active],

@@ -7,7 +7,7 @@ export interface Tab {
   title: string;
   altContent?: React.ReactElement | null;
   isActive: boolean;
-  onCLick: () => void;
+  onClick: () => void;
 }
 
 export interface AlternativeHeaderProps extends Omit<BoxProps, 'css'> {
@@ -46,7 +46,7 @@ export const AlternativeHeader: FC<AlternativeHeaderProps> = ({
         <Flex>
           {tabs.map((tab, index) => (
             <Box
-              onClick={tab.onCLick}
+              onClick={tab.onClick}
               key={tab.title}
               sx={S.tab(activeTabIndex === index)}
             >
