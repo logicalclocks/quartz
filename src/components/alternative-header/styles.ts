@@ -26,15 +26,6 @@ export const tab = (active: boolean) => ({
   },
 });
 
-export const activeTab = (active: boolean) =>
-  active
-    ? {
-        borderBottom: active ? '2px solid' : 'none',
-        borderBottomColor: 'primary',
-        transition: 'border-color .4s',
-      }
-    : {};
-
 export const wrapper = (topContent: boolean) =>
   ({
     p: topContent ? '20px' : '0px 20px 0px 10px',
@@ -61,7 +52,3 @@ export const base = {
   bottom: '0px',
   zIndex: -1,
 };
-
-const x = `
-  
-`;
