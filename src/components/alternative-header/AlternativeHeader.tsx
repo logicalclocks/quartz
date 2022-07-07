@@ -48,9 +48,7 @@ export const AlternativeHeader: FC<AlternativeHeaderProps> = ({
             <Box
               onClick={tab.onCLick}
               key={tab.title}
-              sx={{
-                ...S.tab(activeTabIndex === index),
-              }}
+              sx={S.tab(activeTabIndex === index)}
             >
               <Flex alignItems="baseline" pb="10px">
                 <Value fontFamily="Inter">{tab.title}</Value>
