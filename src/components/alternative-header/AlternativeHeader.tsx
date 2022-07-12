@@ -4,24 +4,31 @@ import Value from '../typography/value';
 import * as S from './styles';
 
 export interface Tab {
+  /** Title for the tab */
   title: string;
+  /** Additional content, e.g. counter */
   altContent?: React.ReactElement | null;
+  /** Whether tab is active or not */
   isActive: boolean;
+  /** Handler called when tab is clicked */
   onClick: () => void;
 }
 
-export interface AlternativeHeaderProps extends Omit<BoxProps, 'css'> {
+export interface Props extends Omit<BoxProps, 'css'> {
+  /** Title for the tabs bar */
   title?: string;
+  /** A list of tabs, defined by `ALternativeHeaderTab` interface */
   tabs: Tab[];
+  /** Whether to show a line under the tabs menu */
   withBase?: boolean;
 }
 
-export const AlternativeHeader: FC<AlternativeHeaderProps> = ({
+export const AlternativeHeader: FC<Props> = ({
   title,
   tabs,
-  withBase,
+  withBase = false,
   ...props
-}: AlternativeHeaderProps) => {
+}: Props) => {
   const activeTabIndex = useMemo(() => {
     const index = tabs.findIndex(({ isActive }) => isActive);
 

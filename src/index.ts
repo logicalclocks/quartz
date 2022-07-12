@@ -64,7 +64,6 @@ import PerformanceBar from './components/performance-bar';
 import ProgressBar2 from './components/bar/progress-bar-2';
 
 // Badges
-import User from './components/user';
 import {
   Badge,
   Blink,
@@ -132,6 +131,7 @@ import { FileExplorerMode } from './components/file-system-explorer/types';
 import * as constants from './constants';
 
 export * from './components/alternative-header';
+export * from './components/user';
 
 export {
   Button,
@@ -194,7 +194,6 @@ export {
   PerformanceBar,
   ProgressBar2,
   // Badges
-  User,
   TextValueBadge,
   Badge,
   Blink,

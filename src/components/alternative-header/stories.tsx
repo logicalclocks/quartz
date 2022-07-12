@@ -2,14 +2,17 @@ import { Meta, Story } from '@storybook/react/types-6-0';
 import React, { useMemo, useState } from 'react';
 import { Box } from 'rebass';
 import Value from '../typography/value';
-import { AlternativeHeader, AlternativeHeaderProps } from './AlternativeHeader';
+import { AlternativeHeader, Props } from './AlternativeHeader';
 
 export default {
   title: 'Quartz/AlternativeHeader',
   component: AlternativeHeader,
+  args: {
+    title: 'Cluster settings',
+  },
 } as Meta;
 
-const Template: Story<AlternativeHeaderProps> = (props) => {
+const Template: Story<Props> = (props) => {
   const [active, setActive] = useState('tab');
 
   const tabs = useMemo(
@@ -29,12 +32,13 @@ const Template: Story<AlternativeHeaderProps> = (props) => {
         isActive: active === 'one more tab',
         onClick: () => setActive('one more tab'),
       },
+      // if the storybook page hangs, comment the tab below. There is an unknown memory leak, which breaks the page.
       {
         title: 'last tab',
         isActive: active === 'last tab',
         altContent: (
           <Value as="span" lineHeight="13px">
-            altContent
+            38
           </Value>
         ),
         onClick: () => setActive('last tab'),
@@ -52,27 +56,8 @@ const Template: Story<AlternativeHeaderProps> = (props) => {
 
 export const Default = Template.bind({});
 
-Default.args = {
-  title: 'Cluster settings',
-};
-
-Default.argTypes = {
-  title: {
-    summary: 'Title',
-    control: {
-      type: 'text',
-    },
-  },
-  tabs: {
-    summary: 'Tabs of header',
-    control: {
-      type: 'object',
-    },
-  },
-  withBase: {
-    summary: 'Adds a line under the menu',
-    control: {
-      type: 'boolean',
-    },
-  },
+export const WithBase = Template.bind({});
+WithBase.args = {
+  title: 'An example with base',
+  withBase: true,
 };
