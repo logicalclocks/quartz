@@ -3,7 +3,7 @@ import { Box, Flex } from 'rebass';
 import { progressBarStyles, circleStyles } from './split-graph.styles';
 import Label from '../../label';
 import Labeling from '../../typography/labeling';
-import { Badge } from '../../badges';
+import { Badge } from '../../badge';
 
 export const graphColors = [
   '#FFADAD',

@@ -1,64 +1,39 @@
-import React, { FC } from 'react';
-import { Flex, FlexProps } from 'rebass';
+import React from 'react';
+import { Flex, FlexProps, SxStyleProp } from 'rebass';
 import { useTheme } from '../../theme/theme';
 import { getIcon, IconName } from '../icon/list';
 import Value from '../typography/value';
-import getBorderAnimation from './animation';
-import { ITheme } from '../../theme/types';
+import { BadgeVariant } from './types';
+import { getBorderColor, getBorderAnimation } from './utils';
 
 type Mode = 'default' | 'bordered';
-type Variant =
-  | 'light'
-  | 'default'
-  | 'label'
-  | 'success'
-  | 'warning'
-  | 'notice'
-  | 'fail';
-
-export interface BadgeProps extends Omit<FlexProps, 'css'> {
+export interface Props extends Omit<FlexProps, 'css'> {
+  /** Value for the badge. E.g. 'pending' or 18 */
   value: string | number;
-  variant?: Variant;
+  /** One of badge variants. Defined by `BadgeVariant` type. E.g. `light` or `warning`... */
+  variant?: BadgeVariant;
+  /** Badge mode: `default` or `bordered` */
   mode?: Mode;
+  /** Whether to show loading spinner */
   loading?: boolean;
+  /** Icon, used as `IconName.nameOfTheIcon` e.g. `IconName.download` */
   icon?: IconName;
 }
-
-// this is a workaround because styled-system does not support theme colors for `linear-gradient`
-const getBorderColor = (theme: ITheme, variant: Variant) => {
-  switch (variant) {
-    case 'light':
-      return theme.colors.grayShade1;
-    case 'default':
-      return theme.colors.black;
-    case 'label':
-      return theme.colors.black;
-    case 'success':
-      return theme.colors.labels.green;
-    case 'warning':
-      return theme.colors.labels.orange;
-    case 'notice':
-      return theme.colors.labels.yellow;
-    case 'fail':
-      return theme.colors.labels.red;
-    default:
-      return theme.colors.black;
-  }
-};
 
 const THEME_PATH: Record<Mode, string> = {
   default: 'variants.badges.primary',
   bordered: 'variants.badges.bordered',
 };
 
-const Badge: FC<BadgeProps> = ({
+export const Badge = ({
   value,
   variant = 'light',
   mode = 'default',
   loading = false,
   icon,
+  sx,
   ...props
-}: BadgeProps) => {
+}: Props) => {
   const theme = useTheme();
 
   const borderColor = getBorderColor(theme, variant);
@@ -73,7 +48,7 @@ const Badge: FC<BadgeProps> = ({
       justifyContent="center"
       px="6px"
       height="19px"
-      sx={borderStyle}
+      sx={{ ...borderStyle, ...sx } as SxStyleProp}
       variant={variant}
       tx={loading ? THEME_PATH.bordered : THEME_PATH[mode]}
       {...props}
@@ -99,5 +74,3 @@ const Badge: FC<BadgeProps> = ({
     </Flex>
   );
 };
-
-export default Badge;

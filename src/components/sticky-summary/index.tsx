@@ -4,7 +4,7 @@ import { boxStyles, boxButtonStyles } from './sticky-summary.styles';
 import Title from '../typography/title';
 import Labeling from '../typography/labeling';
 import FormSummaryContainer from '../form-summary-container';
-import Badge from '../badges/badge';
+import { Badge } from '../badge';
 
 export interface StickySummaryProps {
   title?: string;
