@@ -63,15 +63,6 @@ import FreshnessBar from './components/bar/freshness';
 import PerformanceBar from './components/performance-bar';
 import ProgressBar2 from './components/bar/progress-bar-2';
 
-// Badges
-import {
-  Badge,
-  Blink,
-  TextValueBadge,
-  Dot,
-  ProjectBadge,
-} from './components/badges';
-
 // Navigation
 import Navigation from './components/navigation/container';
 import NavigationItem from './components/navigation/item';
@@ -132,6 +123,10 @@ import * as constants from './constants';
 
 export * from './components/alternative-header';
 export * from './components/user';
+export * from './components/dot';
+export * from './components/badge';
+export * from './components/text-value-badge';
+export * from './components/project-badge';
 
 export {
   Button,
@@ -193,12 +188,6 @@ export {
   FreshnessBar,
   PerformanceBar,
   ProgressBar2,
-  // Badges
-  TextValueBadge,
-  Badge,
-  Blink,
-  ProjectBadge,
-  Dot,
   // Navigation
   Navigation,
   NavigationItem,
@@ -255,7 +244,6 @@ export { default as EmbeddedTabs } from './components/embedded-tabs';
 
 export type { ITheme, IThemeColors, IThemeIconSizes } from './theme/types';
 export type TooltipProps = import('./components/tooltip').TooltipProps;
-export type { BadgeProps, BlinkProps } from './components/badges';
 export type SliderProps = import('./components/slider').SliderProps;
 export type RangeSliderProps =
   import('./components/range-slider').RangeSliderProps;

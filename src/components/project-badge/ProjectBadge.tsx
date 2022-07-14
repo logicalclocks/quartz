@@ -1,22 +1,18 @@
-import React, { FC } from 'react';
+import React from 'react';
 import { Flex, FlexProps } from 'rebass';
 
-// Components
 import Value from '../typography/value';
 import GetIcon from '../icon/GetIcon';
 import { IconName } from '../icon/list';
 
-export interface ProjectBadgeProps extends Omit<FlexProps, 'css'> {
+export interface Props extends Omit<FlexProps, 'css'> {
+  /** Value for the badge. E.g. 'pending' or 18 */
   value: string | number;
+  /** Whether to show a lock icon */
   isLock?: boolean;
 }
 
-const ProjectBadge: FC<ProjectBadgeProps> = ({
-  value,
-  isLock,
-  sx,
-  ...props
-}: ProjectBadgeProps) => (
+export const ProjectBadge = ({ value, isLock, sx, ...props }: Props) => (
   <Flex
     alignItems="center"
     justifyContent="center"
@@ -38,5 +34,3 @@ const ProjectBadge: FC<ProjectBadgeProps> = ({
     {isLock && <GetIcon ml="5px" fontSize="10px" icon={IconName.lock} />}
   </Flex>
 );
-
-export default ProjectBadge;

@@ -5,7 +5,7 @@ import { action } from '@storybook/addon-actions';
 import Row, { RowProps } from './container';
 import RowGroup, { RowGroupProps } from './group';
 import RowItem, { RowItemProps } from './item';
-import User from '../user';
+import { User } from '../user';
 import Button from '../button';
 import Value from '../typography/value';
 import { Mode } from './container/types';

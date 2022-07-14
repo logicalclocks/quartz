@@ -1,25 +1,27 @@
-import React, { FC } from 'react';
-import { FlexProps, Flex } from 'rebass';
-
-// Components
+import React from 'react';
+import { Flex, FlexProps } from 'rebass';
 import Tooltip from '../tooltip';
-// Types
 import TooltipPositions from '../tooltip/positions';
 
-export interface DotProps extends Omit<FlexProps, 'css'> {
+export interface Props extends Omit<FlexProps, 'css'> {
+  /** Text to render on hover */
   mainText: string;
+  /** Color variants: e.g. `green` */
   variant?: 'green' | 'black' | 'white';
+  /** Secondary text on the tooltip */
   secondaryText?: string;
-  position?: TooltipPositions;
+  /** Position of the tooltip, e.g. `top` or `right` */
+  tooltipPosition?: TooltipPositions;
 }
 
-const Dot: FC<DotProps> = ({
+export const Dot = ({
   mainText,
   secondaryText,
-  position,
+  tooltipPosition: position = TooltipPositions.bottom,
   variant = 'black',
+  sx,
   ...props
-}: DotProps) => (
+}: Props) => (
   <Tooltip
     mainText={mainText}
     secondaryText={secondaryText}
@@ -40,9 +42,8 @@ const Dot: FC<DotProps> = ({
         borderRadius: '50%',
         userSelect: 'none',
         ...(variant === 'white' && { border: 'solid 2px black' }),
+        ...sx,
       }}
     />
   </Tooltip>
 );
-
-export default Dot;

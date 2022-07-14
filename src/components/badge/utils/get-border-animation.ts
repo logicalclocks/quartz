@@ -6,7 +6,7 @@ const rotate = keyframes`
   }
 `;
 
-const getBorderAnimation = (borderColor: string) => {
+export const getBorderAnimation = (borderColor: string) => {
   return {
     border: 'none',
     display: 'inline-block',
@@ -48,5 +48,3 @@ const getBorderAnimation = (borderColor: string) => {
     },
   };
 };
-
-export default getBorderAnimation;
