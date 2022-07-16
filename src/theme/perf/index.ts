@@ -18,7 +18,7 @@ const variants = {
     },
   },
   orange: {
-    bg: 'labels.orangeShade3',
+    bg: 'labels.orangeShade2',
     '& > div': {
       bg: 'labels.orange',
     },

@@ -13,7 +13,7 @@ const variants = {
       color: 'labels.red',
     },
 
-    bg: 'labels.redShade3',
+    bg: 'labels.redShade2',
     border: '1px solid',
     borderColor: 'labels.red',
   },
@@ -49,7 +49,7 @@ const variants = {
       color: 'labels.orange',
     },
 
-    bg: 'labels.orangeShade3',
+    bg: 'labels.orangeShade2',
     border: '1px solid',
     borderColor: 'labels.orange',
   },
@@ -57,7 +57,7 @@ const variants = {
     '> span': {
       color: 'black',
     },
-    bg: 'labels.yellowLight',
+    bg: 'labels.yellowShade2',
     border: '1px solid',
     borderColor: 'labels.yellow',
   },

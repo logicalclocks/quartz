@@ -8,10 +8,10 @@ export default {
   boxShadow: 'secondary',
 
   ':hover': {
-    bg: 'labels.redShade3',
+    bg: 'labels.redShade2',
   },
   ':active': {
-    borderColor: 'labels.redShade3',
+    borderColor: 'labels.redShade2',
   },
   ':disabled': {
     bg: 'grayShade1',

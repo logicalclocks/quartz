@@ -2,7 +2,7 @@ import { SystemStyleObject } from '@styled-system/css';
 
 export default {
   color: 'labels.orange',
-  bg: 'labels.orangeShade3',
+  bg: 'labels.orangeShade2',
   borderLeftWidth: 0,
   borderLeftStyle: 'solid',
   borderLeftColor: 'labels.orange',

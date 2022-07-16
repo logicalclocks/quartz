@@ -3,14 +3,18 @@ import { Global, css } from '@emotion/core';
 import { ThemeProvider as EmotionThemeProvider } from 'emotion-theming';
 
 // Theme
-import defaultTheme from './theme';
+import defaultTheme, { darkTheme } from './theme';
+
+type ThemeVariant = 'dark' | 'light';
 
 export interface ThemeProviderProps {
   children: React.ReactNode;
+  variant?: ThemeVariant;
 }
 
 const ThemeProvider: FC<ThemeProviderProps> = ({
   children,
+  variant = 'dark',
 }: ThemeProviderProps) => (
   <React.Fragment>
     <Global
@@ -19,7 +23,11 @@ const ThemeProvider: FC<ThemeProviderProps> = ({
         @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@700&display=swap');
       `}
     />
-    <EmotionThemeProvider theme={defaultTheme}>{children}</EmotionThemeProvider>
+    <EmotionThemeProvider
+      theme={variant === 'light' ? defaultTheme : darkTheme}
+    >
+      {children}
+    </EmotionThemeProvider>
   </React.Fragment>
 );
 

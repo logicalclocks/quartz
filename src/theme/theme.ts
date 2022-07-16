@@ -53,7 +53,37 @@ import notification from './notifications';
 // Chip
 import editableSelect from './editableSelect';
 
-const theme: ITheme = {
+const darkThemeColors: ITheme['colors'] = {
+  white: '#303030',
+
+  gray: '#A6A6A6',
+  grayShade1: '#707070',
+  grayShade2: '#4D4D4D',
+  grayShade3: '#222222',
+
+  black: '#F0F0F0',
+
+  primary: '#229570',
+  primaryShade1: '#326756',
+  primaryShade2: '#264339',
+
+  labels: {
+    red: '#C44D4D',
+    orange: '#C0844E',
+    orangeShade2: '#503E2E',
+    purple: '#8449BB',
+    yellow: '#D4BF08',
+    yellowShade2: '#524D1F',
+    green: '#229570',
+    blue: '#2885A4',
+    blueShade1: '#2D5E6E',
+    blueShade2: '#243439',
+    redShade2: '#4E3131',
+    purpleShade2: '#8449BB',
+  },
+};
+
+const defaultTheme: ITheme = {
   colors: {
     primary: '#21B182',
     primaryShade1: '#65D3AF',
@@ -71,15 +101,15 @@ const theme: ITheme = {
       red: '#EB5757',
       orange: '#f2994a',
       purple: '#9B51E0',
+      purpleShade2: '#F5EEFC',
       yellow: '#FFE600',
-      yellowLight: '#FFF8B3',
+      yellowShade2: '#FFF8B3',
       green: '#21B182',
-      skyblue: '#56CCF2',
-      darkblue: '#186781',
-      lightblue: '#ECF8FC',
+      blueShade1: '#56CCF2',
+      blueShade2: '#ECF8FC',
       blue: '#41B7DC',
-      redShade3: '#F8DEDE',
-      orangeShade3: '#FDF0E4',
+      orangeShade2: '#FDF0E4',
+      redShade2: '#F8DEDE',
     },
   },
   fonts: {
@@ -174,6 +204,11 @@ const theme: ITheme = {
   notification,
 };
 
+export const darkTheme: ITheme = {
+  ...defaultTheme,
+  colors: darkThemeColors,
+};
+
 export const useTheme = () => useEmotionTheme<ITheme>();
 
-export default theme;
+export default defaultTheme;
