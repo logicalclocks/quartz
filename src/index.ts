@@ -14,6 +14,7 @@ import Checkbox from './components/checkbox';
 import Callout, { CalloutTypes } from './components/callout';
 import CalloutWithButton from './components/calloutWithButton';
 import CheckboxGroup from './components/checkbox/checkbox-group';
+import DropdownButton from './components/dropdown-button';
 import SplitGraph, { graphColors } from './components/graphs/split-graph';
 import Radio from './components/radio';
 import RadioGroup from './components/radio/radio-group';
@@ -145,6 +146,7 @@ export {
   CheckboxGroup,
   CompactButton,
   Dropdown,
+  DropdownButton,
   FooterButton,
   Header,
   IconName,
@@ -274,6 +276,7 @@ export type { FileSystemExplorerProps } from './components/file-system-explorer'
 export type { FileExplorData } from './components/file-system-explorer/types';
 export type { GetIconProps } from './components/icon/GetIcon';
 export type { RadioProps } from './components/radio';
+export type { DropdownButtonProps } from './components/dropdown-button';
 export type {
   RadioGroupProps,
   RadioGroupOption,
