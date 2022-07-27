@@ -22,11 +22,11 @@ export interface Props extends Omit<FlexProps, 'css'> {
   containerOpenSx?: FlexProps['sx'];
   /** Setting custom style for dropdown */
   dropdownSx?: DropdownProps['sx'];
-  /** dropwdown items weather could be an array, in this case dropdown will be closed after any item clicked
-   *  in order to handle closing of dropdown manually you have to pass a callback function which accepts the onClose handler function
+  /** Dropwdown items either could be an Array, in this case dropdown will be closed after any item clicked
+   *  in order to handle closing of dropdown manually you have to pass a callback function which accepts the `onClose` handler function
    */
   items: DropdownProps['items'] | RenderDropdownItems;
-  /** to Render custom component as dropdown's button */
+  /** To Render custom component as dropdown's button */
   renderButton: ({
     onClick,
     isOpen,
