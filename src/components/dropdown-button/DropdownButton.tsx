@@ -2,7 +2,7 @@ import React, { useMemo, useRef } from 'react';
 import { Flex, FlexProps } from 'rebass';
 import * as R from 'ramda';
 
-import styles from './dropdown-button.styles';
+import styles from './styles';
 import useDropdown from '../../utils/useDropdown';
 import Dropdown, { DropdownProps } from '../dropdown';
 import { DropdownItem } from '../dropdown/types';
