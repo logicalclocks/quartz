@@ -57,7 +57,7 @@ const argTypes = {
 
 // Default
 const Template: Story<DropdownButtonProps> = (props) => (
-  <Box width="700px" height="200px">
+  <Box width="700px" height="110px">
     <DropdownButton
       {...props}
       items={[
