@@ -1,16 +1,28 @@
-import React, { useRef } from 'react';
+import React, { useMemo, useRef } from 'react';
 import { Flex, FlexProps } from 'rebass';
 import * as R from 'ramda';
 
 import styles from './dropdown-button.styles';
 import useDropdown from '../../utils/useDropdown';
 import Dropdown, { DropdownProps } from '../dropdown';
+import { DropdownItem } from '../dropdown/types';
 
+type RenderDropdownItems = ({
+  onClose,
+}: {
+  onClose: () => void;
+}) => DropdownProps['items'];
 export interface DropdownButtonProps extends Omit<FlexProps, 'css'> {
+  /** wether to align dropdown on the left or right, the default is right alignment
+   * TODO: in the future we might need excact place of opening dropdown similar to tooltip
+   */
   alignLeft?: boolean;
-  dropdownSx?: DropdownProps['sx'];
-  items: DropdownProps['items'];
   containerOpenSx?: FlexProps['sx'];
+  dropdownSx?: DropdownProps['sx'];
+  /** dropwdown items weather could be an array, in this case dropdown will be closed after any item clicked
+   *  in order to handle closing of dropdown manually you have to pass a callback function which accepts the onClose handler function
+   */
+  items: DropdownProps['items'] | RenderDropdownItems;
   renderButton: ({
     onClick,
     isOpen,
@@ -22,15 +34,29 @@ export interface DropdownButtonProps extends Omit<FlexProps, 'css'> {
 
 const DropdownButton: React.FC<DropdownButtonProps> = ({
   alignLeft = false,
+  containerOpenSx = {},
   dropdownSx = {},
   items,
-  containerOpenSx = {},
   renderButton,
   sx = {},
   ...restProps
 }) => {
   const [isOpen, handleToggle, handleClickOutside] = useDropdown();
   const containerRef = useRef<HTMLElement>();
+  const dropdownItems = useMemo(
+    () =>
+      R.equals(R.type(items), 'Array')
+        ? /** if the items is array then close dropdown after clicking each dropdown item */
+          (items as DropdownItem[]).map((item) => ({
+            ...item,
+            onClick: () => {
+              item.onClick(item);
+              handleToggle();
+            },
+          }))
+        : (items as RenderDropdownItems)({ onClose: handleToggle }),
+    [items, handleToggle],
+  );
 
   return (
     <Flex
@@ -49,7 +75,7 @@ const DropdownButton: React.FC<DropdownButtonProps> = ({
           styles.dropdown(containerRef?.current?.offsetHeight, alignLeft),
           { ...dropdownSx },
         )}
-        items={items}
+        items={dropdownItems}
       />
     </Flex>
   );
