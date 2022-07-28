@@ -11,16 +11,7 @@ export default {
 
 const Template: Story<PerformanceCardProps> = (props) => (
   <PerformanceCard {...props}>
-    <Labeling
-      bold
-      sx={{
-        color: '#333',
-        fontSize: '18px',
-        margin: '0 0 10px 0',
-      }}
-    >
-      Some content
-    </Labeling>
+    <Labeling bold>Some content</Labeling>
   </PerformanceCard>
 );
 
