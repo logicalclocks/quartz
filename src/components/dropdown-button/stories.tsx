@@ -38,7 +38,7 @@ export default {
 
 // Default
 const Template: Story<Props> = (props) => (
-  <Box width="700px" height="110px">
+  <Box width="700px" height="115px">
     <DropdownButton {...props} />
   </Box>
 );
