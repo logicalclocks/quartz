@@ -22,6 +22,7 @@ const ListItem: FC<ListItemProps> = ({
   action,
   isActive = false,
   isRightAlignment,
+  disabled,
   ...props
 }: ListItemProps) => {
   const [actionTitle, actionCallback] = action || [];
@@ -33,7 +34,7 @@ const ListItem: FC<ListItemProps> = ({
       tx="variants.list.item"
       variant={variant}
       {...props}
-      sx={styles(isActive)}
+      sx={styles(isActive, disabled)}
       css={!hasDivider ? withoutBorder : undefined}
     >
       {children}

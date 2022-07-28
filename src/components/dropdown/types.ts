@@ -7,4 +7,6 @@ export interface DropdownItem<Metadata = {}> {
   hasDivider?: boolean;
   metadata?: Metadata;
   onClick: (item: DropdownItem) => void;
+  isLoading?: boolean;
+  disabled?: boolean;
 }
