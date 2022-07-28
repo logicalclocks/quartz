@@ -9,7 +9,7 @@ import useOnClickOutside from '../../utils/useClickOutside';
 import { DropdownItem } from './types';
 import { GetIcon } from '../icon';
 
-export interface DropdownProps extends Omit<ListProps, 'css'> {
+export interface DropdownProps extends Omit<ListProps, 'css' | 'children'> {
   items: DropdownItem[];
   isOpen?: boolean;
   onClickOutside?: () => void;
