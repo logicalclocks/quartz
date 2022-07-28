@@ -103,6 +103,7 @@ const Pagination: FC<PaginationProps> = ({
             as="input"
             type="number"
             value={current}
+            color="black"
             min={1}
             max={totalPages}
             onChange={handleChange}
