@@ -14,7 +14,7 @@ export interface ThemeProviderProps {
 
 const ThemeProvider: FC<ThemeProviderProps> = ({
   children,
-  variant = 'dark',
+  variant = 'light',
 }: ThemeProviderProps) => (
   <React.Fragment>
     <Global
