@@ -19,6 +19,8 @@ export default {
         value: 'project_1',
         metadata: {},
         onClick: action('onClick'),
+        isLoading: true,
+        disabled: true,
       },
       {
         value: 'project_2',
@@ -31,6 +33,7 @@ export default {
         icon: IconName.plus,
         metadata: {},
         onClick: action('onClick'),
+        isLoading: true,
       },
     ],
   },

@@ -1,9 +1,10 @@
 export const withoutBorder = { borderBottomColor: 'transparent' };
 
-export default (isActive: boolean) => ({
+export default (isActive: boolean, disablde?: boolean) => ({
   height: '35px',
 
   bg: isActive ? 'grayShade3' : 'initial',
+  color: disablde ? 'gray' : 'initial',
 
   display: 'flex',
   alignItems: 'center',
