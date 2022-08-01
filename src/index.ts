@@ -122,6 +122,8 @@ import { FileExplorerMode } from './components/file-system-explorer/types';
 // constants
 import * as constants from './constants';
 
+import Spinner from './components/spinner';
+
 export * from './components/alternative-header';
 export * from './components/user';
 export * from './components/dot';
@@ -240,6 +242,7 @@ export {
   useTheme,
   // Constants
   constants,
+  Spinner,
 };
 
 export { default as EmbeddedTabs } from './components/embedded-tabs';
