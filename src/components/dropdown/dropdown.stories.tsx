@@ -23,6 +23,7 @@ Default.args = {
       value: 'project_1',
       metadata: {},
       onClick: action('onClick'),
+      tooltipProps: { mainText: 'tooltip', secondaryText: 'tooltip' },
     },
     {
       value: 'project_2',
