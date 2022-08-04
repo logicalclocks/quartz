@@ -128,6 +128,8 @@ export * from './components/badge';
 export * from './components/text-value-badge';
 export * from './components/project-badge';
 
+export * from './theme/useColorMode';
+
 export {
   Button,
   UploadButton,
