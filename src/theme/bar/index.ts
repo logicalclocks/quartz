@@ -7,7 +7,7 @@ const variants = {
     },
   },
   freshness: {
-    background: 'linear-gradient(90deg, #56CCF2 0%, #EB5757 100%)',
+    background: 'linear-gradient(90deg, #56CCF2 0%, red 100%)',
 
     '> span': {
       bg: '#EBEBEB',

@@ -8,7 +8,8 @@ export const progressBarStyles = (
   bg: color,
   width: `${percent}%`,
   marginRight: '2px',
-  border: isSelected ? '1px solid #272727' : null,
+  border: isSelected ? '1px solid' : null,
+  borderColor: 'black',
 });
 
 export const circleStyles = (
@@ -19,5 +20,6 @@ export const circleStyles = (
   width: '10px',
   height: '10px',
   borderRadius: '50%',
-  border: isSelected ? '1px solid #272727' : null,
+  border: isSelected ? '1px solid' : null,
+  borderColor: 'black',
 });

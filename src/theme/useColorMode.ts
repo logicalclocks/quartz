@@ -1,8 +1,8 @@
-import { useState } from "react";
+import { useContext } from 'react';
+import { ColorModeContext } from './ThemeProvider';
 
 export const useColorMode = () => {
-  const theme = localStorage.getItem('user-theme') ?? 'light';
-  const [colorMode, setColorMode] = useState(theme);
+  const { colorMode, setColorMode } = useContext(ColorModeContext);
 
   const changeColorMode = () => {
     const nextColor = colorMode === 'light' ? 'dark' : 'light';

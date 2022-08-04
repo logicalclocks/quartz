@@ -37,7 +37,7 @@ export const wrapper = (topContent: boolean) =>
 
     flexDirection: 'column',
 
-    boxShadow: topContent ? '0 -5px 0 #F5F5F5' : '',
+    boxShadow: topContent ? '0 -5px 0 grayShade3' : '',
 
     zIndex: 25,
 

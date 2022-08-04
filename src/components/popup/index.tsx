@@ -84,7 +84,7 @@ const Popup: FC<PopupProps> = ({
       >
         {children}
         {footer && (
-          <Box width="100%" backgroundColor="#F5F5F5">
+          <Box width="100%" backgroundColor="grayShade3">
             {footer}
           </Box>
         )}

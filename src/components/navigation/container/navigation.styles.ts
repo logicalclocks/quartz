@@ -32,8 +32,8 @@ const styles = (isOpen: boolean) => ({
       alignItems: 'center',
       padding: !isOpen ? '6px 16px' : '0px',
       height: !isOpen ? '24px' : '1px',
-      background: '#F5F5F5',
-      color: '#a0a0a0',
+      background: 'grayShade3',
+      color: 'gray',
       borderColor: 'grayShade2',
       borderStyle: 'solid',
       borderWidth: '1px',
@@ -42,7 +42,7 @@ const styles = (isOpen: boolean) => ({
       cursor: 'default',
       paddingLeft: '0px',
       ':hover': {
-        color: '#a0a0a0',
+        color: 'gray',
       },
     },
     '>li:first-of-type>div': {

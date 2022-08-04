@@ -20,7 +20,7 @@ export const getBorderAnimation = (borderColor: string) => {
     fontSize: '12px',
     fontWeight: '500',
     borderRadius: '1px',
-    color: '#f2994a',
+    color: 'orange',
     ':before': {
       content: "''",
       position: 'absolute',
