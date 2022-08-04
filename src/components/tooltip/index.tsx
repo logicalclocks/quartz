@@ -135,7 +135,7 @@ const Tooltip: FC<TooltipProps> = ({
     >
       {children}
 
-      {visible && !disabled && (
+      {visible && !disabled && mainText && (
         <Portal>
           <Box
             sx={{

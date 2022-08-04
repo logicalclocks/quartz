@@ -10,6 +10,8 @@ import { DropdownItem } from './types';
 import { GetIcon } from '../icon';
 import Spinner from '../spinner';
 import { Flex } from 'rebass';
+import Tooltip from '../tooltip';
+import TooltipPositions from '../tooltip/positions';
 
 export interface DropdownProps extends Omit<ListProps, 'css' | 'children'> {
   items: DropdownItem[];
@@ -33,36 +35,46 @@ const Dropdown: FC<DropdownProps> = ({
   return (
     <List {...props} ref={containerRef}>
       {items?.map((item) => {
-        const { value, id, icon, hasDivider, onClick, isLoading, disabled } =
-          item;
+        const {
+          value,
+          id,
+          icon,
+          hasDivider,
+          onClick,
+          isLoading,
+          disabled,
+          tooltipProps,
+        } = item;
 
         return (
-          <ListItem
-            hasDivider={hasDivider}
-            key={id || value}
-            onClick={() => onClick(item)}
-            disabled={disabled}
-          >
-            <Flex width="100%">
-              <Flex flexGrow={1}>
-                {icon && (
-                  <GetIcon
-                    color={disabled ? 'gray' : 'black'}
-                    icon={icon}
-                    size="sm"
+          <Tooltip position={TooltipPositions.right} {...tooltipProps}>
+            <ListItem
+              hasDivider={hasDivider}
+              key={id || value}
+              onClick={() => onClick(item)}
+              disabled={disabled}
+            >
+              <Flex width="100%">
+                <Flex flexGrow={1}>
+                  {icon && (
+                    <GetIcon
+                      color={disabled ? 'gray' : 'black'}
+                      icon={icon}
+                      size="sm"
+                    />
+                  )}
+                  {value}
+                </Flex>
+                {isLoading && (
+                  <Spinner
+                    size={16}
+                    ml="15px"
+                    color={disabled ? 'gray' : 'primary'}
                   />
                 )}
-                {value}
               </Flex>
-              {isLoading && (
-                <Spinner
-                  size={16}
-                  ml="15px"
-                  color={disabled ? 'gray' : 'primary'}
-                />
-              )}
-            </Flex>
-          </ListItem>
+            </ListItem>
+          </Tooltip>
         );
       })}
     </List>

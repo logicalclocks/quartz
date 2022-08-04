@@ -1,4 +1,5 @@
 import { IconName } from '../icon';
+import { TooltipProps } from '../tooltip';
 
 export interface DropdownItem<Metadata = {}> {
   value: string | number;
@@ -9,4 +10,5 @@ export interface DropdownItem<Metadata = {}> {
   onClick: (item: DropdownItem) => void;
   isLoading?: boolean;
   disabled?: boolean;
+  tooltipProps?: Omit<TooltipProps, 'children'>;
 }
