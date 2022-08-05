@@ -53,36 +53,6 @@ import notification from './notifications';
 // Chip
 import editableSelect from './editableSelect';
 
-const darkThemeColors: ITheme['colors'] = {
-  white: '#303030',
-
-  gray: '#A6A6A6',
-  grayShade1: '#707070',
-  grayShade2: '#4D4D4D',
-  grayShade3: '#222222',
-
-  black: '#F0F0F0',
-
-  primary: '#229570',
-  primaryShade1: '#326756',
-  primaryShade2: '#264339',
-
-  labels: {
-    red: '#C44D4D',
-    orange: '#C0844E',
-    orangeShade2: '#503E2E',
-    purple: '#8449BB',
-    yellow: '#D4BF08',
-    yellowShade2: '#524D1F',
-    green: '#229570',
-    blue: '#2885A4',
-    blueShade1: '#2D5E6E',
-    blueShade2: '#243439',
-    redShade2: '#4E3131',
-    purpleShade2: '#8449BB',
-  },
-};
-
 const defaultTheme: ITheme = {
   colors: {
     primary: '#21B182',
@@ -204,11 +174,55 @@ const defaultTheme: ITheme = {
   notification,
 };
 
-export const darkTheme: ITheme = {
-  ...defaultTheme,
-  colors: darkThemeColors,
+const darkThemeColors: ITheme['colors'] = {
+  white: '#303030',
+
+  gray: '#A6A6A6',
+  grayShade1: '#707070',
+  grayShade2: '#4D4D4D',
+  grayShade3: '#222222',
+
+  black: '#F0F0F0',
+
+  primary: '#229570',
+  primaryShade1: '#326756',
+  primaryShade2: '#264339',
+
+  labels: {
+    red: '#C44D4D',
+    orange: '#C0844E',
+    orangeShade2: '#503E2E',
+    purple: '#8449BB',
+    yellow: '#D4BF08',
+    yellowShade2: '#524D1F',
+    green: '#229570',
+    blue: '#2885A4',
+    blueShade1: '#2D5E6E',
+    blueShade2: '#243439',
+    redShade2: '#4E3131',
+    purpleShade2: '#8449BB',
+  },
+};
+
+const darkThemeShadows: ITheme['shadows'] = {
+  primary: '0px 5px 15px rgba(61, 245, 187, 0.2)',
+  secondary: '0px 5px 15px rgba(230, 230, 230, 0.2)',
+  explorer: '0px -1px 1px #A7A7A7',
+  alert: '0px 5px 15px rgba(255, 102, 102, 0.25)',
+  disabled: '0px 4px 15px rgba(255, 255, 255, 0.25)',
+  cardInsetShadow: 'inset 0px -20px 30px -25px rgba(255, 255, 255, 0.15)',
+  navigation: '1px 0px 0px #4D4D4D, 2px 0px 0px white',
+  list: '0px 4px 15px rgba(255, 255, 255, 0.25)',
+  popup: '0px 4px 4px rgba(255, 255, 255, 0.25)',
+  notification: '0px 0px 15px rgba(255, 255, 255, 0.25)',
 };
 
 export const useTheme = () => useEmotionTheme<ITheme>();
+
+export const darkTheme: ITheme = {
+  ...defaultTheme,
+  colors: darkThemeColors,
+  shadows: darkThemeShadows,
+};
 
 export default defaultTheme;
