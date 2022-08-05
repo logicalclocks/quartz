@@ -4,7 +4,7 @@ import { ThemeProvider as EmotionThemeProvider } from 'emotion-theming';
 
 import defaultTheme, { darkTheme } from './theme';
 
-type ThemeVariant = 'dark' | 'light';
+export type ThemeVariant = 'dark' | 'light';
 
 export interface ThemeProviderProps {
   children: React.ReactNode;
