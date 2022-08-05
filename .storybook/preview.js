@@ -19,7 +19,7 @@ export const parameters = {
 
 export const decorators = [
   (Story) => (
-    <ThemeProvider variant={useDarkMode() ? 'dark' : 'light'}>
+    <ThemeProvider colorMode={useDarkMode() ? 'dark' : 'light'}>
       <Story />
     </ThemeProvider>
   ),

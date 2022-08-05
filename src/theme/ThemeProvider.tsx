@@ -8,23 +8,18 @@ type ThemeVariant = 'dark' | 'light';
 
 export interface ThemeProviderProps {
   children: React.ReactNode;
+  colorMode?: ThemeVariant;
 }
-
-export interface IColorModeContext {
-  colorMode: ThemeVariant;
-  setColorMode: (mode: ThemeVariant) => void;
-}
-
-export const ColorModeContext = createContext<IColorModeContext>({
-  colorMode: 'light',
-  setColorMode: () => {},
-});
 
 const ThemeProvider: FC<ThemeProviderProps> = ({
   children,
+  colorMode: colorModeFromProps,
 }: ThemeProviderProps) => {
-  const theme = localStorage.getItem('user-theme') ?? 'light';
-  const [colorMode, setColorMode] = useState<ThemeVariant>(theme as ThemeVariant);
+  const [colorMode, setColorMode] = useState<ThemeVariant>(
+    (localStorage.getItem('user-theme') ?? 'light') as ThemeVariant,
+  );
+
+  const colorModeToUse = colorModeFromProps ?? colorMode; // the outer one overrides inner state
 
   return (
     <React.Fragment>
@@ -35,7 +30,9 @@ const ThemeProvider: FC<ThemeProviderProps> = ({
         `}
       />
       <ColorModeContext.Provider value={{ colorMode, setColorMode }}>
-        <EmotionThemeProvider theme={colorMode === 'light' ? defaultTheme : darkTheme}>
+        <EmotionThemeProvider
+          theme={colorModeToUse === 'light' ? defaultTheme : darkTheme}
+        >
           {children}
         </EmotionThemeProvider>
       </ColorModeContext.Provider>
@@ -44,3 +41,13 @@ const ThemeProvider: FC<ThemeProviderProps> = ({
 };
 
 export default ThemeProvider;
+
+export interface IColorModeContext {
+  colorMode: ThemeVariant;
+  setColorMode: (mode: ThemeVariant) => void;
+}
+
+export const ColorModeContext = createContext<IColorModeContext>({
+  colorMode: 'light',
+  setColorMode: () => {},
+});
