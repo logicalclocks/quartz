@@ -1,14 +1,18 @@
 import { useContext } from 'react';
-import { ColorModeContext } from './ThemeProvider';
+import { ColorModeContext, ThemeVariant } from './ThemeProvider';
 
 export const useColorMode = () => {
   const { colorMode, setColorMode } = useContext(ColorModeContext);
 
-  const changeColorMode = () => {
+  const toggleColorMode = () => {
     const nextColor = colorMode === 'light' ? 'dark' : 'light';
-    setColorMode(nextColor);
-    localStorage.setItem('user-color', nextColor);
+    changeColorMode(nextColor);
   };
 
-  return { colorMode, changeColorMode };
+  const changeColorMode = (colorMode: ThemeVariant) => {
+    setColorMode(colorMode);
+    localStorage.setItem('user-color', colorMode);
+  };
+
+  return { colorMode, changeColorMode, toggleColorMode };
 };
