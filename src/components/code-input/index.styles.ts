@@ -5,10 +5,6 @@ const getStyles = () => ({
       background: '#grayShade3 !important',
       height: '100%',
     },
-    '.CodeMirror-gutter': {
-      color: 'gray',
-      backgroundColor: 'grayShade2',
-    },
   },
 });
 

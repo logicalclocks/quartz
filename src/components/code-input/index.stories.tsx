@@ -100,7 +100,7 @@ Default.argTypes = argTypes;
 Default.args = {
   label: 'Label',
   mode: 'javascript',
-  value: 'const a = 100;',
+  value: 'const a = 100;\nconst b = 120;',
   tooltipInfo: 'some tooltip',
   onChange: action('Input change'),
 };

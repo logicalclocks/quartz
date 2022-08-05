@@ -8,8 +8,8 @@ import 'codemirror/mode/javascript/javascript';
 import 'codemirror/mode/yaml/yaml';
 import 'codemirror/mode/python/python';
 import 'codemirror/mode/sql/sql';
-// Note for dark-mode, good theme candidates: shadowbox, tomorrow-night-bright, dracula
-import 'codemirror/theme/yeti.css';
+
+import 'codemirror/theme/darcula.css';
 
 // Components
 import Label, { LabelProps } from '../label';
@@ -85,7 +85,7 @@ const CodeInput: FC<InputProps> = forwardRef(
                 mode === 'javascript'
                   ? { name: mode, json: true }
                   : { name: mode },
-              theme: 'yeti',
+              theme: 'darcula',
               lineNumbers: true,
               readOnly,
             }}
