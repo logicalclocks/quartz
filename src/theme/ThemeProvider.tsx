@@ -1,4 +1,4 @@
-import React, { createContext, FC, useState } from 'react';
+import React, { createContext, FC, useEffect, useState } from 'react';
 import { Global, css } from '@emotion/core';
 import { ThemeProvider as EmotionThemeProvider } from 'emotion-theming';
 
@@ -16,7 +16,14 @@ const ThemeProvider: FC<ThemeProviderProps> = ({
   colorMode: colorModeFromProps,
 }: ThemeProviderProps) => {
   const [colorMode, setColorMode] = useState<ThemeVariant>(
-    (localStorage.getItem('user-theme') ?? 'light') as ThemeVariant,
+    (localStorage.getItem('color-mode') ?? 'light') as ThemeVariant,
+  );
+
+  useEffect(
+    function syncWithLocalStorage() {
+      localStorage.setItem('color-mode', colorMode);
+    },
+    [colorMode],
   );
 
   const colorModeToUse = colorModeFromProps ?? colorMode; // the outer one overrides inner state
