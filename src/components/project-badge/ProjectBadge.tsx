@@ -21,7 +21,8 @@ export const ProjectBadge = ({ value, isLock, sx, ...props }: Props) => (
     {...props}
     sx={{
       borderRadius: '2px',
-      border: '1px solid #CBCBCB',
+      border: '1px solid',
+      borderColor: '#grayShade1',
       ...sx,
     }}
     as="span"

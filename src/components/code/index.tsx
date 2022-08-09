@@ -1,7 +1,6 @@
 import React, { FC, useState } from 'react';
 import { Box, FlexProps, Flex } from 'rebass';
 import SyntaxHighlighter from 'react-syntax-highlighter';
-import { useTheme } from '../../theme/theme';
 import Button from '../button';
 import ExpandViewer from '../expand-viewer';
 
@@ -15,6 +14,7 @@ import Value from '../typography/value';
 import { copyToClipboard, saveToFile } from '../../utils';
 import { PopupProps } from '../popup';
 import { GetIcon, IconName } from '../icon';
+import { hybrid } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
 const CONTENT_UPPER_BOUND = 12;
 
@@ -122,8 +122,6 @@ const CodeSnippet: FC<CodeSnippetProps> = ({
   maxHeightOfCode,
   ...props
 }) => {
-  const theme = useTheme();
-
   return (
     <Flex width="100%" sx={styles} height="100%">
       <Flex width="100%" sx={codeHeaderStyles}>
@@ -149,12 +147,10 @@ const CodeSnippet: FC<CodeSnippetProps> = ({
         p={0}
       >
         <SyntaxHighlighter
+          style={hybrid}
           wrapLongLines={wrapLongLines}
           showLineNumbers={showLineNumbers}
-          lineNumberStyle={{
-            ...lineNumberStyles,
-            background: theme.colors.grayShade1,
-          }}
+          lineNumberStyle={lineNumberStyles}
           language={language}
           customStyle={{
             ...boxStyles,

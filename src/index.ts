@@ -125,11 +125,15 @@ import * as constants from './constants';
 import Spinner from './components/spinner';
 
 export * from './components/alternative-header';
+export * from './components/box';
+export * from './components/flex';
 export * from './components/user';
 export * from './components/dot';
 export * from './components/badge';
 export * from './components/text-value-badge';
 export * from './components/project-badge';
+
+export * from './theme/useColorMode';
 
 export {
   Button,
@@ -289,7 +293,5 @@ export type {
   EmbeddedTabsProps,
 } from './components/embedded-tabs';
 
-// Rebass components
-export { Flex, Box } from 'rebass';
 // Rebass types
-export type { SxStyleProp, FlexProps, BoxProps } from 'rebass';
+export type { SxStyleProp } from 'rebass';

@@ -15,17 +15,17 @@ export interface IThemeColors {
 
   labels: {
     red: string;
+    redShade2: string;
     orange: string;
+    orangeShade2: string;
     purple: string;
+    purpleShade2: string;
     yellow: string;
-    yellowLight: string;
+    yellowShade2: string;
     green: string;
-    skyblue: string;
-    darkblue: string;
-    lightblue: string;
     blue: string;
-    redShade3: string;
-    orangeShade3: string;
+    blueShade1: string;
+    blueShade2: string;
   };
 }
 

@@ -132,7 +132,7 @@ export const TreeObject: Story<NavigationProps> = () => {
           title: 'Data',
           icon: <GetIcon icon={IconName.folder} />,
           id: '8',
-          sx: { color: 'red', backgroundColor: 'blue' },
+          sx: { color: 'red', backgroundColor: 'blueShade1' },
         },
         {
           title: 'Activity',
