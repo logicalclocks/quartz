@@ -1,24 +1,22 @@
-import { Box, Button, Flex } from 'rebass';
-import { Meta, Story } from '@storybook/react/types-6-0';
-import { useState } from 'react';
-import ProgressBar2C, { ProgressBar2Props } from '.';
+import { Story } from '@storybook/react/types-6-0';
+import React, { useState } from 'react';
+import { Box } from '../box';
+import Button from '../button';
+import { Flex } from '../flex';
+import { AnimatedProgress, Props } from './AnimatedProgress';
 
 export default {
-  title: 'Quartz/ProgressBar2',
-  component: ProgressBar2C,
-  decorators: [
-    (Story) => (
-      <Box width="700px">
-        <Story />
-      </Box>
-    ),
-  ],
-} as Meta;
+  title: 'Quartz/AnimatedProgress',
+  component: AnimatedProgress,
+  args: {
+    variant: 'perf.green',
+  },
+};
 
-export const Default: Story<ProgressBar2Props> = (args) => {
+export const Default: Story<Props> = (args) => {
   const [isAnimating, setIsAnimating] = useState<boolean>();
   return (
-    <>
+    <Box width="700px">
       <Flex my="20px" justifyContent="center" sx={{ gap: '20px' }}>
         <Button disabled={isAnimating} onClick={() => setIsAnimating(true)}>
           {isAnimating === false ? 'restart' : 'start'}
@@ -27,8 +25,8 @@ export const Default: Story<ProgressBar2Props> = (args) => {
           done
         </Button>
       </Flex>
-      <ProgressBar2C {...args} isAnimating={isAnimating} />
-    </>
+      <AnimatedProgress {...args} isAnimating={isAnimating} />
+    </Box>
   );
 };
 
@@ -101,8 +99,4 @@ Default.argTypes = {
       defaultValue: { summary: 'perf.green' },
     },
   },
-};
-
-Default.args = {
-  variant: 'perf.green',
 };

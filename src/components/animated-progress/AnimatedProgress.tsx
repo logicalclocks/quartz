@@ -1,11 +1,11 @@
-import React, { FC } from 'react';
+import React from 'react';
 import { useNProgress } from '@tanem/react-nprogress';
 import { Options } from '@tanem/react-nprogress/dist/types';
 
 import Bar from './Bar';
 import Container from './Container';
 
-export interface ProgressBar2Props extends Options {
+export interface Props extends Options {
   variant?: 'perf.black' | 'perf.green' | 'perf.orange';
 }
 /**
@@ -15,13 +15,13 @@ export interface ProgressBar2Props extends Options {
  * @param minimum - Optional Number between 0 and 1 indicating the minimum value of the progress bar. Defaults to 0.08.
  * @param variant - Optional string indicating the color of progressing bar. Defaults to 'perf.green'
  */
-const ProgressBar2: FC<ProgressBar2Props> = ({
+export const AnimatedProgress = ({
   variant = 'perf.green',
   animationDuration = 200,
   incrementDuration = 800,
   isAnimating = false,
   minimum = 0.08,
-}) => {
+}: Props) => {
   const { animationDuration: animDuration, progress } = useNProgress({
     animationDuration,
     incrementDuration,
@@ -44,5 +44,3 @@ const ProgressBar2: FC<ProgressBar2Props> = ({
     </Container>
   );
 };
-
-export default ProgressBar2;

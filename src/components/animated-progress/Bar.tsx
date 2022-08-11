@@ -26,4 +26,5 @@ const Bar: React.FC<{
     />
   </Flex>
 );
+
 export default Bar;

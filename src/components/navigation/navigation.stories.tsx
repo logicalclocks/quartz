@@ -8,8 +8,8 @@ import Navigation, { NavigationProps } from './container';
 // Types
 import { TreeNode } from './types';
 import useNavigation from './useNavigation';
-import Bar from '../bar';
 import { GetIcon, IconName } from '../icon';
+import Button from '../button';
 
 export default {
   title: 'Quartz/Navigation',
@@ -198,7 +198,7 @@ export const CustomTreeObject: Story<NavigationProps> = () => {
               component: (
                 <Box p="10px">
                   <h4>This is a custom component!</h4>
-                  <Bar value={0.99} />
+                  <Button>Hey</Button>
                 </Box>
               ),
             },
