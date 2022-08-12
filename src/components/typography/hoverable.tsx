@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
-import { Text, TextProps, Link, LinkProps } from 'rebass';
+import { Link } from 'react-router-dom';
+import { Text, TextProps, LinkProps, Link as RebassLink } from 'rebass';
 
 export interface HoverableTextProps extends Omit<TextProps, 'css'> {}
 export interface HoverableLinkProps extends Omit<LinkProps, 'css'> {}
@@ -20,10 +21,24 @@ export const HoverableText: FC<HoverableTextProps> = (
   return <Text {...props} variant="title" sx={sx} />;
 };
 
-export const HoverableLink: FC<HoverableLinkProps> = (
-  props: HoverableLinkProps,
-) => {
+export const HoverableLink: FC<HoverableLinkProps> = ({
+  href,
+  target,
+  ...props
+}: HoverableLinkProps) => {
   let { sx } = { ...props };
   sx = { ...sx, ...styles };
-  return <Link {...props} variant="title" sx={sx} />;
+
+  return (
+    <RebassLink
+      as={Link}
+      {...props}
+      // @ts-ignore
+      to={href}
+      variant="title"
+      sx={sx}
+      target={target}
+      {...(target === '_blank' ? { rel: 'noopener noreferrer' } : {})}
+    />
+  );
 };
