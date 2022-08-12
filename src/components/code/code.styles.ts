@@ -1,12 +1,12 @@
+import React from 'react';
 import { SxStyleProp } from 'rebass';
 
-export const boxStyles = {
+export const boxStyles: React.CSSProperties = {
   width: '100%',
   lineHeight: '16px',
   whiteSpace: 'pre-wrap',
   wordBreak: 'break-all',
   backgroundColor: 'grayShade3',
-  fonts: 'value',
   fontWeight: 'text',
   marginTop: 0,
   marginBottom: 0,
@@ -21,7 +21,7 @@ export const codeHeaderStyles = {
   fontSize: 'value',
 };
 
-export const lineNumberStyles = {
+export const lineNumberStyles: React.CSSProperties = {
   paddingLeft: '5px',
   paddingRight: '5px',
   marginRight: '10px',
