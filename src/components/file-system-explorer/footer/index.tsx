@@ -5,28 +5,26 @@ import Labeling from '../../typography/labeling';
 import { ActiveFile, FileExplorerMode } from '../types';
 import Button from '../../button';
 
-export interface FileExplorerFooter {
+export interface Props {
   value?: string;
   activeFile?: ActiveFile;
   onClose: (key: any) => void;
   mode?: FileExplorerMode;
-  columns: any[];
   handleSelectFile: (activeFile: any, isDownload: boolean) => void;
   fileListValue: Array<ActiveFile>[];
   rootDir: string;
 }
 
-const FooterFileExplorer: FC<FileExplorerFooter> = ({
+const FooterFileExplorer: FC<Props> = ({
   value,
   activeFile,
-  columns,
   mode = FileExplorerMode.oneFile,
   onClose,
   handleSelectFile,
   fileListValue,
   rootDir,
   ...props
-}: FileExplorerFooter) => {
+}: Props) => {
   const config: Record<
     FileExplorerMode,
     {

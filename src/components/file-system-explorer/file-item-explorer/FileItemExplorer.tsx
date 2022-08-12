@@ -2,32 +2,28 @@ import React, { FC, useState } from 'react';
 import { Box } from 'rebass';
 
 // Styles
-import { fileExplorerStyle } from './file-explorer.styles';
+import { fileExplorerStyle } from './styles';
 import Checkbox from '../../checkbox';
 import Tooltip from '../../tooltip';
+import { FileExplorData } from '../types';
 
-export interface QuartzFileExplorerProps {
-  name?: string;
+export interface Props {
   isActive: boolean;
   index: number;
   selected: boolean;
-  activeFile?: object;
   mode?: string;
-  itemInfo: { [key: string]: any };
+  itemInfo: FileExplorData;
   setActiveFile?: any;
   setColumns?: any;
-  setActive?: any;
   setActiveFolder?: any;
   isFileSelected?: any;
-  setSelectedFile?: any;
   isValidExtension: boolean;
   setIsEmptyFolder: (value: boolean) => void;
 }
 
-const FileExplorer: FC<QuartzFileExplorerProps> = ({
+const FileItemExplorer: FC<Props> = ({
   isActive,
   setActiveFolder,
-  // activeFile,
   setActiveFile,
   itemInfo,
   index,
@@ -37,8 +33,7 @@ const FileExplorer: FC<QuartzFileExplorerProps> = ({
   isFileSelected,
   isValidExtension,
   setIsEmptyFolder,
-}: // ...props
-QuartzFileExplorerProps) => {
+}) => {
   const [active, setActive] = useState(isActive);
   const [selectedFile, setSelectedFile] = useState(selected);
 
@@ -96,4 +91,4 @@ QuartzFileExplorerProps) => {
   );
 };
 
-export default FileExplorer;
+export default FileItemExplorer;

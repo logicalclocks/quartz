@@ -2,7 +2,7 @@ import React, { FC, useState } from 'react';
 import { Box, BoxProps } from 'rebass';
 
 import FolderItemExplorer from '../folder';
-import FileItemExplorer from '../file';
+import FileItemExplorer from '../file-item-explorer/FileItemExplorer';
 import { FileExplorData, FileExplorerMode } from '../types';
 
 export interface FileExplorerColumnProps
@@ -13,7 +13,6 @@ export interface FileExplorerColumnProps
   index: number;
   setActiveFile?: object;
   handleLoadMore: (path: string, columnIndex: number) => void;
-  setActive?: any;
   isFileSelected?: any;
   selectPathListValue?: any;
   fileListValue?: any[];
@@ -30,7 +29,6 @@ const FileExplorerColumn: FC<FileExplorerColumnProps> = ({
   isFileSelected,
   handleLoadMore,
   selectPathListValue,
-  setActive,
   fileListValue,
   validExtensions,
   setIsEmptyFolder,
@@ -50,7 +48,7 @@ const FileExplorerColumn: FC<FileExplorerColumnProps> = ({
         overflowX: 'hidden',
       }}
     >
-      {items.map((item: { [key: string]: any }): any => {
+      {items.map((item: FileExplorData) => {
         const isValidExtension = () => {
           if (!validExtensions || validExtensions?.length === 0) return true;
           const splits = item.attributes.name.split('.');
@@ -69,7 +67,6 @@ const FileExplorerColumn: FC<FileExplorerColumnProps> = ({
                 mode={mode}
                 name={item.attributes.name}
                 itemInfo={item}
-                // isHasChildren={item.children.length > 0}
                 selectPathListValue={selectPathListValue}
                 setColumns={setColumns}
                 setActiveFile={setActiveFile}
@@ -85,7 +82,6 @@ const FileExplorerColumn: FC<FileExplorerColumnProps> = ({
               index={index}
               key={item.attributes.id}
               mode={mode}
-              setActive={setActive}
               setColumns={setColumns}
               isFileSelected={isFileSelected}
               setActiveFile={setActiveFile}
