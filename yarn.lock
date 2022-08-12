@@ -2649,6 +2649,7 @@ __metadata:
     "@types/react": ^16.14.0
     "@types/react-datepicker": ^3.1.8
     "@types/react-dom": ^16.9.14
+    "@types/react-syntax-highlighter": ^15.4.3
     "@types/rebass": ^4.0.10
     "@types/rebass__forms": ^4.0.6
     "@typescript-eslint/eslint-plugin": ^5.29.0
@@ -5116,6 +5117,15 @@ __metadata:
   dependencies:
     "@types/react": ^16
   checksum: 68a4ee88f7a56cdbfbca24b1936b9aa5dad8b40ffbf1f047ddf990454aec6e0c9da2a01c9ae87045e95236602061646c90d02f01281533e14f1970687873030f
+  languageName: node
+  linkType: hard
+
+"@types/react-syntax-highlighter@npm:^15.4.3":
+  version: 15.5.4
+  resolution: "@types/react-syntax-highlighter@npm:15.5.4"
+  dependencies:
+    "@types/react": "*"
+  checksum: 5008a8752f95502d8029b9c067d516050c1a04a898fcaf34fe5ed00ec563cc7aa3df0d6c2e585320d4cd07780d438e7bcaaddba96a72f1ae25ca19c285aad570
   languageName: node
   linkType: hard
 
