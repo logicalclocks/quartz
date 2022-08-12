@@ -1,6 +1,7 @@
 import React, { FC, useState } from 'react';
 import { Box, FlexProps, Flex } from 'rebass';
 import SyntaxHighlighter from 'react-syntax-highlighter';
+import { hybrid } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import Button from '../button';
 import ExpandViewer from '../expand-viewer';
 
@@ -14,7 +15,6 @@ import Value from '../typography/value';
 import { copyToClipboard, saveToFile } from '../../utils';
 import { PopupProps } from '../popup';
 import { GetIcon, IconName } from '../icon';
-import { hybrid } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
 const CONTENT_UPPER_BOUND = 12;
 

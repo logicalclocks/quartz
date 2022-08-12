@@ -144,7 +144,6 @@ const FileSystemExplorer: FC<FileSystemExplorerProps> = ({
         fileListValue={fileListValue}
         value={pathListValue}
         activeFile={activeFile}
-        columns={columns}
         mode={mode}
         handleSelectFile={handleSelectFile}
         rootDir={rootDir}
