@@ -1,12 +1,12 @@
 import React, { FC } from 'react';
 import { Button as RebassButton, ButtonProps } from 'rebass';
+import { Link } from 'react-router-dom';
 
 // Components
 import Tooltip, { TooltipProps } from '../tooltip';
 
-// Styles
+import { getIcon, IconName } from '../icon/list';
 import styles from './icon-button.styles';
-import { IconName, getIcon } from '../icon/list';
 
 export interface IconButtonProps extends Omit<ButtonProps, 'css'> {
   intent?: 'primary' | 'ghost' | 'ghost-white';
@@ -26,6 +26,7 @@ const IconButton: FC<IconButtonProps> = ({
   tooltipProps,
   href,
   onClickIcon,
+  target,
   ...props
 }: IconButtonProps) => {
   let component;
@@ -57,28 +58,20 @@ const IconButton: FC<IconButtonProps> = ({
 
   if (href) {
     return (
-      <a
+      <Link
         style={{
           textDecoration: 'none',
         }}
         onClick={onClickIcon}
-        href={href}
+        to={href}
+        target={target}
+        {...(target === '_blank' ? { rel: 'noopener noreferrer' } : {})}
       >
         {component}
-      </a>
+      </Link>
     );
   }
-  return (
-    <a
-      style={{
-        textDecoration: 'none',
-      }}
-      onClick={onClickIcon}
-      href={href}
-    >
-      {component}
-    </a>
-  );
+  return component;
 };
 
 export default IconButton;

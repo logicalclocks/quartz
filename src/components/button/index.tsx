@@ -1,13 +1,14 @@
+import * as R from 'ramda';
 import React, { FC } from 'react';
 import { Button as RebassButton, ButtonProps } from 'rebass';
-import * as R from 'ramda';
 
 // Styles
-import styles, { spinnerColor } from './button.styles';
+import { Link } from 'react-router-dom';
 import Spinner from '../spinner';
+import styles, { spinnerColor } from './button.styles';
 
-import { GetIcon, IconName } from '../icon';
 import { Color } from '../../theme/types';
+import { GetIcon, IconName } from '../icon';
 
 type Intent = 'primary' | 'secondary' | 'ghost' | 'inline' | 'alert';
 export interface QuartzButtonProps extends Omit<ButtonProps, 'css'> {
@@ -27,6 +28,7 @@ const Button: FC<QuartzButtonProps> = ({
   disabled,
   isLoading,
   loadingOnly,
+  target,
   ...props
 }: QuartzButtonProps) => {
   const test = { ...props };
@@ -49,17 +51,16 @@ const Button: FC<QuartzButtonProps> = ({
 
   if (href) {
     return (
-      <a
+      <Link
         style={{
           textDecoration: 'none',
         }}
-        onClick={(e) => {
-          e.preventDefault();
-        }}
-        href={href}
+        to={href}
+        target={target}
+        {...(target === '_blank' ? { rel: 'noopener noreferrer' } : {})}
       >
         {component}
-      </a>
+      </Link>
     );
   }
 

@@ -1,4 +1,4 @@
-import { Box } from 'rebass';
+import * as R from 'ramda';
 import React, {
   FC,
   memo,
@@ -8,16 +8,17 @@ import React, {
   useEffect,
   useMemo,
 } from 'react';
-import * as R from 'ramda';
+import { Box } from 'rebass';
+import { Link } from 'react-router-dom';
 import { useTheme } from '../../../theme/theme';
 
 // Context
 import NavigationContext from '../context/navigation.context';
 import { NavigationItemProps } from '../types';
 // Styles
-import styles from './navigation-item.styles';
 import Tooltip from '../../tooltip';
 import TooltipPositions from '../../tooltip/positions';
+import styles from './navigation-item.styles';
 
 const getVariant = (isDisabled = false, isActive = false): string => {
   if (isDisabled) {
@@ -127,17 +128,15 @@ const NavigationItem: FC<NavigationItemProps> = (
       }}
     >
       {href ? (
-        <a
+        <Link
           style={{
             textDecoration: 'none',
           }}
-          onClick={(e) => {
-            e.preventDefault();
-          }}
-          href={href}
+          onClick={(e) => e.stopPropagation()}
+          to={href}
         >
           {component}
-        </a>
+        </Link>
       ) : (
         component
       )}
