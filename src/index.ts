@@ -58,11 +58,7 @@ import TinyPopup from './components/popup/tiny';
 import usePopup from './utils/usePopup';
 
 // Bars
-import Bar from './components/bar';
-import ProgressBar from './components/bar/progress';
-import FreshnessBar from './components/bar/freshness';
 import PerformanceBar from './components/performance-bar';
-import ProgressBar2 from './components/bar/progress-bar-2';
 
 // Navigation
 import Navigation from './components/navigation/container';
@@ -125,6 +121,7 @@ import * as constants from './constants';
 import Spinner from './components/spinner';
 
 export * from './components/alternative-header';
+export * from './components/animated-progress';
 export * from './components/box';
 export * from './components/flex';
 export * from './components/user';
@@ -132,6 +129,7 @@ export * from './components/dot';
 export * from './components/badge';
 export * from './components/text-value-badge';
 export * from './components/project-badge';
+export * from './components/freshness-bar';
 
 export * from './theme/useColorMode';
 
@@ -191,11 +189,7 @@ export {
   TinyPopup,
   DrawerSection,
   // Bars
-  Bar,
-  ProgressBar,
-  FreshnessBar,
   PerformanceBar,
-  ProgressBar2,
   // Navigation
   Navigation,
   NavigationItem,
@@ -277,7 +271,6 @@ export type CompactButtonProps =
 export type PerformanceCardProps =
   import('./components/performance-card').PerformanceCardProps;
 export type { ExpandViewerProps } from './components/expand-viewer';
-export type { ProgressBar2Props } from './components/bar/progress-bar-2';
 export type { CardHeaderProps } from './components/card-header';
 export type { FileSystemExplorerProps } from './components/file-system-explorer';
 export type { FileExplorData } from './components/file-system-explorer/types';
