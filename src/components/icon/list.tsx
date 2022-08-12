@@ -612,21 +612,6 @@ export function getIcon(
           />
         </svg>
       );
-    case IconName.arrow_down_filled:
-      return (
-        <svg
-          width={size}
-          height={size}
-          viewBox="0 0 24 24"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M11.6444 5.35921C11.8401 5.16151 12.1595 5.16151 12.3551 5.35921L16.3529 9.39843C16.6654 9.71415 16.4418 10.2502 15.9976 10.2502H8.00198C7.55777 10.2502 7.33413 9.71415 7.64661 9.39843L11.6444 5.35921Z"
-            fill={color}
-          />
-        </svg>
-      );
     case IconName.arrow_left:
       return (
         <svg
