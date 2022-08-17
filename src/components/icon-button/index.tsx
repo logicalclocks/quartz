@@ -27,6 +27,7 @@ const IconButton: FC<IconButtonProps> = ({
   href,
   onClickIcon,
   target,
+  sx,
   ...props
 }: IconButtonProps) => {
   let component;
@@ -34,7 +35,7 @@ const IconButton: FC<IconButtonProps> = ({
     component = (
       <Tooltip {...tooltipProps} disabled={disabled} mainText={tooltip}>
         <RebassButton
-          sx={styles(disabled)}
+          sx={{ ...styles(disabled), ...sx }}
           variant={`icon-${intent}`}
           disabled={disabled}
           {...props}
