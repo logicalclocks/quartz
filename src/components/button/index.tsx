@@ -16,6 +16,7 @@ export interface QuartzButtonProps extends Omit<ButtonProps, 'css'> {
   intent?: Intent;
   icon?: IconName;
   href?: string;
+  external?: boolean;
   isLoading?: boolean;
   loadingOnly?: boolean;
 }
@@ -29,6 +30,7 @@ const Button: FC<QuartzButtonProps> = ({
   isLoading,
   loadingOnly,
   target,
+  external,
   ...props
 }: QuartzButtonProps) => {
   const test = { ...props };
@@ -50,6 +52,21 @@ const Button: FC<QuartzButtonProps> = ({
   );
 
   if (href) {
+    if (external) {
+      return (
+        <a
+          style={{
+            textDecoration: 'none',
+          }}
+          href={href}
+          target={target}
+          {...(target === '_blank' ? { rel: 'noopener noreferrer' } : {})}
+        >
+          {component}
+        </a>
+      );
+    }
+
     return (
       <Link
         style={{
