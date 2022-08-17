@@ -7,7 +7,7 @@ const usePopup = (isInitialOpen = false): UsePopup => {
 
   const handleToggle = useCallback(() => {
     setOpen((open) => !open);
-  }, [isOpen, setOpen]);
+  }, [setOpen]);
 
   return [isOpen, handleToggle, setOpen];
 };
