@@ -31,13 +31,18 @@ const Button: FC<QuartzButtonProps> = ({
   loadingOnly,
   target,
   external,
+  sx,
+  type = 'button',
   ...props
 }: QuartzButtonProps) => {
-  const test = { ...props };
-  test.sx = { ...test.sx, ...styles };
-
   const component = (
-    <RebassButton variant={intent} disabled={disabled || isLoading} {...test}>
+    <RebassButton
+      variant={intent}
+      disabled={disabled || isLoading}
+      sx={{ ...sx, ...styles }}
+      type={type}
+      {...props}
+    >
       {icon && (!loadingOnly || !isLoading) && (
         <GetIcon icon={icon} size="md" color={buttonIntentToColor(intent)} />
       )}
