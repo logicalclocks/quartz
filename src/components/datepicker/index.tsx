@@ -10,13 +10,13 @@ import Labeling from '../typography/labeling';
 import Value from '../typography/value';
 import { GetIcon, IconName } from '../icon';
 
-export interface DatePickerProps {
-  selectProps: SelectProps;
+export interface DatePickerProps extends ReactDatePickerProps {
+  selectProps: Pick<SelectProps, 'variant' | 'noDataMessage' | 'value'>;
   datePickerAlign?: 'left' | 'right';
   sx?: SxStyleProp;
 }
 
-const DatePicker: FC<DatePickerProps & ReactDatePickerProps> = ({
+const DatePicker: FC<DatePickerProps> = ({
   selectProps,
   datePickerAlign = 'right',
   sx,
