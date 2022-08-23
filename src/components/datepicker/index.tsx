@@ -48,7 +48,10 @@ const DatePicker: FC<DatePickerProps & ReactDatePickerProps> = ({
         </Value>
         <GetIcon icon={IconName.arrow_up_down} size="sm" />
       </Flex>
-      <Box alignSelf={datePickerAlign === 'right' ? 'flex-end' : 'flex-start'}>
+      <Box
+        height="0px"
+        alignSelf={datePickerAlign === 'right' ? 'flex-end' : 'flex-start'}
+      >
         <ReactDatePicker
           open={open}
           {...props}
