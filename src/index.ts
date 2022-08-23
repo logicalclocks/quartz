@@ -285,6 +285,7 @@ export type {
   EmbeddedTabsItem,
   EmbeddedTabsProps,
 } from './components/embedded-tabs';
+export type { DatePickerProps } from './components/datepicker';
 
 // Rebass types
 export type { SxStyleProp } from 'rebass';
