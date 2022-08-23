@@ -2668,7 +2668,7 @@ __metadata:
     rc-tooltip: ^4.2.3
     react: ^16.14.0
     react-codemirror2: ^7.2.1
-    react-datepicker: ^4.8.0
+    react-datepicker: 4.8.0
     react-dom: ^16.14.0
     react-router-dom: ^6.3.0
     react-spring: ^8.0.27
@@ -18585,7 +18585,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-datepicker@npm:^4.8.0":
+"react-datepicker@npm:4.8.0":
   version: 4.8.0
   resolution: "react-datepicker@npm:4.8.0"
   dependencies:
