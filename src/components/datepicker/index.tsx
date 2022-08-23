@@ -1,4 +1,4 @@
-import { Box, Flex } from 'rebass';
+import { Box, Flex, SxStyleProp } from 'rebass';
 import React, { FC, memo, useState } from 'react';
 import ReactDatePicker, { ReactDatePickerProps } from 'react-datepicker';
 
@@ -13,17 +13,19 @@ import { GetIcon, IconName } from '../icon';
 export interface DatePickerProps {
   selectProps: SelectProps;
   datePickerAlign?: 'left' | 'right';
+  sx?: SxStyleProp;
 }
 
 const DatePicker: FC<DatePickerProps & ReactDatePickerProps> = ({
   selectProps,
   datePickerAlign = 'right',
+  sx,
   ...props
 }) => {
   const [open, setOpen] = useState(false);
 
   return (
-    <Flex flexDirection="column" sx={styles(datePickerAlign)}>
+    <Flex flexDirection="column" sx={{ ...styles(datePickerAlign), ...sx }}>
       <Flex
         alignItems="center"
         onClick={() => setOpen(!open)}
@@ -42,6 +44,7 @@ const DatePicker: FC<DatePickerProps & ReactDatePickerProps> = ({
         </Labeling>
         <Value
           mr="5px"
+          width="100%"
           sx={{ fontSize: 'text', fontWeight: 'text', fontFamily: 'text' }}
         >
           {selectProps.value}
