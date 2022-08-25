@@ -1,10 +1,11 @@
 import React, { FC } from 'react';
-import { Box } from 'rebass';
 import { boxStyles, boxButtonStyles } from './sticky-summary.styles';
 import Title from '../typography/title';
 import Labeling from '../typography/labeling';
 import FormSummaryContainer from '../form-summary-container';
 import { Badge } from '../badge';
+import { Flex } from '../flex';
+import { Box } from '../box';
 
 export interface StickySummaryProps {
   title?: string;
@@ -27,7 +28,7 @@ const StickySummary: FC<StickySummaryProps> = ({
   ...props
 }: StickySummaryProps) => (
   <FormSummaryContainer hasScrollOnScreen={hasScrollOnScreen} {...props}>
-    <Box sx={{ ...boxStyles }}>
+    <Flex sx={{ ...boxStyles }}>
       {title && (
         <Title uppercase sx={{ textTransform: 'normal' }}>
           {title}
@@ -44,11 +45,11 @@ const StickySummary: FC<StickySummaryProps> = ({
           {secondValue}
         </Labeling>
       )}
-    </Box>
-    <Box sx={{ ...boxButtonStyles }}>
+    </Flex>
+    <Flex sx={{ ...boxButtonStyles }}>
       {secondaryButton && <Box>{secondaryButton}</Box>}
       <Box ml="20px">{mainButton}</Box>
-    </Box>
+    </Flex>
   </FormSummaryContainer>
 );
 
