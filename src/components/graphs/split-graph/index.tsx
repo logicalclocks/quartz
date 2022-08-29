@@ -1,7 +1,7 @@
 import React, { FC, useMemo, useState } from 'react';
 import { Box, Flex } from 'rebass';
-import { progressBarStyles, circleStyles } from './split-graph.styles';
-import Label from '../../label';
+import { progressBarStyles, circleStyles } from './styles';
+import Label, { LabelProps } from '../../label';
 import Labeling from '../../typography/labeling';
 import { Badge } from '../../badge';
 
@@ -20,14 +20,19 @@ export interface SplitGraphValue {
   label: string;
   value: number;
   trainSplit?: boolean;
+  renderCustomComponent?: (props: { selected?: boolean }) => JSX.Element;
 }
 
 export interface SplitGraphProps {
   values: SplitGraphValue[];
+  withoutPercentage?: boolean;
+  labelProps?: Omit<LabelProps, 'children'>;
 }
 
 const SplitGraph: FC<SplitGraphProps> = ({
   values,
+  withoutPercentage = false,
+  labelProps,
   ...props
 }: SplitGraphProps) => {
   const [selectedIndex, setSelected] = useState<number | null>(null);
@@ -54,7 +59,6 @@ const SplitGraph: FC<SplitGraphProps> = ({
       <Flex width="100%" height="10px">
         {values.map((value, ind) => (
           <Box
-            key={`bar-${ind}`}
             onMouseEnter={handleSelect(ind)}
             onMouseLeave={() => setSelected(null)}
             sx={progressBarStyles(
@@ -68,9 +72,8 @@ const SplitGraph: FC<SplitGraphProps> = ({
       <Flex mt="25px" flexDirection="column">
         {values.map((value, ind) => (
           <Flex
-            key={`data-${ind}`}
             mb="7px"
-            width="fit-content"
+            width="100%"
             onMouseEnter={handleSelect(ind)}
             onMouseLeave={() => setSelected(null)}
           >
@@ -79,10 +82,18 @@ const SplitGraph: FC<SplitGraphProps> = ({
               mt="3px"
               sx={circleStyles(colors[ind], ind === selectedIndex)}
             />
-            <Label mr="5px">{value.label}</Label>
-            <Labeling gray mr="8px">
-              {`${Math.ceil((value.value / sum) * 100)}%`}
-            </Labeling>
+            <Label mr="5px" {...labelProps}>
+              {value.label}
+            </Label>
+            {!withoutPercentage && (
+              <Labeling width="20px" gray mr="8px">
+                {`${Math.ceil((value.value / sum) * 100)}%`}
+              </Labeling>
+            )}
+            {value.renderCustomComponent &&
+              value.renderCustomComponent({
+                selected: ind === selectedIndex,
+              })}
             {value.trainSplit && (
               <Badge mt="-3px" variant="default" value="train split" />
             )}
