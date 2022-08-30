@@ -39,7 +39,7 @@ const DatePicker: FC<DatePickerProps> = ({
         variant={selectProps.variant ?? 'white'}
         tx="variants.select"
       >
-        <Labeling gray mr="5px">
+        <Labeling gray mr="5px" minWidth="unset">
           {selectProps.noDataMessage}
         </Labeling>
         <Value
