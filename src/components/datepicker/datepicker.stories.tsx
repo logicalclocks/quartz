@@ -1,33 +1,37 @@
 import React, { useState } from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
+import { addDays, subDays } from 'date-fns/fp';
 
 // Components
 import DatePicker, { DatePickerProps } from './index';
 
 import { DATE_TIME } from '../../constants';
+import { Flex } from '../flex';
 
 export default {
   title: 'Quartz/DatePicker',
   component: DatePicker,
 } as Meta;
 
-const Template: Story<DatePickerProps> = (props) => {
+const Template: Story<DatePickerProps> = ({ selectProps, ...restProps }) => {
   const [startDate, setStartDate] = useState(new Date());
 
   return (
-    <DatePicker
-      {...props}
-      selectProps={{
-        ...props.selectProps,
-        value: [new Date(startDate).toISOString()],
-        options: [],
-        onChange: () => {},
-        placeholder: 'to',
-        noDataMessage: 'from',
-      }}
-      selected={startDate}
-      onChange={(date) => setStartDate(date as Date)}
-    />
+    <Flex height="300px">
+      <DatePicker
+        {...restProps}
+        selectProps={{
+          ...selectProps,
+          value: [new Date(startDate).toISOString()],
+          noDataMessage: 'from',
+        }}
+        selected={startDate}
+        onChange={(date) => setStartDate(date as Date)}
+        excludeDateIntervals={[
+          { start: subDays(5, new Date()), end: addDays(5, new Date()) },
+        ]}
+      />
+    </Flex>
   );
 };
 
@@ -37,26 +41,4 @@ Default.args = {
   showTimeSelect: true,
   dateFormat: DATE_TIME.DATE_TIME_FULL_MONTH,
   excludeTimes: [new Date()],
-};
-
-Default.argTypes = {
-  selectProps: {
-    type: {
-      required: true,
-      summary: 'Select props',
-    },
-  },
-  datePickerAlign: {
-    control: {
-      type: 'select',
-      default: 'right',
-      options: ['left', 'right'],
-    },
-    type: {
-      required: false,
-    },
-    defaultValue: {
-      summary: 'datepicker align',
-    },
-  },
 };

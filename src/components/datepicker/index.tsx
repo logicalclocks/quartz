@@ -1,4 +1,4 @@
-import { Box, Flex } from 'rebass';
+import { Box, Flex, SxStyleProp } from 'rebass';
 import React, { FC, memo, useState } from 'react';
 import ReactDatePicker, { ReactDatePickerProps } from 'react-datepicker';
 
@@ -10,22 +10,25 @@ import Labeling from '../typography/labeling';
 import Value from '../typography/value';
 import { GetIcon, IconName } from '../icon';
 
-export interface DatePickerProps {
-  selectProps: SelectProps;
+export interface DatePickerProps extends ReactDatePickerProps {
+  selectProps: Pick<SelectProps, 'variant' | 'noDataMessage' | 'value'>;
   datePickerAlign?: 'left' | 'right';
+  sx?: SxStyleProp;
 }
 
-const DatePicker: FC<DatePickerProps & ReactDatePickerProps> = ({
+const DatePicker: FC<DatePickerProps> = ({
   selectProps,
   datePickerAlign = 'right',
+  sx,
   ...props
 }) => {
   const [open, setOpen] = useState(false);
 
   return (
-    <Flex flexDirection="column" sx={styles(datePickerAlign)}>
+    <Flex flexDirection="column" sx={{ ...styles(datePickerAlign), ...sx }}>
       <Flex
         alignItems="center"
+        flexShrink={0}
         onClick={() => setOpen(!open)}
         sx={{
           height: '32px',
@@ -37,18 +40,23 @@ const DatePicker: FC<DatePickerProps & ReactDatePickerProps> = ({
         variant={selectProps.variant ?? 'white'}
         tx="variants.select"
       >
-        <Labeling gray mr="5px">
+        <Labeling gray mr="5px" minWidth="unset">
           {selectProps.noDataMessage}
         </Labeling>
         <Value
           mr="5px"
           sx={{ fontSize: 'text', fontWeight: 'text', fontFamily: 'text' }}
+          flexGrow={1}
+          flexShrink={0}
         >
           {selectProps.value}
         </Value>
-        <GetIcon icon={IconName.arrow_up_down} size="sm" />
+        <GetIcon flexShrink={0} icon={IconName.arrow_up_down} size="sm" />
       </Flex>
-      <Box alignSelf={datePickerAlign === 'right' ? 'flex-end' : 'flex-start'}>
+      <Box
+        height="0px"
+        alignSelf={datePickerAlign === 'right' ? 'flex-end' : 'flex-start'}
+      >
         <ReactDatePicker
           open={open}
           {...props}

@@ -1,33 +1,55 @@
 import React, { FC, useMemo, useState } from 'react';
 import { Box, Flex } from 'rebass';
-import { progressBarStyles, circleStyles } from './split-graph.styles';
-import Label from '../../label';
+import * as R from 'ramda';
+
+import {
+  progressBarStyles,
+  circleStyles,
+  customComponentWrapperStyles,
+} from './styles';
+import Label, { LabelProps } from '../../label';
 import Labeling from '../../typography/labeling';
 import { Badge } from '../../badge';
+import { FlexProps } from '../../flex';
 
 export const graphColors = [
   '#FFADAD',
   '#A0C4FF',
   '#CAFFBF',
-  '#FDFFB6',
   '#FFD6A5',
   '#BDB2FF',
   '#FFC6FF',
   '#9BF6FF',
+  '#FDFFB6',
 ];
 
 export interface SplitGraphValue {
-  label: string;
+  label?: string;
   value: number;
+  isGap?: boolean;
   trainSplit?: boolean;
+  renderCustomComponent?: (props: {
+    selected?: boolean;
+    color: string;
+  }) => JSX.Element;
 }
 
-export interface SplitGraphProps {
+export interface SplitGraphProps extends Omit<FlexProps, 'children'> {
   values: SplitGraphValue[];
+  /** wether to show percentage or not */
+  withoutPercentage?: boolean;
+  labelProps?: Omit<LabelProps, 'children'>;
+  hideTrainSplitOnhover?: boolean;
+  /** to render aditional component as actions */
+  renderActions?: () => JSX.Element;
 }
 
 const SplitGraph: FC<SplitGraphProps> = ({
   values,
+  withoutPercentage = false,
+  labelProps,
+  hideTrainSplitOnhover,
+  renderActions,
   ...props
 }: SplitGraphProps) => {
   const [selectedIndex, setSelected] = useState<number | null>(null);
@@ -41,12 +63,26 @@ const SplitGraph: FC<SplitGraphProps> = ({
     [values],
   );
 
+  const gapIndexes = values
+    .map((item, index: number) => (item.isGap ? index : null))
+    .filter((item: number | null) => item !== null) as number[];
+
   const colors = useMemo(
     () =>
-      Array(Math.ceil(values.length / graphColors.length))
-        .fill(0)
-        .reduce((acc) => acc.concat(graphColors), []),
-    [values],
+      values.reduce(
+        (acc: string[], value: any, idx: number) =>
+          value.isGap
+            ? R.append('black', acc)
+            : R.append(
+                graphColors[
+                  (idx - gapIndexes.filter((gi) => gi < idx).length) %
+                    graphColors.length
+                ],
+                acc,
+              ),
+        [],
+      ),
+    [gapIndexes, values],
   );
 
   return (
@@ -54,40 +90,73 @@ const SplitGraph: FC<SplitGraphProps> = ({
       <Flex width="100%" height="10px">
         {values.map((value, ind) => (
           <Box
-            key={`bar-${ind}`}
             onMouseEnter={handleSelect(ind)}
             onMouseLeave={() => setSelected(null)}
             sx={progressBarStyles(
               (value.value / sum) * 100,
-              colors[ind],
-              ind === selectedIndex,
+              value.isGap ? 'grayShade3' : colors[ind],
+              ind === selectedIndex ||
+                (gapIndexes.includes(ind) &&
+                  gapIndexes.includes(selectedIndex ?? -1)),
             )}
           />
         ))}
       </Flex>
-      <Flex mt="25px" flexDirection="column">
-        {values.map((value, ind) => (
-          <Flex
-            key={`data-${ind}`}
-            mb="7px"
-            width="fit-content"
-            onMouseEnter={handleSelect(ind)}
-            onMouseLeave={() => setSelected(null)}
-          >
-            <Box
-              mr="10px"
-              mt="3px"
-              sx={circleStyles(colors[ind], ind === selectedIndex)}
-            />
-            <Label mr="5px">{value.label}</Label>
-            <Labeling gray mr="8px">
-              {`${Math.ceil((value.value / sum) * 100)}%`}
-            </Labeling>
-            {value.trainSplit && (
-              <Badge mt="-3px" variant="default" value="train split" />
-            )}
-          </Flex>
-        ))}
+      {renderActions?.()}
+      <Flex mt="25px" flexDirection="column" sx={{ gap: '7px' }}>
+        {values.map((value, ind) =>
+          value.isGap && value.renderCustomComponent ? (
+            <Flex
+              sx={customComponentWrapperStyles}
+              onMouseEnter={handleSelect(ind)}
+              onMouseLeave={() => setSelected(null)}
+            >
+              {value.renderCustomComponent({
+                color: 'grayShde3',
+                selected: ind === selectedIndex,
+              })}
+            </Flex>
+          ) : (
+            <Flex
+              width="100%"
+              alignItems="center"
+              onMouseEnter={handleSelect(ind)}
+              onMouseLeave={() => setSelected(null)}
+            >
+              <Box
+                mr="10px"
+                mt="3px"
+                sx={{
+                  ...circleStyles(colors[ind], ind === selectedIndex),
+                  ...{ flexShrink: 0 },
+                }}
+              />
+              <Label mr="5px" {...labelProps}>
+                {value.label}
+              </Label>
+              {!withoutPercentage && (
+                <Labeling width="30px" gray mr="8px">
+                  {`${Math.ceil((value.value / sum) * 100)}%`}
+                </Labeling>
+              )}
+              {value.renderCustomComponent &&
+                value.renderCustomComponent({
+                  selected: ind === selectedIndex,
+                  color: colors[ind],
+                })}
+              {value.trainSplit &&
+                !(hideTrainSplitOnhover && ind === selectedIndex) && (
+                  <Badge
+                    flexShrink={0}
+                    mt="-3px"
+                    height="18px"
+                    variant="default"
+                    value="train split"
+                  />
+                )}
+            </Flex>
+          ),
+        )}
       </Flex>
     </Flex>
   );

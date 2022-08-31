@@ -1,10 +1,9 @@
 export const boxStyles = {
-  display: 'flex',
   alignItems: 'center',
+  gap: '8px',
 };
 
 export const boxButtonStyles = {
-  display: 'flex',
   justifyContent: 'space-between',
   alignItems: 'center',
 };

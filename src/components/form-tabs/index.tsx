@@ -8,6 +8,8 @@ import React, {
 } from 'react';
 import { Box, Flex } from 'rebass';
 import ResizeObserver from 'resize-observer-polyfill';
+import * as R from 'ramda';
+
 import {
   summaryContainerStyles,
   containerStyles,
@@ -51,7 +53,7 @@ const FormTabs: FC<FormTabsProps> = ({
   hasScrollOnScreen = true,
   ...props
 }: FormTabsProps) => {
-  const initialActive = useMemo(() => {
+  const active = useMemo(() => {
     const tabIdx = tabs.findIndex((t) => t.id === initialTab);
     return Math.max(tabIdx, 0);
   }, [initialTab, tabs]);
@@ -61,9 +63,8 @@ const FormTabs: FC<FormTabsProps> = ({
   const hasOverflow = useCallback(() => {
     const el = tabsContainerRef?.current;
     return el ? el.clientWidth !== el.scrollWidth : false;
-  }, [tabsContainerRef?.current]);
+  }, []);
 
-  const [active, setActive] = useState<number>(initialActive);
   const [tabArray, setTabArray] = useState<TabItem[]>(tabs);
   const [isOverflown, setIsOverflown] = useState<boolean>(false);
 
@@ -71,44 +72,38 @@ const FormTabs: FC<FormTabsProps> = ({
 
   const handleGoForward = useCallback(async () => {
     const validation = await currentTab.validationFn();
-    const copy = [...tabArray.map((x) => x)];
 
     // VALID: move to next tab and show check mark.
     if (validation === ValidateOpts.valid) {
-      copy[active] = { ...copy[active], state: TabState.valid };
-      onTabChange(copy[active + 1].id);
-      setActive((act) => act + 1);
+      setTabArray(R.adjust(active, R.assoc('state', TabState.valid)));
+      onTabChange(tabArray[active + 1].id);
     }
 
     // UNTOUCHED: if optional, move to next tab. Otherwise show error.
     if (validation === ValidateOpts.untouched) {
       if (currentTab.optional) {
-        copy[active] = { ...copy[active], state: TabState.optional };
-        onTabChange(copy[active + 1].id);
-        setActive((act) => act + 1);
+        setTabArray(R.adjust(active, R.assoc('state', TabState.optional)));
+        onTabChange(tabArray[active + 1].id);
       } else {
-        copy[active] = { ...copy[active], state: TabState.error };
+        setTabArray(R.adjust(active, R.assoc('state', TabState.error)));
       }
     }
 
     // INVALID: don't move to next tab and show error.
     if (validation === ValidateOpts.error) {
-      copy[active] = { ...copy[active], state: TabState.error };
+      setTabArray(R.adjust(active, R.assoc('state', TabState.error)));
     }
-    setTabArray(copy);
-  }, [setActive, active, setTabArray, tabArray, onTabChange, currentTab]);
+  }, [active, setTabArray, tabArray, onTabChange, currentTab]);
 
   const handleGoBack = useCallback(() => {
     onTabChange(tabArray[active - 1].id);
-    setActive((act) => act - 1);
-  }, [active, onTabChange, setActive]);
+  }, [active, onTabChange, tabArray]);
 
   const handleTabClick = useCallback(
     (idx: number) => {
-      setActive(idx);
       onTabChange(tabArray[idx].id);
     },
-    [setActive, onTabChange],
+    [onTabChange, tabArray],
   );
 
   const handleSubmit = useCallback(async () => {
@@ -141,7 +136,7 @@ const FormTabs: FC<FormTabsProps> = ({
     );
     setTabArray(updated);
     return allValid;
-  }, []);
+  }, [tabArray]);
 
   useEffect(() => {
     if (!tabsContainerRef.current) return;
@@ -150,9 +145,10 @@ const FormTabs: FC<FormTabsProps> = ({
       setIsOverflown(hasOverflow());
     });
     resizeObserver.observe(tabsContainerRef.current);
+
     // eslint-disable-next-line consistent-return
     return () => resizeObserver.disconnect();
-  }, [tabsContainerRef?.current]);
+  }, [hasOverflow]);
 
   return (
     <FormSummaryContainer
