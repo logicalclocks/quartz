@@ -23,3 +23,10 @@ export const circleStyles = (
   border: isSelected ? '1px solid' : null,
   borderColor: 'black',
 });
+
+export const customComponentWrapperStyles = {
+  borderColor: 'grayShade3',
+  borderWidth: '1px',
+  borderStyle: 'solid',
+  width: '100%',
+};
