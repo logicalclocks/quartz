@@ -28,6 +28,7 @@ const DatePicker: FC<DatePickerProps> = ({
     <Flex flexDirection="column" sx={{ ...styles(datePickerAlign), ...sx }}>
       <Flex
         alignItems="center"
+        flexShrink={0}
         onClick={() => setOpen(!open)}
         sx={{
           height: '32px',
@@ -44,12 +45,13 @@ const DatePicker: FC<DatePickerProps> = ({
         </Labeling>
         <Value
           mr="5px"
-          width="100%"
           sx={{ fontSize: 'text', fontWeight: 'text', fontFamily: 'text' }}
+          flexGrow={1}
+          flexShrink={0}
         >
           {selectProps.value}
         </Value>
-        <GetIcon icon={IconName.arrow_up_down} size="sm" />
+        <GetIcon flexShrink={0} icon={IconName.arrow_up_down} size="sm" />
       </Flex>
       <Box
         height="0px"
