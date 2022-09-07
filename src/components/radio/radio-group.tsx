@@ -6,16 +6,17 @@ import Radio, { RadioProps } from './index';
 // Utils
 import randomString from '../../utils/randomString';
 
+type Value = string | number | boolean;
 export type RadioGroupOption = {
-  key: string;
+  key: Value;
   text: string;
   additionalText?: string;
 };
 export interface RadioGroupProps
   extends Omit<RadioProps, 'label' | 'onChange' | 'options' | 'value'> {
-  value: string | null;
+  value: Value | null;
   options: string[] | RadioGroupOption[];
-  onChange: (value: string) => void;
+  onChange: (value: Value) => void;
   tooltipMessages?: {
     [key: string]: string;
   };
@@ -31,7 +32,7 @@ const RadioGroup: FC<RadioGroupProps> = ({
   ...props
 }: RadioGroupProps) => {
   const handleChange = useCallback(
-    (newValue: string) => () => {
+    (newValue: Value) => () => {
       onChange(newValue);
     },
     [onChange],
@@ -48,7 +49,7 @@ const RadioGroup: FC<RadioGroupProps> = ({
       {mappedOptions?.map(({ key, text, additionalText }) => (
         <Radio
           {...props}
-          key={key}
+          key={`${key}`}
           mt={flexDirection === 'column' ? 2 : 'initial'}
           mr={flexDirection === 'row' ? '20px' : 'initial'}
           checked={value === key}
@@ -56,7 +57,7 @@ const RadioGroup: FC<RadioGroupProps> = ({
           name={name}
           addtionalText={additionalText}
           onChange={handleChange(key)}
-          tooltip={tooltipMessages[key]}
+          tooltip={tooltipMessages[`${key}`]}
         />
       ))}
     </Flex>
