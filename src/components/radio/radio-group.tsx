@@ -1,4 +1,4 @@
-import React, { FC, useCallback } from 'react';
+import React, { useCallback } from 'react';
 import { Flex } from 'rebass';
 
 // Components
@@ -6,33 +6,32 @@ import Radio, { RadioProps } from './index';
 // Utils
 import randomString from '../../utils/randomString';
 
-type Value = string | number | boolean;
-export type RadioGroupOption = {
-  key: Value;
+export type RadioGroupOption<T = string> = {
+  key: T;
   text: string;
   additionalText?: string;
 };
-export interface RadioGroupProps
+export interface RadioGroupProps<T = string>
   extends Omit<RadioProps, 'label' | 'onChange' | 'options' | 'value'> {
-  value: Value | null;
-  options: string[] | RadioGroupOption[];
-  onChange: (value: Value) => void;
+  value: T;
+  options: string[] | RadioGroupOption<T>[];
+  onChange: (value: T) => void;
   tooltipMessages?: {
     [key: string]: string;
   };
   flexDirection?: 'row' | 'column' | null;
 }
 
-const RadioGroup: FC<RadioGroupProps> = ({
+const RadioGroup: <T = string>(props: RadioGroupProps<T>) => JSX.Element = ({
   options,
   value,
   onChange,
   tooltipMessages = {},
   flexDirection = 'column',
   ...props
-}: RadioGroupProps) => {
+}) => {
   const handleChange = useCallback(
-    (newValue: Value) => () => {
+    (newValue: typeof value) => () => {
       onChange(newValue);
     },
     [onChange],
@@ -41,7 +40,13 @@ const RadioGroup: FC<RadioGroupProps> = ({
   const name = randomString();
 
   const mappedOptions = options.map((val) =>
-    typeof val === 'string' ? { key: val, text: val } : val,
+    typeof val === 'string'
+      ? {
+          key: val as unknown as typeof value,
+          text: val,
+          additionalText: '',
+        }
+      : val,
   );
 
   return (
