@@ -37,10 +37,7 @@ const TinyPopup: FC<TinyPopupProps> = ({
 }: TinyPopupProps) => {
   return (
     <Popup
-      pt="20px"
-      pl="20px"
-      pr="20px"
-      pb="20px"
+      p="20px"
       width="fit-content"
       sx={{
         left: '50%',
@@ -60,13 +57,13 @@ const TinyPopup: FC<TinyPopupProps> = ({
         </Text>
       )}
       <Box sx={contentHeight ? { height: contentHeight } : {}}>{children}</Box>
-      <Flex mt="auto">
-        <Flex ml="auto">
+      <Flex>
+        <Flex width="100%" sx={{ gap: '20px', justifyContent: 'flex-end' }}>
           {tertiaryButtonProps && (
-            <Button intent="secondary" mr="20px" {...tertiaryButtonProps} />
+            <Button intent="secondary" {...tertiaryButtonProps} />
           )}
           {secondaryButtonProps && (
-            <Button intent="secondary" mr="20px" {...secondaryButtonProps} />
+            <Button intent="secondary" {...secondaryButtonProps} />
           )}
           {mainButtonProps && <Button {...mainButtonProps} />}
         </Flex>
