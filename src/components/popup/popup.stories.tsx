@@ -98,8 +98,15 @@ export const PopupTiny: Story<TinyPopupProps> = (props) => {
         {...props}
         onClose={handleToggle}
         isOpen={isOpen}
-        mainButton={['main', action('main')]}
-        secondaryButton={['secondary', action('secondary')]}
+        mainButtonProps={{
+          children: 'main',
+          onClick: action('main'),
+          isLoading: true,
+        }}
+        secondaryButtonProps={{
+          children: 'secondary',
+          onClick: action('secondary'),
+        }}
       >
         <Input label="Value" />
       </TinyPopup>

@@ -1,20 +1,23 @@
 import React, { FC } from 'react';
-import { Box } from 'rebass';
-import Action from '../../action.type';
+import { Box, Flex } from 'rebass';
 import Button from '../../button';
 
 // Components
 import Popup, { PopupProps } from '../index';
 import Subtitle from '../../typography/subtitle';
 import Text from '../../typography/text';
+import { ButtonProps } from '../../..';
 
-export interface TinyPopupProps extends Omit<PopupProps, 'css' | 'children'> {
+export interface TinyPopupProps
+  extends Omit<
+    PopupProps,
+    'css' | 'children' | 'disabledMainButton' | 'disabledSecondaryButton'
+  > {
   title: string;
   secondaryText: string;
-  mainButton?: Action<React.MouseEvent<HTMLButtonElement>>;
-  secondaryButton?: Action<React.MouseEvent<HTMLButtonElement>>;
-  tertiaryButton?: Action<React.MouseEvent<HTMLButtonElement>>;
-  disabledTertiaryButton?: boolean;
+  mainButtonProps?: ButtonProps;
+  secondaryButtonProps?: ButtonProps;
+  tertiaryButtonProps?: ButtonProps;
   onClose?: () => void;
   children?: React.ReactNode;
   contentHeight?: string;
@@ -23,21 +26,15 @@ export interface TinyPopupProps extends Omit<PopupProps, 'css' | 'children'> {
 const TinyPopup: FC<TinyPopupProps> = ({
   title,
   secondaryText,
-  mainButton,
-  secondaryButton,
-  tertiaryButton,
   onClose = () => {},
-  disabledMainButton = false,
-  disabledSecondaryButton = false,
-  disabledTertiaryButton = false,
+  mainButtonProps,
+  secondaryButtonProps,
+  tertiaryButtonProps,
   children,
   contentHeight,
+  sx,
   ...props
 }: TinyPopupProps) => {
-  const [mainActionTitle, mainActionCallback] = mainButton || [];
-  const [secondaryActionTitle, secondaryActionCallback] = secondaryButton || [];
-  const [tertiaryActionTitle, tertiaryActionCallback] = tertiaryButton || [];
-
   return (
     <Popup
       pt="20px"
@@ -49,9 +46,10 @@ const TinyPopup: FC<TinyPopupProps> = ({
         left: '50%',
         top: '50%',
         transform: 'translate(-50%, -50%)',
+        ...sx,
       }}
-      {...props}
       onClose={onClose}
+      {...props}
     >
       <Subtitle pb="20px" lineHeight="22px">
         {title}
@@ -62,35 +60,17 @@ const TinyPopup: FC<TinyPopupProps> = ({
         </Text>
       )}
       <Box sx={contentHeight ? { height: contentHeight } : {}}>{children}</Box>
-      <Box display="flex" mt="auto">
-        <Box display="flex" ml="auto">
-          {tertiaryButton && (
-            <Button
-              disabled={disabledTertiaryButton}
-              intent="secondary"
-              onClick={tertiaryActionCallback}
-              mr="20px"
-            >
-              {tertiaryActionTitle}
-            </Button>
+      <Flex mt="auto">
+        <Flex ml="auto">
+          {tertiaryButtonProps && (
+            <Button intent="secondary" mr="20px" {...tertiaryButtonProps} />
           )}
-          {secondaryButton && (
-            <Button
-              disabled={disabledSecondaryButton}
-              intent="secondary"
-              onClick={secondaryActionCallback}
-              mr="20px"
-            >
-              {secondaryActionTitle}
-            </Button>
+          {secondaryButtonProps && (
+            <Button intent="secondary" mr="20px" {...secondaryButtonProps} />
           )}
-          {mainButton && (
-            <Button disabled={disabledMainButton} onClick={mainActionCallback}>
-              {mainActionTitle}
-            </Button>
-          )}
-        </Box>
-      </Box>
+          {mainButtonProps && <Button {...mainButtonProps} />}
+        </Flex>
+      </Flex>
     </Popup>
   );
 };
