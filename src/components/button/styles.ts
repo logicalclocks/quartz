@@ -1,7 +1,7 @@
 import { SxStyleProp } from 'rebass';
 import buttonsStyles from '../../theme/buttons';
 
-export default {
+export const wrapper = {
   display: 'flex',
   flexDirection: 'row',
   alignItems: 'center',
