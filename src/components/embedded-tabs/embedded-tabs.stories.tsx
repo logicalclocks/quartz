@@ -6,7 +6,7 @@ import EmbeddedTabs, {
   EmbeddedTabsProps,
   ControlledEmbeddedTabsProps,
 } from '.';
-import Button from '../button';
+import { Button } from '../button';
 import Subtitle from '../typography/subtitle';
 
 export default {

@@ -3,7 +3,7 @@ import { Story, Meta } from '@storybook/react/types-6-0';
 import { action } from '@storybook/addon-actions';
 import { Box } from 'rebass';
 import Callout, { ICalloutProps, CalloutTypes } from './index';
-import Button from '../button';
+import { Button } from '../button';
 
 export default {
   title: 'Quartz/Callout',

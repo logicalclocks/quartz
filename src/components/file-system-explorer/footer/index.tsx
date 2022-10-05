@@ -3,7 +3,7 @@ import { Box, Flex } from 'rebass';
 import styles, { boxStyles, boxButtonStyles } from './footer.styles';
 import Labeling from '../../typography/labeling';
 import { ActiveFile, FileExplorerMode } from '../types';
-import Button from '../../button';
+import { Button } from '../../button';
 
 export interface Props {
   value?: string;

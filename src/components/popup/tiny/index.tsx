@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { Box, Flex } from 'rebass';
-import Button from '../../button';
+import { Button } from '../../button';
 
 // Components
 import Popup, { PopupProps } from '../index';

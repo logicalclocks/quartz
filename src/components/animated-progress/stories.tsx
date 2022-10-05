@@ -1,7 +1,7 @@
 import { Story } from '@storybook/react/types-6-0';
 import React, { useState } from 'react';
 import { Box } from '../box';
-import Button from '../button';
+import { Button } from '../button';
 import { Flex } from '../flex';
 import { AnimatedProgress, Props } from './AnimatedProgress';
 

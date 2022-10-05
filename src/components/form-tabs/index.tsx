@@ -19,7 +19,7 @@ import {
 } from './form-tabs.styles';
 import FormSummaryContainer from '../form-summary-container';
 import Tab from './tab/Tab';
-import Button from '../button';
+import { Button } from '../button';
 import { TabState } from './types';
 
 export enum ValidateOpts {

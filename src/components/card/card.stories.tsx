@@ -3,7 +3,7 @@ import React from 'react';
 import { Story, Meta, ArgTypes } from '@storybook/react/types-6-0';
 
 import Card, { CardProps } from '.';
-import Button from '../button';
+import { Button } from '../button';
 import CardSecondary, { CardSecondaryProps } from './card-secondary';
 
 export default {

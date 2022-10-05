@@ -6,7 +6,7 @@ import Row, { RowProps } from './container';
 import RowGroup, { RowGroupProps } from './group';
 import RowItem, { RowItemProps } from './item';
 import { User } from '../user';
-import Button from '../button';
+import { Button } from '../button';
 import Value from '../typography/value';
 import { Mode } from './container/types';
 import { TableItemPosition } from './item/types';

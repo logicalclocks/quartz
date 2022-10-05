@@ -3,7 +3,7 @@ import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
 
 import FileSystemExplorer, { FileSystemExplorerProps } from '.';
-import Button from '../button';
+import { Button } from '../button';
 // Data
 import testData from './test-data';
 
