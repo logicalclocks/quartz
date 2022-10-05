@@ -3,7 +3,7 @@ import { Box } from 'rebass';
 import { Story, Meta } from '@storybook/react/types-6-0';
 
 // Components
-import Button from '../button';
+import { Button } from '../button';
 import { Labeling, Value } from '../../index';
 import Collapse, { CollapseProps } from './index';
 

@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import { Box, BoxProps } from 'rebass';
 
 // Components
-import Button from '../../button';
+import { Button } from '../../button';
 import Labeling from '../../typography/labeling';
 // Types
 import Action from '../../action.type';

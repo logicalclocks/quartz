@@ -2,7 +2,7 @@ import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
 import { Box } from 'rebass';
 import StickySummary, { StickySummaryProps } from './index';
-import Button from '../button';
+import { Button } from '../button';
 
 export default {
   title: 'Quartz/StickySummary',

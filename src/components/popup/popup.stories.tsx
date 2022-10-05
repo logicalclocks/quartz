@@ -3,7 +3,7 @@ import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
 import { Box, BoxProps } from 'rebass';
 
-import Button from '../button';
+import { Button } from '../button';
 import Drawer from './drawer';
 import { DrawerSectionProps } from './drawer/drawer-section';
 import Popup, { PopupProps } from './index';

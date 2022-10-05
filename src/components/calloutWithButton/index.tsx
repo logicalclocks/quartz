@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { FlexProps } from 'rebass';
 import Callout, { CalloutTypes } from '../callout';
-import Button from '../button';
+import { Button } from '../button';
 import variants from '../../theme/callout/index';
 
 export interface ICalloutWithButtonProps

@@ -2,7 +2,7 @@ import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
 
 import Label, { LabelProps } from '.';
-import Button from '../button';
+import { Button } from '../button';
 
 export default {
   title: 'Quartz/Input/Label',

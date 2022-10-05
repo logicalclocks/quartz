@@ -2,7 +2,7 @@ import React, { FC, memo } from 'react';
 import { Box, BoxProps } from 'rebass';
 
 // Components
-import Button from '../../button';
+import { Button } from '../../button';
 // Styles
 import styles, { withoutBorder } from './list-item.styles';
 

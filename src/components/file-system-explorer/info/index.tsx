@@ -11,7 +11,7 @@ import {
 } from './file-explorer-info.styles';
 import Labeling from '../../typography/labeling';
 import { ActiveFile } from '../types';
-import Button from '../../button';
+import { Button } from '../../button';
 import formatSizeUnits from '../../../utils/getFormatSizeUnit';
 import { GetIcon, IconName } from '../../icon';
 

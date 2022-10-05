@@ -2,7 +2,7 @@ import React, { FC, useState } from 'react';
 import { Box, FlexProps, Flex } from 'rebass';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { hybrid } from 'react-syntax-highlighter/dist/esm/styles/hljs';
-import Button from '../button';
+import { Button } from '../button';
 import ExpandViewer from '../expand-viewer';
 
 import styles, {
