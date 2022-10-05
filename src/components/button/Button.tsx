@@ -45,7 +45,7 @@ export const Button: FC<Props> = ({
     <RebassButton
       variant={intent}
       disabled={disabled || isLoading}
-      sx={{ ...sx, ...S.wrapper }}
+      sx={{ ...S.wrapper, ...sx }}
       type={type}
       {...props}
     >
