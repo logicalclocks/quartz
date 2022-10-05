@@ -1,5 +1,6 @@
 import React, { FC, useCallback, useEffect, useMemo, useRef } from 'react';
 import { Box, BoxProps } from 'rebass';
+import * as R from 'ramda';
 
 // Hooks
 import useKeyUp from '../../utils/useKeyUp';
@@ -36,9 +37,10 @@ const Popup: FC<PopupProps> = ({
   closeOnBackdropClick = true,
   footer,
   onClose = () => {},
+  sx,
   ...props
 }: PopupProps) => {
-  const sx = useMemo(
+  const style = useMemo(
     () => getStyles({ left, top, bottom, right }),
     [left, top, bottom, right],
   );
@@ -78,9 +80,9 @@ const Popup: FC<PopupProps> = ({
         minHeight="141px"
         tx="variants.popup"
         variant={variant}
-        {...props}
-        sx={sx}
+        sx={R.mergeDeepRight(style as object, sx ?? {})}
         overflowX="visible"
+        {...props}
       >
         {children}
         {footer && (
