@@ -47,14 +47,14 @@ const SelectListMulti: FC<SelectListProps> = ({
     [onChange],
   );
 
-  // eslint-disable-next-line arrow-body-style
-  const { activeIndex } = useArrowsSelect(options, (val: SelectOpt) => {
-    return handleClick(val)();
-  });
+  const { activeIndex } = useArrowsSelect(options, (val: SelectOpt) =>
+    handleClick(val)(),
+  );
 
   const handleCheck = useCallback(() => {}, []);
 
   return (
+    // eslint-disable-next-line react/jsx-no-useless-fragment
     <React.Fragment>
       {options?.map((option, index) => (
         <ListItem

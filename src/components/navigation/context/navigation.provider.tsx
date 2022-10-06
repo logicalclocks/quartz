@@ -39,7 +39,7 @@ const NavigationProvider: FC<CategoriesProviderProps> = ({
       setActivePath(path);
       takeActivePath(path);
     },
-    [tree],
+    [takeActivePath, trackBy, tree],
   );
 
   const handleBack = useCallback(
@@ -52,7 +52,7 @@ const NavigationProvider: FC<CategoriesProviderProps> = ({
         onBackCLick();
       }
     },
-    [activePath],
+    [onBackCLick],
   );
 
   const value = useMemo(
@@ -64,7 +64,7 @@ const NavigationProvider: FC<CategoriesProviderProps> = ({
       onActivate: handleActivate,
       onBack: handleBack,
     }),
-    [tree, activePath.length, activeNode],
+    [trackBy, tree, activeNode, activePath, handleActivate, handleBack],
   );
 
   useEffect(() => {
@@ -75,6 +75,7 @@ const NavigationProvider: FC<CategoriesProviderProps> = ({
     }
 
     setActiveNode(node);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [activePath, onNavigate, setActiveNode]);
 
   return (

@@ -37,6 +37,7 @@ const Row: FC<RowProps> = ({
           <Box as="tr" width="100%">
             {legend.map((name, index) => (
               <Labeling
+                // eslint-disable-next-line react/no-array-index-key
                 key={`${name}${index}`}
                 sx={rowStyles({
                   position: TableItemPosition.left,

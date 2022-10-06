@@ -48,7 +48,7 @@ const SingleRangeSlider: FC<SingleRangeSliderProps> = ({
         isHover,
       }));
     },
-    [],
+    [setContext],
   );
 
   return (
@@ -63,6 +63,7 @@ const SingleRangeSlider: FC<SingleRangeSliderProps> = ({
           height: '2px',
           backgroundColor: theme.colors.grayShade2,
         }}
+        // eslint-disable-next-line react/no-unstable-nested-components
         handle={({ index, ...restProps }) => (
           <PickerHandler
             key={index}

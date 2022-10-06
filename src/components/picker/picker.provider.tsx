@@ -8,12 +8,10 @@ export interface CategoriesProviderProps {
 const PickerProvider: FC<CategoriesProviderProps> = ({
   children,
 }: CategoriesProviderProps) => {
-  const [value, setValue] = useState(PickerContextDefault);
+  const state = useState(PickerContextDefault);
 
   return (
-    <PickerContext.Provider value={[value, setValue]}>
-      {children}
-    </PickerContext.Provider>
+    <PickerContext.Provider value={state}>{children}</PickerContext.Provider>
   );
 };
 

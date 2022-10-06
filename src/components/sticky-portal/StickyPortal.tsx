@@ -51,6 +51,7 @@ const StickyPortal: FC<StickyPortalProps> = ({
       window.removeEventListener('scroll', listenerAction, true);
       window.removeEventListener('resize', listenerAction, true);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return createPortal(children, rootElemRef.current);

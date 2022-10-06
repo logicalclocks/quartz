@@ -1,5 +1,5 @@
 import { SymbolMode } from './types';
-import svg, { invalid_feature_group } from '../../sources/basketSvgs';
+import svg, { invalidFeatureGroup } from '../../sources/basketSvgs';
 
 export const getSymbolIcon = (
   mode: SymbolMode,
@@ -7,7 +7,7 @@ export const getSymbolIcon = (
   isHover: boolean,
   possible: boolean,
 ) => {
-  if (mode === SymbolMode.bulk && !possible) return invalid_feature_group;
+  if (mode === SymbolMode.bulk && !possible) return invalidFeatureGroup;
 
   const icons: [SymbolMode, boolean, boolean, any][] = [
     [SymbolMode.single, true, false, svg.single_basket],

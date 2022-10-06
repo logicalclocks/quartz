@@ -1,4 +1,4 @@
-import React, { FC, ReactNode } from 'react';
+import React, { FC, ReactNode, useMemo } from 'react';
 import { Box } from 'rebass';
 import HeadCell from './head-cell/head-cell';
 import HolyTableContext from './holy-table.context';
@@ -25,36 +25,46 @@ const HolyTable: FC<Props> = ({
   standalone = false,
   rowHeight = '50px',
   ...props
-}) => (
-  <HolyTableContext.Provider
-    value={{ bordered, padded, hoverable, middleColumn, rowHeight, standalone }}
-  >
-    <Box as="table" sx={styles} {...props}>
-      {legend ? (
-        /* the logic is that if there is a `legend`, then this is a very simple table and we can insert `tbody` and `thead`.//
-           otherwise, we want to be able to put our own `thead` and `tbody` with custom children
+}) => {
+  const value = useMemo(
+    () => ({
+      bordered,
+      padded,
+      hoverable,
+      middleColumn,
+      rowHeight,
+      standalone,
+    }),
+    [bordered, hoverable, middleColumn, padded, rowHeight, standalone],
+  );
 
-           so, there are two ways to do this:
-        */
-        <>
-          <Box as="thead">
-            <Box as="tr" width="100%">
-              {legend.map((name, index) => (
-                // there was no other way for generating keys :()
-                // eslint-disable-next-line react/no-array-index-key
-                <HeadCell key={name + index} fillSpace={middleColumn === index}>
-                  {name}
-                </HeadCell>
-              ))}
+  return (
+    <HolyTableContext.Provider value={value}>
+      <Box as="table" sx={styles} {...props}>
+        {legend ? (
+          /* the logic is that if there is a `legend`, then this is a very simple table and we can insert `tbody` and `thead`.//
+               otherwise, we want to be able to put our own `thead` and `tbody` with custom children
+    
+               so, there are two ways to do this:
+            */
+          <>
+            <Box as="thead">
+              <Box as="tr" width="100%">
+                {legend.map((name, index) => (
+                  <HeadCell key={name} fillSpace={middleColumn === index}>
+                    {name}
+                  </HeadCell>
+                ))}
+              </Box>
             </Box>
-          </Box>
-          <Box as="tbody">{children}</Box>
-        </>
-      ) : (
-        children
-      )}
-    </Box>
-  </HolyTableContext.Provider>
-);
+            <Box as="tbody">{children}</Box>
+          </>
+        ) : (
+          children
+        )}
+      </Box>
+    </HolyTableContext.Provider>
+  );
+};
 
 export default HolyTable;

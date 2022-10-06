@@ -1,7 +1,7 @@
 import { Meta, Story } from '@storybook/react/types-6-0';
 import React from 'react';
 import { Box } from 'rebass';
-import { default as HT } from '.';
+import HT from '.';
 import { Props } from './holy-table';
 
 export default {
@@ -62,60 +62,6 @@ const args = {
   rowHeight: '50px',
 };
 
-const argTypes = {
-  standalone: {
-    control: {
-      type: 'boolean',
-    },
-    type: {
-      required: false,
-    },
-  },
-  padded: {
-    control: {
-      type: 'boolean',
-    },
-    type: {
-      required: false,
-    },
-  },
-  bordered: {
-    control: {
-      type: 'boolean',
-    },
-    type: {
-      required: false,
-    },
-  },
-  hoverable: {
-    control: {
-      type: 'boolean',
-    },
-    type: {
-      required: false,
-    },
-  },
-  middleColumn: {
-    control: {
-      type: 'select',
-      options: [0, 1, 2],
-    },
-    type: {
-      required: false,
-    },
-  },
-  rowHeight: {
-    control: {
-      type: 'text',
-    },
-    type: {
-      required: false,
-    },
-  },
-};
-
 HolyTableWithLegend.args = args;
-HolyTableWithLegend.argTypes = argTypes;
 
 HolyTableCustom.args = args;
-HolyTableCustom.argTypes = argTypes;

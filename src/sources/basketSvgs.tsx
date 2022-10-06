@@ -35,7 +35,7 @@ const inBasket = (
   </svg>
 );
 
-export const invalid_feature_group = (
+export const invalidFeatureGroup = (
   <svg
     width="20"
     height="19"

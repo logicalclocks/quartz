@@ -75,8 +75,8 @@ const ReadOnlyTable: FC<ReadOnlyTableProps> = ({
                     (header) => header.identifier.name === staticColumn,
                   )!;
                   return (
-                    // eslint-disable-next-line operator-linebreak
-                    staticHeader.headerRender ||
+                    staticHeader.headerRender ??
+                    // eslint-disable-next-line react/no-unstable-nested-components
                     (() => <Label>{staticHeader.identifier.name}</Label>)
                   );
                 })()}
@@ -93,8 +93,8 @@ const ReadOnlyTable: FC<ReadOnlyTableProps> = ({
                   key={header.identifier.name}
                   column={header.identifier.name}
                   headerRender={
-                    // eslint-disable-next-line operator-linebreak
-                    header.headerRender ||
+                    header.headerRender ??
+                    // eslint-disable-next-line react/no-unstable-nested-components
                     (() => <Label>{header.identifier.name}</Label>)
                   }
                   actions={[

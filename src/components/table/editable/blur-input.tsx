@@ -20,6 +20,7 @@ const BlurInput: FC<TInputProps> = ({ defaultValue, onChange, ...props }) => {
     if (value !== defaultValue) {
       onChange(value);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [value]);
 
   return (

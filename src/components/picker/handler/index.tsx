@@ -18,7 +18,7 @@ const PickerHandler = React.forwardRef((props: any, ref: any) => {
         activeHandlerId: index,
       }));
     }
-  }, [dragging, index]);
+  }, [dragging, index, setContext]);
 
   return (
     <TooltipWrapper

@@ -36,7 +36,7 @@ const MultiRangeSlider: FC<MultiRangeSliderProps> = ({
 
       return [...curr, val];
     }, []);
-  }, value);
+  }, [theme.colors.grayShade2, value]);
 
   const boxProps = useMemo(() => {
     const { activeHandlerId: ahId, isDraggable, isHover } = context;
@@ -59,7 +59,7 @@ const MultiRangeSlider: FC<MultiRangeSliderProps> = ({
         isHover,
       }));
     },
-    [],
+    [setContext],
   );
 
   return (
@@ -77,6 +77,7 @@ const MultiRangeSlider: FC<MultiRangeSliderProps> = ({
           backgroundColor: theme.colors.grayShade2,
         }}
         onChange={handleChange}
+        // eslint-disable-next-line react/no-unstable-nested-components
         handle={({ index, ...restProps }) => (
           <PickerHandler
             key={index}

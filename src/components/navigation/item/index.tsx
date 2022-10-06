@@ -80,6 +80,7 @@ const NavigationItem: FC<NavigationItemProps> = (
     if (isActive) {
       onActivate(key);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isActive]);
 
   const component = (
@@ -88,7 +89,7 @@ const NavigationItem: FC<NavigationItemProps> = (
       variant={getVariant(disabled, isActiveItem)}
       sx={R.mergeDeepLeft(styles, sx ?? {}) as object}
       onClick={!disabled ? handleClick : undefined}
-      className={key == 'oldui' ? 'oldui' : ''}
+      className={key === 'oldui' ? 'oldui' : ''}
       {...restProps}
     >
       {icon && (

@@ -18,6 +18,7 @@ class Portal extends React.PureComponent {
   }
 
   render() {
+    // eslint-disable-next-line react/destructuring-assignment
     return ReactDOM.createPortal(this.props.children, this.el);
   }
 }

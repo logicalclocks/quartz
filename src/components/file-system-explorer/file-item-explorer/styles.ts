@@ -10,6 +10,7 @@ export const fileExplorerStyle = (
   ({
     position: 'relative',
 
+    // eslint-disable-next-line no-nested-ternary
     backgroundColor: !isActive ? 'white' : selected ? 'grayShade2' : 'white',
     width: '222px',
 

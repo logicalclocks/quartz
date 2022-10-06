@@ -22,6 +22,7 @@ const Notification: FC<SystemNotification> = ({
         NotificationManager.remove(id);
       }, duration),
     );
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const hoverHandler = useCallback(() => {

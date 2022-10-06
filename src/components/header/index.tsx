@@ -40,8 +40,8 @@ const Header: FC<HeaderProps> = ({
     <Box sx={rightSectionStyles}>
       {/*  Actions */}
       <Box>
-        {actions?.map((action, index) => (
-          <span key={index}>{action}</span>
+        {actions?.map((action) => (
+          <span>{action}</span>
         ))}
       </Box>
 

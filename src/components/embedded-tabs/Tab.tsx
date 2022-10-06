@@ -11,19 +11,19 @@ export interface Props {
   disabled?: boolean;
 }
 
-const getStyles = ({ active, disabled }: Props) =>
+const getStyles = ({ active, disabled }: Pick<Props, 'active' | 'disabled'>) =>
   ({
     ...S.tab,
     ...(active ? S.activeTab : {}),
     ...(disabled ? S.disabledTab : {}),
   } as SxStyleProp);
 
-const Tab: FC<Props> = (props) => {
+const Tab: FC<Props> = ({ title, ...props }) => {
   const propagatedProps = R.pick(['disabled', 'onClick'], props);
 
   return (
     <Box sx={getStyles(props)} {...propagatedProps}>
-      <Label pb="1px">{props.title}</Label>
+      <Label pb="1px">{title}</Label>
     </Box>
   );
 };

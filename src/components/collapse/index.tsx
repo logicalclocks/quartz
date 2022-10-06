@@ -46,6 +46,7 @@ const Collapse: FC<CollapseProps> = ({
     if (isOpen !== isOpenProps) {
       setOpen(isOpenProps);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isOpenProps]);
 
   return (

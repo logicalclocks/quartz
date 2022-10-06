@@ -1,8 +1,8 @@
 import { useCallback, useEffect, useState } from 'react';
-import { SelectOpt } from './types';
+import * as R from 'ramda';
 
 const useArrowsSelect = (
-  options: SelectOpt[],
+  options: any[],
   callback: Function,
   startingIndex = -1,
 ) => {
@@ -16,16 +16,18 @@ const useArrowsSelect = (
         const maxLength = options.length;
 
         if (e.key === 'ArrowDown') {
-          setActiveIndex((index) =>
-            index === -1 ? 0 : index > maxLength - 2 ? 0 : index + 1,
+          setActiveIndex(
+            R.cond([
+              [R.either(R.equals(-1), R.lt(maxLength - 2)), R.always(0)],
+              [R.T, R.inc],
+            ]),
           );
         } else {
-          setActiveIndex((index) =>
-            index === -1
-              ? maxLength - 1
-              : index === 0
-              ? maxLength - 1
-              : index - 1,
+          setActiveIndex(
+            R.cond([
+              [R.either(R.equals(-1), R.equals(0)), R.always(maxLength - 1)],
+              [R.T, R.dec],
+            ]),
           );
         }
       }

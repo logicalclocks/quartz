@@ -93,6 +93,7 @@ const EditableTable: FC<EditableTableProps> = ({
 
   useEffect(() => {
     KeysCollection.generateKeys(values);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [values.length]);
 
   // @ts-ignore
@@ -111,8 +112,8 @@ const EditableTable: FC<EditableTableProps> = ({
                     (header) => header.identifier.name === staticColumn,
                   )!;
                   return (
-                    // eslint-disable-next-line operator-linebreak
-                    staticHeader.headerRender ||
+                    staticHeader.headerRender ??
+                    // eslint-disable-next-line react/no-unstable-nested-components
                     (() => <Label>{staticHeader.identifier.name}</Label>)
                   );
                 })()}
@@ -139,8 +140,8 @@ const EditableTable: FC<EditableTableProps> = ({
                   key={header.identifier.name}
                   column={header.identifier.name}
                   headerRender={
-                    // eslint-disable-next-line operator-linebreak
-                    header.headerRender ||
+                    header.headerRender ??
+                    // eslint-disable-next-line react/no-unstable-nested-components
                     (() => <Label>{header.identifier.name}</Label>)
                   }
                   actions={
@@ -165,7 +166,10 @@ const EditableTable: FC<EditableTableProps> = ({
           {sortValues(values, columnHeaders).map(
             (row: TableCell[], rowIndex: number) => (
               <Box key={KeysCollection.getKey(row)} as="tr" sx={trowStyles}>
-                <RowLeftContent onDelete={onDeleteRow} index={rowIndex} />
+                <RowLeftContent
+                  onDelete={() => onDeleteRow(rowIndex)}
+                  index={rowIndex}
+                />
 
                 {/* Static column */}
                 {staticColumn && (

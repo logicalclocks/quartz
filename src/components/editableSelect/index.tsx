@@ -7,14 +7,13 @@ import React, {
   useState,
 } from 'react';
 import useDropdown from '../../utils/useDropdown';
-import useOnClickOutside from '../../utils/useClickOutside';
 import { Intents } from '../intents';
 import Label, { LabelProps } from '../label';
 import EditableSelectContainer from './EditableSelectContainer';
 import EditableSelectDropdown from './EditableSelectDropdown';
 import EditableSelectInfo from './EditableSelectInfo';
 import { EditableSelectTypes, ChipsVariants } from './types';
-import StickyPortal, { CONTENT_ID } from '../sticky-portal/StickyPortal';
+import DropdownWrapper from '../dropdown-wrapper/DropdownWrapper';
 
 export interface EditableSelectProps
   extends Omit<LabelProps, 'onChange' | 'children'> {
@@ -64,12 +63,6 @@ const EditableSelect: FC<EditableSelectProps> = ({
 
   const [isOpen, handleToggle, handleClickOutside] = useDropdown(false);
 
-  useOnClickOutside<HTMLDivElement>(
-    handleClickOutside,
-    [containerRef],
-    [CONTENT_ID],
-  );
-
   const unselectedOpts = useMemo(
     () => options.filter((opt) => !value.includes(opt)),
     [options, value],
@@ -100,9 +93,10 @@ const EditableSelect: FC<EditableSelectProps> = ({
 
   useEffect(() => {
     // Reopen dropdrown when typing.
-    if (!isOpen && search !== '') {
-      if (isMulti || search !== value[0]) handleToggle();
+    if (!isOpen && search !== '' && (isMulti || search !== value[0])) {
+      handleToggle();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [search]);
 
   const dropdrownWidth = useCallback(() => {
@@ -110,28 +104,14 @@ const EditableSelect: FC<EditableSelectProps> = ({
       return `${containerRef.current.offsetWidth - 2}px`;
     }
     return 'auto';
-  }, [containerRef.current?.offsetWidth]);
+  }, []);
 
   const dropdrownPosition = useCallback(() => {
     if (containerRef.current) {
       return containerRef.current.offsetHeight + 1;
     }
     return 33;
-  }, [containerRef.current?.offsetHeight]);
-
-  const DropdownWrapper: FC<{ children: any; refEl: any }> = ({
-    children,
-    refEl,
-    // eslint-disable-next-line arrow-body-style
-  }) => {
-    return appendToBody ? (
-      <StickyPortal refEl={refEl} handleClose={handleClickOutside}>
-        {children}
-      </StickyPortal>
-    ) : (
-      children
-    );
-  };
+  }, []);
 
   return (
     <Label
@@ -161,7 +141,11 @@ const EditableSelect: FC<EditableSelectProps> = ({
         variant={disabled ? 'disabled' : (variant as ChipsVariants)}
       >
         {isOpen && (
-          <DropdownWrapper refEl={containerRef?.current || undefined}>
+          <DropdownWrapper
+            containerRef={containerRef}
+            appendToBody={appendToBody}
+            onClickOutside={handleClickOutside}
+          >
             <EditableSelectDropdown
               type={type}
               value={value}

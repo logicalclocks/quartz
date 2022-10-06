@@ -1,12 +1,11 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
-import FooterFileExplorer from './index';
 
-import FileExplorerFooter, { Props } from './index';
+import FooterFileExplorer, { Props } from './index';
 
 export default {
   title: 'Quartz/FileSystemExplorer/Footer',
-  component: FileExplorerFooter,
+  component: FooterFileExplorer,
   args: {
     value: 'pick a file',
     onClose: (key: any) => {
