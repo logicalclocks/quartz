@@ -6,7 +6,7 @@ on:
       - dev
 jobs:
   # Run interaction and accessibility tests
-  setup:
+  interaction-and-accessibility:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -16,24 +16,12 @@ jobs:
       - name: Install dependencies
         run: yarn
 
-  lint:
-    needs: setup
-    runs-on: ubuntu-latest
-    steps:
       - name: Run linter
         run: yarn run test:lint
 
-  prettier:
-    needs: setup
-    runs-on: ubuntu-latest
-    steps:
       - name: Run formatter
         run: yarn run test:prettier
 
-  interaction-and-accessibility:
-    needs: setup
-    runs-on: ubuntu-latest
-    steps:
       - name: Install Playwright
         run: npx playwright install --with-deps
 
