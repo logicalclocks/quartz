@@ -1,11 +1,9 @@
 import React, { useContext, useEffect } from 'react';
-// @ts-ignore
 import { Handle } from 'rc-slider';
 import TooltipWrapper from '../tooltip';
 import PickerContext from '../picker.context';
 
-// @ts-ignore
-const PickerHandler = React.forwardRef((props: any, ref: any) => {
+const PickerHandler = React.forwardRef((props: any) => {
   const { value, dragging, index, ...restProps } = props;
 
   const [context, setContext] = useContext(PickerContext);
