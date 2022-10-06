@@ -22,6 +22,7 @@ const NotificationsContainer: FC<NotificationContainerProps> = (props) => {
     return () => {
       NotificationManager.removeChangeListener(handleChange);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

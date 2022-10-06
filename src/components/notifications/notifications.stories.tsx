@@ -14,7 +14,7 @@ export default {
 const Template: Story = () => {
   const notifyHandler = useCallback(() => {
     NotificationManager.create({
-      type: <Label fontSize="18px">'Title</Label>,
+      type: <Label fontSize="18px">Title</Label>,
       content: (
         <Flex alignItems="center">
           <Labeling>message or message or message</Labeling>

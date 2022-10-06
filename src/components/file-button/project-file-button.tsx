@@ -9,13 +9,11 @@ export interface QuartzFileButtonProps extends Omit<ButtonProps, 'css'> {
   children: React.ReactNode;
   intent?: 'secondary';
   href?: string;
-  mode?: string;
 }
 
 const FileButton: FC<QuartzFileButtonProps> = ({
   intent = 'secondary',
   children,
-  mode = 'oneFile',
   href,
   ...props
 }: QuartzFileButtonProps) => {

@@ -5,7 +5,7 @@ class KeysCollection {
   map = new WeakMap<object, string>();
 
   generateKeys = <T extends object>(data: T[]) => {
-    data.map((item) => {
+    data.forEach((item) => {
       this.map.set(item, Math.random().toString(32));
     });
   };

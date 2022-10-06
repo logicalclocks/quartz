@@ -1,4 +1,4 @@
-import React, { createContext, FC, useEffect, useState } from 'react';
+import React, { createContext, FC, useEffect, useMemo, useState } from 'react';
 import { Global, css } from '@emotion/core';
 import { ThemeProvider as EmotionThemeProvider } from 'emotion-theming';
 
@@ -18,6 +18,7 @@ const ThemeProvider: FC<ThemeProviderProps> = ({
   const [colorMode, setColorMode] = useState<ThemeVariant>(
     (localStorage.getItem('color-mode') ?? 'light') as ThemeVariant,
   );
+  const value = useMemo(() => ({ colorMode, setColorMode }), [colorMode]);
 
   useEffect(
     function syncWithLocalStorage() {
@@ -36,7 +37,7 @@ const ThemeProvider: FC<ThemeProviderProps> = ({
           @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@700&display=swap');
         `}
       />
-      <ColorModeContext.Provider value={{ colorMode, setColorMode }}>
+      <ColorModeContext.Provider value={value}>
         <EmotionThemeProvider
           theme={colorModeToUse === 'light' ? defaultTheme : darkTheme}
         >

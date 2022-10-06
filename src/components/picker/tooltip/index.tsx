@@ -12,10 +12,12 @@ interface ITooltipWrapperProps {
   visible: boolean;
 }
 
-const TooltipWrapper: FC<ITooltipWrapperProps> = (
-  props: ITooltipWrapperProps,
-) => {
-  const { value, index, children } = props;
+const TooltipWrapper: FC<ITooltipWrapperProps> = ({
+  value,
+  index,
+  children,
+  visible,
+}) => {
   const theme = useTheme();
 
   return (
@@ -46,7 +48,7 @@ const TooltipWrapper: FC<ITooltipWrapperProps> = (
       />
       <Tooltip
         prefixCls="rc-slider-tooltip"
-        visible={props.visible}
+        visible={visible}
         overlay={<Value color="white">{value}</Value>}
         placement="top"
         key={index}

@@ -66,6 +66,7 @@ const Pagination: FC<PaginationProps> = ({
       setCurrent(String(currentPage));
       setError('');
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentPage]);
 
   return (

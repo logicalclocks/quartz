@@ -1,4 +1,5 @@
 import React, { FC, useRef } from 'react';
+import { Flex } from 'rebass';
 
 // Components
 import ListItem from '../list/item';
@@ -9,7 +10,6 @@ import useOnClickOutside from '../../utils/useClickOutside';
 import { DropdownItem } from './types';
 import { GetIcon } from '../icon';
 import Spinner from '../spinner';
-import { Flex } from 'rebass';
 import Tooltip from '../tooltip';
 import TooltipPositions from '../tooltip/positions';
 

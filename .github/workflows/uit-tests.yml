@@ -15,10 +15,19 @@ jobs:
           node-version: '14.x'
       - name: Install dependencies
         run: yarn
+
+      - name: Run linter
+        run: yarn run test:lint
+
+      - name: Run formatter
+        run: yarn run test:prettier
+
       - name: Install Playwright
         run: npx playwright install --with-deps
+
       - name: Build Storybook
         run: yarn build-storybook --quiet
+
       - name: Serve Storybook and run tests
         run: |
           npx concurrently -k -s first -n "SB,TEST" -c "magenta,blue" \

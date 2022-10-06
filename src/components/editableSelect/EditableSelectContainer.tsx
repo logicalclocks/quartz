@@ -70,7 +70,7 @@ const EditableSelectContainer: FC<EditableSelectContainerProps> = forwardRef(
       if (counterRef.current < 0 && value.length > 0) {
         onChange(value.slice(0, -1));
       }
-    }, [search, value, counterRef]);
+    }, [search.length, value, onChange]);
 
     useEffect(() => {
       counterRef.current = 0;

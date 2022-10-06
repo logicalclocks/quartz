@@ -7,7 +7,7 @@ import ListItem from '../../list/item';
 // Types
 import { SelectListProps } from './list.types';
 import Labeling from '../../typography/labeling';
-import useArrowsSelect from '../useArrowsSelect';
+import useArrowsSelect from '../../select2/useArrowsSelect';
 
 const toggleValue = (value: string[], option: string) =>
   value.includes(option)
@@ -38,7 +38,7 @@ const SelectListMulti: FC<SelectListProps> = ({
 
       onChange([option]);
     },
-    [],
+    [onChange],
   );
 
   const { activeIndex } = useArrowsSelect(options, (value: string) =>
@@ -48,9 +48,11 @@ const SelectListMulti: FC<SelectListProps> = ({
   const handleCheck = useCallback(() => {}, []);
 
   return (
+    // eslint-disable-next-line react/jsx-no-useless-fragment
     <React.Fragment>
       {options?.map((option, index) => (
         <ListItem
+          // eslint-disable-next-line react/no-array-index-key
           key={`${option} - ${index}`}
           isActive={index === activeIndex}
           onClick={handleClick(option)}

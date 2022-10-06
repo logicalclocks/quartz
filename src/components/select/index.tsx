@@ -1,18 +1,17 @@
 import React, { FC, useCallback, useMemo, useRef, useState } from 'react';
 // Components
 import { Box, Flex } from 'rebass';
-import useOnClickOutside from '../../utils/useClickOutside';
 // Hooks
 import useDropdown from '../../utils/useDropdown';
 import useKeyUp from '../../utils/useKeyUp';
 import Divider from '../divider';
+import DropdownWrapper from '../dropdown-wrapper/DropdownWrapper';
 import { GetIcon, IconName } from '../icon';
 import Input from '../input';
 // Types
 import { Intents } from '../intents';
 import Label, { LabelProps } from '../label';
 import List from '../list/container';
-import StickyPortal, { CONTENT_ID } from '../sticky-portal/StickyPortal';
 import Value from '../typography/value';
 import SelectInfo from './info';
 import SelectLabel from './label';
@@ -86,11 +85,6 @@ const Select: FC<SelectProps> = ({
 }: SelectProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [isOpen, handleToggle, handleClickOutside] = useDropdown(false);
-  useOnClickOutside<HTMLDivElement>(
-    handleClickOutside,
-    [containerRef],
-    [CONTENT_ID],
-  );
 
   const [search, setSearch] = useState('');
 
@@ -140,26 +134,12 @@ const Select: FC<SelectProps> = ({
     }
   }, [handleToggle, disabled]);
 
-  const DropdownWrapper: FC<{ children: any; refEl: any }> = ({
-    children,
-    refEl,
-    // eslint-disable-next-line arrow-body-style
-  }) => {
-    return appendToBody ? (
-      <StickyPortal handleClose={handleClickOutside} refEl={refEl}>
-        {children}
-      </StickyPortal>
-    ) : (
-      children
-    );
-  };
-
   const dropdrownPosition = useCallback(() => {
     if (containerRef?.current) {
       return containerRef.current.offsetHeight + 1;
     }
     return 33;
-  }, [containerRef.current?.offsetHeight]);
+  }, []);
 
   const dropdrownWidth = useCallback(() => {
     if (listWidth === '100%' && containerRef.current) {
@@ -169,7 +149,9 @@ const Select: FC<SelectProps> = ({
       return listWidth;
     }
     return 'max-content';
-  }, [containerRef.current?.offsetWidth, listWidth]);
+  }, [listWidth]);
+
+  const SelectComponent = isMulti ? SelectListMulti : SelectList;
 
   return (
     <Label
@@ -197,7 +179,11 @@ const Select: FC<SelectProps> = ({
         needSwap={needSwap}
       >
         {isOpen && (
-          <DropdownWrapper refEl={containerRef?.current || undefined}>
+          <DropdownWrapper
+            containerRef={containerRef}
+            appendToBody={appendToBody}
+            onClickOutside={handleClickOutside}
+          >
             <List
               sx={listStyles(dropdrownPosition(), appendToBody)}
               width={dropdrownWidth()}
@@ -241,27 +227,14 @@ const Select: FC<SelectProps> = ({
                 <Divider my={0} width="calc(100% + 20px)" />
               )}
               {filteredOptions.length ? (
-                isMulti ? (
-                  // Multi choice
-                  <SelectListMulti
-                    value={value}
-                    onChange={onChange}
-                    onClose={handleToggle}
-                    options={filteredOptions}
-                    additionalTexts={filteredAdditionalTexts}
-                    additionalComponents={filteredAdditionalComponents}
-                  />
-                ) : (
-                  // Single choice
-                  <SelectList
-                    value={value}
-                    onChange={onChange}
-                    onClose={handleToggle}
-                    options={filteredOptions}
-                    additionalTexts={filteredAdditionalTexts}
-                    additionalComponents={filteredAdditionalComponents}
-                  />
-                )
+                <SelectComponent
+                  value={value}
+                  onChange={onChange}
+                  onClose={handleToggle}
+                  options={filteredOptions}
+                  additionalTexts={filteredAdditionalTexts}
+                  additionalComponents={filteredAdditionalComponents}
+                />
               ) : (
                 <Flex height="55px" alignItems="center" justifyContent="center">
                   <Value>{noMathText}</Value>

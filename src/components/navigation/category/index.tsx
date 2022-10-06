@@ -27,7 +27,7 @@ const NavigationCategory: FC<NavigationCategoryProps> = ({
 
   const handleBackClick = useCallback(() => {
     onBack(title);
-  }, [onBack]);
+  }, [onBack, title]);
 
   return (
     <NavigationItem title={title} {...props}>

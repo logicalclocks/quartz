@@ -1,4 +1,3 @@
-import { stderr } from 'process';
 import React, { ReactElement } from 'react';
 import theme from '../../theme/theme';
 

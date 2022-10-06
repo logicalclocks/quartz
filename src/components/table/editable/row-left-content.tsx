@@ -1,4 +1,4 @@
-import React, { FC, memo, useCallback } from 'react';
+import React, { FC, memo } from 'react';
 import { Box } from 'rebass';
 import IconButton from '../../icon-button';
 import { IconName } from '../../icon/list';
@@ -6,7 +6,7 @@ import TooltipPositions from '../../tooltip/positions';
 
 export interface RowLeftContentProps {
   index: number;
-  onDelete: (ind: number) => void;
+  onDelete: () => void;
 }
 
 const styles = {
@@ -30,23 +30,16 @@ const styles = {
   },
 };
 
-const RowLeftContent: FC<RowLeftContentProps> = ({
-  index,
-  onDelete,
-}: RowLeftContentProps) => {
-  const handleDeleteRow = useCallback(() => onDelete(index), []);
-
-  return (
-    <Box as="td" id={String(index + 1)} onClick={handleDeleteRow} sx={styles}>
-      <span>{index + 1}</span>
-      <IconButton
-        tooltipProps={{ position: TooltipPositions.right }}
-        tooltip="remove"
-        intent="ghost"
-        icon={IconName.bin}
-      />
-    </Box>
-  );
-};
+const RowLeftContent: FC<RowLeftContentProps> = ({ index, onDelete }) => (
+  <Box as="td" id={String(index + 1)} onClick={onDelete} sx={styles}>
+    <span>{index + 1}</span>
+    <IconButton
+      tooltipProps={{ position: TooltipPositions.right }}
+      tooltip="remove"
+      intent="ghost"
+      icon={IconName.bin}
+    />
+  </Box>
+);
 
 export default memo(RowLeftContent);

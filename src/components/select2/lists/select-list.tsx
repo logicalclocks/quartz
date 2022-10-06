@@ -29,7 +29,8 @@ const SelectList: FC<SelectListProps> = ({
   });
 
   return (
-    <React.Fragment>
+    // eslint-disable-next-line react/jsx-no-useless-fragment
+    <>
       {options?.map((option, index) => (
         <ListItem
           key={option.key}
@@ -48,7 +49,7 @@ const SelectList: FC<SelectListProps> = ({
           )}
         </ListItem>
       ))}
-    </React.Fragment>
+    </>
   );
 };
 

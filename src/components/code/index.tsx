@@ -58,6 +58,7 @@ const Code: FC<CodeProps> = ({
          * if we need deep merging we may use lodash merge function instead
          */
         popupProps={{ ...defaultPopupProps, ...popupProps }}
+        // eslint-disable-next-line react/no-unstable-nested-components
         NormalComponent={() => (
           <CodeSnippet
             content={content}
@@ -72,6 +73,7 @@ const Code: FC<CodeProps> = ({
             {...props}
           />
         )}
+        // eslint-disable-next-line react/no-unstable-nested-components
         BriefComponent={() => (
           <CodeSnippet
             content={content}

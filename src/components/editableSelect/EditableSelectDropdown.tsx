@@ -5,9 +5,9 @@ import ListItem from '../list/item';
 
 import Labeling from '../typography/labeling';
 import List from '../list/container';
-import useArrowsSelect from '../select/useArrowsSelect';
 import { listStyles, messageStyles } from './editableSelect.styles';
 import { EditableSelectTypes } from './types';
+import useArrowsSelect from '../select2/useArrowsSelect';
 
 export interface EditableSelectDropdownProps {
   value: string[];
@@ -40,7 +40,7 @@ const EditableSelectDropdown: FC<EditableSelectDropdownProps> = ({
     (option: string) => () => {
       if (option) onChange([option]);
     },
-    [value, onChange],
+    [onChange],
   );
 
   const fullOptions = useMemo(() => {
@@ -48,13 +48,13 @@ const EditableSelectDropdown: FC<EditableSelectDropdownProps> = ({
     return search === '' || options.includes(search) || value.includes(search)
       ? options
       : [...options, search];
-  }, [search, options]);
+  }, [type, options, search, value]);
 
   const message = useMemo(() => {
     if (isMulti && value.includes(search)) return 'value already selected';
     if (fullOptions.length === 0) return 'no options available';
     return null;
-  }, [value, search, fullOptions]);
+  }, [isMulti, value, search, fullOptions.length]);
 
   const { activeIndex } = useArrowsSelect(fullOptions, (val: string) => {
     handleClick(val)();

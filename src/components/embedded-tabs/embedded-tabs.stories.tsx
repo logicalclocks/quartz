@@ -7,7 +7,6 @@ import EmbeddedTabs, {
   ControlledEmbeddedTabsProps,
 } from '.';
 import { Button } from '../button';
-import Subtitle from '../typography/subtitle';
 
 export default {
   title: 'Quartz/EmbeddedTabs',
@@ -32,6 +31,7 @@ const tabs = [
 ];
 
 export const Uncontrolled: Story<EmbeddedTabsProps> = (props) => {
+  // eslint-disable-next-line react/destructuring-assignment
   const [activeTab, setActiveTab] = useState(props.initialTab ?? 0);
 
   return (

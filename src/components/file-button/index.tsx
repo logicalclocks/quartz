@@ -7,7 +7,6 @@ import { fileButton, inputBox, inputButton } from './file-button.styles';
 export interface QuartzFileButtonProps extends Omit<ButtonProps, 'css'> {
   children: React.ReactNode | string;
   modeNFiles?: boolean;
-  intent?: 'secondary';
   href?: string;
   name?: string;
   currentRef?: any;
@@ -18,7 +17,6 @@ export interface QuartzFileButtonProps extends Omit<ButtonProps, 'css'> {
 }
 
 const UploadButton: FC<QuartzFileButtonProps> = ({
-  intent = 'secondary',
   children,
   href,
   modeNFiles,

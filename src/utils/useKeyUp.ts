@@ -7,7 +7,7 @@ const useKeyUp = (handler: () => void, key = 'Escape') => {
         handler();
       }
     },
-    [handler],
+    [handler, key],
   );
 
   useEffect(() => {

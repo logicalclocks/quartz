@@ -11,7 +11,6 @@ import Input from '../input';
 import Value from '../typography/value';
 import useKeyUp from '../../utils/useKeyUp';
 import Tooltip from '../tooltip';
-import { CONTENT_ID } from '../sticky-portal/StickyPortal';
 // List types
 import SelectList from './lists/select-list';
 import SelectListMulti from './lists/select-list-multi';
@@ -22,9 +21,8 @@ import { SelectFormat, SelectOpt } from './types';
 import { listStyles, bottomActionStyles } from './select.styles';
 // Hooks
 import useDropdown from '../../utils/useDropdown';
-import useOnClickOutside from '../../utils/useClickOutside';
-import DropdownWrapper from './dropdown';
 import { GetIcon, IconName } from '../icon';
+import DropdownWrapper from '../dropdown-wrapper/DropdownWrapper';
 
 export interface SelectProps
   extends Omit<LabelProps, 'onChange' | 'children' | 'value'> {
@@ -99,11 +97,6 @@ const Select: FC<SelectProps> = ({
 }: SelectProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [isOpen, handleToggle, handleClickOutside] = useDropdown(false);
-  useOnClickOutside<HTMLDivElement>(
-    handleClickOutside,
-    [containerRef],
-    [CONTENT_ID],
-  );
 
   const [search, setSearch] = useState('');
 
@@ -222,9 +215,9 @@ const Select: FC<SelectProps> = ({
       >
         {isOpen && (
           <DropdownWrapper
-            refEl={containerRef?.current}
+            containerRef={containerRef}
             appendToBody={appendToBody}
-            handleClickOutside={handleClickOutside}
+            onClickOutside={handleClickOutside}
           >
             <List
               sx={listStyles(dropdrownPosition(), appendToBody)}

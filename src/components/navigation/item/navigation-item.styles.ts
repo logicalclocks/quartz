@@ -20,7 +20,7 @@ export default {
     borderTop: '1px solid',
     borderBottom: '1px solid',
     borderTopColor: 'grayShade2',
-    borderBottomColor: 'grayShade2'
+    borderBottomColor: 'grayShade2',
   },
 
   // Icon
