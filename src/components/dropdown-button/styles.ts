@@ -4,6 +4,7 @@ export default {
     cursor: 'pointer',
     marginTop: '-2px',
     width: 'fit-content',
+    background: 'white',
   },
   dropdown: (height: number | undefined, alignLeft: boolean) => ({
     position: 'absolute',
