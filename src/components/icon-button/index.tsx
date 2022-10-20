@@ -1,15 +1,18 @@
 import React, { FC } from 'react';
-import { Button as RebassButton, ButtonProps } from 'rebass';
 import { Link } from 'react-router-dom';
+import { ButtonProps } from 'rebass';
 
 // Components
 import Tooltip, { TooltipProps } from '../tooltip';
 
-import { getIcon, IconName } from '../icon/list';
-import styles from './icon-button.styles';
+import { Button } from '../button';
+import GetIcon from '../icon/GetIcon';
+import { IconName } from '../icon/list';
+
+import * as S from './icon-button.styles';
 
 export interface IconButtonProps extends Omit<ButtonProps, 'css'> {
-  intent?: 'primary' | 'ghost' | 'ghost-white';
+  intent?: 'primary' | 'ghost' | 'ghost-white'; // TODO remove this intent, not used
   tooltip?: string;
   icon: IconName;
   disabled?: boolean;
@@ -19,8 +22,8 @@ export interface IconButtonProps extends Omit<ButtonProps, 'css'> {
 }
 
 const IconButton: FC<IconButtonProps> = ({
+  intent: _, // TODO remove this
   tooltip,
-  intent = 'primary',
   icon,
   disabled = false,
   tooltipProps,
@@ -34,26 +37,26 @@ const IconButton: FC<IconButtonProps> = ({
   if (tooltip) {
     component = (
       <Tooltip {...tooltipProps} disabled={disabled} mainText={tooltip}>
-        <RebassButton
-          sx={{ ...styles(disabled), ...sx }}
-          variant={`icon-${intent}`}
+        <Button
+          sx={{ ...S.wrapper, ...sx }}
+          variant="secondary"
           disabled={disabled}
           {...props}
         >
-          {getIcon(icon, 'black')}
-        </RebassButton>
+          <GetIcon disabled={disabled} icon={icon} size="sm" />
+        </Button>
       </Tooltip>
     );
   } else {
     component = (
-      <RebassButton
-        sx={styles(disabled)}
-        variant={`icon-${intent}`}
+      <Button
+        sx={{ ...S.wrapper, ...sx }}
+        variant="secondary"
         disabled={disabled}
         {...props}
       >
-        {getIcon(icon, 'black')}
-      </RebassButton>
+        <GetIcon disabled={disabled} icon={icon} size="sm" />
+      </Button>
     );
   }
 

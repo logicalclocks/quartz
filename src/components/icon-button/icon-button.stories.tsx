@@ -1,6 +1,6 @@
-import React from 'react';
 import { action } from '@storybook/addon-actions';
-import { Story, Meta } from '@storybook/react/types-6-0';
+import { Meta, Story } from '@storybook/react/types-6-0';
+import React from 'react';
 
 import IconButton, { IconButtonProps } from '.';
 import { IconName } from '../icon/list';
@@ -15,7 +15,7 @@ const Template: Story<IconButtonProps> = (props) => <IconButton {...props} />;
 export const IconButtons = Template.bind({});
 
 IconButtons.args = {
-  icon: IconName.eye,
+  icon: IconName.more,
   intent: 'primary',
   tooltip: 'Tooltip',
   onClick: action('onClick'),
@@ -56,12 +56,13 @@ IconButtons.argTypes = {
     },
   },
   icon: {
-    control: {
-      disable: true,
-    },
-    type: {
-      required: true,
-      summary: 'Use an icon from IconName. E.g. IconName.glass',
+    control: { type: 'select' },
+    options: ['more', 'card', 'birth', 'lock'],
+    mapping: {
+      download: IconName.more,
+      card: IconName.card,
+      birth: IconName.birth,
+      lock: IconName.lock,
     },
   },
 };
