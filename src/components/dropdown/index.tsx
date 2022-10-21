@@ -55,7 +55,7 @@ const Dropdown: FC<DropdownProps> = ({
               disabled={disabled}
             >
               <Flex width="100%">
-                <Flex flexGrow={1}>
+                <Flex flexGrow={1} color="black">
                   {icon && (
                     <GetIcon
                       color={disabled ? 'gray' : 'black'}

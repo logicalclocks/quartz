@@ -25,6 +25,8 @@ const GetIcon: FC<GetIconProps> = ({
     <Flex
       {...props}
       sx={{
+        minWidth: iconSize,
+        height: 'auto',
         svg: {
           width: iconSize,
           height: iconSize,

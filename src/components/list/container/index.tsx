@@ -17,6 +17,7 @@ const List = forwardRef<HTMLUListElement, ListProps>(
       {...props}
       tx="variants.list"
       variant="container"
+      color="black"
     >
       {children}
     </Box>

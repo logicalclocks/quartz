@@ -3,8 +3,8 @@ export const withoutBorder = { borderBottomColor: 'transparent' };
 export default (isActive: boolean, disablde?: boolean) => ({
   height: '35px',
 
-  bg: isActive ? 'grayShade3' : 'initial',
-  color: disablde ? 'gray' : 'initial',
+  bg: isActive ? 'grayShade3' : 'inherit',
+  color: disablde ? 'gray' : 'inherit',
 
   display: 'flex',
   alignItems: 'center',

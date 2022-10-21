@@ -175,12 +175,12 @@ const defaultTheme: ITheme = {
 };
 
 const darkThemeColors: ITheme['colors'] = {
-  white: '#303030',
+  white: '#181a1b',
 
   gray: '#A6A6A6',
   grayShade1: '#707070',
   grayShade2: '#4D4D4D',
-  grayShade3: '#222222',
+  grayShade3: '#1e2021',
 
   black: '#F0F0F0',
 
@@ -205,16 +205,16 @@ const darkThemeColors: ITheme['colors'] = {
 };
 
 const darkThemeShadows: ITheme['shadows'] = {
-  primary: '0px 5px 15px rgba(61, 245, 187, 0.2)',
-  secondary: '0px 5px 15px rgba(230, 230, 230, 0.2)',
-  explorer: '0px -1px 1px #A7A7A7',
-  alert: '0px 5px 15px rgba(255, 102, 102, 0.25)',
-  disabled: '0px 4px 15px rgba(255, 255, 255, 0.25)',
-  cardInsetShadow: 'inset 0px -20px 30px -25px rgba(255, 255, 255, 0.15)',
-  navigation: '1px 0px 0px #4D4D4D, 2px 0px 0px white',
-  list: '0px 4px 15px rgba(255, 255, 255, 0.25)',
-  popup: '0px 4px 4px rgba(255, 255, 255, 0.25)',
-  notification: '0px 0px 15px rgba(255, 255, 255, 0.25)',
+  primary: '0 0 1px 2px rgba(160, 160, 160, 0.1)',
+  secondary: '0 0 1px 2px rgba(160, 160, 160, 0.1)',
+  explorer: '0 0 1px 2px rgba(160, 160, 160, 0.1)',
+  alert: '0 0 1px 2px rgba(160, 160, 160, 0.1)',
+  disabled: '0 0 1px 2px rgba(160, 160, 160, 0.1)',
+  cardInsetShadow: '0 0 1px 2px rgba(160, 160, 160, 0.1)',
+  navigation: '0 0 1px 2px rgba(160, 160, 160, 0.1)',
+  list: '0 0 1px 2px rgba(160, 160, 160, 0.1)',
+  popup: '0 0 1px 2px rgba(160, 160, 160, 0.1)',
+  notification: '0 0 1px 2px rgba(160, 160, 160, 0.1)',
 };
 
 export const useTheme = () => useEmotionTheme<ITheme>();
