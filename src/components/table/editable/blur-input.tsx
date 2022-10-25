@@ -6,6 +6,14 @@ interface TInputProps extends Omit<InputProps, 'onChange'> {
   defaultValue: string;
 }
 
+/**
+ * @deprecated this component does not serve much purpose, its scope is limited
+ * also, it usese `onMouseLeave` instead of `onBlur` due to `blur` event blocking outside clicks
+ * references:
+ * https://github.com/jaredpalmer/formik/issues/786
+ * https://github.com/facebook/react/issues/2291
+ * https://erikmartinjordan.com/onblur-prevents-onclick-react
+ */
 const BlurInput: FC<TInputProps> = ({ defaultValue, onChange, ...props }) => {
   const [value, setValue] = useState(defaultValue);
 
@@ -16,16 +24,19 @@ const BlurInput: FC<TInputProps> = ({ defaultValue, onChange, ...props }) => {
     [],
   );
 
-  const handleBlur = useCallback(() => {
-    if (value !== defaultValue) {
-      onChange(value);
-    }
+  const handleBlur = useCallback(
+    () => {
+      if (value !== defaultValue) {
+        onChange(value);
+      }
+    },
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [value]);
+    [value],
+  );
 
   return (
     <Input
-      onBlur={handleBlur}
+      onMouseLeave={handleBlur}
       onChange={handleChange}
       value={value}
       {...props}
