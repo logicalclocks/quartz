@@ -6,6 +6,8 @@ import * as R from 'ramda';
 import useKeyUp from '../../utils/useKeyUp';
 // Styles
 import getStyles, { backdropStyles } from './popup.styles';
+import { IconName } from '../icon';
+import IconButton from '../icon-button';
 
 export interface PopupProps extends Omit<BoxProps, 'css'> {
   children: React.ReactNode;
@@ -22,6 +24,7 @@ export interface PopupProps extends Omit<BoxProps, 'css'> {
   disabledMainButton?: boolean;
   footer?: React.ReactNode;
   disabledSecondaryButton?: boolean;
+  hasCloseButton?: boolean;
 }
 
 const Popup: FC<PopupProps> = ({
@@ -37,6 +40,7 @@ const Popup: FC<PopupProps> = ({
   closeOnBackdropClick = true,
   footer,
   onClose = () => {},
+  hasCloseButton = false,
   sx,
   ...props
 }: PopupProps) => {
@@ -84,6 +88,14 @@ const Popup: FC<PopupProps> = ({
         overflowX="visible"
         {...props}
       >
+        {hasCloseButton && (
+          <IconButton
+            icon={IconName.cross}
+            sx={{ position: 'absolute', right: 10, top: 10 }}
+            size="lg"
+            onClick={onClose}
+          />
+        )}
         {children}
         {footer && (
           <Box width="100%" backgroundColor="grayShade3">
