@@ -43,7 +43,9 @@ const Template: Story<PopupProps> = (props) => {
   return (
     <div>
       <Button onClick={handleToggle}>Open Drawer</Button>
-      <Popup isOpen={isOpen} onClose={handleToggle} {...props} />
+      <Popup isOpen={isOpen} onClose={handleToggle} {...props}>
+        <div>this is children</div>
+      </Popup>
     </div>
   );
 };
@@ -297,6 +299,11 @@ Default.argTypes = {
 
     type: {
       summary: 'Is show backdrop',
+    },
+  },
+  hasCloseButton: {
+    control: {
+      type: 'boolean',
     },
   },
 };
