@@ -25,6 +25,7 @@ export interface PopupProps extends Omit<BoxProps, 'css'> {
   footer?: React.ReactNode;
   disabledSecondaryButton?: boolean;
   hasCloseButton?: boolean;
+  backdropSx?: BoxProps['sx'];
 }
 
 const Popup: FC<PopupProps> = ({
@@ -41,6 +42,7 @@ const Popup: FC<PopupProps> = ({
   footer,
   onClose = () => {},
   hasCloseButton = false,
+  backdropSx = {},
   sx,
   ...props
 }: PopupProps) => {
@@ -104,7 +106,12 @@ const Popup: FC<PopupProps> = ({
         )}
       </Box>
       {/* Backdrop */}
-      {hasBackdrop && <Box sx={backdropStyles} onClick={handleBackdropClick} />}
+      {hasBackdrop && (
+        <Box
+          sx={R.mergeDeepRight(backdropStyles as object, backdropSx as object)}
+          onClick={handleBackdropClick}
+        />
+      )}
     </React.Fragment>
   );
 };
