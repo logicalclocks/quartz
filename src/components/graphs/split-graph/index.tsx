@@ -96,7 +96,7 @@ const SplitGraph: FC<SplitGraphProps> = ({
               ),
         [],
       ),
-    [gapIndexes, values],
+    [gapIndexes, values, graphColors],
   );
 
   return (

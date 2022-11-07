@@ -10,7 +10,7 @@ export const progressBarStyles = (
   width: `${percent}%`,
   marginRight: '2px',
   border: isSelected ? '1px solid' : null,
-  borderColor: borderColor,
+  borderColor,
 });
 
 export const circleStyles = (
@@ -23,7 +23,7 @@ export const circleStyles = (
   height: '10px',
   borderRadius: '50%',
   border: isSelected ? '1px solid' : null,
-  borderColor: borderColor,
+  borderColor,
 });
 
 export const customComponentWrapperStyles = {
