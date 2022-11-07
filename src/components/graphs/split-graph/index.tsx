@@ -12,7 +12,7 @@ import Labeling from '../../typography/labeling';
 import { Badge } from '../../badge';
 import { FlexProps } from '../../flex';
 
-export const graphColors = [
+export const defaultGraphColors = [
   '#FFADAD',
   '#A0C4FF',
   '#CAFFBF',
@@ -22,6 +22,8 @@ export const graphColors = [
   '#9BF6FF',
   '#FDFFB6',
 ];
+
+export const defaultBorderColor = 'black';
 
 export interface SplitGraphValue {
   label?: string;
@@ -34,6 +36,8 @@ export interface SplitGraphValue {
   }) => JSX.Element;
 }
 
+type LabelDirection = 'column' | 'row';
+type AlignGraphAndLabel = 'center' | undefined;
 export interface SplitGraphProps extends Omit<FlexProps, 'children'> {
   values: SplitGraphValue[];
   /** wether to show percentage or not */
@@ -42,6 +46,11 @@ export interface SplitGraphProps extends Omit<FlexProps, 'children'> {
   hideTrainSplitOnhover?: boolean;
   /** to render aditional component as actions */
   renderActions?: () => JSX.Element;
+  graphColors?: string[];
+  borderColors?: string[];
+  labelDirection?: LabelDirection;
+  widthLabelFlex?: string;
+  alignGraphAndLabel?: AlignGraphAndLabel;
 }
 
 const SplitGraph: FC<SplitGraphProps> = ({
@@ -50,6 +59,11 @@ const SplitGraph: FC<SplitGraphProps> = ({
   labelProps,
   hideTrainSplitOnhover,
   renderActions,
+  graphColors = defaultGraphColors,
+  borderColors = [] as string[],
+  labelDirection = 'column',
+  widthLabelFlex = '100%',
+  alignGraphAndLabel = undefined,
   ...props
 }: SplitGraphProps) => {
   const [selectedIndex, setSelected] = useState<number | null>(null);
@@ -86,7 +100,7 @@ const SplitGraph: FC<SplitGraphProps> = ({
   );
 
   return (
-    <Flex {...props} flexDirection="column">
+    <Flex {...props} flexDirection="column" alignItems={alignGraphAndLabel}>
       <Flex width="100%" height="10px">
         {values.map((value, ind) => (
           <Box
@@ -98,12 +112,13 @@ const SplitGraph: FC<SplitGraphProps> = ({
               ind === selectedIndex ||
                 (gapIndexes.includes(ind) &&
                   gapIndexes.includes(selectedIndex ?? -1)),
+              borderColors.length ? borderColors[ind] : defaultBorderColor,
             )}
           />
         ))}
       </Flex>
       {renderActions?.()}
-      <Flex mt="25px" flexDirection="column" sx={{ gap: '7px' }}>
+      <Flex mt="25px" flexDirection={labelDirection} sx={{ gap: '7px' }}>
         {values.map((value, ind) =>
           value.isGap && value.renderCustomComponent ? (
             <Flex
@@ -118,7 +133,7 @@ const SplitGraph: FC<SplitGraphProps> = ({
             </Flex>
           ) : (
             <Flex
-              width="100%"
+              width={widthLabelFlex}
               alignItems="center"
               onMouseEnter={handleSelect(ind)}
               onMouseLeave={() => setSelected(null)}
@@ -127,7 +142,13 @@ const SplitGraph: FC<SplitGraphProps> = ({
                 mr="10px"
                 mt="3px"
                 sx={{
-                  ...circleStyles(colors[ind], ind === selectedIndex),
+                  ...circleStyles(
+                    colors[ind],
+                    ind === selectedIndex,
+                    borderColors.length
+                      ? borderColors[ind]
+                      : defaultBorderColor,
+                  ),
                   ...{ flexShrink: 0 },
                 }}
               />

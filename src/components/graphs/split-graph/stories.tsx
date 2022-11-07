@@ -1,7 +1,7 @@
 import React from 'react';
 import { Meta, Story } from '@storybook/react/types-6-0';
 import { Box, Flex } from 'rebass';
-import SplitGraph, { SplitGraphProps } from './index';
+import SplitGraph, { defaultGraphColors, SplitGraphProps } from './index';
 
 export default {
   title: 'Quartz/SplitGraph',
@@ -17,16 +17,22 @@ const Template: Story<SplitGraphProps> = (props) => (
 export const Default = Template.bind({});
 
 Default.args = {
-  withoutPercentage: true,
+  withoutPercentage: false,
   labelProps: { width: '50px' },
+  // borderColors: ['#21B182', '#EB5757', 'white'],
+  // graphColors: ['#E6F2EE', '#F8DEDE', '#EB5757'],
+  // labelDirection: 'row',
+  // alignGraphAndLabel: 'center',
+  // widthLabelFlex: '80%',
+  graphColors: defaultGraphColors,
   values: [
     { label: 'test', value: 230 },
     { label: 'atdsdsa', value: 830 },
-    { isGap: true, value: 320 },
     {
       label: 'lku56ytr',
       value: 1530,
     },
+    { isGap: true, value: 320 },
     {
       label: 'test',
       value: 103,
