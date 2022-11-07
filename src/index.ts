@@ -14,7 +14,9 @@ import Callout, { CalloutTypes } from './components/callout';
 import CalloutWithButton from './components/calloutWithButton';
 import CheckboxGroup from './components/checkbox/checkbox-group';
 import { DropdownButton } from './components/dropdown-button';
-import SplitGraph, { graphColors } from './components/graphs/split-graph';
+import SplitGraph, {
+  defaultGraphColors,
+} from './components/graphs/split-graph';
 import Radio from './components/radio';
 import RadioGroup from './components/radio/radio-group';
 import Dropdown from './components/dropdown';
@@ -234,7 +236,7 @@ export {
   useOnClickOutside,
   Symbol,
   SymbolMode,
-  graphColors,
+  defaultGraphColors,
   theme,
   useTheme,
   // Constants
