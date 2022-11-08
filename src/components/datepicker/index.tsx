@@ -25,7 +25,7 @@ const DatePicker: FC<DatePickerProps> = ({
   sx,
   ...props
 }) => {
-  const [isOpen, _, setOpen] = usePopup();
+  const [isOpen,, setOpen] = usePopup();
   return (
     <Flex flexDirection="column" sx={{ ...styles, ...sx }}>
       <ReactDatePicker
