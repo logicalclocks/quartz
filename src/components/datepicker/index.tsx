@@ -1,4 +1,4 @@
-import React, { FC, forwardRef, memo } from 'react';
+import React, { FC, forwardRef, memo, useState } from 'react';
 import ReactDatePicker, { ReactDatePickerProps } from 'react-datepicker';
 import { Flex, SxStyleProp } from 'rebass';
 
@@ -9,7 +9,6 @@ import { GetIcon, IconName } from '../icon';
 import Labeling from '../typography/labeling';
 import Value from '../typography/value';
 import styles from './datepicker.styles';
-import usePopup from '../../utils/usePopup';
 
 export interface DatePickerProps extends ReactDatePickerProps {
   selectProps: Pick<SelectProps, 'variant' | 'noDataMessage' | 'value'>;
@@ -25,7 +24,7 @@ const DatePicker: FC<DatePickerProps> = ({
   sx,
   ...props
 }) => {
-  const [isOpen,, setOpen] = usePopup();
+  const [isOpen, setOpen] = useState(false);
   return (
     <Flex flexDirection="column" sx={{ ...styles, ...sx }}>
       <ReactDatePicker
