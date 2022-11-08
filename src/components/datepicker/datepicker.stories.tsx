@@ -15,6 +15,7 @@ export default {
 
 const Template: Story<DatePickerProps> = ({ selectProps, ...restProps }) => {
   const [startDate, setStartDate] = useState(new Date());
+  const [startDate2, setStartDate2] = useState(new Date());
 
   return (
     <Flex height="300px">
@@ -22,11 +23,22 @@ const Template: Story<DatePickerProps> = ({ selectProps, ...restProps }) => {
         {...restProps}
         selectProps={{
           ...selectProps,
-          value: [new Date(startDate).toISOString()],
           noDataMessage: 'from',
         }}
         selected={startDate}
         onChange={(date) => setStartDate(date as Date)}
+        excludeDateIntervals={[
+          { start: subDays(5, new Date()), end: addDays(5, new Date()) },
+        ]}
+      />
+      <DatePicker
+        {...restProps}
+        selectProps={{
+          ...selectProps,
+          noDataMessage: 'to',
+        }}
+        selected={startDate2}
+        onChange={(date) => setStartDate2(date as Date)}
         excludeDateIntervals={[
           { start: subDays(5, new Date()), end: addDays(5, new Date()) },
         ]}
