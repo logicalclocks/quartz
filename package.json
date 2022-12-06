@@ -14,7 +14,7 @@
   },
   "source": "src/index.ts",
   "engines": {
-    "node": ">=14.0.0"
+    "node": ">=16.0.0"
   },
   "scripts": {
     "build": "microbundle --compress --format modern,cjs --jsx React.createElement --jsxFragment React.Fragment",
