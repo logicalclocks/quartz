@@ -1,10 +1,14 @@
 import React, { FC, forwardRef } from 'react';
 import { Flex as RebassFlex, FlexProps } from 'rebass';
 
-export interface Props extends Omit<FlexProps, 'css'> {}
+export interface Props extends Omit<FlexProps, 'css'> {
+  gap: string;
+}
 
-export const Flex: FC<Props> = forwardRef(({ children, ...rest }, ref) => (
-  <RebassFlex ref={ref} {...rest}>
-    {children}
-  </RebassFlex>
-));
+export const Flex: FC<Props> = forwardRef(
+  ({ children, gap, sx, ...rest }, ref) => (
+    <RebassFlex ref={ref} sx={{ ...sx, gap }} {...rest}>
+      {children}
+    </RebassFlex>
+  ),
+);
