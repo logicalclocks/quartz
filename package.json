@@ -7,7 +7,7 @@
   "license": "MIT",
   "repository": "logicalclocks/quartz",
   "main": "dist/index.js",
-  "module": "dist/index.modern.js",
+  "module": "dist/index.modern.mjs",
   "source": "src/index.ts",
   "engines": {
     "node": ">=14.0.0"
