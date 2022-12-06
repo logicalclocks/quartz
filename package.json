@@ -9,7 +9,7 @@
   "main": "dist/index.js",
   "module": "dist/index.modern.mjs",
   "exports": {
-    "require": "./dist/index.cjs",     
+    "require": "./dist/index.cjs",
     "default": "./dist/index.modern.js"
   },
   "source": "src/index.ts",
