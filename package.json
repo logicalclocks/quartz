@@ -7,10 +7,14 @@
   "license": "MIT",
   "repository": "logicalclocks/quartz",
   "main": "dist/index.js",
-  "module": "dist/index.modern.js",
+  "module": "dist/index.modern.mjs",
+  "exports": {
+    "require": "./dist/index.cjs",
+    "default": "./dist/index.modern.js"
+  },
   "source": "src/index.ts",
   "engines": {
-    "node": ">=14.0.0"
+    "node": ">=16.0.0"
   },
   "scripts": {
     "build": "microbundle --compress --format modern,cjs --jsx React.createElement --jsxFragment React.Fragment",
@@ -120,7 +124,7 @@
   "resolutions": {
     "npm/chalk": "^4.1.2"
   },
-  "packageManager": "yarn@3.1.1",
+  "packageManager": "yarn@3.3.0",
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
