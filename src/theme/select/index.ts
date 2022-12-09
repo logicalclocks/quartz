@@ -8,4 +8,4 @@ const variants = {
   white,
 };
 
-export default variants;
+export default variants as any;
