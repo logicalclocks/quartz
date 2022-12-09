@@ -9,8 +9,9 @@
   "main": "dist/index.js",
   "module": "dist/index.modern.mjs",
   "exports": {
-    "require": "./dist/index.cjs",
-    "default": "./dist/index.modern.mjs"
+    "require": "./dist/index.js",
+    "types": "./dist/index.d.ts",
+    "default": "./dist/index.js"
   },
   "source": "src/index.ts",
   "engines": {
@@ -129,5 +130,8 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
+  },
+  "volta": {
+    "node": "16.18.1"
   }
 }
