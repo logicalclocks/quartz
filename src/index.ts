@@ -246,9 +246,19 @@ export {
 
 export { default as EmbeddedTabs } from './components/embedded-tabs';
 
-export type { ITheme, IThemeColors, IThemeIconSizes } from './theme/types';
+export type {
+  ITheme,
+  IThemeColors,
+  IThemeIconSizes,
+  Color,
+} from './theme/types';
 export type TooltipProps = import('./components/tooltip').TooltipProps;
 export type SliderProps = import('./components/slider').SliderProps;
+export type InputProps = import('./components/input').InputProps;
+export type PopupProps = import('./components/popup').PopupProps;
+export type DrawerProps = import('./components/popup/drawer').DrawerProps;
+export type SplitGraphValue =
+  import('./components/graphs/split-graph').SplitGraphValue;
 export type RangeSliderProps =
   import('./components/range-slider').RangeSliderProps;
 export type EditableSelectProps =
@@ -277,6 +287,7 @@ export type { FileExplorData } from './components/file-system-explorer/types';
 export type { GetIconProps } from './components/icon/GetIcon';
 export type { RadioProps } from './components/radio';
 export type { DropdownButtonProps } from './components/dropdown-button';
+export type { DropdownItem } from './components/dropdown/types';
 export type {
   RadioGroupProps,
   RadioGroupOption,
