@@ -42,42 +42,40 @@ const DatePicker: FC<DatePickerProps> = ({
 export default memo(DatePicker);
 
 const DateSelect = forwardRef(
-  ({ value, selectProps, isOpen, ...props }: any, ref: any) => {
-    return (
-      <Flex
-        ref={ref}
-        alignItems="center"
-        flexShrink={0}
-        {...props}
-        sx={{
-          height: '32px',
-          px: '5px',
-          borderWidth: '1px',
-          borderStyle: 'solid',
-          borderColor: isOpen ? 'grayShade1' : '',
-          ':hover': {
-            borderColor: 'grayShade1',
-          },
-        }}
-        variant={selectProps?.variant ?? 'white'}
-        tx="variants.select"
-      >
-        {selectProps && (
-          <Labeling gray mr="5px" minWidth="unset">
-            {selectProps.noDataMessage}
-          </Labeling>
-        )}
+  ({ value, selectProps, isOpen, ...props }: any, ref: any) => (
+    <Flex
+      ref={ref}
+      alignItems="center"
+      flexShrink={0}
+      {...props}
+      sx={{
+        height: '32px',
+        px: '5px',
+        borderWidth: '1px',
+        borderStyle: 'solid',
+        borderColor: isOpen ? 'grayShade1' : '',
+        ':hover': {
+          borderColor: 'grayShade1',
+        },
+      }}
+      variant={selectProps?.variant ?? 'white'}
+      tx="variants.select"
+    >
+      {selectProps && (
+        <Labeling gray mr="5px" minWidth="unset">
+          {selectProps.noDataMessage}
+        </Labeling>
+      )}
 
-        <Value
-          mr="5px"
-          sx={{ fontSize: 'text', fontWeight: 'text', fontFamily: 'text' }}
-          flexGrow={1}
-          flexShrink={0}
-        >
-          {selectProps?.value ?? value}
-        </Value>
-        <GetIcon flexShrink={0} icon={IconName.arrow_up_down} size="sm" />
-      </Flex>
-    );
-  },
+      <Value
+        mr="5px"
+        sx={{ fontSize: 'text', fontWeight: 'text', fontFamily: 'text' }}
+        flexGrow={1}
+        flexShrink={0}
+      >
+        {selectProps?.value ?? value}
+      </Value>
+      <GetIcon flexShrink={0} icon={IconName.arrow_up_down} size="sm" />
+    </Flex>
+  ),
 );

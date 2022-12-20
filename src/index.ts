@@ -252,34 +252,28 @@ export type {
   IThemeIconSizes,
   Color,
 } from './theme/types';
-export type TooltipProps = import('./components/tooltip').TooltipProps;
-export type SliderProps = import('./components/slider').SliderProps;
-export type InputProps = import('./components/input').InputProps;
-export type PopupProps = import('./components/popup').PopupProps;
-export type DrawerProps = import('./components/popup/drawer').DrawerProps;
-export type SplitGraphValue =
-  import('./components/graphs/split-graph').SplitGraphValue;
-export type RangeSliderProps =
-  import('./components/range-slider').RangeSliderProps;
-export type EditableSelectProps =
-  import('./components/editableSelect').EditableSelectProps;
-export type Select2Props = import('./components/select2').SelectProps;
-export type TableCell = import('./components/table/type').TableCell;
-export type HolyTableProps = import('./components/holy-table').HolyTableProps;
-export type TableHeader = import('./components/table/type').TableHeader;
-export type ColumnIdentifier =
-  import('./components/table/type').ColumnIdentifier;
-export type TreeNode = import('./components/navigation/types').TreeNode;
-export type TabItem = import('./components/form-tabs/index').TabItem;
-export type TableRowComponent =
-  import('./components/table/type').TableRowComponent;
-export type TableCellType = import('./components/table/type').TableCellType;
-export type SelectOpt = import('./components/select2/types').SelectOpt;
-export type CardProps = import('./components/card').CardProps;
-export type CompactButtonProps =
-  import('./components/compact-button').CompactButtonProps;
-export type PerformanceCardProps =
-  import('./components/performance-card').PerformanceCardProps;
+export type { TooltipProps } from './components/tooltip';
+export type { SliderProps } from './components/slider';
+export type { InputProps } from './components/input';
+export type { CodeInputProps } from './components/code-input';
+export type { PopupProps } from './components/popup';
+export type { DrawerProps } from './components/popup/drawer';
+export type { SplitGraphValue } from './components/graphs/split-graph';
+export type { RangeSliderProps } from './components/range-slider';
+export type { EditableSelectProps } from './components/editableSelect';
+export type { Select2Props } from './components/select2';
+export type { TableCell } from './components/table/type';
+export type { HolyTableProps } from './components/holy-table';
+export type { TableHeader } from './components/table/type';
+export type { ColumnIdentifier } from './components/table/type';
+export type { TreeNode } from './components/navigation/types';
+export type { TabItem } from './components/form-tabs/index';
+export type { TableRowComponent } from './components/table/type';
+export type { TableCellType } from './components/table/type';
+export type { SelectOpt } from './components/select2/types';
+export type { CardProps } from './components/card';
+export type { CompactButtonProps } from './components/compact-button';
+export type { PerformanceCardProps } from './components/performance-card';
 export type { ExpandViewerProps } from './components/expand-viewer';
 export type { CardHeaderProps } from './components/card-header';
 export type { FileSystemExplorerProps } from './components/file-system-explorer';

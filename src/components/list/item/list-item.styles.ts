@@ -1,6 +1,8 @@
+import { SystemStyleObject } from '@styled-system/css';
+
 export const withoutBorder = { borderBottomColor: 'transparent' };
 
-export default (isActive: boolean, disablde?: boolean) => ({
+export default (isActive: boolean, disablde?: boolean): SystemStyleObject => ({
   height: '35px',
 
   bg: isActive ? 'grayShade3' : 'inherit',

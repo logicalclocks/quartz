@@ -1,3 +1,4 @@
+import { SystemStyleObject } from '@styled-system/css';
 import { ITheme } from '../../theme/types';
 import { Intents } from '../intents';
 
@@ -6,7 +7,10 @@ const getIntentColor =
   ({ inputIntents }: ITheme) =>
     inputIntents[intent] ?? 'transparent';
 
-const getStyles = (intent: Intents, isTextArea: boolean) => ({
+const getStyles = (
+  intent: Intents,
+  isTextArea: boolean,
+): SystemStyleObject => ({
   width: '100%',
 
   borderWidth: '1px',

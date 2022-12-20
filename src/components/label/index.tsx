@@ -18,14 +18,15 @@ const Label: FC<LabelProps> = ({
   pointer = false,
   align = 'top',
   as = 'label',
+  sx = {},
   ...props
 }: LabelProps) => (
   <Flex
     flexDirection={align === 'top' ? 'column' : 'row'}
     as={as}
-    {...props}
     variant="label"
-    sx={{ ...styles, cursor: pointer ? 'pointer' : 'default' }}
+    sx={{ ...styles, cursor: pointer ? 'pointer' : 'default', ...sx }}
+    {...props}
   >
     {(text || action) && (
       <span>

@@ -24,7 +24,7 @@ import useDropdown from '../../utils/useDropdown';
 import { GetIcon, IconName } from '../icon';
 import DropdownWrapper from '../dropdown-wrapper/DropdownWrapper';
 
-export interface SelectProps
+export interface Select2Props
   extends Omit<LabelProps, 'onChange' | 'children' | 'value'> {
   // Value of the select. Needs to match one of the keys of the options.
   // Array if isMulti
@@ -66,7 +66,7 @@ export interface SelectProps
   info?: string;
 }
 
-const Select: FC<SelectProps> = ({
+const Select: FC<Select2Props> = ({
   label,
   value,
   options,
@@ -94,7 +94,7 @@ const Select: FC<SelectProps> = ({
   noMatchText = 'No result',
   searchPlaceholder = 'Find...',
   ...props
-}: SelectProps) => {
+}: Select2Props) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [isOpen, handleToggle, handleClickOutside] = useDropdown(false);
 

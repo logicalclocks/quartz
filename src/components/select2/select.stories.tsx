@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
 
 import { Box } from 'rebass';
-import Select, { SelectProps } from './index';
+import Select, { Select2Props } from './index';
 import { Button, Popup, RadioGroup, Value } from '../../index';
 import Labeling from '../typography/labeling';
 import { SelectOpt } from './types';
@@ -38,7 +38,7 @@ const options = [
   },
 ] as SelectOpt[];
 
-const Template: Story<SelectProps> = (props) => {
+const Template: Story<Select2Props> = (props) => {
   const [val, setValue] = useState<(string | number)[]>([]);
   const [customOptions, setOptions] = useState(options);
 

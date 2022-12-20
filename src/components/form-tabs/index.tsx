@@ -108,7 +108,7 @@ const FormTabs: FC<FormTabsProps> = ({
 
   const handleSubmit = useCallback(async () => {
     /*
-      When trying to submit the form whe check all the previous tabs to see.
+      When trying to submit the form we check all the previous tabs to see.
       If they haven't been checked we trigger the validation and update the state.
       If there's any wrong we return false;
      */

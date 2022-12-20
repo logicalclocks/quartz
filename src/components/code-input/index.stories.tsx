@@ -2,7 +2,7 @@ import { action } from '@storybook/addon-actions';
 import { Meta, Story } from '@storybook/react/types-6-0';
 import React from 'react';
 
-import CodeInput, { InputProps } from '.';
+import CodeInput, { CodeInputProps } from '.';
 
 export default {
   title: 'Quartz/CodeInput',
@@ -91,7 +91,7 @@ const argTypes = {
   },
 };
 
-const Template: Story<InputProps> = (props) => <CodeInput {...props} />;
+const Template: Story<CodeInputProps> = (props) => <CodeInput {...props} />;
 
 export const Default = Template.bind({});
 

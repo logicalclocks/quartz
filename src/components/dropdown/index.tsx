@@ -39,20 +39,20 @@ const Dropdown: FC<DropdownProps> = ({
           value,
           id,
           icon,
-          hasDivider,
           onClick,
           isLoading,
           disabled,
           tooltipProps,
+          ...restProps
         } = item;
 
         return (
           <Tooltip position={TooltipPositions.right} {...tooltipProps}>
             <ListItem
-              hasDivider={hasDivider}
               key={id || value}
               onClick={() => onClick(item)}
               disabled={disabled}
+              {...restProps}
             >
               <Flex width="100%">
                 <Flex flexGrow={1} color="black">

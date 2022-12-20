@@ -14,9 +14,15 @@ export interface InputInfoProps extends Omit<TextProps, 'css'> {
 const InputInfo: FC<InputInfoProps> = ({
   intent = 'error',
   children,
+  sx = {},
   ...props
 }: InputInfoProps) => (
-  <Text as="span" variant={`inputInfo.${intent}`} sx={styles} {...props}>
+  <Text
+    as="span"
+    variant={`inputInfo.${intent}`}
+    sx={{ ...styles, ...sx }}
+    {...props}
+  >
     {children}
   </Text>
 );

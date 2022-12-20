@@ -18,8 +18,10 @@ import Tooltip from '../tooltip';
 import { Intents } from '../intents';
 import InputInfo from '../input-info';
 import { GetIcon, IconName } from '../icon';
+import { BoxProps } from '../box';
 
-export interface InputProps {
+export interface CodeInputProps
+  extends Omit<BoxProps, 'children' | 'onChange'> {
   label?: string;
   value: string;
   // Use javascript for displaying JSON
@@ -36,7 +38,7 @@ export interface InputProps {
   intent?: Intents;
 }
 
-const CodeInput: FC<InputProps> = forwardRef(
+const CodeInput: FC<CodeInputProps> = forwardRef(
   ({
     label = '',
     value,
@@ -51,7 +53,9 @@ const CodeInput: FC<InputProps> = forwardRef(
     readOnly = false,
     info,
     intent = 'default',
-  }: InputProps) => {
+    sx = {},
+    ...props
+  }: CodeInputProps) => {
     const actions = (labelAction || tooltipInfo || optional) && (
       <Flex>
         {labelAction}
@@ -69,7 +73,13 @@ const CodeInput: FC<InputProps> = forwardRef(
     );
 
     return (
-      <Box width={width} height={height} tx="inputs" sx={getStyles()}>
+      <Box
+        width={width}
+        height={height}
+        tx="inputs"
+        sx={{ ...getStyles(), ...sx }}
+        {...props}
+      >
         <Label
           action={actions}
           text={label}
@@ -81,10 +91,10 @@ const CodeInput: FC<InputProps> = forwardRef(
           <Controlled
             value={value}
             options={{
-              mode:
-                mode === 'javascript'
-                  ? { name: mode, json: true }
-                  : { name: mode },
+              mode: {
+                name: mode,
+                ...(mode === 'javascript' ? { json: true } : {}),
+              },
               theme: 'darcula',
               lineNumbers: true,
               readOnly,

@@ -80,7 +80,7 @@ const Popup: FC<PopupProps> = ({
   }
 
   return (
-    <React.Fragment>
+    <>
       <Box
         minWidth="417px"
         minHeight="141px"
@@ -112,7 +112,7 @@ const Popup: FC<PopupProps> = ({
           onClick={handleBackdropClick}
         />
       )}
-    </React.Fragment>
+    </>
   );
 };
 
