@@ -24,6 +24,7 @@ const ListItem: FC<ListItemProps> = ({
   isRightAlignment,
   disabled,
   onClick,
+  sx = {},
   ...props
 }: ListItemProps) => {
   const [actionTitle, actionCallback] = action || [];
@@ -35,8 +36,8 @@ const ListItem: FC<ListItemProps> = ({
       tx="variants.list.item"
       variant={variant}
       onClick={disabled ? undefined : onClick}
+      sx={{ ...styles(isActive, disabled), ...sx }}
       {...props}
-      sx={styles(isActive, disabled)}
       css={!hasDivider ? withoutBorder : undefined}
     >
       {children}

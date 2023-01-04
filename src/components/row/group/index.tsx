@@ -5,6 +5,8 @@ import styles from './row-group.styles';
 import { Mode } from '../container/types';
 import { TableItemPosition } from '../item/types';
 
+const getPosition = (mc: number, key: number): TableItemPosition =>
+  key <= mc ? TableItemPosition.left : TableItemPosition.right;
 export interface RowGroupProps {
   mode?: Mode;
   components: ComponentType<any>[];
@@ -23,10 +25,6 @@ const RowGroup: FC<RowGroupProps> = ({
   index,
   ...props
 }: RowGroupProps) => {
-  function getPosition(mc: number, key: number): TableItemPosition {
-    return key <= mc ? TableItemPosition.left : TableItemPosition.right;
-  }
-
   const keys = useMemo(
     () => Object.keys(Array.from({ length: components.length })),
     [components],

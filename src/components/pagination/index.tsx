@@ -75,7 +75,7 @@ const Pagination: FC<PaginationProps> = ({
       {...props}
       tx="pagination"
       variant={disabled ? 'disabled' : variant}
-      sx={styles}
+      sx={{ ...styles, ...props.sx }}
     >
       <IconButton
         icon={IconName.arrow_left}

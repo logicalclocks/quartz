@@ -50,6 +50,7 @@ const Input: FC<InputProps> = forwardRef(
       rows = 3,
       tooltipInfo,
       optional,
+      sx,
       ...props
     }: InputProps,
     ref,
@@ -90,8 +91,7 @@ const Input: FC<InputProps> = forwardRef(
             minWidth={width}
             pl={icon && '34px'}
             pr={iconPaddingRight}
-            // @ts-ignore
-            sx={getStyles(intent, isTextArea)}
+            sx={{ ...getStyles(intent, isTextArea), ...sx }}
             variant={readOnly ? 'disabled' : variant}
             placeholder={placeholder}
             {...props}

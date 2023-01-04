@@ -1,11 +1,12 @@
 import React, { FC, useCallback } from 'react';
 
 // Components
-import Label from '../label';
+import Label, { LabelProps } from '../label';
 import Checkbox from './index';
 import { TooltipProps } from '../tooltip';
 
-export interface CheckboxGroupProps {
+export interface CheckboxGroupProps
+  extends Omit<LabelProps, 'children' | 'onChange'> {
   label: string;
   value: string[];
   options: string[];
@@ -21,6 +22,7 @@ const CheckboxGroup: FC<CheckboxGroupProps> = ({
   onChange,
   disabledUnselect = false,
   tooltipProps,
+  ...props
 }: CheckboxGroupProps) => {
   const handleChange = useCallback(
     ({ target }) => {
@@ -34,7 +36,7 @@ const CheckboxGroup: FC<CheckboxGroupProps> = ({
   );
 
   return (
-    <Label text={label} as="span">
+    <Label text={label} as="span" {...props}>
       {options?.map((option, index) => (
         <Checkbox
           mt={index ? '11px' : '7px'}
@@ -45,6 +47,7 @@ const CheckboxGroup: FC<CheckboxGroupProps> = ({
           name={option}
           onChange={handleChange}
           disabled={disabledUnselect && !value.includes(option)}
+          data-test={`test-${option}`}
         />
       ))}
     </Label>

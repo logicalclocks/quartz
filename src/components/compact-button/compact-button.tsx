@@ -20,18 +20,15 @@ const flexDirections: Record<Indicator, CSSProperties['flexDirection']> = {
   vertical: 'column-reverse',
 };
 
-const getLinkProps = ({ href, newTab }: LinkRelatedProps): Partial<Props> => {
-  if (href) {
-    return {
-      href,
-      as: 'a',
-      rel: 'noreferrer',
-      target: newTab ? '_blank' : '_self',
-    };
-  }
-
-  return {};
-};
+const getLinkProps = ({ href, newTab }: LinkRelatedProps): Partial<Props> =>
+  href
+    ? {
+        href,
+        as: 'a',
+        rel: 'noreferrer',
+        target: newTab ? '_blank' : '_self',
+      }
+    : {};
 
 const CompactButton: FC<Props> = ({
   icon,
