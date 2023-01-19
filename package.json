@@ -95,7 +95,7 @@
     "semantic-release": "^19.0.2",
     "storybook-dark-mode": "^1.1.0",
     "typescript": "^4.6.2",
-    "vite": "^4.0.4",
+    "vite": "^3.2.5",
     "yalc": "^1.0.0-pre.53"
   },
   "files": [
