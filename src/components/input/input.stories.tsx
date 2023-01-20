@@ -138,6 +138,16 @@ const argTypes = {
         Should not really be called rightIcon(or exist), but it is a long story :)`,
     },
   },
+  suffix: {
+    control: {
+      type: 'text',
+    },
+    type: {
+      required: false,
+      summary:
+        'Suffix for the input, e.g. `MB` to show that the input shows megabytes',
+    },
+  },
 };
 
 const Template: Story<InputProps> = (props) => {

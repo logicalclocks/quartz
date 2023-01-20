@@ -19,6 +19,7 @@ export interface InputProps extends Omit<RebassInputProps, 'css'> {
   info?: string;
   icon?: IconName;
   rightIcon?: React.ReactElement;
+  suffix?: string;
   iconPaddingRight?: string;
   label?: string;
   placeholder?: string;
@@ -51,6 +52,7 @@ const Input: FC<InputProps> = forwardRef(
       tooltipInfo,
       optional,
       sx,
+      suffix,
       ...props
     }: InputProps,
     ref,
@@ -100,6 +102,13 @@ const Input: FC<InputProps> = forwardRef(
             <GetIcon icon={icon} color="gray" size="sm" sx={getIconStyle} />
           )}
           {rightIcon && rightIcon}
+          {suffix && (
+            <Box sx={{ position: 'absolute', right: '8px', top: '9px' }}>
+              <Labeling fontSize="9px" bold gray>
+                {suffix}
+              </Labeling>
+            </Box>
+          )}
         </Box>
         {info && <InputInfo intent={intent}>{info}</InputInfo>}
       </Label>
