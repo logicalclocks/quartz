@@ -124,6 +124,7 @@ import Spinner from './components/spinner';
 export * from './components/alternative-header';
 export * from './components/animated-progress';
 export * from './components/box';
+export * from './components/bar';
 export * from './components/button';
 export * from './components/flex';
 export * from './components/user';
