@@ -1,5 +1,4 @@
 import React, { useContext, useEffect } from 'react';
-import { Handle } from 'rc-slider';
 import TooltipWrapper from '../tooltip';
 import PickerContext from '../picker.context';
 
@@ -26,9 +25,9 @@ const PickerHandler = React.forwardRef((props: any) => {
       index={index}
       key={index}
     >
-      <Handle value={value} {...restProps}>
+      <div value={value} {...restProps}>
         <div className="icon" />
-      </Handle>
+      </div>
     </TooltipWrapper>
   );
 });

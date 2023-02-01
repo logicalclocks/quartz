@@ -1,6 +1,6 @@
 import React, { FC, useCallback, useContext, useMemo } from 'react';
 import { Box } from 'rebass';
-import { Range } from 'rc-slider';
+import RcSclider from 'rc-slider';
 import { useTheme } from '../../../theme/theme';
 import PickerHandler from '../handler';
 import styles from './multi-range-slider.styles';
@@ -64,7 +64,7 @@ const MultiRangeSlider: FC<MultiRangeSliderProps> = ({
 
   return (
     <Box sx={{ ...styles(boxProps) }} {...props}>
-      <Range
+      <RcSclider
         min={min}
         max={max}
         step={step}
@@ -76,17 +76,19 @@ const MultiRangeSlider: FC<MultiRangeSliderProps> = ({
           height: '2px',
           backgroundColor: theme.colors.grayShade2,
         }}
-        onChange={handleChange}
+        onChange={handleChange as (value: number | number[]) => void}
         // eslint-disable-next-line react/no-unstable-nested-components
-        handle={({ index, ...restProps }) => (
+        handleRender={({ props: { tabIndex: index, ...restProps } }: any) => (
           <PickerHandler
-            key={index}
             onMouseOver={() => handleMouseHover(index, true)}
             onMouseLeave={() => handleMouseHover(index, false)}
             {...restProps}
+            value={value}
+            index={index}
           />
         )}
         onAfterChange={() => setContext(PickerContextDefault)}
+        range
       />
     </Box>
   );
