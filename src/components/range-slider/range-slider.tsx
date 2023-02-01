@@ -1,5 +1,5 @@
 import React from 'react';
-import { Range as RCRangeSlider } from 'rc-slider';
+import RCRangeSlider from 'rc-slider';
 import { FlexProps, Flex } from 'rebass';
 import { useTheme } from '../../theme/theme';
 import Labeling from '../typography/labeling';
@@ -55,7 +55,7 @@ const RangeSlider = ({
       <RCRangeSlider
         disabled={disabled}
         value={value}
-        onChange={onChange}
+        onChange={onChange as (value: number | number[]) => void}
         min={range[0]}
         max={range[1]}
         step={step}
@@ -69,6 +69,7 @@ const RangeSlider = ({
         ]}
         // we have two handles, so we need two styles for that
         handleStyle={[handleStyle, handleStyle]}
+        range
       />
     </Flex>
   );

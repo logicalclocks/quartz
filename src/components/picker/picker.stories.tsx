@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
 import { action } from '@storybook/addon-actions';
 import { Box } from 'rebass';
@@ -76,9 +76,10 @@ Container.argTypes = {
 };
 
 export const SingleRange: Story<SingleRangeSliderProps> = (props) => {
+  const [value, setValue] = useState(10);
   return (
     <Box width="700px">
-      <SingleRangeSlider {...props} />
+      <SingleRangeSlider {...props} value={value} handleChange={setValue} />
     </Box>
   );
 };
@@ -139,9 +140,10 @@ SingleRange.argTypes = {
 };
 
 export const DoubleRange: Story<MultiRangeSliderProps> = (props) => {
+  const [value, setValue] = useState([-0.55, 0.1]);
   return (
     <Box width="700px">
-      <MultiRangeSlider {...props} />
+      <MultiRangeSlider {...props} value={value} handleChange={setValue} />
     </Box>
   );
 };
@@ -149,7 +151,6 @@ export const DoubleRange: Story<MultiRangeSliderProps> = (props) => {
 DoubleRange.args = {
   min: -1,
   max: 1,
-  value: [-0.55, 0.1],
   step: 0.01,
   handleChange: action('OnChange'),
 };
@@ -202,9 +203,10 @@ DoubleRange.argTypes = {
 };
 
 export const MultiRange: Story<MultiRangeSliderProps> = (props) => {
+  const [value, setValue] = useState([-1, -0.55, 0.1, 1]);
   return (
     <Box width="700px">
-      <MultiRangeSlider {...props} />
+      <MultiRangeSlider {...props} value={value} handleChange={setValue} />
     </Box>
   );
 };
@@ -212,9 +214,7 @@ export const MultiRange: Story<MultiRangeSliderProps> = (props) => {
 MultiRange.args = {
   min: -1,
   max: 1,
-  value: [-1, -0.55, 0.1, 1],
   step: 0.01,
-  handleChange: action('OnChange'),
 };
 MultiRange.argTypes = {
   min: {

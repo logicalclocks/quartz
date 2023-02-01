@@ -47,7 +47,7 @@ const Slider = ({
       <RcSlider
         disabled={disabled}
         value={value}
-        onChange={onChange}
+        onChange={onChange as (value: number | number[]) => void}
         min={range[0]}
         max={range[1]}
         step={step}

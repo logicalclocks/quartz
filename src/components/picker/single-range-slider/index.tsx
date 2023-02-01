@@ -64,15 +64,16 @@ const SingleRangeSlider: FC<SingleRangeSliderProps> = ({
           backgroundColor: theme.colors.grayShade2,
         }}
         // eslint-disable-next-line react/no-unstable-nested-components
-        handle={({ index, ...restProps }) => (
+        handleRender={({ props: { tabIndex: index, ...restProps } }: any) => (
           <PickerHandler
-            key={index}
+            {...restProps}
+            value={value}
+            index={index}
             onMouseOver={() => handleMouseHover(index, true)}
             onMouseLeave={() => handleMouseHover(index, false)}
-            {...restProps}
           />
         )}
-        onChange={handleChange}
+        onChange={handleChange as (e: number | number[]) => void}
         onAfterChange={() => setContext(PickerContextDefault)}
       />
     </Box>
