@@ -1,9 +1,9 @@
-import React from 'react';
 import { useNProgress } from '@tanem/react-nprogress';
 import { Options } from '@tanem/react-nprogress/dist/types';
+import React from 'react';
 
+import { Flex } from '../flex';
 import Bar from './Bar';
-import Container from './Container';
 
 export interface Props extends Options {
   variant?: 'perf.black' | 'perf.green' | 'perf.orange';
@@ -30,7 +30,13 @@ export const AnimatedProgress = ({
   });
 
   return (
-    <Container>
+    <Flex
+      sx={{
+        position: 'relative',
+        height: '8px',
+        width: '100%',
+      }}
+    >
       <Bar
         variant={variant}
         animationDuration={animDuration}
@@ -41,6 +47,6 @@ export const AnimatedProgress = ({
         animationDuration={animDuration}
         progress={1 - progress}
       />
-    </Container>
+    </Flex>
   );
 };

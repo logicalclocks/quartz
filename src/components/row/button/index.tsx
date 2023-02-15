@@ -29,6 +29,7 @@ const RowButton: FC<RowButtonProps> = ({
       variant="secondary"
       disabled={disabled}
       {...props}
+      // @ts-ignore
       sx={{ ...rowButtonStyles, ...props.sx }}
     >
       {icon}

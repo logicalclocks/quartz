@@ -87,9 +87,14 @@ const Drawer: IDrawer<DrawerProps> = ({
       </Box>
       {bottomActionTitle && (
         <Box>
-          <FooterButton width="100%" onClick={bottomActionCallback}>
-            {bottomActionTitle}
-          </FooterButton>
+          {singleBottom ? (
+            <FooterButton width="100%" onClick={bottomActionCallback}>
+              {bottomActionTitle}
+            </FooterButton>
+          ) : (
+            // eslint-disable-next-line react/jsx-no-useless-fragment
+            <>{bottomButton}</>
+          )}
         </Box>
       )}
     </Popup>

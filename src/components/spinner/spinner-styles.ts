@@ -1,4 +1,4 @@
-import { keyframes } from '@emotion/core';
+import { keyframes } from '@emotion/react';
 import { SxStyleProp } from 'rebass';
 
 const ldsRing = keyframes`from {

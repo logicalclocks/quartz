@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { Link } from 'react-router-dom';
-import { ButtonProps } from 'rebass';
+import { ButtonProps } from '@chakra-ui/react';
 
 // Components
 import Tooltip, { TooltipProps } from '../tooltip';
@@ -19,6 +19,7 @@ export interface IconButtonProps extends Omit<ButtonProps, 'css'> {
   href?: string;
   tooltipProps?: Omit<TooltipProps, 'children' | 'mainText'>;
   onClickIcon?: React.MouseEventHandler<HTMLAnchorElement>;
+  target?: string;
 }
 
 export const IconButton: FC<IconButtonProps> = ({

@@ -13,7 +13,7 @@ export default {
   },
 };
 
-export const Default: Story<Props> = (args) => {
+export const Default: Story<Props> = (args: Props) => {
   const [isAnimating, setIsAnimating] = useState<boolean>();
   return (
     <Box width="700px">

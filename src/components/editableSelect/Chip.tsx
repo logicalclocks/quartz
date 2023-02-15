@@ -1,4 +1,4 @@
-import React, { FC, useCallback, useState } from 'react';
+import React, { FC, MouseEventHandler, useCallback, useState } from 'react';
 import { Box, Flex, FlexProps } from 'rebass';
 import { GetIcon, IconName } from '../icon';
 

@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { ReactFragment } from 'react';
 import { BoxProps } from 'rebass';
 
-export interface NavigationItemProps extends Omit<BoxProps, 'css' | 'id'> {
+export interface NavigationItemProps
+  extends Omit<BoxProps & ReactFragment, 'css' | 'id' | 'children'> {
   title: string;
   id: string;
   icon?: any;

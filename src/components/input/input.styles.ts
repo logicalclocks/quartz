@@ -2,10 +2,10 @@ import { SystemStyleObject } from '@styled-system/css';
 import { ITheme } from '../../theme/types';
 import { Intents } from '../intents';
 
-const getIntentColor =
-  (intent: Intents) =>
-  ({ inputIntents }: ITheme) =>
-    inputIntents[intent] ?? 'transparent';
+const getIntentColor = (intent: Intents) => (theme: ITheme) => {
+  console.log(theme);
+  return theme.inputIntents[intent] ?? 'transparent';
+};
 
 const getStyles = (
   intent: Intents,

@@ -105,7 +105,6 @@ import {
 } from './components/typography/hoverable';
 
 // Theme
-import ThemeProvider from './theme/ThemeProvider';
 import theme, { useTheme } from './theme/theme';
 
 // Hooks
@@ -172,7 +171,6 @@ export {
   Select,
   Select2,
   EditableSelect,
-  ThemeProvider,
   ToggleButton,
   Tooltip,
   TooltipPositions,
@@ -294,4 +292,7 @@ export type {
 export type { DatePickerProps } from './components/datepicker';
 
 // Rebass types
-export type { SxStyleProp } from 'rebass';
+export type { SxProps, SxStyleProp } from 'rebass';
+
+export { keyframes, css, Global } from '@emotion/react';
+export { ThemeProvider } from './theme/ThemeProvider';

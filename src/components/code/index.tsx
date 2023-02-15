@@ -148,6 +148,7 @@ const CodeSnippet: FC<CodeSnippetProps> = ({
         {...props}
         p={0}
       >
+        {/* @ts-ignore */}
         <SyntaxHighlighter
           style={hybrid}
           wrapLongLines={wrapLongLines}

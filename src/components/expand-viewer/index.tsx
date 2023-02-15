@@ -70,6 +70,8 @@ interface ExpandButtonProps {
 }
 const ExpandButton: FC<ExpandButtonProps> = ({ onClick }) => {
   const theme = useTheme();
+
+  // console.log(theme);
   return (
     <RebassButton variant="ghost" sx={expandViewButtonStyle} onClick={onClick}>
       <Value>expand view</Value>

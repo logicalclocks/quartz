@@ -1,7 +1,6 @@
 import * as R from 'ramda';
 import React, { FC } from 'react';
 import { Button as RebassButton, ButtonProps } from 'rebass';
-
 // Styles
 import { Link } from 'react-router-dom';
 import Spinner from '../spinner';
@@ -25,6 +24,8 @@ export interface Props extends Omit<ButtonProps, 'css'> {
   isLoading?: boolean;
   /** When `true`, and `isLoading`, doesn't show button text, only spinner */
   loadingOnly?: boolean;
+  /** target */
+  target?: string;
 }
 
 export const Button: FC<Props> = ({
@@ -45,7 +46,6 @@ export const Button: FC<Props> = ({
     <RebassButton
       variant={intent}
       disabled={disabled || isLoading}
-      sx={{ ...S.wrapper, ...sx }}
       type={type}
       {...props}
     >

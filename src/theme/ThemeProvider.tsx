@@ -1,7 +1,6 @@
-import React, { createContext, FC, useEffect, useMemo, useState } from 'react';
-import { Global, css } from '@emotion/core';
-import { ThemeProvider as EmotionThemeProvider } from 'emotion-theming';
-
+import { ChakraBaseProvider, extendBaseTheme } from '@chakra-ui/react';
+import { Global, css } from '@emotion/react';
+import React, { FC, createContext, useEffect, useMemo, useState } from 'react';
 import defaultTheme, { darkTheme } from './theme';
 
 export type ThemeVariant = 'dark' | 'light';
@@ -11,7 +10,7 @@ export interface ThemeProviderProps {
   colorMode?: ThemeVariant;
 }
 
-const ThemeProvider: FC<ThemeProviderProps> = ({
+export const ThemeProvider: FC<ThemeProviderProps> = ({
   children,
   colorMode: colorModeFromProps,
 }: ThemeProviderProps) => {
@@ -29,6 +28,12 @@ const ThemeProvider: FC<ThemeProviderProps> = ({
 
   const colorModeToUse = colorModeFromProps ?? colorMode; // the outer one overrides inner state
 
+  const theme = useMemo(() => {
+    return extendBaseTheme(
+      colorModeToUse === 'light' ? defaultTheme : darkTheme,
+    );
+  }, [colorModeToUse]);
+
   return (
     <React.Fragment>
       <Global
@@ -38,11 +43,7 @@ const ThemeProvider: FC<ThemeProviderProps> = ({
         `}
       />
       <ColorModeContext.Provider value={value}>
-        <EmotionThemeProvider
-          theme={colorModeToUse === 'light' ? defaultTheme : darkTheme}
-        >
-          {children}
-        </EmotionThemeProvider>
+        <ChakraBaseProvider theme={theme}>{children}</ChakraBaseProvider>
       </ColorModeContext.Provider>
     </React.Fragment>
   );

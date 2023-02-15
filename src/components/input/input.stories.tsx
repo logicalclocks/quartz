@@ -151,7 +151,14 @@ const argTypes = {
 };
 
 const Template: Story<InputProps> = (props) => {
-  return <Input icon={IconName.glass} iconPaddingRight="40px" {...props} />;
+  return (
+    <Input
+      intent="error"
+      icon={IconName.glass}
+      iconPaddingRight="40px"
+      {...props}
+    />
+  );
 };
 
 export const Default = Template.bind({});

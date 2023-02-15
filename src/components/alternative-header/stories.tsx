@@ -1,19 +1,16 @@
-import { Meta, Story } from '@storybook/react/types-6-0';
+import type { Meta, StoryObj } from '@storybook/react';
+
 import React, { useMemo, useState } from 'react';
 import { Box } from 'rebass';
-import Value from '../typography/value';
 import { AlternativeHeader, AlternativeHeaderProps } from './index';
+import Value from '../typography/value';
 
 export default {
   title: 'Quartz/AlternativeHeader',
   component: AlternativeHeader,
-  args: {
-    title: 'Cluster settings',
-    withBase: false,
-  },
 } as Meta;
 
-const Template: Story<AlternativeHeaderProps> = (props) => {
+const Template = (props: Partial<AlternativeHeaderProps>) => {
   const [active, setActive] = useState('tab');
 
   const tabs = useMemo(
@@ -55,4 +52,10 @@ const Template: Story<AlternativeHeaderProps> = (props) => {
   );
 };
 
-export const Default = Template.bind({});
+export const Default: StoryObj<typeof AlternativeHeader> = {
+  render: (props: any) => <Template {...props} />,
+  args: {
+    title: 'Cluster settings',
+    withBase: false,
+  },
+};

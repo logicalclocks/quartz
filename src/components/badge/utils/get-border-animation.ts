@@ -1,4 +1,4 @@
-import { keyframes } from '@emotion/core';
+import { keyframes } from '@chakra-ui/react';
 
 const rotate = keyframes`
   to {

@@ -6,7 +6,7 @@ import TooltipPositions from './positions';
 
 // Styles
 import { getPopupStyles, getTooltipStyles } from './tooltip.styles';
-import Portal from './Portal';
+import { Portal } from '@chakra-ui/react';
 
 export interface TooltipProps extends Omit<BoxProps, 'css'> {
   children: React.ReactNode;

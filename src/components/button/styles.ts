@@ -2,23 +2,7 @@ import { SxStyleProp } from 'rebass';
 import buttonsStyles from '../../theme/buttons';
 
 export const wrapper = {
-  display: 'flex',
-  flexDirection: 'row',
-  alignItems: 'center',
-
-  py: '8px',
-  px: '15px',
-
-  borderRadius: 0,
-  boxSizing: 'border-box',
-
-  fontFamily: 'label',
-  fontWeight: 'label',
-  fontSize: 'label',
-
-  cursor: 'pointer',
-
-  transition: ({ transitions }) => transitions.button,
+  // transition: ({ transitions }) => transitions.button,
 
   ':disabled': {
     cursor: 'default',

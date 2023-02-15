@@ -1,9 +1,10 @@
-import { useTheme as useEmotionTheme } from 'emotion-theming';
+import { useTheme as useEmotionTheme } from '@emotion/react';
 // Button themes
-import buttons from './buttons';
-import iconButtons from './icon-buttons';
-import footerButtons from './footer-buttons';
+import { ChakraTheme } from '@chakra-ui/react';
+import buttonVariants from './buttons';
 import fileButtons from './file-buttons';
+import footerButtons from './footer-buttons';
+import iconButtons from './icon-buttons';
 import toggleButton from './toggle-button';
 // Label themes
 import label from './label';
@@ -40,8 +41,8 @@ import selectInfo from './select-info';
 import bar from './bar';
 import perf from './perf';
 // Code
-import code from './code';
 import callout from './callout';
+import code from './code';
 // Icon
 import icon from './icon';
 // Pagination
@@ -53,7 +54,28 @@ import notification from './notifications';
 // Chip
 import editableSelect from './editableSelect';
 
-const defaultTheme: ITheme = {
+const defaultTheme: Partial<ChakraTheme> & ITheme = {
+  breakpoints: [],
+  styles: {},
+  components: {
+    Button: {
+      baseStyle: {
+        fontFamily: 'label',
+        fontWeight: 'label',
+        fontSize: 'label',
+        py: '8px',
+        px: '15px',
+
+        borderRadius: 0,
+        boxSizing: 'border-box',
+        display: 'flex',
+        flexDirection: 'row',
+        alignItems: 'center',
+        bg: 'grayShade2',
+      },
+      variants: buttonVariants,
+    },
+  },
   colors: {
     primary: '#21B182',
     primaryShade1: '#65D3AF',
@@ -161,7 +183,7 @@ const defaultTheme: ITheme = {
     notifications: 50,
   },
   buttons: {
-    ...buttons,
+    ...buttonVariants,
     ...iconButtons,
     ...footerButtons,
     ...fileButtons,
@@ -217,7 +239,7 @@ const darkThemeShadows: ITheme['shadows'] = {
   notification: '0 0 1px 2px rgba(160, 160, 160, 0.1)',
 };
 
-export const useTheme = () => useEmotionTheme<ITheme>();
+export const useTheme = () => useEmotionTheme() as ITheme;
 
 export const darkTheme: ITheme = {
   ...defaultTheme,

@@ -1,7 +1,7 @@
 import { SxStyleProp } from 'rebass';
 
 // Enums
-import { keyframes } from '@emotion/core';
+import { keyframes } from '@emotion/react';
 import TooltipPositions from './positions';
 
 const tooltipArrows = {
