@@ -1,9 +1,9 @@
 import React from 'react';
+import * as R from 'ramda';
+
 import { Box, BoxProps } from '../box';
 import { Flex } from '../flex';
 import Value from '../typography/value';
-
-import * as R from 'ramda';
 
 export interface Props extends Omit<BoxProps, 'css'> {
   /** width of the bar */
