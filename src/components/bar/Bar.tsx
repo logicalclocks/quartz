@@ -1,4 +1,6 @@
 import React from 'react';
+import * as R from 'ramda';
+
 import { Box, BoxProps } from '../box';
 import { Flex } from '../flex';
 import Value from '../typography/value';
@@ -26,7 +28,12 @@ export const Bar = ({
       width={width}
       sx={outside}
     >
-      <Box as="span" bg="black" width={`${value}%`} sx={inside} />
+      <Box
+        as="span"
+        bg="black"
+        width={`${R.clamp(0, 100, value)}%`}
+        sx={inside}
+      />
     </Box>
     {hasCaption && (
       <Value fontFamily="IBM Plex Mono" fontSize="11px">
