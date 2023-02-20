@@ -41,7 +41,11 @@ export const Dot = ({
         fontFamily: 'Inter',
         borderRadius: '50%',
         userSelect: 'none',
-        ...(variant === 'white' && { border: 'solid 2px black' }),
+        ...(variant === 'white' && {
+          borderStyle: 'solid',
+          borderWidth: '2px',
+          borderColor: 'black',
+        }),
         ...sx,
       }}
     />
