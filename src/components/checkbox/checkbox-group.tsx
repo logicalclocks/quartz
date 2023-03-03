@@ -25,7 +25,7 @@ const CheckboxGroup: FC<CheckboxGroupProps> = ({
   ...props
 }: CheckboxGroupProps) => {
   const handleChange = useCallback(
-    ({ target }) => {
+    ({ target }: React.ChangeEvent<HTMLInputElement>) => {
       onChange(
         target.checked
           ? [...value, target.name]

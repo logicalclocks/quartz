@@ -33,7 +33,7 @@ const Notification: FC<SystemNotification> = ({
   }, [timeout]);
 
   const removeHandler = useCallback(
-    (id) => () => {
+    (id: number) => () => {
       NotificationManager.remove(id);
     },
     [],

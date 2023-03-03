@@ -1,6 +1,6 @@
 import React, { FC, memo } from 'react';
 import { Box } from 'rebass';
-import IconButton from '../../icon-button';
+import { IconButton } from '../../icon-button';
 import { IconName } from '../../icon/list';
 import TooltipPositions from '../../tooltip/positions';
 

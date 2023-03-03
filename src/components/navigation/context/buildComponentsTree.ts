@@ -21,12 +21,12 @@ const buildComponentsTree = (
   if (Array.isArray(tree.children)) {
     return React.createElement(
       isFirstLevel ? NavigationCategory : NavigationItem,
-      { ...tree, key: tree.id },
+      { ...tree, key: tree.id } as any,
       buildComponentsTree(tree.children, false),
     );
   }
 
-  return React.createElement(NavigationItem, { ...tree, key: tree.id });
+  return React.createElement(NavigationItem, { ...tree, key: tree.id } as any);
 };
 
 export default buildComponentsTree;

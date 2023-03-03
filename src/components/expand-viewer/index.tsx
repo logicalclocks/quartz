@@ -2,7 +2,7 @@ import React, { FC, useState } from 'react';
 import { Box, Button as RebassButton, Flex } from 'rebass';
 import { useTheme } from '../../theme/theme';
 import Popup, { PopupProps } from '../popup';
-import IconButton from '../icon-button';
+import { IconButton } from '../icon-button';
 import { getIcon, IconName } from '../icon/list';
 import Value from '../typography/value';
 import Subtitle from '../typography/subtitle';

@@ -3,7 +3,7 @@ import { Box, Flex, FlexProps } from 'rebass';
 
 // Components
 import Tooltip from '../tooltip';
-import IconButton from '../icon-button';
+import { IconButton } from '../icon-button';
 import Labeling from '../typography/labeling';
 // Styles
 import styles from './pagination.styles';

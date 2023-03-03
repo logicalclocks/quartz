@@ -9,7 +9,7 @@ const useArrowsSelect = (
   const [activeIndex, setActiveIndex] = useState(startingIndex);
 
   const handleSelect = useCallback(
-    (e) => {
+    (e: KeyboardEvent) => {
       if (['ArrowDown', 'ArrowUp'].includes(e.key)) {
         e.preventDefault();
 
