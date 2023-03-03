@@ -7,7 +7,7 @@ import CardHeader from '../card-header';
 import { IconName } from '../icon';
 import { Flex } from '../flex';
 import usePopup from '../../utils/usePopup';
-import { IconButton } from '../icon-button';
+import IconButton from '../icon-button';
 
 export interface CardProps extends Omit<RebassCardProps, 'css' | 'title'> {
   title?: React.ReactElement | string;
