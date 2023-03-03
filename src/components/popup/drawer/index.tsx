@@ -6,7 +6,6 @@ import Popup, { PopupProps } from '../index';
 import FooterButton from '../../footer-button';
 import DrawerSection, { DrawerSectionProps } from './drawer-section';
 // Types
-import Action from '../../action.type';
 import Tooltip from '../../tooltip';
 import { GetIcon, IconName } from '../../icon';
 
@@ -17,7 +16,7 @@ type IDrawer<P> = FC<P> & {
 type Children = React.ReactElement<DrawerSectionProps> | null;
 
 export interface DrawerProps extends Omit<PopupProps, 'css'> {
-  bottomButton?: Action<React.MouseEvent<HTMLButtonElement>> | React.ReactNode;
+  bottomButton?: [React.ReactNode, React.MouseEventHandler<HTMLButtonElement>];
   headerLine?: React.ReactNode;
   headerSummary?: React.ReactNode;
   children: Children | Children[];
@@ -35,10 +34,8 @@ const Drawer: IDrawer<DrawerProps> = ({
   onClose,
   ...props
 }: DrawerProps) => {
-  // @ts-ignore
-  const [bottomActionTitle, bottomActionCallback] = singleBottom
-    ? bottomButton
-    : [] || [];
+  const [bottomActionTitle, bottomActionCallback] =
+    singleBottom && bottomButton ? bottomButton : [];
 
   return (
     <Popup
@@ -88,15 +85,11 @@ const Drawer: IDrawer<DrawerProps> = ({
         </Box>
         {children}
       </Box>
-      {bottomButton && (
+      {bottomActionTitle && (
         <Box>
-          {singleBottom ? (
-            <FooterButton width="100%" onClick={bottomActionCallback}>
-              {bottomActionTitle}
-            </FooterButton>
-          ) : (
-            bottomButton
-          )}
+          <FooterButton width="100%" onClick={bottomActionCallback}>
+            {bottomActionTitle}
+          </FooterButton>
         </Box>
       )}
     </Popup>

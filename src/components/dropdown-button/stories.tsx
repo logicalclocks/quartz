@@ -5,7 +5,7 @@ import { action } from '@storybook/addon-actions';
 
 import { DropdownButton, Props } from './DropdownButton';
 import { IconName } from '../icon';
-import IconButton from '../icon-button';
+import { IconButton } from '../icon-button';
 
 export default {
   title: 'Quartz/DropdownButton',

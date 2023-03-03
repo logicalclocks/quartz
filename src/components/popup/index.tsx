@@ -7,7 +7,7 @@ import useKeyUp from '../../utils/useKeyUp';
 // Styles
 import getStyles, { backdropStyles } from './popup.styles';
 import { IconName } from '../icon';
-import IconButton from '../icon-button';
+import { IconButton } from '../icon-button';
 
 export interface PopupProps extends Omit<BoxProps, 'css'> {
   children: React.ReactNode;

@@ -24,7 +24,7 @@ import FooterButton from './components/footer-button';
 import Header from './components/header';
 import { IconName, getIcon } from './components/icon/list';
 import GetIcon from './components/icon/GetIcon';
-import IconButton from './components/icon-button';
+import { IconButton } from './components/icon-button';
 import MenuButton from './components/header/menu-button';
 import Input from './components/input';
 import InputInfo from './components/input-info';

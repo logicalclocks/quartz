@@ -43,7 +43,7 @@ const NavigationProvider: FC<CategoriesProviderProps> = ({
   );
 
   const handleBack = useCallback(
-    (target) => {
+    (target: string) => {
       setActivePath((path) =>
         path.slice(path.indexOf(target) - 1, path.length - 1),
       );

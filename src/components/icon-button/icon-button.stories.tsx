@@ -2,7 +2,7 @@ import { action } from '@storybook/addon-actions';
 import { Meta, Story } from '@storybook/react/types-6-0';
 import React from 'react';
 
-import IconButton, { IconButtonProps } from '.';
+import { IconButton, IconButtonProps } from '.';
 import { IconName } from '../icon/list';
 
 export default {

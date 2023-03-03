@@ -32,7 +32,7 @@ const Chip: FC<ChipProps> = ({
   );
 
   const handleDelete = useCallback(
-    (e) => {
+    (e: React.MouseEvent<HTMLDivElement>) => {
       e.stopPropagation();
       onDelete(value);
     },

@@ -21,7 +21,7 @@ export interface IconButtonProps extends Omit<ButtonProps, 'css'> {
   onClickIcon?: React.MouseEventHandler<HTMLAnchorElement>;
 }
 
-const IconButton: FC<IconButtonProps> = ({
+export const IconButton: FC<IconButtonProps> = ({
   intent: _, // TODO remove this
   tooltip,
   icon,
@@ -77,5 +77,3 @@ const IconButton: FC<IconButtonProps> = ({
   }
   return component;
 };
-
-export default IconButton;

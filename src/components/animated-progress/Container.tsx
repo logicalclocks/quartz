@@ -1,7 +1,7 @@
 import React from 'react';
 import { Flex } from 'rebass';
 
-const Container: React.FC = ({ children }) => (
+const Container = ({ children }: React.PropsWithChildren) => (
   <Flex
     sx={{
       position: 'relative',
