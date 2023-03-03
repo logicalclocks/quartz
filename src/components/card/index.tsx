@@ -4,6 +4,10 @@ import { Box, Card as RebassCard, CardProps as RebassCardProps } from 'rebass';
 // Styles
 import styles from './card.styles';
 import CardHeader from '../card-header';
+import { IconName } from '../icon';
+import { Flex } from '../flex';
+import usePopup from '../../utils/usePopup';
+import { IconButton } from '../icon-button';
 
 export interface CardProps extends Omit<RebassCardProps, 'css' | 'title'> {
   title?: React.ReactElement | string;
@@ -13,6 +17,7 @@ export interface CardProps extends Omit<RebassCardProps, 'css' | 'title'> {
   contentProps?: Omit<RebassCardProps, 'css' | 'children'>;
   readOnly?: boolean;
   withoutShadow?: boolean;
+  expandable?: boolean;
 }
 
 const Card: FC<CardProps> = ({
@@ -23,10 +28,13 @@ const Card: FC<CardProps> = ({
   readOnly,
   contentProps,
   withoutShadow = false,
+  expandable = false,
   ...props
 }: CardProps) => {
   const isShowHeader = title || actions;
+  const [expanded, toggleExpanded] = usePopup();
 
+  const realHeight = expanded ? '1000px' : maxHeight;
   const contentRef = useRef<HTMLDivElement>();
 
   const isScrollable =
@@ -40,7 +48,7 @@ const Card: FC<CardProps> = ({
       {...props}
       tx="variants"
       variant={readOnly ? 'readOnly' : 'card'}
-      maxHeight={maxHeight}
+      maxHeight={realHeight}
       sx={styles}
     >
       {/* Header */}
@@ -56,11 +64,12 @@ const Card: FC<CardProps> = ({
       {!!children && (
         <Box
           sx={{
-            boxShadow: isScrollable ? 'cardInsetShadow' : 'none',
+            boxShadow: isScrollable && !expanded ? 'cardInsetShadow' : 'none',
+            transition: (styles as any)?.transition,
           }}
           ref={contentRef}
           width="100%"
-          maxHeight={maxHeight}
+          maxHeight={realHeight}
           height="100%"
           overflowY={isScrollable ? 'auto' : 'initial'}
           p="20px"
@@ -68,6 +77,23 @@ const Card: FC<CardProps> = ({
         >
           {children}
         </Box>
+      )}
+      {expandable && (
+        <Flex
+          sx={{
+            position: 'absolute',
+            bottom: '-1px',
+            right: '-1px',
+            width: '100%',
+            justifyContent: 'flex-end',
+          }}
+        >
+          <IconButton
+            icon={expanded ? IconName.arrow_up : IconName.arrow_down}
+            onClick={toggleExpanded}
+            sx={{ cursor: 'pointer', mr: '-31px' }}
+          />
+        </Flex>
       )}
     </RebassCard>
   );

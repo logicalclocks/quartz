@@ -5,6 +5,7 @@ import { Story, Meta, ArgTypes } from '@storybook/react/types-6-0';
 import Card, { CardProps } from '.';
 import { Button } from '../button';
 import CardSecondary, { CardSecondaryProps } from './card-secondary';
+import { Flex } from '../flex';
 
 export default {
   title: 'Quartz/Cards',
@@ -25,12 +26,14 @@ Default.args = {
   title: 'Title',
   width: '830px',
   children: '',
-  height: '270px',
+  maxHeight: '170px',
   actions: (
     <Button variant="inline" pr="0" onClick={action('Card action')}>
       naked button
     </Button>
   ),
+  children: <Flex height="270px">Hello world!</Flex>,
+  expandable: true,
 };
 
 Secondary.args = {
