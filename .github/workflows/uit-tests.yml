@@ -30,6 +30,9 @@ jobs:
           npx concurrently -k -s first -n "SB,TEST" -c "magenta,blue" \
             "npx http-server storybook-static --port 6006 --silent" \
             "npx wait-on tcp:6006 && yarn test-storybook"
+
+      - name: Install chromium
+        run: yarn playwright install chromium
       
       - name: Playwright component test
         run: yarn test-ct
