@@ -32,6 +32,7 @@
     "build-storybook": "build-storybook",
     "storybook": "start-storybook -p 6006",
     "test-storybook": "test-storybook",
+    "test-ct": "playwright test -c playwright-ct.config.ts",
     "chromatic": "npx chromatic --project-token dqq8k95raoo",
     "semantic-release": "semantic-release",
     "commit": "cz",
@@ -45,6 +46,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.17.5",
+    "@playwright/experimental-ct-react": "^1.31.2",
     "@semantic-release/changelog": "^6.0.1",
     "@semantic-release/commit-analyzer": "^9.0.2",
     "@semantic-release/git": "^10.0.1",
