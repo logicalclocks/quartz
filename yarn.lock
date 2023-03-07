@@ -4251,6 +4251,7 @@ __metadata:
     jest: 27
     microbundle: 0.15.0
     npm-run-all: ^4.1.5
+    playwright: ^1.31.2
     prettier: ^2.5.1
     ramda: ^0.28.0
     rc-slider: ^10.1.0
@@ -19959,6 +19960,17 @@ __metadata:
   bin:
     playwright: cli.js
   checksum: c3fa27b66e9c3448c61f3dcc2fb7f1f967b75625d43809b949ec62b8b59a3e196180ee22ff7381d1bcede2e4511b54947ea0d077af00ba9792c26de4a80f815f
+  languageName: node
+  linkType: hard
+
+"playwright@npm:^1.31.2":
+  version: 1.31.2
+  resolution: "playwright@npm:1.31.2"
+  dependencies:
+    playwright-core: 1.31.2
+  bin:
+    playwright: cli.js
+  checksum: da7a190275ca6ce14aee0ecf40307b46f014ecca4a5c1b103a308c4be6a03b0825b17721728a69c140654d124487ca35d2fc2d5558bade4969c9363e5b4bd290
   languageName: node
   linkType: hard
 
