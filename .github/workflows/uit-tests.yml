@@ -22,9 +22,6 @@ jobs:
       - name: Run formatter
         run: yarn run test:prettier
 
-      - name: Install Playwright
-        run: npx playwright install --with-deps
-
       - name: Build Storybook
         run: yarn build-storybook --quiet
 
