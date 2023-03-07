@@ -24,7 +24,6 @@
     "prepare": "run-s build",
     "prepack": "run-s build",
     "test:lint": "eslint --ext .ts,.tsx ./",
-    "lint": "yarn lint --fix",
     "test:prettier": "prettier --check ./src",
     "prettier": "prettier --write ./src",
     "predeploy": "yarn build-storybook",
