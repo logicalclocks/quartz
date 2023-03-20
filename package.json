@@ -101,7 +101,7 @@
     ".releaserc.json"
   ],
   "dependencies": {
-    "@emotion/core": "^10.3.1",
+    "@emotion/core": "^11.0.0",
     "@rebass/forms": "^4.0.6",
     "@styled-system/css": "^5.1.5",
     "@tanem/react-nprogress": "^4.0.8",
