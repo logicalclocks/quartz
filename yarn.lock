@@ -2833,7 +2833,6 @@ __metadata:
     react-spring: ^8.0.27
     react-syntax-highlighter: ^15.5.0
     rebass: ^4.0.7
-    resize-observer-polyfill: ^1.5.1
     semantic-release: ^19.0.3
     storybook-dark-mode: ^2.1.1
     typescript: ^4.6.2

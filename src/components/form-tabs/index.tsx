@@ -7,7 +7,6 @@ import React, {
   useState,
 } from 'react';
 import { Box, Flex } from 'rebass';
-import ResizeObserver from 'resize-observer-polyfill';
 import * as R from 'ramda';
 
 import {
