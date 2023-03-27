@@ -104,7 +104,7 @@
     "@emotion/core": "^10.3.1",
     "@rebass/forms": "^4.0.6",
     "@styled-system/css": "^5.1.5",
-    "@tanem/react-nprogress": "^4.0.8",
+    "@tanem/react-nprogress": "^5.0.33",
     "codemirror": "^5.65.2",
     "date-fns": "^2.28.0",
     "emotion-theming": "^10.3.0",
