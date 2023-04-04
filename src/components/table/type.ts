@@ -23,5 +23,6 @@ export interface TableRowComponent {
     value: TableCellType;
     onChange: (value: TableCellType) => void;
     readOnly: boolean;
+    row: TableCell[];
   }) => React.ReactElement;
 }
