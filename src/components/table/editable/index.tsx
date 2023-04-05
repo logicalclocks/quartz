@@ -76,7 +76,11 @@ const EditableTable: FC<EditableTableProps> = ({
     });
   };
 
-  const componentifyCell = (cell: TableCell, rowIndex: number) => {
+  const componentifyCell = (
+    cell: TableCell,
+    rowIndex: number,
+    row: TableCell[],
+  ) => {
     const component: TableRowComponent | undefined = rowComponents.find(
       (cpt) => cpt.identifier.name === cell.identifierName,
     );
@@ -87,6 +91,7 @@ const EditableTable: FC<EditableTableProps> = ({
           value: cell.value,
           onChange,
           readOnly: cell.readOnly || false,
+          row,
         })
       : cell.value;
   };
@@ -182,6 +187,7 @@ const EditableTable: FC<EditableTableProps> = ({
                     {componentifyCell(
                       row.find((c) => c.identifierName === staticColumn)!,
                       rowIndex,
+                      row,
                     )}
                   </Box>
                 )}
@@ -201,7 +207,7 @@ const EditableTable: FC<EditableTableProps> = ({
                       sx={{ bg: 'grayShade3' }}
                       p="0px !important"
                     >
-                      {componentifyCell(cell, rowIndex)}
+                      {componentifyCell(cell, rowIndex, row)}
                     </Box>
                   ))}
               </Box>
