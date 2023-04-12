@@ -17,14 +17,8 @@ export interface NavigationItemProps extends Omit<BoxProps, 'css' | 'id'> {
 }
 
 export interface RecursiveNode extends NavigationItemProps {
-  children?: TreeNode[];
+  children?: TreeNode[] & React.ReactNode;
   hideBack?: boolean;
 }
 
-export interface ComponentNode extends Omit<NavigationItemProps, 'title'> {
-  id: string;
-  component: React.ReactElement;
-  hideBack?: boolean;
-}
-
-export type TreeNode = ComponentNode | RecursiveNode;
+export type TreeNode = RecursiveNode;

@@ -1,6 +1,6 @@
-import React, { createContext, FC, useEffect, useMemo, useState } from 'react';
-import { Global, css } from '@emotion/core';
+import { css, Global } from '@emotion/core';
 import { ThemeProvider as EmotionThemeProvider } from 'emotion-theming';
+import React, { createContext, FC, useEffect, useMemo, useState } from 'react';
 
 import defaultTheme, { darkTheme } from './theme';
 

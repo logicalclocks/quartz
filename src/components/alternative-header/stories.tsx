@@ -1,7 +1,6 @@
 import { Meta, Story } from '@storybook/react/types-6-0';
 import React, { useMemo, useState } from 'react';
 import { Box } from 'rebass';
-import Value from '../typography/value';
 import { AlternativeHeader, AlternativeHeaderProps } from './index';
 
 export default {
@@ -34,16 +33,16 @@ const Template: Story<AlternativeHeaderProps> = (props) => {
         onClick: () => setActive('one more tab'),
       },
       // if the storybook page hangs, comment the tab below. There is an unknown memory leak, which breaks the page.
-      {
-        title: 'last tab',
-        isActive: active === 'last tab',
-        altContent: (
-          <Value as="span" lineHeight="13px">
-            38
-          </Value>
-        ),
-        onClick: () => setActive('last tab'),
-      },
+      // {
+      //   title: 'last tab',
+      //   isActive: active === 'last tab',
+      //   altContent: (
+      //     <Value as="span" lineHeight="13px">
+      //       38
+      //     </Value>
+      //   ),
+      //   onClick: () => setActive('last tab'),
+      // },
     ],
     [active],
   );
