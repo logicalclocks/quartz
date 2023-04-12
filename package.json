@@ -21,7 +21,7 @@
     "start": "vite build --watch",
     "prepare": "run-s build",
     "prepack": "run-s build",
-    "test:lint": "eslint --ext .ts,.tsx ./",
+    "test:lint": "eslint --ext .ts,.tsx ./src",
     "test:prettier": "prettier --check ./src",
     "prettier": "prettier --write ./src",
     "predeploy": "yarn build-storybook",
@@ -67,6 +67,7 @@
     "@types/rebass__forms": "^4.0.6",
     "@typescript-eslint/eslint-plugin": "^5.29.0",
     "@typescript-eslint/parser": "^5.29.0",
+    "@vitejs/plugin-react": "^3.1.0",
     "chromatic": "^5.10.2",
     "commitizen": "^4.2.4",
     "cross-env": "^7.0.3",
@@ -120,7 +121,8 @@
     "react-datepicker": "4.10.0",
     "react-spring": "^8.0.27",
     "react-syntax-highlighter": "^15.5.0",
-    "rebass": "^4.0.7"
+    "rebass": "^4.0.7",
+    "remove": "^0.1.5"
   },
   "publishConfig": {
     "access": "public"
