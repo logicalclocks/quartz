@@ -14,14 +14,16 @@ const Notification: FC<SystemNotification> = ({
   duration,
   isError = true,
 }) => {
-  const [timeout, setTimeoutNumber] = useState<number | null>(null);
+  const [timeout, setTimeoutNumber] = useState<ReturnType<
+    typeof setTimeout
+  > | null>(null);
 
   useEffect(() => {
-    setTimeoutNumber(
-      setTimeout(() => {
-        NotificationManager.remove(id);
-      }, duration),
-    );
+    const timeout = setTimeout(() => {
+      NotificationManager.remove(id);
+    }, duration);
+
+    setTimeoutNumber(timeout);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

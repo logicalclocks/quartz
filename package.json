@@ -17,9 +17,8 @@
     "node": ">=16.0.0"
   },
   "scripts": {
-    "build": "microbundle --compress --format modern,cjs --jsx React.createElement --jsxFragment React.Fragment",
-    "build-dev": "microbundle --no-compress --format modern,cjs --jsx React.createElement --jsxFragment React.Fragment",
-    "start": "microbundle watch --no-compress --format modern,cjs --jsx React.createElement --jsxFragment React.Fragment",
+    "build": "vite build",
+    "start": "vite build --watch",
     "prepare": "run-s build",
     "prepack": "run-s build",
     "test:lint": "eslint --ext .ts,.tsx ./",
