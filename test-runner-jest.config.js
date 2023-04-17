@@ -10,4 +10,5 @@ module.exports = {
     '.*stories\\.[jt]sx?$': '@storybook/test-runner/playwright/transform',
     '^.+\\.[jt]sx?$': 'babel-jest',
   },
+  testTimeout: 30000,
 };

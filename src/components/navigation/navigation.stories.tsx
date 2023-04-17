@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box } from 'rebass';
 import { action } from '@storybook/addon-actions';
-import { Story, Meta } from '@storybook/react/types-6-0';
+import { Story, Meta } from '@storybook/react';
 
 // Components
 import Navigation, { NavigationProps } from './container';
@@ -9,7 +9,6 @@ import Navigation, { NavigationProps } from './container';
 import { TreeNode } from './types';
 import useNavigation from './useNavigation';
 import { GetIcon, IconName } from '../icon';
-import { Button } from '../button';
 
 export default {
   title: 'Quartz/Navigation',
@@ -156,77 +155,6 @@ export const TreeObject: Story<NavigationProps> = () => {
         onNavigate={action('On Navigate')}
         tree={tree}
         header="Header"
-        footer={<Footer />}
-      />
-    </Box>
-  );
-};
-
-export const CustomTreeObject: Story<NavigationProps> = () => {
-  const tree: TreeNode[] = [
-    {
-      title: 'Home',
-      icon: <GetIcon icon={IconName.folder} />,
-      id: '1',
-      children: [
-        {
-          id: '32',
-          title: 'Owerview 2',
-        },
-      ],
-      secondaryTooltipText: 'Home',
-    },
-    {
-      title: 'Feature Groups',
-      icon: <GetIcon icon={IconName.folder} />,
-      id: '2',
-      disabled: true,
-      secondaryTooltipText: 'Feature Groups',
-      hideBack: true,
-      children: [
-        {
-          title: 'Overview',
-          id: '3',
-          children: [
-            {
-              title: 'Feature List',
-              id: '4',
-              icon: <GetIcon icon={IconName.folder} />,
-            },
-            {
-              id: '5',
-              component: (
-                <Box p="10px">
-                  <h4>This is a custom component!</h4>
-                  <Button>Hey</Button>
-                </Box>
-              ),
-            },
-            {
-              title: 'Schematised Tags',
-              id: '5',
-              icon: <GetIcon icon={IconName.folder} />,
-              onClick: action('Tags Click'),
-              isActive: true,
-            },
-          ],
-        },
-      ],
-    },
-    {
-      title: 'Training Datasets',
-      id: '10',
-      hasDivider: true,
-    },
-    { title: 'Source', id: '11' },
-    { title: 'Jobs', id: '12' },
-  ];
-
-  return (
-    <Box height="100vh">
-      <Navigation
-        onNavigate={action('On Navigate')}
-        tree={tree}
         footer={<Footer />}
       />
     </Box>

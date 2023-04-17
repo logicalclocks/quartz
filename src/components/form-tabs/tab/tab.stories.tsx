@@ -1,6 +1,6 @@
 import { action } from '@storybook/addon-actions';
 import React from 'react';
-import { Story, Meta } from '@storybook/react/types-6-0';
+import { Story, Meta } from '@storybook/react';
 import { Flex } from 'rebass';
 import Tab, { TabProps } from './Tab';
 import { TabState } from '../types';

@@ -294,4 +294,6 @@ export type {
 export type { DatePickerProps } from './components/datepicker';
 
 // Rebass types
-export type { SxStyleProp } from 'rebass';
+export type { SxProps, SxStyleProp } from 'rebass';
+
+export { keyframes, css, Global } from '@emotion/react';

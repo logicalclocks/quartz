@@ -1,5 +1,5 @@
 import React from 'react';
-import { Story, Meta } from '@storybook/react/types-6-0';
+import { Story, Meta } from '@storybook/react';
 import { Box } from 'rebass';
 import StickySummary, { StickySummaryProps } from './index';
 import { Button } from '../button';

@@ -1,14 +1,8 @@
-import isComponentNode from '../utils';
-
 const getPathInTree = (
   tree: any,
   callback: (node: any) => boolean,
   pathKey = 'title',
 ): string[] => {
-  if (isComponentNode(tree)) {
-    return [tree[pathKey]];
-  }
-
   if (Array.isArray(tree)) {
     return tree.reduce(
       (acc, node) =>

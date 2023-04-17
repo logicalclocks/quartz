@@ -1,5 +1,4 @@
 import { TreeNode } from '../types';
-import isComponentNode from '../utils';
 
 type ReturnType = TreeNode | null;
 
@@ -13,10 +12,6 @@ const getNode = (
       (acc, node) => acc || getNode(node, key, value),
       null,
     );
-  }
-
-  if (isComponentNode(tree)) {
-    return tree;
   }
 
   const { children } = tree;

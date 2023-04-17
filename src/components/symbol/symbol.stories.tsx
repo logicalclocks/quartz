@@ -1,5 +1,5 @@
 import React from 'react';
-import { Meta, Story } from '@storybook/react/types-6-0';
+import { Meta, Story } from '@storybook/react';
 import Symbol, { SymbolProps } from './index';
 import TooltipPositions from '../tooltip/positions';
 import { SymbolMode } from './types';
