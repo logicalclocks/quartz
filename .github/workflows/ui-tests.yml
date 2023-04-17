@@ -27,9 +27,6 @@ jobs:
       # - name: Build Storybook
       #   run: yarn build-storybook --quiet
 
-      - name: Run Storybook
-        run: yarn storybook
-
       - name: Serve Storybook and run tests
         run: |
           npx concurrently -k -s first -n "SB,TEST" -c "magenta,blue" \
