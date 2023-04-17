@@ -1,7 +1,7 @@
 import { action } from '@storybook/addon-actions';
 import React from 'react';
 import { Box } from 'rebass';
-import { Story, Meta } from '@storybook/react/types-6-0';
+import { Story, Meta } from '@storybook/react';
 
 import Dropdown, { DropdownProps } from './index';
 import { IconName } from '../icon';

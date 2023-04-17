@@ -1,6 +1,6 @@
 import { action } from '@storybook/addon-actions';
 import React from 'react';
-import { Story, Meta, ArgTypes } from '@storybook/react/types-6-0';
+import { Story, Meta, ArgTypes } from '@storybook/react';
 
 import Card, { CardProps } from '.';
 import { Button } from '../button';
@@ -25,7 +25,6 @@ export const Secondary = TemplateSecondary.bind({});
 Default.args = {
   title: 'Title',
   width: '830px',
-  children: '',
   maxHeight: '170px',
   actions: (
     <Button variant="inline" pr="0" onClick={action('Card action')}>

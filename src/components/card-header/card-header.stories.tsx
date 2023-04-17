@@ -1,7 +1,7 @@
 import { action } from '@storybook/addon-actions';
 
 import { Box, Button } from 'rebass';
-import { Meta, Story } from '@storybook/react/types-6-0';
+import { Meta, Story } from '@storybook/react';
 import CardHeader, { CardHeaderProps } from '.';
 
 export default {

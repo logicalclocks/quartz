@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Story, Meta } from '@storybook/react/types-6-0';
+import { Story, Meta } from '@storybook/react';
 import { Button } from '../button';
 
 import Tooltip, { TooltipProps } from './index';

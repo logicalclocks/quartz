@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box } from 'rebass';
-import { Story, Meta } from '@storybook/react/types-6-0';
+import { Story, Meta } from '@storybook/react';
 
 import ListItem, { ListItemProps } from './item';
 import List, { ListProps } from './container';

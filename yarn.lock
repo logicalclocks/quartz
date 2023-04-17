@@ -4292,6 +4292,7 @@ __metadata:
     "@semantic-release/release-notes-generator": ^10.0.3
     "@storybook/addon-actions": ^7.0.4
     "@storybook/addon-essentials": ^7.0.4
+    "@storybook/addon-interactions": ^7.0.4
     "@storybook/addon-links": ^7.0.4
     "@storybook/react": ^7.0.4
     "@storybook/react-vite": ^7.0.4
@@ -5419,6 +5420,35 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@storybook/addon-interactions@npm:^7.0.4":
+  version: 7.0.4
+  resolution: "@storybook/addon-interactions@npm:7.0.4"
+  dependencies:
+    "@storybook/client-logger": 7.0.4
+    "@storybook/components": 7.0.4
+    "@storybook/core-common": 7.0.4
+    "@storybook/core-events": 7.0.4
+    "@storybook/global": ^5.0.0
+    "@storybook/instrumenter": 7.0.4
+    "@storybook/manager-api": 7.0.4
+    "@storybook/preview-api": 7.0.4
+    "@storybook/theming": 7.0.4
+    "@storybook/types": 7.0.4
+    jest-mock: ^27.0.6
+    polished: ^4.2.2
+    ts-dedent: ^2.2.0
+  peerDependencies:
+    react: ^16.8.0 || ^17.0.0 || ^18.0.0
+    react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
+  peerDependenciesMeta:
+    react:
+      optional: true
+    react-dom:
+      optional: true
+  checksum: cce4e214d3f37e7ee4fc62f848aea80462965ab549a9cd626fb356b798ed5e11ac5cd84f2b8371f71f039350ce86ff0dfe81a1fa0a32c08cea6bb98410f40e96
+  languageName: node
+  linkType: hard
+
 "@storybook/addon-links@npm:^7.0.4":
   version: 7.0.4
   resolution: "@storybook/addon-links@npm:7.0.4"
@@ -6054,6 +6084,19 @@ __metadata:
   version: 5.0.0
   resolution: "@storybook/global@npm:5.0.0"
   checksum: ede0ad35ec411fe31c61150dbd118fef344d1d0e72bf5d3502368e35cf68126f6b7ae4a0ab5e2ffe2f0baa3b4286f03ad069ba3e098e1725449ef08b7e154ba8
+  languageName: node
+  linkType: hard
+
+"@storybook/instrumenter@npm:7.0.4":
+  version: 7.0.4
+  resolution: "@storybook/instrumenter@npm:7.0.4"
+  dependencies:
+    "@storybook/channels": 7.0.4
+    "@storybook/client-logger": 7.0.4
+    "@storybook/core-events": 7.0.4
+    "@storybook/global": ^5.0.0
+    "@storybook/preview-api": 7.0.4
+  checksum: d5f22fcea3efefd6bb0523c3164ffb7f0287c89a4f6485ac8165658d35b699d6665c964ba01fd3f0dff0938913e6c0b08341796acc9d3fe21e63ebd441147bd9
   languageName: node
   linkType: hard
 
@@ -13944,7 +13987,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jest-mock@npm:^27.5.1":
+"jest-mock@npm:^27.0.6, jest-mock@npm:^27.5.1":
   version: 27.5.1
   resolution: "jest-mock@npm:27.5.1"
   dependencies:
@@ -20028,7 +20071,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ts-dedent@npm:^2.0.0":
+"ts-dedent@npm:^2.0.0, ts-dedent@npm:^2.2.0":
   version: 2.2.0
   resolution: "ts-dedent@npm:2.2.0"
   checksum: 93ed8f7878b6d5ed3c08d99b740010eede6bccfe64bce61c5a4da06a2c17d6ddbb80a8c49c2d15251de7594a4f93ffa21dd10e7be75ef66a4dc9951b4a94e2af

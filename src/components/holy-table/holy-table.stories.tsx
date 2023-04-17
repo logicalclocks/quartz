@@ -1,4 +1,4 @@
-import { Meta, Story } from '@storybook/react/types-6-0';
+import { Meta, Story } from '@storybook/react';
 import React from 'react';
 import { Box } from 'rebass';
 import HT from '.';

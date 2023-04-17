@@ -1,13 +1,11 @@
 import { defineConfig } from 'vite';
-
 import dts from 'vite-plugin-dts';
-import pkg from './package.json';
 
 export default defineConfig({
   define: {
     // By default, Vite doesn't include shims for NodeJS/
     // necessary for segment analytics lib to work
-    global: 'window',
+    // global: 'window',
   },
 
   plugins: [
@@ -22,7 +20,6 @@ export default defineConfig({
       formats: ['es'],
     },
     rollupOptions: {
-      external: Object.keys(pkg.peerDependencies),
       output: {
         globals: {
           react: 'React',

@@ -1,6 +1,6 @@
 import { action } from '@storybook/addon-actions';
 import React, { useState } from 'react';
-import { Story, Meta } from '@storybook/react/types-6-0';
+import { Story, Meta } from '@storybook/react';
 import Label from '../label';
 
 import Pagination, { PaginationProps } from './index';
