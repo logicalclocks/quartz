@@ -9,7 +9,6 @@ import Navigation, { NavigationProps } from './container';
 import { TreeNode } from './types';
 import useNavigation from './useNavigation';
 import { GetIcon, IconName } from '../icon';
-import { Button } from '../button';
 
 export default {
   title: 'Quartz/Navigation',
