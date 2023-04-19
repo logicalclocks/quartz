@@ -1,27 +1,24 @@
+import { EditorView } from '@codemirror/view';
 import React, { FC, useState } from 'react';
-import { Box, FlexProps, Flex } from 'rebass';
-import SyntaxHighlighter from 'react-syntax-highlighter';
-import { hybrid } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+import { Box, Flex, FlexProps } from 'rebass';
+
+import { LanguageName, loadLanguage } from '@uiw/codemirror-extensions-langs';
+import { darcula } from '@uiw/codemirror-theme-darcula';
+import CodeMirror from '@uiw/react-codemirror';
+import { copyToClipboard, saveToFile } from '../../utils';
 import { Button } from '../button';
 import ExpandViewer from '../expand-viewer';
-
-import styles, {
-  boxStyles,
-  buttonsStyles,
-  lineNumberStyles,
-  codeHeaderStyles,
-} from './code.styles';
-import Value from '../typography/value';
-import { copyToClipboard, saveToFile } from '../../utils';
-import { PopupProps } from '../popup';
 import { GetIcon, IconName } from '../icon';
+import { PopupProps } from '../popup';
+import Value from '../typography/value';
+import styles, { buttonsStyles, codeHeaderStyles } from './code.styles';
 
 const CONTENT_UPPER_BOUND = 12;
 
 export interface CodeProps extends Omit<FlexProps, 'css' | 'title'> {
   title?: React.ReactElement | string;
   content: string;
-  language?: string;
+  language?: LanguageName;
   copyButton?: boolean;
   downloadButton?: boolean;
   downloadCallback?: () => void;
@@ -39,7 +36,7 @@ export const defaultPopupProps = {
 
 const Code: FC<CodeProps> = ({
   content,
-  language = 'text',
+  language,
   copyButton = false,
   downloadButton = false,
   expandable = false,
@@ -76,10 +73,7 @@ const Code: FC<CodeProps> = ({
         // eslint-disable-next-line react/no-unstable-nested-components
         BriefComponent={() => (
           <CodeSnippet
-            content={content}
-            contentToShow={contentLines
-              .slice(0, CONTENT_UPPER_BOUND)
-              .join('\n')}
+            content={contentLines.slice(0, CONTENT_UPPER_BOUND).join('\n')}
             language={language}
             copyButton={copyButton}
             downloadButton={downloadButton}
@@ -107,13 +101,11 @@ export default Code;
 // Normal Code Component
 interface CodeSnippetProps
   extends Omit<CodeProps, 'popupProps' | 'expandable'> {
-  contentToShow?: string;
   maxHeightOfCode?: string;
 }
 const CodeSnippet: FC<CodeSnippetProps> = ({
   title,
   content,
-  contentToShow,
   language,
   copyButton,
   downloadButton,
@@ -148,19 +140,25 @@ const CodeSnippet: FC<CodeSnippetProps> = ({
         {...props}
         p={0}
       >
-        <SyntaxHighlighter
-          style={hybrid}
-          wrapLongLines={wrapLongLines}
-          showLineNumbers={showLineNumbers}
-          lineNumberStyle={lineNumberStyles}
-          language={language}
-          customStyle={{
-            ...boxStyles,
-            paddingLeft: showLineNumbers ? '0px' : '20px',
+        <CodeMirror
+          value={content}
+          basicSetup={{
+            autocompletion: false,
+            lineNumbers: true,
           }}
-        >
-          {contentToShow ?? content}
-        </SyntaxHighlighter>
+          style={{
+            width: '100%',
+          }}
+          extensions={
+            language
+              ? [EditorView.lineWrapping, loadLanguage(language)!].filter(
+                  Boolean,
+                )
+              : [EditorView.lineWrapping]
+          }
+          theme={darcula}
+          readOnly
+        />
       </Flex>
     </Flex>
   );

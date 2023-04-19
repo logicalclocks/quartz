@@ -57,6 +57,6 @@ export const buttonsStyles = {
 };
 
 export default {
-  justifyContent: 'flex-start',
+  // justifyContent: 'flex-start',
   flexDirection: 'column',
 } as SxStyleProp;

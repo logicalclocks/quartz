@@ -8,10 +8,17 @@
   "repository": "logicalclocks/quartz",
   "main": "./dist/index.mjs",
   "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
   "source": "src/index.ts",
   "exports": {
-    ".": "./dist/index.mjs",
-    "./chakra": "./dist/chakra.mjs"
+    ".": {
+      "import": "./dist/index.mjs",
+      "types": "./dist/index.d.ts"
+    },
+    "./chakra": {
+      "import": "./dist/chakra.mjs",
+      "types": "./dist/chakra.d.ts"
+    }
   },
   "engines": {
     "node": ">=16.0.0"
@@ -63,7 +70,6 @@
     "@types/react": "^18.0.28",
     "@types/react-datepicker": "^4",
     "@types/react-dom": "^18.0.11",
-    "@types/react-syntax-highlighter": "^15.4.3",
     "@types/rebass": "^4.0.10",
     "@types/rebass__forms": "^4.0.6",
     "@typescript-eslint/eslint-plugin": "^5.29.0",
@@ -104,13 +110,16 @@
   ],
   "dependencies": {
     "@chakra-ui/react": "^2.5.5",
+    "@codemirror/view": "^6.9.5",
     "@emotion/core": "^10.3.1",
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
     "@rebass/forms": "^4.0.6",
     "@styled-system/css": "^5.1.5",
     "@tanem/react-nprogress": "^4.0.8",
-    "codemirror": "^5.65.2",
+    "@uiw/codemirror-extensions-langs": "^4.19.16",
+    "@uiw/codemirror-theme-darcula": "^4.19.16",
+    "@uiw/react-codemirror": "^4.19.16",
     "date-fns": "^2.28.0",
     "emotion-theming": "^10.3.0",
     "events": "^3.2.0",
@@ -118,10 +127,8 @@
     "ramda": "^0.28.0",
     "rc-slider": "^10.1.0",
     "rc-tooltip": "^4.2.3",
-    "react-codemirror2": "^7.2.1",
     "react-datepicker": "4.10.0",
     "react-spring": "^8.0.27",
-    "react-syntax-highlighter": "^15.5.0",
     "rebass": "^4.0.7",
     "remove": "^0.1.5"
   },
