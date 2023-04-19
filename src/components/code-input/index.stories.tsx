@@ -77,7 +77,7 @@ const argTypes = {
       required: false,
       summary: 'Input type',
     },
-    defaultValue: { summary: 'python' },
+    defaultValue: { summary: 'javascript' },
   },
   intent: {
     control: {
@@ -99,7 +99,7 @@ Default.argTypes = argTypes;
 
 Default.args = {
   label: 'Label',
-  mode: 'python',
+  mode: 'javascript',
   value: 'const a = 100;\nconst b = 120;',
   tooltipInfo: 'some tooltip',
   onChange: action('Input change'),
