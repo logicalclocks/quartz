@@ -1,24 +1,18 @@
-import { Box, Flex } from 'rebass';
 import React, { FC, forwardRef } from 'react';
-import { Controlled } from 'react-codemirror2';
-import getStyles from './index.styles';
+import { Box, Flex } from 'rebass';
 
-import 'codemirror/lib/codemirror.css';
-import 'codemirror/mode/javascript/javascript';
-import 'codemirror/mode/yaml/yaml';
-import 'codemirror/mode/python/python';
-import 'codemirror/mode/sql/sql';
-
-import 'codemirror/theme/darcula.css';
+import { loadLanguage } from '@uiw/codemirror-extensions-langs';
+import { darcula } from '@uiw/codemirror-theme-darcula';
+import CodeMirror from '@uiw/react-codemirror';
 
 // Components
-import Label, { LabelProps } from '../label';
-import Labeling from '../typography/labeling';
-import Tooltip from '../tooltip';
-import { Intents } from '../intents';
-import InputInfo from '../input-info';
-import { GetIcon, IconName } from '../icon';
 import { BoxProps } from '../box';
+import { GetIcon, IconName } from '../icon';
+import InputInfo from '../input-info';
+import { Intents } from '../intents';
+import Label, { LabelProps } from '../label';
+import Tooltip from '../tooltip';
+import Labeling from '../typography/labeling';
 
 export interface CodeInputProps
   extends Omit<BoxProps, 'children' | 'onChange'> {
@@ -53,7 +47,6 @@ const CodeInput: FC<CodeInputProps> = forwardRef(
     readOnly = false,
     info,
     intent = 'default',
-    sx = {},
     ...props
   }: CodeInputProps) => {
     const actions = (labelAction || tooltipInfo || optional) && (
@@ -73,13 +66,7 @@ const CodeInput: FC<CodeInputProps> = forwardRef(
     );
 
     return (
-      <Box
-        width={width}
-        height={height}
-        tx="inputs"
-        sx={{ ...getStyles(), ...sx }}
-        {...props}
-      >
+      <Box width={width} height={height} tx="inputs" {...props}>
         <Label
           action={actions}
           text={label}
@@ -88,21 +75,17 @@ const CodeInput: FC<CodeInputProps> = forwardRef(
           {...labelProps}
           mb="8px"
         >
-          <Controlled
+          <CodeMirror
             value={value}
-            options={{
-              mode: {
-                name: mode,
-                ...(mode === 'javascript' ? { json: true } : {}),
-              },
-              theme: 'darcula',
+            basicSetup={{
+              autocompletion: false,
               lineNumbers: true,
-              readOnly,
+              foldGutter: false,
             }}
-            onChange={() => {}}
-            onBeforeChange={(_editor, _data, val: string) => {
-              onChange(val);
-            }}
+            extensions={[loadLanguage(mode)!].filter(Boolean)}
+            theme={darcula}
+            onChange={onChange}
+            readOnly={readOnly}
           />
         </Label>
         {info && <InputInfo intent={intent}>{info}</InputInfo>}

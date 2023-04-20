@@ -109,6 +109,8 @@ const Template: Story<CodeProps> = (props) => (
 export const Default = Template.bind({});
 
 Default.args = {
+  copyButton: true,
+  downloadButton: true,
   content:
     'SELECT ‘fg2’.’home_team_id’, ‘fg2’.\nFROM ‘demo_featurestore_admin000’\nINNER JOIN ‘demo_featurestore’',
 };
@@ -151,6 +153,7 @@ Expandable.args = {
   title: 'cargo.sh',
   expandable: true,
   wrapLongLines: true,
+  language: 'sql',
 };
 
 Expandable.argTypes = argTypes;

@@ -1,5 +1,4 @@
 import React from 'react';
-import { SxStyleProp } from 'rebass';
 
 export const boxStyles: React.CSSProperties = {
   width: '100%',
@@ -19,13 +18,6 @@ export const codeHeaderStyles = {
   fontFamily: 'Inter',
   fontWeight: 700,
   fontSize: 'value',
-};
-
-export const lineNumberStyles: React.CSSProperties = {
-  paddingLeft: '5px',
-  paddingRight: '5px',
-  marginRight: '10px',
-  textAlign: 'right',
 };
 
 export const buttonsStyles = {
@@ -55,8 +47,3 @@ export const buttonsStyles = {
   borderRadius: 0,
   transition: 'all 0.8s cubic-bezier(0.19, 1, 0.22, 1)',
 };
-
-export default {
-  justifyContent: 'flex-start',
-  flexDirection: 'column',
-} as SxStyleProp;
