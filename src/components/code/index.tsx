@@ -11,7 +11,7 @@ import ExpandViewer from '../expand-viewer';
 import { GetIcon, IconName } from '../icon';
 import { PopupProps } from '../popup';
 import Value from '../typography/value';
-import styles, { buttonsStyles, codeHeaderStyles } from './code.styles';
+import { buttonsStyles, codeHeaderStyles } from './code.styles';
 
 const CONTENT_UPPER_BOUND = 12;
 
@@ -117,7 +117,7 @@ const CodeSnippet: FC<CodeSnippetProps> = ({
   ...props
 }) => {
   return (
-    <Flex width="100%" sx={styles} height="100%">
+    <Flex flexDirection="column" width="100%" height="100%">
       <Flex width="100%" sx={codeHeaderStyles}>
         <Box flexGrow={1} ml="8px" my={1}>
           {title}
@@ -144,18 +144,15 @@ const CodeSnippet: FC<CodeSnippetProps> = ({
           value={content}
           basicSetup={{
             autocompletion: false,
-            lineNumbers: true,
+            lineNumbers: showLineNumbers,
+            foldGutter: false,
           }}
           style={{
             width: '100%',
           }}
-          extensions={
-            language
-              ? [EditorView.lineWrapping, loadLanguage(language)!].filter(
-                  Boolean,
-                )
-              : [EditorView.lineWrapping]
-          }
+          extensions={[EditorView.lineWrapping].concat(
+            language ? [loadLanguage(language)!].filter(Boolean) : [],
+          )}
           theme={darcula}
           readOnly
         />

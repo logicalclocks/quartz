@@ -80,6 +80,7 @@ const CodeInput: FC<CodeInputProps> = forwardRef(
             basicSetup={{
               autocompletion: false,
               lineNumbers: true,
+              foldGutter: false,
             }}
             extensions={[loadLanguage(mode)!].filter(Boolean)}
             theme={darcula}

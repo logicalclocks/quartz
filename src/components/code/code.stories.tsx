@@ -153,6 +153,7 @@ Expandable.args = {
   title: 'cargo.sh',
   expandable: true,
   wrapLongLines: true,
+  language: 'sql',
 };
 
 Expandable.argTypes = argTypes;
