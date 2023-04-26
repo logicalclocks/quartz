@@ -1,3 +1,10 @@
+## [2.0.5](https://github.com/logicalclocks/quartz/compare/v2.0.4...v2.0.5) (2023-04-26)
+
+
+### Bug Fixes
+
+* **release-notes:** fixing semantic-release-bot to push release-notes and version to dev ([#374](https://github.com/logicalclocks/quartz/issues/374)) ([2a2e04a](https://github.com/logicalclocks/quartz/commit/2a2e04a3d1bb42bf74bc9e9d0cc8fe5762ac548f))
+
 ## [2.0.4](https://github.com/logicalclocks/quartz/compare/v2.0.3...v2.0.4) (2023-04-26)
 
 
