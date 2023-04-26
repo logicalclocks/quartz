@@ -1,3 +1,10 @@
+## [2.0.4](https://github.com/logicalclocks/quartz/compare/v2.0.3...v2.0.4) (2023-04-26)
+
+
+### Bug Fixes
+
+* use chakra's dark mode ([#373](https://github.com/logicalclocks/quartz/issues/373)) ([8fde40f](https://github.com/logicalclocks/quartz/commit/8fde40fec16e7a603e51b2425385fb60a3898092))
+
 ## [2.0.3](https://github.com/logicalclocks/quartz/compare/v2.0.2...v2.0.3) (2023-04-26)
 
 
