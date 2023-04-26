@@ -18,8 +18,7 @@ export interface CodeInputProps
   extends Omit<BoxProps, 'children' | 'onChange'> {
   label?: string;
   value: string;
-  // Use javascript for displaying JSON
-  mode: 'javascript' | 'yaml' | 'python' | 'sql';
+  mode: 'json' | 'javascript' | 'yaml' | 'python' | 'sql';
   width?: string | number;
   height?: string | number;
   labelAction?: React.ReactNode;
