@@ -1,3 +1,10 @@
+# [2.1.0](https://github.com/logicalclocks/quartz/compare/v2.0.6...v2.1.0) (2023-04-26)
+
+
+### Features
+
+* **CodeInput:** add `json` mode ([#375](https://github.com/logicalclocks/quartz/issues/375)) ([29c1349](https://github.com/logicalclocks/quartz/commit/29c134945da30084cc487cfbbb971a5f45a119dc))
+
 ## [2.0.6](https://github.com/logicalclocks/quartz/compare/v2.0.5...v2.0.6) (2023-04-26)
 
 ## [2.0.5](https://github.com/logicalclocks/quartz/compare/v2.0.4...v2.0.5) (2023-04-26)
