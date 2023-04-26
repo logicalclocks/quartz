@@ -1,14 +1,7 @@
-import { useContext } from 'react';
-import { ColorModeContext } from './ThemeProvider';
+import { useColorMode as useChakraColorMode } from '@chakra-ui/react';
 
 export const useColorMode = () => {
-  const { colorMode, setColorMode: setColorModeInContext } =
-    useContext(ColorModeContext);
+  const { colorMode, setColorMode, toggleColorMode } = useChakraColorMode();
 
-  const toggleColorMode = () => {
-    const nextColor = colorMode === 'light' ? 'dark' : 'light';
-    setColorModeInContext(nextColor);
-  };
-
-  return { colorMode, changeColorMode: setColorModeInContext, toggleColorMode };
+  return { colorMode, changeColorMode: setColorMode, toggleColorMode };
 };

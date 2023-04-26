@@ -1,6 +1,7 @@
+import { ColorModeScript, useColorMode } from '@chakra-ui/react';
 import { css, Global } from '@emotion/core';
 import { ThemeProvider as EmotionThemeProvider } from 'emotion-theming';
-import React, { createContext, FC, useEffect, useMemo, useState } from 'react';
+import React, { FC } from 'react';
 
 import defaultTheme, { darkTheme } from './theme';
 
@@ -15,47 +16,26 @@ const ThemeProvider: FC<ThemeProviderProps> = ({
   children,
   colorMode: colorModeFromProps,
 }: ThemeProviderProps) => {
-  const [colorMode, setColorMode] = useState<ThemeVariant>(
-    (localStorage.getItem('color-mode') ?? 'light') as ThemeVariant,
-  );
-  const value = useMemo(() => ({ colorMode, setColorMode }), [colorMode]);
-
-  useEffect(
-    function syncWithLocalStorage() {
-      localStorage.setItem('color-mode', colorMode);
-    },
-    [colorMode],
-  );
+  const { colorMode } = useColorMode();
 
   const colorModeToUse = colorModeFromProps ?? colorMode; // the outer one overrides inner state
 
   return (
     <React.Fragment>
+      <ColorModeScript />
       <Global
         styles={css`
           @import url('https://fonts.googleapis.com/css2?family=Inter:wght@500;700&display=swap');
           @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@700&display=swap');
         `}
       />
-      <ColorModeContext.Provider value={value}>
-        <EmotionThemeProvider
-          theme={colorModeToUse === 'light' ? defaultTheme : darkTheme}
-        >
-          {children}
-        </EmotionThemeProvider>
-      </ColorModeContext.Provider>
+      <EmotionThemeProvider
+        theme={colorModeToUse === 'light' ? defaultTheme : darkTheme}
+      >
+        {children}
+      </EmotionThemeProvider>
     </React.Fragment>
   );
 };
 
 export default ThemeProvider;
-
-export interface IColorModeContext {
-  colorMode: ThemeVariant;
-  setColorMode: (mode: ThemeVariant) => void;
-}
-
-export const ColorModeContext = createContext<IColorModeContext>({
-  colorMode: 'light',
-  setColorMode: () => {},
-});
