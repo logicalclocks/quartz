@@ -126,7 +126,7 @@
     "framer-motion": "^10.11.4",
     "ramda": "^0.28.0",
     "rc-slider": "^10.1.0",
-    "rc-tooltip": "^4.2.3",
+    "rc-tooltip": "^6.0.1",
     "react-datepicker": "4.10.0",
     "react-spring": "^8.0.27",
     "rebass": "^4.0.7",
