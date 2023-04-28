@@ -1,11 +1,13 @@
 import { defineConfig } from 'vite';
 import dts from 'vite-plugin-dts';
+import cssInjectedByJsPlugin from 'vite-plugin-css-injected-by-js';
 
 export default defineConfig({
   plugins: [
     dts({
       insertTypesEntry: true,
     }),
+    cssInjectedByJsPlugin(),
   ],
   build: {
     lib: {

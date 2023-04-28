@@ -4823,6 +4823,7 @@ __metadata:
     storybook-dark-mode: ^3.0.0
     typescript: ^4.6.2
     vite: ^4.2.1
+    vite-plugin-css-injected-by-js: ^3.1.0
     vite-plugin-dts: ^2.2.0
     yalc: ^1.0.0-pre.53
   peerDependencies:
@@ -21125,6 +21126,15 @@ __metadata:
     core-util-is: 1.0.2
     extsprintf: ^1.2.0
   checksum: c431df0bedf2088b227a4e051e0ff4ca54df2c114096b0c01e1cbaadb021c30a04d7dd5b41ab277bcd51246ca135bf931d4c4c796ecae7a4fef6d744ecef36ea
+  languageName: node
+  linkType: hard
+
+"vite-plugin-css-injected-by-js@npm:^3.1.0":
+  version: 3.1.0
+  resolution: "vite-plugin-css-injected-by-js@npm:3.1.0"
+  peerDependencies:
+    vite: ">2.0.0-0"
+  checksum: 2f48b23a52d2c7e4d4a172107406e788bac5132c7b9650ab6e8f1906ed8c60fd4ff82b49f7e073233c348590d3a390173d482000faec8d2fee60e2bc915c5388
   languageName: node
   linkType: hard
 
