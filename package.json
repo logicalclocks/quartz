@@ -110,12 +110,14 @@
     ".releaserc.json"
   ],
   "dependencies": {
+    "@chakra-ui/anatomy": "^2.1.1",
     "@chakra-ui/react": "^2.5.5",
     "@codemirror/view": "^6.9.5",
     "@emotion/core": "^10.3.1",
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
     "@rebass/forms": "^4.0.6",
+    "@storybook/testing-library": "^0.1.0",
     "@styled-system/css": "^5.1.5",
     "@tanem/react-nprogress": "^5.0.34",
     "@uiw/codemirror-extensions-langs": "^4.19.16",

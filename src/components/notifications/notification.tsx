@@ -23,7 +23,7 @@ const Notification: FC<SystemNotification> = ({
       NotificationManager.remove(id);
     }, duration);
 
-    setTimeoutNumber(timeout);
+    setTimeoutNumber(timeout);  
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

@@ -1,6 +1,7 @@
 import { themes } from '@storybook/theming';
 import React from 'react';
 import { useDarkMode } from 'storybook-dark-mode';
+import { ChakraThemeProvider } from '../src/chakra';
 
 import ThemeProvider from '../src/theme/ThemeProvider';
 
@@ -19,7 +20,9 @@ export const parameters = {
 export const decorators = [
   (Story) => (
     <ThemeProvider colorMode={useDarkMode() ? 'dark' : 'light'}>
-      <Story />
+      <ChakraThemeProvider>
+        <Story />
+      </ChakraThemeProvider>
     </ThemeProvider>
   ),
 ];
