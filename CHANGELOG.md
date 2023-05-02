@@ -1,3 +1,10 @@
+## [2.1.3](https://github.com/logicalclocks/quartz/compare/v2.1.2...v2.1.3) (2023-05-02)
+
+
+### Bug Fixes
+
+* word breaks ([#382](https://github.com/logicalclocks/quartz/issues/382)) ([524fda8](https://github.com/logicalclocks/quartz/commit/524fda86d2875d1620c29839fd9478a5328156b3))
+
 ## [2.1.2](https://github.com/logicalclocks/quartz/compare/v2.1.1...v2.1.2) (2023-04-28)
 
 ## [2.1.1](https://github.com/logicalclocks/quartz/compare/v2.1.0...v2.1.1) (2023-04-26)
