@@ -1,7 +1,7 @@
 import { ColorModeScript, useColorMode } from '@chakra-ui/react';
 import { css, Global } from '@emotion/core';
 import { ThemeProvider as EmotionThemeProvider } from 'emotion-theming';
-import React, { FC } from 'react';
+import React, { FC, useEffect } from 'react';
 
 import defaultTheme, { darkTheme } from './theme';
 
@@ -16,7 +16,12 @@ const ThemeProvider: FC<ThemeProviderProps> = ({
   children,
   colorMode: colorModeFromProps,
 }: ThemeProviderProps) => {
-  const { colorMode } = useColorMode();
+  const { colorMode, setColorMode } = useColorMode();
+
+  useEffect(() => {
+    console.log();
+    setColorMode(colorModeFromProps);
+  }, [colorModeFromProps, setColorMode]);
 
   const colorModeToUse = colorModeFromProps ?? colorMode; // the outer one overrides inner state
 

@@ -1,3 +1,4 @@
+import { ColorModeScript } from '@chakra-ui/react';
 import { themes } from '@storybook/theming';
 import React from 'react';
 import { useDarkMode } from 'storybook-dark-mode';
@@ -11,18 +12,26 @@ export const parameters = {
   controls: { expanded: true },
   chakra: {},
   darkMode: {
-    current: 'light',
-    dark: { ...themes.dark, appBg: themes.dark.appBg },
-    light: { ...themes.light, appBg: themes.light.appBg },
+    dark: { ...themes.dark },
+    light: { ...themes.light },
+    stylePreview: true,
   },
 };
 
 export const decorators = [
-  (Story) => (
-    <ThemeProvider colorMode={useDarkMode() ? 'dark' : 'light'}>
-      <ChakraThemeProvider>
-        <Story />
-      </ChakraThemeProvider>
-    </ThemeProvider>
-  ),
+  (Story) => {
+    const isDark = useDarkMode();
+
+    return (
+      <>
+        <ColorModeScript />
+
+        <ChakraThemeProvider>
+          <ThemeProvider colorMode={isDark ? 'dark' : 'light'}>
+            <Story />
+          </ThemeProvider>
+        </ChakraThemeProvider>
+      </>
+    );
+  },
 ];
