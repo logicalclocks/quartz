@@ -116,6 +116,7 @@
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
     "@rebass/forms": "^4.0.6",
+    "@storybook/jest": "^0.1.0",
     "@storybook/testing-library": "^0.1.0",
     "@styled-system/css": "^5.1.5",
     "@tanem/react-nprogress": "^5.0.34",

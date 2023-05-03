@@ -14,6 +14,9 @@ const theme = extendTheme({
     ...colors,
     dark: darkThemeColors,
   },
+  components: {
+    Alert: {},
+  },
 });
 
 const { ToastContainer, toast } = createStandaloneToast({
@@ -23,7 +26,12 @@ const { ToastContainer, toast } = createStandaloneToast({
 export const ChakraThemeProvider = ({ children }: PropsWithChildren) => {
   return (
     <>
-      <ChakraProvider theme={theme}>{children}</ChakraProvider>
+      <ChakraProvider
+        toastOptions={{ defaultOptions: { position: 'top-right' } }}
+        theme={theme}
+      >
+        {children}
+      </ChakraProvider>
       <ToastContainer />
     </>
   );
