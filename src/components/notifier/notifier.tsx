@@ -27,7 +27,7 @@ export const useNotifier = () => {
               title={notification.title}
               content={notification.content}
               onClose={onClose}
-              status="error"
+              status={status}
             />
           );
         },

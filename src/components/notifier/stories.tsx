@@ -8,9 +8,11 @@ import { INotification, Notification, useNotify } from './Notification';
 import { Button } from '../button';
 import { Box } from '../box';
 import { useNotifier } from './notifier';
+import { Flex } from '../flex';
 
 const meta: Meta<INotification> = {
   title: 'Notifier',
+  tags: ['autodocs'],
   args: {
     title: 'Something happened',
     content: 'You have to see it.',
@@ -19,6 +21,39 @@ const meta: Meta<INotification> = {
 };
 
 export default meta;
+
+export const Primary: Story = {
+  render: ({ title, content, duration }) => {
+    const notify = useNotifier();
+
+    const showSuccess = () => {
+      notify.success({
+        title,
+        content,
+        duration,
+      });
+    };
+
+    const showError = () => {
+      notify.error({
+        title,
+        content,
+        duration,
+      });
+    };
+
+    return (
+      <Flex gap="20px">
+        <Button intent="primary" onClick={showSuccess}>
+          Success
+        </Button>
+        <Button intent="alert" onClick={showError}>
+          Error
+        </Button>
+      </Flex>
+    );
+  },
+};
 
 type Story = StoryObj<INotification>;
 

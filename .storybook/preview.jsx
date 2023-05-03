@@ -1,4 +1,5 @@
 import { ColorModeScript } from '@chakra-ui/react';
+import { DocsContainer } from '@storybook/addon-docs';
 import { themes } from '@storybook/theming';
 import React from 'react';
 import { useDarkMode } from 'storybook-dark-mode';
@@ -10,7 +11,15 @@ export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
   layout: 'centered',
   controls: { expanded: true },
-  chakra: {},
+  docs: {
+    container: (props) => {
+      const isDark = useDarkMode();
+
+      return (
+        <DocsContainer {...props} theme={isDark ? themes.dark : themes.light} />
+      );
+    },
+  },
   darkMode: {
     dark: { ...themes.dark },
     light: { ...themes.light },
