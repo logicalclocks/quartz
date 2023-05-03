@@ -1,3 +1,10 @@
+## [2.1.4](https://github.com/logicalclocks/quartz/compare/v2.1.3...v2.1.4) (2023-05-03)
+
+
+### Bug Fixes
+
+* **CodeInput:** code Input height issue ([#383](https://github.com/logicalclocks/quartz/issues/383)) ([818c784](https://github.com/logicalclocks/quartz/commit/818c78433e79ee4f16de8d4f65cc14f197e4d494))
+
 ## [2.1.3](https://github.com/logicalclocks/quartz/compare/v2.1.2...v2.1.3) (2023-05-02)
 
 
