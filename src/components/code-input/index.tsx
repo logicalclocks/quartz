@@ -20,7 +20,7 @@ export interface CodeInputProps
   value: string;
   mode: 'json' | 'javascript' | 'yaml' | 'python' | 'sql';
   width?: string | number;
-  height?: string | number;
+  height?: string;
   labelAction?: React.ReactNode;
   optional?: boolean;
   tooltipInfo?: string;
@@ -36,8 +36,8 @@ const CodeInput: FC<CodeInputProps> = forwardRef(
     label = '',
     value,
     mode,
-    width = '300px',
-    height = '600px',
+    width = '100%',
+    height = '100%',
     labelAction,
     optional,
     tooltipInfo,
@@ -65,12 +65,11 @@ const CodeInput: FC<CodeInputProps> = forwardRef(
     );
 
     return (
-      <Box width={width} height={height} tx="inputs" {...props}>
+      <Box width={width} tx="inputs" {...props}>
         <Label
           action={actions}
           text={label}
           width={width}
-          height={height}
           {...labelProps}
           mb="8px"
         >
@@ -85,6 +84,7 @@ const CodeInput: FC<CodeInputProps> = forwardRef(
             theme={darcula}
             onChange={onChange}
             readOnly={readOnly}
+            height={height}
           />
         </Label>
         {info && <InputInfo intent={intent}>{info}</InputInfo>}
