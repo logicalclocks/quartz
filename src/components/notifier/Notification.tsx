@@ -58,25 +58,3 @@ export interface INotification {
   duration?: number;
   isError?: boolean;
 }
-
-export const useNotify = () => {
-  const toast = useToast();
-
-  return (notification: INotification) =>
-    toast({
-      position: 'top-right',
-      status: notification.isError ? 'error' : 'success',
-      duration: notification.duration ?? 5000,
-      isClosable: true,
-      render: ({ onClose }) => {
-        return (
-          <Notification
-            title={notification.title}
-            content={notification.content}
-            onClose={onClose}
-            status="error"
-          />
-        );
-      },
-    });
-};

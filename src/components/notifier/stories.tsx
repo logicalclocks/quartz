@@ -1,15 +1,15 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import { userEvent, waitFor, within } from '@storybook/testing-library';
 import React from 'react';
-import { within, userEvent, waitFor } from '@storybook/testing-library';
 
 import { expect } from '@storybook/jest';
 
-import { INotification, Notification, useNotify } from './Notification';
-import { Button } from '../button';
 import { Box } from '../box';
-import { createNotifier, useNotifier } from './notifier';
+import { Button } from '../button';
 import { Flex } from '../flex';
 import Value from '../typography/value';
+import { INotification } from './Notification';
+import { createNotifier, useNotifier } from './notifier';
 
 const meta: Meta<INotification> = {
   title: 'Notifier',
