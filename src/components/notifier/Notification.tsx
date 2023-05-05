@@ -17,9 +17,11 @@ interface Props extends Omit<AlertProps, 'title'> {
 
 export const Notification = ({ onClose, content, title, status }: Props) => {
   return (
+    // make it 350px widevc
     <Alert
       variant="left-accent"
       status={status}
+      borderLeftWidth="5px"
       bg="white"
       _dark={{
         bg: 'dark.white',
@@ -29,7 +31,7 @@ export const Notification = ({ onClose, content, title, status }: Props) => {
       gap={1}
       pb={4}
       pl={6}
-      minW="300px"
+      minW="350px"
     >
       <Flex width="100%" justifyContent="space-between" alignItems="flex-start">
         {React.isValidElement(title) ? (
