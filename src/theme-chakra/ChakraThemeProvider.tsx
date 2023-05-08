@@ -5,13 +5,6 @@ const theme = extendTheme({
   config: {
     cssVarPrefix: 'quartz',
   },
-  styles: {
-    global: {
-      '*, *::before, &::after': {
-        wordWrap: 'normal',
-      },
-    },
-  },
 });
 
 export const ChakraThemeProvider = ({ children }: PropsWithChildren) => {
