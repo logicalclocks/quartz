@@ -5,9 +5,13 @@ export interface ValueProps extends Omit<TextProps, 'css'> {
   primary?: boolean;
 }
 
-const Value: FC<ValueProps> = ({ primary, ...props }: ValueProps) => (
+const Value: FC<ValueProps> = ({ primary, sx, ...props }: ValueProps) => (
   <Text
     fontFamily="Inter"
+    sx={{
+      wordWrap: 'normal',
+      ...sx,
+    }}
     {...props}
     variant={`value${primary ? 'Primary' : ''}`}
   />

@@ -10,7 +10,11 @@ const Title: FC<TitleProps> = ({ uppercase = false, ...props }: TitleProps) => (
     {...props}
     as="h1"
     variant="title"
-    sx={{ ...(uppercase && { textTransform: 'uppercase' }), ...props.sx }}
+    sx={{
+      ...(uppercase && { textTransform: 'uppercase' }),
+      wordWrap: 'normal',
+      ...props.sx,
+    }}
   />
 );
 export default Title;

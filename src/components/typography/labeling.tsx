@@ -10,12 +10,14 @@ const Labeling: FC<LabelingProps> = ({
   children,
   bold,
   gray,
+  sx,
   ...props
 }: LabelingProps) => (
   <Text
-    {...props}
     variant={`labeling${gray ? 'Gray' : ''}`}
     fontWeight={bold ? 'label' : undefined}
+    sx={{ wordWrap: 'normal', ...sx }}
+    {...props}
   >
     {children}
   </Text>
