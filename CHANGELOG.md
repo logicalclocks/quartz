@@ -1,3 +1,10 @@
+# [2.3.0](https://github.com/logicalclocks/quartz/compare/v2.2.0...v2.3.0) (2023-05-09)
+
+
+### Features
+
+* **alternativeheader:** make sx prop overridable keeping default styles ([#391](https://github.com/logicalclocks/quartz/issues/391)) ([4bffb81](https://github.com/logicalclocks/quartz/commit/4bffb81024b65d050ee8075b7c57d236b5265e7c))
+
 # [2.2.0](https://github.com/logicalclocks/quartz/compare/v2.1.5...v2.2.0) (2023-05-09)
 
 
