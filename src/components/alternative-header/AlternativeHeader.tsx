@@ -27,6 +27,7 @@ export const AlternativeHeader: FC<Props> = ({
   title,
   tabs,
   withBase = false,
+  sx,
   ...props
 }: Props) => {
   const activeTabIndex = useMemo(() => {
@@ -36,7 +37,7 @@ export const AlternativeHeader: FC<Props> = ({
   }, [tabs]);
 
   return (
-    <Flex sx={S.wrapper(Boolean(title))} {...props}>
+    <Flex sx={{ ...S.wrapper(Boolean(title)), ...sx }} {...props}>
       <Flex justifyContent="space-between" width="100%" height="fit-content">
         <Value fontSize="20px" fontFamily="Inter" fontWeight="bold">
           {title && title}
