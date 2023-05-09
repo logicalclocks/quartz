@@ -1,3 +1,10 @@
+# [2.2.0](https://github.com/logicalclocks/quartz/compare/v2.1.5...v2.2.0) (2023-05-09)
+
+
+### Features
+
+* **tinypopup:** add optional close button ([#390](https://github.com/logicalclocks/quartz/issues/390)) ([516364f](https://github.com/logicalclocks/quartz/commit/516364f56a1e9c8821e585220c4e7229a79da61f))
+
 ## [2.1.5](https://github.com/logicalclocks/quartz/compare/v2.1.4...v2.1.5) (2023-05-08)
 
 ## [2.1.4](https://github.com/logicalclocks/quartz/compare/v2.1.3...v2.1.4) (2023-05-03)
