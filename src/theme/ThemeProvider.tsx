@@ -1,4 +1,4 @@
-import { ColorModeScript, useColorMode } from '@chakra-ui/react';
+import { useColorMode } from '@chakra-ui/react';
 import { css, Global } from '@emotion/core';
 import { ThemeProvider as EmotionThemeProvider } from 'emotion-theming';
 import React, { FC, useEffect } from 'react';
@@ -19,15 +19,13 @@ const ThemeProvider: FC<ThemeProviderProps> = ({
   const { colorMode, setColorMode } = useColorMode();
 
   useEffect(() => {
-    console.log();
-    setColorMode(colorModeFromProps);
+    if (colorModeFromProps) setColorMode(colorModeFromProps);
   }, [colorModeFromProps, setColorMode]);
 
   const colorModeToUse = colorModeFromProps ?? colorMode; // the outer one overrides inner state
 
   return (
     <React.Fragment>
-      <ColorModeScript />
       <Global
         styles={css`
           @import url('https://fonts.googleapis.com/css2?family=Inter:wght@500;700&display=swap');

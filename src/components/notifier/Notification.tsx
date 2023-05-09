@@ -4,7 +4,6 @@ import {
   AlertProps,
   AlertTitle,
   CloseButton,
-  useToast,
 } from '@chakra-ui/react';
 import React, { ReactNode } from 'react';
 import { Flex } from '../flex';
@@ -17,7 +16,6 @@ interface Props extends Omit<AlertProps, 'title'> {
 
 export const Notification = ({ onClose, content, title, status }: Props) => {
   return (
-    // make it 350px widevc
     <Alert
       variant="left-accent"
       status={status}
@@ -37,7 +35,7 @@ export const Notification = ({ onClose, content, title, status }: Props) => {
         {React.isValidElement(title) ? (
           title
         ) : (
-          <AlertTitle fontSize="lg">{title}</AlertTitle>
+          <AlertTitle fontSize="md">{title}</AlertTitle>
         )}
         <CloseButton onClick={onClose} />
       </Flex>
@@ -45,7 +43,7 @@ export const Notification = ({ onClose, content, title, status }: Props) => {
       {React.isValidElement(content) ? (
         content
       ) : (
-        <AlertDescription>{content}</AlertDescription>
+        <AlertDescription fontSize="xs">{content}</AlertDescription>
       )}
     </Alert>
   );

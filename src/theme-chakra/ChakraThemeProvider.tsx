@@ -14,9 +14,6 @@ const theme = extendTheme({
     ...colors,
     dark: darkThemeColors,
   },
-  components: {
-    Alert: {},
-  },
 });
 
 const { ToastContainer, toast } = createStandaloneToast({
