@@ -1,4 +1,4 @@
-import { useToast } from '@chakra-ui/react';
+import { ToastId, useToast } from '@chakra-ui/react';
 import React, { ReactNode, useCallback } from 'react';
 import { standaloneToast } from '../../theme-chakra/ChakraThemeProvider';
 import { Notification } from './Notification';
@@ -16,22 +16,38 @@ export const useNotifier = () => {
   const toast = useToast();
 
   const notify = useCallback(
-    (status: Status) => (notification: INotification) =>
+    (status: Status) => (notification: INotification) => {
+      const render = ({ onClose, id }: { onClose(): void; id: ToastId }) => {
+        return (
+          <Notification
+            title={notification.title}
+            content={notification.content}
+            onClose={onClose}
+            status={status}
+            onMouseEnter={() => hoverHandler(id)}
+            onMouseLeave={() => unhoverHandler(id)}
+          />
+        );
+      };
+
+      const hoverHandler = (id: ToastId) => {
+        toast.update(id, { duration: 1e6, render });
+      };
+
+      const unhoverHandler = (id: ToastId) => {
+        toast.update(id, {
+          duration: notification.duration ?? 5000,
+          render,
+        });
+      };
+
       toast({
         status,
         duration: notification.duration ?? 5000,
         isClosable: true,
-        render: ({ onClose }) => {
-          return (
-            <Notification
-              title={notification.title}
-              content={notification.content}
-              onClose={onClose}
-              status={status}
-            />
-          );
-        },
-      }),
+        render,
+      });
+    },
     [toast],
   );
 

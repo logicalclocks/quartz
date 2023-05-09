@@ -14,22 +14,29 @@ interface Props extends Omit<AlertProps, 'title'> {
   content: string | ReactNode;
 }
 
-export const Notification = ({ onClose, content, title, status }: Props) => {
+export const Notification = ({
+  onClose,
+  content,
+  title,
+  status,
+  ...restProps
+}: Props) => {
   return (
     <Alert
       variant="left-accent"
       status={status}
       borderLeftWidth="5px"
+      flexDirection="column"
+      alignItems="start"
+      minW="350px"
       bg="white"
       _dark={{
         bg: 'dark.white',
       }}
-      flexDirection="column"
-      alignItems="start"
       gap={1}
       pb={4}
       pl={6}
-      minW="350px"
+      {...restProps}
     >
       <Flex width="100%" justifyContent="space-between" alignItems="flex-start">
         {React.isValidElement(title) ? (

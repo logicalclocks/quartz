@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { userEvent, waitFor, within } from '@storybook/testing-library';
-import React from 'react';
+import React, { useRef } from 'react';
 
 import { expect } from '@storybook/jest';
 
@@ -106,13 +106,16 @@ export const Error: Story = {
 export const Success: Story = {
   render: (args) => {
     const notify = useNotifier();
+    const counter = useRef(1);
 
     const another = () => {
       notify.success({
-        title: args.title,
+        title: `${args.title} ${counter.current}`,
         content: args.content,
         duration: args.duration,
       });
+
+      counter.current += 1;
     };
 
     return (
