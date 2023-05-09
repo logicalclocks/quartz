@@ -229,6 +229,11 @@ PopupTiny.argTypes = {
       summary: callbackDescription,
     },
   },
+  withCloseButton: {
+    control: {
+      type: 'boolean',
+    },
+  },
   otherProps: {
     type: {
       summary: 'Other props extended from the Popup Default component ',

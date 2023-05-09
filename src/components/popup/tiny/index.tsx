@@ -6,7 +6,7 @@ import { Button } from '../../button';
 import Popup, { PopupProps } from '../index';
 import Subtitle from '../../typography/subtitle';
 import Text from '../../typography/text';
-import { ButtonProps } from '../../..';
+import { ButtonProps, GetIcon, IconName, Tooltip } from '../../..';
 
 export interface TinyPopupProps
   extends Omit<
@@ -21,6 +21,7 @@ export interface TinyPopupProps
   onClose?: () => void;
   children?: React.ReactNode;
   contentHeight?: string;
+  withCloseButton?: boolean;
 }
 
 const TinyPopup: FC<TinyPopupProps> = ({
@@ -33,6 +34,7 @@ const TinyPopup: FC<TinyPopupProps> = ({
   children,
   contentHeight,
   sx,
+  withCloseButton = false,
   ...props
 }: TinyPopupProps) => (
   <Popup
@@ -47,6 +49,26 @@ const TinyPopup: FC<TinyPopupProps> = ({
     onClose={onClose}
     {...props}
   >
+    {withCloseButton && (
+      <Box
+        onClick={onClose}
+        p="2px"
+        height="30px"
+        sx={{
+          position: 'absolute',
+          top: 20,
+          right: 20,
+          cursor: 'pointer',
+          ':hover': {
+            backgroundColor: 'grayShade3',
+          },
+        }}
+      >
+        <Tooltip mainText="Close">
+          <GetIcon icon={IconName.cross} size="md" />
+        </Tooltip>
+      </Box>
+    )}
     <Subtitle pb="20px" lineHeight="22px">
       {title}
     </Subtitle>
