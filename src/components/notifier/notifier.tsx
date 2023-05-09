@@ -31,7 +31,7 @@ export const useNotifier = () => {
       };
 
       const hoverHandler = (id: ToastId) => {
-        toast.update(id, { duration: 1e6, render });
+        toast.update(id, { duration: 1e3, render });
       };
 
       const unhoverHandler = (id: ToastId) => {
