@@ -93,7 +93,7 @@ const Popup: FC<PopupProps> = ({
         {hasCloseButton && (
           <IconButton
             icon={IconName.cross}
-            sx={{ position: 'absolute', right: 10, top: 10 }}
+            sx={{ position: 'absolute', right: 10, top: 10, zIndex: 30 }}
             size="lg"
             onClick={onClose}
           />

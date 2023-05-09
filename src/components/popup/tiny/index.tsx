@@ -62,6 +62,7 @@ const TinyPopup: FC<TinyPopupProps> = ({
           ':hover': {
             backgroundColor: 'grayShade3',
           },
+          zIndex: 30,
         }}
       >
         <Tooltip mainText="Close">
