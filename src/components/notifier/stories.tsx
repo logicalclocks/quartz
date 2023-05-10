@@ -43,6 +43,22 @@ export const Primary: Story = {
       });
     };
 
+    const showInfo = () => {
+      notify.info({
+        title: `Info: ${title}`,
+        content,
+        duration,
+      });
+    };
+
+    const showWarning = () => {
+      notify.warning({
+        title: `Warning: ${title}`,
+        content,
+        duration,
+      });
+    };
+
     return (
       <Flex flexDirection="column" gap="20px">
         <Flex gap="20px">
@@ -51,6 +67,12 @@ export const Primary: Story = {
           </Button>
           <Button intent="alert" onClick={showError}>
             Error
+          </Button>
+          <Button intent="secondary" onClick={showInfo}>
+            Info
+          </Button>
+          <Button intent="ghost" onClick={showWarning}>
+            Warning
           </Button>
         </Flex>
         <Button intent="secondary" onClick={() => notify.closeAll()}>
@@ -63,15 +85,19 @@ export const Primary: Story = {
     const canvas = within(canvasElement);
     const portal = within(document.querySelector('.chakra-portal')!);
 
-    await userEvent.click(canvas.getByText('Success'));
-    await expect(portal.getByText('Something happened')).toBeInTheDocument();
+    userEvent.click(canvas.getByText('Success'));
+    expect(portal.getByText('Something happened')).toBeInTheDocument();
 
-    await userEvent.click(canvas.getByText('Error'));
-    await expect(
-      portal.getByText('Error!: Something happened'),
-    ).toBeInTheDocument();
+    userEvent.click(canvas.getByText('Warning'));
+    expect(portal.getByText('Warning: Something happened')).toBeInTheDocument();
 
-    await userEvent.click(canvas.getByText('Clear all notifications'));
+    userEvent.click(canvas.getByText('Info'));
+    expect(portal.getByText('Info: Something happened')).toBeInTheDocument();
+
+    userEvent.click(canvas.getByText('Error'));
+    expect(portal.getByText('Error!: Something happened')).toBeInTheDocument();
+
+    userEvent.click(canvas.getByText('Clear all notifications'));
     await waitFor(() =>
       expect(portal.queryByText('Something happened')).not.toBeInTheDocument(),
     );
