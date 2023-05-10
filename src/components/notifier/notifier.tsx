@@ -60,27 +60,45 @@ export const useNotifier = () => {
 };
 
 export const createNotifier = () => {
-  const notify = (status: AlertStatus) => (notification: INotification) =>
-    standaloneToast({
+  const notify = (status: AlertStatus) => (notification: INotification) => {
+    const render = ({ onClose, id }: { onClose(): void; id: ToastId }) => {
+      return (
+        <Notification
+          title={notification.title}
+          content={notification.content}
+          onClose={onClose}
+          status={status}
+          onMouseEnter={() => hoverHandler(id)}
+          onMouseLeave={() => unhoverHandler(id)}
+        />
+      );
+    };
+
+    const hoverHandler = (id: ToastId) => {
+      standaloneToast.update(id, { duration: 1e6, render });
+    };
+
+    const unhoverHandler = (id: ToastId) => {
+      standaloneToast.update(id, {
+        duration: notification.duration ?? 5000,
+        render,
+      });
+    };
+
+    return standaloneToast({
       status,
       duration: notification.duration ?? 5000,
       isClosable: true,
       position: 'top-right',
-      render: ({ onClose }) => {
-        return (
-          <Notification
-            title={notification.title}
-            content={notification.content}
-            onClose={onClose}
-            status={status}
-          />
-        );
-      },
+      render,
     });
+  };
 
   return {
     success: notify('success'),
     error: notify('error'),
+    info: notify('info'),
+    warning: notify('warning'),
     closeAll: standaloneToast.closeAll,
     close: standaloneToast.close,
   };

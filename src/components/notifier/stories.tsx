@@ -29,7 +29,7 @@ export const Primary: Story = {
 
     const showSuccess = () => {
       notify.success({
-        title,
+        title: `Success: ${title}`,
         content,
         duration,
       });
@@ -37,7 +37,7 @@ export const Primary: Story = {
 
     const showError = () => {
       notify.error({
-        title: `Error!: ${title}`,
+        title: `Error: ${title}`,
         content,
         duration,
       });
@@ -86,16 +86,24 @@ export const Primary: Story = {
     const portal = within(document.querySelector('.chakra-portal')!);
 
     userEvent.click(canvas.getByText('Success'));
-    expect(portal.getByText('Something happened')).toBeInTheDocument();
+    expect(
+      await portal.findByText('Success: Something happened'),
+    ).toBeInTheDocument();
 
     userEvent.click(canvas.getByText('Warning'));
-    expect(portal.getByText('Warning: Something happened')).toBeInTheDocument();
+    expect(
+      await portal.findByText('Warning: Something happened'),
+    ).toBeInTheDocument();
 
     userEvent.click(canvas.getByText('Info'));
-    expect(portal.getByText('Info: Something happened')).toBeInTheDocument();
+    expect(
+      await portal.findByText('Info: Something happened'),
+    ).toBeInTheDocument();
 
     userEvent.click(canvas.getByText('Error'));
-    expect(portal.getByText('Error!: Something happened')).toBeInTheDocument();
+    expect(
+      await portal.findByText('Error: Something happened'),
+    ).toBeInTheDocument();
 
     userEvent.click(canvas.getByText('Clear all notifications'));
     await waitFor(() =>
@@ -158,21 +166,87 @@ export const Standalone: Story = {
       source: `huy`,
     },
   },
-  render: (args) => {
+  render: ({ title, content, duration }) => {
     const notifier = createNotifier();
-    const another = () => {
+
+    const showSuccess = () => {
       notifier.success({
-        title: args.title,
-        content: args.content,
-        duration: args.duration,
+        title: `Success: ${title}`,
+        content,
+        duration,
+      });
+    };
+
+    const showError = () => {
+      notifier.error({
+        title: `Error: ${title}`,
+        content,
+        duration,
+      });
+    };
+
+    const showInfo = () => {
+      notifier.info({
+        title: `Info: ${title}`,
+        content,
+        duration,
+      });
+    };
+
+    const showWarning = () => {
+      notifier.warning({
+        title: `Warning: ${title}`,
+        content,
+        duration,
       });
     };
 
     return (
       <Flex flexDirection="column" gap="20px">
         <Value>This is for situations when you cannot use a hook.</Value>
-        <Button onClick={another}>Success</Button>
+        <Button onClick={showSuccess}>Success</Button>
+        <Button intent="alert" onClick={showError}>
+          Error
+        </Button>
+        <Button intent="secondary" onClick={showInfo}>
+          Info
+        </Button>
+        <Button intent="ghost" onClick={showWarning}>
+          Warning
+        </Button>
+        <Button intent="secondary" onClick={() => notifier.closeAll()}>
+          Clear all notifications
+        </Button>
       </Flex>
+    );
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const portal = within(document.querySelector('.chakra-portal')!);
+
+    userEvent.click(canvas.getByText('Success'));
+    expect(
+      await portal.findByText('Success: Something happened'),
+    ).toBeInTheDocument();
+
+    userEvent.click(canvas.getByText('Warning'));
+    expect(
+      await portal.findByText('Warning: Something happened'),
+    ).toBeInTheDocument();
+
+    userEvent.click(canvas.getByText('Info'));
+    expect(
+      await portal.findByText('Info: Something happened'),
+    ).toBeInTheDocument();
+
+    userEvent.click(canvas.getByText('Error'));
+    expect(
+      await portal.findByText('Error: Something happened'),
+    ).toBeInTheDocument();
+
+    userEvent.click(canvas.getByText('Clear all notifications'));
+    await waitFor(() =>
+      expect(portal.queryByText('Something happened')).not.toBeInTheDocument(),
     );
   },
 };
