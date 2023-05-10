@@ -1,3 +1,10 @@
+# [2.4.0](https://github.com/logicalclocks/quartz/compare/v2.3.0...v2.4.0) (2023-05-10)
+
+
+### Features
+
+* **notifications:** use chakra notifications ([#384](https://github.com/logicalclocks/quartz/issues/384)) ([4a032a2](https://github.com/logicalclocks/quartz/commit/4a032a293135e5cc8a75fd80d78701e68bf45352))
+
 # [2.3.0](https://github.com/logicalclocks/quartz/compare/v2.2.0...v2.3.0) (2023-05-09)
 
 
