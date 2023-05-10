@@ -1,3 +1,10 @@
+## [2.4.1](https://github.com/logicalclocks/quartz/compare/v2.4.0...v2.4.1) (2023-05-10)
+
+
+### Bug Fixes
+
+* **datepicker:** fix dark mode and enhance styling ([#392](https://github.com/logicalclocks/quartz/issues/392)) ([6a6d9c1](https://github.com/logicalclocks/quartz/commit/6a6d9c1d431217cbb0d01c327c320d3daadd0e77))
+
 # [2.4.0](https://github.com/logicalclocks/quartz/compare/v2.3.0...v2.4.0) (2023-05-10)
 
 
