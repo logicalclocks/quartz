@@ -30,7 +30,8 @@
       { "peerDependencies": false }
     ],
 
-    // turning these off as they
+    // turning these off as they are already checked by typescript
+    // see: https://typescript-eslint.io/linting/troubleshooting/performance-troubleshooting#eslint-plugin-import
     "import/named": 0,
     "import/namespace": 0,
     "import/default": 0,
