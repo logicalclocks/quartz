@@ -4,11 +4,21 @@ export default {
   '.react-datepicker': {
     boxShadow: 'notification',
     borderRadius: 'initial',
+    backgroundColor: 'white',
+  },
+  '.react-datepicker .react-datepicker__month': {
+    marginTop: '0.45rem !important',
   },
   '.react-datepicker__time-box': {
     backgroundColor: 'white',
     color: 'black',
   },
+  '.react-datepicker__time, .react-datepicker__time .react-datepicker__time-box':
+    {
+      borderBottomRightRadius: 0,
+      borderRight: '1px solid',
+      borderColor: '#C9CDCF',
+    },
 
   '.react-datepicker__navigation ': {
     outline: 'none',
@@ -22,6 +32,13 @@ export default {
   '.react-datepicker__triangle': {
     display: 'none',
   },
+  '.react-datepicker__header.react-datepicker__header--time': {
+    borderTopRightRadius: 0,
+  },
+  '.react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box ul.react-datepicker__time-list':
+    {
+      borderColor: 'black',
+    },
 
   '.react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box ul.react-datepicker__time-list li.react-datepicker__time-list-item: hover':
     {
