@@ -18,6 +18,7 @@ export interface DatePickerProps extends ReactDatePickerProps {
 
 const getPlacement = (align: DatePickerProps['datePickerAlign']) =>
   align === 'right' ? 'bottom-end' : 'bottom-start';
+
 const DatePicker: FC<DatePickerProps> = ({
   selectProps,
   datePickerAlign = 'right',
