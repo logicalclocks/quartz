@@ -12,35 +12,29 @@ export const parameters = {
   layout: 'centered',
   controls: { expanded: true },
   docs: {
-    container: (props) => {
-      const isDark = useDarkMode();
-
-      return (
-        <DocsContainer {...props} theme={isDark ? themes.dark : themes.light} />
-      );
-    },
+    container: (props) => (
+      <DocsContainer
+        {...props}
+        theme={useDarkMode() ? themes.dark : themes.light}
+      />
+    ),
   },
   darkMode: {
-    dark: { ...themes.dark },
-    light: { ...themes.light },
+    dark: themes.dark,
+    light: themes.light,
     stylePreview: true,
   },
 };
 
 export const decorators = [
-  (Story) => {
-    const isDark = useDarkMode();
-
-    return (
-      <>
-        <ColorModeScript />
-
-        <ChakraThemeProvider>
-          <ThemeProvider colorMode={isDark ? 'dark' : 'light'}>
-            <Story />
-          </ThemeProvider>
-        </ChakraThemeProvider>
-      </>
-    );
-  },
+  (Story) => (
+    <>
+      <ColorModeScript />
+      <ChakraThemeProvider>
+        <ThemeProvider colorMode={useDarkMode() ? 'dark' : 'light'}>
+          <Story />
+        </ThemeProvider>
+      </ChakraThemeProvider>
+    </>
+  ),
 ];
