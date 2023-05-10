@@ -30,6 +30,8 @@ const Template: Story<DatePickerProps> = ({ selectProps, ...restProps }) => {
         excludeDateIntervals={[
           { start: subDays(5, new Date()), end: addDays(5, new Date()) },
         ]}
+        startDate={new Date(startDate)}
+        endDate={startDate2}
       />
       <DatePicker
         {...restProps}
@@ -42,6 +44,8 @@ const Template: Story<DatePickerProps> = ({ selectProps, ...restProps }) => {
         excludeDateIntervals={[
           { start: subDays(5, new Date()), end: addDays(5, new Date()) },
         ]}
+        startDate={startDate}
+        endDate={new Date(startDate2)}
       />
     </Flex>
   );
