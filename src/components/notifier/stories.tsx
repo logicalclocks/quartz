@@ -8,8 +8,8 @@ import { Box } from '../box';
 import { Button } from '../button';
 import { Flex } from '../flex';
 import Value from '../typography/value';
-import { INotification } from './Notification';
-import { createNotifier, useNotifier } from './notifier';
+import { INotification, createNotifier, useNotifier } from './notifier';
+import { Label, Labeling } from '../..';
 
 const meta: Meta<INotification> = {
   title: 'Notifier',
@@ -157,6 +157,60 @@ export const Success: Story = {
         <Button onClick={another}>Success</Button>
       </Box>
     );
+  },
+};
+
+export const PreventDuplicateNotifications: Story = {
+  render: (args) => {
+    const notify = useNotifier();
+
+    const showRegular = () => {
+      notify.info({
+        title: `Regular: ${args.title}`,
+        content: args.content,
+        duration: args.duration,
+      });
+    };
+
+    const showPrevented = () => {
+      notify.success({
+        title: `Prevents others: ${args.title}`,
+        content: args.content,
+        duration: args.duration,
+        uniqueId: 'just one id',
+      });
+    };
+
+    return (
+      <Flex flexDirection="column" gap="1rem">
+        <Value fontSize="18px" width="300px">
+          If you pass an ID to a notifier, it is going to prevent other
+          notifications with the same ID from being shown.
+        </Value>
+        <Flex gap="20px">
+          <Button onClick={showRegular}>Regular</Button>
+          <Button onClick={showPrevented}>With ID given</Button>
+        </Flex>
+      </Flex>
+    );
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const portal = within(document.querySelector('.chakra-portal')!);
+
+    userEvent.click(canvas.getByText('Regular'));
+    userEvent.click(canvas.getByText('Regular'));
+    userEvent.click(canvas.getByText('Regular'));
+    expect(
+      await portal.findAllByText('Regular: Something happened'),
+    ).toHaveLength(3);
+
+    userEvent.click(canvas.getByText('With ID given'));
+    userEvent.click(canvas.getByText('With ID given'));
+    userEvent.click(canvas.getByText('With ID given'));
+    expect(
+      await portal.findAllByText('Prevents others: Something happened'),
+    ).toHaveLength(1);
   },
 };
 
