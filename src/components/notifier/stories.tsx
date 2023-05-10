@@ -9,7 +9,6 @@ import { Button } from '../button';
 import { Flex } from '../flex';
 import Value from '../typography/value';
 import { INotification, createNotifier, useNotifier } from './notifier';
-import { Label, Labeling } from '../..';
 
 const meta: Meta<INotification> = {
   title: 'Notifier',
