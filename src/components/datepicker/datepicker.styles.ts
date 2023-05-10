@@ -73,11 +73,7 @@ export default {
   '.react-datepicker .react-datepicker__day-name': {
     fontWeight: 500,
   },
-  '.react-datepicker__current-month, .react-datepicker-time__header, .react-datepicker-year-header':
-    {
-      color: 'black',
-    },
-  '.react-datepicker__day-name, .react-datepicker__day, .react-datepicker__time-name':
+  '.react-datepicker__current-month, .react-datepicker-time__header, .react-datepicker-year-header, .react-datepicker__day-name, .react-datepicker__day, .react-datepicker__time-name':
     {
       color: 'black',
     },
