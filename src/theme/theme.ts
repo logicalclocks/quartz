@@ -53,35 +53,37 @@ import notification from './notifications';
 // Chip
 import editableSelect from './editableSelect';
 
-const defaultTheme: ITheme = {
-  colors: {
-    primary: '#21B182',
-    primaryShade1: '#65D3AF',
-    primaryShade2: '#E6F2EE',
+export const colors = {
+  primary: '#21B182',
+  primaryShade1: '#65D3AF',
+  primaryShade2: '#E6F2EE',
 
-    gray: '#a0a0a0',
-    grayShade1: '#CBCBCB',
-    grayShade2: '#E2E2E2',
-    grayShade3: '#F5F5F5',
+  gray: '#a0a0a0',
+  grayShade1: '#CBCBCB',
+  grayShade2: '#E2E2E2',
+  grayShade3: '#F5F5F5',
 
-    black: '#272727',
-    white: '#FFFFFF',
+  black: '#272727',
+  white: '#FFFFFF',
 
-    labels: {
-      red: '#EB5757',
-      orange: '#f2994a',
-      purple: '#9B51E0',
-      purpleShade2: '#F5EEFC',
-      yellow: '#FFE600',
-      yellowShade2: '#FFF8B3',
-      green: '#21B182',
-      blueShade1: '#41B7DC',
-      blueShade2: '#ECF8FC',
-      blue: '#186781',
-      orangeShade2: '#FDF0E4',
-      redShade2: '#F8DEDE',
-    },
+  labels: {
+    red: '#EB5757',
+    orange: '#f2994a',
+    purple: '#9B51E0',
+    purpleShade2: '#F5EEFC',
+    yellow: '#FFE600',
+    yellowShade2: '#FFF8B3',
+    green: '#21B182',
+    blueShade1: '#41B7DC',
+    blueShade2: '#ECF8FC',
+    blue: '#186781',
+    orangeShade2: '#FDF0E4',
+    redShade2: '#F8DEDE',
   },
+};
+
+const defaultTheme: ITheme = {
+  colors,
   fonts: {
     text: 'Inter',
     title: 'Inter',
@@ -174,7 +176,7 @@ const defaultTheme: ITheme = {
   notification,
 };
 
-const darkThemeColors: ITheme['colors'] = {
+export const darkThemeColors: ITheme['colors'] = {
   white: '#181a1b',
 
   gray: '#A6A6A6',

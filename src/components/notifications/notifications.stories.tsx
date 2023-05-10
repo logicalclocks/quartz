@@ -1,19 +1,20 @@
+import { Meta } from '@storybook/react';
 import React, { useCallback } from 'react';
-import { Story, Meta } from '@storybook/react';
 import { Flex } from 'rebass';
 import NotificationManager from './notifications-manager';
 // Components
-import NotificationsContainer from './index';
 import { Button, Label, Labeling } from '../../index';
+import NotificationsContainer from './index';
 
 export default {
   title: 'Quartz/NotificationsContainer',
   component: NotificationsContainer,
 } as Meta;
 
-const Template: Story = () => {
+const Template = () => {
   const notifyHandler = useCallback(() => {
     NotificationManager.create({
+      isError: true,
       type: <Label fontSize="18px">Title</Label>,
       content: (
         <Flex alignItems="center">

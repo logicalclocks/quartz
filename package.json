@@ -50,7 +50,6 @@
     "react-router-dom": "^6.3.0"
   },
   "devDependencies": {
-    "@chakra-ui/storybook-addon": "^4.0.16",
     "@playwright/experimental-ct-react": "^1.31.2",
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/commit-analyzer": "^9.0.2",
@@ -110,12 +109,14 @@
     ".releaserc.json"
   ],
   "dependencies": {
-    "@chakra-ui/react": "^2.5.5",
+    "@chakra-ui/react": "^2.6.1",
     "@codemirror/view": "^6.9.5",
     "@emotion/core": "^10.3.1",
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
     "@rebass/forms": "^4.0.6",
+    "@storybook/jest": "^0.1.0",
+    "@storybook/testing-library": "^0.1.0",
     "@styled-system/css": "^5.1.5",
     "@tanem/react-nprogress": "^5.0.34",
     "@uiw/codemirror-extensions-langs": "^4.19.16",
