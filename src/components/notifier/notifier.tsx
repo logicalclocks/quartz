@@ -21,9 +21,9 @@ export const useNotifier = () => {
 
   const notify = useCallback(
     (status: AlertStatus) => (notification: INotification) => {
-      const render = ({ onClose, id }: { onClose(): void; id: ToastId }) => {
-        const duration = notification.duration ?? 5000;
+      const duration = notification.duration ?? 5000;
 
+      const render = ({ onClose, id }: { onClose(): void; id: ToastId }) => {
         const dontLetToastDisappear = () =>
           toast.update(id, { duration: 1e6, render });
 
@@ -44,7 +44,7 @@ export const useNotifier = () => {
       if (!(notification.uniqueId && toast.isActive(notification.uniqueId))) {
         return toast({
           status,
-          duration: notification.duration ?? 5000,
+          duration,
           isClosable: true,
           render,
           id: notification.uniqueId,
@@ -68,35 +68,42 @@ export const useNotifier = () => {
 export const createNotifier = () => {
   const notify = (status: AlertStatus) => {
     return (notification: INotification) => {
-      const render = ({ onClose, id }: { onClose(): void; id: ToastId }) => (
-        <Notification
-          title={notification.title}
-          content={notification.content}
-          onClose={onClose}
-          status={status}
-          onMouseEnter={() => hoverHandler(id)}
-          onMouseLeave={() => unhoverHandler(id)}
-        />
-      );
+      const duration = notification.duration ?? 5000;
 
-      const hoverHandler = (id: ToastId) => {
-        standaloneToast.update(id, { duration: 1e6, render });
+      const render = ({ onClose, id }: { onClose(): void; id: ToastId }) => {
+        const dontLetToastDisappear = () =>
+          standaloneToast.update(id, { duration: 1e6, render });
+        const letToastDisappear = () =>
+          standaloneToast.update(id, { duration, render });
+
+        return (
+          <Notification
+            title={notification.title}
+            content={notification.content}
+            onClose={onClose}
+            status={status}
+            onMouseEnter={dontLetToastDisappear}
+            onMouseLeave={letToastDisappear}
+          />
+        );
       };
 
-      const unhoverHandler = (id: ToastId) => {
-        standaloneToast.update(id, {
-          duration: notification.duration ?? 5000,
+      if (
+        !(
+          notification.uniqueId &&
+          standaloneToast.isActive(notification.uniqueId)
+        )
+      ) {
+        return standaloneToast({
+          position: 'top-right',
+          status,
+          duration,
+          isClosable: true,
           render,
+          id: notification.uniqueId,
         });
-      };
-
-      return standaloneToast({
-        status,
-        duration: notification.duration ?? 5000,
-        isClosable: true,
-        position: 'top-right',
-        render,
-      });
+      }
+      return null;
     };
   };
 
