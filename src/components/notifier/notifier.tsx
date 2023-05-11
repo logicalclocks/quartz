@@ -65,11 +65,16 @@ const buildNotifier =
     return null;
   };
 
-const createMethods = (toast: CreateToastFnReturn, notify: any) => ({
-  success: notify('success'),
-  error: notify('error'),
-  info: notify('info'),
-  warning: notify('warning'),
+type Notifier = ReturnType<typeof buildNotifier>;
+
+const createMethods = (
+  toast: CreateToastFnReturn,
+  notifyWithStatus: (status: AlertStatus) => Notifier,
+) => ({
+  success: notifyWithStatus('success'),
+  error: notifyWithStatus('error'),
+  info: notifyWithStatus('info'),
+  warning: notifyWithStatus('warning'),
   closeAll: toast.closeAll,
   close: toast.close,
 });
@@ -77,17 +82,20 @@ const createMethods = (toast: CreateToastFnReturn, notify: any) => ({
 export const useNotifier = () => {
   const toast = useToast();
 
-  const notify = useCallback(
+  const notifyWithStatus = useCallback(
     (status: AlertStatus) => buildNotifier(toast, status),
     [toast],
   );
 
-  return useMemo(() => createMethods(toast, notify), [notify, toast]);
+  return useMemo(
+    () => createMethods(toast, notifyWithStatus),
+    [notifyWithStatus, toast],
+  );
 };
 
 export const createNotifier = () => {
-  const notify = (status: AlertStatus) =>
+  const notifyWithStatus = (status: AlertStatus) =>
     buildNotifier(standaloneToast, status);
 
-  return createMethods(standaloneToast, notify);
+  return createMethods(standaloneToast, notifyWithStatus);
 };
