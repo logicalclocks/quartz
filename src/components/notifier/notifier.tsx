@@ -1,5 +1,11 @@
-import { AlertStatus, ToastId, useToast } from '@chakra-ui/react';
+import {
+  AlertStatus,
+  CreateToastFnReturn,
+  ToastId,
+  useToast,
+} from '@chakra-ui/react';
 import React, { ReactNode, useCallback } from 'react';
+import * as R from 'ramda';
 import { standaloneToast } from '../../theme-chakra/ChakraThemeProvider';
 import { Notification } from './Notification';
 
@@ -16,18 +22,25 @@ export interface INotification {
   uniqueId?: ToastId;
 }
 
-export const useNotifier = () => {
-  const toast = useToast();
-
-  const notify = useCallback(
-    (status: AlertStatus) => (notification: INotification) => {
+const buildNotifier = R.curryN(
+  2,
+  (toast: CreateToastFnReturn, status: AlertStatus) =>
+    (notification: INotification) => {
       const duration = notification.duration ?? 5000;
-
       const render = ({ onClose, id }: { onClose(): void; id: ToastId }) => {
-        const dontLetToastDisappear = () =>
-          toast.update(id, { duration: 1e6, render });
+        const duration = notification.duration ?? 5000;
 
-        const letToastDisappear = () => toast.update(id, { duration, render });
+        const dontLetToastDisappear = () =>
+          toast.update(id, {
+            duration: 1e6,
+            render,
+          });
+
+        const letToastDisappear = () =>
+          toast.update(id, {
+            duration,
+            render,
+          });
 
         return (
           <Notification
@@ -43,6 +56,7 @@ export const useNotifier = () => {
 
       if (!(notification.uniqueId && toast.isActive(notification.uniqueId))) {
         return toast({
+          position: 'top-right',
           status,
           duration,
           isClosable: true,
@@ -52,6 +66,13 @@ export const useNotifier = () => {
       }
       return null;
     },
+);
+
+export const useNotifier = () => {
+  const toast = useToast();
+
+  const notify = useCallback(
+    (status: AlertStatus) => buildNotifier(toast, status),
     [toast],
   );
 
@@ -66,46 +87,7 @@ export const useNotifier = () => {
 };
 
 export const createNotifier = () => {
-  const notify = (status: AlertStatus) => {
-    return (notification: INotification) => {
-      const duration = notification.duration ?? 5000;
-
-      const render = ({ onClose, id }: { onClose(): void; id: ToastId }) => {
-        const dontLetToastDisappear = () =>
-          standaloneToast.update(id, { duration: 1e6, render });
-        const letToastDisappear = () =>
-          standaloneToast.update(id, { duration, render });
-
-        return (
-          <Notification
-            title={notification.title}
-            content={notification.content}
-            onClose={onClose}
-            status={status}
-            onMouseEnter={dontLetToastDisappear}
-            onMouseLeave={letToastDisappear}
-          />
-        );
-      };
-
-      if (
-        !(
-          notification.uniqueId &&
-          standaloneToast.isActive(notification.uniqueId)
-        )
-      ) {
-        return standaloneToast({
-          position: 'top-right',
-          status,
-          duration,
-          isClosable: true,
-          render,
-          id: notification.uniqueId,
-        });
-      }
-      return null;
-    };
-  };
+  const notify = buildNotifier(standaloneToast);
 
   return {
     success: notify('success'),
