@@ -1,3 +1,10 @@
+# [2.5.0](https://github.com/logicalclocks/quartz/compare/v2.4.1...v2.5.0) (2023-05-11)
+
+
+### Features
+
+* **notifications:** prevent duplicates ([#394](https://github.com/logicalclocks/quartz/issues/394)) ([ccf3e8f](https://github.com/logicalclocks/quartz/commit/ccf3e8f77e818c49623ac3d39093aa9036db1c31))
+
 ## [2.4.1](https://github.com/logicalclocks/quartz/compare/v2.4.0...v2.4.1) (2023-05-10)
 
 
