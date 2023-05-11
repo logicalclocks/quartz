@@ -55,13 +55,3 @@ export const Notification = ({
     </Alert>
   );
 };
-
-export interface INotification {
-  /** Title of the alert. */
-  title: string | ReactNode;
-  /** Content under the title. */
-  content: string | ReactNode;
-  /** Duration in milliseconds. E.g. 5000 by default */
-  duration?: number;
-  isError?: boolean;
-}

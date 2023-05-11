@@ -1,105 +1,101 @@
-import { AlertStatus, ToastId, useToast } from '@chakra-ui/react';
-import React, { ReactNode, useCallback } from 'react';
+import {
+  AlertStatus,
+  CreateToastFnReturn,
+  ToastId,
+  useToast,
+} from '@chakra-ui/react';
+import React, { ReactNode, useCallback, useMemo } from 'react';
 import { standaloneToast } from '../../theme-chakra/ChakraThemeProvider';
 import { Notification } from './Notification';
 
 export interface INotification {
+  /** Title of the alert. */
   title: string | ReactNode;
+  /** Content under the title. */
   content: string | ReactNode;
+  /** Duration in milliseconds. E.g. 5000 by default */
   duration?: number;
+  /** Status e.g. warning, error, success */
   status?: AlertStatus;
+  /** A unique ID that blocks other notifications with the same ID */
+  uniqueId?: ToastId;
 }
 
-export const useNotifier = () => {
-  const toast = useToast();
+const buildNotifier =
+  (toast: CreateToastFnReturn, status: AlertStatus) =>
+  (notification: INotification) => {
+    const duration = notification.duration ?? 5000;
+    const render = ({ onClose, id }: { onClose(): void; id: ToastId }) => {
+      const duration = notification.duration ?? 5000;
 
-  const notify = useCallback(
-    (status: AlertStatus) => (notification: INotification) => {
-      const render = ({ onClose, id }: { onClose(): void; id: ToastId }) => {
-        return (
-          <Notification
-            title={notification.title}
-            content={notification.content}
-            onClose={onClose}
-            status={status}
-            onMouseEnter={() => hoverHandler(id)}
-            onMouseLeave={() => unhoverHandler(id)}
-          />
-        );
-      };
-
-      const hoverHandler = (id: ToastId) => {
-        toast.update(id, { duration: 1e6, render });
-      };
-
-      const unhoverHandler = (id: ToastId) => {
+      const dontLetToastDisappear = () =>
         toast.update(id, {
-          duration: notification.duration ?? 5000,
+          duration: 1e6,
           render,
         });
-      };
 
-      toast({
-        status,
-        duration: notification.duration ?? 5000,
-        isClosable: true,
-        render,
-      });
-    },
-    [toast],
-  );
+      const letToastDisappear = () =>
+        toast.update(id, {
+          duration,
+          render,
+        });
 
-  return {
-    success: notify('success'),
-    error: notify('error'),
-    info: notify('info'),
-    warning: notify('warning'),
-    closeAll: toast.closeAll,
-    close: toast.close,
-  };
-};
-
-export const createNotifier = () => {
-  const notify = (status: AlertStatus) => (notification: INotification) => {
-    const render = ({ onClose, id }: { onClose(): void; id: ToastId }) => {
       return (
         <Notification
           title={notification.title}
           content={notification.content}
           onClose={onClose}
           status={status}
-          onMouseEnter={() => hoverHandler(id)}
-          onMouseLeave={() => unhoverHandler(id)}
+          onMouseEnter={dontLetToastDisappear}
+          onMouseLeave={letToastDisappear}
         />
       );
     };
 
-    const hoverHandler = (id: ToastId) => {
-      standaloneToast.update(id, { duration: 1e6, render });
-    };
-
-    const unhoverHandler = (id: ToastId) => {
-      standaloneToast.update(id, {
-        duration: notification.duration ?? 5000,
+    if (!(notification.uniqueId && toast.isActive(notification.uniqueId))) {
+      return toast({
+        position: 'top-right',
+        status,
+        duration,
+        isClosable: true,
         render,
+        id: notification.uniqueId,
       });
-    };
-
-    return standaloneToast({
-      status,
-      duration: notification.duration ?? 5000,
-      isClosable: true,
-      position: 'top-right',
-      render,
-    });
+    }
+    return null;
   };
 
-  return {
-    success: notify('success'),
-    error: notify('error'),
-    info: notify('info'),
-    warning: notify('warning'),
-    closeAll: standaloneToast.closeAll,
-    close: standaloneToast.close,
-  };
+type Notifier = ReturnType<typeof buildNotifier>;
+
+const createMethods = (
+  toast: CreateToastFnReturn,
+  notifyWithStatus: (status: AlertStatus) => Notifier,
+) => ({
+  success: notifyWithStatus('success'),
+  error: notifyWithStatus('error'),
+  info: notifyWithStatus('info'),
+  warning: notifyWithStatus('warning'),
+  closeAll: toast.closeAll,
+  close: toast.close,
+});
+
+export const useNotifier = () => {
+  const toast = useToast();
+
+  const notifyWithStatus = useCallback(
+    (status: AlertStatus) => buildNotifier(toast, status),
+    [toast],
+  );
+
+  return useMemo(
+    () => createMethods(toast, notifyWithStatus),
+    [notifyWithStatus, toast],
+  );
+};
+
+export const createNotifier = () => {
+  const notifyWithStatus = (status: AlertStatus) =>
+    buildNotifier(standaloneToast, status);
+
+  return createMethods(standaloneToast, notifyWithStatus);
 };
