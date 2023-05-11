@@ -4,7 +4,7 @@ import {
   ToastId,
   useToast,
 } from '@chakra-ui/react';
-import React, { ReactNode, useCallback } from 'react';
+import React, { ReactNode, useCallback, useMemo } from 'react';
 import { standaloneToast } from '../../theme-chakra/ChakraThemeProvider';
 import { Notification } from './Notification';
 
@@ -65,6 +65,15 @@ const buildNotifier =
     return null;
   };
 
+const createMethods = (toast: CreateToastFnReturn, notify: any) => ({
+  success: notify('success'),
+  error: notify('error'),
+  info: notify('info'),
+  warning: notify('warning'),
+  closeAll: toast.closeAll,
+  close: toast.close,
+});
+
 export const useNotifier = () => {
   const toast = useToast();
 
@@ -73,26 +82,12 @@ export const useNotifier = () => {
     [toast],
   );
 
-  return {
-    success: notify('success'),
-    error: notify('error'),
-    info: notify('info'),
-    warning: notify('warning'),
-    closeAll: toast.closeAll,
-    close: toast.close,
-  };
+  return useMemo(() => createMethods(toast, notify), [notify, toast]);
 };
 
 export const createNotifier = () => {
   const notify = (status: AlertStatus) =>
     buildNotifier(standaloneToast, status);
 
-  return {
-    success: notify('success'),
-    error: notify('error'),
-    info: notify('info'),
-    warning: notify('warning'),
-    closeAll: standaloneToast.closeAll,
-    close: standaloneToast.close,
-  };
+  return createMethods(standaloneToast, notify);
 };
