@@ -5,7 +5,6 @@ import {
   useToast,
 } from '@chakra-ui/react';
 import React, { ReactNode, useCallback } from 'react';
-import * as R from 'ramda';
 import { standaloneToast } from '../../theme-chakra/ChakraThemeProvider';
 import { Notification } from './Notification';
 
@@ -22,51 +21,49 @@ export interface INotification {
   uniqueId?: ToastId;
 }
 
-const buildNotifier = R.curryN(
-  2,
+const buildNotifier =
   (toast: CreateToastFnReturn, status: AlertStatus) =>
-    (notification: INotification) => {
+  (notification: INotification) => {
+    const duration = notification.duration ?? 5000;
+    const render = ({ onClose, id }: { onClose(): void; id: ToastId }) => {
       const duration = notification.duration ?? 5000;
-      const render = ({ onClose, id }: { onClose(): void; id: ToastId }) => {
-        const duration = notification.duration ?? 5000;
 
-        const dontLetToastDisappear = () =>
-          toast.update(id, {
-            duration: 1e6,
-            render,
-          });
-
-        const letToastDisappear = () =>
-          toast.update(id, {
-            duration,
-            render,
-          });
-
-        return (
-          <Notification
-            title={notification.title}
-            content={notification.content}
-            onClose={onClose}
-            status={status}
-            onMouseEnter={dontLetToastDisappear}
-            onMouseLeave={letToastDisappear}
-          />
-        );
-      };
-
-      if (!(notification.uniqueId && toast.isActive(notification.uniqueId))) {
-        return toast({
-          position: 'top-right',
-          status,
-          duration,
-          isClosable: true,
+      const dontLetToastDisappear = () =>
+        toast.update(id, {
+          duration: 1e6,
           render,
-          id: notification.uniqueId,
         });
-      }
-      return null;
-    },
-);
+
+      const letToastDisappear = () =>
+        toast.update(id, {
+          duration,
+          render,
+        });
+
+      return (
+        <Notification
+          title={notification.title}
+          content={notification.content}
+          onClose={onClose}
+          status={status}
+          onMouseEnter={dontLetToastDisappear}
+          onMouseLeave={letToastDisappear}
+        />
+      );
+    };
+
+    if (!(notification.uniqueId && toast.isActive(notification.uniqueId))) {
+      return toast({
+        position: 'top-right',
+        status,
+        duration,
+        isClosable: true,
+        render,
+        id: notification.uniqueId,
+      });
+    }
+    return null;
+  };
 
 export const useNotifier = () => {
   const toast = useToast();
@@ -87,7 +84,8 @@ export const useNotifier = () => {
 };
 
 export const createNotifier = () => {
-  const notify = buildNotifier(standaloneToast);
+  const notify = (status: AlertStatus) =>
+    buildNotifier(standaloneToast, status);
 
   return {
     success: notify('success'),
