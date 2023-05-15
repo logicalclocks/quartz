@@ -1,3 +1,10 @@
+# [2.6.0](https://github.com/logicalclocks/quartz/compare/v2.5.0...v2.6.0) (2023-05-15)
+
+
+### Features
+
+* **radiogroup:** Add ability to disable radio group option ([#395](https://github.com/logicalclocks/quartz/issues/395)) ([fbd07f0](https://github.com/logicalclocks/quartz/commit/fbd07f0a3777fa82ba18f78398832ed50169987a))
+
 # [2.5.0](https://github.com/logicalclocks/quartz/compare/v2.4.1...v2.5.0) (2023-05-11)
 
 
