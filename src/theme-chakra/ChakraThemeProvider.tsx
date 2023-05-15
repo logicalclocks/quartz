@@ -4,14 +4,12 @@ import {
   extendTheme,
 } from '@chakra-ui/react';
 import React, { PropsWithChildren } from 'react';
-import { colors } from '../theme/theme';
 
 const theme = extendTheme({
   config: {
     cssVarPrefix: 'quartz',
     initialColorMode: 'system',
     useSystemColorMode: true,
-    colors,
   },
 });
 
