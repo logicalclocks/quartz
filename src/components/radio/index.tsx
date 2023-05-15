@@ -1,7 +1,7 @@
 import React, { FC, forwardRef } from 'react';
 import { RadioProps as RebassRadioProps } from '@rebass/forms';
 import { Box, Flex } from 'rebass';
-import Tooltip from '../tooltip';
+import Tooltip, { TooltipProps } from '../tooltip';
 
 // Components
 import Labeling from '../typography/labeling';
@@ -12,6 +12,7 @@ export interface RadioProps extends Omit<RebassRadioProps, 'css'> {
   label?: string;
   addtionalText?: string;
   tooltip?: string;
+  tooltipPosition?: TooltipProps['position'];
 }
 
 const Radio: FC<RadioProps> = forwardRef(
@@ -25,6 +26,7 @@ const Radio: FC<RadioProps> = forwardRef(
       onChange,
       checked,
       tooltip,
+      tooltipPosition = 'bottom',
       ...props
     }: RadioProps,
     ref,
@@ -52,7 +54,9 @@ const Radio: FC<RadioProps> = forwardRef(
       {label && (
         <Labeling bold ml="8px">
           {tooltip && disabled ? (
-            <Tooltip mainText={tooltip}>{label}</Tooltip>
+            <Tooltip mainText={tooltip} position={tooltipPosition}>
+              {label}
+            </Tooltip>
           ) : (
             label
           )}
