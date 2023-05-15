@@ -9,8 +9,8 @@ import { colors } from '../theme/theme';
 const theme = extendTheme({
   config: {
     cssVarPrefix: 'quartz',
-    initialColorMode: 'light',
-    useSystemColorMode: false,
+    initialColorMode: 'system',
+    useSystemColorMode: true,
     colors,
   },
 });
