@@ -8,10 +8,10 @@ import {
 import React, { ReactNode } from 'react';
 import { Flex } from '../flex';
 
-interface Props extends Omit<AlertProps, 'title'> {
+interface Props extends Omit<AlertProps, 'title' | 'content'> {
   onClose: any;
-  title: string | ReactNode;
-  content: string | ReactNode;
+  title: ReactNode;
+  content: ReactNode;
 }
 
 export const Notification = ({
