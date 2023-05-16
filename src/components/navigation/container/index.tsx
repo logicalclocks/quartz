@@ -22,7 +22,7 @@ export interface NavigationProps {
   children?: React.ReactNode;
   footer?: React.ReactNode;
   header?: React.ReactNode;
-  trackBy?: string;
+  trackBy?: keyof TreeNode;
   tree?: TreeNode[];
   onNavigate?: (node: TreeNode | null) => void;
   onBackCLick?: () => void;

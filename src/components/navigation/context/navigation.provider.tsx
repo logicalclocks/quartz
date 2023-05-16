@@ -10,7 +10,7 @@ import { TreeNode } from '../types';
 
 export interface CategoriesProviderProps {
   tree: TreeNode[];
-  trackBy?: string;
+  trackBy?: keyof TreeNode;
   children: React.ReactNode;
   onNavigate?: (node: TreeNode | null) => void;
   onBackCLick?: () => void;

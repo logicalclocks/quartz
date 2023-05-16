@@ -4,7 +4,7 @@ type ReturnType = TreeNode | null;
 
 const getNode = (
   tree: TreeNode[] | TreeNode,
-  key: string,
+  key: keyof TreeNode,
   value?: string,
 ): ReturnType => {
   if (Array.isArray(tree)) {
