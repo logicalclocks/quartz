@@ -4525,6 +4525,7 @@ __metadata:
     "@semantic-release/npm": ^10.0.3
     "@semantic-release/release-notes-generator": ^10.0.3
     "@storybook/addon-actions": ^7.0.12
+    "@storybook/addon-docs": ^7.0.12
     "@storybook/addon-essentials": ^7.0.12
     "@storybook/addon-interactions": ^7.0.12
     "@storybook/addon-links": ^7.0.12
@@ -5618,7 +5619,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/addon-docs@npm:7.0.12":
+"@storybook/addon-docs@npm:7.0.12, @storybook/addon-docs@npm:^7.0.12":
   version: 7.0.12
   resolution: "@storybook/addon-docs@npm:7.0.12"
   dependencies:
