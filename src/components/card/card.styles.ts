@@ -9,6 +9,4 @@ export default {
   borderWidth: '1px',
   borderStyle: 'solid',
   boxSizing: 'border-box',
-
-  overflowX: 'auto',
 } as SxStyleProp;

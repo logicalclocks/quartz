@@ -72,6 +72,7 @@ const Card: FC<CardProps> = ({
           maxHeight={realHeight}
           height="100%"
           overflowY={isScrollable ? 'auto' : 'initial'}
+          overflowX="auto"
           p="20px"
           {...contentProps}
         >
