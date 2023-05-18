@@ -1,5 +1,5 @@
 import { EditorView } from '@codemirror/view';
-import React, { FC, useState } from 'react';
+import React, { useState } from 'react';
 import { Box, Flex, FlexProps } from 'rebass';
 
 import { LanguageName, loadLanguage } from '@uiw/codemirror-extensions-langs';
@@ -30,11 +30,10 @@ export interface CodeProps extends Omit<FlexProps, 'css' | 'title'> {
 }
 
 export const defaultPopupProps = {
-  width: 'calc(100vw - 80px)',
-  height: 'calc(100vh - 80px)',
+  size: '7xl',
 };
 
-const Code: FC<CodeProps> = ({
+const Code = ({
   content,
   language,
   copyButton = false,
@@ -62,11 +61,6 @@ const Code: FC<CodeProps> = ({
             language={language}
             copyButton={copyButton}
             downloadButton={downloadButton}
-            maxHeightOfCode={
-              popupProps.height || popupProps.maxHeight
-                ? `calc(${popupProps.height ?? popupProps.maxHeight} - 143px)`
-                : '100%'
-            }
             {...props}
           />
         )}
@@ -99,11 +93,8 @@ const Code: FC<CodeProps> = ({
 export default Code;
 
 // Normal Code Component
-interface CodeSnippetProps
-  extends Omit<CodeProps, 'popupProps' | 'expandable'> {
-  maxHeightOfCode?: string;
-}
-const CodeSnippet: FC<CodeSnippetProps> = ({
+type CodeSnippetProps = Omit<CodeProps, 'popupProps' | 'expandable'>;
+const CodeSnippet = ({
   title,
   content,
   language,
@@ -113,9 +104,8 @@ const CodeSnippet: FC<CodeSnippetProps> = ({
   wrapLongLines,
   showLineNumbers,
   copyCallback,
-  maxHeightOfCode,
   ...props
-}) => {
+}: CodeSnippetProps) => {
   return (
     <Flex flexDirection="column" width="100%" height="100%">
       <Flex width="100%" sx={codeHeaderStyles}>
@@ -133,13 +123,7 @@ const CodeSnippet: FC<CodeSnippetProps> = ({
           <CopyButton content={content} copyCallback={copyCallback} />
         )}
       </Flex>
-      <Flex
-        width="100%"
-        variant="code"
-        height={maxHeightOfCode}
-        {...props}
-        p={0}
-      >
+      <Flex width="100%" variant="code" {...props} p={0}>
         <CodeMirror
           value={content}
           basicSetup={{
@@ -162,9 +146,11 @@ const CodeSnippet: FC<CodeSnippetProps> = ({
 };
 
 // Download Button
-const DownloadButton: FC<
-  Pick<CodeProps, 'content' | 'downloadCallback' | 'title'>
-> = ({ content, downloadCallback, title }) => {
+const DownloadButton = ({
+  content,
+  downloadCallback,
+  title,
+}: Pick<CodeProps, 'content' | 'downloadCallback' | 'title'>) => {
   const download = () => {
     if (downloadCallback) {
       downloadCallback();
@@ -186,10 +172,10 @@ const DownloadButton: FC<
 };
 
 // Copy Button
-const CopyButton: FC<Pick<CodeProps, 'copyCallback' | 'content'>> = ({
+const CopyButton = ({
   copyCallback,
   content,
-}) => {
+}: Pick<CodeProps, 'copyCallback' | 'content'>) => {
   const [copied, setCopied] = useState(false);
 
   const handleCopyClicked = async () => {

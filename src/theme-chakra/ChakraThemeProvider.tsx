@@ -1,17 +1,6 @@
-import {
-  ChakraProvider,
-  createStandaloneToast,
-  extendTheme,
-} from '@chakra-ui/react';
+import { ChakraProvider, createStandaloneToast } from '@chakra-ui/react';
 import React, { PropsWithChildren } from 'react';
-
-const theme = extendTheme({
-  config: {
-    cssVarPrefix: 'quartz',
-    initialColorMode: 'system',
-    useSystemColorMode: true,
-  },
-});
+import { chakraTheme as theme } from './chakra-theme';
 
 const { ToastContainer, toast } = createStandaloneToast({
   theme,

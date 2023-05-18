@@ -1,12 +1,11 @@
-import React, { FC } from 'react';
-import { Box, Flex } from 'rebass';
+import React from 'react';
+import { Flex } from '@chakra-ui/react';
 import { Button } from '../../button';
 
 // Components
 import Popup, { PopupProps } from '../index';
-import Subtitle from '../../typography/subtitle';
 import Text from '../../typography/text';
-import { ButtonProps, GetIcon, IconName, Tooltip } from '../../..';
+import { ButtonProps } from '../../..';
 
 export interface TinyPopupProps
   extends Omit<
@@ -20,11 +19,15 @@ export interface TinyPopupProps
   tertiaryButtonProps?: ButtonProps;
   onClose?: () => void;
   children?: React.ReactNode;
+  /**
+   * @deprecated [#1] since version 2.6.1 [#2].
+   * */
   contentHeight?: string;
   withCloseButton?: boolean;
+  size?: string;
 }
 
-const TinyPopup: FC<TinyPopupProps> = ({
+const TinyPopup = ({
   title,
   secondaryText,
   onClose = () => {},
@@ -32,55 +35,17 @@ const TinyPopup: FC<TinyPopupProps> = ({
   secondaryButtonProps,
   tertiaryButtonProps,
   children,
-  contentHeight,
-  sx,
   withCloseButton = false,
+  size = 'sm',
   ...props
 }: TinyPopupProps) => (
   <Popup
-    p="20px"
-    width="fit-content"
-    sx={{
-      left: '50%',
-      top: '50%',
-      transform: 'translate(-50%, -50%)',
-      ...sx,
-    }}
     onClose={onClose}
-    {...props}
-  >
-    {withCloseButton && (
-      <Box
-        onClick={onClose}
-        p="2px"
-        height="30px"
-        sx={{
-          position: 'absolute',
-          top: 20,
-          right: 20,
-          cursor: 'pointer',
-          ':hover': {
-            backgroundColor: 'grayShade3',
-          },
-          zIndex: 30,
-        }}
-      >
-        <Tooltip mainText="Close">
-          <GetIcon icon={IconName.cross} size="md" />
-        </Tooltip>
-      </Box>
-    )}
-    <Subtitle pb="20px" lineHeight="22px">
-      {title}
-    </Subtitle>
-    {!!secondaryText && (
-      <Text lineHeight="14px" pb="20px">
-        {secondaryText}
-      </Text>
-    )}
-    <Box sx={contentHeight ? { height: contentHeight } : {}}>{children}</Box>
-    <Flex>
-      <Flex width="100%" sx={{ gap: '20px', justifyContent: 'flex-end' }}>
+    size={size}
+    title={title}
+    hasCloseButton={withCloseButton}
+    footer={
+      <Flex gap="20px">
         {tertiaryButtonProps && (
           <Button intent="secondary" {...tertiaryButtonProps} />
         )}
@@ -89,7 +54,11 @@ const TinyPopup: FC<TinyPopupProps> = ({
         )}
         {mainButtonProps && <Button {...mainButtonProps} />}
       </Flex>
-    </Flex>
+    }
+    {...props}
+  >
+    {!!secondaryText && <Text pb="20px">{secondaryText}</Text>}
+    {children}
   </Popup>
 );
 

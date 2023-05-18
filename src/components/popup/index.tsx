@@ -1,118 +1,72 @@
-import React, { FC, useCallback, useEffect, useMemo, useRef } from 'react';
-import { Box, BoxProps } from 'rebass';
-import * as R from 'ramda';
+import React from 'react';
+import {
+  Modal,
+  ModalCloseButton,
+  ModalOverlay,
+  ModalHeader,
+  ModalBody,
+  ModalFooter,
+  ModalContent,
+  ModalProps,
+  ModalOverlayProps,
+} from '@chakra-ui/react';
 
-// Hooks
-import useKeyUp from '../../utils/useKeyUp';
-// Styles
-import getStyles, { backdropStyles } from './popup.styles';
-import { IconName } from '../icon';
-import { IconButton } from '../icon-button';
-
-export interface PopupProps extends Omit<BoxProps, 'css'> {
+export interface PopupProps
+  extends Omit<
+    ModalProps,
+    'css' | 'title' | 'closeOnOverlayClick' | 'isOpen' | 'onClose'
+  > {
   children: React.ReactNode;
+  title?: React.ReactNode;
   variant?: 'primary';
   hasBackdrop?: boolean;
   closeOnBackdropClick?: boolean;
+  /** @deprecated */
   left?: string;
+  /** @deprecated */
   top?: string;
+  /** @deprecated */
   bottom?: string;
+  /** @deprecated */
   right?: string;
   isOpen?: boolean;
-  onBackdropClick?: (event: React.SyntheticEvent<HTMLDivElement>) => void;
   onClose?: () => void;
-  disabledMainButton?: boolean;
   footer?: React.ReactNode;
-  disabledSecondaryButton?: boolean;
   hasCloseButton?: boolean;
-  backdropSx?: BoxProps['sx'];
+  overlayProps?: ModalOverlayProps;
 }
 
-const Popup: FC<PopupProps> = ({
-  children,
-  left,
-  top,
-  bottom,
-  right,
-  variant = 'primary',
+const Popup = ({
+  title,
+  footer,
+  size = 'sm',
   hasBackdrop = true,
   isOpen = false,
-  onBackdropClick,
   closeOnBackdropClick = true,
-  footer,
   onClose = () => {},
   hasCloseButton = false,
-  backdropSx = {},
-  sx,
+  overlayProps,
+  children,
   ...props
 }: PopupProps) => {
-  const style = useMemo(
-    () => getStyles({ left, top, bottom, right }),
-    [left, top, bottom, right],
-  );
-  const openRef = useRef<boolean>(isOpen);
-
-  useKeyUp(() => {
-    if (openRef.current) {
-      onClose();
-    }
-  });
-
-  const handleBackdropClick = useCallback(
-    (event: React.SyntheticEvent<HTMLDivElement>) => {
-      if (closeOnBackdropClick) {
-        onClose();
-      }
-
-      if (onBackdropClick) {
-        onBackdropClick(event);
-      }
-    },
-    [onClose, onBackdropClick, closeOnBackdropClick],
-  );
-
-  useEffect(() => {
-    openRef.current = isOpen;
-  }, [isOpen]);
-
-  if (!isOpen) {
-    return null;
-  }
-
   return (
-    <>
-      <Box
-        minWidth="417px"
-        minHeight="141px"
-        tx="variants.popup"
-        variant={variant}
-        sx={R.mergeDeepRight(style as object, sx ?? {})}
-        overflowX="visible"
-        {...props}
-      >
-        {hasCloseButton && (
-          <IconButton
-            icon={IconName.cross}
-            sx={{ position: 'absolute', right: 10, top: 10, zIndex: 30 }}
-            size="lg"
-            onClick={onClose}
-          />
-        )}
-        {children}
-        {footer && (
-          <Box width="100%" backgroundColor="grayShade3">
-            {footer}
-          </Box>
-        )}
-      </Box>
-      {/* Backdrop */}
-      {hasBackdrop && (
-        <Box
-          sx={R.mergeDeepRight(backdropStyles as object, backdropSx as object)}
-          onClick={handleBackdropClick}
-        />
-      )}
-    </>
+    <Modal
+      isOpen={isOpen}
+      onClose={onClose}
+      size={size}
+      closeOnOverlayClick={closeOnBackdropClick}
+      scrollBehavior="inside"
+      isCentered
+      {...props}
+    >
+      {hasBackdrop && <ModalOverlay {...overlayProps} />}
+      <ModalContent>
+        {title && <ModalHeader>{title}</ModalHeader>}
+        {hasCloseButton && <ModalCloseButton />}
+        <ModalBody>{children}</ModalBody>
+        {footer && <ModalFooter>{footer}</ModalFooter>}
+      </ModalContent>
+    </Modal>
   );
 };
 
