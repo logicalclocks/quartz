@@ -12,8 +12,7 @@ export interface TinyPopupProps
     PopupProps,
     'css' | 'children' | 'disabledMainButton' | 'disabledSecondaryButton'
   > {
-  title: string;
-  secondaryText: string;
+  secondaryText?: string;
   mainButtonProps?: ButtonProps;
   secondaryButtonProps?: ButtonProps;
   tertiaryButtonProps?: ButtonProps;
@@ -24,7 +23,6 @@ export interface TinyPopupProps
    * */
   contentHeight?: string;
   withCloseButton?: boolean;
-  size?: string;
 }
 
 const TinyPopup = ({
@@ -36,7 +34,7 @@ const TinyPopup = ({
   tertiaryButtonProps,
   children,
   withCloseButton = false,
-  size = 'sm',
+  size = 'md',
   ...props
 }: TinyPopupProps) => (
   <Popup
@@ -55,6 +53,7 @@ const TinyPopup = ({
         {mainButtonProps && <Button {...mainButtonProps} />}
       </Flex>
     }
+    scrollBehavior="outside"
     {...props}
   >
     {!!secondaryText && <Text pb="20px">{secondaryText}</Text>}

@@ -9,6 +9,7 @@ import {
   ModalContent,
   ModalProps,
   ModalOverlayProps,
+  ModalContentProps,
 } from '@chakra-ui/react';
 
 export interface PopupProps
@@ -34,6 +35,7 @@ export interface PopupProps
   footer?: React.ReactNode;
   hasCloseButton?: boolean;
   overlayProps?: ModalOverlayProps;
+  contentProps?: ModalContentProps;
 }
 
 const Popup = ({
@@ -47,27 +49,26 @@ const Popup = ({
   hasCloseButton = false,
   overlayProps,
   children,
+  contentProps,
   ...props
-}: PopupProps) => {
-  return (
-    <Modal
-      isOpen={isOpen}
-      onClose={onClose}
-      size={size}
-      closeOnOverlayClick={closeOnBackdropClick}
-      scrollBehavior="inside"
-      isCentered
-      {...props}
-    >
-      {hasBackdrop && <ModalOverlay {...overlayProps} />}
-      <ModalContent>
-        {title && <ModalHeader>{title}</ModalHeader>}
-        {hasCloseButton && <ModalCloseButton />}
-        <ModalBody>{children}</ModalBody>
-        {footer && <ModalFooter>{footer}</ModalFooter>}
-      </ModalContent>
-    </Modal>
-  );
-};
+}: PopupProps) => (
+  <Modal
+    isOpen={isOpen}
+    onClose={onClose}
+    size={size}
+    closeOnOverlayClick={closeOnBackdropClick}
+    scrollBehavior="inside"
+    isCentered
+    {...props}
+  >
+    {hasBackdrop && <ModalOverlay {...overlayProps} />}
+    <ModalContent {...contentProps}>
+      {title && <ModalHeader>{title}</ModalHeader>}
+      {hasCloseButton && <ModalCloseButton />}
+      <ModalBody>{children}</ModalBody>
+      {footer && <ModalFooter>{footer}</ModalFooter>}
+    </ModalContent>
+  </Modal>
+);
 
 export default Popup;
