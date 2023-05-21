@@ -4,6 +4,8 @@ import {
   createMultiStyleConfigHelpers,
   defineStyle,
 } from '@chakra-ui/styled-system';
+import { closeButton } from './close-button';
+import { overlay } from './overlay';
 
 const { definePartsStyle, defineMultiStyleConfig } =
   createMultiStyleConfigHelpers(parts.keys);
@@ -17,13 +19,13 @@ const xl7 = defineStyle({
 
 const drawer = definePartsStyle({
   dialogContainer: {
-    right: '0px',
-    top: '0px',
-    left: 'none',
+    width: '0px !important',
   },
   dialog: {
-    mt: '77px',
-    mr: '8px',
+    position: 'fixed',
+    minWidth: '350px',
+    top: '77px',
+    right: '8px',
   },
   body: {
     p: 0,
@@ -35,12 +37,7 @@ const sizes = {
 };
 
 const baseStyle = definePartsStyle({
-  overlay: {
-    bg: 'rgba(39, 39, 39, 0.2)',
-    _dark: {
-      bg: 'rgba(39, 39, 39, 0.4)',
-    },
-  },
+  overlay,
   header: {
     fontWeight: 'bold',
     pb: '0px',
@@ -61,6 +58,7 @@ const baseStyle = definePartsStyle({
     bgColor: 'grayShade3._light',
     _dark: { bgColor: 'grayShade3._dark' },
   },
+  closeButton,
 });
 
 export const modalTheme = defineMultiStyleConfig({

@@ -1,7 +1,9 @@
 import * as R from 'ramda';
 import { extendTheme } from '@chakra-ui/react';
+
 import { colors, darkThemeColors } from '../../theme/theme';
 import { modalTheme } from './components/modal';
+import { drawerTheme } from './components/drawer';
 
 const createColors = (c: any, d: any): any =>
   R.mapObjIndexed((color: any, key: any) => {
@@ -26,5 +28,5 @@ export const chakraTheme = extendTheme({
     },
   },
   colors: themeColors,
-  components: { Modal: modalTheme },
+  components: { Modal: modalTheme, Drawer: drawerTheme },
 });
