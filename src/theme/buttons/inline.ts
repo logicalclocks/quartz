@@ -10,6 +10,7 @@ export default {
 
   ':focus': {
     outline: 'none',
+    boxShadow: 'focused',
   },
 
   ':disabled': {

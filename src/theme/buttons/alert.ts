@@ -13,6 +13,10 @@ export default {
   ':active': {
     borderColor: 'labels.redShade2',
   },
+  ':focus': {
+    outline: 'none',
+    boxShadow: 'focused',
+  },
   ':disabled': {
     bg: 'grayShade1',
     color: 'black',
