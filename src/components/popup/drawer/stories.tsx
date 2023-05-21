@@ -34,13 +34,13 @@ export const Simple: StoryObj<typeof Drawer> = {
     headerSummary: <YellowBox>header summary</YellowBox>,
     bottomButton: ['CTA', action('CTA')],
   },
-  render: (props) => {
+  render: (props: any) => {
     const [isOpen, handleToggle] = usePopup();
 
     return (
       <>
         <Button onClick={handleToggle}>Open Drawer</Button>
-        <Drawer isOpen={isOpen} onClose={handleToggle} {...props}>
+        <Drawer isOpen={isOpen} {...props} onClose={handleToggle}>
           <Drawer.Section
             title="Section title"
             action={['section link', action('section action')]}
