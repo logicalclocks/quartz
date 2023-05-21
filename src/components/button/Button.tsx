@@ -44,6 +44,7 @@ export const Button: FC<Props> = ({
   const component = (
     <RebassButton
       variant={intent}
+      as={href ? 'span' : 'button'}
       disabled={disabled || isLoading}
       sx={{ ...S.wrapper, ...sx }}
       type={type}
