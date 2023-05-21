@@ -29,4 +29,7 @@ export default {
   ':disabled': {
     cursor: 'default',
   },
+  ':focus': {
+    bg: 'primaryShade2',
+  },
 } as SxStyleProp;
