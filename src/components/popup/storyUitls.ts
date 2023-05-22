@@ -6,7 +6,7 @@ export const reusableArgs = {
     backdropFilter: 'blur(3px)',
   },
   blockScrollOnMount: false,
-  trapFocus: false,
+  trapFocus: true,
   motionPreset: 'scale' as any,
   autoFocus: true,
   closeOnEsc: true,
