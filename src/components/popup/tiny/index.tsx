@@ -7,22 +7,16 @@ import Popup, { PopupProps } from '../index';
 import Text from '../../typography/text';
 import { ButtonProps } from '../../..';
 
-export interface TinyPopupProps
-  extends Omit<
-    PopupProps,
-    'css' | 'children' | 'disabledMainButton' | 'disabledSecondaryButton'
-  > {
+export interface TinyPopupProps extends Omit<PopupProps, 'footer'> {
   secondaryText?: string;
   mainButtonProps?: ButtonProps;
   secondaryButtonProps?: ButtonProps;
   tertiaryButtonProps?: ButtonProps;
-  onClose?: () => void;
-  children?: React.ReactNode;
+  withCloseButton?: boolean;
   /**
    * @deprecated [#1] since version 2.6.1 [#2].
    * */
   contentHeight?: string;
-  withCloseButton?: boolean;
 }
 
 const TinyPopup = ({

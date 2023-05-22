@@ -10,11 +10,9 @@ import {
   DrawerOverlay,
 } from '@chakra-ui/react';
 
-// Components
 import { PopupProps } from '../index';
 import FooterButton from '../../footer-button';
 import DrawerSection, { DrawerSectionProps } from './drawer-section';
-// Types
 
 type IDrawer<P> = FC<P> & {
   Section: FC<DrawerSectionProps>;
@@ -22,14 +20,13 @@ type IDrawer<P> = FC<P> & {
 
 type Children = React.ReactElement<DrawerSectionProps> | null;
 
-export interface DrawerProps extends Omit<PopupProps, 'css'> {
+export interface DrawerProps extends PopupProps {
   bottomButton?: [React.ReactNode, React.MouseEventHandler<HTMLButtonElement>];
   headerLine?: React.ReactNode;
   headerSummary?: React.ReactNode;
   children: Children | Children[];
-  isOpen?: boolean;
+  /** @deprecated */
   singleBottom?: boolean;
-  onClose: () => void;
 }
 
 const Drawer: IDrawer<DrawerProps> = ({
@@ -37,7 +34,6 @@ const Drawer: IDrawer<DrawerProps> = ({
   headerLine,
   headerSummary,
   onClose,
-  singleBottom = true,
   hasBackdrop = true,
   closeOnBackdropClick,
   hasCloseButton = true,
@@ -45,8 +41,7 @@ const Drawer: IDrawer<DrawerProps> = ({
   children,
   ...props
 }: DrawerProps) => {
-  const [bottomActionTitle, bottomActionCallback] =
-    singleBottom && bottomButton ? bottomButton : [];
+  const [bottomActionTitle, bottomActionCallback] = bottomButton || [];
 
   return (
     <ChakraDrawer

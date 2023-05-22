@@ -47,6 +47,8 @@ export const PopupStory: StoryObj<typeof Popup> = {
     },
     blockScrollOnMount: false,
     trapFocus: true,
+    motionPreset: 'scale',
+    variant: 'modal',
   },
   render: (props) => {
     const [isOpen, handleToggle] = usePopup();
@@ -59,7 +61,7 @@ export const PopupStory: StoryObj<typeof Popup> = {
         >
           Open Popup
         </Button>
-        <Popup isOpen={isOpen} onClose={handleToggle} {...props}>
+        <Popup {...props} isOpen={isOpen} onClose={handleToggle}>
           <div>this is children</div>
         </Popup>
       </Box>

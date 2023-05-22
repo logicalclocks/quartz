@@ -13,15 +13,15 @@ import {
 } from '@chakra-ui/react';
 
 export interface PopupProps
-  extends Omit<
-    ModalProps,
-    'css' | 'title' | 'closeOnOverlayClick' | 'isOpen' | 'onClose'
-  > {
-  children: React.ReactNode;
+  extends Omit<ModalProps, 'title' | 'closeOnOverlayClick'> {
   title?: React.ReactNode;
-  variant?: 'primary';
+  children: React.ReactNode;
+  footer?: React.ReactNode;
   hasBackdrop?: boolean;
   closeOnBackdropClick?: boolean;
+  hasCloseButton?: boolean;
+  overlayProps?: ModalOverlayProps;
+  contentProps?: ModalContentProps;
   /** @deprecated */
   left?: string;
   /** @deprecated */
@@ -30,12 +30,6 @@ export interface PopupProps
   bottom?: string;
   /** @deprecated */
   right?: string;
-  isOpen?: boolean;
-  onClose?: () => void;
-  footer?: React.ReactNode;
-  hasCloseButton?: boolean;
-  overlayProps?: ModalOverlayProps;
-  contentProps?: ModalContentProps;
 }
 
 const Popup = ({
