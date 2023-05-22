@@ -5,7 +5,7 @@ export const reusableArgs = {
   overlayProps: {
     backdropFilter: 'blur(3px)',
   },
-  blockScrollOnMount: false,
+  blockScrollOnMount: true,
   trapFocus: true,
   motionPreset: 'scale' as any,
   autoFocus: true,
