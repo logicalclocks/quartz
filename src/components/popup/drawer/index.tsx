@@ -8,6 +8,7 @@ import {
   DrawerFooter,
   DrawerHeader,
   DrawerOverlay,
+  SlideDirection,
 } from '@chakra-ui/react';
 
 import { PopupProps } from '../index';
@@ -27,6 +28,7 @@ export interface DrawerProps extends PopupProps {
   children: Children | Children[];
   /** @deprecated */
   singleBottom?: boolean;
+  placement?: SlideDirection;
 }
 
 const Drawer: IDrawer<DrawerProps> = ({

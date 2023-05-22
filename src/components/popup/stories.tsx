@@ -5,6 +5,7 @@ import { expect } from '@storybook/jest';
 
 import { Box, Button, usePopup } from '../..';
 import Popup from './index';
+import { reusableArgs } from './storyUitls';
 
 const meta: Meta<typeof Popup> = {
   title: 'Popup',
@@ -29,6 +30,8 @@ const meta: Meta<typeof Popup> = {
     variant: {
       options: ['modal', 'drawer'],
       control: { type: 'radio' },
+      description:
+        'drawer can be used for having fixed popup on the right side',
     },
   },
 };
@@ -38,17 +41,10 @@ export const PopupStory: StoryObj<typeof Popup> = {
   args: {
     title: 'Title',
     footer: 'some footer',
-    size: 'sm',
-    closeOnBackdropClick: false,
-    hasBackdrop: false,
     hasCloseButton: false,
-    overlayProps: {
-      backdropFilter: 'blur(3px)',
-    },
-    blockScrollOnMount: false,
-    trapFocus: true,
-    motionPreset: 'scale',
     variant: 'modal',
+    allowPinchZoom: true,
+    ...reusableArgs,
   },
   render: (props) => {
     const [isOpen, handleToggle] = usePopup();

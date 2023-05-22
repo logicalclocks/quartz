@@ -34,6 +34,7 @@ export interface PopupProps
 
 const Popup = ({
   title,
+  children,
   footer,
   size = 'sm',
   hasBackdrop = true,
@@ -42,7 +43,6 @@ const Popup = ({
   onClose = () => {},
   hasCloseButton = false,
   overlayProps,
-  children,
   contentProps,
   ...props
 }: PopupProps) => (

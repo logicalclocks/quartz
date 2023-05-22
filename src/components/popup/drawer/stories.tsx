@@ -4,6 +4,7 @@ import { Meta, StoryObj } from '@storybook/react';
 
 import { Box, BoxProps } from 'rebass';
 import { Button, Drawer, usePopup } from '../../..';
+import { reusableArgs } from '../storyUitls';
 
 const YellowBox = (props: Omit<BoxProps, 'css'>) => (
   <Box
@@ -33,6 +34,8 @@ export const Simple: StoryObj<typeof Drawer> = {
     headerLine: <YellowBox width="268px">head line</YellowBox>,
     headerSummary: <YellowBox>header summary</YellowBox>,
     bottomButton: ['CTA', action('CTA')],
+    placement: 'right',
+    ...reusableArgs,
   },
   render: (props: any) => {
     const [isOpen, handleToggle] = usePopup();
