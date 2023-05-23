@@ -1,8 +1,8 @@
 import { action } from '@storybook/addon-actions';
 import React from 'react';
-import { Story, Meta } from '@storybook/react';
+import { StoryObj, Meta } from '@storybook/react';
 
-import { Button, Props } from './Button';
+import { Button } from './Button';
 import { IconName } from '../icon';
 
 export default {
@@ -32,6 +32,6 @@ export default {
   },
 } as Meta;
 
-const Template: Story<Props> = (props) => <Button {...props} />;
-
-export const Default = Template.bind({});
+export const Default: StoryObj<typeof Button> = {
+  render: (props) => <Button {...props} />,
+};

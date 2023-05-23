@@ -26,6 +26,7 @@ export interface Props extends Omit<ButtonProps, 'css'> {
   isLoading?: boolean;
   /** When `true`, and `isLoading`, doesn't show button text, only spinner */
   loadingOnly?: boolean;
+  disabled?: boolean;
 }
 
 export const Button = ({
@@ -45,7 +46,8 @@ export const Button = ({
   const component = (
     <RebassButton
       variant={intent}
-      as={href ? 'span' : 'button'}
+      /** if it's disabled show as disabled button since a tag doesn't have disabled attribute */
+      as={href && !disabled ? 'span' : 'button'}
       disabled={disabled || isLoading}
       sx={{ ...S.wrapper, ...sx }}
       type={type}
