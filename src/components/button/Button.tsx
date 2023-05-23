@@ -26,6 +26,7 @@ export interface Props extends Omit<ButtonProps, 'css'> {
   isLoading?: boolean;
   /** When `true`, and `isLoading`, doesn't show button text, only spinner */
   loadingOnly?: boolean;
+  /** guess what */
   disabled?: boolean;
 }
 
