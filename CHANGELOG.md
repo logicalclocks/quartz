@@ -1,3 +1,10 @@
+## [2.7.2](https://github.com/logicalclocks/quartz/compare/v2.7.1...v2.7.2) (2023-05-23)
+
+
+### Bug Fixes
+
+* **build:** rework ([#407](https://github.com/logicalclocks/quartz/issues/407)) ([e0f8b5e](https://github.com/logicalclocks/quartz/commit/e0f8b5e2946f2cd71c35c0587d10ed53b6abd792))
+
 ## [2.7.1](https://github.com/logicalclocks/quartz/compare/v2.7.0...v2.7.1) (2023-05-23)
 
 
