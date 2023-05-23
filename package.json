@@ -26,6 +26,7 @@
   "scripts": {
     "build": "vite build",
     "start": "vite build --watch",
+    "prepare": "run-s build",
     "prepack": "run-s build",
     "gen:chakra-theme-typings": "chakra-cli tokens src/theme-chakra/theme/index.ts",
     "postinstall": "yarn run gen:chakra-theme-typings",
