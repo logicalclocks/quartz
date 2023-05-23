@@ -1,7 +1,7 @@
 .link-button:focus-visible {
-    outline: none;
+  outline: none;
 }
 .link-button:focus-visible > span {
-    box-shadow: 0 0 0 2px rgba(33, 177, 130, 0.6);
-    text-decoration: none;
+  box-shadow: 0 0 0 2px rgba(33, 177, 130, 0.6);
+  text-decoration: none;
 }
