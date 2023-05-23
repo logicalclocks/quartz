@@ -1,3 +1,10 @@
+## [2.7.1](https://github.com/logicalclocks/quartz/compare/v2.7.0...v2.7.1) (2023-05-23)
+
+
+### Bug Fixes
+
+* **build:** bring back prepack command ([#406](https://github.com/logicalclocks/quartz/issues/406)) ([6c98195](https://github.com/logicalclocks/quartz/commit/6c981950dd2fab652f13f488f6ea40887c7e38ec))
+
 # [2.7.0](https://github.com/logicalclocks/quartz/compare/v2.6.1...v2.7.0) (2023-05-23)
 
 
