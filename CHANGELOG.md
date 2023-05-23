@@ -1,3 +1,10 @@
+## [2.7.4](https://github.com/logicalclocks/quartz/compare/v2.7.3...v2.7.4) (2023-05-23)
+
+
+### Bug Fixes
+
+* **button:** disabled href button ([#410](https://github.com/logicalclocks/quartz/issues/410)) ([76cee8e](https://github.com/logicalclocks/quartz/commit/76cee8e53303c878f72c28d3fee7fe3090ff9241))
+
 ## [2.7.3](https://github.com/logicalclocks/quartz/compare/v2.7.2...v2.7.3) (2023-05-23)
 
 
