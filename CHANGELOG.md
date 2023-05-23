@@ -1,3 +1,10 @@
+## [2.7.3](https://github.com/logicalclocks/quartz/compare/v2.7.2...v2.7.3) (2023-05-23)
+
+
+### Bug Fixes
+
+* **build:** chakra theme type generation should be done in hopsworks instead ([012e14a](https://github.com/logicalclocks/quartz/commit/012e14a98d92c2b0927be0894f8b6ebb16eedb6e))
+
 ## [2.7.2](https://github.com/logicalclocks/quartz/compare/v2.7.1...v2.7.2) (2023-05-23)
 
 
