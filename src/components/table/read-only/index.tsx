@@ -151,9 +151,9 @@ const ReadOnlyTable: FC<ReadOnlyTableProps> = ({
                   <Box
                     key={cell.identifierName}
                     as="td"
-                    className={`${
-                      hoverColumn === cell.identifierName && 'hover-column'
-                    }`}
+                    className={
+                      hoverColumn === cell.identifierName ? 'hover-column' : ''
+                    }
                     onMouseEnter={() => setHoverColumn(cell.identifierName)}
                     onMouseLeave={() => setHoverColumn(undefined)}
                   >
