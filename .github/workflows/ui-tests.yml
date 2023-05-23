@@ -1,10 +1,6 @@
 name: 'UI Tests'
 
-on:
-  pull_request_review:
-    types: [submitted]
-  pull_request:
-    types: [review_requested]
+on: pull_request
 
 jobs:
   # Run interaction and accessibility tests
@@ -32,7 +28,7 @@ jobs:
 
       - name: Install chromium
         run: yarn playwright install chromium
-      
+
       - name: Playwright component test
         run: yarn test-ct
       - uses: actions/upload-artifact@v3

@@ -15,6 +15,7 @@ export default {
 
   ':focus': {
     outline: 'none',
+    boxShadow: 'focused',
   },
 
   ':active': {

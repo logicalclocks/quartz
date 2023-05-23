@@ -17,8 +17,8 @@ export interface SymbolProps {
 }
 
 const defaultTooltipText = {
-  single: 'Add this feature to basket',
-  bulk: 'Add all features to basket',
+  [SymbolMode.single]: 'Add this feature to basket',
+  [SymbolMode.bulk]: 'Add all features to basket',
 };
 
 const Symbol: FC<SymbolProps> = ({

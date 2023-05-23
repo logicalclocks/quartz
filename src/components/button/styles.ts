@@ -33,7 +33,7 @@ export const wrapper = {
   },
 } as SxStyleProp;
 
-export const spinnerColor = (intent: string): string => {
+export const spinnerColor = (intent: keyof typeof buttonsStyles): string => {
   const disabledStyles = buttonsStyles[intent][':disabled'];
   return disabledStyles.color;
 };

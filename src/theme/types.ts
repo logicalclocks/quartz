@@ -69,6 +69,7 @@ export interface IThemeShadows {
   list: string;
   popup: string;
   notification: string;
+  focused: string;
 }
 
 export interface IThemeVariants {

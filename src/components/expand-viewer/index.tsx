@@ -2,10 +2,8 @@ import React, { FC, useState } from 'react';
 import { Box, Button as RebassButton, Flex } from 'rebass';
 import { useTheme } from '../../theme/theme';
 import Popup, { PopupProps } from '../popup';
-import { IconButton } from '../icon-button';
 import { getIcon, IconName } from '../icon/list';
 import Value from '../typography/value';
-import Subtitle from '../typography/subtitle';
 import expandViewButtonStyle from './expand-viewer.styles';
 
 export interface ExpandViewerProps {
@@ -45,18 +43,15 @@ const ExpandViewer: FC<ExpandViewerProps> = ({
   return (
     <Flex sx={{ width: '100%' }}>
       <BriefComponent />
-      <Popup isOpen onClose={() => setExpanded(false)} {...popupProps}>
-        <Box padding={20}>
-          <Flex marginBottom={3} alignItems="center">
-            <Box flexGrow={1}>
-              <Subtitle>{title}</Subtitle>
-            </Box>
-            <IconButton
-              icon={IconName.cross}
-              intent="ghost"
-              onClick={() => setExpanded(false)}
-            />
-          </Flex>
+      <Popup
+        isOpen
+        onClose={() => setExpanded(false)}
+        title={title}
+        hasCloseButton
+        size="4xl"
+        {...popupProps}
+      >
+        <Box mb="20px">
           <NormalComponent />
         </Box>
       </Popup>

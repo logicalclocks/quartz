@@ -1,13 +1,19 @@
 import React, { FC } from 'react';
 import { Box } from 'rebass';
+import {
+  Drawer as ChakraDrawer,
+  DrawerBody,
+  DrawerCloseButton,
+  DrawerContent,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerOverlay,
+  SlideDirection,
+} from '@chakra-ui/react';
 
-// Components
-import Popup, { PopupProps } from '../index';
+import { PopupProps } from '../index';
 import FooterButton from '../../footer-button';
 import DrawerSection, { DrawerSectionProps } from './drawer-section';
-// Types
-import Tooltip from '../../tooltip';
-import { GetIcon, IconName } from '../../icon';
 
 type IDrawer<P> = FC<P> & {
   Section: FC<DrawerSectionProps>;
@@ -15,84 +21,71 @@ type IDrawer<P> = FC<P> & {
 
 type Children = React.ReactElement<DrawerSectionProps> | null;
 
-export interface DrawerProps extends Omit<PopupProps, 'css'> {
+export interface DrawerProps extends PopupProps {
   bottomButton?: [React.ReactNode, React.MouseEventHandler<HTMLButtonElement>];
   headerLine?: React.ReactNode;
   headerSummary?: React.ReactNode;
   children: Children | Children[];
-  isOpen?: boolean;
+  /** @deprecated */
   singleBottom?: boolean;
-  onClose?: () => void;
+  placement?: SlideDirection;
 }
 
 const Drawer: IDrawer<DrawerProps> = ({
   bottomButton,
   headerLine,
   headerSummary,
-  children,
-  singleBottom = true,
   onClose,
+  hasBackdrop = true,
+  closeOnBackdropClick,
+  hasCloseButton = true,
+  isOpen = true,
+  children,
   ...props
 }: DrawerProps) => {
-  const [bottomActionTitle, bottomActionCallback] =
-    singleBottom && bottomButton ? bottomButton : [];
+  const [bottomActionTitle, bottomActionCallback] = bottomButton || [];
 
   return (
-    <Popup
-      width="460px"
-      right="20px"
-      left="none"
-      top="75px"
+    <ChakraDrawer
       onClose={onClose}
+      closeOnOverlayClick={closeOnBackdropClick}
+      size="sm"
+      isOpen={isOpen}
       {...props}
     >
-      <Box>
-        <Box p="20px" {...props} tx="variants.popup" variant="drawerSection">
-          <Box
-            width="100%"
-            display="flex"
-            sx={{
-              alignItems: 'center',
-            }}
-          >
-            <Tooltip mainText="Close">
+      {hasBackdrop && <DrawerOverlay />}
+      <DrawerContent>
+        {hasCloseButton && <DrawerCloseButton left={4} top={4} />}
+        {(headerLine || headerSummary) && (
+          <DrawerHeader>
+            <Box p="20px" tx="variants.popup" variant="drawerSection">
               <Box
-                onClick={onClose}
-                p="2px"
-                height="30px"
+                width="100%"
+                display="flex"
                 sx={{
-                  borderWidth: '1px',
-                  borderStyle: 'solid',
-                  borderColor: 'transparent',
-                  cursor: 'pointer',
-
-                  ':hover': {
-                    backgroundColor: 'grayShade3',
-                    borderColor: 'grayShade3',
-                  },
+                  alignItems: 'center',
                 }}
               >
-                <GetIcon icon={IconName.cross} />
+                <Box ml="auto" display="flex">
+                  {headerLine}
+                </Box>
               </Box>
-            </Tooltip>
-            <Box ml="auto" display="flex">
-              {headerLine}
+              <Box mt={headerLine ? '17px' : '40px'} display="flex">
+                {headerSummary}
+              </Box>
             </Box>
-          </Box>
-          <Box mt="17px" display="flex">
-            {headerSummary}
-          </Box>
-        </Box>
-        {children}
-      </Box>
-      {bottomActionTitle && (
-        <Box>
-          <FooterButton width="100%" onClick={bottomActionCallback}>
-            {bottomActionTitle}
-          </FooterButton>
-        </Box>
-      )}
-    </Popup>
+          </DrawerHeader>
+        )}
+        <DrawerBody>{children}</DrawerBody>
+        {bottomActionTitle && (
+          <DrawerFooter>
+            <FooterButton width="100%" onClick={bottomActionCallback}>
+              {bottomActionTitle}
+            </FooterButton>
+          </DrawerFooter>
+        )}
+      </DrawerContent>
+    </ChakraDrawer>
   );
 };
 

@@ -1,8 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { userEvent, waitFor, within } from '@storybook/testing-library';
-import React, { useRef } from 'react';
-
 import { expect } from '@storybook/jest';
+import React, { useRef } from 'react';
 
 import { Box } from '../box';
 import { Button } from '../button';
@@ -12,7 +11,6 @@ import { INotification, createNotifier, useNotifier } from './notifier';
 
 const meta: Meta<INotification> = {
   title: 'Notifier',
-  tags: ['autodocs'],
   args: {
     title: 'Something happened',
     content: 'You have to see it.',
@@ -21,6 +19,8 @@ const meta: Meta<INotification> = {
 };
 
 export default meta;
+
+type Story = StoryObj<INotification>;
 
 export const Primary: Story = {
   render: ({ title, content, duration }) => {
@@ -110,8 +110,6 @@ export const Primary: Story = {
     );
   },
 };
-
-type Story = StoryObj<INotification>;
 
 export const Error: Story = {
   args: {

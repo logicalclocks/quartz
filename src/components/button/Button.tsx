@@ -1,5 +1,5 @@
 import * as R from 'ramda';
-import React, { FC } from 'react';
+import React from 'react';
 import { Button as RebassButton, ButtonProps } from 'rebass';
 
 // Styles
@@ -9,6 +9,7 @@ import * as S from './styles';
 
 import { Color } from '../../theme/types';
 import { GetIcon, IconName } from '../icon';
+import './link-button.css';
 
 type Intent = 'primary' | 'secondary' | 'ghost' | 'inline' | 'alert';
 export interface Props extends Omit<ButtonProps, 'css'> {
@@ -27,7 +28,7 @@ export interface Props extends Omit<ButtonProps, 'css'> {
   loadingOnly?: boolean;
 }
 
-export const Button: FC<Props> = ({
+export const Button = ({
   icon,
   children,
   href,
@@ -44,6 +45,7 @@ export const Button: FC<Props> = ({
   const component = (
     <RebassButton
       variant={intent}
+      as={href ? 'span' : 'button'}
       disabled={disabled || isLoading}
       sx={{ ...S.wrapper, ...sx }}
       type={type}
@@ -66,9 +68,7 @@ export const Button: FC<Props> = ({
     if (external) {
       return (
         <a
-          style={{
-            textDecoration: 'none',
-          }}
+          className="link-button"
           href={href}
           target={target}
           {...(target === '_blank' ? { rel: 'noopener noreferrer' } : {})}
@@ -79,13 +79,7 @@ export const Button: FC<Props> = ({
     }
 
     return (
-      <Link
-        style={{
-          textDecoration: 'none',
-        }}
-        to={href}
-        target={target}
-      >
+      <Link className="link-button" to={href} target={target}>
         {component}
       </Link>
     );

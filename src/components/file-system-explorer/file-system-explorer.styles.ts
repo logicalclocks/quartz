@@ -32,8 +32,8 @@ export const fileExplorerHeaderStyles = {
 export default {
   display: 'flex',
   flexDirection: 'column',
-  minHeight: 'calc(100vh - 45px)',
-  maxHeight: 'calc(100vh - 20px)',
+  height: '100%',
+  maxHeight: 'calc(100vh - 110px)',
   borderWidth: '1px',
   borderBottomWidth: '0px',
   borderStyle: 'solid',
