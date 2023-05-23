@@ -1,3 +1,10 @@
+# [2.7.0](https://github.com/logicalclocks/quartz/compare/v2.6.1...v2.7.0) (2023-05-23)
+
+
+### Features
+
+* **modals:** Migrate Popup, Drawer, TinyPopup to Chakra ([#401](https://github.com/logicalclocks/quartz/issues/401)) ([3e3615f](https://github.com/logicalclocks/quartz/commit/3e3615fcef362191296a1f226601265510445b02))
+
 ## [2.6.1](https://github.com/logicalclocks/quartz/compare/v2.6.0...v2.6.1) (2023-05-17)
 
 # [2.6.0](https://github.com/logicalclocks/quartz/compare/v2.5.0...v2.6.0) (2023-05-15)

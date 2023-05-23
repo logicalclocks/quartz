@@ -1,7 +1,7 @@
 {
   "homepage": "http://logicalclocks.github.io/quartz",
   "name": "@logicalclocks/quartz",
-  "version": "2.6.1",
+  "version": "2.7.0",
   "description": "Logical Clocks Design System Library",
   "author": "logicalclocks",
   "license": "MIT",
