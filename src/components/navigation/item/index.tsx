@@ -143,7 +143,7 @@ const NavigationItem: FC<NavigationItemProps> = (
       )}
       {hasDivider && <div />}
       {childs && (
-        <Box paddingLeft="33px" as="ul" display={display}>
+        <Box paddingLeft="33px" as="ul" aria-label="submenu" display={display}>
           {childs}
         </Box>
       )}
