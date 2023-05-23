@@ -13,9 +13,9 @@ import {
 } from '@chakra-ui/react';
 
 export interface PopupProps
-  extends Omit<ModalProps, 'title' | 'closeOnOverlayClick'> {
+  extends Omit<ModalProps, 'title' | 'closeOnOverlayClick' | 'children'> {
   title?: React.ReactNode;
-  children: React.ReactNode;
+  children?: React.ReactNode;
   footer?: React.ReactNode;
   hasBackdrop?: boolean;
   closeOnBackdropClick?: boolean;
