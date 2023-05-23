@@ -25,6 +25,14 @@ export const chakraTheme = extendTheme({
       '*, *::before, &::after': {
         fontFamily: 'Inter',
       },
+      'a:focus-visible': {
+        outlineOffset: '-1px',
+        transition: 'none',
+        outlineColor: 'rgba(33, 177, 130, 0.6)',
+        _dark: {
+          outlineColor: 'rgba(33, 177, 130, 0.6)',
+        },
+      },
     },
   },
   colors: themeColors,
