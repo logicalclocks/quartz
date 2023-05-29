@@ -1,3 +1,10 @@
+## [2.7.5](https://github.com/logicalclocks/quartz/compare/v2.7.4...v2.7.5) (2023-05-29)
+
+
+### Bug Fixes
+
+* **select2:** searchable select should also search through additional… ([#411](https://github.com/logicalclocks/quartz/issues/411)) ([9418949](https://github.com/logicalclocks/quartz/commit/94189494192a4a081f4c2014a8a7bb19a0502f3d))
+
 ## [2.7.4](https://github.com/logicalclocks/quartz/compare/v2.7.3...v2.7.4) (2023-05-23)
 
 
