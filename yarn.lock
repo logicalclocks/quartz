@@ -6968,15 +6968,15 @@ __metadata:
   linkType: hard
 
 "@tanem/react-nprogress@npm:^5.0.34":
-  version: 5.0.38
-  resolution: "@tanem/react-nprogress@npm:5.0.38"
+  version: 5.0.40
+  resolution: "@tanem/react-nprogress@npm:5.0.40"
   dependencies:
     "@babel/runtime": ^7.21.5
     hoist-non-react-statics: ^3.3.2
   peerDependencies:
     react: ^16.8.0 || ^17.0.0 || ^18.0.0
     react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
-  checksum: 711cb8e05ece4b3aaf1dcade48202f38af55195256573553b938f4ff73947155493744852b3311ce4a3d2451fc056f7f1d1cd72c3ad00710e01076dbf275583f
+  checksum: 91c8cbfb2fb467a27801a570d8f7d68dbcfa8bfdeb317ee6aee39bcd2b4c8c090da0206a503f9ddb348421ab8f63dc780c78f57f8116eb23f44584e3f3078651
   languageName: node
   linkType: hard
 
