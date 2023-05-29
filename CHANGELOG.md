@@ -1,3 +1,10 @@
+# [2.8.0](https://github.com/logicalclocks/quartz/compare/v2.7.5...v2.8.0) (2023-05-29)
+
+
+### Features
+
+* **select2:** do deep search over both label and additional text ([#412](https://github.com/logicalclocks/quartz/issues/412)) ([8ce5b89](https://github.com/logicalclocks/quartz/commit/8ce5b897379b43328a58d2ccc6960523aa1c7d2a))
+
 ## [2.7.5](https://github.com/logicalclocks/quartz/compare/v2.7.4...v2.7.5) (2023-05-29)
 
 
