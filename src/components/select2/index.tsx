@@ -110,6 +110,19 @@ const Select: FC<Select2Props> = ({
     if (!search) return options;
     return options.filter((opt) => {
       const searchString = search.toLowerCase().trim();
+
+      // incase we want to search for lable and additional text
+      const mutliSearch = searchString.trim().split(' ');
+      if (mutliSearch.length > 1) {
+        const [f, s] = mutliSearch;
+        return (
+          (opt.label.toLowerCase().includes(f) &&
+            opt.additionalText?.toLowerCase().includes(s)) ||
+          (opt.label.toLowerCase().includes(s) &&
+            opt.additionalText?.toLowerCase().includes(f))
+        );
+      }
+
       return (
         opt.label.toLowerCase().includes(searchString) ||
         opt.additionalText?.toLowerCase().includes(searchString)
