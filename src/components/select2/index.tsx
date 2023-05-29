@@ -110,7 +110,10 @@ const Select: FC<Select2Props> = ({
     if (!search) return options;
     return options.filter((opt) => {
       const searchString = search.toLowerCase().trim();
-      return opt.label.toLowerCase().includes(searchString);
+      return (
+        opt.label.toLowerCase().includes(searchString) ||
+        opt.additionalText?.toLowerCase().includes(searchString)
+      );
     });
   }, [search, options]);
 
