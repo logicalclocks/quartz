@@ -112,7 +112,7 @@ const Select: FC<Select2Props> = ({
       const searchString = search.toLowerCase().trim();
       return (
         opt.label.toLowerCase().includes(searchString) ||
-        opt.additionalText?.toLocaleLowerCase().includes(searchString)
+        opt.additionalText?.toLowerCase().includes(searchString)
       );
     });
   }, [search, options]);
