@@ -130,7 +130,7 @@ const defaultTheme: ITheme = {
     list: '0px 4px 15px rgba(0, 0, 0, 0.25)',
     popup: '0px 4px 4px rgba(0, 0, 0, 0.25)',
     notification: '0px 0px 15px rgba(0, 0, 0, 0.25)',
-    focused: '0 0 0 3px rgba(33, 177, 130, 0.6)',
+    focused: '0 0 0 2px rgba(33, 177, 130, 0.6)',
   },
   variants: {
     ...cards,
@@ -218,7 +218,7 @@ const darkThemeShadows: ITheme['shadows'] = {
   list: '0 0 1px 2px rgba(160, 160, 160, 0.1)',
   popup: '0 0 1px 2px rgba(160, 160, 160, 0.1)',
   notification: '0 0 1px 2px rgba(160, 160, 160, 0.1)',
-  focused: '0 0 0 3px rgba(33, 177, 130, 0.6)',
+  focused: '0 0 0 2px rgba(33, 177, 130, 0.6)',
 };
 
 export const useTheme = () => useEmotionTheme<ITheme>();
