@@ -1,42 +1,32 @@
+import {
+  RangeSlider as ChakraRangeSlider,
+  RangeSliderFilledTrack,
+  RangeSliderProps,
+  RangeSliderThumb,
+  RangeSliderTrack,
+} from '@chakra-ui/react';
 import React from 'react';
-import RCRangeSlider from 'rc-slider';
-import { FlexProps, Flex } from 'rebass';
-import { useTheme } from '../../theme/theme';
+import { Flex } from 'rebass';
 import Labeling from '../typography/labeling';
 import Value from '../typography/value';
 
-export interface Props extends Omit<FlexProps, 'value' | 'css' | 'onChange'> {
+export interface Props extends RangeSliderProps {
   label: string;
-  value: number[];
   range: number[];
-  step: number;
   disabled?: boolean;
-  onChange: (value: number[]) => void;
   formatDisplayValue?: (value: number) => string;
 }
 
-const buildHandleStyle = (color: string) => ({
-  borderColor: color,
-  boxShadow: `0 0 5px ${color}`,
-});
-
 const RangeSlider = ({
   label,
-  defaultValue,
   value,
-  onChange,
   range,
-  step,
   disabled,
   formatDisplayValue = (displayValue) => displayValue.toString(),
-  ...flexProps
+  ...props
 }: Props) => {
-  const theme = useTheme();
-
-  const handleStyle = buildHandleStyle(theme.colors.primary);
-
   return (
-    <Flex flexDirection="column" {...flexProps}>
+    <Flex flexDirection="column">
       <Flex alignItems="center" mb="10px">
         <Labeling bold mr="8px">
           {label}
@@ -48,29 +38,24 @@ const RangeSlider = ({
           sx={{ borderRadius: '2px' }}
         >
           <Value color="primary">
-            {value.map(formatDisplayValue).join('-')}
+            {value?.map(formatDisplayValue).join('-')}
           </Value>
         </Flex>
       </Flex>
-      <RCRangeSlider
-        disabled={disabled}
+      <ChakraRangeSlider
         value={value}
-        onChange={onChange as (value: number | number[]) => void}
         min={range[0]}
         max={range[1]}
-        step={step}
-        railStyle={{
-          backgroundColor: theme.colors.grayShade2,
-        }}
-        trackStyle={[
-          {
-            backgroundColor: theme.colors.primary,
-          },
-        ]}
-        // we have two handles, so we need two styles for that
-        handleStyle={[handleStyle, handleStyle]}
-        range
-      />
+        aria-label={range.map(String)}
+        isDisabled={disabled}
+        {...props}
+      >
+        <RangeSliderTrack>
+          <RangeSliderFilledTrack />
+        </RangeSliderTrack>
+        <RangeSliderThumb index={0} />
+        <RangeSliderThumb index={1} />
+      </ChakraRangeSlider>
     </Flex>
   );
 };
