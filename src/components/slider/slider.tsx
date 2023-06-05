@@ -29,7 +29,7 @@ const Slider = ({
 }: Props) => {
   return (
     <Flex flexDirection="column">
-      <Flex alignItems="center" mb="10px">
+      <Flex alignItems="center" mb="8px">
         <Labeling bold mr="8px">
           {label}
         </Labeling>
