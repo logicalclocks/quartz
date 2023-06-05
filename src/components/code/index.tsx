@@ -123,7 +123,15 @@ const CodeSnippet = ({
           <CopyButton content={content} copyCallback={copyCallback} />
         )}
       </Flex>
-      <Flex width="100%" variant="code" {...props} p={0}>
+      <Flex
+        width="100%"
+        variant="code"
+        sx={{
+          p: 0,
+          '*': { fontFamily: 'inherit' },
+        }}
+        {...props}
+      >
         <CodeMirror
           value={content}
           basicSetup={{
