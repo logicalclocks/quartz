@@ -73,19 +73,25 @@ const CodeInput: FC<CodeInputProps> = forwardRef(
           {...labelProps}
           mb="8px"
         >
-          <CodeMirror
-            value={value}
-            basicSetup={{
-              autocompletion: false,
-              lineNumbers: true,
-              foldGutter: false,
+          <Box
+            sx={{
+              '*': { fontFamily: 'inherit' },
             }}
-            extensions={[loadLanguage(mode)!].filter(Boolean)}
-            theme={darcula}
-            onChange={onChange}
-            readOnly={readOnly}
-            height={height}
-          />
+          >
+            <CodeMirror
+              value={value}
+              basicSetup={{
+                autocompletion: false,
+                lineNumbers: true,
+                foldGutter: false,
+              }}
+              extensions={[loadLanguage(mode)!].filter(Boolean)}
+              theme={darcula}
+              onChange={onChange}
+              readOnly={readOnly}
+              height={height}
+            />
+          </Box>
         </Label>
         {info && <InputInfo intent={intent}>{info}</InputInfo>}
       </Box>
