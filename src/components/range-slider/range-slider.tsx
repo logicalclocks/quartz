@@ -27,7 +27,7 @@ const RangeSlider = ({
 }: Props) => {
   return (
     <Flex flexDirection="column">
-      <Flex alignItems="center" mb="10px">
+      <Flex alignItems="center" mb="8px">
         <Labeling bold mr="8px">
           {label}
         </Labeling>
@@ -38,7 +38,7 @@ const RangeSlider = ({
           sx={{ borderRadius: '2px' }}
         >
           <Value color="primary">
-            {value?.map(formatDisplayValue).join('-')}
+            {value?.map(formatDisplayValue).join(', ')}
           </Value>
         </Flex>
       </Flex>
