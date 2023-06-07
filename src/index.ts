@@ -79,11 +79,6 @@ import RowGroup from './components/row/group';
 import RowItem from './components/row/item';
 import RowButton from './components/row/button';
 
-// Picker
-import Picker from './components/picker/container';
-import SingleRangeSlider from './components/picker/single-range-slider';
-import MultiRangeSlider from './components/picker/multi-range-slider';
-
 // Table
 import Table from './components/table';
 import HolyTable from './components/holy-table';
@@ -133,6 +128,8 @@ export * from './components/badge';
 export * from './components/text-value-badge';
 export * from './components/project-badge';
 export * from './components/freshness-bar';
+export * from './components/range-slider';
+export * from './components/slider';
 
 export * from './theme/useColorMode';
 
@@ -212,10 +209,6 @@ export {
   RowGroup,
   RowItem,
   RowButton,
-  // Picker
-  Picker,
-  SingleRangeSlider,
-  MultiRangeSlider,
   //  Table
   Table,
   EditableTable,

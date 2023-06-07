@@ -1,46 +1,48 @@
-import { Meta, Story } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 import React, { useState } from 'react';
 import { Box } from 'rebass';
 import Slider, { Props } from './slider';
 
-export default {
-  title: 'Quartz/Slider',
+const meta: Meta<Props> = {
+  title: 'Slider',
   component: Slider,
-} as Meta;
-
-export const DefaultSlider: Story<Pick<Props, 'label' | 'step' | 'range'>> = (
-  props,
-) => {
-  const [value, setValue] = useState(0);
-
-  return (
-    <Box width="700px">
-      <Slider value={value} onChange={setValue} {...props} />
-    </Box>
-  );
+  args: {
+    label: 'CPU cores',
+    step: 1,
+    range: [0, 10],
+  },
 };
 
-DefaultSlider.args = {
-  label: 'CPU cores',
-  step: 1,
-  range: [0, 10],
+export default meta;
+
+type Story = StoryObj<Props>;
+
+export const DefaultSlider: Story = {
+  render: (props) => {
+    const [value, setValue] = useState(0);
+
+    return (
+      <Box width="700px">
+        <Slider {...props} value={value} onChange={setValue} />
+      </Box>
+    );
+  },
 };
 
-export const WithCustomDisplayValue: Story<
-  Pick<Props, 'label' | 'step' | 'range' | 'formatDisplayValue'>
-> = (props) => {
-  const [value, setValue] = useState(0);
+export const WithCustomDisplayValue: Story = {
+  args: {
+    label: 'RAM',
+    step: 128,
+    range: [0, 1024],
+    formatDisplayValue: (value) => `${value} MB`,
+  },
+  render: (props) => {
+    const [value, setValue] = useState(0);
 
-  return (
-    <Box width="700px">
-      <Slider value={value} onChange={setValue} {...props} />
-    </Box>
-  );
-};
-
-WithCustomDisplayValue.args = {
-  label: 'RAM',
-  step: 128,
-  range: [0, 1024],
-  formatDisplayValue: (value) => `${value} MB`,
+    return (
+      <Box width="700px">
+        <Slider {...props} value={value} onChange={setValue} />
+      </Box>
+    );
+  },
 };

@@ -1,37 +1,35 @@
+import {
+  Slider as ChakraSlider,
+  SliderFilledTrack,
+  SliderProps,
+  SliderThumb,
+  SliderTrack,
+} from '@chakra-ui/react';
 import React from 'react';
-import RcSlider from 'rc-slider';
-import { FlexProps, Flex } from 'rebass';
-import { useTheme } from '../../theme/theme';
+import { Flex } from 'rebass';
 import Labeling from '../typography/labeling';
 import Value from '../typography/value';
 
-export interface Props extends Omit<FlexProps, 'css' | 'onChange'> {
+export interface Props extends SliderProps {
   label: string;
   value: number;
   range: [number, number];
   step: number;
   disabled?: boolean;
-  onChange: (value: number) => void;
-  // eslint-disable-next-line react/require-default-props
   formatDisplayValue?: (value: number) => string;
 }
 
 const Slider = ({
   label,
-  defaultValue,
   value,
-  onChange,
   range,
-  step,
   disabled,
   formatDisplayValue = (displayValue) => displayValue.toString(),
-  ...flexProps
+  ...props
 }: Props) => {
-  const theme = useTheme();
-
   return (
-    <Flex flexDirection="column" {...flexProps}>
-      <Flex alignItems="center" mb="10px">
+    <Flex flexDirection="column">
+      <Flex alignItems="center" mb="8px">
         <Labeling bold mr="8px">
           {label}
         </Labeling>
@@ -44,24 +42,18 @@ const Slider = ({
           <Value color="primary">{formatDisplayValue(value)}</Value>
         </Flex>
       </Flex>
-      <RcSlider
-        disabled={disabled}
+      <ChakraSlider
         value={value}
-        onChange={onChange as (value: number | number[]) => void}
         min={range[0]}
         max={range[1]}
-        step={step}
-        railStyle={{
-          backgroundColor: theme.colors.grayShade2,
-        }}
-        trackStyle={{
-          backgroundColor: theme.colors.primary,
-        }}
-        handleStyle={{
-          borderColor: theme.colors.primary,
-          boxShadow: `0 0 5px ${theme.colors.primary}`,
-        }}
-      />
+        isDisabled={disabled}
+        {...props}
+      >
+        <SliderTrack>
+          <SliderFilledTrack />
+        </SliderTrack>
+        <SliderThumb />
+      </ChakraSlider>
     </Flex>
   );
 };
