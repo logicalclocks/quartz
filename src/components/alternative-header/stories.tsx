@@ -36,17 +36,6 @@ export const Default: Story = {
           isActive: active === 'one more tab',
           onClick: () => setActive('one more tab'),
         },
-        // if the storybook page hangs, comment the tab below. There is an unknown memory leak, which breaks the page.
-        // {
-        //   title: 'last tab',
-        //   isActive: active === 'last tab',
-        //   altContent: (
-        //     <Value as="span" lineHeight="13px">
-        //       38
-        //     </Value>
-        //   ),
-        //   onClick: () => setActive('last tab'),
-        // },
       ],
       [active],
     );
