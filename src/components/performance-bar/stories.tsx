@@ -13,6 +13,7 @@ export const Default: Story = {
 };
 
 export const Mix: Story = {
+  ...Default,
   args: {
     bars: [
       {
