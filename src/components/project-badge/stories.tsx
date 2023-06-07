@@ -1,15 +1,15 @@
-import { Story } from '@storybook/react';
+import { StoryObj } from '@storybook/react';
 import React from 'react';
-import { ProjectBadge, Props } from './ProjectBadge';
+import { ProjectBadge } from './ProjectBadge';
 
 export default {
-  title: 'Quartz/Badges/ProjectBadge',
+  title: 'Badges/ProjectBadge',
   component: ProjectBadge,
   args: {
     value: 'ml demo web',
   },
 };
 
-const Template: Story<Props> = (props) => <ProjectBadge {...props} />;
-
-export const Default = Template.bind({});
+export const Default: StoryObj<typeof ProjectBadge> = {
+  render: (props) => <ProjectBadge {...props} />,
+};

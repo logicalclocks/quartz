@@ -1,14 +1,14 @@
 import React from 'react';
-import { Story, Meta } from '@storybook/react';
+import { StoryObj, Meta } from '@storybook/react';
 import { Box } from 'rebass';
 import { action } from '@storybook/addon-actions';
 
-import { DropdownButton, Props } from './DropdownButton';
+import { DropdownButton } from './DropdownButton';
 import { IconName } from '../icon';
 import { IconButton } from '../icon-button';
 
 export default {
-  title: 'Quartz/DropdownButton',
+  title: 'DropdownButton',
   component: DropdownButton,
   args: {
     renderButton: ({ onClick }: any) => (
@@ -37,13 +37,12 @@ export default {
       },
     ],
   },
-} as Meta;
+} as Meta<typeof DropdownButton>;
 
-// Default
-const Template: Story<Props> = (props) => (
-  <Box width="700px" height="115px">
-    <DropdownButton {...props} />
-  </Box>
-);
-
-export const Default = Template.bind({});
+export const Default: StoryObj<typeof DropdownButton> = {
+  render: (props) => (
+    <Box width="700px" height="115px">
+      <DropdownButton {...props} />
+    </Box>
+  ),
+};

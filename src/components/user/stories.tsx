@@ -5,7 +5,7 @@ import Labeling from '../typography/labeling';
 import { User, UserProps } from './index';
 
 export default {
-  title: 'Quartz/User',
+  title: 'User',
   component: User,
   args: {
     firstName: 'Martin',

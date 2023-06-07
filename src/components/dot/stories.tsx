@@ -1,15 +1,15 @@
-import { Story } from '@storybook/react';
+import { StoryObj } from '@storybook/react';
 import React from 'react';
-import { Dot, Props } from './Dot';
+import { Dot } from './Dot';
 
 export default {
-  title: 'Quartz/Badges/Dot',
+  title: 'Badges/Dot',
   component: Dot,
+};
+
+export const Default: StoryObj<typeof Dot> = {
   args: {
     mainText: 'tooltip text(hover the dot)',
   },
+  render: (props) => <Dot {...props} />,
 };
-
-const Template: Story<Props> = (props) => <Dot {...props} />;
-
-export const Default = Template.bind({});

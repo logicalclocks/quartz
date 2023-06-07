@@ -11,7 +11,7 @@ import { HoverableText, Text } from '../../index';
 import InputValidation from './input-validation/input-validation';
 
 export default {
-  title: 'Quartz/Typography',
+  title: 'Typography',
 } as Meta;
 
 const Template: Story = () => (
@@ -36,7 +36,7 @@ const Template: Story = () => (
   </Box>
 );
 
-export const TemplateInfo: Story = () => (
+export const DefaultInfo: Story = () => (
   <Box
     sx={{
       display: 'flex',

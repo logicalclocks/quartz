@@ -12,6 +12,9 @@ export const boxStyles: React.CSSProperties = {
 };
 
 export const codeHeaderStyles = {
+  position: 'sticky',
+  top: 0,
+  zIndex: 1,
   backgroundColor: 'grayShade2',
   color: 'gray',
   alignItems: 'center',

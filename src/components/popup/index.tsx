@@ -10,6 +10,9 @@ import {
   ModalProps,
   ModalOverlayProps,
   ModalContentProps,
+  ModalBodyProps,
+  ModalFooterProps,
+  ModalHeaderProps,
 } from '@chakra-ui/react';
 
 export interface PopupProps
@@ -22,6 +25,9 @@ export interface PopupProps
   hasCloseButton?: boolean;
   overlayProps?: ModalOverlayProps;
   contentProps?: ModalContentProps;
+  headerProps?: ModalHeaderProps;
+  bodyProps?: ModalBodyProps;
+  footerProps?: ModalFooterProps;
   /** @deprecated */
   left?: string;
   /** @deprecated */
@@ -44,6 +50,9 @@ const Popup = ({
   hasCloseButton = false,
   overlayProps,
   contentProps,
+  headerProps,
+  bodyProps,
+  footerProps,
   ...props
 }: PopupProps) => (
   <Modal
@@ -57,10 +66,10 @@ const Popup = ({
   >
     {hasBackdrop && <ModalOverlay {...overlayProps} />}
     <ModalContent {...contentProps}>
-      {title && <ModalHeader>{title}</ModalHeader>}
+      {title && <ModalHeader {...headerProps}>{title}</ModalHeader>}
       {hasCloseButton && <ModalCloseButton />}
-      <ModalBody>{children}</ModalBody>
-      {footer && <ModalFooter>{footer}</ModalFooter>}
+      <ModalBody {...bodyProps}>{children}</ModalBody>
+      {footer && <ModalFooter {...footerProps}>{footer}</ModalFooter>}
     </ModalContent>
   </Modal>
 );

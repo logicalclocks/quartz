@@ -105,53 +105,56 @@ const CodeSnippet = ({
   showLineNumbers,
   copyCallback,
   ...props
-}: CodeSnippetProps) => {
-  return (
-    <Flex flexDirection="column" width="100%" height="100%">
-      <Flex width="100%" sx={codeHeaderStyles}>
-        <Box flexGrow={1} ml="8px" my={1}>
-          {title}
-        </Box>
-        {downloadButton && (
-          <DownloadButton
-            content={content}
-            downloadCallback={downloadCallback}
-            title={title}
-          />
-        )}
-        {copyButton && (
-          <CopyButton content={content} copyCallback={copyCallback} />
-        )}
-      </Flex>
-      <Flex
-        width="100%"
-        variant="code"
-        sx={{
-          p: 0,
-          '*': { fontFamily: 'inherit' },
-        }}
-        {...props}
-      >
-        <CodeMirror
-          value={content}
-          basicSetup={{
-            autocompletion: false,
-            lineNumbers: showLineNumbers,
-            foldGutter: false,
-          }}
-          style={{
-            width: '100%',
-          }}
-          extensions={[EditorView.lineWrapping].concat(
-            language ? [loadLanguage(language)!].filter(Boolean) : [],
-          )}
-          theme={darcula}
-          readOnly
+}: CodeSnippetProps) => (
+  <Flex
+    flexDirection="column"
+    width="100%"
+    height="100%"
+    sx={{ position: 'relative' }}
+  >
+    <Flex width="100%" sx={codeHeaderStyles}>
+      <Box flexGrow={1} ml="8px" my={1}>
+        {title}
+      </Box>
+      {downloadButton && (
+        <DownloadButton
+          content={content}
+          downloadCallback={downloadCallback}
+          title={title}
         />
-      </Flex>
+      )}
+      {copyButton && (
+        <CopyButton content={content} copyCallback={copyCallback} />
+      )}
     </Flex>
-  );
-};
+    <Flex
+      width="100%"
+      variant="code"
+      sx={{
+        p: 0,
+        '*': { fontFamily: 'inherit' },
+      }}
+      {...props}
+    >
+      <CodeMirror
+        value={content}
+        basicSetup={{
+          autocompletion: false,
+          lineNumbers: showLineNumbers,
+          foldGutter: false,
+        }}
+        style={{
+          width: '100%',
+        }}
+        extensions={[EditorView.lineWrapping].concat(
+          language ? [loadLanguage(language)!].filter(Boolean) : [],
+        )}
+        theme={darcula}
+        readOnly
+      />
+    </Flex>
+  </Flex>
+);
 
 // Download Button
 const DownloadButton = ({
