@@ -1,4 +1,4 @@
-import React from 'react';
+import { createElement } from 'react';
 import NavigationCategory from '../category';
 import NavigationItem from '../item';
 import { TreeNode } from '../types';
@@ -12,14 +12,14 @@ const buildComponentsTree = (
   }
 
   if (Array.isArray(tree.children)) {
-    return React.createElement(
+    return createElement(
       isFirstLevel ? NavigationCategory : NavigationItem,
       { ...tree, key: tree.id } as any,
       buildComponentsTree(tree.children, false),
     );
   }
 
-  return React.createElement(NavigationItem, { ...tree, key: tree.id } as any);
+  return createElement(NavigationItem, { ...tree, key: tree.id } as any);
 };
 
 export default buildComponentsTree;

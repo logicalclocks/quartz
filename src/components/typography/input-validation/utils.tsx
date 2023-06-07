@@ -1,4 +1,3 @@
-import React from 'react';
 import { GetIcon, IconName } from '../../icon';
 
 const icons: Record<string, React.ReactElement> = {

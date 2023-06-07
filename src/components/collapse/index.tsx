@@ -1,5 +1,5 @@
 import { Box, BoxProps, Flex } from 'rebass';
-import React, { FC, memo, useEffect, useRef, useState } from 'react';
+import { FC, memo, useEffect, useRef, useState } from 'react';
 
 import Labeling from '../typography/labeling';
 import styles, { contentStyles, containerStyles } from './collapse.styles';

@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
 import useOnClickOutside from '../../utils/useClickOutside';
 import StickyPortal, { CONTENT_ID } from '../sticky-portal/StickyPortal';
 

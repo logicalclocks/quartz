@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Box, BoxProps } from 'rebass';
 import * as S from './styles';
 import Tab, { Props as EmbeddedTabItem } from './Tab';

@@ -4,7 +4,7 @@ import {
   ToastId,
   useToast,
 } from '@chakra-ui/react';
-import React, { ReactNode, useCallback, useMemo } from 'react';
+import { ReactNode, useCallback, useMemo } from 'react';
 import { standaloneToast } from '../../theme-chakra/ChakraThemeProvider';
 import { Notification } from './Notification';
 

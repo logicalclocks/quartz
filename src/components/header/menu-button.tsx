@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
 
 const MenuButton: FC = () => (
   <svg width="5" height="21" viewBox="0 0 5 21" fill="none">

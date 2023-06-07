@@ -1,4 +1,4 @@
-import React, { FC, memo, useRef } from 'react';
+import { FC, memo, useRef } from 'react';
 import { Box, Card as RebassCard, CardProps as RebassCardProps } from 'rebass';
 
 // Styles

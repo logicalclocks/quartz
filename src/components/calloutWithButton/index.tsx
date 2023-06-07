@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
 import { FlexProps } from 'rebass';
 import Callout, { CalloutTypes } from '../callout';
 import { Button } from '../button';

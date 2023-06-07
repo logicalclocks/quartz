@@ -1,4 +1,4 @@
-import React, { FC, memo } from 'react';
+import { FC, memo } from 'react';
 import { Box, BoxProps } from 'rebass';
 
 // Components

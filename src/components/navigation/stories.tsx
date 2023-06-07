@@ -1,4 +1,3 @@
-import React from 'react';
 import { Box } from 'rebass';
 import { action } from '@storybook/addon-actions';
 import { StoryObj, Meta } from '@storybook/react';

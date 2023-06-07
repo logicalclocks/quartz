@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Box, Flex } from 'rebass';
 import Labeling from '../typography/labeling';
 import EmbeddedTabs from '.';

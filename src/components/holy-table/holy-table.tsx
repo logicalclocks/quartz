@@ -1,4 +1,4 @@
-import React, { FC, ReactNode, useMemo } from 'react';
+import { FC, ReactNode, useMemo } from 'react';
 import { Box } from 'rebass';
 import HeadCell from './head-cell/head-cell';
 import HolyTableContext from './holy-table.context';

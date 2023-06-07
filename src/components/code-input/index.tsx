@@ -1,4 +1,4 @@
-import React, { FC, forwardRef } from 'react';
+import { FC, forwardRef } from 'react';
 import { Box, Flex } from 'rebass';
 
 import { loadLanguage } from '@uiw/codemirror-extensions-langs';

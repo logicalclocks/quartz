@@ -1,4 +1,4 @@
-import React, { forwardRef } from 'react';
+import { forwardRef } from 'react';
 import { Box, BoxProps } from 'rebass';
 
 export interface ListProps extends Omit<BoxProps, 'css'> {

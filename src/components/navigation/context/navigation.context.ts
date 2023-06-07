@@ -1,4 +1,4 @@
-import React from 'react';
+import { createContext } from 'react';
 import { TreeNode } from '../types';
 
 export interface NavigationContextValue {
@@ -10,7 +10,7 @@ export interface NavigationContextValue {
   onBack: (name: string) => void;
 }
 
-const NavigationContext = React.createContext<NavigationContextValue>({
+const NavigationContext = createContext<NavigationContextValue>({
   trackBy: 'id',
   activePath: [],
   tree: [],

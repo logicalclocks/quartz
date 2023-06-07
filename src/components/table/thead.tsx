@@ -1,4 +1,4 @@
-import React, { FC, memo, useCallback, useRef } from 'react';
+import { FC, memo, useCallback, useRef } from 'react';
 import { Box } from 'rebass';
 import useDropdown from '../../utils/useDropdown';
 import useOnClickOutside from '../../utils/useClickOutside';

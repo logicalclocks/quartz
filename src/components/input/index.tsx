@@ -1,5 +1,5 @@
 import { Box, Flex } from 'rebass';
-import React, { FC, forwardRef } from 'react';
+import { FC, forwardRef } from 'react';
 import { InputProps as RebassInputProps } from 'rebass__forms';
 
 // Components

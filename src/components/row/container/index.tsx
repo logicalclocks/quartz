@@ -1,4 +1,4 @@
-import React, { ComponentType, FC, useMemo } from 'react';
+import { ComponentType, FC, useMemo } from 'react';
 import { Box } from 'rebass';
 import TableRow from '../group';
 import { Mode } from './types';

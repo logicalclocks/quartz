@@ -1,5 +1,4 @@
 import * as R from 'ramda';
-import React from 'react';
 import { Flex } from 'rebass';
 import Label from '../label';
 import Tooltip from '../tooltip';

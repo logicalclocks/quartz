@@ -1,5 +1,5 @@
 import * as R from 'ramda';
-import React, { FC } from 'react';
+import { FC } from 'react';
 import { Box, SxStyleProp } from 'rebass';
 import Label from '../label';
 import * as S from './styles';

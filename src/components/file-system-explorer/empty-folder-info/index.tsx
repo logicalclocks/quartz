@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
 import { Box, BoxProps } from 'rebass';
 import Value from '../../typography/value';
 import styles from './empty-folder-info.styles';

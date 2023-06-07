@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
 // Components
 import { Button } from 'rebass';
 import { ButtonProps } from '../../button';

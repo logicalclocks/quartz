@@ -1,4 +1,4 @@
-import React, { FC, ComponentType } from 'react';
+import { FC, ComponentType } from 'react';
 import { Box } from 'rebass';
 import styles from './row-item.styles';
 import { TableItemPosition } from './types';

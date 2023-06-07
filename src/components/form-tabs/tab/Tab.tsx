@@ -1,4 +1,4 @@
-import React, { FC, memo, useMemo } from 'react';
+import { FC, memo, useMemo } from 'react';
 import { Flex } from 'rebass';
 import TabDescription from './TabDescription';
 import styles from './tab.styles';

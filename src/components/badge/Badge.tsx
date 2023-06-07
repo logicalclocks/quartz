@@ -1,4 +1,3 @@
-import React from 'react';
 import { Flex, FlexProps, SxStyleProp } from 'rebass';
 import { useTheme } from '../../theme/theme';
 import { getIcon, IconName } from '../icon/list';

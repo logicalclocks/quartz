@@ -1,11 +1,4 @@
-import React, {
-  FC,
-  useCallback,
-  useEffect,
-  useMemo,
-  useRef,
-  useState,
-} from 'react';
+import { FC, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import useDropdown from '../../utils/useDropdown';
 import { Intents } from '../intents';
 import Label, { LabelProps } from '../label';

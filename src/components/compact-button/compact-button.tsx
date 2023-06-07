@@ -1,4 +1,4 @@
-import React, { FC, memo, CSSProperties } from 'react';
+import { FC, memo, CSSProperties } from 'react';
 import { Button, ButtonProps, Flex, Box } from 'rebass';
 import { GetIcon, IconName } from '../icon';
 

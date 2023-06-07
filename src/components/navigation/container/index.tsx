@@ -1,5 +1,5 @@
 import { Box } from 'rebass';
-import React, { FC, ReactElement, useMemo, useState } from 'react';
+import { FC, ReactElement, useMemo, useState } from 'react';
 
 // Components
 import NavigationItem from '../item';

@@ -1,4 +1,3 @@
-import React from 'react';
 import { Box, Button as RebassButton, ButtonProps, Flex } from 'rebass';
 import { GetIcon, IconName } from '../icon';
 // Styles

@@ -1,4 +1,4 @@
-import React, { FC, useMemo, useState } from 'react';
+import { FC, useMemo, useState } from 'react';
 import { Box, Flex } from 'rebass';
 import * as R from 'ramda';
 

@@ -1,4 +1,3 @@
-import React from 'react';
 import { BoxProps } from 'rebass';
 
 export interface NavigationItemProps extends Omit<BoxProps, 'css' | 'id'> {

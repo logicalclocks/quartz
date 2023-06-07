@@ -1,5 +1,4 @@
-import React from 'react';
-import { Story, Meta } from '@storybook/react';
+import { Meta } from '@storybook/react';
 import { Box } from 'rebass';
 
 import Value from './value';
@@ -14,7 +13,7 @@ export default {
   title: 'Typography',
 } as Meta;
 
-const Template: Story = () => (
+const Template = () => (
   <Box
     sx={{
       display: 'flex',
@@ -36,7 +35,7 @@ const Template: Story = () => (
   </Box>
 );
 
-export const DefaultInfo: Story = () => (
+export const DefaultInfo = () => (
   <Box
     sx={{
       display: 'flex',

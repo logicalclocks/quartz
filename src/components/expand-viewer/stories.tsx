@@ -1,4 +1,3 @@
-import React from 'react';
 import { StoryObj, Meta } from '@storybook/react';
 import { Box } from 'rebass';
 import ExpandViewer from './index';

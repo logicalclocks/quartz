@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
 import { Box, Flex, FlexProps, Text } from 'rebass';
 import styles from './callout.styles';
 import { Color } from '../../theme/types';

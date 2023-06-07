@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
 import { boxStyles, boxButtonStyles } from './sticky-summary.styles';
 import Title from '../typography/title';
 import Labeling from '../typography/labeling';

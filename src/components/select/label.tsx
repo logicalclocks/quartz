@@ -1,4 +1,4 @@
-import React, { FC, forwardRef, useMemo } from 'react';
+import { FC, forwardRef, useMemo } from 'react';
 import { Box, BoxProps, Flex } from 'rebass';
 import { GetIcon, IconName } from '../icon';
 

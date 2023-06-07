@@ -1,6 +1,5 @@
 import { action } from '@storybook/addon-actions';
 import { Meta, StoryObj } from '@storybook/react';
-import React from 'react';
 
 import { Box } from 'rebass';
 import Input from '.';

@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
 import { Text, TextProps } from 'rebass';
 
 export interface MicrolabelingProps extends Omit<TextProps, 'css'> {

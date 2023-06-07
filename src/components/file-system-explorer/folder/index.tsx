@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react';
+import { FC, useState } from 'react';
 import { Box, Flex } from 'rebass';
 import { GetIcon, IconName } from '../../icon';
 import Tooltip from '../../tooltip';

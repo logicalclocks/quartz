@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react';
+import { FC, useState } from 'react';
 import { Box, Button as RebassButton, Flex } from 'rebass';
 import { useTheme } from '../../theme/theme';
 import Popup, { PopupProps } from '../popup';

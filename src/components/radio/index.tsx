@@ -1,4 +1,4 @@
-import React, { FC, forwardRef } from 'react';
+import { FC, forwardRef } from 'react';
 import { RadioProps as RebassRadioProps } from '@rebass/forms';
 import { Box, Flex } from 'rebass';
 import Tooltip, { TooltipProps } from '../tooltip';

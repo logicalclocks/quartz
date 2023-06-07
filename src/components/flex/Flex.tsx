@@ -1,4 +1,4 @@
-import React, { FC, forwardRef } from 'react';
+import { FC, forwardRef } from 'react';
 import { Flex as RebassFlex, FlexProps } from 'rebass';
 
 export interface Props extends Omit<FlexProps, 'css'> {

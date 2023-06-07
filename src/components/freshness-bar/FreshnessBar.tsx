@@ -1,5 +1,4 @@
 import { differenceInMilliseconds, format } from 'date-fns';
-import React from 'react';
 import * as R from 'ramda';
 
 import Tooltip from '../tooltip';

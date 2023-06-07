@@ -1,4 +1,3 @@
-import React from 'react';
 import { Flex, FlexProps } from 'rebass';
 import Tooltip from '../tooltip';
 import TooltipPositions from '../tooltip/positions';

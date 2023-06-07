@@ -1,4 +1,4 @@
-import React, { FC, memo } from 'react';
+import { FC, memo } from 'react';
 import { Flex } from 'rebass';
 import Label from '../../label';
 import { TabState } from '../types';

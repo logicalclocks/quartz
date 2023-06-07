@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import { ReactNode } from 'react';
 import { BoxProps } from 'rebass';
 import Labeling from '../../typography/labeling';
 import styles from './styles';

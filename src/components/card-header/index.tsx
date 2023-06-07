@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
 import { Box, BoxProps, Flex } from 'rebass';
 import styles from './card-header.styles';
 

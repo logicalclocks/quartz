@@ -1,5 +1,5 @@
 import { EditorView } from '@codemirror/view';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Box, Flex, FlexProps } from 'rebass';
 
 import { LanguageName, loadLanguage } from '@uiw/codemirror-extensions-langs';

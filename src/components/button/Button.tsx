@@ -1,5 +1,4 @@
 import * as R from 'ramda';
-import React from 'react';
 import { Button as RebassButton, ButtonProps } from 'rebass';
 
 // Styles

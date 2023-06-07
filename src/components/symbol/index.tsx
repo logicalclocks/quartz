@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react';
+import { FC, useState } from 'react';
 import styles from './symbol.styles';
 import { getSymbolIcon } from './utils';
 import Text, { TextProps } from '../typography/text';

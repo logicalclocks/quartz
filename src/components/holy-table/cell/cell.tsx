@@ -1,4 +1,4 @@
-import React, { FC, ReactNode, useContext } from 'react';
+import { FC, ReactNode, useContext } from 'react';
 import { Box, BoxProps } from 'rebass';
 import HolyTableContext from '../holy-table.context';
 import styles from './styles';

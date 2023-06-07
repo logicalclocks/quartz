@@ -1,4 +1,4 @@
-import React, { FC, memo } from 'react';
+import { FC, memo } from 'react';
 import { Box } from 'rebass';
 import { IconButton } from '../../icon-button';
 import { IconName } from '../../icon/list';

@@ -1,4 +1,3 @@
-import React from 'react';
 import { Meta, StoryObj } from '@storybook/react';
 import { Box, Flex } from 'rebass';
 import SplitGraph, { defaultGraphColors } from './index';

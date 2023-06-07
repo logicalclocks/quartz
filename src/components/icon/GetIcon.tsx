@@ -1,5 +1,5 @@
 import { path, prop, split } from 'ramda';
-import React, { FC } from 'react';
+import { FC } from 'react';
 import { BoxProps, Flex } from 'rebass';
 import { useTheme } from '../../theme/theme';
 import { Color, IconSizes } from '../../theme/types';

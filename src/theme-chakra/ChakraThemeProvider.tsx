@@ -1,5 +1,5 @@
 import { ChakraProvider, createStandaloneToast } from '@chakra-ui/react';
-import React, { PropsWithChildren } from 'react';
+import { PropsWithChildren } from 'react';
 import { chakraTheme as theme } from './theme';
 
 const { ToastContainer, toast } = createStandaloneToast({

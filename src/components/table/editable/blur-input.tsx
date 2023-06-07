@@ -1,4 +1,4 @@
-import React, { FC, memo, useCallback, useState } from 'react';
+import { FC, memo, useCallback, useState } from 'react';
 import Input, { InputProps } from '../../input';
 
 interface TInputProps extends Omit<InputProps, 'onChange'> {

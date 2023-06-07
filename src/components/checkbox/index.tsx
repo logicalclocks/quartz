@@ -1,5 +1,5 @@
 import { CheckboxProps as RebassCheckboxProps } from '@rebass/forms';
-import React, { FC, forwardRef } from 'react';
+import { FC, forwardRef } from 'react';
 import { Box, Flex } from 'rebass';
 
 // Components

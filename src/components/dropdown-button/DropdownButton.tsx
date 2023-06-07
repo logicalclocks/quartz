@@ -1,4 +1,4 @@
-import React, { useMemo, useRef } from 'react';
+import { useMemo, useRef } from 'react';
 import { Flex, FlexProps } from 'rebass';
 import * as R from 'ramda';
 

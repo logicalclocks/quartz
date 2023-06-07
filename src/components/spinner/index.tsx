@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
 import { Box, BoxProps } from 'rebass';
 // Styles
 import styles from './spinner-styles';

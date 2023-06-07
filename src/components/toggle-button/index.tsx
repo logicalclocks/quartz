@@ -1,5 +1,5 @@
 import { Flex } from 'rebass';
-import React, { FC } from 'react';
+import { FC } from 'react';
 import { CheckboxProps as RebassCheckboxProps } from '@rebass/forms';
 import * as R from 'ramda';
 

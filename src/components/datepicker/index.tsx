@@ -1,4 +1,4 @@
-import React, { FC, forwardRef, memo, useState } from 'react';
+import { FC, forwardRef, memo, useState } from 'react';
 import ReactDatePicker, { ReactDatePickerProps } from 'react-datepicker';
 import { Flex, SxStyleProp } from 'rebass';
 

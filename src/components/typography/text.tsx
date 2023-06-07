@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
 import { TextProps as RebassTextProps, Text as RebassText } from 'rebass';
 
 export interface TextProps extends Omit<RebassTextProps, 'css'> {}

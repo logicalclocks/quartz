@@ -1,5 +1,3 @@
-import React from 'react';
-
 export const boxStyles: React.CSSProperties = {
   width: '100%',
   lineHeight: '16px',

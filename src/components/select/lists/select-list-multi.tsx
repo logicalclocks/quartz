@@ -1,10 +1,8 @@
-import React, { FC, useCallback } from 'react';
-
-// Components
+import { FC, Fragment, useCallback } from 'react';
 import { Box } from 'rebass';
+
 import Checkbox from '../../checkbox';
 import ListItem from '../../list/item';
-// Types
 import { SelectListProps } from './list.types';
 import Labeling from '../../typography/labeling';
 import useArrowsSelect from '../../select2/useArrowsSelect';
@@ -49,7 +47,7 @@ const SelectListMulti: FC<SelectListProps> = ({
 
   return (
     // eslint-disable-next-line react/jsx-no-useless-fragment
-    <React.Fragment>
+    <Fragment>
       {options?.map((option, index) => (
         <ListItem
           // eslint-disable-next-line react/no-array-index-key
@@ -85,7 +83,7 @@ const SelectListMulti: FC<SelectListProps> = ({
           )}
         </ListItem>
       ))}
-    </React.Fragment>
+    </Fragment>
   );
 };
 

@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
 import { Box } from 'rebass';
 import {
   Drawer as ChakraDrawer,

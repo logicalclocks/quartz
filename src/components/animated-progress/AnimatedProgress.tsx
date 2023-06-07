@@ -1,4 +1,3 @@
-import React from 'react';
 import { useNProgress } from '@tanem/react-nprogress';
 import { Options } from '@tanem/react-nprogress/dist/types';
 

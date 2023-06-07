@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
 import { Flex, FlexProps } from 'rebass';
 
 import styles from './label.styles';

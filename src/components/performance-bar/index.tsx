@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
 import { Flex } from 'rebass';
 
 import * as s from './performance-bar.styles';

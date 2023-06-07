@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
 import { Flex, Text, TextProps } from 'rebass';
 import { getIcon } from './utils';
 

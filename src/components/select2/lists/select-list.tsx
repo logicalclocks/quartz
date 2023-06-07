@@ -1,4 +1,4 @@
-import React, { FC, useCallback } from 'react';
+import { FC, useCallback } from 'react';
 // Components
 import { Box } from 'rebass';
 import ListItem from '../../list/item';

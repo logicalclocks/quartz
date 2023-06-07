@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { StoryObj, Meta } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { Box } from 'rebass';
