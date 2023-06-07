@@ -8,8 +8,7 @@ import Header from './index';
 import MenuButton from './menu-button';
 import { User } from '../user';
 import { GetIcon, IconName } from '../icon';
-
-// import { Template as NavigationStory } from '../navigation/stories';
+import { Default as NavigationStory } from '../navigation/stories';
 
 export default {
   title: 'Header',
@@ -38,7 +37,7 @@ export const Default: StoryObj<typeof Header> = {
   args: {
     user: (
       <>
-        <User firstName="" />
+        <User firstName="Anna" lastName="Lundström" />
         <Label>Anna Lundström</Label>
       </>
     ),
@@ -69,7 +68,7 @@ export const Default: StoryObj<typeof Header> = {
   render: (props) => (
     <Box width="90vw" height="90vh">
       <Header {...props} />
-      {/* <NavigationStory {...NavigationStory.args} /> */}
+      <NavigationStory />
     </Box>
   ),
 };
