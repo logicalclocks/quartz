@@ -6,7 +6,7 @@ import FileItemExplorer, {
 } from './FileItemExplorer';
 
 export default {
-  title: 'Quartz/FileSystemExplorer/File',
+  title: 'FileSystemExplorer/File',
   component: FileItemExplorer,
   args: {
     itemInfo: { attributes: { name: 'file-name' } },

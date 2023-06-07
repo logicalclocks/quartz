@@ -1,11 +1,10 @@
-import { Story } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
-import { Badge, Props } from './Badge';
+import { Badge } from './Badge';
 import { IconName } from '../icon/list';
 
-export default {
-  title: 'Quartz/Badges/Default',
-  component: Badge,
+const meta: Meta<typeof Badge> = {
+  title: 'Badges',
   args: {
     value: 'arizona',
     mode: 'default',
@@ -41,7 +40,8 @@ export default {
     },
   },
 };
+export default meta;
 
-const Template: Story<Props> = (props) => <Badge {...props} />;
+type Story = StoryObj<typeof Badge>;
 
-export const Default = Template.bind({});
+export const Default: Story = { render: (props) => <Badge {...props} /> };

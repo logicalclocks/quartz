@@ -1,26 +1,28 @@
-import { Story } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 import { Flex } from '../flex';
-import { Bar, Props } from './Bar';
+import { Bar } from './Bar';
 
-export default {
-  title: 'Quartz/Bar',
-  component: Bar,
+const meta: Meta<typeof Bar> = {
+  title: 'Bar',
+};
+export default meta;
+
+export const Default: StoryObj<typeof Bar> = {
   args: {
     value: 50,
   },
-};
-
-export const Default: Story<Props> = (args) => {
-  return (
-    <Flex
-      alignItems="center"
-      justifyContent="center"
-      width="250px"
-      height="150px"
-      bg="antiquewhite"
-    >
-      <Bar {...args} />
-    </Flex>
-  );
+  render: (args) => {
+    return (
+      <Flex
+        alignItems="center"
+        justifyContent="center"
+        width="250px"
+        height="150px"
+        bg="antiquewhite"
+      >
+        <Bar {...args} />
+      </Flex>
+    );
+  },
 };

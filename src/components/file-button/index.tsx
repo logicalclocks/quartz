@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React from 'react';
 import { Box, Button as RebassButton, ButtonProps, Flex } from 'rebass';
 import { GetIcon, IconName } from '../icon';
 // Styles
@@ -16,7 +16,7 @@ export interface QuartzFileButtonProps extends Omit<ButtonProps, 'css'> {
   isDisabledUploadButton?: boolean;
 }
 
-const UploadButton: FC<QuartzFileButtonProps> = ({
+const UploadButton = ({
   children,
   href,
   modeNFiles,

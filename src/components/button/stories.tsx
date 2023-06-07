@@ -6,7 +6,7 @@ import { Button } from './Button';
 import { IconName } from '../icon';
 
 export default {
-  title: 'Quartz/Buttons',
+  title: 'Buttons',
   component: Button,
   args: {
     children: 'Button',
