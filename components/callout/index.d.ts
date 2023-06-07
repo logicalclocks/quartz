@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+/// <reference types="react" />
 import { FlexProps } from 'rebass';
 export declare enum CalloutTypes {
     valid = "valid",
@@ -11,5 +11,5 @@ export interface ICalloutProps extends Omit<FlexProps, 'content' | 'css'> {
     content: string | React.ReactNode;
     cta?: React.ReactNode;
 }
-declare const Callout: FC<ICalloutProps>;
+declare const Callout: ({ type, content, cta, ...props }: ICalloutProps) => import("react/jsx-runtime").JSX.Element;
 export default Callout;

@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+/// <reference types="react" />
 export interface StickySummaryProps {
     title?: string;
     firstValue?: string;
@@ -8,5 +8,5 @@ export interface StickySummaryProps {
     errorsValue?: string;
     hasScrollOnScreen?: boolean;
 }
-declare const StickySummary: FC<StickySummaryProps>;
+declare const StickySummary: ({ title, firstValue, secondValue, mainButton, secondaryButton, hasScrollOnScreen, errorsValue, ...props }: StickySummaryProps) => import("react/jsx-runtime").JSX.Element;
 export default StickySummary;

@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+/// <reference types="react" />
 import { ButtonProps } from '../../button';
 export interface RowButtonProps extends Omit<ButtonProps, 'icon'> {
     icon: JSX.Element;
@@ -6,5 +6,5 @@ export interface RowButtonProps extends Omit<ButtonProps, 'icon'> {
     mainText: string;
     disabled?: boolean;
 }
-declare const RowButton: FC<RowButtonProps>;
+declare const RowButton: ({ onClick, icon, mainText, disabled, ...props }: RowButtonProps) => import("react/jsx-runtime").JSX.Element;
 export default RowButton;

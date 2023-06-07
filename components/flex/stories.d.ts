@@ -1,9 +1,9 @@
+/// <reference types="react" />
 import { StoryObj } from '@storybook/react';
-import React from 'react';
 import { Flex } from './index';
 declare const _default: {
     title: string;
-    component: React.FC<import("./Flex").Props>;
+    component: import("react").ForwardRefExoticComponent<Omit<import("./Flex").Props, "ref"> & import("react").RefAttributes<unknown>>;
 };
 export default _default;
 export declare const Default: StoryObj<typeof Flex>;

@@ -1,4 +1,4 @@
-import { ComponentType, FC } from 'react';
+import { ComponentType } from 'react';
 import { Mode } from './types';
 export interface RowProps {
     mode?: Mode;
@@ -8,5 +8,5 @@ export interface RowProps {
     legend?: String[];
     onRowClick?: (event: any, index: number) => void;
 }
-declare const Row: FC<RowProps>;
+declare const Row: ({ mode, groupComponents, groupProps, legend, middleColumn, onRowClick, ...props }: RowProps) => import("react/jsx-runtime").JSX.Element;
 export default Row;

@@ -1,4 +1,3 @@
-import { FC } from 'react';
 import { TableProps } from '../index';
 import { TableCell, TableHeader } from '../type';
 export interface ReadOnlyTableProps extends Omit<TableProps, 'value'> {
@@ -10,5 +9,5 @@ export interface ReadOnlyTableProps extends Omit<TableProps, 'value'> {
         handler: (column: string) => void;
     }>;
 }
-declare const ReadOnlyTable: FC<ReadOnlyTableProps>;
+declare const ReadOnlyTable: ({ initialStaticColumn, values, columnHeaders, actions, }: ReadOnlyTableProps) => import("react/jsx-runtime").JSX.Element;
 export default ReadOnlyTable;

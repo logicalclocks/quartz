@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+/// <reference types="react" />
 import { FlexProps } from 'rebass';
 import { CalloutTypes } from '../callout';
 export interface ICalloutWithButtonProps extends Omit<FlexProps, 'content' | 'css' | 'onClick'> {
@@ -9,5 +9,5 @@ export interface ICalloutWithButtonProps extends Omit<FlexProps, 'content' | 'cs
     disabledButton?: boolean;
     isButtonLoading?: boolean;
 }
-declare const CalloutWithButton: FC<ICalloutWithButtonProps>;
+declare const CalloutWithButton: ({ buttonContent, content, onClick, type, disabledButton, isButtonLoading, ...props }: ICalloutWithButtonProps) => import("react/jsx-runtime").JSX.Element;
 export default CalloutWithButton;

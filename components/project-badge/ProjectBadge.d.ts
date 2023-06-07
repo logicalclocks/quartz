@@ -1,4 +1,3 @@
-import React from 'react';
 import { FlexProps } from 'rebass';
 export interface Props extends Omit<FlexProps, 'css'> {
     /** Value for the badge. E.g. 'pending' or 18 */
@@ -6,4 +5,4 @@ export interface Props extends Omit<FlexProps, 'css'> {
     /** Whether to show a lock icon */
     isLock?: boolean;
 }
-export declare const ProjectBadge: ({ value, isLock, sx, ...props }: Props) => React.JSX.Element;
+export declare const ProjectBadge: ({ value, isLock, sx, ...props }: Props) => import("react/jsx-runtime").JSX.Element;

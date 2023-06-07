@@ -1,5 +1,5 @@
+/// <reference types="react" />
 import { BoxProps } from 'rebass';
-import React from 'react';
 export interface CollapseProps extends Omit<BoxProps, 'css' | 'title'> {
     title: React.ReactNode;
     secondaryContent?: React.ReactNode;
@@ -7,5 +7,5 @@ export interface CollapseProps extends Omit<BoxProps, 'css' | 'title'> {
     isOpenProps?: boolean;
     openChange?: (value: boolean) => void;
 }
-declare const _default: React.NamedExoticComponent<CollapseProps>;
+declare const _default: import("react").MemoExoticComponent<({ title, contentProps, secondaryContent, children, isOpenProps, openChange, ...props }: CollapseProps) => import("react/jsx-runtime").JSX.Element>;
 export default _default;

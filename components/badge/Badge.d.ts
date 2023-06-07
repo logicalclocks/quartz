@@ -1,4 +1,3 @@
-import React from 'react';
 import { FlexProps } from 'rebass';
 import { IconName } from '../icon/list';
 import { BadgeVariant } from './types';
@@ -15,5 +14,5 @@ export interface Props extends Omit<FlexProps, 'css'> {
     /** Icon, used as `IconName.nameOfTheIcon` e.g. `IconName.download` */
     icon?: IconName;
 }
-export declare const Badge: ({ value, variant, mode, loading, icon, sx, ...props }: Props) => React.JSX.Element;
+export declare const Badge: ({ value, variant, mode, loading, icon, sx, ...props }: Props) => import("react/jsx-runtime").JSX.Element;
 export {};

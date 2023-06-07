@@ -1,4 +1,3 @@
-import { FC } from 'react';
 import { BoxProps } from 'rebass';
 import { ActiveFile } from '../types';
 export interface FileExplorerInfoProps extends Omit<BoxProps, 'css'> {
@@ -7,5 +6,5 @@ export interface FileExplorerInfoProps extends Omit<BoxProps, 'css'> {
     disableDownload: boolean;
     handleDownloadFile: (file: any) => void;
 }
-declare const FileExplorerInfo: FC<FileExplorerInfoProps>;
+declare const FileExplorerInfo: ({ children, activeFile, disableDownload, handleDownloadFile, }: FileExplorerInfoProps) => import("react/jsx-runtime").JSX.Element;
 export default FileExplorerInfo;

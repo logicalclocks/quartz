@@ -1,4 +1,4 @@
-import React from 'react';
+/// <reference types="react" />
 import { ButtonProps } from 'rebass';
 import { IconName } from '../icon';
 type Intent = 'primary' | 'secondary' | 'ghost' | 'inline' | 'alert';
@@ -18,5 +18,5 @@ export interface Props extends Omit<ButtonProps, 'css'> {
     loadingOnly?: boolean;
     disabled?: boolean;
 }
-export declare const Button: ({ icon, children, href, target, sx, external, disabled, intent, loadingOnly, isLoading, type, ...props }: Props) => React.JSX.Element;
+export declare const Button: ({ icon, children, href, target, sx, external, disabled, intent, loadingOnly, isLoading, type, ...props }: Props) => import("react/jsx-runtime").JSX.Element;
 export default Button;

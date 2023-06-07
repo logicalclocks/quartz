@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+/// <reference types="react" />
 import { InputProps as RebassInputProps } from 'rebass__forms';
 import { LabelProps } from '../label';
 import { Intents } from '../intents';
@@ -21,5 +21,5 @@ export interface InputProps extends Omit<RebassInputProps, 'css'> {
     optional?: boolean;
     tooltipInfo?: string;
 }
-declare const Input: FC<InputProps>;
+declare const Input: import("react").ForwardRefExoticComponent<Omit<InputProps, "ref"> & import("react").RefAttributes<unknown>>;
 export default Input;

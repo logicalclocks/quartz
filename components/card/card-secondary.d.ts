@@ -1,4 +1,4 @@
-import React from 'react';
+/// <reference types="react" />
 import { CardProps as RebassCardProps } from 'rebass';
 export interface CardSecondaryProps extends Omit<RebassCardProps, 'css' | 'title'> {
     title?: React.ReactElement | string;
@@ -7,5 +7,5 @@ export interface CardSecondaryProps extends Omit<RebassCardProps, 'css' | 'title
     contentProps?: Omit<RebassCardProps, 'css' | 'children'>;
     readonly?: boolean;
 }
-declare const _default: React.NamedExoticComponent<CardSecondaryProps>;
+declare const _default: import("react").MemoExoticComponent<({ title, children, maxHeight, contentProps, placeholder, readOnly, ...props }: CardSecondaryProps) => import("react/jsx-runtime").JSX.Element>;
 export default _default;

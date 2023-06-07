@@ -1,4 +1,3 @@
-import { FC } from 'react';
 import { ActiveFile, FileExplorerMode } from '../types';
 export interface Props {
     value?: string;
@@ -9,5 +8,5 @@ export interface Props {
     fileListValue: Array<ActiveFile>[];
     rootDir: string;
 }
-declare const FooterFileExplorer: FC<Props>;
+declare const FooterFileExplorer: ({ value, activeFile, mode, onClose, handleSelectFile, fileListValue, rootDir, ...props }: Props) => import("react/jsx-runtime").JSX.Element;
 export default FooterFileExplorer;

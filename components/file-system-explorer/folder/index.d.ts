@@ -1,4 +1,3 @@
-import { FC } from 'react';
 export interface QuartzFileExplorerFolderProps {
     name: string;
     id: number;
@@ -15,5 +14,5 @@ export interface QuartzFileExplorerFolderProps {
     handleLoadMore: (path: string, columnIndex: number) => void;
     itemInfo: any;
 }
-declare const FolderExplorer: FC<QuartzFileExplorerFolderProps>;
+declare const FolderExplorer: ({ setActiveFile, selectPathListValue, mode, handleLoadMore, isActive, selected, setActiveFolder, activeFolder, index, name, itemInfo, id, }: QuartzFileExplorerFolderProps) => import("react/jsx-runtime").JSX.Element;
 export default FolderExplorer;

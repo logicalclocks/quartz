@@ -1,2 +1,2 @@
-import React from 'react';
-export declare const getIcon: (intent: 'success' | 'fail' | 'warning' | 'neutral') => React.ReactElement<any, string | React.JSXElementConstructor<any>>;
+/// <reference types="react" />
+export declare const getIcon: (intent: 'success' | 'fail' | 'warning' | 'neutral') => import("react").ReactElement<any, string | import("react").JSXElementConstructor<any>>;

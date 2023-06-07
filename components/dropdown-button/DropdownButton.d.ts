@@ -1,4 +1,4 @@
-import React from 'react';
+/// <reference types="react" />
 import { FlexProps } from 'rebass';
 import { DropdownProps } from '../dropdown';
 type RenderDropdownItems = ({ onClose, }: {
@@ -23,5 +23,5 @@ export interface Props extends Omit<FlexProps, 'css'> {
         isOpen: boolean;
     }) => React.ReactNode;
 }
-export declare const DropdownButton: React.FC<Props>;
+export declare const DropdownButton: ({ alignLeft, containerOpenSx, dropdownSx, items, renderButton, sx, ...restProps }: Props) => import("react/jsx-runtime").JSX.Element;
 export {};

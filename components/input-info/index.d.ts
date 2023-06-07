@@ -1,9 +1,7 @@
-import React, { FC } from 'react';
 import { TextProps } from 'rebass';
 import { Intents } from '../intents';
 export interface InputInfoProps extends Omit<TextProps, 'css'> {
     intent?: Intents;
-    children: React.ReactNode;
 }
-declare const InputInfo: FC<InputInfoProps>;
+declare const InputInfo: ({ intent, children, sx, ...props }: InputInfoProps) => import("react/jsx-runtime").JSX.Element;
 export default InputInfo;

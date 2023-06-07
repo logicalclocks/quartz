@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+/// <reference types="react" />
 import { Intents } from '../intents';
 import { LabelProps } from '../label';
 import { EditableSelectTypes, ChipsVariants } from './types';
@@ -22,5 +22,5 @@ export interface EditableSelectProps extends Omit<LabelProps, 'onChange' | 'chil
     labelAction?: React.ReactNode;
     onChange: (value: string[]) => void;
 }
-declare const EditableSelect: FC<EditableSelectProps>;
+declare const EditableSelect: ({ info, label, value, options, onChange, inputWidth, labelAction, placeholder, inlineLegend, appendToBody, width, isMulti, type, disabled, intent, variant, maxListHeight, noDataMessage, ...props }: EditableSelectProps) => import("react/jsx-runtime").JSX.Element;
 export default EditableSelect;

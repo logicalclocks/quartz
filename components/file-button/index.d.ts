@@ -1,4 +1,4 @@
-import React from 'react';
+/// <reference types="react" />
 import { ButtonProps } from 'rebass';
 export interface QuartzFileButtonProps extends Omit<ButtonProps, 'css'> {
     children: React.ReactNode | string;
@@ -11,5 +11,5 @@ export interface QuartzFileButtonProps extends Omit<ButtonProps, 'css'> {
     handleClick: (event: React.MouseEvent<HTMLElement>) => void;
     isDisabledUploadButton?: boolean;
 }
-declare const UploadButton: ({ children, href, modeNFiles, currentRef, name, value, onHandleUpload, handleClick, validExtensions, isDisabledUploadButton, ...props }: QuartzFileButtonProps) => React.JSX.Element;
+declare const UploadButton: ({ children, href, modeNFiles, currentRef, name, value, onHandleUpload, handleClick, validExtensions, isDisabledUploadButton, ...props }: QuartzFileButtonProps) => import("react/jsx-runtime").JSX.Element;
 export default UploadButton;

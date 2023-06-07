@@ -1,4 +1,4 @@
-import { FC } from 'react';
+/// <reference types="react" />
 import { TabState } from './types';
 export declare enum ValidateOpts {
     valid = "valid",
@@ -15,10 +15,10 @@ export interface TabItem {
 }
 export interface FormTabsProps {
     tabs: TabItem[];
-    SubmitButton: FC<any>;
+    SubmitButton: React.FC<any>;
     initialTab?: string;
     onTabChange: (tabId: string) => void;
     hasScrollOnScreen?: boolean;
 }
-declare const FormTabs: FC<FormTabsProps>;
+declare const FormTabs: ({ tabs, SubmitButton, onTabChange, initialTab, hasScrollOnScreen, ...props }: FormTabsProps) => import("react/jsx-runtime").JSX.Element;
 export default FormTabs;

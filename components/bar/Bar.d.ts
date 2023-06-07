@@ -1,4 +1,3 @@
-import React from 'react';
 import { BoxProps } from '../box';
 export interface Props extends Omit<BoxProps, 'css'> {
     /** width of the bar */
@@ -8,7 +7,7 @@ export interface Props extends Omit<BoxProps, 'css'> {
     /** whether to show caption with percentage */
     hasCaption?: boolean;
 }
-export declare const Bar: ({ value, width, hasCaption, ...props }: Props) => React.JSX.Element;
+export declare const Bar: ({ value, width, hasCaption, ...props }: Props) => import("react/jsx-runtime").JSX.Element;
 export declare const inside: {
     height: string;
     display: string;

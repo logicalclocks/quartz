@@ -1,4 +1,3 @@
-import { FC } from 'react';
 import { BoxProps } from 'rebass';
 import { TableCell, TableHeader } from './type';
 export interface TableProps extends Omit<BoxProps, 'css'> {
@@ -6,5 +5,5 @@ export interface TableProps extends Omit<BoxProps, 'css'> {
     values: TableCell[][];
     columnHeaders: Array<TableHeader>;
 }
-declare const Table: FC<TableProps>;
+declare const Table: ({ variant, values, ...props }: TableProps) => import("react/jsx-runtime").JSX.Element;
 export default Table;

@@ -1,4 +1,4 @@
-import React from 'react';
+/// <reference types="react" />
 export type TableCellType = string | string[] | boolean;
 export interface TableCell {
     identifierName: string;

@@ -1,4 +1,3 @@
-import { FC } from 'react';
 import { FlexProps } from 'rebass';
 export interface PaginationProps extends Omit<FlexProps, 'css' | 'onChange'> {
     totalPages: number;
@@ -8,5 +7,5 @@ export interface PaginationProps extends Omit<FlexProps, 'css' | 'onChange'> {
     variant?: 'primary' | 'white';
     onChange: (page: number) => void;
 }
-declare const Pagination: FC<PaginationProps>;
+declare const Pagination: ({ totalPages, currentPage, disabled, label, onChange, variant, ...props }: PaginationProps) => import("react/jsx-runtime").JSX.Element;
 export default Pagination;

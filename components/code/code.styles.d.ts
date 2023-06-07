@@ -1,4 +1,4 @@
-import React from 'react';
+/// <reference types="react" />
 export declare const boxStyles: React.CSSProperties;
 export declare const codeHeaderStyles: {
     position: string;

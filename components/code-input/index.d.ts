@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+/// <reference types="react" />
 import { BoxProps } from '../box';
 import { Intents } from '../intents';
 import { LabelProps } from '../label';
@@ -17,5 +17,5 @@ export interface CodeInputProps extends Omit<BoxProps, 'children' | 'onChange'> 
     info?: string;
     intent?: Intents;
 }
-declare const CodeInput: FC<CodeInputProps>;
+declare const CodeInput: import("react").ForwardRefExoticComponent<Omit<CodeInputProps, "ref"> & import("react").RefAttributes<unknown>>;
 export default CodeInput;

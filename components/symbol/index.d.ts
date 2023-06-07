@@ -1,4 +1,3 @@
-import { FC } from 'react';
 import { TextProps } from '../typography/text';
 import { TooltipProps } from '../tooltip';
 import { SymbolMode } from './types';
@@ -12,5 +11,5 @@ export interface SymbolProps {
     tooltipSecondaryText?: string;
     tooltipProps?: Omit<TooltipProps, 'children' | 'mainText'>;
 }
-declare const Symbol: FC<SymbolProps>;
+declare const Symbol: ({ inBasket, handleClick, tooltipProps, tooltipMainText, tooltipSecondaryText, iconProps, possible, mode, }: SymbolProps) => import("react/jsx-runtime").JSX.Element;
 export default Symbol;

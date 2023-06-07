@@ -1,4 +1,4 @@
-import React from 'react';
+/// <reference types="react" />
 import { CardProps as RebassCardProps } from 'rebass';
 import { FileExplorData, FileExplorerMode } from './types';
 export interface FileSystemExplorerProps extends Omit<RebassCardProps, 'css' | 'title' | 'data'> {
@@ -15,5 +15,5 @@ export interface FileSystemExplorerProps extends Omit<RebassCardProps, 'css' | '
     handleSelectFile?: (activeFile: any, isDownload: boolean) => void;
     handleDownloadFile: (file: any) => void;
 }
-declare const _default: React.NamedExoticComponent<FileSystemExplorerProps>;
+declare const _default: import("react").MemoExoticComponent<({ title, onClose, shortcutActions, handleDownloadFile, mode, rootDir, contentProps, handleLoadMore, handleSelectFile, disableDownload, validExtensions, data, ...props }: FileSystemExplorerProps) => import("react/jsx-runtime").JSX.Element>;
 export default _default;

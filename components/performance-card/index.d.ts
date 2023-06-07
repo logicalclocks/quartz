@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+/// <reference types="react" />
 import { CardProps } from 'rebass';
 interface Bar {
     proportion: number;
@@ -8,5 +8,5 @@ export interface PerformanceCardProps extends Omit<CardProps, 'css'> {
     bars: Bar[];
     children: React.ReactNode;
 }
-declare const PerformanceCard: FC<PerformanceCardProps>;
+declare const PerformanceCard: ({ bars, children, ...props }: PerformanceCardProps) => import("react/jsx-runtime").JSX.Element;
 export default PerformanceCard;

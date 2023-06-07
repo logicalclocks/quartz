@@ -1,9 +1,9 @@
-import React, { FC } from 'react';
+/// <reference types="react" />
 import { SlideDirection } from '@chakra-ui/react';
 import { PopupProps } from '../index';
 import { DrawerSectionProps } from './drawer-section';
-type IDrawer<P> = FC<P> & {
-    Section: FC<DrawerSectionProps>;
+type IDrawer<P> = React.FC<P> & {
+    Section: React.FC<DrawerSectionProps>;
 };
 type Children = React.ReactElement<DrawerSectionProps> | null;
 export interface DrawerProps extends PopupProps {

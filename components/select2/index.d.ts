@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+/// <reference types="react" />
 import { LabelProps } from '../label';
 import { Intents } from '../intents';
 import { SelectOpt } from './types';
@@ -30,5 +30,5 @@ export interface Select2Props extends Omit<LabelProps, 'onChange' | 'children' |
     needSwap?: boolean;
     info?: string;
 }
-declare const Select: FC<Select2Props>;
+declare const Select: ({ label, value, options, isMulti, info, message, disabled, onChange, deletabled, placeholder, labelAction, customFilter, noDataMessage, format, bottomActionText, needSwap, color, hasSearch, state, bottomActionHandler, appendToBody, labelMode, maxListHeight, needSecondaryText, noMatchText, searchPlaceholder, ...props }: Select2Props) => import("react/jsx-runtime").JSX.Element;
 export default Select;

@@ -1,9 +1,9 @@
-import React, { FC } from 'react';
+/// <reference types="react" />
 import { NavigationCategoryProps } from '../category';
 import { NavigationItemProps, TreeNode } from '../types';
-type INavigation<P> = FC<P> & {
-    Item: FC<NavigationItemProps>;
-    Category: FC<NavigationCategoryProps>;
+type INavigation<P> = React.FC<P> & {
+    Item: React.FC<NavigationItemProps>;
+    Category: React.FC<NavigationCategoryProps>;
 };
 export interface NavigationProps {
     children?: React.ReactNode;

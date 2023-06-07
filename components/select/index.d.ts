@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+/// <reference types="react" />
 import { Intents } from '../intents';
 import { LabelProps } from '../label';
 export interface SelectProps extends Omit<LabelProps, 'onChange' | 'children'> {
@@ -31,5 +31,5 @@ export interface SelectProps extends Omit<LabelProps, 'onChange' | 'children'> {
     deletabled?: boolean;
     needSwap?: boolean;
 }
-declare const Select: FC<SelectProps>;
+declare const Select: ({ labelAction, label, width, variant, options, disabled, listWidth, value, isMulti, placeholder, maxListHeight, noDataMessage, info, intent, onChange, bottomActionHandler, bottomActionText, hasPlaceholder, hasSearch, searchPlaceholder, customFilter, additionalComponents, additionalTexts, noMathText, needSecondaryText, deletabled, needSwap, appendToBody, ...props }: SelectProps) => import("react/jsx-runtime").JSX.Element;
 export default Select;

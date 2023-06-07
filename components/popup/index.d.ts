@@ -1,4 +1,4 @@
-import React from 'react';
+/// <reference types="react" />
 import { ModalProps, ModalOverlayProps, ModalContentProps, ModalBodyProps, ModalFooterProps, ModalHeaderProps } from '@chakra-ui/react';
 export interface PopupProps extends Omit<ModalProps, 'title' | 'closeOnOverlayClick' | 'children'> {
     title?: React.ReactNode;
@@ -21,5 +21,5 @@ export interface PopupProps extends Omit<ModalProps, 'title' | 'closeOnOverlayCl
     /** @deprecated */
     right?: string;
 }
-declare const Popup: ({ title, children, footer, size, hasBackdrop, isOpen, closeOnBackdropClick, onClose, hasCloseButton, overlayProps, contentProps, headerProps, bodyProps, footerProps, ...props }: PopupProps) => React.JSX.Element;
+declare const Popup: ({ title, children, footer, size, hasBackdrop, isOpen, closeOnBackdropClick, onClose, hasCloseButton, overlayProps, contentProps, headerProps, bodyProps, footerProps, ...props }: PopupProps) => import("react/jsx-runtime").JSX.Element;
 export default Popup;

@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+/// <reference types="react" />
 import { BoxProps } from 'rebass';
 import { Intents } from '../intents';
 import { SelectOpt } from './types';
@@ -17,5 +17,5 @@ export interface SelectLabelProps extends Omit<BoxProps, 'css' | 'onChange' | 'v
     label?: string;
     onChange: (value: SelectOpt | SelectOpt[]) => void;
 }
-declare const SelectLabel: FC<SelectLabelProps>;
+declare const SelectLabel: import("react").ForwardRefExoticComponent<Omit<SelectLabelProps, "ref"> & import("react").RefAttributes<unknown>>;
 export default SelectLabel;

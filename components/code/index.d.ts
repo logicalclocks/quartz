@@ -1,4 +1,4 @@
-import React from 'react';
+/// <reference types="react" />
 import { FlexProps } from 'rebass';
 import { LanguageName } from '@uiw/codemirror-extensions-langs';
 import { PopupProps } from '../popup';
@@ -18,5 +18,5 @@ export interface CodeProps extends Omit<FlexProps, 'css' | 'title'> {
 export declare const defaultPopupProps: {
     size: string;
 };
-declare const Code: ({ content, language, copyButton, downloadButton, expandable, popupProps, ...props }: CodeProps) => React.JSX.Element;
+declare const Code: ({ content, language, copyButton, downloadButton, expandable, popupProps, ...props }: CodeProps) => import("react/jsx-runtime").JSX.Element;
 export default Code;

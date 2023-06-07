@@ -1,4 +1,3 @@
-import { FC } from 'react';
 import { EditableSelectTypes } from './types';
 export interface EditableSelectDropdownProps {
     value: string[];
@@ -13,5 +12,5 @@ export interface EditableSelectDropdownProps {
     onChange: (value: string[]) => void;
     onClose: () => void;
 }
-declare const EditableSelectDropdown: FC<EditableSelectDropdownProps>;
+declare const EditableSelectDropdown: ({ type, value, width, search, isMulti, options, onClose, position, onChange, maxHeight, appendToBody, }: EditableSelectDropdownProps) => import("react/jsx-runtime").JSX.Element;
 export default EditableSelectDropdown;

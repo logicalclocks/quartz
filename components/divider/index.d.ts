@@ -1,4 +1,3 @@
-import { FC } from 'react';
 import { BoxProps } from 'rebass';
 export interface DividerProps extends Omit<BoxProps, 'css'> {
     mt?: string;
@@ -8,5 +7,5 @@ export interface DividerProps extends Omit<BoxProps, 'css'> {
     width?: string;
     legend?: string;
 }
-declare const Divider: FC<DividerProps>;
+declare const Divider: ({ mt, mb, mr, ml, width, legend, ...props }: DividerProps) => import("react/jsx-runtime").JSX.Element;
 export default Divider;

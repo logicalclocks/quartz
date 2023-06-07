@@ -1,4 +1,4 @@
-import React from 'react';
+/// <reference types="react" />
 import { BoxProps } from 'rebass';
 export interface NavigationItemProps extends Omit<BoxProps, 'css' | 'id'> {
     title: string;

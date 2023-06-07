@@ -1,4 +1,4 @@
-import { FC } from 'react';
+/// <reference types="react" />
 import { LabelProps } from '../../label';
 import { FlexProps } from '../../flex';
 export declare const defaultGraphColors: string[];
@@ -29,5 +29,5 @@ export interface SplitGraphProps extends Omit<FlexProps, 'children'> {
     widthLabelFlex?: string;
     alignGraphAndLabel?: AlignGraphAndLabel;
 }
-declare const SplitGraph: FC<SplitGraphProps>;
+declare const SplitGraph: ({ values, withoutPercentage, labelProps, hideTrainSplitOnhover, renderActions, graphColors, borderColors, labelDirection, widthLabelFlex, alignGraphAndLabel, ...props }: SplitGraphProps) => import("react/jsx-runtime").JSX.Element;
 export default SplitGraph;

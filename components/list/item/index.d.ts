@@ -1,4 +1,4 @@
-import React from 'react';
+/// <reference types="react" />
 import { BoxProps } from 'rebass';
 export interface ListItemProps extends Omit<BoxProps, 'css' | 'action'> {
     children: React.ReactNode;
@@ -8,5 +8,5 @@ export interface ListItemProps extends Omit<BoxProps, 'css' | 'action'> {
     action?: [string, (event: React.MouseEvent<HTMLButtonElement>) => void];
     isActive?: boolean;
 }
-declare const _default: React.NamedExoticComponent<ListItemProps>;
+declare const _default: import("react").MemoExoticComponent<({ children, variant, hasDivider, action, isActive, isRightAlignment, disabled, onClick, sx, ...props }: ListItemProps) => import("react/jsx-runtime").JSX.Element>;
 export default _default;

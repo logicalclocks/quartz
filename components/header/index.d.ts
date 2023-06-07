@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+/// <reference types="react" />
 import { BoxProps } from 'rebass';
 export interface HeaderProps extends Omit<BoxProps, 'css'> {
     children?: React.ReactNode;
@@ -7,5 +7,5 @@ export interface HeaderProps extends Omit<BoxProps, 'css'> {
     menuAction: React.ReactNode;
     logoAction?: () => void;
 }
-declare const Header: FC<HeaderProps>;
+declare const Header: ({ children, user, actions, menuAction, logoAction, }: HeaderProps) => import("react/jsx-runtime").JSX.Element;
 export default Header;

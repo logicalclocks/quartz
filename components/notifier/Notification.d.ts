@@ -1,9 +1,9 @@
 import { AlertProps } from '@chakra-ui/react';
-import React, { ReactNode } from 'react';
+import React from 'react';
 interface Props extends Omit<AlertProps, 'title' | 'content'> {
     onClose: any;
-    title: ReactNode;
-    content: ReactNode;
+    title: React.ReactNode;
+    content: React.ReactNode;
 }
-export declare const Notification: ({ onClose, content, title, status, ...restProps }: Props) => React.JSX.Element;
+export declare const Notification: ({ onClose, content, title, status, ...restProps }: Props) => import("react/jsx-runtime").JSX.Element;
 export {};

@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React from 'react';
 import { BoxProps } from 'rebass';
 export interface Tab {
     /** Title for the tab */
@@ -18,4 +18,4 @@ export interface Props extends Omit<BoxProps, 'css'> {
     /** Whether to show a line under the tabs menu */
     withBase?: boolean;
 }
-export declare const AlternativeHeader: FC<Props>;
+export declare const AlternativeHeader: ({ title, tabs, withBase, sx, ...props }: Props) => import("react/jsx-runtime").JSX.Element;

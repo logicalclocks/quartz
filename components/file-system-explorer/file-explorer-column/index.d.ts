@@ -1,4 +1,3 @@
-import { FC } from 'react';
 import { BoxProps } from 'rebass';
 import { FileExplorData, FileExplorerMode } from '../types';
 export interface FileExplorerColumnProps extends Omit<BoxProps, 'css' | 'action'> {
@@ -14,5 +13,5 @@ export interface FileExplorerColumnProps extends Omit<BoxProps, 'css' | 'action'
     validExtensions?: string[];
     setIsEmptyFolder: (value: boolean) => void;
 }
-declare const FileExplorerColumn: FC<FileExplorerColumnProps>;
+declare const FileExplorerColumn: ({ items, mode, index, setColumns, setActiveFile, isFileSelected, handleLoadMore, selectPathListValue, fileListValue, validExtensions, setIsEmptyFolder, }: FileExplorerColumnProps) => import("react/jsx-runtime").JSX.Element;
 export default FileExplorerColumn;

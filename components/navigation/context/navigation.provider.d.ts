@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+/// <reference types="react" />
 import { TreeNode } from '../types';
 export interface CategoriesProviderProps {
     tree: TreeNode[];
@@ -8,5 +8,5 @@ export interface CategoriesProviderProps {
     onBackCLick?: () => void;
     takeActivePath?: any;
 }
-declare const NavigationProvider: FC<CategoriesProviderProps>;
+declare const NavigationProvider: ({ tree, trackBy, children, onNavigate, onBackCLick, takeActivePath, }: CategoriesProviderProps) => import("react/jsx-runtime").JSX.Element;
 export default NavigationProvider;

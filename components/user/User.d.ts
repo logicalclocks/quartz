@@ -1,4 +1,3 @@
-import React from 'react';
 export interface Props {
     /** User's first name */
     firstName: string;
@@ -11,4 +10,4 @@ export interface Props {
     /** Allows including text into user badge */
     secondaryText?: string;
 }
-export declare const User: ({ firstName, lastName, title, secondaryText, isTooltipActive, }: Props) => React.JSX.Element;
+export declare const User: ({ firstName, lastName, title, secondaryText, isTooltipActive, }: Props) => import("react/jsx-runtime").JSX.Element;

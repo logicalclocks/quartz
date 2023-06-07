@@ -1,14 +1,8 @@
-import React from 'react';
-import { UserProps } from './index';
-declare const _default: {
-    title: string;
-    component: ({ firstName, lastName, title, secondaryText, isTooltipActive, }: UserProps) => React.JSX.Element;
-    args: {
-        firstName: string;
-        lastName: string;
-    };
-};
+import { StoryObj } from '@storybook/react';
+import { User } from './index';
+declare const _default: import("@storybook/types").ComponentAnnotations<import("@storybook/react/dist/types-0a347bb9").R, import("./User").Props>;
 export default _default;
-export declare const Default: import("@storybook/types").AnnotatedStoryFn<import("@storybook/react/dist/types-0a347bb9").R, UserProps>;
-export declare const WithSecondaryText: import("@storybook/types").AnnotatedStoryFn<import("@storybook/react/dist/types-0a347bb9").R, UserProps>;
-export declare const WithTitle: () => React.JSX.Element;
+type Story = StoryObj<typeof User>;
+export declare const Default: Story;
+export declare const WithSecondaryText: Story;
+export declare const WithTitle: () => import("react/jsx-runtime").JSX.Element;

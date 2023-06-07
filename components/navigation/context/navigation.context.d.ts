@@ -1,4 +1,4 @@
-import React from 'react';
+/// <reference types="react" />
 import { TreeNode } from '../types';
 export interface NavigationContextValue {
     trackBy: string;
@@ -8,5 +8,5 @@ export interface NavigationContextValue {
     onActivate: (name: string) => void;
     onBack: (name: string) => void;
 }
-declare const NavigationContext: React.Context<NavigationContextValue>;
+declare const NavigationContext: import("react").Context<NavigationContextValue>;
 export default NavigationContext;

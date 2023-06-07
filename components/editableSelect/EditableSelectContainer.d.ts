@@ -1,4 +1,4 @@
-import React, { FC, Dispatch } from 'react';
+/// <reference types="react" />
 import { BoxProps } from 'rebass';
 import { Intents } from '../intents';
 import { EditableSelectTypes, ChipsVariants } from './types';
@@ -17,8 +17,8 @@ export interface EditableSelectContainerProps extends Omit<BoxProps, 'css' | 'on
     type: EditableSelectTypes;
     variant: ChipsVariants;
     children: React.ReactNode;
-    setSearch: Dispatch<React.SetStateAction<string>>;
+    setSearch: React.Dispatch<React.SetStateAction<string>>;
     onChange: (value: string[]) => void;
 }
-declare const EditableSelectContainer: FC<EditableSelectContainerProps>;
+declare const EditableSelectContainer: import("react").ForwardRefExoticComponent<Omit<EditableSelectContainerProps, "ref"> & import("react").RefAttributes<unknown>>;
 export default EditableSelectContainer;

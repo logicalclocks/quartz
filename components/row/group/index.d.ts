@@ -1,4 +1,4 @@
-import { ComponentType, FC } from 'react';
+import { ComponentType } from 'react';
 import { Mode } from '../container/types';
 export interface RowGroupProps {
     mode?: Mode;
@@ -8,5 +8,5 @@ export interface RowGroupProps {
     onRowClick?: (event: any, index: number) => void;
     index: number;
 }
-declare const RowGroup: FC<RowGroupProps>;
+declare const RowGroup: ({ mode, components, componentsProps, middleColumn, onRowClick, index, ...props }: RowGroupProps) => import("react/jsx-runtime").JSX.Element;
 export default RowGroup;

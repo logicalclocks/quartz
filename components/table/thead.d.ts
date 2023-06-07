@@ -1,4 +1,4 @@
-import React from 'react';
+/// <reference types="react" />
 export interface TheadProps {
     column: string;
     headerRender: (isOpen: boolean) => React.ReactElement<any>;
@@ -8,5 +8,5 @@ export interface TheadProps {
         handler: (column: string) => void;
     }>;
 }
-declare const _default: React.NamedExoticComponent<TheadProps>;
+declare const _default: import("react").MemoExoticComponent<({ column, className, headerRender, actions }: TheadProps) => import("react/jsx-runtime").JSX.Element>;
 export default _default;

@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+/// <reference types="react" />
 import { BoxProps } from 'rebass';
 export interface QuartzFileLoaderProps extends Omit<BoxProps, 'css'> {
     id: any;
@@ -10,5 +10,5 @@ export interface QuartzFileLoaderProps extends Omit<BoxProps, 'css'> {
     children?: React.ReactNode | string;
     removeHandler: (id: any) => void;
 }
-declare const FileLoader: FC<QuartzFileLoaderProps>;
+declare const FileLoader: ({ id, fileName, isLoading, located, percentage, disabled, children, removeHandler, ...props }: QuartzFileLoaderProps) => import("react/jsx-runtime").JSX.Element;
 export default FileLoader;
