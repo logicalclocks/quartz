@@ -1,0 +1,2 @@
+import{r as c}from"./index-8db94870.js";const d=(o,r,s)=>{c.useEffect(()=>{const n=u=>{(s||[]).some(e=>{const t=document.getElementById(e);return t==null?void 0:t.contains(u.target)})||r.some(e=>{var t;return(t=e==null?void 0:e.current)==null?void 0:t.contains(u.target)})||o()};return document.addEventListener("mousedown",n),document.addEventListener("touchstart",n),()=>{document.removeEventListener("mousedown",n),document.removeEventListener("touchstart",n)}},[r,s,o])};export{d as u};
+//# sourceMappingURL=useClickOutside-d22d402a.js.map

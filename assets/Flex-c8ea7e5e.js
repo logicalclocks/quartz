@@ -1,0 +1,2 @@
+import{j as t,c as l}from"./index.esm-d48b4efe.js";import{r as i}from"./index-8db94870.js";const r=i.forwardRef(({children:e,gap:a,sx:p,...o},s)=>t(l,{ref:s,sx:{gap:a,...p},...o,children:e}));try{r.displayName="Flex",r.__docgenInfo={description:"",displayName:"Flex",props:{gap:{defaultValue:null,description:"flexbox gap, in pixels, e.g. `40px`",name:"gap",required:!1,type:{name:"string"}}}}}catch{}export{r as F};
+//# sourceMappingURL=Flex-c8ea7e5e.js.map

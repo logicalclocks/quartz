@@ -1,0 +1,10 @@
+import type { Meta, StoryObj } from '@storybook/react';
+import { INotification } from './notifier';
+declare const meta: Meta<INotification>;
+export default meta;
+type Story = StoryObj<INotification>;
+export declare const Primary: Story;
+export declare const Error: Story;
+export declare const Success: Story;
+export declare const PreventDuplicateNotifications: Story;
+export declare const Standalone: Story;

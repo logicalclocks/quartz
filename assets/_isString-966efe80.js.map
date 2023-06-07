@@ -1,0 +1,1 @@
+{"version":3,"file":"_isString-966efe80.js","sources":["../../node_modules/ramda/es/internal/_isString.js"],"sourcesContent":["export default function _isString(x) {\n  return Object.prototype.toString.call(x) === '[object String]';\n}"],"names":["_isString","x"],"mappings":"AAAe,SAASA,EAAUC,EAAG,CACnC,OAAO,OAAO,UAAU,SAAS,KAAKA,CAAC,IAAM,iBAC/C","x_google_ignoreList":[0]}

@@ -1,0 +1,34 @@
+import React, { FC } from 'react';
+import { LabelProps } from '../label';
+import { Intents } from '../intents';
+import { SelectOpt } from './types';
+export interface Select2Props extends Omit<LabelProps, 'onChange' | 'children' | 'value'> {
+    value: (string | number) | (string | number)[];
+    options: SelectOpt[];
+    format?: 'fit' | 'fill';
+    placeholder: string;
+    isMulti?: boolean;
+    appendToBody?: boolean;
+    label?: string;
+    labelMode?: 'default' | 'inline' | 'none';
+    disabled?: boolean;
+    maxListHeight?: string;
+    labelAction?: React.ReactNode;
+    color?: 'primary' | 'white';
+    message?: string;
+    state?: Intents;
+    onChange: (value: SelectOpt | SelectOpt[]) => void;
+    noDataMessage?: string;
+    bottomActionText?: string;
+    bottomActionHandler?: () => void;
+    hasSearch?: boolean;
+    searchPlaceholder?: string;
+    customFilter?: React.ReactNode;
+    noMatchText?: string;
+    needSecondaryText?: boolean;
+    deletabled?: boolean;
+    needSwap?: boolean;
+    info?: string;
+}
+declare const Select: FC<Select2Props>;
+export default Select;

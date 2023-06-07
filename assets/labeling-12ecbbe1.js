@@ -1,0 +1,2 @@
+import{j as o,d as i}from"./index.esm-d48b4efe.js";const d=({children:e,bold:a,gray:l,sx:r,...n})=>o(i,{variant:`labeling${l?"Gray":""}`,fontWeight:a?"label":void 0,sx:{wordWrap:"normal",...r},...n,children:e});try{labeling.displayName="labeling",labeling.__docgenInfo={description:"",displayName:"labeling",props:{bold:{defaultValue:null,description:"",name:"bold",required:!1,type:{name:"boolean"}},gray:{defaultValue:null,description:"",name:"gray",required:!1,type:{name:"boolean"}}}}}catch{}export{d as L};
+//# sourceMappingURL=labeling-12ecbbe1.js.map

@@ -1,0 +1,2 @@
+function t(r){return r!=null&&typeof r=="object"&&r["@@functional/placeholder"]===!0}function o(r){return function e(n){return arguments.length===0||t(n)?e:r.apply(this,arguments)}}function i(r){return function e(n,c){switch(arguments.length){case 0:return e;case 1:return t(n)?e:o(function(u){return r(n,u)});default:return t(n)&&t(c)?e:t(n)?o(function(u){return r(u,c)}):t(c)?o(function(u){return r(n,u)}):r(n,c)}}}export{i as _,o as a,t as b};
+//# sourceMappingURL=_curry2-8f4fb22d.js.map

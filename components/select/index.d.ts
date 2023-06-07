@@ -1,0 +1,35 @@
+import React, { FC } from 'react';
+import { Intents } from '../intents';
+import { LabelProps } from '../label';
+export interface SelectProps extends Omit<LabelProps, 'onChange' | 'children'> {
+    value: string[];
+    options: string[];
+    placeholder: string;
+    isMulti?: boolean;
+    appendToBody?: boolean;
+    label?: string;
+    disabled?: boolean;
+    width?: string | number;
+    maxListHeight?: string;
+    labelAction?: React.ReactNode;
+    listWidth?: string | number;
+    variant?: 'primary' | 'white';
+    info?: string;
+    intent?: Intents;
+    onChange: (value: string[]) => void;
+    noDataMessage?: string;
+    bottomActionText?: string;
+    bottomActionHandler?: () => void;
+    hasPlaceholder?: boolean;
+    hasSearch?: boolean;
+    searchPlaceholder?: string;
+    customFilter?: React.ReactNode;
+    additionalTexts?: string[];
+    additionalComponents?: React.ReactNode[];
+    noMathText?: string;
+    needSecondaryText?: boolean;
+    deletabled?: boolean;
+    needSwap?: boolean;
+}
+declare const Select: FC<SelectProps>;
+export default Select;
