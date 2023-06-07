@@ -5,7 +5,7 @@ on:
     branches:
       - dev
 jobs:
-  build-and-deploy:
+  build-and-deploy-storybook:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout 🗒️
@@ -14,7 +14,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18.x'
+          node-version: '16.x'
           cache: 'yarn'
 
       - name: Install 💽
@@ -23,7 +23,7 @@ jobs:
 
       - name: Build 🤖
         run: |
-          yarn run predeploy
+          NODE_OPTIONS=--max_old_space_size=4096 yarn run predeploy
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4.4.1
