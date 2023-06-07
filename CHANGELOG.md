@@ -1,3 +1,10 @@
+# [2.9.0](https://github.com/logicalclocks/quartz/compare/v2.8.3...v2.9.0) (2023-06-07)
+
+
+### Features
+
+* migrate sliders to chakraui ([#425](https://github.com/logicalclocks/quartz/issues/425)) ([857e749](https://github.com/logicalclocks/quartz/commit/857e7491d1c527f495f8b9dff58e86e5287dcf83))
+
 ## [2.8.3](https://github.com/logicalclocks/quartz/compare/v2.8.2...v2.8.3) (2023-06-05)
 
 ## [2.8.2](https://github.com/logicalclocks/quartz/compare/v2.8.1...v2.8.2) (2023-06-05)
