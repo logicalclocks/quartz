@@ -9,6 +9,14 @@ export default {
 
 type Story = StoryObj<typeof PerformanceBar>;
 export const Default: Story = {
+  args: {
+    bars: [
+      {
+        variant: 'perf.orange',
+        proportion: 1,
+      },
+    ],
+  },
   render: (props) => <PerformanceBar {...props} />,
 };
 
