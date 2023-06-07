@@ -1,4 +1,3 @@
-import React, { FC } from 'react';
 import { Box, Flex, FlexProps, Text } from 'rebass';
 import styles from './callout.styles';
 import { Color } from '../../theme/types';
@@ -23,12 +22,7 @@ export interface ICalloutProps extends Omit<FlexProps, 'content' | 'css'> {
   cta?: React.ReactNode;
 }
 
-const Callout: FC<ICalloutProps> = ({
-  type,
-  content,
-  cta,
-  ...props
-}: ICalloutProps) => (
+const Callout = ({ type, content, cta, ...props }: ICalloutProps) => (
   <Flex
     width="100%"
     variant={`callout.${type}`}

@@ -1,4 +1,3 @@
-import React, { FC } from 'react';
 import { Box, Flex } from 'rebass';
 import styles, { boxStyles, boxButtonStyles } from './footer.styles';
 import Labeling from '../../typography/labeling';
@@ -15,7 +14,7 @@ export interface Props {
   rootDir: string;
 }
 
-const FooterFileExplorer: FC<Props> = ({
+const FooterFileExplorer = ({
   value,
   activeFile,
   mode = FileExplorerMode.oneFile,

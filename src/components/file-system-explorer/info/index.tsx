@@ -1,4 +1,3 @@
-import React, { FC } from 'react';
 import { Box, BoxProps, Flex } from 'rebass';
 
 import { format } from 'date-fns';
@@ -22,16 +21,14 @@ export interface FileExplorerInfoProps extends Omit<BoxProps, 'css'> {
   handleDownloadFile: (file: any) => void;
 }
 
-const FileExplorerInfo: FC<FileExplorerInfoProps> = ({
+const FileExplorerInfo = ({
   children,
   activeFile,
   disableDownload,
   handleDownloadFile,
 }: FileExplorerInfoProps) => {
-  const dateFormat = (date: string) => {
-    // eslint-disable-next-line
-    return format(new Date(date), 'yyyy-MM-dd - HH:mm:ss');
-  };
+  const dateFormat = (date: string) =>
+    format(new Date(date), 'yyyy-MM-dd - HH:mm:ss');
 
   return (
     <Box

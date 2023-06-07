@@ -1,11 +1,11 @@
-import React from 'react';
 import { Flex } from 'rebass';
 
-const Bar: React.FC<{
+interface Props {
   animationDuration: number;
   progress: number;
   variant: string;
-}> = ({ animationDuration, progress, variant }) => (
+}
+const Bar = ({ animationDuration, progress, variant }: Props) => (
   <Flex
     variant={variant}
     sx={{

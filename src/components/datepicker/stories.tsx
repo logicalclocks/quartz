@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { StoryObj, Meta } from '@storybook/react';
 import { addDays, subDays } from 'date-fns/fp';
 

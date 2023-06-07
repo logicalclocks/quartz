@@ -1,4 +1,4 @@
-import React, { FC, forwardRef } from 'react';
+import { forwardRef } from 'react';
 import { RadioProps as RebassRadioProps } from '@rebass/forms';
 import { Box, Flex } from 'rebass';
 import Tooltip, { TooltipProps } from '../tooltip';
@@ -15,7 +15,7 @@ export interface RadioProps extends Omit<RebassRadioProps, 'css'> {
   tooltipPosition?: TooltipProps['position'];
 }
 
-const Radio: FC<RadioProps> = forwardRef(
+const Radio = forwardRef(
   (
     {
       label,

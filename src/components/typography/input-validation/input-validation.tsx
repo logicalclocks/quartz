@@ -1,4 +1,3 @@
-import React, { FC } from 'react';
 import { Flex, Text, TextProps } from 'rebass';
 import { getIcon } from './utils';
 
@@ -6,7 +5,7 @@ export interface InputValidationProps extends Omit<TextProps, 'css'> {
   intent?: 'success' | 'fail' | 'warning' | 'neutral';
 }
 
-const InputValidation: FC<InputValidationProps> = ({
+const InputValidation = ({
   intent = 'neutral',
   ...props
 }: InputValidationProps) => {

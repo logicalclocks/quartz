@@ -1,4 +1,3 @@
-import React, { FC } from 'react';
 import { Box, BoxProps } from 'rebass';
 
 // Components
@@ -14,7 +13,7 @@ export interface DrawerSectionProps
   children?: React.ReactNode;
 }
 
-const DrawerSection: FC<DrawerSectionProps> = ({
+const DrawerSection = ({
   title,
   action,
   children,

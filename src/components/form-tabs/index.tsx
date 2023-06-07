@@ -1,11 +1,4 @@
-import React, {
-  FC,
-  useCallback,
-  useEffect,
-  useMemo,
-  useRef,
-  useState,
-} from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { Box, Flex } from 'rebass';
 import * as R from 'ramda';
 
@@ -38,13 +31,13 @@ export interface TabItem {
 
 export interface FormTabsProps {
   tabs: TabItem[];
-  SubmitButton: FC<any>;
+  SubmitButton: React.FC<any>;
   initialTab?: string;
   onTabChange: (tabId: string) => void;
   hasScrollOnScreen?: boolean;
 }
 
-const FormTabs: FC<FormTabsProps> = ({
+const FormTabs = ({
   tabs,
   SubmitButton,
   onTabChange,

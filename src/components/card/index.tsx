@@ -1,4 +1,4 @@
-import React, { FC, memo, useRef } from 'react';
+import { memo, useRef } from 'react';
 import { Box, Card as RebassCard, CardProps as RebassCardProps } from 'rebass';
 
 // Styles
@@ -20,7 +20,7 @@ export interface CardProps extends Omit<RebassCardProps, 'css' | 'title'> {
   expandable?: boolean;
 }
 
-const Card: FC<CardProps> = ({
+const Card = ({
   title,
   actions,
   children,

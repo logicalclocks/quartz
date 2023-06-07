@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Box, Flex, FlexProps } from 'rebass';
 
 // Components
@@ -19,7 +19,7 @@ export interface PaginationProps extends Omit<FlexProps, 'css' | 'onChange'> {
   onChange: (page: number) => void;
 }
 
-const Pagination: FC<PaginationProps> = ({
+const Pagination = ({
   totalPages,
   currentPage,
   disabled,
@@ -27,7 +27,7 @@ const Pagination: FC<PaginationProps> = ({
   onChange,
   variant = 'primary',
   ...props
-}) => {
+}: PaginationProps) => {
   const [current, setCurrent] = useState<string>(String(currentPage));
   const [error, setError] = useState<string>('');
 

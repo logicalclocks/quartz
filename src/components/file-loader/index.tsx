@@ -1,7 +1,5 @@
-import React, { FC } from 'react';
 import { Box, BoxProps, Flex, Text } from 'rebass';
 
-// Styles
 import styles, {
   fileNameBox,
   statusAndLocationBox,
@@ -21,7 +19,7 @@ export interface QuartzFileLoaderProps extends Omit<BoxProps, 'css'> {
   removeHandler: (id: any) => void;
 }
 
-const FileLoader: FC<QuartzFileLoaderProps> = ({
+const FileLoader = ({
   id,
   fileName,
   isLoading,

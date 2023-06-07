@@ -1,4 +1,4 @@
-import React, { ComponentType, FC, useMemo } from 'react';
+import { ComponentType, useMemo } from 'react';
 import { Box } from 'rebass';
 import TableRow from '../group';
 import { Mode } from './types';
@@ -16,7 +16,7 @@ export interface RowProps {
   onRowClick?: (event: any, index: number) => void;
 }
 
-const Row: FC<RowProps> = ({
+const Row = ({
   mode = Mode.full,
   groupComponents,
   groupProps,

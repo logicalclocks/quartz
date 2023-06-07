@@ -5,7 +5,6 @@ import {
   RangeSliderThumb,
   RangeSliderTrack,
 } from '@chakra-ui/react';
-import React from 'react';
 import { Flex } from 'rebass';
 import Labeling from '../typography/labeling';
 import Value from '../typography/value';

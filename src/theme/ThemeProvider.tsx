@@ -1,7 +1,7 @@
 import { useColorMode } from '@chakra-ui/react';
 import { css, Global } from '@emotion/core';
 import { ThemeProvider as EmotionThemeProvider } from 'emotion-theming';
-import React, { FC, useEffect } from 'react';
+import { useEffect } from 'react';
 
 import defaultTheme, { darkTheme } from './theme';
 
@@ -12,7 +12,7 @@ export interface ThemeProviderProps {
   colorMode?: ThemeVariant;
 }
 
-const ThemeProvider: FC<ThemeProviderProps> = ({
+const ThemeProvider = ({
   children,
   colorMode: colorModeFromProps,
 }: ThemeProviderProps) => {
@@ -25,7 +25,7 @@ const ThemeProvider: FC<ThemeProviderProps> = ({
   const colorModeToUse = colorModeFromProps ?? colorMode; // the outer one overrides inner state
 
   return (
-    <React.Fragment>
+    <>
       <Global
         styles={css`
           @import url('https://fonts.googleapis.com/css2?family=Inter:wght@500;700&display=swap');
@@ -37,7 +37,7 @@ const ThemeProvider: FC<ThemeProviderProps> = ({
       >
         {children}
       </EmotionThemeProvider>
-    </React.Fragment>
+    </>
   );
 };
 

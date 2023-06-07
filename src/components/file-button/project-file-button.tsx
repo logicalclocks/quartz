@@ -1,8 +1,5 @@
-import React, { FC } from 'react';
 import { Box, Button as RebassButton, ButtonProps } from 'rebass';
 import { GetIcon, IconName } from '../icon';
-
-// Styles
 import { fileButton } from './file-button.styles';
 
 export interface QuartzFileButtonProps extends Omit<ButtonProps, 'css'> {
@@ -11,7 +8,7 @@ export interface QuartzFileButtonProps extends Omit<ButtonProps, 'css'> {
   href?: string;
 }
 
-const FileButton: FC<QuartzFileButtonProps> = ({
+const FileButton = ({
   intent = 'secondary',
   children,
   href,

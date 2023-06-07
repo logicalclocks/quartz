@@ -1,4 +1,3 @@
-import React, { FC } from 'react';
 import { Box, BoxProps } from 'rebass';
 import Microlabeling from '../typography/microlabeling';
 
@@ -13,7 +12,7 @@ export interface DividerProps extends Omit<BoxProps, 'css'> {
   legend?: string;
 }
 
-const Divider: FC<DividerProps> = ({
+const Divider = ({
   mt = '20px',
   mb = '20px',
   mr = '0',
@@ -21,7 +20,7 @@ const Divider: FC<DividerProps> = ({
   width,
   legend,
   ...props
-}) => (
+}: DividerProps) => (
   <Box
     mt={mt}
     mb={mb}

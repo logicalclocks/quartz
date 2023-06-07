@@ -1,5 +1,3 @@
-import React, { FC } from 'react';
-// Components
 import { Button } from 'rebass';
 import { ButtonProps } from '../../button';
 import Tooltip from '../../tooltip';
@@ -12,7 +10,7 @@ export interface RowButtonProps extends Omit<ButtonProps, 'icon'> {
   disabled?: boolean;
 }
 
-const RowButton: FC<RowButtonProps> = ({
+const RowButton = ({
   onClick,
   icon,
   mainText,

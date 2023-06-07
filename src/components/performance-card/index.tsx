@@ -1,4 +1,3 @@
-import React, { FC } from 'react';
 import { Card, CardProps } from 'rebass';
 
 import PerformanceBar from '../performance-bar';
@@ -14,7 +13,7 @@ export interface PerformanceCardProps extends Omit<CardProps, 'css'> {
   children: React.ReactNode;
 }
 
-const PerformanceCard: FC<PerformanceCardProps> = ({
+const PerformanceCard = ({
   bars,
   children,
   ...props

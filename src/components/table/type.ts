@@ -1,5 +1,3 @@
-import React from 'react';
-
 export type TableCellType = string | string[] | boolean;
 
 export interface TableCell {

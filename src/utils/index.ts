@@ -1,5 +1,3 @@
-import React from 'react';
-
 export const copyToClipboard = async (content: string): Promise<boolean> => {
   return navigator.clipboard
     .writeText(content)

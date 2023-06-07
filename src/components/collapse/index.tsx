@@ -1,5 +1,5 @@
+import { memo, useEffect, useRef, useState } from 'react';
 import { Box, BoxProps, Flex } from 'rebass';
-import React, { FC, memo, useEffect, useRef, useState } from 'react';
 
 import Labeling from '../typography/labeling';
 import styles, { contentStyles, containerStyles } from './collapse.styles';
@@ -13,7 +13,7 @@ export interface CollapseProps extends Omit<BoxProps, 'css' | 'title'> {
   openChange?: (value: boolean) => void;
 }
 
-const Collapse: FC<CollapseProps> = ({
+const Collapse = ({
   title,
   contentProps,
   secondaryContent,
@@ -21,7 +21,7 @@ const Collapse: FC<CollapseProps> = ({
   isOpenProps = false,
   openChange,
   ...props
-}) => {
+}: CollapseProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
 

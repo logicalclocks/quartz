@@ -1,21 +1,11 @@
 import * as R from 'ramda';
-import React, {
-  FC,
-  memo,
-  ReactElement,
-  useCallback,
-  useContext,
-  useEffect,
-  useMemo,
-} from 'react';
+import React, { useCallback, useContext, useEffect, useMemo } from 'react';
 import { Box } from 'rebass';
 import { Link } from 'react-router-dom';
-import { useTheme } from '../../../theme/theme';
 
-// Context
+import { useTheme } from '../../../theme/theme';
 import NavigationContext from '../context/navigation.context';
 import { NavigationItemProps } from '../types';
-// Styles
 import Tooltip from '../../tooltip';
 import TooltipPositions from '../../tooltip/positions';
 import styles from './navigation-item.styles';
@@ -28,9 +18,7 @@ const getVariant = (isDisabled = false, isActive = false): string => {
   return isActive ? 'active' : 'default';
 };
 
-const NavigationItem: FC<NavigationItemProps> = (
-  props: NavigationItemProps,
-) => {
+const NavigationItem = (props: NavigationItemProps) => {
   const { activePath, onActivate, trackBy } = useContext(NavigationContext);
   const theme = useTheme();
 
@@ -63,7 +51,7 @@ const NavigationItem: FC<NavigationItemProps> = (
   const childs = useMemo(
     () =>
       React.Children.map(children, (child) =>
-        React.cloneElement(child as ReactElement<NavigationItemProps>, {
+        React.cloneElement(child as React.ReactElement<NavigationItemProps>, {
           isSubItem: true,
         }),
       ),
@@ -151,4 +139,4 @@ const NavigationItem: FC<NavigationItemProps> = (
   );
 };
 
-export default memo(NavigationItem);
+export default React.memo(NavigationItem);

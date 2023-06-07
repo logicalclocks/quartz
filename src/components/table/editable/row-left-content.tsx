@@ -1,4 +1,4 @@
-import React, { FC, memo } from 'react';
+import { memo } from 'react';
 import { Box } from 'rebass';
 import { IconButton } from '../../icon-button';
 import { IconName } from '../../icon/list';
@@ -30,7 +30,7 @@ const styles = {
   },
 };
 
-const RowLeftContent: FC<RowLeftContentProps> = ({ index, onDelete }) => (
+const RowLeftContent = ({ index, onDelete }: RowLeftContentProps) => (
   <Box as="td" id={String(index + 1)} onClick={onDelete} sx={styles}>
     <span>{index + 1}</span>
     <IconButton

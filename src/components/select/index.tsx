@@ -1,4 +1,4 @@
-import React, { FC, useCallback, useMemo, useRef, useState } from 'react';
+import { useCallback, useMemo, useRef, useState } from 'react';
 // Components
 import { Box, Flex } from 'rebass';
 // Hooks
@@ -52,7 +52,7 @@ export interface SelectProps extends Omit<LabelProps, 'onChange' | 'children'> {
   needSwap?: boolean;
 }
 
-const Select: FC<SelectProps> = ({
+const Select = ({
   labelAction,
   label,
   width = '180px',

@@ -1,17 +1,13 @@
-import React, { FC, useState } from 'react';
+import { useState } from 'react';
 import { Box } from 'rebass';
 
-// Components
 import { TableProps } from '../index';
-
-// Styles
 import {
   containerStyles,
   tableStyles,
   theadStyles,
   trowStyles,
 } from '../table.styles';
-
 import Thead from '../thead';
 import { TableCell, TableHeader } from '../type';
 import Label from '../../label';
@@ -26,9 +22,7 @@ export interface ReadOnlyTableProps extends Omit<TableProps, 'value'> {
   }>;
 }
 
-/* eslint-disable arrow-body-style */
-
-const ReadOnlyTable: FC<ReadOnlyTableProps> = ({
+const ReadOnlyTable = ({
   initialStaticColumn,
   values,
   columnHeaders,

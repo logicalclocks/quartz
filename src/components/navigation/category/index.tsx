@@ -1,14 +1,10 @@
 import { Box } from 'rebass';
-import React, { FC, memo, useCallback, useContext } from 'react';
+import { memo, useCallback, useContext } from 'react';
 
-// Components
 import NavigationItem from '../item';
 import Labeling from '../../typography/labeling';
-// Styles
 import styles from './navigation-category.styles';
-// Content
 import NavigationContext from '../context/navigation.context';
-// Types
 import { NavigationItemProps } from '../types';
 
 export interface NavigationCategoryProps
@@ -17,7 +13,7 @@ export interface NavigationCategoryProps
   hideBack?: boolean;
 }
 
-const NavigationCategory: FC<NavigationCategoryProps> = ({
+const NavigationCategory = ({
   children,
   title,
   hideBack = false,

@@ -1,5 +1,4 @@
 import { StoryObj } from '@storybook/react';
-import React from 'react';
 import { Dot } from './Dot';
 
 export default {

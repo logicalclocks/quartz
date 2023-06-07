@@ -1,5 +1,4 @@
 import { StoryObj } from '@storybook/react';
-import React from 'react';
 import { ProjectBadge } from './ProjectBadge';
 
 export default {

@@ -1,9 +1,7 @@
-import React, { FC, memo } from 'react';
+import { memo } from 'react';
 import { Box, BoxProps } from 'rebass';
 
-// Components
 import { Button } from '../../button';
-// Styles
 import styles, { withoutBorder } from './list-item.styles';
 
 export interface ListItemProps extends Omit<BoxProps, 'css' | 'action'> {
@@ -15,7 +13,7 @@ export interface ListItemProps extends Omit<BoxProps, 'css' | 'action'> {
   isActive?: boolean;
 }
 
-const ListItem: FC<ListItemProps> = ({
+const ListItem = ({
   children,
   variant = 'primary',
   hasDivider,

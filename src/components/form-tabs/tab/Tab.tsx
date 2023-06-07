@@ -1,4 +1,4 @@
-import React, { FC, memo, useMemo } from 'react';
+import { memo, useMemo } from 'react';
 import { Flex } from 'rebass';
 import TabDescription from './TabDescription';
 import styles from './tab.styles';
@@ -12,12 +12,12 @@ export interface TabProps {
   onClick: () => any;
 }
 
-const Tab: FC<TabProps> = ({
+const Tab = ({
   title,
   active,
   state = TabState.default,
   onClick,
-}) => {
+}: TabProps) => {
   const titleColor = useMemo(
     () => (active ? 'labels.green' : 'black'),
     [active],

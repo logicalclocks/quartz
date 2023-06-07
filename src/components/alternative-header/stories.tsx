@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
-import React, { useMemo, useState } from 'react';
+import { useMemo, useState } from 'react';
 import { Box } from 'rebass';
 import { AlternativeHeader } from './index';
 

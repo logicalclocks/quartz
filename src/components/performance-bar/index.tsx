@@ -1,4 +1,3 @@
-import React, { FC } from 'react';
 import { Flex } from 'rebass';
 
 import * as s from './performance-bar.styles';
@@ -12,9 +11,7 @@ export interface PerformanceBarProps {
   bars: Bar[];
 }
 
-const PerformanceBar: FC<PerformanceBarProps> = ({
-  bars,
-}: PerformanceBarProps) => {
+const PerformanceBar = ({ bars }: PerformanceBarProps) => {
   const renderBarPortion = (bar: Bar) => (
     <Flex
       key={bar.variant}

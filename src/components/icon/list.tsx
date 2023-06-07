@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react';
+import { ReactElement } from 'react';
 import theme from '../../theme/theme';
 
 // Instructions to add a new icons

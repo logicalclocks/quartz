@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react';
+import { useState } from 'react';
 import styles from './symbol.styles';
 import { getSymbolIcon } from './utils';
 import Text, { TextProps } from '../typography/text';
@@ -21,7 +21,7 @@ const defaultTooltipText = {
   [SymbolMode.bulk]: 'Add all features to basket',
 };
 
-const Symbol: FC<SymbolProps> = ({
+const Symbol = ({
   inBasket,
   handleClick,
   tooltipProps,
@@ -30,7 +30,7 @@ const Symbol: FC<SymbolProps> = ({
   iconProps,
   possible = true,
   mode = SymbolMode.single,
-}) => {
+}: SymbolProps) => {
   const [hover, setHover] = useState(false);
   const mainText = tooltipMainText || defaultTooltipText[mode];
 

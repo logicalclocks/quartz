@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Box } from 'rebass';
 import RangeSlider from './range-slider';
 import Value from '../typography/value';

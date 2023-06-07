@@ -40,8 +40,6 @@ yarn add @logicalclocks/quartz
 ### Usage
 
 ```tsx
-import React from 'react';
-
 import { ThemeProvider, Button } from '@logicalclocks/quartz';
 
 const App = () => (
@@ -103,10 +101,9 @@ Delete `node_modules` and `dist` folders then follow **Build locally** or **Run 
 
 Follow **Build locally** or **Run locally** instruction
 
-
 ## Using locally
+
 You can use the library locally with the help of [yalc](https://github.com/wclr/yalc).
 Just run `yarn publish-local` here and then do a `yalc link @logicalclocks/quartz` wherever you wanna use it.
 
 To publish changes you can do `yarn dlx yalc push`. After that, the changes will be "published" to the local registry.
-

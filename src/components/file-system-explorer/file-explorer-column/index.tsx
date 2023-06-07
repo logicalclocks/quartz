@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react';
+import { useState } from 'react';
 import { Box, BoxProps } from 'rebass';
 
 import FolderItemExplorer from '../folder';
@@ -20,7 +20,7 @@ export interface FileExplorerColumnProps
   setIsEmptyFolder: (value: boolean) => void;
 }
 
-const FileExplorerColumn: FC<FileExplorerColumnProps> = ({
+const FileExplorerColumn = ({
   items,
   mode,
   index,

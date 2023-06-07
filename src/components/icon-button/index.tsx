@@ -1,4 +1,3 @@
-import React, { FC } from 'react';
 import { Link } from 'react-router-dom';
 import { ButtonProps } from 'rebass';
 
@@ -21,7 +20,7 @@ export interface IconButtonProps extends Omit<ButtonProps, 'css'> {
   onClickIcon?: React.MouseEventHandler<HTMLAnchorElement>;
 }
 
-export const IconButton: FC<IconButtonProps> = ({
+export const IconButton = ({
   intent: _, // TODO remove this
   tooltip,
   icon,

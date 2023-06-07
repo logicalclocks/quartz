@@ -1,4 +1,4 @@
-import React, { FC, memo, useCallback, useRef } from 'react';
+import { memo, useCallback, useRef } from 'react';
 import { Box } from 'rebass';
 import useDropdown from '../../utils/useDropdown';
 import useOnClickOutside from '../../utils/useClickOutside';
@@ -16,12 +16,7 @@ export interface TheadProps {
   }>;
 }
 
-const Thead: FC<TheadProps> = ({
-  column,
-  className,
-  headerRender,
-  actions,
-}: TheadProps) => {
+const Thead = ({ column, className, headerRender, actions }: TheadProps) => {
   const containerRef = useRef(null);
   const [isOpen, handleToggle, handleClickOutside] = useDropdown();
   useOnClickOutside<HTMLDivElement>(handleClickOutside, [containerRef]);

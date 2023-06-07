@@ -1,5 +1,4 @@
 import { action } from '@storybook/addon-actions';
-import React from 'react';
 import { Meta, StoryObj } from '@storybook/react';
 
 import { Box, BoxProps } from 'rebass';

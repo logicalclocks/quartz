@@ -1,5 +1,3 @@
-import React from 'react';
-
 export interface SelectListProps {
   options: string[];
   value: string[];

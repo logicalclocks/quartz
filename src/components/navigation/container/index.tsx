@@ -1,21 +1,17 @@
 import { Box } from 'rebass';
-import React, { FC, ReactElement, useMemo, useState } from 'react';
+import { ReactElement, useMemo, useState } from 'react';
 
-// Components
 import NavigationItem from '../item';
 import NavigationProvider from '../context/navigation.provider';
 import NavigationCategory, { NavigationCategoryProps } from '../category';
-// Types
 import { NavigationItemProps, TreeNode } from '../types';
-// Styles
 import styles from './navigation.styles';
-// Utils
 import buildComponentsTree from '../context/buildComponentsTree';
 import buildTree from '../context/buildTree';
 
-type INavigation<P> = FC<P> & {
-  Item: FC<NavigationItemProps>;
-  Category: FC<NavigationCategoryProps>;
+type INavigation<P> = React.FC<P> & {
+  Item: React.FC<NavigationItemProps>;
+  Category: React.FC<NavigationCategoryProps>;
 };
 
 export interface NavigationProps {
@@ -34,7 +30,7 @@ const Navigation: INavigation<NavigationProps> = ({
   children,
   tree: propsTree,
   ...props
-}: NavigationProps) => {
+}) => {
   const tree = useMemo(() => {
     if (!propsTree) {
       return buildTree(children as ReactElement<NavigationItemProps>);

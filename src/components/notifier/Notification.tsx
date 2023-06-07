@@ -5,13 +5,13 @@ import {
   AlertTitle,
   CloseButton,
 } from '@chakra-ui/react';
-import React, { ReactNode } from 'react';
+import React from 'react';
 import { Flex } from '../flex';
 
 interface Props extends Omit<AlertProps, 'title' | 'content'> {
   onClose: any;
-  title: ReactNode;
-  content: ReactNode;
+  title: React.ReactNode;
+  content: React.ReactNode;
 }
 
 export const Notification = ({

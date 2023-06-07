@@ -1,4 +1,3 @@
-import React from 'react';
 import { Box, BoxProps, SxStyleProp } from 'rebass';
 
 interface Props extends Omit<BoxProps, 'css'> {

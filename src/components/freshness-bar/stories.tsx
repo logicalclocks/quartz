@@ -1,5 +1,4 @@
 import { Meta, StoryObj } from '@storybook/react';
-import React from 'react';
 
 import { addMonths } from 'date-fns';
 import { FreshnessBar } from './FreshnessBar';

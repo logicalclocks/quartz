@@ -1,10 +1,8 @@
 import { CheckboxProps as RebassCheckboxProps } from '@rebass/forms';
-import React, { FC, forwardRef } from 'react';
+import { forwardRef } from 'react';
 import { Box, Flex } from 'rebass';
 
-// Components
 import Labeling from '../typography/labeling';
-// Styles
 import styles from './checkbox-styles';
 import Tooltip, { TooltipProps } from '../tooltip';
 
@@ -14,7 +12,7 @@ export interface CheckboxProps extends Omit<RebassCheckboxProps, 'css'> {
   tooltipProps?: Omit<TooltipProps, 'children'>;
 }
 
-const Checkbox: FC<CheckboxProps> = forwardRef(
+const Checkbox = forwardRef(
   (
     {
       label,

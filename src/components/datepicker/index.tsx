@@ -1,4 +1,4 @@
-import React, { FC, forwardRef, memo, useState } from 'react';
+import { forwardRef, memo, useState } from 'react';
 import ReactDatePicker, { ReactDatePickerProps } from 'react-datepicker';
 import { Flex, SxStyleProp } from 'rebass';
 
@@ -19,12 +19,12 @@ export interface DatePickerProps extends ReactDatePickerProps {
 const getPlacement = (align: DatePickerProps['datePickerAlign']) =>
   align === 'right' ? 'bottom-end' : 'bottom-start';
 
-const DatePicker: FC<DatePickerProps> = ({
+const DatePicker = ({
   selectProps,
   datePickerAlign = 'right',
   sx,
   ...props
-}) => {
+}: DatePickerProps) => {
   const [isOpen, setOpen] = useState(false);
   return (
     <Flex flexDirection="column" sx={{ ...styles, ...sx }}>

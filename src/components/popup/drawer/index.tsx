@@ -1,4 +1,3 @@
-import React, { FC } from 'react';
 import { Box } from 'rebass';
 import {
   Drawer as ChakraDrawer,
@@ -15,8 +14,8 @@ import { PopupProps } from '../index';
 import FooterButton from '../../footer-button';
 import DrawerSection, { DrawerSectionProps } from './drawer-section';
 
-type IDrawer<P> = FC<P> & {
-  Section: FC<DrawerSectionProps>;
+type IDrawer<P> = React.FC<P> & {
+  Section: React.FC<DrawerSectionProps>;
 };
 
 type Children = React.ReactElement<DrawerSectionProps> | null;

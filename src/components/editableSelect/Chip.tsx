@@ -1,4 +1,4 @@
-import React, { FC, useCallback, useState } from 'react';
+import { useCallback, useState } from 'react';
 import { Box, Flex, FlexProps } from 'rebass';
 import { GetIcon, IconName } from '../icon';
 
@@ -15,7 +15,7 @@ export interface ChipProps extends Omit<FlexProps, 'css'> {
   onDelete: (value: string) => void;
 }
 
-const Chip: FC<ChipProps> = ({
+const Chip = ({
   value,
   onDelete,
   disabled,
@@ -23,7 +23,7 @@ const Chip: FC<ChipProps> = ({
   deletable = true,
   variant = 'primary',
   ...props
-}) => {
+}: ChipProps) => {
   const [hover, setHover] = useState(false);
 
   const handleHover = useCallback(

@@ -1,4 +1,3 @@
-import React, { FC } from 'react';
 import { Link } from 'react-router-dom';
 import { Text, TextProps, LinkProps, Link as RebassLink } from 'rebass';
 
@@ -13,15 +12,13 @@ const styles = {
   transition: 'all .4s',
 };
 
-export const HoverableText: FC<HoverableTextProps> = (
-  props: HoverableTextProps,
-) => {
+export const HoverableText = (props: HoverableTextProps) => {
   let { sx } = { ...props };
   sx = { ...sx, ...styles };
   return <Text {...props} variant="title" sx={sx} />;
 };
 
-export const HoverableLink: FC<HoverableLinkProps> = ({
+export const HoverableLink = ({
   href,
   target,
   ...props

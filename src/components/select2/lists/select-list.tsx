@@ -1,20 +1,13 @@
-import React, { FC, useCallback } from 'react';
-// Components
+import { useCallback } from 'react';
 import { Box } from 'rebass';
+
 import ListItem from '../../list/item';
 import Labeling from '../../typography/labeling';
-// Hook
 import useArrowsSelect from '../useArrowsSelect';
-// Types
 import { SelectListProps } from './list.types';
 import { SelectOpt } from '../types';
 
-const SelectList: FC<SelectListProps> = ({
-  options,
-  value,
-  onClose,
-  onChange,
-}: SelectListProps) => {
+const SelectList = ({ options, value, onClose, onChange }: SelectListProps) => {
   const handleClick = useCallback(
     (option: SelectOpt) => () => {
       const selection = { key: option.key, label: option.label };

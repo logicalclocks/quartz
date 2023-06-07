@@ -1,4 +1,3 @@
-import React, { FC } from 'react';
 import { Text, TextProps } from 'rebass';
 
 // Types
@@ -11,7 +10,7 @@ export interface SelectInfoProps extends Omit<TextProps, 'css'> {
   children: React.ReactNode;
 }
 
-const SelectInfo: FC<SelectInfoProps> = ({
+const SelectInfo = ({
   intent = 'error',
   children,
   ...props

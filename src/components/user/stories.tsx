@@ -1,8 +1,7 @@
-import { Story } from '@storybook/react';
-import React from 'react';
+import { Meta, StoryObj } from '@storybook/react';
 import { Flex } from 'rebass';
 import Labeling from '../typography/labeling';
-import { User, UserProps } from './index';
+import { User } from './index';
 
 export default {
   title: 'User',
@@ -11,15 +10,18 @@ export default {
     firstName: 'Martin',
     lastName: 'Heidegger',
   },
+} as Meta<typeof User>;
+
+type Story = StoryObj<typeof User>;
+export const Default: Story = {
+  render: (props) => <User {...props} />,
 };
 
-const Template: Story<UserProps> = (props) => <User {...props} />;
-
-export const Default = Template.bind({});
-
-export const WithSecondaryText = Template.bind({});
-WithSecondaryText.args = {
-  secondaryText: 'you can add some stuff here',
+export const WithSecondaryText: Story = {
+  ...Default,
+  args: {
+    secondaryText: 'you can add some stuff here',
+  },
 };
 
 export const WithTitle = () => (

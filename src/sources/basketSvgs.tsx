@@ -1,5 +1,3 @@
-import React from 'react';
-
 const inBasket = (
   <svg
     width="20"

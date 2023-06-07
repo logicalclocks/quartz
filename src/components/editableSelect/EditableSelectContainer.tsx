@@ -1,12 +1,4 @@
-import React, {
-  FC,
-  forwardRef,
-  useCallback,
-  Dispatch,
-  useRef,
-  useEffect,
-  KeyboardEvent,
-} from 'react';
+import { forwardRef, useCallback, useRef, useEffect } from 'react';
 import { Box, BoxProps, Flex } from 'rebass';
 import { Input } from '@rebass/forms';
 
@@ -32,11 +24,11 @@ export interface EditableSelectContainerProps
   type: EditableSelectTypes;
   variant: ChipsVariants;
   children: React.ReactNode;
-  setSearch: Dispatch<React.SetStateAction<string>>;
+  setSearch: React.Dispatch<React.SetStateAction<string>>;
   onChange: (value: string[]) => void;
 }
 
-const EditableSelectContainer: FC<EditableSelectContainerProps> = forwardRef(
+const EditableSelectContainer = forwardRef(
   (
     {
       type,
@@ -129,7 +121,7 @@ const EditableSelectContainer: FC<EditableSelectContainerProps> = forwardRef(
                 counterRef.current = 1;
                 setSearch(target.value);
               }}
-              onKeyUp={(e: KeyboardEvent<HTMLInputElement>) => {
+              onKeyUp={(e: React.KeyboardEvent<HTMLInputElement>) => {
                 if (e.key === 'Backspace') {
                   handleDelete();
                 }
