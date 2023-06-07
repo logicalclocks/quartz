@@ -67,7 +67,7 @@
     "emotion-theming": "^10.3.0",
     "framer-motion": "^10.11.4",
     "ramda": "^0.28.0",
-    "react-datepicker": "4.10.0",
+    "react-datepicker": "^4.12.0",
     "react-spring": "^8.0.27",
     "rebass": "^4.0.7"
   },

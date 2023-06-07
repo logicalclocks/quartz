@@ -4602,7 +4602,7 @@ __metadata:
     prettier: ^2.5.1
     ramda: ^0.28.0
     react: ^18.2.0
-    react-datepicker: 4.10.0
+    react-datepicker: ^4.12.0
     react-dom: ^18.2.0
     react-router-dom: ^6.3.0
     react-spring: ^8.0.27
@@ -20773,9 +20773,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-datepicker@npm:4.10.0":
-  version: 4.10.0
-  resolution: "react-datepicker@npm:4.10.0"
+"react-datepicker@npm:^4.12.0":
+  version: 4.12.0
+  resolution: "react-datepicker@npm:4.12.0"
   dependencies:
     "@popperjs/core": ^2.9.2
     classnames: ^2.2.6
@@ -20786,7 +20786,7 @@ __metadata:
   peerDependencies:
     react: ^16.9.0 || ^17 || ^18
     react-dom: ^16.9.0 || ^17 || ^18
-  checksum: d3e433e35a80308fe0c12d97a6d27148c5d31cc5a640d26da77c50ceff71541b1809b86372ad9d0e53aa4795fe50bb544c0f26f17ef2223cca0682089fe29450
+  checksum: 6d637b1132a9607846defb08a9b736a1b003fd40ae33f58d643168adb5de10b37dc9e9414c586abe9981768e0f56486b849fdb3890a5417277ad142b5525a5c2
   languageName: node
   linkType: hard
 
