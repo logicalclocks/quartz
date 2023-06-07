@@ -1,3 +1,15 @@
+## [2.10.1](https://github.com/logicalclocks/quartz/compare/v2.10.0...v2.10.1) (2023-06-07)
+
+
+### Code Refactoring
+
+* **build:** no React import needed ([#428](https://github.com/logicalclocks/quartz/issues/428)) ([60ce090](https://github.com/logicalclocks/quartz/commit/60ce0901775eb202df6a896e9dfbbb0f7cefa623))
+
+
+### BREAKING CHANGES
+
+* **build:** NotificationManager, NotificationContainer, Notification
+
 # [2.10.0](https://github.com/logicalclocks/quartz/compare/v2.9.1...v2.10.0) (2023-06-07)
 
 
