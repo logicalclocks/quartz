@@ -1,9 +1,6 @@
-import { FC } from 'react';
 import { Text, TextProps } from 'rebass';
 
-// Types
 import { Intents } from '../intents';
-// Styles
 import styles from './editableSelectInfo.styles';
 
 export interface EditableSelectInfoProps extends Omit<TextProps, 'css'> {
@@ -11,7 +8,7 @@ export interface EditableSelectInfoProps extends Omit<TextProps, 'css'> {
   children: React.ReactNode;
 }
 
-const EditableSelectInfo: FC<EditableSelectInfoProps> = ({
+const EditableSelectInfo = ({
   intent = 'error',
   children,
   ...props

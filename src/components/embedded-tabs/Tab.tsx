@@ -1,5 +1,4 @@
 import * as R from 'ramda';
-import { FC } from 'react';
 import { Box, SxStyleProp } from 'rebass';
 import Label from '../label';
 import * as S from './styles';
@@ -18,7 +17,7 @@ const getStyles = ({ active, disabled }: Pick<Props, 'active' | 'disabled'>) =>
     ...(disabled ? S.disabledTab : {}),
   } as SxStyleProp);
 
-const Tab: FC<Props> = ({ title, ...props }) => {
+const Tab = ({ title, ...props }: Props) => {
   const propagatedProps = R.pick(['disabled', 'onClick'], props);
 
   return (

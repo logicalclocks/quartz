@@ -1,4 +1,4 @@
-import { FC, memo, useCallback, useState } from 'react';
+import { memo, useCallback, useState } from 'react';
 import Input, { InputProps } from '../../input';
 
 interface TInputProps extends Omit<InputProps, 'onChange'> {
@@ -14,7 +14,7 @@ interface TInputProps extends Omit<InputProps, 'onChange'> {
  * https://github.com/facebook/react/issues/2291
  * https://erikmartinjordan.com/onblur-prevents-onclick-react
  */
-const BlurInput: FC<TInputProps> = ({ defaultValue, onChange, ...props }) => {
+const BlurInput = ({ defaultValue, onChange, ...props }: TInputProps) => {
   const [value, setValue] = useState(defaultValue);
 
   const handleChange = useCallback(

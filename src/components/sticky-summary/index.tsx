@@ -1,4 +1,3 @@
-import { FC } from 'react';
 import { boxStyles, boxButtonStyles } from './sticky-summary.styles';
 import Title from '../typography/title';
 import Labeling from '../typography/labeling';
@@ -17,7 +16,7 @@ export interface StickySummaryProps {
   hasScrollOnScreen?: boolean;
 }
 
-const StickySummary: FC<StickySummaryProps> = ({
+const StickySummary = ({
   title,
   firstValue,
   secondValue,

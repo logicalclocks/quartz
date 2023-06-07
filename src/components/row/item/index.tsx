@@ -1,4 +1,4 @@
-import { FC, ComponentType } from 'react';
+import { ComponentType } from 'react';
 import { Box } from 'rebass';
 import styles from './row-item.styles';
 import { TableItemPosition } from './types';
@@ -12,7 +12,7 @@ export interface RowItemProps {
   fillSpace?: boolean;
 }
 
-const RowItem: FC<RowItemProps> = ({
+const RowItem = ({
   mode = Mode.full,
   component: Component,
   componentProps,

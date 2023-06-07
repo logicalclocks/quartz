@@ -1,4 +1,3 @@
-import { FC } from 'react';
 import { FlexProps } from 'rebass';
 import Callout, { CalloutTypes } from '../callout';
 import { Button } from '../button';
@@ -14,7 +13,7 @@ export interface ICalloutWithButtonProps
   isButtonLoading?: boolean;
 }
 
-const CalloutWithButton: FC<ICalloutWithButtonProps> = ({
+const CalloutWithButton = ({
   buttonContent,
   content,
   onClick,

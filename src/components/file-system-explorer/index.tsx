@@ -1,4 +1,4 @@
-import { FC, memo, useEffect, useRef, useState } from 'react';
+import { memo, useEffect, useRef, useState } from 'react';
 import {
   Box,
   Card as RebassCard,
@@ -32,7 +32,7 @@ export interface FileSystemExplorerProps
   handleDownloadFile: (file: any) => void;
 }
 
-const FileSystemExplorer: FC<FileSystemExplorerProps> = ({
+const FileSystemExplorer = ({
   title = 'Select a file',
   onClose = () => console.log('Close'),
   shortcutActions,

@@ -1,4 +1,4 @@
-import { FC, useState } from 'react';
+import { useState } from 'react';
 import { Box } from 'rebass';
 
 // Styles
@@ -21,7 +21,7 @@ export interface Props {
   setIsEmptyFolder: (value: boolean) => void;
 }
 
-const FileItemExplorer: FC<Props> = ({
+const FileItemExplorer = ({
   isActive,
   setActiveFolder,
   setActiveFile,
@@ -33,7 +33,7 @@ const FileItemExplorer: FC<Props> = ({
   isFileSelected,
   isValidExtension,
   setIsEmptyFolder,
-}) => {
+}: Props) => {
   const [active, setActive] = useState(isActive);
   const [selectedFile, setSelectedFile] = useState(selected);
 

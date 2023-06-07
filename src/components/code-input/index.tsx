@@ -1,4 +1,4 @@
-import { FC, forwardRef } from 'react';
+import { forwardRef } from 'react';
 import { Box, Flex } from 'rebass';
 
 import { loadLanguage } from '@uiw/codemirror-extensions-langs';
@@ -31,7 +31,7 @@ export interface CodeInputProps
   intent?: Intents;
 }
 
-const CodeInput: FC<CodeInputProps> = forwardRef(
+const CodeInput = forwardRef(
   ({
     label = '',
     value,

@@ -1,4 +1,3 @@
-import { FC } from 'react';
 import { Flex, FlexProps } from 'rebass';
 import styles, { mainBoxStyles } from './form-summary-container.styles';
 
@@ -7,7 +6,7 @@ export interface FormSummaryContainerProps extends Omit<FlexProps, 'css'> {
   children: any;
 }
 
-const FormSummaryContainer: FC<FormSummaryContainerProps> = ({
+const FormSummaryContainer = ({
   hasScrollOnScreen = true,
   children,
   ...props

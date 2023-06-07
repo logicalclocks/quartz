@@ -1,4 +1,4 @@
-import { FC, useRef } from 'react';
+import { useRef } from 'react';
 import { Flex } from 'rebass';
 
 // Components
@@ -19,7 +19,7 @@ export interface DropdownProps extends Omit<ListProps, 'css' | 'children'> {
   onClickOutside?: () => void;
 }
 
-const Dropdown: FC<DropdownProps> = ({
+const Dropdown = ({
   items,
   isOpen = true,
   onClickOutside = () => {},

@@ -1,4 +1,4 @@
-import { FC, useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import useDropdown from '../../utils/useDropdown';
 import { Intents } from '../intents';
 import Label, { LabelProps } from '../label';
@@ -30,7 +30,7 @@ export interface EditableSelectProps
   onChange: (value: string[]) => void;
 }
 
-const EditableSelect: FC<EditableSelectProps> = ({
+const EditableSelect = ({
   info,
   label = '',
   value,
@@ -50,7 +50,7 @@ const EditableSelect: FC<EditableSelectProps> = ({
   maxListHeight = '150px',
   noDataMessage = 'no options',
   ...props
-}) => {
+}: EditableSelectProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [search, setSearch] = useState(isMulti ? '' : value[0] || '');
 

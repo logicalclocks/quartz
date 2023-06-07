@@ -1,4 +1,4 @@
-import { FC, Fragment, useCallback } from 'react';
+import { useCallback } from 'react';
 import { Box } from 'rebass';
 
 import Checkbox from '../../checkbox';
@@ -12,7 +12,7 @@ const toggleValue = (value: string[], option: string) =>
     ? value.filter((o) => o !== option)
     : [...value, option];
 
-const SelectListMulti: FC<SelectListProps> = ({
+const SelectListMulti = ({
   options,
   value,
   additionalTexts,
@@ -47,7 +47,7 @@ const SelectListMulti: FC<SelectListProps> = ({
 
   return (
     // eslint-disable-next-line react/jsx-no-useless-fragment
-    <Fragment>
+    <>
       {options?.map((option, index) => (
         <ListItem
           // eslint-disable-next-line react/no-array-index-key
@@ -83,7 +83,7 @@ const SelectListMulti: FC<SelectListProps> = ({
           )}
         </ListItem>
       ))}
-    </Fragment>
+    </>
   );
 };
 

@@ -1,4 +1,4 @@
-import { FC, useState } from 'react';
+import { useState } from 'react';
 import { Box, Flex } from 'rebass';
 import { GetIcon, IconName } from '../../icon';
 import Tooltip from '../../tooltip';
@@ -23,7 +23,7 @@ export interface QuartzFileExplorerFolderProps {
   itemInfo: any;
 }
 
-const FolderExplorer: FC<QuartzFileExplorerFolderProps> = ({
+const FolderExplorer = ({
   setActiveFile,
   selectPathListValue,
   mode,

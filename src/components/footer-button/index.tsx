@@ -1,4 +1,3 @@
-import { FC } from 'react';
 import { Button as RebassButton, ButtonProps } from 'rebass';
 
 // Styles
@@ -9,7 +8,7 @@ export interface QuartzFooterButtonProps extends Omit<ButtonProps, 'css'> {
   intent?: 'primary';
 }
 
-const FooterButton: FC<QuartzFooterButtonProps> = ({
+const FooterButton = ({
   intent = 'primary',
   children,
   ...props

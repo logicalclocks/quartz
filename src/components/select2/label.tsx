@@ -1,4 +1,4 @@
-import { FC, forwardRef, useMemo } from 'react';
+import { forwardRef, useMemo } from 'react';
 import { Box, BoxProps, Flex } from 'rebass';
 
 import Labeling from '../typography/labeling';
@@ -38,7 +38,7 @@ const getLabelText = (
     : value.map((x) => x.label).join(', ');
 };
 
-const SelectLabel: FC<SelectLabelProps> = forwardRef(
+const SelectLabel = forwardRef(
   (
     {
       label,

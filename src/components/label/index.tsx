@@ -1,4 +1,3 @@
-import { FC } from 'react';
 import { Flex, FlexProps } from 'rebass';
 
 import styles from './label.styles';
@@ -11,7 +10,7 @@ export interface LabelProps extends Omit<FlexProps, 'css' | 'action'> {
   children: React.ReactNode;
 }
 
-const Label: FC<LabelProps> = ({
+const Label = ({
   action,
   text,
   children,

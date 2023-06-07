@@ -1,4 +1,4 @@
-import { ComponentType, FC, useMemo } from 'react';
+import { ComponentType, useMemo } from 'react';
 import { Box } from 'rebass';
 import TableItem from '../item';
 import styles from './row-group.styles';
@@ -16,7 +16,7 @@ export interface RowGroupProps {
   index: number;
 }
 
-const RowGroup: FC<RowGroupProps> = ({
+const RowGroup = ({
   mode = Mode.full,
   components,
   componentsProps,

@@ -1,17 +1,13 @@
-import { FC } from 'react';
 import { Text, TextProps } from 'rebass';
 
-// Types
 import { Intents } from '../intents';
-// Styles
 import styles from './input-info.styles';
 
 export interface InputInfoProps extends Omit<TextProps, 'css'> {
   intent?: Intents;
-  children: React.ReactNode;
 }
 
-const InputInfo: FC<InputInfoProps> = ({
+const InputInfo = ({
   intent = 'error',
   children,
   sx = {},

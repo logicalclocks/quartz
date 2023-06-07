@@ -1,11 +1,8 @@
 import { Flex } from 'rebass';
-import { FC } from 'react';
 import { CheckboxProps as RebassCheckboxProps } from '@rebass/forms';
 import * as R from 'ramda';
 
-// Components
 import Labeling from '../typography/labeling';
-// Styles
 import styles from './toggle-button.styles';
 
 export interface ToggleButtonProps extends Omit<RebassCheckboxProps, 'css'> {
@@ -13,7 +10,7 @@ export interface ToggleButtonProps extends Omit<RebassCheckboxProps, 'css'> {
   variant?: 'primary' | 'white';
 }
 
-const ToggleButton: FC<ToggleButtonProps> = ({
+const ToggleButton = ({
   name,
   id,
   disabled,

@@ -1,4 +1,3 @@
-import { FC } from 'react';
 import { Box, BoxProps } from 'rebass';
 
 // Styles
@@ -14,7 +13,7 @@ export interface HeaderProps extends Omit<BoxProps, 'css'> {
   logoAction?: () => void;
 }
 
-const Header: FC<HeaderProps> = ({
+const Header = ({
   children,
   user,
   actions,

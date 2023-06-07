@@ -1,25 +1,19 @@
-import { FC, memo, useCallback, useEffect, useState } from 'react';
+import { memo, useCallback, useEffect, useState } from 'react';
 import { Box } from 'rebass';
 
-// Components
 import { TableProps } from '../index';
-// Utils
 import KeysCollection from '../../../utils/KeysCollection';
-// Styles
 import {
   containerStyles,
   tableStyles,
   theadStyles,
   trowStyles,
 } from '../table.styles';
-// Components
 import RowLeftContent from './row-left-content';
-// types
 import { TableCell, TableHeader, TableRowComponent } from '../type';
 import Thead from '../thead';
 import Label from '../../label';
 
-/* eslint-disable implicit-arrow-linebreak */
 export interface EditableTableProps extends Omit<TableProps, 'value'> {
   initialStaticColumn?: string;
   values: TableCell[][];
@@ -38,9 +32,7 @@ export interface EditableTableProps extends Omit<TableProps, 'value'> {
   hasFreezeButton?: boolean;
 }
 
-/* eslint-disable arrow-body-style */
-
-const EditableTable: FC<EditableTableProps> = ({
+const EditableTable = ({
   onChangeData,
   onDeleteRow,
   initialStaticColumn,

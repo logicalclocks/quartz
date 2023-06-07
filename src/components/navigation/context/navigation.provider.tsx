@@ -1,4 +1,4 @@
-import { FC, useCallback, useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 
 // Context
 import NavigationContext from './navigation.context';
@@ -17,7 +17,7 @@ export interface CategoriesProviderProps {
   takeActivePath?: any;
 }
 
-const NavigationProvider: FC<CategoriesProviderProps> = ({
+const NavigationProvider = ({
   tree,
   trackBy = 'title',
   children,

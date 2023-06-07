@@ -1,5 +1,5 @@
 import { createPortal } from 'react-dom';
-import { FC, useCallback, useEffect, useRef } from 'react';
+import { useCallback, useEffect, useRef } from 'react';
 
 export interface StickyPortalProps {
   children: any;
@@ -9,11 +9,7 @@ export interface StickyPortalProps {
 
 export const CONTENT_ID = 'portal-content';
 
-const StickyPortal: FC<StickyPortalProps> = ({
-  children,
-  refEl,
-  handleClose,
-}: StickyPortalProps) => {
+const StickyPortal = ({ children, refEl, handleClose }: StickyPortalProps) => {
   const rootElemRef = useRef(document.createElement('div'));
 
   useEffect(() => {

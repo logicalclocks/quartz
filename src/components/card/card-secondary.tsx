@@ -1,4 +1,4 @@
-import { FC, memo, useEffect, useRef, useState } from 'react';
+import { memo, useEffect, useRef, useState } from 'react';
 import {
   Box,
   Flex,
@@ -18,7 +18,7 @@ export interface CardSecondaryProps
   readonly?: boolean;
 }
 
-const CardSecondary: FC<CardSecondaryProps> = ({
+const CardSecondary = ({
   title,
   children,
   maxHeight,

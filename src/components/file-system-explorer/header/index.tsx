@@ -1,4 +1,3 @@
-import { FC } from 'react';
 import { Box, BoxProps, Flex } from 'rebass';
 
 // Styles
@@ -10,7 +9,7 @@ export interface FileExplorerHeaderProps
   title?: string;
 }
 
-const FileExplorerHeader: FC<FileExplorerHeaderProps> = ({
+const FileExplorerHeader = ({
   title,
   shortcutActions,
 }: FileExplorerHeaderProps) => {

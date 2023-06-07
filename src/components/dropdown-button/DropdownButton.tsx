@@ -36,7 +36,7 @@ export interface Props extends Omit<FlexProps, 'css'> {
   }) => React.ReactNode;
 }
 
-export const DropdownButton: React.FC<Props> = ({
+export const DropdownButton = ({
   alignLeft = false,
   containerOpenSx = {},
   dropdownSx = {},
@@ -44,7 +44,7 @@ export const DropdownButton: React.FC<Props> = ({
   renderButton,
   sx = {},
   ...restProps
-}) => {
+}: Props) => {
   const [isOpen, handleToggle, handleClickOutside] = useDropdown();
   const containerRef = useRef<HTMLElement>();
   const dropdownItems = useMemo(

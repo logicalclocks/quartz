@@ -1,13 +1,10 @@
 import { Box, Flex } from 'rebass';
-import { FC, forwardRef } from 'react';
+import { forwardRef } from 'react';
 import { InputProps as RebassInputProps } from 'rebass__forms';
 
-// Components
 import Label, { LabelProps } from '../label';
 import InputInfo from '../input-info';
-// Types
 import { Intents } from '../intents';
-// Styles
 import getStyles, { getIconStyle } from './input.styles';
 import Labeling from '../typography/labeling';
 import Tooltip from '../tooltip';
@@ -32,7 +29,7 @@ export interface InputProps extends Omit<RebassInputProps, 'css'> {
   tooltipInfo?: string;
 }
 
-const Input: FC<InputProps> = forwardRef(
+const Input = forwardRef(
   (
     {
       placeholder,

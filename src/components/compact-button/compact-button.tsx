@@ -1,4 +1,4 @@
-import { FC, memo, CSSProperties } from 'react';
+import { memo, CSSProperties } from 'react';
 import { Button, ButtonProps, Flex, Box } from 'rebass';
 import { GetIcon, IconName } from '../icon';
 
@@ -30,7 +30,7 @@ const getLinkProps = ({ href, newTab }: LinkRelatedProps): Partial<Props> =>
       }
     : {};
 
-const CompactButton: FC<Props> = ({
+const CompactButton = ({
   icon,
   href,
   children,
@@ -40,7 +40,7 @@ const CompactButton: FC<Props> = ({
   newTab = false,
   mode = 'default',
   ...props
-}) => (
+}: Props) => (
   <Button
     {...props}
     {...getLinkProps({ newTab, href })}

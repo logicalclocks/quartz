@@ -1,4 +1,4 @@
-import React, { FC, useMemo } from 'react';
+import React, { useMemo } from 'react';
 import { Box, BoxProps, Flex } from 'rebass';
 import Value from '../typography/value';
 import * as S from './styles';
@@ -23,7 +23,7 @@ export interface Props extends Omit<BoxProps, 'css'> {
   withBase?: boolean;
 }
 
-export const AlternativeHeader: FC<Props> = ({
+export const AlternativeHeader = ({
   title,
   tabs,
   withBase = false,

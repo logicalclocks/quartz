@@ -1,4 +1,4 @@
-import React, { FC, useCallback } from 'react';
+import React, { useCallback } from 'react';
 
 // Components
 import { Box } from 'rebass';
@@ -22,11 +22,7 @@ const toggleValue = (value: SelectOpt[], option: SelectOpt) => {
   return result.map((x) => ({ key: x.key, label: x.label }));
 };
 
-const SelectListMulti: FC<SelectListProps> = ({
-  options,
-  value,
-  onChange,
-}: SelectListProps) => {
+const SelectListMulti = ({ options, value, onChange }: SelectListProps) => {
   const handleClick = useCallback(
     (option: SelectOpt) => (event?: React.MouseEvent<HTMLDivElement>) => {
       if (event) {
@@ -55,7 +51,7 @@ const SelectListMulti: FC<SelectListProps> = ({
 
   return (
     // eslint-disable-next-line react/jsx-no-useless-fragment
-    <React.Fragment>
+    <>
       {options?.map((option, index) => (
         <ListItem
           key={option.key}
@@ -90,7 +86,7 @@ const SelectListMulti: FC<SelectListProps> = ({
           )}
         </ListItem>
       ))}
-    </React.Fragment>
+    </>
   );
 };
 

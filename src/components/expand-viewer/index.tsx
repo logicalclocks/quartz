@@ -1,4 +1,4 @@
-import { FC, useState } from 'react';
+import { useState } from 'react';
 import { Box, Button as RebassButton, Flex } from 'rebass';
 import { useTheme } from '../../theme/theme';
 import Popup, { PopupProps } from '../popup';
@@ -8,17 +8,17 @@ import expandViewButtonStyle from './expand-viewer.styles';
 
 export interface ExpandViewerProps {
   title?: string;
-  NormalComponent: FC;
-  BriefComponent: FC;
+  NormalComponent: React.FC;
+  BriefComponent: React.FC;
   popupProps?: Omit<PopupProps, 'children' | 'isOpen' | 'onClose'>;
 }
 
-const ExpandViewer: FC<ExpandViewerProps> = ({
+const ExpandViewer = ({
   title,
   NormalComponent,
   BriefComponent,
   popupProps,
-}) => {
+}: ExpandViewerProps) => {
   const [expanded, setExpanded] = useState(false);
 
   // if it's not expanded yet then render the Brief with a button to expand
@@ -63,7 +63,7 @@ export default ExpandViewer;
 interface ExpandButtonProps {
   onClick: () => void;
 }
-const ExpandButton: FC<ExpandButtonProps> = ({ onClick }) => {
+const ExpandButton = ({ onClick }: ExpandButtonProps) => {
   const theme = useTheme();
   return (
     <RebassButton variant="ghost" sx={expandViewButtonStyle} onClick={onClick}>

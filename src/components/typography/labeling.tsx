@@ -1,4 +1,3 @@
-import { FC } from 'react';
 import { Text, TextProps } from 'rebass';
 
 export interface LabelingProps extends Omit<TextProps, 'css'> {
@@ -6,13 +5,7 @@ export interface LabelingProps extends Omit<TextProps, 'css'> {
   gray?: boolean;
 }
 
-const Labeling: FC<LabelingProps> = ({
-  children,
-  bold,
-  gray,
-  sx,
-  ...props
-}: LabelingProps) => (
+const Labeling = ({ children, bold, gray, sx, ...props }: LabelingProps) => (
   <Text
     variant={`labeling${gray ? 'Gray' : ''}`}
     fontWeight={bold ? 'label' : undefined}

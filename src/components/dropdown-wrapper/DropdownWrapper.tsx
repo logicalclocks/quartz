@@ -1,4 +1,3 @@
-import { FC } from 'react';
 import useOnClickOutside from '../../utils/useClickOutside';
 import StickyPortal, { CONTENT_ID } from '../sticky-portal/StickyPortal';
 
@@ -8,12 +7,12 @@ interface DropdownWrapperProps {
   appendToBody: any;
   onClickOutside: any;
 }
-const DropdownWrapper: FC<DropdownWrapperProps> = ({
+const DropdownWrapper = ({
   children,
   containerRef,
   appendToBody,
   onClickOutside,
-}) => {
+}: DropdownWrapperProps) => {
   useOnClickOutside<HTMLDivElement>(
     onClickOutside,
     [containerRef],

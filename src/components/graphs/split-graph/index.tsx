@@ -1,4 +1,4 @@
-import { FC, useMemo, useState } from 'react';
+import { useMemo, useState } from 'react';
 import { Box, Flex } from 'rebass';
 import * as R from 'ramda';
 
@@ -53,7 +53,7 @@ export interface SplitGraphProps extends Omit<FlexProps, 'children'> {
   alignGraphAndLabel?: AlignGraphAndLabel;
 }
 
-const SplitGraph: FC<SplitGraphProps> = ({
+const SplitGraph = ({
   values,
   withoutPercentage = false,
   labelProps,

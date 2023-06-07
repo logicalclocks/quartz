@@ -1,6 +1,5 @@
-import { FC, useCallback } from 'react';
+import { useCallback } from 'react';
 
-// Components
 import Label, { LabelProps } from '../label';
 import Checkbox from './index';
 import { TooltipProps } from '../tooltip';
@@ -15,7 +14,7 @@ export interface CheckboxGroupProps
   tooltipProps?: Omit<TooltipProps, 'children'>;
 }
 
-const CheckboxGroup: FC<CheckboxGroupProps> = ({
+const CheckboxGroup = ({
   label,
   options,
   value,

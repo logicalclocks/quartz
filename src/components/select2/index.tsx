@@ -1,4 +1,4 @@
-import { FC, useCallback, useMemo, useRef, useState } from 'react';
+import { useCallback, useMemo, useRef, useState } from 'react';
 
 // Components
 import { Box, Flex } from 'rebass';
@@ -66,7 +66,7 @@ export interface Select2Props
   info?: string;
 }
 
-const Select: FC<Select2Props> = ({
+const Select = ({
   label,
   value,
   options,

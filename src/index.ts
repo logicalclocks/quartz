@@ -39,8 +39,6 @@ import Select from './components/select';
 import Select2 from './components/select2';
 import EditableSelect from './components/editableSelect';
 import ToggleButton from './components/toggle-button';
-import NotificationsContainer from './components/notifications/index';
-import NotificationsManager from './components/notifications/notifications-manager';
 import DatePicker from './components/datepicker';
 import Divider from './components/divider';
 import Symbol from './components/symbol';
@@ -196,9 +194,6 @@ export {
   NavigationProvider,
   NavigationContext,
   FormTabs,
-  // Notifications
-  NotificationsContainer,
-  NotificationsManager,
   // Hooks
   useDropdown,
   useNavigation,

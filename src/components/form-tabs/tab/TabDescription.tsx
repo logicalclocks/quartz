@@ -1,4 +1,4 @@
-import { FC, memo } from 'react';
+import { memo } from 'react';
 import { Flex } from 'rebass';
 import Label from '../../label';
 import { TabState } from '../types';
@@ -8,7 +8,7 @@ export interface TabDescriptionProps {
   state: TabState;
 }
 
-const TabDescription: FC<TabDescriptionProps> = ({ state }) => {
+const TabDescription = ({ state }: TabDescriptionProps) => {
   switch (state) {
     case TabState.default:
       return null;

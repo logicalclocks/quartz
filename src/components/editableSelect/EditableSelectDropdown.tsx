@@ -1,4 +1,4 @@
-import { FC, useCallback, useMemo } from 'react';
+import { useCallback, useMemo } from 'react';
 
 import { Box } from 'rebass';
 import ListItem from '../list/item';
@@ -23,7 +23,7 @@ export interface EditableSelectDropdownProps {
   onClose: () => void;
 }
 
-const EditableSelectDropdown: FC<EditableSelectDropdownProps> = ({
+const EditableSelectDropdown = ({
   type,
   value,
   width,
@@ -35,7 +35,7 @@ const EditableSelectDropdown: FC<EditableSelectDropdownProps> = ({
   onChange,
   maxHeight,
   appendToBody,
-}) => {
+}: EditableSelectDropdownProps) => {
   const handleClick = useCallback(
     (option: string) => () => {
       if (option) onChange([option]);

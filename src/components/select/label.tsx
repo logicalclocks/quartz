@@ -1,4 +1,4 @@
-import { FC, forwardRef, useMemo } from 'react';
+import { forwardRef, useMemo } from 'react';
 import { Box, BoxProps, Flex } from 'rebass';
 import { GetIcon, IconName } from '../icon';
 
@@ -56,7 +56,7 @@ const getLabelText = (
   return value.length === options.length && isMulti ? 'all' : value.join(', ');
 };
 
-const SelectLabel: FC<SelectLabelProps> = forwardRef(
+const SelectLabel = forwardRef(
   (
     {
       variant,

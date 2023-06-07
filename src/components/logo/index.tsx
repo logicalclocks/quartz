@@ -1,4 +1,3 @@
-import { FC } from 'react';
 import { useTheme } from '../../theme/theme';
 
 export interface LogoProps {
@@ -7,11 +6,7 @@ export interface LogoProps {
   withName?: boolean;
 }
 
-const Logo: FC<LogoProps> = ({
-  width = 114,
-  height = 22,
-  withName = false,
-}: LogoProps) => {
+const Logo = ({ width = 114, height = 22, withName = false }: LogoProps) => {
   const theme = useTheme();
 
   /* sadly, we can't use theme colors directly in svg :/ */

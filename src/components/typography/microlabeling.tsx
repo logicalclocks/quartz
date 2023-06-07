@@ -1,15 +1,10 @@
-import { FC } from 'react';
 import { Text, TextProps } from 'rebass';
 
 export interface MicrolabelingProps extends Omit<TextProps, 'css'> {
   gray?: boolean;
 }
 
-const Microlabeling: FC<MicrolabelingProps> = ({
-  gray,
-  sx,
-  ...props
-}: MicrolabelingProps) => (
+const Microlabeling = ({ gray, sx, ...props }: MicrolabelingProps) => (
   <Text
     {...props}
     as="h6"

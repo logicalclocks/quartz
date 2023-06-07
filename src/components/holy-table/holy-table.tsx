@@ -1,4 +1,4 @@
-import { FC, ReactNode, useMemo } from 'react';
+import { ReactNode, useMemo } from 'react';
 import { Box } from 'rebass';
 import HeadCell from './head-cell/head-cell';
 import HolyTableContext from './holy-table.context';
@@ -15,7 +15,7 @@ export interface Props {
   rowHeight?: string;
 }
 
-const HolyTable: FC<Props> = ({
+const HolyTable = ({
   legend,
   children,
   middleColumn,
@@ -25,7 +25,7 @@ const HolyTable: FC<Props> = ({
   standalone = false,
   rowHeight = '50px',
   ...props
-}) => {
+}: Props) => {
   const value = useMemo(
     () => ({
       bordered,
