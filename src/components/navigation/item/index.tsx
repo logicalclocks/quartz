@@ -75,7 +75,7 @@ const NavigationItem = (props: NavigationItemProps) => {
     <Box
       tx={tx}
       variant={getVariant(disabled, isActiveItem)}
-      sx={R.mergeDeepLeft(styles, sx ?? {}) as object}
+      sx={R.mergeDeepRight(styles, sx ?? {}) as object}
       onClick={!disabled ? handleClick : undefined}
       className={key === 'oldui' ? 'oldui' : ''}
       {...restProps}
@@ -83,7 +83,7 @@ const NavigationItem = (props: NavigationItemProps) => {
       {icon && (
         <div>
           <Tooltip
-            disabled={disableTooltip || !isOpen}
+            disabled={disableTooltip}
             position={TooltipPositions.right}
             mainText={mainTooltipText}
             secondaryText={secondaryTooltipText}
@@ -94,7 +94,7 @@ const NavigationItem = (props: NavigationItemProps) => {
       )}
       <span>
         <Tooltip
-          disabled={icon || disableTooltip}
+          disabled={(icon || disableTooltip) && !disabled}
           position={TooltipPositions.right}
           mainText={mainTooltipText}
           secondaryText={secondaryTooltipText}
