@@ -1,4 +1,3 @@
-/// <reference types="react" />
 import { RadioProps } from './index';
 export type RadioGroupOption<T = string> = RadioProps & {
     key: T;
