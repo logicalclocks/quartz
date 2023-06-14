@@ -92,6 +92,7 @@ export declare enum IconName {
     stdout = 89,
     stderr = 90,
     tensorflow = 91,
-    rokect = 92
+    rokect = 92,
+    python = 93
 }
 export declare function getIcon(iconName: IconName, color?: string, size?: string): ReactElement<any, any>;
