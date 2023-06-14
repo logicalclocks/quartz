@@ -1,3 +1,10 @@
+# [2.11.0](https://github.com/logicalclocks/quartz/compare/v2.10.2...v2.11.0) (2023-06-14)
+
+
+### Features
+
+* **icon:** add python icon ([#435](https://github.com/logicalclocks/quartz/issues/435)) ([c328de2](https://github.com/logicalclocks/quartz/commit/c328de23275c89c372740d900db4011f57a21caf))
+
 ## [2.10.2](https://github.com/logicalclocks/quartz/compare/v2.10.1...v2.10.2) (2023-06-13)
 
 ## [2.10.1](https://github.com/logicalclocks/quartz/compare/v2.10.0...v2.10.1) (2023-06-07)
