@@ -9,7 +9,11 @@ export interface StickyPortalProps {
 
 export const CONTENT_ID = 'portal-content';
 
-const StickyPortal = ({ children, refEl, handleClose }: StickyPortalProps) => {
+const StickyPortal: any = ({
+  children,
+  refEl,
+  handleClose,
+}: StickyPortalProps) => {
   const rootElemRef = useRef(document.createElement('div'));
 
   useEffect(() => {
