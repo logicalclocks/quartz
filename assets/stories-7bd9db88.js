@@ -1,0 +1,2 @@
+import{j as o}from"./index.esm-35888c3f.js";import{T as t}from"./TextValueBadge-38b7e931.js";import"./index-8db94870.js";import"./_commonjsHelpers-042e6b4d.js";import"./value-fb8fdf17.js";import"./labeling-01aa14c4.js";const x={title:"Badges/TextValueBadge",component:t,args:{text:"text",value:"value"}},l={render:e=>o.jsx(t,{...e})};export{l as Default,x as default};
+//# sourceMappingURL=stories-7bd9db88.js.map

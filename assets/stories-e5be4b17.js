@@ -1,0 +1,2 @@
+import{j as t}from"./index.esm-35888c3f.js";import{S as o}from"./index-65778582.js";import"./index-8db94870.js";import"./_commonjsHelpers-042e6b4d.js";import"./core.browser.esm-fde4463a.js";import"./inheritsLoose-d541526f.js";import"./setPrototypeOf-0bb37fbe.js";const a={title:"Spinner",component:o,argTypes:{color:{control:{type:"text"}},size:{control:{type:"number"}}}},c={args:{color:"labels.green",size:20},render:r=>t.jsx(o,{...r})};export{c as Default,a as default};
+//# sourceMappingURL=stories-e5be4b17.js.map
