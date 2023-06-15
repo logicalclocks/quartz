@@ -128,6 +128,7 @@
     "vite": "^4.3.9",
     "vite-plugin-css-injected-by-js": "^3.1.1",
     "vite-plugin-dts": "^2.3.0",
+    "vite-plugin-svgr": "^3.2.0",
     "yalc": "^1.0.0-pre.53"
   },
   "files": [
