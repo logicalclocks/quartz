@@ -1,13 +1,18 @@
 import { defineConfig } from 'vite';
+import reactPlugin from '@vitejs/plugin-react';
 import dts from 'vite-plugin-dts';
 import cssInjectedByJsPlugin from 'vite-plugin-css-injected-by-js';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import svgrPlugin from 'vite-plugin-svgr';
 
 export default defineConfig({
   plugins: [
+    reactPlugin(),
     dts({
       insertTypesEntry: true,
     }),
     cssInjectedByJsPlugin(),
+    svgrPlugin(),
   ],
   build: {
     lib: {
