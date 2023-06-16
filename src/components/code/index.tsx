@@ -194,7 +194,8 @@ const CopyButton = ({
     if (copyCallback) {
       success = await copyCallback();
     } else {
-      success = await copyToClipboard(content);
+      await copyToClipboard(content);
+      success = true;
     }
     setCopied(success);
     setTimeout(() => {
