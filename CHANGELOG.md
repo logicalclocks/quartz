@@ -1,3 +1,10 @@
+## [2.11.3](https://github.com/logicalclocks/quartz/compare/v2.11.2...v2.11.3) (2023-06-16)
+
+
+### Bug Fixes
+
+* **code:** show copied when copying to clipboard ([#438](https://github.com/logicalclocks/quartz/issues/438)) ([6656bec](https://github.com/logicalclocks/quartz/commit/6656bec6768fcc53395f7f136fb54a025b2b206d))
+
 ## [2.11.2](https://github.com/logicalclocks/quartz/compare/v2.11.1...v2.11.2) (2023-06-16)
 
 
