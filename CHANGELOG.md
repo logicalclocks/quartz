@@ -1,3 +1,10 @@
+## [2.11.2](https://github.com/logicalclocks/quartz/compare/v2.11.1...v2.11.2) (2023-06-16)
+
+
+### Bug Fixes
+
+* **code:** fix copy to clipboard for none secure context ([#437](https://github.com/logicalclocks/quartz/issues/437)) ([49f4037](https://github.com/logicalclocks/quartz/commit/49f40376953649ce813653443e1bc20cc54a3991))
+
 ## [2.11.1](https://github.com/logicalclocks/quartz/compare/v2.11.0...v2.11.1) (2023-06-15)
 
 # [2.11.0](https://github.com/logicalclocks/quartz/compare/v2.10.2...v2.11.0) (2023-06-14)
