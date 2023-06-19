@@ -8251,17 +8251,17 @@ __metadata:
   linkType: hard
 
 "@uiw/codemirror-theme-darcula@npm:^4.19.16":
-  version: 4.19.16
-  resolution: "@uiw/codemirror-theme-darcula@npm:4.19.16"
+  version: 4.21.3
+  resolution: "@uiw/codemirror-theme-darcula@npm:4.21.3"
   dependencies:
-    "@uiw/codemirror-themes": 4.19.16
-  checksum: ce9ce56e2c46622a87ae6b61e2300681e1d533c20b1c80baf90a6663cbbca0b75f992c4fd6309f58b01e925c6b30d10827d4ee258bcabd7d14e9587e34fee090
+    "@uiw/codemirror-themes": 4.21.3
+  checksum: 95f86f516c054175bd1b5166bd2fb78fe99411eadae7efd434fb6acae53266083d301b1ef22fa993846900470f9d300ebcc1853ffdf8cb91db76afd0a3151dce
   languageName: node
   linkType: hard
 
-"@uiw/codemirror-themes@npm:4.19.16":
-  version: 4.19.16
-  resolution: "@uiw/codemirror-themes@npm:4.19.16"
+"@uiw/codemirror-themes@npm:4.21.3":
+  version: 4.21.3
+  resolution: "@uiw/codemirror-themes@npm:4.21.3"
   dependencies:
     "@codemirror/language": ^6.0.0
     "@codemirror/state": ^6.0.0
@@ -8270,7 +8270,7 @@ __metadata:
     "@codemirror/language": ">=6.0.0"
     "@codemirror/state": ">=6.0.0"
     "@codemirror/view": ">=6.0.0"
-  checksum: 9d09c59160b01d0d07f91d013fe9081d5bfa4dd21e7e4d7e3e343ee9c26dfb6cea96811b72dd4d48f8974bccfc861985a413e46d184015c622d25f0487b1cc11
+  checksum: e47fa187d5fb308eb9bd709b6ef7bde7fd59171f80db9eb4f53998444c34cd3890eeea1b7b0d91f9744107d316c79b26f3565f4c6a632db7eb7bf4fe4980dda6
   languageName: node
   linkType: hard
 
