@@ -5434,43 +5434,43 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@playwright/experimental-ct-core@npm:1.33.0":
-  version: 1.33.0
-  resolution: "@playwright/experimental-ct-core@npm:1.33.0"
+"@playwright/experimental-ct-core@npm:1.35.1":
+  version: 1.35.1
+  resolution: "@playwright/experimental-ct-core@npm:1.35.1"
   dependencies:
-    "@playwright/test": 1.33.0
-    vite: ^4.2.1
+    "@playwright/test": 1.35.1
+    vite: ^4.3.9
   bin:
     playwright: cli.js
-  checksum: eefff4a614ae11f7c6294812a5a67c8a1fa0cdd3f2f65353bdaab08940ea31374778667827fa7543024dd9fd6bbb0949b89ddc9088a7d0cb1713c40b1a835f83
+  checksum: be01701e6ed59d2c336fbf7e5509ad4c423e792999754beda8d8babf4bfc5cba3c1eaf2db6205cd0c40a3fd18889b7eebc90dcb6e24b912072008bf6550fed24
   languageName: node
   linkType: hard
 
 "@playwright/experimental-ct-react@npm:^1.31.2":
-  version: 1.33.0
-  resolution: "@playwright/experimental-ct-react@npm:1.33.0"
+  version: 1.35.1
+  resolution: "@playwright/experimental-ct-react@npm:1.35.1"
   dependencies:
-    "@playwright/experimental-ct-core": 1.33.0
-    "@vitejs/plugin-react": ^3.1.0
+    "@playwright/experimental-ct-core": 1.35.1
+    "@vitejs/plugin-react": ^4.0.0
   bin:
     playwright: cli.js
-  checksum: fb3fb947d964ee1a4ecb9b1fe4ddd6bfb3355edfca80f9d62de0bf754ea8f1f6c8bf6b4b7668cfa717fe09b440ecbddcd48349597855a9fea9723d43676986e2
+  checksum: 9b90ede1664515906ba9491007f562d7a50d133b606e8718cedfb021f9f58b00e96065d15b90d93ad0f37ca0ec201551da87c4e4197f70994bcdf0b9fa99b27c
   languageName: node
   linkType: hard
 
-"@playwright/test@npm:1.33.0":
-  version: 1.33.0
-  resolution: "@playwright/test@npm:1.33.0"
+"@playwright/test@npm:1.35.1":
+  version: 1.35.1
+  resolution: "@playwright/test@npm:1.35.1"
   dependencies:
     "@types/node": "*"
     fsevents: 2.3.2
-    playwright-core: 1.33.0
+    playwright-core: 1.35.1
   dependenciesMeta:
     fsevents:
       optional: true
   bin:
     playwright: cli.js
-  checksum: cec3215fc92c1cb9f5bfba357ea1cbe97b54979ab82f9d34a2287b1687cda5e0966b8ea7290dcd35416e18668e56d5781b6b8c4cec64baf12f3ae8dde0f68f5e
+  checksum: 3509d2f2c7397f9b0d4f49088cab8625f17d186f7e9b3389ddebf7c52ee8aae6407eab48f66b300b7bf6a33f6e3533fd5951e72bfdb001b68838af98596d5a53
   languageName: node
   linkType: hard
 
@@ -8296,7 +8296,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vitejs/plugin-react@npm:^3.0.1, @vitejs/plugin-react@npm:^3.1.0":
+"@vitejs/plugin-react@npm:^3.0.1":
   version: 3.1.0
   resolution: "@vitejs/plugin-react@npm:3.1.0"
   dependencies:
@@ -18434,6 +18434,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"playwright-core@npm:1.35.1":
+  version: 1.35.1
+  resolution: "playwright-core@npm:1.35.1"
+  bin:
+    playwright-core: cli.js
+  checksum: 179abc0051f00474e528935b507fa8cedc986b2803b020d7679878ba28cdd7036ad5a779792aad2ad281f8dc625eb1d2fb77663cb8de0d20c7ffbda7c18febdd
+  languageName: node
+  linkType: hard
+
 "playwright@npm:^1.14.0, playwright@npm:^1.31.2":
   version: 1.33.0
   resolution: "playwright@npm:1.33.0"
@@ -21907,43 +21916,6 @@ __metadata:
   peerDependencies:
     vite: ^2.6.0 || 3 || 4
   checksum: 19887e1db910ecdd6c12645e430d9e1d9ad40fe6945d3f7de68fc235fba0277586deffa47db1a6be2fa511207b01893a3c5bad9d1bd558ca28971feca13ecd9a
-  languageName: node
-  linkType: hard
-
-"vite@npm:^4.2.1":
-  version: 4.3.6
-  resolution: "vite@npm:4.3.6"
-  dependencies:
-    esbuild: ^0.17.5
-    fsevents: ~2.3.2
-    postcss: ^8.4.23
-    rollup: ^3.21.0
-  peerDependencies:
-    "@types/node": ">= 14"
-    less: "*"
-    sass: "*"
-    stylus: "*"
-    sugarss: "*"
-    terser: ^5.4.0
-  dependenciesMeta:
-    fsevents:
-      optional: true
-  peerDependenciesMeta:
-    "@types/node":
-      optional: true
-    less:
-      optional: true
-    sass:
-      optional: true
-    stylus:
-      optional: true
-    sugarss:
-      optional: true
-    terser:
-      optional: true
-  bin:
-    vite: bin/vite.js
-  checksum: fa6a323308da58f08d59c1b96186fc7d054d6bbf2e976129f17cae4d439d50605584d0ec1cf245ac360024998e484422cb504e724c8efb936b3c22a120b4a210
   languageName: node
   linkType: hard
 
