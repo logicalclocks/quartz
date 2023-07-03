@@ -1,7 +1,7 @@
 /// <reference types="react" />
 export interface TheadProps {
     column: string;
-    headerRender: (isOpen: boolean) => React.ReactElement<any>;
+    headerRender: (isOpen: boolean) => React.ReactNode;
     className?: string;
     actions: Array<{
         label: string;
