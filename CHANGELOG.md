@@ -1,3 +1,10 @@
+# [2.12.0](https://github.com/logicalclocks/quartz/compare/v2.11.3...v2.12.0) (2023-07-03)
+
+
+### Features
+
+* **editabletable2:** add new editable table component using react-table ([#448](https://github.com/logicalclocks/quartz/issues/448)) ([3ef7c11](https://github.com/logicalclocks/quartz/commit/3ef7c119acfb18099728e04a7fd3756667a79246))
+
 ## [2.11.3](https://github.com/logicalclocks/quartz/compare/v2.11.2...v2.11.3) (2023-06-16)
 
 
