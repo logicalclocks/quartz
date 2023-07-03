@@ -4806,6 +4806,7 @@ __metadata:
     "@storybook/testing-library": ^0.1.0
     "@styled-system/css": ^5.1.5
     "@tanem/react-nprogress": ^5.0.41
+    "@tanstack/react-table": ^8.9.3
     "@types/node": ^16.12.38
     "@types/ramda": ^0.28.1
     "@types/react": ^18.2.12
@@ -7376,6 +7377,25 @@ __metadata:
     react: ^16.8.0 || ^17.0.0 || ^18.0.0
     react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
   checksum: 1dc8b9c847af960dcf4351c2093351fdb6f3ccbe1c100d5d3b667dd90574bb682160dc8876fde2410566a62a46e6edf1ed3e697aed8af9883d79bea51e239296
+  languageName: node
+  linkType: hard
+
+"@tanstack/react-table@npm:^8.9.3":
+  version: 8.9.3
+  resolution: "@tanstack/react-table@npm:8.9.3"
+  dependencies:
+    "@tanstack/table-core": 8.9.3
+  peerDependencies:
+    react: ">=16"
+    react-dom: ">=16"
+  checksum: a71fbbc608bb11b79ecd2b1a838fad2fc4140f9eb1a25bd44b6b1b4c6acd52741b5745e3e022390c642c284d0d528249360e322c0dbc3d34fea031611c207a7d
+  languageName: node
+  linkType: hard
+
+"@tanstack/table-core@npm:8.9.3":
+  version: 8.9.3
+  resolution: "@tanstack/table-core@npm:8.9.3"
+  checksum: 52c7e57daaa3160450fb0bde702ec0b8aab159e2b19efd1012e03b3e167acc52839f5b39578cc8bf96e91346719f400d0435a5191384c168d9477da82f276c38
   languageName: node
   linkType: hard
 

@@ -83,6 +83,7 @@ import HolyTable from './components/holy-table';
 import ReadOnlyTable from './components/table/read-only';
 import EditableTable from './components/table/editable';
 import BlurInput from './components/table/editable/blur-input';
+import { EditableTable2 } from './components/table/editable/EditableTable2';
 
 // Typography
 import InputValidation from './components/typography/input-validation/input-validation';
@@ -207,6 +208,7 @@ export {
   //  Table
   Table,
   EditableTable,
+  EditableTable2,
   ReadOnlyTable,
   HolyTable,
   //  Typography
@@ -235,6 +237,7 @@ export {
 
 export { default as EmbeddedTabs } from './components/embedded-tabs';
 
+export type { Props as EditableTable2Props } from './components/table/editable/EditableTable2';
 export type {
   ITheme,
   IThemeColors,
@@ -257,7 +260,10 @@ export type { TableHeader } from './components/table/type';
 export type { ColumnIdentifier } from './components/table/type';
 export type { TreeNode } from './components/navigation/types';
 export type { TabItem } from './components/form-tabs/index';
-export type { TableRowComponent } from './components/table/type';
+export type {
+  TableRowComponent,
+  TableCellRenderProps,
+} from './components/table/type';
 export type { TableCellType } from './components/table/type';
 export type { SelectOpt } from './components/select2/types';
 export type { CardProps } from './components/card';
@@ -283,5 +289,7 @@ export type { DatePickerProps } from './components/datepicker';
 
 // Rebass types
 export type { SxProps, SxStyleProp } from 'rebass';
+// react-table types
+export type { ColumnDef } from '@tanstack/react-table';
 
 export { keyframes, css, Global } from '@emotion/react';

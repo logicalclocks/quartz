@@ -8,7 +8,7 @@ import ListItem from '../list/item';
 
 export interface TheadProps {
   column: string;
-  headerRender: (isOpen: boolean) => React.ReactElement<any>;
+  headerRender: (isOpen: boolean) => React.ReactNode;
   className?: string;
   actions: Array<{
     label: string;
@@ -24,6 +24,7 @@ const Thead = ({ column, className, headerRender, actions }: TheadProps) => {
   const dropdownStyles = {
     position: 'absolute',
     width: '100% !important',
+    minWidth: 'max-content',
     left: '0',
     top: '37px',
     zIndex: '200',
@@ -42,7 +43,7 @@ const Thead = ({ column, className, headerRender, actions }: TheadProps) => {
       onClick={handleToggleList}
       ref={containerRef}
     >
-      {headerRender(isOpen)}
+      {headerRender(isOpen) as any}
       {isOpen && (
         <List sx={dropdownStyles}>
           {actions.map((action) => (

@@ -32,6 +32,10 @@ export interface EditableTableProps extends Omit<TableProps, 'value'> {
   hasFreezeButton?: boolean;
 }
 
+/**
+ * @deprecated
+ * use EditableTable2
+ */
 const EditableTable = ({
   onChangeData,
   onDeleteRow,
@@ -72,7 +76,7 @@ const EditableTable = ({
     cell: TableCell,
     rowIndex: number,
     row: TableCell[],
-  ) => {
+  ): React.ReactNode | any => {
     const component: TableRowComponent | undefined = rowComponents.find(
       (cpt) => cpt.identifier.name === cell.identifierName,
     );
@@ -84,7 +88,7 @@ const EditableTable = ({
           onChange,
           readOnly: cell.readOnly || false,
           row,
-        })
+        } as any)
       : cell.value;
   };
 
@@ -176,11 +180,13 @@ const EditableTable = ({
                     as="td"
                     p="0px !important"
                   >
-                    {componentifyCell(
-                      row.find((c) => c.identifierName === staticColumn)!,
-                      rowIndex,
-                      row,
-                    )}
+                    {
+                      componentifyCell(
+                        row.find((c) => c.identifierName === staticColumn)!,
+                        rowIndex,
+                        row,
+                      ) as any
+                    }
                   </Box>
                 )}
 
