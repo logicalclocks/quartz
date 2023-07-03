@@ -32,6 +32,10 @@ export interface EditableTableProps extends Omit<TableProps, 'value'> {
   hasFreezeButton?: boolean;
 }
 
+/**
+ * @deprecated
+ * use EditableTable2
+ */
 const EditableTable = ({
   onChangeData,
   onDeleteRow,
