@@ -11,10 +11,11 @@ export interface RowLeftContentProps {
 
 const styles = {
   '&:hover': {
-    padding: '0 !important',
+    p: '0 !important',
   },
   '&:hover div': {
     display: 'block',
+    my: '1px',
   },
   '&:hover span': {
     display: 'none',
@@ -23,8 +24,7 @@ const styles = {
     display: 'none',
   },
   '& div button': {
-    paddingLeft: '0 !important',
-    paddingRight: '0 !important',
+    px: '0 !important',
     width: '30px',
     height: '32px',
   },

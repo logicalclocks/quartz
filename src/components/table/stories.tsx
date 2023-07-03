@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import * as R from 'ramda';
+import { useCallback, useState } from 'react';
 import { StoryObj, Meta } from '@storybook/react';
 
 import { Box } from 'rebass';
@@ -10,7 +11,13 @@ import dummyValuesEditable from './editable/dummydata.json';
 import EditableTable from './editable';
 import { Button, Checkbox, Select } from '../../index';
 import BlurInput from './editable/blur-input';
-import { TableCellType, TableHeader, TableRowComponent } from './type';
+import {
+  TableCellRenderProps,
+  TableCellType,
+  TableHeader,
+  TableRowComponent,
+} from './type';
+import { EditableTable2 } from './editable/EditableTable2';
 
 const meta: Meta<typeof Table> = {
   title: 'Tables',
@@ -72,6 +79,66 @@ export const ReadOnly: StoryObj<typeof ReadOnlyTable> = {
   },
 };
 
+const rowComponents: TableRowComponent[] = [
+  {
+    identifier: { name: 'away_team_id' },
+    render: ({ value, onChange, onBlur }) => (
+      <BlurInput
+        defaultValue={value as string}
+        onChange={onChange}
+        onBlur={onBlur}
+      />
+    ),
+  },
+  {
+    identifier: { name: 'score' },
+    render: ({ value, onChange, onBlur }) => {
+      const handleChange = () => {
+        onChange(!(value as boolean));
+      };
+
+      return (
+        <Checkbox
+          ml="8px"
+          checked={value as boolean}
+          onChange={handleChange}
+          variant="gray"
+          onBlur={onBlur}
+        />
+      );
+    },
+  },
+  {
+    identifier: { name: 'dummycolumn_test1' },
+    render: ({ value, onChange, onBlur }) => (
+      <Select
+        value={value as string[]}
+        onChange={onChange}
+        options={['1', '2']}
+        placeholder=""
+        onBlur={onBlur}
+      />
+    ),
+  },
+  {
+    identifier: { name: 'dummycolumn_test2' },
+    render: ({ value, onChange }) => (
+      <BlurInput defaultValue={value as string} onChange={onChange} />
+    ),
+  },
+  {
+    identifier: { name: 'home_team_id' },
+    render: ({ value, onChange }) => (
+      <Select
+        value={value as string[]}
+        onChange={onChange}
+        options={['1', '2']}
+        placeholder=""
+      />
+    ),
+  },
+];
+
 export const Editable: StoryObj<typeof EditableTable> = {
   args: {
     values: dummyValuesEditable,
@@ -95,60 +162,6 @@ export const Editable: StoryObj<typeof EditableTable> = {
         value: vals[index] as TableCellType,
       }),
     );
-
-    const rowComponents: TableRowComponent[] = [
-      {
-        identifier: { name: 'away_team_id' },
-        render: ({ value, onChange }) => (
-          <BlurInput defaultValue={value as string} onChange={onChange} />
-        ),
-      },
-      {
-        identifier: { name: 'score' },
-        render: ({ value, onChange }) => {
-          const handleChange = () => {
-            onChange(!(value as boolean));
-          };
-
-          return (
-            <Checkbox
-              ml="8px"
-              checked={value as boolean}
-              onChange={handleChange}
-              variant="gray"
-            />
-          );
-        },
-      },
-      {
-        identifier: { name: 'dummycolumn_test1' },
-        render: ({ value, onChange }) => (
-          <Select
-            value={value as string[]}
-            onChange={onChange}
-            options={['1', '2']}
-            placeholder=""
-          />
-        ),
-      },
-      {
-        identifier: { name: 'dummycolumn_test2' },
-        render: ({ value, onChange }) => (
-          <BlurInput defaultValue={value as string} onChange={onChange} />
-        ),
-      },
-      {
-        identifier: { name: 'home_team_id' },
-        render: ({ value, onChange }) => (
-          <Select
-            value={value as string[]}
-            onChange={onChange}
-            options={['1', '2']}
-            placeholder=""
-          />
-        ),
-      },
-    ];
 
     const handleChangeData = (
       rowInd: number,
@@ -189,6 +202,120 @@ export const Editable: StoryObj<typeof EditableTable> = {
           ]}
         />
       </>
+    );
+  },
+};
+
+// converting old data structure to new one
+type DataShape = {
+  identifierName: string;
+  value: any;
+};
+
+const convertOldDataToNew = R.map(
+  R.reduce(
+    (acc, item: DataShape) => ({ ...acc, [item.identifierName]: [item.value] }),
+    {},
+  ),
+);
+const dummyValues2 = convertOldDataToNew(dummyValuesEditable as DataShape[][]);
+const editableTable2Columns = [
+  {
+    accessorKey: 'away_team_id',
+    // cell: since type is input we don't need to explicitly define cell
+  },
+  {
+    accessorKey: 'score',
+    cell: ({ value, onChange, onBlur }: TableCellRenderProps) => {
+      const handleChange = () => {
+        onChange(!(value as boolean));
+      };
+
+      return (
+        <Checkbox
+          ml="8px"
+          checked={value as boolean}
+          onChange={handleChange}
+          variant="gray"
+          onBlur={onBlur}
+        />
+      );
+    },
+  },
+  {
+    accessorKey: 'dummycolumn_test1',
+    cell: ({ value, onChange, onBlur }: TableCellRenderProps) => (
+      <Select
+        value={value as string[]}
+        onChange={onChange}
+        options={['1', '2']}
+        placeholder=""
+        onBlur={onBlur}
+      />
+    ),
+  },
+  {
+    accessorKey: 'dummycolumn_test2',
+    // cell: since type is input we don't need to explicitly define cell
+  },
+  {
+    accessorKey: 'home_team_id',
+    cell: ({ value, onChange }: TableCellRenderProps) => (
+      <Select
+        value={value as string[]}
+        onChange={onChange}
+        options={['1', '2']}
+        placeholder=""
+      />
+    ),
+  },
+];
+
+export const Editable2: StoryObj<typeof EditableTable2> = {
+  args: {
+    hasFreezeButton: true,
+    columns: editableTable2Columns as any,
+    actions: [
+      {
+        label: 'go to stats',
+        handler: (column) => {
+          console.log(`go to stats of ${column}`);
+        },
+      },
+    ],
+  },
+  render: (props: any) => {
+    const [data, setData] = useState(dummyValues2);
+
+    const updateData = useCallback(
+      (rowIndex: number, columnId: string, value: any) => {
+        console.log({ rowIndex, columnId, value });
+        // Skip page index reset until after next rerender
+        setData((old) =>
+          old.map((row, index) => {
+            if (index === rowIndex) {
+              return {
+                ...old[rowIndex]!,
+                [columnId]: value,
+              };
+            }
+            return row;
+          }),
+        );
+      },
+      [],
+    );
+
+    const handleDeleteRow = (rowIdx: number) =>
+      setData((data) => data.filter((x, idx) => idx !== rowIdx));
+
+    return (
+      <EditableTable2
+        data={data}
+        onDeleteRow={handleDeleteRow}
+        updateData={updateData}
+        {...props}
+      />
     );
   },
 };

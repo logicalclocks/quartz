@@ -60,6 +60,7 @@
     "@rebass/forms": "^4.0.6",
     "@styled-system/css": "^5.1.5",
     "@tanem/react-nprogress": "^5.0.41",
+    "@tanstack/react-table": "^8.9.3",
     "@uiw/codemirror-extensions-langs": "^4.21.3",
     "@uiw/codemirror-theme-darcula": "^4.19.16",
     "@uiw/react-codemirror": "^4.21.3",

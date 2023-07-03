@@ -8,7 +8,7 @@ export const containerStyles = {
   borderTopColor: 'grey',
   borderStyle: 'solid',
   marginRight: '20px',
-  width: 'fit-content',
+  width: '100%',
 };
 
 export const tableStyles = {
