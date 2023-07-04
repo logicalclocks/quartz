@@ -198,9 +198,7 @@ export const PreventDuplicateNotifications: Story = {
     userEvent.click(canvas.getByText('Regular'));
     userEvent.click(canvas.getByText('Regular'));
     userEvent.click(canvas.getByText('Regular'));
-    expect(
-      await portal.findAllByText('Regular: Something happened'),
-    ).toHaveLength(3);
+    expect(await portal.findAllByText('You have to see it.')).toHaveLength(1);
 
     userEvent.click(canvas.getByText('With ID given'));
     userEvent.click(canvas.getByText('With ID given'));
