@@ -1,3 +1,10 @@
+# [2.13.0](https://github.com/logicalclocks/quartz/compare/v2.12.1...v2.13.0) (2023-07-05)
+
+
+### Features
+
+* **animatedprogress:** make animated progress render custom progress as we pass ([#453](https://github.com/logicalclocks/quartz/issues/453)) ([d5bd902](https://github.com/logicalclocks/quartz/commit/d5bd90232c5f47117db439531b97e60d80026572))
+
 ## [2.12.1](https://github.com/logicalclocks/quartz/compare/v2.12.0...v2.12.1) (2023-07-04)
 
 # [2.12.0](https://github.com/logicalclocks/quartz/compare/v2.11.3...v2.12.0) (2023-07-03)
