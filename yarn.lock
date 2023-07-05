@@ -3687,7 +3687,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@emotion/react@npm:^11.11.1":
+"@emotion/react@npm:^11.10.6":
   version: 11.11.1
   resolution: "@emotion/react@npm:11.11.1"
   dependencies:
@@ -3776,7 +3776,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@emotion/styled@npm:^11.11.0":
+"@emotion/styled@npm:^11.10.6":
   version: 11.11.0
   resolution: "@emotion/styled@npm:11.11.0"
   dependencies:
@@ -4879,8 +4879,8 @@ __metadata:
     "@chakra-ui/styled-system": ^2.9.1
     "@codemirror/view": ^6.14.0
     "@emotion/core": ^10.3.1
-    "@emotion/react": ^11.11.1
-    "@emotion/styled": ^11.11.0
+    "@emotion/react": ^11.10.6
+    "@emotion/styled": ^11.10.6
     "@playwright/experimental-ct-react": ^1.31.2
     "@rebass/forms": ^4.0.6
     "@semantic-release/changelog": ^6.0.3
