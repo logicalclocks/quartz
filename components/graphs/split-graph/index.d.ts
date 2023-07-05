@@ -1,3 +1,4 @@
+/// <reference types="react" />
 import { LabelProps } from '../../label';
 import { FlexProps } from '../../flex';
 export declare const defaultGraphColors: string[];

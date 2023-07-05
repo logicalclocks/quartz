@@ -1,2 +1,0 @@
-import{j as o,b as t}from"./index.esm-35888c3f.js";const i=({primary:a,sx:e,...r})=>o.jsx(t,{fontFamily:"Inter",sx:{wordWrap:"normal",...e},...r,variant:`value${a?"Primary":""}`});try{value.displayName="value",value.__docgenInfo={description:"",displayName:"value",props:{primary:{defaultValue:null,description:"",name:"primary",required:!1,type:{name:"boolean"}}}}}catch{}export{i as V};
-//# sourceMappingURL=value-fb8fdf17.js.map
