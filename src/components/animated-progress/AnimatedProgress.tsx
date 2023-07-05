@@ -6,6 +6,7 @@ import Container from './Container';
 
 export interface Props extends Options {
   variant?: 'perf.black' | 'perf.green' | 'perf.orange';
+  customProgress?: number;
 }
 /**
  * @param animationDuration - Optional Number indicating the animation duration in ms. Defaults to 200.
@@ -20,6 +21,7 @@ export const AnimatedProgress = ({
   incrementDuration = 800,
   isAnimating = false,
   minimum = 0.08,
+  customProgress,
 }: Props) => {
   const { animationDuration: animDuration, progress } = useNProgress({
     animationDuration,
@@ -28,17 +30,19 @@ export const AnimatedProgress = ({
     minimum,
   });
 
+  const progressFinal = customProgress ?? progress;
+
   return (
     <Container>
       <Bar
         variant={variant}
         animationDuration={animDuration}
-        progress={progress}
+        progress={progressFinal}
       />
       <Bar
         variant="perf.gray"
         animationDuration={animDuration}
-        progress={1 - progress}
+        progress={1 - progressFinal}
       />
     </Container>
   );
