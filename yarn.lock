@@ -19652,7 +19652,7 @@ __metadata:
   linkType: hard
 
 "semantic-release@npm:^21.0.6":
-  version: 21.0.7
+  version: 21.0.6
   resolution: "semantic-release@npm:21.0.6"
   dependencies:
     "@semantic-release/commit-analyzer": ^10.0.0
