@@ -43,7 +43,7 @@
     "commit": "cz",
     "publish-local": "yalc publish --push",
     "push-local": "yalc push",
-    "serve:storybook:test": "npx concurrently -k -s last \"yarn storybook\" \"yarn wait-on http://localhost:6006 && yarn run test-storybook\"",
+    "serve:storybook:test": "npx concurrently -k -s last \"yarn storybook\" \"yarn wait-on http://localhost:6006 && yarn run test-storybook\""
   },
   "peerDependencies": {
     "react": "^18.2.0",
