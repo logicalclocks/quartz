@@ -21,10 +21,7 @@ jobs:
         run: yarn run test:prettier
 
       - name: Serve Storybook and run tests
-        run: |
-          npx concurrently \
-            "yarn run storybook" \
-            "yarn wait-on http://localhost:6006 && yarn test-storybook"
+        run: yarn run serve:storybook:test
 
       - name: Install chromium
         run: yarn playwright install chromium
