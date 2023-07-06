@@ -1,3 +1,12 @@
+## [2.13.3](https://github.com/logicalclocks/quartz/compare/v2.13.2...v2.13.3) (2023-07-06)
+
+
+### Bug Fixes
+
+* **build:** fix pakcage release ([#460](https://github.com/logicalclocks/quartz/issues/460)) ([04715d2](https://github.com/logicalclocks/quartz/commit/04715d20d0f6bdf26512cbb1164814d3a5187abe))
+* **github-package:** release to github-packages ([46ff12d](https://github.com/logicalclocks/quartz/commit/46ff12daef742f6c736646bf95e9392f5a1db9ec))
+* **semantic-release:** roll back to older version:/ ([#461](https://github.com/logicalclocks/quartz/issues/461)) ([e29834a](https://github.com/logicalclocks/quartz/commit/e29834a5f462462358e4206db67a66c1693f27c9))
+
 # [2.13.0](https://github.com/logicalclocks/quartz/compare/v2.12.1...v2.13.0) (2023-07-05)
 
 
