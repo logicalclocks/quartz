@@ -22,8 +22,7 @@ jobs:
         run: yarn install
 
       - name: Use variables
-          run: |
-           echo "test env : $CHROMATIC_PROJECT_TOKEN"
+        run: echo "$CHROMATIC_PROJECT_TOKEN"
         env:
           CHROMATIC_PROJECT_TOKEN: ${{ secrets.CHROMATIC_PROJECT_TOKEN}}
 
