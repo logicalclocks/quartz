@@ -4886,8 +4886,8 @@ __metadata:
     "@semantic-release/changelog": ^6.0.3
     "@semantic-release/commit-analyzer": ^9.0.2
     "@semantic-release/git": ^10.0.1
-    "@semantic-release/github": ^8.1.0
-    "@semantic-release/npm": ^10.0.4
+    "@semantic-release/github": ^8.0.7
+    "@semantic-release/npm": ^10.0.3
     "@semantic-release/release-notes-generator": ^10.0.3
     "@storybook/addon-actions": ^7.0.25
     "@storybook/addon-docs": ^7.0.25
@@ -5896,7 +5896,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@semantic-release/github@npm:^8.1.0":
+"@semantic-release/github@npm:^8.0.7":
   version: 8.1.0
   resolution: "@semantic-release/github@npm:8.1.0"
   dependencies:
@@ -5949,7 +5949,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@semantic-release/npm@npm:^10.0.2, @semantic-release/npm@npm:^10.0.4":
+"@semantic-release/npm@npm:^10.0.2, @semantic-release/npm@npm:^10.0.3":
   version: 10.0.4
   resolution: "@semantic-release/npm@npm:10.0.4"
   dependencies:
