@@ -1,0 +1,40 @@
+export declare const getBorderAnimation: (borderColor: string) => {
+    border: string;
+    display: string;
+    position: string;
+    zIndex: string;
+    width: string;
+    height: string;
+    overflow: string;
+    padding: string;
+    fontFamily: string;
+    fontSize: string;
+    fontWeight: string;
+    borderRadius: string;
+    color: string;
+    ':before': {
+        content: string;
+        position: string;
+        zIndex: string;
+        left: string;
+        top: string;
+        width: string;
+        height: string;
+        backgroundRepeat: string;
+        backgroundSize: string;
+        backgroundPosition: string;
+        backgroundImage: string;
+        animation: string;
+    };
+    ':after': {
+        content: string;
+        position: string;
+        zIndex: string;
+        left: string;
+        top: string;
+        width: string;
+        height: string;
+        background: string;
+        borderRadius: string;
+    };
+};
