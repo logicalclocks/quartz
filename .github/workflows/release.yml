@@ -20,6 +20,13 @@ jobs:
           cache: 'yarn'
       - name: Install dependencies
         run: yarn install
+
+      - name: Use variables
+          run: |
+           echo "test env : $CHROMATIC_PROJECT_TOKEN"
+        env:
+          CHROMATIC_PROJECT_TOKEN: ${{ secrets.CHROMATIC_PROJECT_TOKEN}}
+
       - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.EHSAN_GITHUB_TOKEN }}

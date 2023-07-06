@@ -63,8 +63,29 @@
     ],
     "@semantic-release/release-notes-generator",
     "@semantic-release/changelog",
-    "@semantic-release/npm",
     "@semantic-release/git",
-    "@semantic-release/github"
+    [
+      "@semantic-release/github",
+      {
+        "assets": [
+          {
+            "path": "dist/index.mjs",
+            "label": "Modern JS distribution"
+          },
+          {
+            "path": "dist/index.d.ts",
+            "label": "Typescript"
+          },
+          {
+            "path": "dist/chakra.mjs",
+            "label": "Chakra JS distrubution"
+          },
+          {
+            "path": "dist/chakra.d.ts",
+            "label": "Chakra Types"
+          }
+        ]
+      }
+    ]
   ]
 }

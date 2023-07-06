@@ -1,11 +1,14 @@
 {
-  "homepage": "http://logicalclocks.github.io/quartz",
+  "homepage": "https://github.com/logicalclocks/quartz",
   "name": "@logicalclocks/quartz",
-  "version": "2.13.2",
+  "version": "2.13.3",
   "description": "Logical Clocks Design System Library",
   "author": "logicalclocks",
   "license": "MIT",
-  "repository": "logicalclocks/quartz",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/logicalclocks/quartz.git"
+  },
   "main": "./dist/index.mjs",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
@@ -138,7 +141,8 @@
     ".releaserc.json"
   ],
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "registry": "https://npm.pkg.github.com"
   },
   "resolutions": {
     "npm/chalk": "^4.1.2"
