@@ -8,7 +8,7 @@ import { Button } from '../button';
 import { Flex } from '../flex';
 import Value from '../typography/value';
 import { INotification, createNotifier, useNotifier } from './notifier';
-import { standaloneToast } from '../../theme-chakra/ChakraThemeProvider';
+import { createStandaloneToast } from '../../chakra';
 
 const meta: Meta<INotification> = {
   title: 'Notifier',
@@ -210,6 +210,8 @@ export const PreventDuplicateNotifications: Story = {
   },
 };
 
+const { ToastContainer, toast } = createStandaloneToast();
+
 export const Standalone: Story = {
   parameters: {
     docs: {
@@ -217,7 +219,7 @@ export const Standalone: Story = {
     },
   },
   render: ({ title, content, duration }) => {
-    const notifier = createNotifier(standaloneToast);
+    const notifier = createNotifier(toast);
 
     const showSuccess = () => {
       notifier.success({
@@ -267,6 +269,7 @@ export const Standalone: Story = {
         <Button intent="secondary" onClick={() => notifier.closeAll()}>
           Clear all notifications
         </Button>
+        <ToastContainer />
       </Flex>
     );
   },
