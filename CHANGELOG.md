@@ -1,3 +1,10 @@
+# [3.1.0](https://github.com/logicalclocks/quartz/compare/v3.0.0...v3.1.0) (2023-07-07)
+
+
+### Features
+
+* **improve notifier:** improve standalone notifier ([#464](https://github.com/logicalclocks/quartz/issues/464)) ([dacc3fa](https://github.com/logicalclocks/quartz/commit/dacc3fac7ee4fb33972ec055d2588a88dafbb1ba))
+
 # [3.0.0](https://github.com/logicalclocks/quartz/compare/v2.13.3...v3.0.0) (2023-07-07)
 
 
