@@ -1,4 +1,4 @@
-import { SystemStyleObject } from '@styled-system/css';
+import { SxStyleProp } from 'rebass';
 export interface IThemeColors {
     primary: string;
     primaryShade1: string;
@@ -54,7 +54,7 @@ export interface IThemeShadows {
     focused: string;
 }
 export interface IThemeVariants {
-    [key: string]: SystemStyleObject;
+    [key: string]: SxStyleProp;
 }
 interface INestedThemeVariants {
     [key: string]: IThemeVariants;
