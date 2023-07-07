@@ -1,7 +1,7 @@
 import { StoryObj, Meta } from '@storybook/react';
 import Spinner from '.';
 
-export default {
+const meta: Meta = {
   title: 'Spinner',
   component: Spinner,
   argTypes: {
@@ -16,7 +16,8 @@ export default {
       },
     },
   },
-} as Meta;
+};
+export default meta;
 
 export const Default: StoryObj<typeof Spinner> = {
   args: {

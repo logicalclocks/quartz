@@ -2,7 +2,7 @@ import { StoryObj, Meta } from '@storybook/react';
 import { Box } from 'rebass';
 import FormSummaryContainer from './index';
 
-export default {
+const meta: Meta<typeof FormSummaryContainer> = {
   title: 'FormSummaryContainer',
   component: FormSummaryContainer,
   argTypes: {
@@ -12,7 +12,8 @@ export default {
       },
     },
   },
-} as Meta<typeof FormSummaryContainer>;
+};
+export default meta;
 
 export const Default: StoryObj<typeof FormSummaryContainer> = {
   args: {

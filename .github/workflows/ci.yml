@@ -11,23 +11,42 @@ jobs:
       - name: Checkout 🗒️
         uses: actions/checkout@v3
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
+      ## install node and dependancies
+      - uses: actions/setup-node@v3
+        name: Setup Node.js
         with:
           node-version: '16.x'
-          cache: 'yarn'
+      - uses: pnpm/action-setup@v2
+        name: Install pnpm
+        id: pnpm-install
+        with:
+          version: 8.6.6
+          run_install: false
 
-      - name: Install 💽
+      - name: Get pnpm store directory
+        id: pnpm-cache
+        shell: bash
         run: |
-          yarn install
+          echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
+
+      - uses: actions/cache@v3
+        name: Setup pnpm cache
+        with:
+          path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
+      - name: Install dependencies
+        run: pnpm install
 
       - name: Build Quartz
         run: |
-          yarn build
+          pbpm build
 
       - name: Build StoryBook🤖
         run: |
-          NODE_OPTIONS=--max_old_space_size=4096 yarn run predeploy
+          NODE_OPTIONS=--max_old_space_size=4096 pnpm run predeploy
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4.4.2

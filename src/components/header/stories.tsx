@@ -9,7 +9,7 @@ import { User } from '../user';
 import { GetIcon, IconName } from '../icon';
 import { Default as NavigationStory } from '../navigation/stories';
 
-export default {
+const meta: Meta<typeof Header> = {
   title: 'Header',
   component: Header,
   argTypes: {
@@ -30,7 +30,8 @@ export default {
       description: 'Callback function for the right menu button',
     },
   },
-} as Meta<typeof Header>;
+};
+export default meta;
 
 export const Default: StoryObj<typeof Header> = {
   args: {

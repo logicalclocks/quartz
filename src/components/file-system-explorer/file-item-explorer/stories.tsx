@@ -4,7 +4,7 @@ import FileItemExplorer, {
   Props as QuartzFileExplorerProps,
 } from './FileItemExplorer';
 
-export default {
+const meta: Meta = {
   title: 'FileSystemExplorer/File',
   component: FileItemExplorer,
   args: {
@@ -13,10 +13,9 @@ export default {
     mode: 'oneFile',
     selected: false,
   },
-} as Meta;
+};
+export default meta;
 
-const Template: Story<QuartzFileExplorerProps> = (props) => (
+export const File: Story<QuartzFileExplorerProps> = (props) => (
   <FileItemExplorer {...props} />
 );
-
-export const File = Template.bind({});

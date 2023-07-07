@@ -9,7 +9,7 @@ import theme from '../../theme/theme';
 import Labeling from '../typography/labeling';
 import Input from '../input';
 
-export default {
+const meta: Meta = {
   title: 'GetIcon',
   component: GetIcon,
   argTypes: {
@@ -63,7 +63,8 @@ export default {
       },
     },
   },
-} as Meta;
+};
+export default meta;
 
 const allIcons = Object.values(IconName);
 

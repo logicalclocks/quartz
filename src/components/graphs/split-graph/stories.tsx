@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/react';
 import { Box, Flex } from 'rebass';
 import SplitGraph, { defaultGraphColors } from './index';
 
-export default {
+const meta: Meta<typeof SplitGraph> = {
   title: 'SplitGraph',
   component: SplitGraph,
   args: {
@@ -49,7 +49,8 @@ export default {
         ),
     })),
   },
-} as Meta<typeof SplitGraph>;
+};
+export default meta;
 
 export const Default: StoryObj<typeof SplitGraph> = {
   render: (props) => (

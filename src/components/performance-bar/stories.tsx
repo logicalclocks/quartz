@@ -1,10 +1,11 @@
 import { StoryObj, Meta } from '@storybook/react';
 import PerformanceBar from '.';
 
-export default {
+const meta: Meta = {
   title: 'PerformanceBar',
   component: PerformanceBar,
-} as Meta;
+};
+export default meta;
 
 type Story = StoryObj<typeof PerformanceBar>;
 export const Default: Story = {

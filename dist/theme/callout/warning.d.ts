@@ -1,3 +1,3 @@
-import { SystemStyleObject } from '@styled-system/css';
-declare const _default: SystemStyleObject;
+import { SxStyleProp } from 'rebass';
+declare const _default: SxStyleProp;
 export default _default;

@@ -2,7 +2,7 @@ import { StoryObj, Meta } from '@storybook/react';
 
 import FileExplorerFolder from '.';
 
-export default {
+const meta: Meta = {
   title: 'FileSystemExplorer/Folder',
   component: FileExplorerFolder,
   args: {
@@ -22,6 +22,7 @@ export default {
     itemInfo: { attributes: { path: 'item info' } },
   },
 } as Meta;
+export default meta;
 
 export const Default: StoryObj<typeof FileExplorerFolder> = {
   args: {

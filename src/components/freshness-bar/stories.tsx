@@ -10,7 +10,7 @@ const halfAYearAgo = addMonths(new Date(), -6);
 const threeMonthsAgo = addMonths(new Date(), -3);
 const almostAYearAgo = addMonths(new Date(), -11);
 
-export default {
+const meta: Meta = {
   title: 'FreshnessBar',
   component: FreshnessBar,
   argTypes: {
@@ -20,7 +20,8 @@ export default {
       },
     },
   },
-} as Meta;
+};
+export default meta;
 
 export const Default: StoryObj<typeof FreshnessBar> = {
   args: {

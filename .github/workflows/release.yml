@@ -13,13 +13,35 @@ jobs:
         with:
           fetch-depth: 0
           persist-credentials: false
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
+
+      ## install node and dependancies
+      - uses: actions/setup-node@v3
+        name: Setup Node.js
         with:
           node-version: '18.x'
-          cache: 'yarn'
+      - uses: pnpm/action-setup@v2
+        name: Install pnpm
+        id: pnpm-install
+        with:
+          version: 8.6.6
+          run_install: false
+
+      - name: Get pnpm store directory
+        id: pnpm-cache
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
+
+      - uses: actions/cache@v3
+        name: Setup pnpm cache
+        with:
+          path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
       - name: Install dependencies
-        run: yarn install
+        run: pnpm install
 
       - name: Use variables
         run: echo "$CHROMATIC_PROJECT_TOKEN"
@@ -30,4 +52,4 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.EHSAN_GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: yarn semantic-release
+        run: pnpm semantic-release

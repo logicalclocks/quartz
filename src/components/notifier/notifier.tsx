@@ -2,10 +2,10 @@ import {
   AlertStatus,
   CreateToastFnReturn,
   ToastId,
+  ToastPosition,
   useToast,
 } from '@chakra-ui/react';
 import { ReactNode, useCallback, useMemo } from 'react';
-import { standaloneToast } from '../../theme-chakra/ChakraThemeProvider';
 import { Notification } from './Notification';
 
 export interface INotification {
@@ -23,7 +23,7 @@ export interface INotification {
 
 const buildNotifier =
   (toast: CreateToastFnReturn, status: AlertStatus) =>
-  (notification: INotification) => {
+  (notification: INotification): React.ReactNode => {
     const duration = notification.duration ?? 5000;
     const render = ({ onClose, id }: { onClose(): void; id: ToastId }) => {
       const duration = notification.duration ?? 5000;
@@ -70,7 +70,14 @@ type Notifier = ReturnType<typeof buildNotifier>;
 const createMethods = (
   toast: CreateToastFnReturn,
   notifyWithStatus: (status: AlertStatus) => Notifier,
-) => ({
+): {
+  success: Notifier;
+  error: Notifier;
+  info: Notifier;
+  warning: Notifier;
+  closeAll: (options?: { positions?: ToastPosition[] }) => void;
+  close: (toastId: number | string) => void;
+} => ({
   success: notifyWithStatus('success'),
   error: notifyWithStatus('error'),
   info: notifyWithStatus('info'),
@@ -93,7 +100,7 @@ export const useNotifier = () => {
   );
 };
 
-export const createNotifier = () => {
+export const createNotifier = (standaloneToast: CreateToastFnReturn) => {
   const notifyWithStatus = (status: AlertStatus) =>
     buildNotifier(standaloneToast, status);
 

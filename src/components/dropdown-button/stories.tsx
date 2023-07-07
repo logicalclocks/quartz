@@ -6,7 +6,7 @@ import { DropdownButton } from './DropdownButton';
 import { IconName } from '../icon';
 import { IconButton } from '../icon-button';
 
-export default {
+const meta: Meta<typeof DropdownButton> = {
   title: 'DropdownButton',
   component: DropdownButton,
   args: {
@@ -36,7 +36,8 @@ export default {
       },
     ],
   },
-} as Meta<typeof DropdownButton>;
+};
+export default meta;
 
 export const Default: StoryObj<typeof DropdownButton> = {
   render: (props) => (

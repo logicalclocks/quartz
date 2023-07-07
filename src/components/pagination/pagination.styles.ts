@@ -1,4 +1,4 @@
-import { SystemStyleObject } from '@styled-system/css';
+import { SxStyleProp } from 'rebass';
 
 export default {
   userSelect: 'none',
@@ -45,4 +45,4 @@ export default {
   '& > div > button > svg': {
     fontSize: '14px',
   },
-} as SystemStyleObject;
+} as SxStyleProp;

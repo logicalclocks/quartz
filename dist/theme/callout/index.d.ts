@@ -1,7 +1,7 @@
 declare const variants: {
-    valid: import("@styled-system/css").SystemStyleObject;
-    error: import("@styled-system/css").SystemStyleObject;
-    warning: import("@styled-system/css").SystemStyleObject;
-    neutral: import("@styled-system/css").SystemStyleObject;
+    valid: import("rebass").SxStyleProp;
+    error: import("rebass").SxStyleProp;
+    warning: import("rebass").SxStyleProp;
+    neutral: import("rebass").SxStyleProp;
 };
 export default variants;

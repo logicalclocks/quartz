@@ -6,10 +6,11 @@ import Value from '../typography/value';
 import Divider from '../divider';
 import Labeling from '../typography/labeling';
 
-export default {
+const meta: Meta = {
   title: 'RangeSlider',
   component: RangeSlider,
-} as Meta;
+};
+export default meta;
 
 type Story = StoryObj<typeof RangeSlider>;
 
