@@ -34,7 +34,7 @@
     "test:lint": "eslint --ext .ts,.tsx ./src",
     "test:prettier": "prettier --check ./src",
     "prettier": "prettier --write ./src",
-    "predeploy": "yarn build-storybook",
+    "predeploy": "pnpm build-storybook",
     "deploy": "gh-pages -d storybook-static",
     "build-storybook": "storybook build",
     "storybook": "storybook dev -p 6006",
@@ -144,16 +144,13 @@
     "access": "public",
     "registry": "https://npm.pkg.github.com"
   },
-  "resolutions": {
-    "npm/chalk": "^4.1.2"
-  },
-  "packageManager": "yarn@3.3.0",
+  "packageManager": "pnpm@8.6.6",
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
   },
   "volta": {
-    "node": "16.18.1"
+    "node": "18.16.1"
   }
 }

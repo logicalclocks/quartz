@@ -8,27 +8,51 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      ## install node and dependancies
       - uses: actions/setup-node@v3
+        name: Setup Node.js
         with:
           node-version: '18.x'
+
+      - uses: pnpm/action-setup@v2
+        name: Install pnpm
+        id: pnpm-install
+        with:
+          version: 8.6.6
+          run_install: false
+
+      - name: Get pnpm store directory
+        id: pnpm-cache
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
+
+      - uses: actions/cache@v3
+        name: Setup pnpm cache
+        with:
+          path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
       - name: Install dependencies
-        run: yarn
+        run: pnpm install
 
       - name: Run linter
-        run: yarn run test:lint
+        run: pnpm run test:lint
 
       - name: Run formatter
-        run: yarn run test:prettier
+        run: pnpm run test:prettier
 
       ### TODO: to fix ci running storybook tests ###
       # - name: Serve Storybook and run tests
-      #   run: yarn run serve:storybook:test
+      #   run: pnpm run serve:storybook:test
 
       - name: Install chromium
-        run: yarn playwright install chromium
+        run: pnpm playwright install chromium
 
       - name: Playwright component test
-        run: yarn test-ct
+        run: pnpm test-ct
       - uses: actions/upload-artifact@v3
         if: always()
         with:
