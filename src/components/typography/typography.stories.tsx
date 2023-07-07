@@ -9,9 +9,10 @@ import Microlabeling from './microlabeling';
 import { HoverableText, Text } from '../../index';
 import InputValidation from './input-validation/input-validation';
 
-export default {
+const meta: Meta = {
   title: 'Typography',
-} as Meta;
+};
+export default meta;
 
 const Template = () => (
   <Box

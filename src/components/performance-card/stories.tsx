@@ -3,10 +3,11 @@ import Labeling from '../typography/labeling';
 
 import PerformanceCard from '.';
 
-export default {
+const meta: Meta = {
   title: 'PerformanceCard',
   component: PerformanceCard,
-} as Meta;
+};
+export default meta;
 
 type Story = StoryObj<typeof PerformanceCard>;
 export const Default: Story = {

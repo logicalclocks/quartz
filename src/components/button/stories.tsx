@@ -4,7 +4,7 @@ import { StoryObj, Meta } from '@storybook/react';
 import { Button } from './Button';
 import { IconName } from '../icon';
 
-export default {
+const meta: Meta = {
   title: 'Buttons',
   component: Button,
   args: {
@@ -29,7 +29,8 @@ export default {
       },
     },
   },
-} as Meta;
+};
+export default meta;
 
 export const Default: StoryObj<typeof Button> = {
   render: (props) => <Button {...props} />,

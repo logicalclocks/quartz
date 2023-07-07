@@ -3,14 +3,15 @@ import { Flex } from 'rebass';
 import Labeling from '../typography/labeling';
 import { User } from './index';
 
-export default {
+const meta: Meta<typeof User> = {
   title: 'User',
   component: User,
   args: {
     firstName: 'Martin',
     lastName: 'Heidegger',
   },
-} as Meta<typeof User>;
+};
+export default meta;
 
 type Story = StoryObj<typeof User>;
 export const Default: Story = {

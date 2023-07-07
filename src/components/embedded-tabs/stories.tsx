@@ -5,13 +5,9 @@ import Labeling from '../typography/labeling';
 import EmbeddedTabs from '.';
 import { Button } from '../button';
 
-const meta = {
+const meta: Meta<typeof EmbeddedTabs> = {
   title: 'EmbeddedTabs',
   component: EmbeddedTabs,
-  subcomponents: {
-    Controlled: EmbeddedTabs.Controlled,
-  },
-
   argTypes: {
     tabs: {
       required: true,
@@ -27,7 +23,7 @@ const meta = {
       required: false,
     },
   },
-} as Meta<typeof EmbeddedTabs>;
+};
 export default meta;
 
 const tabs = [

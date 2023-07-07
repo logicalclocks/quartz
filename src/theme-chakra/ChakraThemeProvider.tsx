@@ -17,5 +17,4 @@ export const ChakraThemeProvider = ({ children }: PropsWithChildren) => (
     <ToastContainer />
   </>
 );
-
-export const standaloneToast = toast;
+export const standaloneToast: any = toast;

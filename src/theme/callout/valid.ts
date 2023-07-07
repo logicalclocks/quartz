@@ -1,4 +1,4 @@
-import { SystemStyleObject } from '@styled-system/css';
+import { SxStyleProp } from 'rebass';
 
 export default {
   color: 'labels.green',
@@ -18,4 +18,4 @@ export default {
       },
     },
   },
-} as SystemStyleObject;
+} as SxStyleProp;

@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/react';
 import { Box } from 'rebass';
 import HT from '.';
 
-export default {
+const meta: Meta = {
   title: 'HolyTable',
   component: HT,
   args: {
@@ -12,7 +12,8 @@ export default {
     hoverable: true,
     rowHeight: '50px',
   },
-} as Meta;
+};
+export default meta;
 
 type Story = StoryObj<typeof HT>;
 

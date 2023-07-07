@@ -1,8 +1,8 @@
-import { SystemStyleObject } from '@styled-system/css';
+import { SxStyleProp } from 'rebass';
 
 export const withoutBorder = { borderBottomColor: 'transparent' };
 
-export default (isActive: boolean, disablde?: boolean): SystemStyleObject => ({
+export default (isActive: boolean, disablde?: boolean): SxStyleProp => ({
   height: '35px',
 
   bg: isActive ? 'grayShade3' : 'inherit',

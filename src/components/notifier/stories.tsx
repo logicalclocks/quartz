@@ -8,6 +8,7 @@ import { Button } from '../button';
 import { Flex } from '../flex';
 import Value from '../typography/value';
 import { INotification, createNotifier, useNotifier } from './notifier';
+import { standaloneToast } from '../../theme-chakra/ChakraThemeProvider';
 
 const meta: Meta<INotification> = {
   title: 'Notifier',
@@ -216,7 +217,7 @@ export const Standalone: Story = {
     },
   },
   render: ({ title, content, duration }) => {
-    const notifier = createNotifier();
+    const notifier = createNotifier(standaloneToast);
 
     const showSuccess = () => {
       notifier.success({

@@ -2,7 +2,7 @@ import { StoryObj, Meta } from '@storybook/react';
 
 import FooterFileExplorer from './index';
 
-export default {
+const meta: Meta = {
   title: 'FileSystemExplorer/Footer',
   component: FooterFileExplorer,
   args: {
@@ -17,7 +17,8 @@ export default {
     fileListValue: [],
     rootDir: '',
   },
-} as Meta;
+};
+export default meta;
 
 export const Default: StoryObj<typeof FooterFileExplorer> = {
   render: (props) => <FooterFileExplorer {...props} />,

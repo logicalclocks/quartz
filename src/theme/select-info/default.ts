@@ -1,5 +1,5 @@
-import { SystemStyleObject } from '@styled-system/css';
+import { SxStyleProp } from 'rebass';
 
 export default {
   color: 'darkGray',
-} as SystemStyleObject;
+} as SxStyleProp;
