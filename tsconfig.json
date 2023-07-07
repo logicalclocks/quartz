@@ -27,7 +27,7 @@
   "include": [
     "src",
     "./vite.config.ts",
-    "@testing-library__jest-dom"
+    "@types/testing-library__jest-dom"
   ],
   "exclude": ["node_modules", "dist"]
 }
