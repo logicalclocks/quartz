@@ -1,3 +1,21 @@
+# [3.0.0](https://github.com/logicalclocks/quartz/compare/v2.13.3...v3.0.0) (2023-07-07)
+
+
+### break
+
+* **pnpm-migration:** ([#463](https://github.com/logicalclocks/quartz/issues/463)) ([6d4dd6c](https://github.com/logicalclocks/quartz/commit/6d4dd6c8996e52dbd3d004b7194e4a3f0e1d911c))
+
+
+### BREAKING CHANGES
+
+* **pnpm-migration:** pass standalnoe toast to createNotifier
+
+* Migrate from yarn to pnpm
+
+* build
+
+* Fix install
+
 ## [2.13.3](https://github.com/logicalclocks/quartz/compare/v2.13.2...v2.13.3) (2023-07-06)
 
 
