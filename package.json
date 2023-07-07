@@ -29,7 +29,6 @@
   "scripts": {
     "build": "vite build",
     "start": "vite build --watch",
-    "prepare": "run-s build",
     "gen:chakra-theme-typings": "chakra-cli tokens src/theme-chakra/theme/index.ts",
     "test:lint": "eslint --ext .ts,.tsx ./src",
     "test:prettier": "prettier --check ./src",

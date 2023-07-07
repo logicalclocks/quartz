@@ -29,9 +29,6 @@ dependencies:
   '@rebass/forms':
     specifier: ^4.0.6
     version: 4.0.6(react@18.2.0)
-  '@storybook/theming':
-    specifier: ^7.0.26
-    version: 7.0.26(react-dom@18.2.0)(react@18.2.0)
   '@styled-system/css':
     specifier: ^5.1.5
     version: 5.1.5
@@ -127,9 +124,6 @@ devDependencies:
   '@storybook/testing-library':
     specifier: ^0.2.0
     version: 0.2.0
-  '@testing-library/jest-dom':
-    specifier: ^5.16.5
-    version: 5.16.5
   '@types/node':
     specifier: ^16.18.38
     version: 16.18.38
@@ -151,9 +145,6 @@ devDependencies:
   '@types/rebass__forms':
     specifier: ^4.0.6
     version: 4.0.6
-  '@types/testing-library__jest-dom':
-    specifier: ^5.14.7
-    version: 5.14.7
   '@typescript-eslint/eslint-plugin':
     specifier: ^5.61.0
     version: 5.61.0(@typescript-eslint/parser@5.61.0)(eslint@8.44.0)(typescript@5.1.6)
@@ -6505,6 +6496,7 @@ packages:
     resolution: {integrity: sha512-OMVLbgceoeuM8sWOfTX/9a4zCrH78G32hg7x8yXLZnRJ9OLaHJHzUM0Onc4MLudqVUdaKH0c8ejpBXUyIr1rJQ==}
     dependencies:
       '@storybook/global': 5.0.0
+    dev: true
 
   /@storybook/codemod@7.0.26:
     resolution: {integrity: sha512-H9sV59FfGrGzGM+UZQclNglnc4cOkQvvF3EOWlR3BfDhx+STSB9VbCR308ygjUYw2TXZ2s5seCvHtVvA2yhILA==}
@@ -6693,6 +6685,7 @@ packages:
 
   /@storybook/global@5.0.0:
     resolution: {integrity: sha512-FcOqPAXACP0I3oJ/ws6/rrPT9WGhu915Cg8D02a9YxLo0DE9zI+a9A5gRGvmQ09fiWPukqI8ZAEoQEdWUKMQdQ==}
+    dev: true
 
   /@storybook/instrumenter@7.0.26:
     resolution: {integrity: sha512-7Ty0LTslgkm5RyH6CqTAKhWz/cF6wq/sNdMYKwvVZHWNZ2LKMtXD0RWM2caCPruAGOQ9+52H+3s4TZGKaPSSWQ==}
@@ -6951,6 +6944,7 @@ packages:
       memoizerific: 1.11.3
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
+    dev: true
 
   /@storybook/types@7.0.26:
     resolution: {integrity: sha512-5RBi6agtDglNXdffmw4+Fyv2dUdlIdeOdUj0O5+JRYajTxfHdurZd9r/42z4OstN+ORDkLA/svt8Q9JyRpIb6Q==}
@@ -13843,6 +13837,7 @@ packages:
 
   /map-or-similar@1.5.0:
     resolution: {integrity: sha512-0aF7ZmVon1igznGI4VS30yugpduQW3y3GkcgGJOp7d8x8QrizhigUxjI/m2UojsXXto+jLAH3KSz+xOJTiORjg==}
+    dev: true
 
   /markdown-to-jsx@7.2.1(react@18.2.0):
     resolution: {integrity: sha512-9HrdzBAo0+sFz9ZYAGT5fB8ilzTW+q6lPocRxrIesMO+aB40V9MgFfbfMXxlGjf22OpRy+IXlvVaQenicdpgbg==}
@@ -13893,6 +13888,7 @@ packages:
     resolution: {integrity: sha512-/EuHYwAPdLtXwAwSZkh/Gutery6pD2KYd44oQLhAvQp/50mpyduZh8Q7PYHXTCJ+wuXxt7oij2LXyIJOOYFPog==}
     dependencies:
       map-or-similar: 1.5.0
+    dev: true
 
   /memorystream@0.3.1:
     resolution: {integrity: sha512-S3UwM3yj5mtUSEfP41UZmt/0SCoVYUcU1rkXv+BQ5Ig8ndL4sPoJNBUJERafdPb5jjHJGuMgytgKvKIf58XNBw==}
