@@ -1,11 +1,9 @@
+import { Tag, TagCloseButton } from '@chakra-ui/react';
 import { useCallback } from 'react';
-import { Flex, FlexProps } from 'rebass';
+import { Flex, FlexProps, Labeling } from '../../index';
 import { GetIcon, IconName } from '../icon';
 
-import Labeling from '../typography/labeling';
 import { ChipsVariants } from './types';
-import { Tag, TagCloseButton } from '@chakra-ui/react';
-import { disabledTab } from '../embedded-tabs/styles';
 
 export interface ChipProps extends Omit<FlexProps, 'css'> {
   value: string;

@@ -1,7 +1,6 @@
-import { Input } from '@rebass/forms';
 import { forwardRef, useCallback, useEffect, useRef } from 'react';
 
-import { Box, BoxProps, Flex } from '../../index';
+import { Box, BoxProps, Flex, Input } from '../../index';
 import Labeling from '../typography/labeling';
 import Chip from './Chip';
 import * as S from './editableSelect.styles';

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { StoryObj, Meta } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { Box } from 'rebass';
+import { Box } from '../../index';
 
 import EditableSelect from './index';
 

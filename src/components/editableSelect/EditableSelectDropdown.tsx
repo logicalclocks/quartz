@@ -1,6 +1,6 @@
 import { useCallback, useMemo } from 'react';
 
-import { Box } from 'rebass';
+import { Box } from '../../index';
 import ListItem from '../list/item';
 
 import Labeling from '../typography/labeling';

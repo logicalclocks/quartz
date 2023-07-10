@@ -1,4 +1,3 @@
-import { SxStyleProp } from 'rebass';
 import { useTheme } from '../../theme/theme';
 
 export const chipIconStyles = {
@@ -13,7 +12,7 @@ export const chipStyles = {
   cursor: 'default',
 };
 
-export const container: SxStyleProp = {
+export const container = {
   position: 'relative',
   flexWrap: 'wrap',
   borderColor: 'transparent',
