@@ -4,14 +4,12 @@ import { Intents } from '../intents';
 import Label, { LabelProps } from '../label';
 import EditableSelectContainer from './EditableSelectContainer';
 import EditableSelectDropdown from './EditableSelectDropdown';
-import EditableSelectInfo from './EditableSelectInfo';
 import { EditableSelectTypes, ChipsVariants } from './types';
 import DropdownWrapper from '../dropdown-wrapper/DropdownWrapper';
 
 export interface EditableSelectProps
   extends Omit<LabelProps, 'onChange' | 'children'> {
   appendToBody?: boolean;
-  info?: string;
   label?: string;
   width?: string;
   value: string[];
@@ -31,7 +29,6 @@ export interface EditableSelectProps
 }
 
 const EditableSelect = ({
-  info,
   label = '',
   value,
   options,
@@ -155,7 +152,6 @@ const EditableSelect = ({
           </DropdownWrapper>
         )}
       </EditableSelectContainer>
-      {info && <EditableSelectInfo intent={intent}>{info}</EditableSelectInfo>}
     </Label>
   );
 };

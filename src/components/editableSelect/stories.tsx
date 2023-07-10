@@ -9,10 +9,6 @@ const meta: Meta<typeof EditableSelect> = {
   title: 'EditableSelect',
   component: EditableSelect,
   argTypes: {
-    info: {
-      description: 'String',
-      control: { type: 'text' },
-    },
     value: {
       description: 'Array of strings',
       control: { type: 'array' },
@@ -92,7 +88,6 @@ const options = [
 
 export const Default: StoryObj<typeof EditableSelect> = {
   args: {
-    info: '',
     label: 'Label',
     placeholder: 'placeholder',
     noDataMessage: 'no options',
