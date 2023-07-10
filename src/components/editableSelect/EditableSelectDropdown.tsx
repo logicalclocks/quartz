@@ -56,10 +56,14 @@ const EditableSelectDropdown = ({
     return null;
   }, [isMulti, value, search, fullOptions.length]);
 
-  const { activeIndex } = useArrowsSelect(fullOptions, (val: string) => {
-    handleClick(val)();
-    onClose();
-  });
+  const { activeIndex } = useArrowsSelect(
+    fullOptions,
+    (val: string) => {
+      handleClick(val)();
+      onClose();
+    },
+    0, // start at first result
+  );
 
   return (
     <List
