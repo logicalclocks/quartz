@@ -1,5 +1,5 @@
 import { forwardRef, useCallback, useRef, useEffect } from 'react';
-import { Box, BoxProps, Flex } from 'rebass';
+import { Box, BoxProps } from 'rebass';
 import { Input } from '@rebass/forms';
 
 import { getContainerStyles, inputStyles } from './editableSelect.styles';
@@ -7,6 +7,7 @@ import Chip from './Chip';
 import { Intents } from '../intents';
 import Labeling from '../typography/labeling';
 import { EditableSelectTypes, ChipsVariants } from './types';
+import { Flex } from '../flex';
 
 export interface EditableSelectContainerProps
   extends Omit<BoxProps, 'css' | 'onChange'> {
@@ -16,7 +17,7 @@ export interface EditableSelectContainerProps
   intent: Intents;
   options: string[];
   disabled: boolean;
-  isMulti: boolean;
+  isMulti?: boolean;
   placeholder: string;
   inlineLegend?: string;
   noDataMessage?: string;
@@ -38,7 +39,6 @@ const EditableSelectContainer = forwardRef(
       search,
       variant,
       options,
-      isMulti,
       children,
       disabled,
       onChange,
@@ -46,6 +46,7 @@ const EditableSelectContainer = forwardRef(
       placeholder,
       inlineLegend,
       noDataMessage,
+      isMulti = false,
       inputWidth = 'inherit',
       ...props
     }: EditableSelectContainerProps,
@@ -95,18 +96,20 @@ const EditableSelectContainer = forwardRef(
           flexGrow={1}
           mt="-5px"
         >
-          {isMulti &&
-            value.map((selection: string) => (
-              <Chip
-                mt="5px"
-                boxed={isMulti}
-                key={selection}
-                value={selection}
-                disabled={disabled}
-                variant={variant}
-                onDelete={handleDeleteChip}
-              />
-            ))}
+          {isMulti && (
+            <Flex gap="5px">
+              {value.map((selection: string) => (
+                <Chip
+                  mt="5px"
+                  key={selection}
+                  value={selection}
+                  disabled={disabled}
+                  variant={variant}
+                  onDelete={handleDeleteChip}
+                />
+              ))}
+            </Flex>
+          )}
           {type !== 'base' && (
             <Input
               sx={inputStyles()}
