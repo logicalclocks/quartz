@@ -1,6 +1,5 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import useDropdown from '../../utils/useDropdown';
-import { Intents } from '../intents';
 import Label, { LabelProps } from '../label';
 import EditableSelectContainer from './EditableSelectContainer';
 import EditableSelectDropdown from './EditableSelectDropdown';
@@ -13,7 +12,6 @@ export interface EditableSelectProps
   label?: string;
   width?: string;
   value: string[];
-  intent?: Intents;
   options: string[];
   isMulti?: boolean;
   inputWidth?: string;
@@ -42,7 +40,6 @@ const EditableSelect = ({
   isMulti = true,
   type = 'editable',
   disabled = false,
-  intent = 'default',
   variant = 'primary',
   maxListHeight = '150px',
   noDataMessage = 'no options',
@@ -118,7 +115,6 @@ const EditableSelect = ({
         label={label}
         value={value}
         search={search}
-        intent={intent}
         isMulti={isMulti}
         options={options}
         disabled={disabled}

@@ -1,20 +1,17 @@
-import { forwardRef, useCallback, useRef, useEffect } from 'react';
-import { Box, BoxProps } from 'rebass';
 import { Input } from '@rebass/forms';
+import { forwardRef, useCallback, useEffect, useRef } from 'react';
 
-import { getContainerStyles, inputStyles } from './editableSelect.styles';
-import Chip from './Chip';
-import { Intents } from '../intents';
+import { Box, BoxProps, Flex } from '../../index';
 import Labeling from '../typography/labeling';
-import { EditableSelectTypes, ChipsVariants } from './types';
-import { Flex } from '../flex';
+import Chip from './Chip';
+import * as S from './editableSelect.styles';
+import { ChipsVariants, EditableSelectTypes } from './types';
 
 export interface EditableSelectContainerProps
   extends Omit<BoxProps, 'css' | 'onChange'> {
   label: string;
   search: string;
   value: string[];
-  intent: Intents;
   options: string[];
   disabled: boolean;
   isMulti?: boolean;
@@ -35,7 +32,6 @@ const EditableSelectContainer = forwardRef(
       type,
       value,
       label,
-      intent,
       search,
       variant,
       options,
@@ -74,7 +70,7 @@ const EditableSelectContainer = forwardRef(
         {...props}
         width="auto"
         flex="inherit"
-        sx={getContainerStyles(intent)}
+        sx={S.container}
         tx="variants.editableSelect.container"
         variant={variant}
         ref={ref}
@@ -111,7 +107,7 @@ const EditableSelectContainer = forwardRef(
             </Flex>
           )}
           <Input
-            sx={inputStyles()}
+            sx={S.inputStyles()}
             width={inputWidth}
             mt="5px"
             ml={isMulti ? '0px' : '3px'}

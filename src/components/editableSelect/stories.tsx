@@ -60,10 +60,6 @@ const meta: Meta<typeof EditableSelect> = {
       control: { type: 'select', options: ['primary', 'white'] },
       defaultValue: { description: 'primary' },
     },
-    intent: {
-      control: { type: 'select', options: ['default', 'error'] },
-      defaultValue: { description: 'default' },
-    },
     labelAction: {
       description: 'React Component',
     },
@@ -94,7 +90,6 @@ export const Default: StoryObj<typeof EditableSelect> = {
     disabled: false,
     type: 'editable',
     variant: 'primary',
-    intent: 'default',
     isMulti: true,
     appendToBody: false,
     inlineLegend: '',

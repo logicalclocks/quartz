@@ -1,7 +1,5 @@
 import { SxStyleProp } from 'rebass';
 import { useTheme } from '../../theme/theme';
-import { ITheme } from '../../theme/types';
-import { Intents } from '../intents';
 
 export const chipIconStyles = {
   marginLeft: '4px',
@@ -15,16 +13,10 @@ export const chipStyles = {
   cursor: 'default',
 };
 
-const getIntentColor =
-  (intent: Intents) =>
-  ({ inputIntents }: ITheme) => {
-    return inputIntents[intent] ?? 'transparent';
-  };
-
-export const getContainerStyles = (intent: Intents): SxStyleProp => ({
+export const container: SxStyleProp = {
   position: 'relative',
   flexWrap: 'wrap',
-  borderColor: getIntentColor(intent),
+  borderColor: 'transparent',
   outline: 'none',
   minHeight: '32px',
   display: 'flex',
@@ -37,7 +29,7 @@ export const getContainerStyles = (intent: Intents): SxStyleProp => ({
   pt: '4px',
   pb: '4px',
   transition: 'all 0.25s ease',
-});
+};
 
 export const inputStyles = (): SxStyleProp => {
   const theme = useTheme();
