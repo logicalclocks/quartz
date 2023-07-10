@@ -1,14 +1,14 @@
-import { useCallback, useState } from 'react';
-import { Box, Flex, FlexProps } from 'rebass';
+import { useCallback } from 'react';
+import { Flex, FlexProps } from 'rebass';
 import { GetIcon, IconName } from '../icon';
 
 import Labeling from '../typography/labeling';
-import { chipIconStyles, chipStyles } from './editableSelect.styles';
 import { ChipsVariants } from './types';
+import { Tag, TagCloseButton } from '@chakra-ui/react';
+import { disabledTab } from '../embedded-tabs/styles';
 
 export interface ChipProps extends Omit<FlexProps, 'css'> {
   value: string;
-  boxed: boolean;
   variant?: ChipsVariants;
   disabled?: boolean;
   deletable?: boolean;
@@ -19,56 +19,74 @@ const Chip = ({
   value,
   onDelete,
   disabled,
-  boxed = true,
-  deletable = true,
   variant = 'primary',
   ...props
 }: ChipProps) => {
-  const [hover, setHover] = useState(false);
-
-  const handleHover = useCallback(
-    (val: boolean) => !disabled && deletable && setHover(val),
-    [disabled, deletable],
-  );
-
   const handleDelete = useCallback(
-    (e: React.MouseEvent<HTMLDivElement>) => {
+    (e: React.MouseEvent) => {
       e.stopPropagation();
       onDelete(value);
     },
     [onDelete, value],
   );
+  // todo: handle disabled
+  return (
+    <Tag borderRadius="1px" size="sm" variant="outline">
+      <Labeling as="span">{value}</Labeling>
 
-  const showCross = deletable && boxed && !disabled && hover;
+      <TagCloseButton onClick={handleDelete} />
+    </Tag>
+  );
 
   return (
     <Flex
       alignItems="center"
       justifyContent="center"
-      px={boxed ? '5px' : '3px'}
       py="3px"
       mr="5px"
       sx={chipStyles}
       as="span"
       tx="variants.editableSelect.chip"
-      variant={boxed ? variant : ''}
-      onMouseEnter={() => handleHover(true)}
-      onMouseLeave={() => handleHover(false)}
+      variant={variant}
       {...props}
     >
-      {!showCross && boxed && <Box width="7px" />}
       <Labeling as="span">{value}</Labeling>
-      {showCross && (
-        <GetIcon
-          icon={IconName.cross}
-          size="xs"
-          onClick={handleDelete}
-          style={chipIconStyles}
-        />
-      )}
-      {!showCross && boxed && <Box width="7px" />}
+      <GetIcon
+        icon={IconName.cross}
+        size="xs"
+        onClick={handleDelete}
+        style={crossStyle}
+        className="shit"
+      />
     </Flex>
   );
 };
 
 export default Chip;
+
+export const chipStyles = {
+  borderRadius: '1px',
+  whiteSpace: 'nowrap',
+  cursor: 'default',
+  pl: '8px',
+  pr: '8px',
+
+  '.shit': {
+    display: 'none',
+  },
+
+  '&:hover': {
+    pr: '0px',
+  },
+
+  '&:hover .shit': {
+    display: 'block',
+  },
+};
+
+export const crossStyle = {
+  // display: 'none',
+  marginLeft: '4px',
+  marginTop: '2px',
+  cursor: 'pointer',
+};
