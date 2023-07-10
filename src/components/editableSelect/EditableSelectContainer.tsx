@@ -110,27 +110,25 @@ const EditableSelectContainer = forwardRef(
               ))}
             </Flex>
           )}
-          {type !== 'base' && (
-            <Input
-              sx={inputStyles()}
-              width={inputWidth}
-              mt="5px"
-              ml={isMulti ? '0px' : '3px'}
-              minWidth="50px"
-              value={search}
-              disabled={disabled}
-              placeholder={placeholder}
-              onChange={({ target }) => {
-                counterRef.current = 1;
-                setSearch(target.value);
-              }}
-              onKeyUp={(e: React.KeyboardEvent<HTMLInputElement>) => {
-                if (e.key === 'Backspace') {
-                  handleDelete();
-                }
-              }}
-            />
-          )}
+          <Input
+            sx={inputStyles()}
+            width={inputWidth}
+            mt="5px"
+            ml={isMulti ? '0px' : '3px'}
+            minWidth="50px"
+            value={search}
+            disabled={disabled}
+            placeholder={placeholder}
+            onChange={({ target }) => {
+              counterRef.current = 1;
+              setSearch(target.value);
+            }}
+            onKeyUp={(e: React.KeyboardEvent<HTMLInputElement>) => {
+              if (e.key === 'Backspace') {
+                handleDelete();
+              }
+            }}
+          />
         </Flex>
         <Flex>{children}</Flex>
       </Box>
