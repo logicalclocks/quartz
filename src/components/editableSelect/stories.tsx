@@ -20,9 +20,6 @@ const meta: Meta<typeof EditableSelect> = {
     label: {
       control: { type: 'text' },
     },
-    maxListHeight: {
-      control: { type: 'text' },
-    },
     width: {
       description: 'string',
       control: { type: 'array' },
@@ -56,10 +53,6 @@ const meta: Meta<typeof EditableSelect> = {
       control: { type: 'select', options: ['base', 'editable', 'searchable'] },
       defaultValue: { description: 'editable' },
     },
-    variant: {
-      control: { type: 'select', options: ['primary', 'white'] },
-      defaultValue: { description: 'primary' },
-    },
     labelAction: {
       description: 'React Component',
     },
@@ -70,26 +63,16 @@ const meta: Meta<typeof EditableSelect> = {
 };
 export default meta;
 
-const options = [
-  'integer',
-  'string',
-  'boolean',
-  'float',
-  'bigInt',
-  'integer1',
-  'string1',
-  'boolean1',
-  'float1',
-];
+const options = ['integer', 'string', 'boolean', 'float', 'bigInt'];
 
 export const Default: StoryObj<typeof EditableSelect> = {
   args: {
     label: 'Label',
+    labelAction: '(optional)',
     placeholder: 'placeholder',
     noDataMessage: 'no options',
     disabled: false,
     type: 'editable',
-    variant: 'primary',
     isMulti: true,
     appendToBody: false,
     inlineLegend: '',
