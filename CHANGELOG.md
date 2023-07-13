@@ -1,3 +1,10 @@
+## [3.2.2](https://github.com/logicalclocks/quartz/compare/v3.2.1...v3.2.2) (2023-07-13)
+
+
+### Bug Fixes
+
+* **dropdownbutton2:** sx could be a function accepting isOpen ([#472](https://github.com/logicalclocks/quartz/issues/472)) ([c3e1c7e](https://github.com/logicalclocks/quartz/commit/c3e1c7e88b25f594f45df8eca2392381faed2fe8))
+
 ## [3.2.1](https://github.com/logicalclocks/quartz/compare/v3.2.0...v3.2.1) (2023-07-13)
 
 
