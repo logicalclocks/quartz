@@ -2,7 +2,7 @@ import { IconName } from '../icon';
 import { TooltipProps } from '../tooltip';
 
 export interface DropdownItem<Metadata = {}> {
-  value: string | number;
+  value: React.ReactNode;
   icon?: IconName;
   id?: string | number;
   hasDivider?: boolean;

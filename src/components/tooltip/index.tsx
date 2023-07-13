@@ -3,6 +3,7 @@ import {
   PlacementWithLogical,
   TooltipProps as ChakraTooltipProps,
   Box,
+  BoxProps,
 } from '@chakra-ui/react';
 
 export interface TooltipProps extends Omit<ChakraTooltipProps, 'position'> {
@@ -12,6 +13,7 @@ export interface TooltipProps extends Omit<ChakraTooltipProps, 'position'> {
   visibleDefault?: boolean;
   position?: PlacementWithLogical;
   delayed?: boolean;
+  containerProps?: BoxProps;
 }
 
 const delayTime = 500;
@@ -25,6 +27,7 @@ const Tooltip = ({
   position = 'bottom',
   delayed = true,
   hasArrow = true,
+  containerProps,
   ...props
 }: TooltipProps) => (
   <ChakraTooltip
@@ -45,7 +48,7 @@ const Tooltip = ({
     hasArrow={hasArrow}
     {...props}
   >
-    <Box>{children}</Box>
+    <Box {...containerProps}>{children}</Box>
   </ChakraTooltip>
 );
 
