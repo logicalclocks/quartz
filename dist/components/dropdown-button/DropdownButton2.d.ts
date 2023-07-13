@@ -4,7 +4,7 @@ import { DropdownProps } from '../dropdown';
 type RenderDropdownItems = ({ onClose, }: {
     onClose: () => void;
 }) => DropdownProps['items'];
-export interface Props extends MenuProps {
+export interface Props extends Omit<MenuProps, 'children'> {
     /** Dropwdown items either could be an Array, in this case dropdown will be closed after any item clicked
      *  in order to handle closing of dropdown manually you have to pass a callback function which accepts the `onClose` handler function
      */
