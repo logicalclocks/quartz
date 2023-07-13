@@ -13,7 +13,7 @@ export interface Props extends Omit<MenuProps, 'children'> {
     renderButton?: (p: {
         isOpen?: boolean;
     }) => React.ReactNode;
-    sx?: SystemStyleObject;
+    sx?: SystemStyleObject | ((isOpen: boolean) => SystemStyleObject);
     menuListProps?: MenuListProps;
 }
 export declare const DropdownButton2: ({ sx, placement, items, renderButton, menuListProps, ...restProps }: Props) => import("react/jsx-runtime").JSX.Element;

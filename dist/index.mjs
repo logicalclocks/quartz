@@ -49768,7 +49768,10 @@ const Qce = ({
   return /* @__PURE__ */ d.jsx(dk, { placement: e, closeOnSelect: !1, ...O, children: ({ isOpen: a, onClose: s }) => /* @__PURE__ */ d.jsxs(
     Bc,
     {
-      sx: us(g$.container, t ?? {}),
+      sx: us(
+        g$.container,
+        typeof t == "function" ? t(a) : t
+      ),
       children: [
         /* @__PURE__ */ d.jsx(fk, { children: i ? i({ isOpen: a }) : /* @__PURE__ */ d.jsx(hs, { icon: ke.more }) }),
         /* @__PURE__ */ d.jsx(hk, { ...r, children: o(s).map((l, c) => (
