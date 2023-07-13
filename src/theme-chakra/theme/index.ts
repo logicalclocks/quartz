@@ -8,6 +8,7 @@ import { modalTheme } from './components/modal';
 import { sliderTheme } from './components/slider';
 import { inputTheme } from './components/input';
 import { semanticTokens } from './semanticTokens';
+import { tagTheme } from './components/tag';
 
 const createColors = (c: any, d: any): any =>
   R.mapObjIndexed((color: any, key: any) => {
@@ -46,6 +47,7 @@ export const chakraTheme = extendTheme({
     Modal: modalTheme,
     Slider: sliderTheme,
     Input: inputTheme,
+    Tag: tagTheme,
   },
   semanticTokens,
 });
