@@ -1,3 +1,10 @@
+## [3.2.1](https://github.com/logicalclocks/quartz/compare/v3.2.0...v3.2.1) (2023-07-13)
+
+
+### Bug Fixes
+
+* **dropdownbutton2:** fix type ([#471](https://github.com/logicalclocks/quartz/issues/471)) ([f3fe826](https://github.com/logicalclocks/quartz/commit/f3fe826936361c19589db1999d6ac78d80373739))
+
 # [3.2.0](https://github.com/logicalclocks/quartz/compare/v3.1.0...v3.2.0) (2023-07-13)
 
 
