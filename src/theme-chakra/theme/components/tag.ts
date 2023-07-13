@@ -8,8 +8,18 @@ const baseStyle = definePartsStyle({
   container: {
     bg: 'background',
     borderRadius: '1px',
-    px: '8px',
+    px: '4px',
+    fontSize: '14px', // up from 12
+    fontWeight: 500,
+
     _hover: {},
+  },
+  closeButton: {
+    mx: '2px',
+    '> svg': {
+      width: '14px',
+      height: '14px',
+    },
   },
 });
 

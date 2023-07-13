@@ -23,9 +23,6 @@ const primary = definePartsStyle({
     _hover: {
       borderColor: 'grayShade1',
     },
-    _focus: {
-      borderColor: 'red',
-    },
     _focusVisible: {
       borderColor: 'black',
     },

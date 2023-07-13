@@ -30,7 +30,7 @@ const Chip = ({
   // todo: handle disabled
   return (
     <Tag borderRadius="1px" size="sm" variant="outline">
-      <Labeling as="span">{value}</Labeling>
+      <Labeling>{value}</Labeling>
 
       <TagCloseButton onClick={handleDelete} />
     </Tag>
