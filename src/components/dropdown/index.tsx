@@ -34,7 +34,7 @@ const Dropdown = ({
 
   return (
     <List {...props} ref={containerRef}>
-      {items?.map((item) => {
+      {items?.map((item, idx) => {
         const {
           value,
           id,
@@ -49,7 +49,8 @@ const Dropdown = ({
         return (
           <Tooltip position={TooltipPositions.right} {...tooltipProps}>
             <ListItem
-              key={id || value}
+              // eslint-disable-next-line react/no-array-index-key
+              key={id || typeof value !== 'object' ? (value as string) : idx}
               onClick={() => onClick(item)}
               disabled={disabled}
               {...restProps}

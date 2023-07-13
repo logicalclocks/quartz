@@ -13,6 +13,7 @@ import Callout, { CalloutTypes } from './components/callout';
 import CalloutWithButton from './components/calloutWithButton';
 import CheckboxGroup from './components/checkbox/checkbox-group';
 import { DropdownButton } from './components/dropdown-button';
+import { DropdownButton2 } from './components/dropdown-button/DropdownButton2';
 import SplitGraph, {
   defaultGraphColors,
 } from './components/graphs/split-graph';
@@ -135,7 +136,12 @@ export {
   CheckboxGroup,
   CompactButton,
   Dropdown,
+  /**
+   * @deprecated
+   * use DropdownButton2
+   */
   DropdownButton,
+  DropdownButton2,
   FooterButton,
   Header,
   IconName,
@@ -194,6 +200,10 @@ export {
   RowButton,
   //  Table
   Table,
+  /**
+   * @deprecated
+   * use EditableTable2
+   */
   EditableTable,
   EditableTable2,
   ReadOnlyTable,

@@ -2,8 +2,9 @@ import * as R from 'ramda';
 import { extendTheme } from '@chakra-ui/react';
 
 import { colors, darkThemeColors } from '../../theme/theme';
-import { modalTheme } from './components/modal';
 import { drawerTheme } from './components/drawer';
+import { menuTheme } from './components/menu';
+import { modalTheme } from './components/modal';
 import { sliderTheme } from './components/slider';
 
 const createColors = (c: any, d: any): any =>
@@ -37,5 +38,10 @@ export const chakraTheme = extendTheme({
     },
   },
   colors: themeColors,
-  components: { Modal: modalTheme, Drawer: drawerTheme, Slider: sliderTheme },
+  components: {
+    Drawer: drawerTheme,
+    Menu: menuTheme,
+    Modal: modalTheme,
+    Slider: sliderTheme,
+  },
 });
