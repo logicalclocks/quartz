@@ -37,7 +37,7 @@ export interface Props extends Omit<MenuProps, 'children'> {
   items: DropdownProps['items'] | RenderDropdownItems;
   /** To Render custom component as dropdown's button */
   renderButton?: (p: { isOpen?: boolean }) => React.ReactNode;
-  sx?: SystemStyleObject;
+  sx?: SystemStyleObject | ((isOpen: boolean) => SystemStyleObject);
   menuListProps?: MenuListProps;
 }
 
@@ -70,7 +70,12 @@ export const DropdownButton2 = ({
     <Menu placement={placement} closeOnSelect={false} {...restProps}>
       {({ isOpen, onClose }) => (
         <Flex
-          sx={R.mergeDeepRight(styles.container, sx ?? {}) as SystemStyleObject}
+          sx={
+            R.mergeDeepRight(
+              styles.container,
+              typeof sx === 'function' ? sx(isOpen) : sx,
+            ) as SystemStyleObject
+          }
         >
           <MenuButton>
             {renderButton ? (
