@@ -1,3 +1,10 @@
+# [3.2.0](https://github.com/logicalclocks/quartz/compare/v3.1.0...v3.2.0) (2023-07-13)
+
+
+### Features
+
+* **dropdownbutton2:** migrate dropdown to use chakra menu ([#470](https://github.com/logicalclocks/quartz/issues/470)) ([362a008](https://github.com/logicalclocks/quartz/commit/362a0082c5c368b873fd590b5a1597da26a98293))
+
 # [3.1.0](https://github.com/logicalclocks/quartz/compare/v3.0.0...v3.1.0) (2023-07-07)
 
 
