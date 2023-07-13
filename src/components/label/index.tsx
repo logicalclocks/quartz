@@ -7,7 +7,7 @@ export interface LabelProps extends Omit<FlexProps, 'css' | 'action'> {
   text?: string;
   pointer?: boolean;
   align?: 'top' | 'left';
-  children: React.ReactNode;
+  children?: React.ReactNode;
 }
 
 const Label = ({
