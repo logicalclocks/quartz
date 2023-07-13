@@ -1,5 +1,5 @@
 import { Box, FormControl, FormLabel, HStack } from '@chakra-ui/react';
-import { CreatableSelect } from 'chakra-react-select';
+import { CreatableSelect, MultiValue, OptionBase } from 'chakra-react-select';
 import Label, { LabelProps } from '../label';
 import Labeling from '../typography/labeling';
 import { EditableSelectTypes } from './types';
@@ -20,6 +20,11 @@ export interface EditableSelectProps
   type?: EditableSelectTypes; // -
   labelAction?: React.ReactNode; // +
   onChange: (value: string[]) => void; // +
+}
+
+interface Option extends OptionBase {
+  label: string;
+  value: string;
 }
 
 const EditableSelect = ({
@@ -50,16 +55,22 @@ const EditableSelect = ({
         />
       </FormLabel>
 
-      <CreatableSelect
+      <CreatableSelect<Option, boolean>
+        size="sm"
         useBasicStyles
+        openMenuOnFocus // needed for accessibility, e.g. trigger on a label click
+        isClearable={false}
         isDisabled={disabled}
         options={options.map((it) => ({ label: it, value: it }))}
         isMulti={isMulti}
-        openMenuOnFocus
         placeholder={placeholder}
         noOptionsMessage={() => noDataMessage}
-        onChange={(option: any) => {
-          onChange(option.map((it) => it.value));
+        onChange={(option) => {
+          if (isMultiOption(option)) {
+            onChange(option.map((it) => it.value));
+          } else {
+            onChange([option!.value]);
+          }
         }}
         // eslint-disable-next-line react/no-unstable-nested-components
         formatCreateLabel={(text) => (
@@ -74,3 +85,6 @@ const EditableSelect = ({
 };
 
 export default EditableSelect;
+
+const isMultiOption = (option: any): option is MultiValue<Option> =>
+  Array.isArray(option);
