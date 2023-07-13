@@ -11,6 +11,7 @@ import Callout, { CalloutTypes } from './components/callout';
 import CalloutWithButton from './components/calloutWithButton';
 import CheckboxGroup from './components/checkbox/checkbox-group';
 import { DropdownButton } from './components/dropdown-button';
+import { DropdownButton2 } from './components/dropdown-button/DropdownButton2';
 import SplitGraph, { defaultGraphColors } from './components/graphs/split-graph';
 import Radio from './components/radio';
 import RadioGroup from './components/radio/radio-group';
@@ -98,7 +99,17 @@ export * from './components/freshness-bar';
 export * from './components/range-slider';
 export * from './components/slider';
 export * from './theme/useColorMode';
-export { UploadButton, FileLoader, FileSystemExplorer, Card, CardSecondary, CardHeader, Code, InputValidation, Checkbox, Callout, CalloutTypes, CalloutWithButton, CheckboxGroup, CompactButton, Dropdown, DropdownButton, FooterButton, Header, IconName, getIcon, GetIcon, IconButton, MenuButton, Input, BlurInput, InputInfo, CodeInput, Label, Logo, List, ListItem, Pagination, Select, Select2, EditableSelect, ThemeProvider, ToggleButton, Tooltip, TooltipPositions, Radio, RadioGroup, DatePicker, Divider, PerformanceCard, Slider, RangeSlider, ExpandViewer, usePopup, Popup, Drawer, TinyPopup, DrawerSection, PerformanceBar, Navigation, NavigationItem, NavigationCategory, NavigationProvider, NavigationContext, FormTabs, useDropdown, useNavigation, FileExplorerMode, Row, RowGroup, RowItem, RowButton, Table, EditableTable, EditableTable2, ReadOnlyTable, HolyTable, Value, Text, HoverableText, HoverableLink, Title, Subtitle, Microlabeling, Labeling, StickySummary, SplitGraph, Collapse, useOnClickOutside, Symbol, SymbolMode, defaultGraphColors, theme, useTheme, constants, Spinner, };
+export { UploadButton, FileLoader, FileSystemExplorer, Card, CardSecondary, CardHeader, Code, InputValidation, Checkbox, Callout, CalloutTypes, CalloutWithButton, CheckboxGroup, CompactButton, Dropdown, 
+/**
+ * @deprecated
+ * use DropdownButton2
+ */
+DropdownButton, DropdownButton2, FooterButton, Header, IconName, getIcon, GetIcon, IconButton, MenuButton, Input, BlurInput, InputInfo, CodeInput, Label, Logo, List, ListItem, Pagination, Select, Select2, EditableSelect, ThemeProvider, ToggleButton, Tooltip, TooltipPositions, Radio, RadioGroup, DatePicker, Divider, PerformanceCard, Slider, RangeSlider, ExpandViewer, usePopup, Popup, Drawer, TinyPopup, DrawerSection, PerformanceBar, Navigation, NavigationItem, NavigationCategory, NavigationProvider, NavigationContext, FormTabs, useDropdown, useNavigation, FileExplorerMode, Row, RowGroup, RowItem, RowButton, Table, 
+/**
+ * @deprecated
+ * use EditableTable2
+ */
+EditableTable, EditableTable2, ReadOnlyTable, HolyTable, Value, Text, HoverableText, HoverableLink, Title, Subtitle, Microlabeling, Labeling, StickySummary, SplitGraph, Collapse, useOnClickOutside, Symbol, SymbolMode, defaultGraphColors, theme, useTheme, constants, Spinner, };
 export { default as EmbeddedTabs } from './components/embedded-tabs';
 export type { Props as EditableTable2Props } from './components/table/editable/EditableTable2';
 export type { ITheme, IThemeColors, IThemeIconSizes, Color, } from './theme/types';
