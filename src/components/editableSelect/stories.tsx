@@ -36,22 +36,11 @@ const meta: Meta<typeof EditableSelect> = {
       description: 'string',
       control: { type: 'text' },
     },
-    inlineLegend: {
-      description: 'String',
-      control: { type: 'text' },
-    },
     disabled: {
       control: { type: 'boolean' },
     },
     isMulti: {
       control: { type: 'boolean' },
-    },
-    appendToBody: {
-      control: { type: 'boolean' },
-    },
-    type: {
-      control: { type: 'select', options: ['base', 'editable', 'searchable'] },
-      defaultValue: { description: 'editable' },
     },
     labelAction: {
       description: 'React Component',
@@ -72,10 +61,7 @@ export const Default: StoryObj<typeof EditableSelect> = {
     placeholder: 'placeholder',
     noDataMessage: 'no options',
     disabled: false,
-    type: 'editable',
     isMulti: true,
-    appendToBody: false,
-    inlineLegend: '',
   },
   render: (props) => {
     const [value, setValue] = useState<string[]>([]);

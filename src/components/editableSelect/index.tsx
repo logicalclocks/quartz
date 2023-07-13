@@ -6,7 +6,6 @@ import { EditableSelectTypes } from './types';
 
 export interface EditableSelectProps
   extends Omit<LabelProps, 'onChange' | 'children'> {
-  appendToBody?: boolean; // -
   label?: string; // +
   width?: string; // +
   value: string[]; // +
@@ -15,9 +14,7 @@ export interface EditableSelectProps
   inputWidth?: string; // +
   disabled?: boolean; // +
   placeholder: string; // +
-  inlineLegend?: string; // -
   noDataMessage?: string; // +
-  type?: EditableSelectTypes; // -
   labelAction?: React.ReactNode; // +
   onChange: (value: string[]) => void; // +
 }
@@ -35,10 +32,8 @@ const EditableSelect = ({
   inputWidth,
   labelAction,
   placeholder,
-  inlineLegend,
   width = 'auto',
   isMulti = true,
-  type = 'editable',
   disabled = false,
   noDataMessage = 'no options',
   ...props
