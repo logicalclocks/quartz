@@ -7,7 +7,7 @@ const { definePartsStyle, defineMultiStyleConfig } =
 const primary = definePartsStyle({
   field: {
     color: 'text',
-    bg: 'grayShade3',
+    background: 'grayShade3',
 
     outline: 'none',
 

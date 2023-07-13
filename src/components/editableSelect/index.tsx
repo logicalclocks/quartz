@@ -1,4 +1,4 @@
-import { Box, FormControl, FormLabel, MenuItem } from '@chakra-ui/react';
+import { Box, FormControl, FormLabel, HStack } from '@chakra-ui/react';
 import { CreatableSelect } from 'chakra-react-select';
 import Label, { LabelProps } from '../label';
 import Labeling from '../typography/labeling';
@@ -51,6 +51,7 @@ const EditableSelect = ({
       </FormLabel>
 
       <CreatableSelect
+        useBasicStyles
         isDisabled={disabled}
         options={options.map((it) => ({ label: it, value: it }))}
         isMulti={isMulti}
@@ -62,10 +63,10 @@ const EditableSelect = ({
         }}
         // eslint-disable-next-line react/no-unstable-nested-components
         formatCreateLabel={(text) => (
-          <Box>
-            <Labeling gray>new</Labeling>
+          <HStack align="baseline">
+            <Labeling gray>add</Labeling>
             <Box>{text}</Box>
-          </Box>
+          </HStack>
         )}
       />
     </FormControl>
