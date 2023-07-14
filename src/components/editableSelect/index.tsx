@@ -17,7 +17,6 @@ export interface EditableSelectProps
   value: string[];
   options: string[];
   isMulti?: boolean;
-  inputWidth?: string;
   disabled?: boolean;
   placeholder: string;
   noDataMessage?: string;
@@ -33,9 +32,8 @@ interface Option extends OptionBase {
 const EditableSelect = ({
   label = '',
   value,
-  options,
+  options: optionsAsStrings,
   onChange,
-  inputWidth,
   labelAction,
   placeholder,
   width = 'auto',
@@ -44,9 +42,9 @@ const EditableSelect = ({
   noDataMessage = 'no options',
   ...props
 }: EditableSelectProps) => {
-  const preparedOptions = useMemo<Option[]>(
-    () => options.map((option) => ({ label: option, value: option })),
-    [options],
+  const options = useMemo<Option[]>(
+    () => optionsAsStrings.map(toOption),
+    [optionsAsStrings],
   );
 
   const handleChange = useCallback(
@@ -59,6 +57,9 @@ const EditableSelect = ({
     },
     [onChange],
   );
+
+  console.log(value.map(toOption));
+  console.log(value);
 
   return (
     <FormControl isDisabled={disabled}>
@@ -76,7 +77,8 @@ const EditableSelect = ({
         size="sm"
         openMenuOnFocus // needed for accessibility, e.g. trigger on a label click
         isClearable={false} // removes clear button [X] that clears the whole select
-        options={preparedOptions}
+        options={options}
+        value={isMulti ? value.map(toOption) : toOption(value[0])}
         onChange={handleChange}
         formatCreateLabel={CreateLabel}
         noOptionsMessage={R.always(noDataMessage)}
@@ -90,12 +92,14 @@ const EditableSelect = ({
 
 export default EditableSelect;
 
-const isMultiOption = (option: any): option is MultiValue<Option> =>
-  Array.isArray(option);
-
 const CreateLabel = (text: string) => (
   <HStack align="baseline">
     <Labeling gray>add</Labeling>
     <Box>{text}</Box>
   </HStack>
 );
+
+const isMultiOption = (option: any): option is MultiValue<Option> =>
+  Array.isArray(option);
+
+const toOption = (text: string): Option => ({ value: text, label: text });

@@ -20,14 +20,6 @@ const meta: Meta<typeof EditableSelect> = {
     label: {
       control: { type: 'text' },
     },
-    width: {
-      description: 'string',
-      control: { type: 'array' },
-    },
-    inputWidth: {
-      description: 'string',
-      control: { type: 'array' },
-    },
     placeholder: {
       description: 'string',
       control: { type: 'text' },
@@ -45,9 +37,6 @@ const meta: Meta<typeof EditableSelect> = {
     labelAction: {
       description: 'React Component',
     },
-    onChange: {
-      description: 'Change callback function',
-    },
   },
 };
 export default meta;
@@ -62,10 +51,11 @@ export const Default: StoryObj<typeof EditableSelect> = {
     noDataMessage: 'no options',
     disabled: false,
     isMulti: true,
+    value: ['boolean'],
+    options,
   },
-  render: (props) => {
-    const [value, setValue] = useState<string[]>([]);
-    const [customOptions] = useState(options);
+  render: ({ value: initialValue, options, ...props }) => {
+    const [value, setValue] = useState<string[]>(initialValue);
 
     const handleChange = (data: string[]) => {
       action('onChange')(data);
@@ -77,7 +67,7 @@ export const Default: StoryObj<typeof EditableSelect> = {
         <EditableSelect
           {...props}
           value={value}
-          options={customOptions}
+          options={options}
           onChange={handleChange}
         />
       </Box>
