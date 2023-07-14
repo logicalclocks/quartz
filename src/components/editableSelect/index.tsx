@@ -39,7 +39,7 @@ const EditableSelect = ({
   width = 'auto',
   isMulti = true,
   disabled = false,
-  noDataMessage = 'no options',
+  noDataMessage = '',
   ...props
 }: EditableSelectProps) => {
   const options = useMemo<Option[]>(
