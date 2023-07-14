@@ -1,22 +1,28 @@
 import { Box, FormControl, FormLabel, HStack } from '@chakra-ui/react';
-import { CreatableSelect, MultiValue, OptionBase } from 'chakra-react-select';
+import {
+  CreatableSelect,
+  MultiValue,
+  OnChangeValue,
+  OptionBase,
+} from 'chakra-react-select';
+import * as R from 'ramda';
+import { useCallback, useMemo } from 'react';
 import Label, { LabelProps } from '../label';
 import Labeling from '../typography/labeling';
-import { EditableSelectTypes } from './types';
 
 export interface EditableSelectProps
   extends Omit<LabelProps, 'onChange' | 'children'> {
-  label?: string; // +
-  width?: string; // +
-  value: string[]; // +
-  options: string[]; // +
-  isMulti?: boolean; // +
-  inputWidth?: string; // +
-  disabled?: boolean; // +
-  placeholder: string; // +
-  noDataMessage?: string; // +
-  labelAction?: React.ReactNode; // +
-  onChange: (value: string[]) => void; // +
+  label?: string;
+  width?: string;
+  value: string[];
+  options: string[];
+  isMulti?: boolean;
+  inputWidth?: string;
+  disabled?: boolean;
+  placeholder: string;
+  noDataMessage?: string;
+  labelAction?: React.ReactNode;
+  onChange: (value: string[]) => void;
 }
 
 interface Option extends OptionBase {
@@ -38,6 +44,22 @@ const EditableSelect = ({
   noDataMessage = 'no options',
   ...props
 }: EditableSelectProps) => {
+  const preparedOptions = useMemo<Option[]>(
+    () => options.map((option) => ({ label: option, value: option })),
+    [options],
+  );
+
+  const handleChange = useCallback(
+    (option: OnChangeValue<Option, boolean>) => {
+      if (isMultiOption(option)) {
+        onChange(option.map((it) => it.value));
+      } else {
+        onChange([option!.value]);
+      }
+    },
+    [onChange],
+  );
+
   return (
     <FormControl isDisabled={disabled}>
       <FormLabel>
@@ -52,28 +74,15 @@ const EditableSelect = ({
 
       <CreatableSelect<Option, boolean>
         size="sm"
-        useBasicStyles
         openMenuOnFocus // needed for accessibility, e.g. trigger on a label click
-        isClearable={false}
-        isDisabled={disabled}
-        options={options.map((it) => ({ label: it, value: it }))}
-        isMulti={isMulti}
+        isClearable={false} // removes clear button [X] that clears the whole select
+        options={preparedOptions}
+        onChange={handleChange}
+        formatCreateLabel={CreateLabel}
+        noOptionsMessage={R.always(noDataMessage)}
         placeholder={placeholder}
-        noOptionsMessage={() => noDataMessage}
-        onChange={(option) => {
-          if (isMultiOption(option)) {
-            onChange(option.map((it) => it.value));
-          } else {
-            onChange([option!.value]);
-          }
-        }}
-        // eslint-disable-next-line react/no-unstable-nested-components
-        formatCreateLabel={(text) => (
-          <HStack align="baseline">
-            <Labeling gray>add</Labeling>
-            <Box>{text}</Box>
-          </HStack>
-        )}
+        isMulti={isMulti}
+        isDisabled={disabled}
       />
     </FormControl>
   );
@@ -83,3 +92,10 @@ export default EditableSelect;
 
 const isMultiOption = (option: any): option is MultiValue<Option> =>
   Array.isArray(option);
+
+const CreateLabel = (text: string) => (
+  <HStack align="baseline">
+    <Labeling gray>add</Labeling>
+    <Box>{text}</Box>
+  </HStack>
+);
