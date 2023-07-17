@@ -4,6 +4,7 @@ import {
   MultiValue,
   OnChangeValue,
   OptionBase,
+  Select,
 } from 'chakra-react-select';
 import * as R from 'ramda';
 import { useCallback, useMemo } from 'react';
@@ -22,6 +23,7 @@ export interface EditableSelectProps
   noDataMessage?: string;
   labelAction?: React.ReactNode;
   onChange: (value: string[]) => void;
+  preventAdding?: boolean;
 }
 
 interface Option extends OptionBase {
@@ -39,7 +41,8 @@ const EditableSelect = ({
   width = 'auto',
   isMulti = true,
   disabled = false,
-  noDataMessage = '',
+  noDataMessage = 'no options',
+  preventAdding = false,
   ...props
 }: EditableSelectProps) => {
   const options = useMemo<Option[]>(
@@ -58,8 +61,12 @@ const EditableSelect = ({
     [onChange],
   );
 
-  console.log(value.map(toOption));
-  console.log(value);
+  const Component = preventAdding ? Select : CreatableSelect;
+  const propsForCreatable = preventAdding
+    ? {}
+    : {
+        formatCreateLabel: CreateLabel,
+      };
 
   return (
     <FormControl isDisabled={disabled}>
@@ -73,18 +80,20 @@ const EditableSelect = ({
         />
       </FormLabel>
 
-      <CreatableSelect<Option, boolean>
+      <Component<Option, boolean>
         size="sm"
+        closeMenuOnSelect={false}
         openMenuOnFocus // needed for accessibility, e.g. trigger on a label click
         isClearable={false} // removes clear button [X] that clears the whole select
         options={options}
         value={isMulti ? value.map(toOption) : toOption(value[0])}
+        selectedOptionColorScheme="gray"
         onChange={handleChange}
-        formatCreateLabel={CreateLabel}
         noOptionsMessage={R.always(noDataMessage)}
         placeholder={placeholder}
         isMulti={isMulti}
         isDisabled={disabled}
+        {...propsForCreatable}
       />
     </FormControl>
   );
