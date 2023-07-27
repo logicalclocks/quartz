@@ -52184,6 +52184,7 @@ const kue = {
 ), Zue = ({
   type: t,
   value: e,
+<<<<<<< HEAD
   width: n,
   search: i,
   isMulti: r,
@@ -52193,6 +52194,18 @@ const kue = {
   onChange: s,
   maxHeight: l,
   appendToBody: c
+=======
+  options: n,
+  onChange: i,
+  labelAction: r,
+  placeholder: o,
+  width: a = "auto",
+  isMulti: O = !0,
+  disabled: s = !1,
+  noDataMessage: l = "no options available",
+  preventAdding: c = !1,
+  ...u
+>>>>>>> dd65384 (update menu styles)
 }) => {
   const u = ce(
     (Q) => () => {
@@ -52272,6 +52285,7 @@ const kue = {
   }, Z = (I) => {
     v && q(), r(I);
   };
+<<<<<<< HEAD
   De(() => {
     !v && P !== "" && (u || P !== n[0]) && q();
   }, [P]);
@@ -52329,6 +52343,20 @@ const kue = {
                 )
               }
             )
+=======
+  return /* @__PURE__ */ h.jsxs(lV, { isDisabled: s, children: [
+    t && /* @__PURE__ */ h.jsx(cV, { children: /* @__PURE__ */ h.jsx(
+      hn,
+      {
+        as: "span",
+        text: t,
+        width: a,
+        action: r,
+        sx: {
+          span: {
+            mb: 0,
+            mr: 0
+>>>>>>> dd65384 (update menu styles)
           }
         ),
         t && /* @__PURE__ */ d.jsx(Gue, { intent: $, children: t })

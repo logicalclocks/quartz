@@ -147,6 +147,7 @@ export const Single: StoryObj<typeof EditableSelect> = {
     return (
       <Box minHeight="400px" width="600px">
         <EditableSelect
+          // isOpen
           {...props}
           value={value}
           options={options}

@@ -41,7 +41,7 @@ const EditableSelect = ({
   width = 'auto',
   isMulti = true,
   disabled = false,
-  noDataMessage = 'no options',
+  noDataMessage = 'no options available',
   preventAdding = false,
   ...props
 }: EditableSelectProps) => {
@@ -70,18 +70,51 @@ const EditableSelect = ({
 
   return (
     <FormControl isDisabled={disabled}>
-      <FormLabel>
-        <Label
-          as="span"
-          text={label}
-          width={width}
-          action={labelAction}
-          {...props}
-        />
-      </FormLabel>
+      {label && (
+        <FormLabel>
+          <Label
+            as="span"
+            text={label}
+            width={width}
+            action={labelAction}
+            sx={{
+              span: {
+                mb: 0,
+                mr: 0,
+              },
+            }}
+            {...props}
+          />
+        </FormLabel>
+      )}
 
       <Component<Option, boolean>
+        // menuIsOpen
+        sx={{
+          height: '33px',
+          _placeholder: {
+            fontFamily: 'Inter',
+            fontSize: '14px',
+          },
+        }}
         size="sm"
+        useBasicStyles
+        menuPortalTarget={document.querySelector('.chakra-portal') as any}
+        styles={{
+          menuPortal: (provided) => ({ ...provided, zIndex: 200 }),
+        }}
+        chakraStyles={{
+          menuList: (provided) => ({
+            ...provided,
+            my: 0,
+            py: 0,
+          }),
+          menu: (provided) => ({
+            ...provided,
+            my: 1,
+            // py: 0,
+          }),
+        }}
         closeMenuOnSelect={false}
         openMenuOnFocus // needed for accessibility, e.g. trigger on a label click
         isClearable={false} // removes clear button [X] that clears the whole select
