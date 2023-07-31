@@ -92,10 +92,6 @@ const EditableSelect = ({
         // menuIsOpen
         sx={{
           height: '33px',
-          _placeholder: {
-            fontFamily: 'Inter',
-            fontSize: '14px',
-          },
         }}
         size="sm"
         useBasicStyles

@@ -8489,7 +8489,86 @@ const Or = {
       bg: "grayShade2._dark"
     }
   }
+<<<<<<< HEAD
 }), Bf = Ff({ baseStyle: Rf }), zr = (e, t) => Us((n, o) => Bs(n) === "String" ? { _light: n, _dark: t[o] } : zr(go.labels, t.labels), e), $f = zr(go, $s), Of = Rs({
+=======
+}), Sf = yf({ baseStyle: xf }), { definePartsStyle: _f, defineMultiStyleConfig: Cf } = Ye(js.keys), kf = _f({
+  field: {
+    color: "text",
+    outline: "none",
+    transition: "all 0.25s ease",
+    fontFamily: "inter",
+    fontSize: "12px",
+    lineHeight: "20px",
+    border: "none",
+    _hover: {
+      borderColor: "grayShade1"
+    },
+    _focusVisible: {
+      borderColor: "black"
+    },
+    _disabled: {
+      bg: "grayShade2",
+      borderColor: "grayShade2"
+    },
+    _placeholder: {
+      color: "gray"
+    }
+  }
+}), wf = Cf({
+  baseStyle: kf,
+  variants: {
+    filled: {
+      field: {
+        background: "grayShade3",
+        _hover: {
+          bacgkround: "grayShade2"
+        }
+      }
+    }
+  },
+  defaultProps: {
+    variant: "filled"
+  }
+}), Pf = {
+  colors: {
+    text: {
+      default: "#272727",
+      _dark: "#F0F0F0"
+    },
+    background: {
+      default: "#FFFFFF",
+      _dark: "#181a1b"
+    },
+    grayShade3: {
+      default: "#F5F5F5",
+      _dark: "#1e2021"
+    }
+  }
+}, { definePartsStyle: Nf, defineMultiStyleConfig: If } = Ye(As.keys), Ef = Nf({
+  container: {
+    bg: "background",
+    borderRadius: "1px",
+    px: "4px",
+    fontSize: "14px",
+    // up from 12
+    fontWeight: 500,
+    _hover: {}
+  },
+  closeButton: {
+    mx: "2px",
+    "> svg": {
+      width: "14px",
+      height: "14px"
+    }
+  }
+}), jf = If({
+  baseStyle: Ef,
+  defaultProps: {
+    size: "sm"
+  }
+}), Tr = (e, t) => Ks((n, o) => Ms(n) === "String" ? { _light: n, _dark: t[o] } : Tr(vo.labels, t.labels), e), Af = Tr(vo, Ds), Tf = Ts({
+>>>>>>> e901331 (experiment with base styles)
   config: {
     cssVarPrefix: "quartz",
     initialColorMode: "system",

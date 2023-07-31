@@ -4,11 +4,9 @@ import { createMultiStyleConfigHelpers } from '@chakra-ui/react';
 const { definePartsStyle, defineMultiStyleConfig } =
   createMultiStyleConfigHelpers(inputAnatomy.keys);
 
-const primary = definePartsStyle({
+const base = definePartsStyle({
   field: {
     color: 'text',
-    background: 'grayShade3',
-
     outline: 'none',
 
     transition: 'all 0.25s ease',
@@ -37,8 +35,18 @@ const primary = definePartsStyle({
 });
 
 export const inputTheme = defineMultiStyleConfig({
-  variants: { primary },
+  baseStyle: base,
+  variants: {
+    filled: {
+      field: {
+        background: 'grayShade3',
+        _hover: {
+          bacgkround: 'grayShade2',
+        },
+      },
+    },
+  },
   defaultProps: {
-    variant: 'primary',
+    variant: 'filled',
   },
 });

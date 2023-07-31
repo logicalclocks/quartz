@@ -52358,12 +52358,62 @@ const kue = {
             mr: 0
 >>>>>>> dd65384 (update menu styles)
           }
+<<<<<<< HEAD
         ),
         t && /* @__PURE__ */ d.jsx(Gue, { intent: $, children: t })
       ]
     }
   );
 }, jue = {
+=======
+        },
+        ...u
+      }
+    ) }),
+    /* @__PURE__ */ h.jsx(
+      g,
+      {
+        sx: {
+          height: "33px"
+        },
+        size: "sm",
+        useBasicStyles: !0,
+        menuPortalTarget: document.querySelector(".chakra-portal"),
+        styles: {
+          menuPortal: ($) => ({ ...$, zIndex: 200 })
+        },
+        chakraStyles: {
+          menuList: ($) => ({
+            ...$,
+            my: 0,
+            py: 0
+          }),
+          menu: ($) => ({
+            ...$,
+            my: 1
+            // py: 0,
+          })
+        },
+        closeMenuOnSelect: !1,
+        openMenuOnFocus: !0,
+        isClearable: !1,
+        options: d,
+        value: O ? e.map(ng) : ng(e[0]),
+        selectedOptionColorScheme: "gray",
+        onChange: f,
+        noOptionsMessage: yg(l),
+        placeholder: o,
+        isMulti: O,
+        isDisabled: s,
+        ...m
+      }
+    )
+  ] });
+}, eSe = (t) => /* @__PURE__ */ h.jsxs(uV, { align: "baseline", children: [
+  /* @__PURE__ */ h.jsx(xe, { gray: !0, children: "add" }),
+  /* @__PURE__ */ h.jsx(kt, { children: t })
+] }), tSe = (t) => Array.isArray(t), ng = (t) => ({ value: t, label: t }), nSe = {
+>>>>>>> e901331 (experiment with base styles)
   div: {
     display: "flex",
     flexDirection: "row",
