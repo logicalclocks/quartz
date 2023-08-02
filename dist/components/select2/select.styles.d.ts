@@ -1,5 +1,6 @@
 import { SxStyleProp } from 'rebass';
 import { ITheme } from '../../theme/types';
+import { Intents } from '../intents';
 export declare const listStyles: (parentHeight: number, appendToBody: boolean) => SxStyleProp;
 export declare const bottomActionStyles: {
     p: string;

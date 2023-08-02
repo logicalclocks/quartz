@@ -1,4 +1,4 @@
-import { Box, FormControl, FormLabel, HStack, VStack } from '@chakra-ui/react';
+import { Box, FormControl, FormLabel, HStack } from '@chakra-ui/react';
 import {
   CreatableSelect,
   MultiValue,
@@ -151,17 +151,6 @@ const CreateLabel = (text: string) => (
     </Labeling>
     <Box>{text}</Box>
   </HStack>
-);
-
-const NoData = () => (
-  <VStack>
-    <Labeling gray fontSize="12px">
-      nothing to choose from,
-    </Labeling>
-    <Labeling gray fontSize="12px">
-      just type to add yours
-    </Labeling>
-  </VStack>
 );
 
 const isMultiOption = (option: any): option is MultiValue<Option> =>
