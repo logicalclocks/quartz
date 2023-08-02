@@ -8,9 +8,9 @@ import svgrPlugin from 'vite-plugin-svgr';
 export default defineConfig({
   plugins: [
     reactPlugin(),
-    // dts({
-    //   insertTypesEntry: true,
-    // }),
+    dts({
+      insertTypesEntry: true,
+    }),
     cssInjectedByJsPlugin(),
     svgrPlugin(),
   ],
