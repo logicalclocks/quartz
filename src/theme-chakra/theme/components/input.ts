@@ -16,20 +16,49 @@ const base = definePartsStyle({
     fontSize: 'text',
     lineHeight: '20px',
 
-    borderWidth: '1px',
+    borderWidth: '1px !important',
+    borderColor: 'transparent',
 
     _hover: {
       borderColor: 'grayShade1',
     },
-    _focusVisible: {
-      borderColor: 'black',
+    _focusWithin: {
+      borderColor: 'text',
     },
     _disabled: {
       bg: 'grayShade2',
       borderColor: 'grayShade2',
     },
     _placeholder: {
-      color: 'gray',
+      fontSize: '12px',
+      fontFamily: 'inter',
+    },
+  },
+});
+
+const primary = definePartsStyle({
+  field: {
+    background: 'grayShade3',
+    _hover: {
+      background: 'grayShade3',
+    },
+    _focus: {
+      bg: 'grayShade3',
+    },
+  },
+});
+
+const white = definePartsStyle({
+  field: {
+    background: 'background',
+    _hover: {
+      background: 'background',
+    },
+    _focus: {
+      bg: 'background',
+    },
+    _focusWithin: {
+      borderColor: 'grayShade2',
     },
   },
 });
@@ -37,16 +66,10 @@ const base = definePartsStyle({
 export const inputTheme = defineMultiStyleConfig({
   baseStyle: base,
   variants: {
-    filled: {
-      field: {
-        background: 'grayShade3',
-        _hover: {
-          bacgkround: 'grayShade2',
-        },
-      },
-    },
+    primary,
+    white,
   },
   defaultProps: {
-    variant: 'filled',
+    variant: 'primary',
   },
 });

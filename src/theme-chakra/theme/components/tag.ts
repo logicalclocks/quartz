@@ -9,10 +9,8 @@ const baseStyle = definePartsStyle({
     bg: 'background',
     borderRadius: '1px',
     px: '4px',
-    fontSize: '14px', // up from 12
+    fontSize: '12px',
     fontWeight: 500,
-
-    _hover: {},
   },
   closeButton: {
     mx: '2px',

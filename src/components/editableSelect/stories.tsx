@@ -40,6 +40,11 @@ const meta: Meta<typeof EditableSelect> = {
     labelAction: {
       description: 'React Component',
     },
+    variant: {
+      control: { type: 'select' },
+      description: 'Component can look different with different variants',
+      options: ['primary', 'white'],
+    },
   },
 };
 export default meta;
@@ -51,7 +56,7 @@ export const Multi: StoryObj<typeof EditableSelect> = {
     label: 'Label',
     labelAction: '(optional)',
     placeholder: 'placeholder',
-    noDataMessage: 'no options',
+    // noDataMessage: 'no options',
     disabled: false,
     isMulti: true,
     value: ['integer', 'string'],

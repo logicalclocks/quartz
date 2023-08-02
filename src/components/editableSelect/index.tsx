@@ -1,4 +1,4 @@
-import { Box, FormControl, FormLabel, HStack } from '@chakra-ui/react';
+import { Box, FormControl, FormLabel, HStack, VStack } from '@chakra-ui/react';
 import {
   CreatableSelect,
   MultiValue,
@@ -24,6 +24,7 @@ export interface EditableSelectProps
   labelAction?: React.ReactNode;
   onChange: (value: string[]) => void;
   preventAdding?: boolean;
+  variant?: 'primary' | 'white';
 }
 
 interface Option extends OptionBase {
@@ -41,8 +42,9 @@ const EditableSelect = ({
   width = 'auto',
   isMulti = true,
   disabled = false,
-  noDataMessage = 'no options available',
+  noDataMessage = 'nothing to choose',
   preventAdding = false,
+  variant = 'primary',
   ...props
 }: EditableSelectProps) => {
   const options = useMemo<Option[]>(
@@ -89,10 +91,8 @@ const EditableSelect = ({
       )}
 
       <Component<Option, boolean>
-        // menuIsOpen
-        sx={{
-          height: '33px',
-        }}
+        variant={variant}
+        tagVariant="solid"
         size="sm"
         useBasicStyles
         menuPortalTarget={document.querySelector('.chakra-portal') as any}
@@ -100,15 +100,28 @@ const EditableSelect = ({
           menuPortal: (provided) => ({ ...provided, zIndex: 200 }),
         }}
         chakraStyles={{
-          menuList: (provided) => ({
-            ...provided,
+          menuList: R.mergeLeft({
+            my: 1,
+            py: 0,
+          }),
+          menu: R.mergeLeft({
             my: 0,
             py: 0,
           }),
-          menu: (provided) => ({
-            ...provided,
-            my: 1,
-            // py: 0,
+          placeholder: R.mergeLeft({
+            fontSize: '12px',
+          }),
+          input: R.mergeLeft({
+            fontSize: '12px',
+          }),
+          option: R.mergeLeft({
+            fontSize: '12px',
+          }),
+          noOptionsMessage: R.mergeLeft({
+            fontSize: '12px',
+          }),
+          multiValue: R.mergeLeft({
+            bg: variant === 'white' ? 'grayShade3' : 'background',
           }),
         }}
         closeMenuOnSelect={false}
@@ -132,9 +145,22 @@ export default EditableSelect;
 
 const CreateLabel = (text: string) => (
   <HStack align="baseline">
-    <Labeling gray>add</Labeling>
+    <Labeling fontSize="11px" gray>
+      add
+    </Labeling>
     <Box>{text}</Box>
   </HStack>
+);
+
+const NoData = () => (
+  <VStack>
+    <Labeling gray fontSize="12px">
+      nothing to choose from,
+    </Labeling>
+    <Labeling gray fontSize="12px">
+      just type to add yours
+    </Labeling>
+  </VStack>
 );
 
 const isMultiOption = (option: any): option is MultiValue<Option> =>
