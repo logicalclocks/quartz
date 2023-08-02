@@ -1,5 +1,6 @@
 (function(){"use strict";try{if(typeof document<"u"){var e=document.createElement("style");e.appendChild(document.createTextNode('.link-button:focus-visible{outline:none}.link-button:focus-visible>span{box-shadow:0 0 0 2px #21b18299;text-decoration:none}.react-datepicker__year-read-view--down-arrow,.react-datepicker__month-read-view--down-arrow,.react-datepicker__month-year-read-view--down-arrow,.react-datepicker__navigation-icon:before{border-color:#ccc;border-style:solid;border-width:3px 3px 0 0;content:"";display:block;height:9px;position:absolute;top:6px;width:9px}.react-datepicker-popper[data-placement^=top] .react-datepicker__triangle,.react-datepicker-popper[data-placement^=bottom] .react-datepicker__triangle{margin-left:-4px;position:absolute;width:0}.react-datepicker-popper[data-placement^=top] .react-datepicker__triangle:before,.react-datepicker-popper[data-placement^=bottom] .react-datepicker__triangle:before,.react-datepicker-popper[data-placement^=top] .react-datepicker__triangle:after,.react-datepicker-popper[data-placement^=bottom] .react-datepicker__triangle:after{box-sizing:content-box;position:absolute;border:8px solid rgba(0,0,0,0);height:0;width:1px;content:"";z-index:-1;border-width:8px;left:-8px}.react-datepicker-popper[data-placement^=top] .react-datepicker__triangle:before,.react-datepicker-popper[data-placement^=bottom] .react-datepicker__triangle:before{border-bottom-color:#aeaeae}.react-datepicker-popper[data-placement^=bottom] .react-datepicker__triangle{top:0;margin-top:-8px}.react-datepicker-popper[data-placement^=bottom] .react-datepicker__triangle:before,.react-datepicker-popper[data-placement^=bottom] .react-datepicker__triangle:after{border-top:none;border-bottom-color:#f0f0f0}.react-datepicker-popper[data-placement^=bottom] .react-datepicker__triangle:after{top:0}.react-datepicker-popper[data-placement^=bottom] .react-datepicker__triangle:before{top:-1px;border-bottom-color:#aeaeae}.react-datepicker-popper[data-placement^=top] .react-datepicker__triangle{bottom:0;margin-bottom:-8px}.react-datepicker-popper[data-placement^=top] .react-datepicker__triangle:before,.react-datepicker-popper[data-placement^=top] .react-datepicker__triangle:after{border-bottom:none;border-top-color:#fff}.react-datepicker-popper[data-placement^=top] .react-datepicker__triangle:after{bottom:0}.react-datepicker-popper[data-placement^=top] .react-datepicker__triangle:before{bottom:-1px;border-top-color:#aeaeae}.react-datepicker-wrapper{display:inline-block;padding:0;border:0}.react-datepicker{font-family:Helvetica Neue,helvetica,arial,sans-serif;font-size:.8rem;background-color:#fff;color:#000;border:1px solid #aeaeae;border-radius:.3rem;display:inline-block;position:relative}.react-datepicker--time-only .react-datepicker__triangle{left:35px}.react-datepicker--time-only .react-datepicker__time-container{border-left:0}.react-datepicker--time-only .react-datepicker__time,.react-datepicker--time-only .react-datepicker__time-box{border-bottom-left-radius:.3rem;border-bottom-right-radius:.3rem}.react-datepicker__triangle{position:absolute;left:50px}.react-datepicker-popper{z-index:1}.react-datepicker-popper[data-placement^=bottom]{padding-top:10px}.react-datepicker-popper[data-placement=bottom-end] .react-datepicker__triangle,.react-datepicker-popper[data-placement=top-end] .react-datepicker__triangle{left:auto;right:50px}.react-datepicker-popper[data-placement^=top]{padding-bottom:10px}.react-datepicker-popper[data-placement^=right]{padding-left:8px}.react-datepicker-popper[data-placement^=right] .react-datepicker__triangle{left:auto;right:42px}.react-datepicker-popper[data-placement^=left]{padding-right:8px}.react-datepicker-popper[data-placement^=left] .react-datepicker__triangle{left:42px;right:auto}.react-datepicker__header{text-align:center;background-color:#f0f0f0;border-bottom:1px solid #aeaeae;border-top-left-radius:.3rem;padding:8px 0;position:relative}.react-datepicker__header--time{padding-bottom:8px;padding-left:5px;padding-right:5px}.react-datepicker__header--time:not(.react-datepicker__header--time--only){border-top-left-radius:0}.react-datepicker__header:not(.react-datepicker__header--has-time-select){border-top-right-radius:.3rem}.react-datepicker__year-dropdown-container--select,.react-datepicker__month-dropdown-container--select,.react-datepicker__month-year-dropdown-container--select,.react-datepicker__year-dropdown-container--scroll,.react-datepicker__month-dropdown-container--scroll,.react-datepicker__month-year-dropdown-container--scroll{display:inline-block;margin:0 15px}.react-datepicker__current-month,.react-datepicker-time__header,.react-datepicker-year-header{margin-top:0;color:#000;font-weight:700;font-size:.944rem}.react-datepicker-time__header{text-overflow:ellipsis;white-space:nowrap;overflow:hidden}.react-datepicker__navigation{align-items:center;background:none;display:flex;justify-content:center;text-align:center;cursor:pointer;position:absolute;top:2px;padding:0;border:none;z-index:1;height:32px;width:32px;text-indent:-999em;overflow:hidden}.react-datepicker__navigation--previous{left:2px}.react-datepicker__navigation--next{right:2px}.react-datepicker__navigation--next--with-time:not(.react-datepicker__navigation--next--with-today-button){right:85px}.react-datepicker__navigation--years{position:relative;top:0;display:block;margin-left:auto;margin-right:auto}.react-datepicker__navigation--years-previous{top:4px}.react-datepicker__navigation--years-upcoming{top:-4px}.react-datepicker__navigation:hover *:before{border-color:#a6a6a6}.react-datepicker__navigation-icon{position:relative;top:-1px;font-size:20px;width:0}.react-datepicker__navigation-icon--next{left:-2px}.react-datepicker__navigation-icon--next:before{transform:rotate(45deg);left:-7px}.react-datepicker__navigation-icon--previous{right:-2px}.react-datepicker__navigation-icon--previous:before{transform:rotate(225deg);right:-7px}.react-datepicker__month-container{float:left}.react-datepicker__year{margin:.4rem;text-align:center}.react-datepicker__year-wrapper{display:flex;flex-wrap:wrap;max-width:180px}.react-datepicker__year .react-datepicker__year-text{display:inline-block;width:4rem;margin:2px}.react-datepicker__month{margin:.4rem;text-align:center}.react-datepicker__month .react-datepicker__month-text,.react-datepicker__month .react-datepicker__quarter-text{display:inline-block;width:4rem;margin:2px}.react-datepicker__input-time-container{clear:both;width:100%;float:left;margin:5px 0 10px 15px;text-align:left}.react-datepicker__input-time-container .react-datepicker-time__caption,.react-datepicker__input-time-container .react-datepicker-time__input-container{display:inline-block}.react-datepicker__input-time-container .react-datepicker-time__input-container .react-datepicker-time__input{display:inline-block;margin-left:10px}.react-datepicker__input-time-container .react-datepicker-time__input-container .react-datepicker-time__input input{width:auto}.react-datepicker__input-time-container .react-datepicker-time__input-container .react-datepicker-time__input input[type=time]::-webkit-inner-spin-button,.react-datepicker__input-time-container .react-datepicker-time__input-container .react-datepicker-time__input input[type=time]::-webkit-outer-spin-button{-webkit-appearance:none;margin:0}.react-datepicker__input-time-container .react-datepicker-time__input-container .react-datepicker-time__input input[type=time]{-moz-appearance:textfield}.react-datepicker__input-time-container .react-datepicker-time__input-container .react-datepicker-time__delimiter{margin-left:5px;display:inline-block}.react-datepicker__time-container{float:right;border-left:1px solid #aeaeae;width:85px}.react-datepicker__time-container--with-today-button{display:inline;border:1px solid #aeaeae;border-radius:.3rem;position:absolute;right:-87px;top:0}.react-datepicker__time-container .react-datepicker__time{position:relative;background:#fff;border-bottom-right-radius:.3rem}.react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box{width:85px;overflow-x:hidden;margin:0 auto;text-align:center;border-bottom-right-radius:.3rem}.react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box ul.react-datepicker__time-list{list-style:none;margin:0;height:calc(195px + .85rem);overflow-y:scroll;padding-right:0;padding-left:0;width:100%;box-sizing:content-box}.react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box ul.react-datepicker__time-list li.react-datepicker__time-list-item{height:30px;padding:5px 10px;white-space:nowrap}.react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box ul.react-datepicker__time-list li.react-datepicker__time-list-item:hover{cursor:pointer;background-color:#f0f0f0}.react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box ul.react-datepicker__time-list li.react-datepicker__time-list-item--selected{background-color:#216ba5;color:#fff;font-weight:700}.react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box ul.react-datepicker__time-list li.react-datepicker__time-list-item--selected:hover{background-color:#216ba5}.react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box ul.react-datepicker__time-list li.react-datepicker__time-list-item--disabled{color:#ccc}.react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box ul.react-datepicker__time-list li.react-datepicker__time-list-item--disabled:hover{cursor:default;background-color:#0000}.react-datepicker__week-number{color:#ccc;display:inline-block;width:1.7rem;line-height:1.7rem;text-align:center;margin:.166rem}.react-datepicker__week-number.react-datepicker__week-number--clickable{cursor:pointer}.react-datepicker__week-number.react-datepicker__week-number--clickable:hover{border-radius:.3rem;background-color:#f0f0f0}.react-datepicker__day-names,.react-datepicker__week{white-space:nowrap}.react-datepicker__day-names{margin-bottom:-8px}.react-datepicker__day-name,.react-datepicker__day,.react-datepicker__time-name{color:#000;display:inline-block;width:1.7rem;line-height:1.7rem;text-align:center;margin:.166rem}.react-datepicker__day,.react-datepicker__month-text,.react-datepicker__quarter-text,.react-datepicker__year-text{cursor:pointer}.react-datepicker__day:hover,.react-datepicker__month-text:hover,.react-datepicker__quarter-text:hover,.react-datepicker__year-text:hover{border-radius:.3rem;background-color:#f0f0f0}.react-datepicker__day--today,.react-datepicker__month-text--today,.react-datepicker__quarter-text--today,.react-datepicker__year-text--today{font-weight:700}.react-datepicker__day--highlighted,.react-datepicker__month-text--highlighted,.react-datepicker__quarter-text--highlighted,.react-datepicker__year-text--highlighted{border-radius:.3rem;background-color:#3dcc4a;color:#fff}.react-datepicker__day--highlighted:hover,.react-datepicker__month-text--highlighted:hover,.react-datepicker__quarter-text--highlighted:hover,.react-datepicker__year-text--highlighted:hover{background-color:#32be3f}.react-datepicker__day--highlighted-custom-1,.react-datepicker__month-text--highlighted-custom-1,.react-datepicker__quarter-text--highlighted-custom-1,.react-datepicker__year-text--highlighted-custom-1{color:#f0f}.react-datepicker__day--highlighted-custom-2,.react-datepicker__month-text--highlighted-custom-2,.react-datepicker__quarter-text--highlighted-custom-2,.react-datepicker__year-text--highlighted-custom-2{color:green}.react-datepicker__day--selected,.react-datepicker__day--in-selecting-range,.react-datepicker__day--in-range,.react-datepicker__month-text--selected,.react-datepicker__month-text--in-selecting-range,.react-datepicker__month-text--in-range,.react-datepicker__quarter-text--selected,.react-datepicker__quarter-text--in-selecting-range,.react-datepicker__quarter-text--in-range,.react-datepicker__year-text--selected,.react-datepicker__year-text--in-selecting-range,.react-datepicker__year-text--in-range{border-radius:.3rem;background-color:#216ba5;color:#fff}.react-datepicker__day--selected:hover,.react-datepicker__day--in-selecting-range:hover,.react-datepicker__day--in-range:hover,.react-datepicker__month-text--selected:hover,.react-datepicker__month-text--in-selecting-range:hover,.react-datepicker__month-text--in-range:hover,.react-datepicker__quarter-text--selected:hover,.react-datepicker__quarter-text--in-selecting-range:hover,.react-datepicker__quarter-text--in-range:hover,.react-datepicker__year-text--selected:hover,.react-datepicker__year-text--in-selecting-range:hover,.react-datepicker__year-text--in-range:hover{background-color:#1d5d90}.react-datepicker__day--keyboard-selected,.react-datepicker__month-text--keyboard-selected,.react-datepicker__quarter-text--keyboard-selected,.react-datepicker__year-text--keyboard-selected{border-radius:.3rem;background-color:#bad9f1;color:#000}.react-datepicker__day--keyboard-selected:hover,.react-datepicker__month-text--keyboard-selected:hover,.react-datepicker__quarter-text--keyboard-selected:hover,.react-datepicker__year-text--keyboard-selected:hover{background-color:#1d5d90}.react-datepicker__day--in-selecting-range:not(.react-datepicker__day--in-range,.react-datepicker__month-text--in-range,.react-datepicker__quarter-text--in-range,.react-datepicker__year-text--in-range),.react-datepicker__month-text--in-selecting-range:not(.react-datepicker__day--in-range,.react-datepicker__month-text--in-range,.react-datepicker__quarter-text--in-range,.react-datepicker__year-text--in-range),.react-datepicker__quarter-text--in-selecting-range:not(.react-datepicker__day--in-range,.react-datepicker__month-text--in-range,.react-datepicker__quarter-text--in-range,.react-datepicker__year-text--in-range),.react-datepicker__year-text--in-selecting-range:not(.react-datepicker__day--in-range,.react-datepicker__month-text--in-range,.react-datepicker__quarter-text--in-range,.react-datepicker__year-text--in-range){background-color:#216ba580}.react-datepicker__month--selecting-range .react-datepicker__day--in-range:not(.react-datepicker__day--in-selecting-range,.react-datepicker__month-text--in-selecting-range,.react-datepicker__quarter-text--in-selecting-range,.react-datepicker__year-text--in-selecting-range),.react-datepicker__year--selecting-range .react-datepicker__day--in-range:not(.react-datepicker__day--in-selecting-range,.react-datepicker__month-text--in-selecting-range,.react-datepicker__quarter-text--in-selecting-range,.react-datepicker__year-text--in-selecting-range),.react-datepicker__month--selecting-range .react-datepicker__month-text--in-range:not(.react-datepicker__day--in-selecting-range,.react-datepicker__month-text--in-selecting-range,.react-datepicker__quarter-text--in-selecting-range,.react-datepicker__year-text--in-selecting-range),.react-datepicker__year--selecting-range .react-datepicker__month-text--in-range:not(.react-datepicker__day--in-selecting-range,.react-datepicker__month-text--in-selecting-range,.react-datepicker__quarter-text--in-selecting-range,.react-datepicker__year-text--in-selecting-range),.react-datepicker__month--selecting-range .react-datepicker__quarter-text--in-range:not(.react-datepicker__day--in-selecting-range,.react-datepicker__month-text--in-selecting-range,.react-datepicker__quarter-text--in-selecting-range,.react-datepicker__year-text--in-selecting-range),.react-datepicker__year--selecting-range .react-datepicker__quarter-text--in-range:not(.react-datepicker__day--in-selecting-range,.react-datepicker__month-text--in-selecting-range,.react-datepicker__quarter-text--in-selecting-range,.react-datepicker__year-text--in-selecting-range),.react-datepicker__month--selecting-range .react-datepicker__year-text--in-range:not(.react-datepicker__day--in-selecting-range,.react-datepicker__month-text--in-selecting-range,.react-datepicker__quarter-text--in-selecting-range,.react-datepicker__year-text--in-selecting-range),.react-datepicker__year--selecting-range .react-datepicker__year-text--in-range:not(.react-datepicker__day--in-selecting-range,.react-datepicker__month-text--in-selecting-range,.react-datepicker__quarter-text--in-selecting-range,.react-datepicker__year-text--in-selecting-range){background-color:#f0f0f0;color:#000}.react-datepicker__day--disabled,.react-datepicker__month-text--disabled,.react-datepicker__quarter-text--disabled,.react-datepicker__year-text--disabled{cursor:default;color:#ccc}.react-datepicker__day--disabled:hover,.react-datepicker__month-text--disabled:hover,.react-datepicker__quarter-text--disabled:hover,.react-datepicker__year-text--disabled:hover{background-color:#0000}.react-datepicker__input-container{position:relative;display:inline-block;width:100%}.react-datepicker__input-container .react-datepicker__calendar-icon{position:absolute;padding:.5rem}.react-datepicker__view-calendar-icon input{padding:6px 10px 5px 25px}.react-datepicker__year-read-view,.react-datepicker__month-read-view,.react-datepicker__month-year-read-view{border:1px solid rgba(0,0,0,0);border-radius:.3rem;position:relative}.react-datepicker__year-read-view:hover,.react-datepicker__month-read-view:hover,.react-datepicker__month-year-read-view:hover{cursor:pointer}.react-datepicker__year-read-view:hover .react-datepicker__year-read-view--down-arrow,.react-datepicker__year-read-view:hover .react-datepicker__month-read-view--down-arrow,.react-datepicker__month-read-view:hover .react-datepicker__year-read-view--down-arrow,.react-datepicker__month-read-view:hover .react-datepicker__month-read-view--down-arrow,.react-datepicker__month-year-read-view:hover .react-datepicker__year-read-view--down-arrow,.react-datepicker__month-year-read-view:hover .react-datepicker__month-read-view--down-arrow{border-top-color:#b3b3b3}.react-datepicker__year-read-view--down-arrow,.react-datepicker__month-read-view--down-arrow,.react-datepicker__month-year-read-view--down-arrow{transform:rotate(135deg);right:-16px;top:0}.react-datepicker__year-dropdown,.react-datepicker__month-dropdown,.react-datepicker__month-year-dropdown{background-color:#f0f0f0;position:absolute;width:50%;left:25%;top:30px;z-index:1;text-align:center;border-radius:.3rem;border:1px solid #aeaeae}.react-datepicker__year-dropdown:hover,.react-datepicker__month-dropdown:hover,.react-datepicker__month-year-dropdown:hover{cursor:pointer}.react-datepicker__year-dropdown--scrollable,.react-datepicker__month-dropdown--scrollable,.react-datepicker__month-year-dropdown--scrollable{height:150px;overflow-y:scroll}.react-datepicker__year-option,.react-datepicker__month-option,.react-datepicker__month-year-option{line-height:20px;width:100%;display:block;margin-left:auto;margin-right:auto}.react-datepicker__year-option:first-of-type,.react-datepicker__month-option:first-of-type,.react-datepicker__month-year-option:first-of-type{border-top-left-radius:.3rem;border-top-right-radius:.3rem}.react-datepicker__year-option:last-of-type,.react-datepicker__month-option:last-of-type,.react-datepicker__month-year-option:last-of-type{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;border-bottom-left-radius:.3rem;border-bottom-right-radius:.3rem}.react-datepicker__year-option:hover,.react-datepicker__month-option:hover,.react-datepicker__month-year-option:hover{background-color:#ccc}.react-datepicker__year-option:hover .react-datepicker__navigation--years-upcoming,.react-datepicker__month-option:hover .react-datepicker__navigation--years-upcoming,.react-datepicker__month-year-option:hover .react-datepicker__navigation--years-upcoming{border-bottom-color:#b3b3b3}.react-datepicker__year-option:hover .react-datepicker__navigation--years-previous,.react-datepicker__month-option:hover .react-datepicker__navigation--years-previous,.react-datepicker__month-year-option:hover .react-datepicker__navigation--years-previous{border-top-color:#b3b3b3}.react-datepicker__year-option--selected,.react-datepicker__month-option--selected,.react-datepicker__month-year-option--selected{position:absolute;left:15px}.react-datepicker__close-icon{cursor:pointer;background-color:#0000;border:0;outline:0;padding:0 6px 0 0;position:absolute;top:0;right:0;height:100%;display:table-cell;vertical-align:middle}.react-datepicker__close-icon:after{cursor:pointer;background-color:#216ba5;color:#fff;border-radius:50%;height:16px;width:16px;padding:2px;font-size:12px;line-height:1;text-align:center;display:table-cell;vertical-align:middle;content:"×"}.react-datepicker__today-button{background:#f0f0f0;border-top:1px solid #aeaeae;cursor:pointer;text-align:center;font-weight:700;padding:5px 0;clear:left}.react-datepicker__portal{position:fixed;width:100vw;height:100vh;background-color:#000c;left:0;top:0;justify-content:center;align-items:center;display:flex;z-index:2147483647}.react-datepicker__portal .react-datepicker__day-name,.react-datepicker__portal .react-datepicker__day,.react-datepicker__portal .react-datepicker__time-name{width:3rem;line-height:3rem}@media (max-width: 400px),(max-height: 550px){.react-datepicker__portal .react-datepicker__day-name,.react-datepicker__portal .react-datepicker__day,.react-datepicker__portal .react-datepicker__time-name{width:2rem;line-height:2rem}}.react-datepicker__portal .react-datepicker__current-month,.react-datepicker__portal .react-datepicker-time__header{font-size:1.44rem}.react-datepicker__children-container{width:13.8rem;margin:.4rem;padding-right:.2rem;padding-left:.2rem;height:auto}.react-datepicker__aria-live{position:absolute;clip-path:circle(0);border:0;height:1px;margin:-1px;overflow:hidden;padding:0;width:1px;white-space:nowrap}.react-datepicker__calendar-icon{width:1em;height:1em;vertical-align:-.125em}')),document.head.appendChild(e)}}catch(t){console.error("vite-plugin-css-injected-by-js",t)}})();
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { a as Ur, f as Xr, k as Yr, j as l, ad as gt, ae as Ae, af as yt, ag as xt, ah as je, ai as Zr, aj as Jr, ak as lo, al as Qr, am as es, an as Mn, ao as ts, ap as ns, aq as os, a8 as rs, ar as ss, as as vt, at as as, au as is, av as Se, aw as ls, ax as tt, ay as qt, az as h, aA as Me, aB as b, aC as ge, ab as Ee, aD as pe, aE as W, aF as S, aG as J, aH as se, aI as Ut, aJ as co, aK as cs, aL as us, aM as ds, aN as fs, aO as ms, aP as Xt, aQ as ot, aR as ce, aS as j, aT as rt, aU as ft, aV as Dn, aW as O, aX as Le, aY as ps, aZ as _e, a_ as Yt, a$ as hs, b0 as uo, b1 as Ln, b2 as fo, b3 as vs, b4 as mo, W as bs, b5 as st, b6 as gs, p as ys, b7 as xs, b8 as Ss, b9 as _s, ba as ks, bb as Cs, M as ws, G as Ns, bc as Ps, bd as Is, be as js, bf as Es, bg as As, bh as po, bi as Et, bj as ho, bk as vo, bl as Ts, bm as Ms, bn as St, bo, bp as Ds, bq as Ls, br as Fs, bs as Rs, t as Bs, bt as go, bu as $s, z as Os } from "./Flex-23d3f517.mjs";
 import { J as up, I as dp, K as fp, H as mp, E as pp, bw as hp, a5 as vp, J as bp, I as gp, a6 as yp, K as xp, H as Sp, E as _p, cJ as kp, O as Cp, bv as wp, N as Np, P as Pp, by as Ip, bz as jp, U as Ep, R as Ap, Q as Tp, bA as Mp, J as Dp, I as Lp, bL as Fp, bM as Rp, K as Bp, H as $p, E as Op, a1 as Vp, a3 as zp, bT as Hp, bU as Wp, a4 as Gp, a2 as Kp, cK as qp, cL as Up, cM as Xp, Y as Yp, $ as Zp, bV as Jp, bW as Qp, a0 as eh, Z as th, bx as nh, o as oh, c6 as rh, c7 as sh, c8 as ah, c9 as ih, ca as lh, cb as ch, cc as uh, cd as dh, cH as fh, cN as mh, ce as ph, cf as hh, cg as vh, ch as bh, ci as gh, cO as yh, cj as xh, ck as Sh, cF as _h, cl as kh, cm as Ch, cn as wh, co as Nh, cp as Ph, cq as Ih, cr as jh, cs as Eh, cG as Ah, ct as Th, cu as Mh, cP as Dh, cv as Lh, c1 as Fh, cQ as Rh, cw as Bh, c2 as $h, cx as Oh, cy as Vh, c3 as zh, cz as Hh, cA as Wh, cB as Gh, cC as Kh, cD as qh, cE as Uh, c5 as Xh, c4 as Yh, bN as Zh, bB as Jh, bC as Qh, bD as ev, bE as tv, bF as nv, bG as ov, bH as rv, bI as sv, bJ as av, bK as iv, bO as lv, bP as cv, bQ as uv, bR as dv, bS as fv, bX as mv, bY as pv, bZ as hv, b_ as vv, b$ as bv, c0 as gv, cI as yv } from "./Flex-23d3f517.mjs";
 import Fn, { useState as L, useMemo as Y, useCallback as x, useEffect as q, createContext as yo, useContext as xo, useReducer as Vs, useRef as V, memo as zs, Children as Ze, useSyncExternalStore as Hs, useId as Fe, forwardRef as Ws, cloneElement as be, isValidElement as Zt, useLayoutEffect as Gs, Fragment as So, createElement as Ks } from "react";
@@ -15,6 +16,11 @@ var _o = String.raw, ko = _o`
 import { a as $r, f as Or, k as Vr, j as l, ar as gt, as as Ae, at as bt, au as yt, av as Be, aw as zr, ax as Hr, ay as ao, az as Gr, aA as Wr, aB as An, aC as Kr, aD as Ur, aE as qr, ao as Xr, aF as Yr, aG as ht, aH as Zr, aI as Jr, aJ as Qr, aK as Se, aL as es, aM as tt, aN as Gt, a2 as h, aO as Te, a0 as g, aP as ve, V as Ie, a1 as be, a3 as H, aQ as S, aR as te, $ as ae, aS as Wt, aT as io, aU as ts, aV as ns, aW as os, aX as rs, aY as ss, aZ as Kt, a_ as ot, a$ as ue, b0 as j, b1 as rt, b2 as dt, b3 as Tn, b4 as z, b5 as Oe, b6 as as, b7 as Ut, b8 as lo, b9 as qt, ba as is, bb as co, bc as Mn, bd as uo, be as Ne, bf as ls, bg as fo, ab as cs, a7 as Xt, Y as Yt, bh as Ee, bi as us, bj as ds, p as fs, bk as Zt, bl as ms, bm as ps, bn as hs, bo as vs, a6 as gs, M as bs, G as ys, bp as xs, bq as Ss, br as _s, bs as ks, bt as Cs, bu as mo, bv as Nt, bw as po, bx as ho, by as ws, Z as Ps, bz as Ns, bA as Ye, bB as vo, bC as Is, bD as Es, bE as js, bF as As, bG as Ts, bH as Ms, t as Ds, bI as go, bJ as Fs, z as Ls } from "./Flex-25911dba.mjs";
 import { J as rp, I as sp, K as ap, H as ip, E as lp, bO as cp, a4 as up, al as dp, J as fp, I as mp, am as pp, K as hp, H as vp, E as gp, d1 as bp, O as yp, bK as xp, a8 as Sp, bL as _p, a9 as kp, aa as Cp, N as wp, P as Pp, bS as Np, bT as Ip, U as Ep, R as jp, Q as Ap, bU as Tp, J as Mp, I as Dp, c3 as Fp, c4 as Lp, K as Rp, H as Bp, E as $p, ah as Op, aj as Vp, cc as zp, cd as Hp, ak as Gp, ai as Wp, bM as Kp, d2 as Up, d3 as qp, d4 as Xp, ad as Yp, af as Zp, ce as Jp, cf as Qp, ag as eh, ae as th, bP as nh, bQ as oh, o as rh, cq as sh, cr as ah, cs as ih, ct as lh, cu as ch, cv as uh, cw as dh, cx as fh, c$ as mh, d5 as ph, cy as hh, cz as vh, cA as gh, cB as bh, cC as yh, d6 as xh, cD as Sh, cE as _h, cZ as kh, cF as Ch, cG as wh, cH as Ph, cI as Nh, cJ as Ih, cK as Eh, cL as jh, cM as Ah, c_ as Th, cN as Mh, cO as Dh, d7 as Fh, cP as Lh, cm as Rh, d8 as Bh, cQ as $h, cn as Oh, cR as Vh, cS as zh, co as Hh, cT as Gh, cU as Wh, cV as Kh, cW as Uh, cX as qh, cY as Xh, bR as Yh, a5 as Zh, cp as Jh, c5 as Qh, cb as ev, bN as tv, bV as nv, bW as ov, bX as rv, bY as sv, bZ as av, b_ as iv, b$ as lv, c0 as cv, c1 as uv, c2 as dv, c6 as fv, c7 as mv, c8 as pv, c9 as hv, ca as vv, cg as gv, ch as bv, ci as yv, cj as xv, ck as Sv, cl as _v, d0 as kv } from "./Flex-25911dba.mjs";
 import Dn, { useState as F, useMemo as J, useCallback as x, useEffect as U, createContext as Rs, useContext as Bs, memo as $s, Children as Ze, useSyncExternalStore as Os, useRef as V, useId as Ve, forwardRef as Vs, cloneElement as ge, isValidElement as Jt, useLayoutEffect as zs, Fragment as Hs, createElement as Gs } from "react";
+=======
+import { a as $r, f as Or, k as Vr, j as l, ar as gt, as as Ae, at as bt, au as yt, av as Re, aw as zr, ax as Hr, ay as ao, az as Gr, aA as Wr, aB as An, aC as Kr, aD as Ur, aE as qr, ao as Xr, aF as Yr, aG as ht, aH as Zr, aI as Jr, aJ as Qr, aK as Se, aL as es, aM as tt, aN as Gt, a2 as h, aO as Te, a0 as g, aP as ve, V as Ie, a1 as be, a3 as H, aQ as S, aR as te, $ as ae, aS as Wt, aT as io, aU as ts, aV as ns, aW as os, aX as rs, aY as ss, aZ as Kt, a_ as ot, a$ as ue, b0 as j, b1 as rt, b2 as dt, b3 as Tn, b4 as z, b5 as Oe, b6 as as, b7 as Ut, b8 as lo, b9 as qt, ba as is, bb as co, bc as Mn, bd as uo, be as Ne, bf as ls, bg as fo, ab as cs, a7 as Xt, Y as Yt, bh as Ee, bi as us, bj as ds, p as fs, bk as Zt, bl as ms, bm as ps, bn as hs, bo as vs, a6 as gs, M as bs, G as ys, bp as xs, bq as Ss, br as _s, bs as ks, bt as Cs, bu as mo, bv as Nt, bw as po, bx as ho, by as ws, Z as Ps, bz as Ns, bA as Ye, bB as vo, bC as Is, bD as Es, bE as js, bF as As, bG as Ts, bH as Ms, t as Ds, bI as go, bJ as Fs, z as Ls } from "./Flex-25911dba.mjs";
+import { J as rp, I as sp, K as ap, H as ip, E as lp, bO as cp, a4 as up, al as dp, J as fp, I as mp, am as pp, K as hp, H as vp, E as gp, d1 as bp, O as yp, bK as xp, a8 as Sp, bL as _p, a9 as kp, aa as Cp, N as wp, P as Pp, bS as Np, bT as Ip, U as Ep, R as jp, Q as Ap, bU as Tp, J as Mp, I as Dp, c3 as Fp, c4 as Lp, K as Bp, H as Rp, E as $p, ah as Op, aj as Vp, cc as zp, cd as Hp, ak as Gp, ai as Wp, bM as Kp, d2 as Up, d3 as qp, d4 as Xp, ad as Yp, af as Zp, ce as Jp, cf as Qp, ag as eh, ae as th, bP as nh, bQ as oh, o as rh, cq as sh, cr as ah, cs as ih, ct as lh, cu as ch, cv as uh, cw as dh, cx as fh, c$ as mh, d5 as ph, cy as hh, cz as vh, cA as gh, cB as bh, cC as yh, d6 as xh, cD as Sh, cE as _h, cZ as kh, cF as Ch, cG as wh, cH as Ph, cI as Nh, cJ as Ih, cK as Eh, cL as jh, cM as Ah, c_ as Th, cN as Mh, cO as Dh, d7 as Fh, cP as Lh, cm as Bh, d8 as Rh, cQ as $h, cn as Oh, cR as Vh, cS as zh, co as Hh, cT as Gh, cU as Wh, cV as Kh, cW as Uh, cX as qh, cY as Xh, bR as Yh, a5 as Zh, cp as Jh, c5 as Qh, cb as ev, bN as tv, bV as nv, bW as ov, bX as rv, bY as sv, bZ as av, b_ as iv, b$ as lv, c0 as cv, c1 as uv, c2 as dv, c6 as fv, c7 as mv, c8 as pv, c9 as hv, ca as vv, cg as gv, ch as bv, ci as yv, cj as xv, ck as Sv, cl as _v, d0 as kv } from "./Flex-25911dba.mjs";
+import Dn, { useState as F, useMemo as J, useCallback as x, useEffect as U, createContext as Bs, useContext as Rs, memo as $s, Children as Ze, useSyncExternalStore as Os, useRef as V, useId as Ve, forwardRef as Vs, cloneElement as ge, isValidElement as Jt, useLayoutEffect as zs, Fragment as Hs, createElement as Gs } from "react";
+>>>>>>> 561af57 (placeholder color)
 import "react-dom";
 var Ws = /* @__PURE__ */ $r(function(t, n) {
   return Or(function(o, r) {
@@ -637,7 +643,11 @@ function oa({
 }) {
   return (n) => {
     let o = Object.keys(n.components || {});
+<<<<<<< HEAD
     return Array.isArray(t) ? o = t : je(t) && (o = Object.keys(t)), xt(n, {
+=======
+    return Array.isArray(t) ? o = t : Re(t) && (o = Object.keys(t)), yt(n, {
+>>>>>>> 561af57 (placeholder color)
       components: Object.fromEntries(
         o.map((r) => [r, {
           defaultProps: {
@@ -658,7 +668,11 @@ function ra({
 }) {
   return (n) => {
     let o = Object.keys(n.components || {});
+<<<<<<< HEAD
     return Array.isArray(t) ? o = t : je(t) && (o = Object.keys(t)), xt(n, {
+=======
+    return Array.isArray(t) ? o = t : Re(t) && (o = Object.keys(t)), yt(n, {
+>>>>>>> 561af57 (placeholder color)
       components: Object.fromEntries(
         o.map((r) => [r, {
           defaultProps: {
@@ -679,7 +693,11 @@ function sa({
 }) {
   return (n) => {
     let o = Object.keys(n.components || {});
+<<<<<<< HEAD
     return Array.isArray(t) ? o = t : je(t) && (o = Object.keys(t)), xt(n, {
+=======
+    return Array.isArray(t) ? o = t : Re(t) && (o = Object.keys(t)), yt(n, {
+>>>>>>> 561af57 (placeholder color)
       components: Object.fromEntries(
         o.map((r) => [r, {
           defaultProps: {
@@ -1007,7 +1025,7 @@ function Ea(e) {
     (e = this.removeListeners) == null || e.call(this), Hr.update(this.updatePoint);
   }
 };
-function Rn(e, t) {
+function Bn(e, t) {
   return { x: e.x - t.x, y: e.y - t.y };
 }
 function Na(e) {
@@ -1020,6 +1038,7 @@ function Ia(e) {
 function Tt(e, t) {
   return {
     point: e.point,
+<<<<<<< HEAD
 <<<<<<< HEAD
     delta: $n(e.point, Ea(t)),
     offset: $n(e.point, ja(t)),
@@ -1039,6 +1058,10 @@ function Ma(e, t) {
 =======
     delta: Rn(e.point, Ia(t)),
     offset: Rn(e.point, Na(t)),
+=======
+    delta: Bn(e.point, Ia(t)),
+    offset: Bn(e.point, Na(t)),
+>>>>>>> 561af57 (placeholder color)
     velocity: Aa(t, 0.1)
   };
 }
@@ -1131,11 +1154,15 @@ var Oa = [
 =======
   return t in o ? o[t]() : La(e) ? !0 : Co(e);
 }
-function Ra(e) {
+function Ba(e) {
   return e ? xt(e) && No(e) && !Ta(e) : !1;
 }
+<<<<<<< HEAD
 var Ba = [
 >>>>>>> d2c80eb (cosmetics)
+=======
+var Ra = [
+>>>>>>> 561af57 (placeholder color)
   "input:not(:disabled):not([disabled])",
   "select:not(:disabled):not([disabled])",
   "textarea:not(:disabled):not([disabled])",
@@ -1151,6 +1178,7 @@ var Ba = [
   "*[tabindex]:not([aria-disabled])",
   "*[contenteditable]"
 <<<<<<< HEAD
+<<<<<<< HEAD
 ], Va = Oa.join(), za = (e) => e.offsetWidth > 0 && e.offsetHeight > 0;
 function Ha(e) {
   const t = Array.from(
@@ -1163,6 +1191,9 @@ function nt(e, t = {}) {
     isActive: n = jo,
 =======
 ], $a = Ba.join(), Oa = (e) => e.offsetWidth > 0 && e.offsetHeight > 0;
+=======
+], $a = Ra.join(), Oa = (e) => e.offsetWidth > 0 && e.offsetHeight > 0;
+>>>>>>> 561af57 (placeholder color)
 function Va(e) {
   const t = Array.from(
     e.querySelectorAll($a)
@@ -1275,7 +1306,7 @@ function Ga(e) {
     t.scrollTop = n, t.scrollLeft = o;
 }
 var Wa = process.env.NODE_ENV === "production", jt = "Invariant failed";
-function Bn(e, t) {
+function Rn(e, t) {
   if (!e) {
     if (Wa)
       throw new Error(jt);
@@ -1345,10 +1376,14 @@ var ht = function(t) {
     return 0;
   var r = Number(n);
 <<<<<<< HEAD
+<<<<<<< HEAD
   return isNaN(r) && (process.env.NODE_ENV !== "production" ? On(!1, "Could not parse value [raw: " + t + ", without suffix: " + n + "]") : On(!1)), r;
 }, Ya = function(t, n) {
 =======
   return isNaN(r) && (process.env.NODE_ENV !== "production" ? Bn(!1, "Could not parse value [raw: " + t + ", without suffix: " + n + "]") : Bn(!1)), r;
+=======
+  return isNaN(r) && (process.env.NODE_ENV !== "production" ? Rn(!1, "Could not parse value [raw: " + t + ", without suffix: " + n + "]") : Rn(!1)), r;
+>>>>>>> 561af57 (placeholder color)
 }, qa = function(t, n) {
 >>>>>>> d2c80eb (cosmetics)
   var o = {
@@ -1403,6 +1438,7 @@ function Io(e = {}) {
     errorMessage: n = "useContext: `context` is undefined. Seems you forgot to wrap component within the Provider",
     name: o
 <<<<<<< HEAD
+<<<<<<< HEAD
   } = e, r = yo(void 0);
   r.displayName = o;
   function s() {
@@ -1415,6 +1451,13 @@ function Io(e = {}) {
     var a;
     const i = Bs(r);
 >>>>>>> d2c80eb (cosmetics)
+=======
+  } = e, r = Bs(void 0);
+  r.displayName = o;
+  function s() {
+    var a;
+    const i = Rs(r);
+>>>>>>> 561af57 (placeholder color)
     if (!i && t) {
       const c = new Error(n);
       throw c.name = "ContextError", (a = Error.captureStackTrace) == null || a.call(Error, c, s), c;
@@ -2272,7 +2315,7 @@ var [yi, xi] = J({
 var [vi, gi] = te({
   name: "ToastOptionsContext",
   strict: !1
-}), Ro = (e) => {
+}), Bo = (e) => {
   const t = Os(
 >>>>>>> d2c80eb (cosmetics)
     Pe.subscribe,
@@ -2393,8 +2436,12 @@ function Kf({
       zo,
 =======
     ToastContainer: () => /* @__PURE__ */ l.jsx(Eo, { theme: e, children: /* @__PURE__ */ l.jsx(bt.Provider, { value: u, children: /* @__PURE__ */ l.jsx(
+<<<<<<< HEAD
       Ro,
 >>>>>>> d2c80eb (cosmetics)
+=======
+      Bo,
+>>>>>>> 561af57 (placeholder color)
       {
         defaultOptions: r,
         motionVariants: s,
@@ -2411,8 +2458,12 @@ var Ho = (e) => function({
     toast: Lo(e.direction, r)
   };
 }
+<<<<<<< HEAD
 var Bo = (e) => function({
 >>>>>>> d2c80eb (cosmetics)
+=======
+var Ro = (e) => function({
+>>>>>>> 561af57 (placeholder color)
   children: n,
   theme: o = e,
   toastOptions: r,
@@ -2431,9 +2482,9 @@ var Bo = (e) => function({
 =======
   return /* @__PURE__ */ l.jsxs(Ja, { theme: o, ...s, children: [
     /* @__PURE__ */ l.jsx(vi, { value: r == null ? void 0 : r.defaultOptions, children: n }),
-    /* @__PURE__ */ l.jsx(Ro, { ...r })
+    /* @__PURE__ */ l.jsx(Bo, { ...r })
   ] });
-}, xi = Bo(rs), Uf = Bo(ss), [Si, St] = te({
+}, xi = Ro(rs), Uf = Ro(ss), [Si, St] = te({
   name: "AccordionStylesContext",
   hookName: "useAccordionStyles",
   providerName: "<Accordion />"
@@ -2776,10 +2827,14 @@ var Li = (e) => e != null && parseInt(e.toString(), 10) > 0, Hn = {
     opacity: { duration: 0.4, ease: ft.ease }
   }
 <<<<<<< HEAD
+<<<<<<< HEAD
 }, Oi = {
 =======
 }, Ri = {
 >>>>>>> d2c80eb (cosmetics)
+=======
+}, Bi = {
+>>>>>>> 561af57 (placeholder color)
   exit: ({
     animateOpacity: e,
     startingHeight: t,
@@ -2879,11 +2934,15 @@ var Li = (e) => e != null && parseInt(e.toString(), 10) > 0, Hn = {
         },
         custom: y,
 <<<<<<< HEAD
+<<<<<<< HEAD
         variants: Oi,
         initial: o ? "exit" : !1,
         animate: _,
 =======
         variants: Ri,
+=======
+        variants: Bi,
+>>>>>>> 561af57 (placeholder color)
         initial: o ? "exit" : !1,
         animate: k,
 >>>>>>> d2c80eb (cosmetics)
@@ -2897,8 +2956,12 @@ Wo.displayName = "Collapse";
 var Vi = b(
 =======
 $o.displayName = "Collapse";
+<<<<<<< HEAD
 var Bi = g(
 >>>>>>> d2c80eb (cosmetics)
+=======
+var Ri = g(
+>>>>>>> 561af57 (placeholder color)
   function(t, n) {
     const { className: o, motionProps: r, ...s } = t, { reduceMotion: a } = mn(), { getPanelProps: i, isOpen: c } = Ct(), u = i(s, n), d = S("chakra-accordion__panel", o), f = kt();
     a || delete u.hidden;
@@ -2918,7 +2981,7 @@ var zi = b(function({ children: t, reduceMotion: n, ...o }, r) {
     return a ? m : /* @__PURE__ */ l.jsx($o, { in: c, ...r, children: m });
   }
 );
-Bi.displayName = "AccordionPanel";
+Ri.displayName = "AccordionPanel";
 var $i = g(function({ children: t, reduceMotion: n, ...o }, r) {
   const s = ae("Accordion", o), a = H(o), { htmlProps: i, descendants: c, ...u } = Ni(a), d = J(
     () => ({ ...u, reduceMotion: !!n }),
@@ -3637,8 +3700,13 @@ function rl(e) {
     s && n(s.tagName === "BUTTON");
   }, []), type: t ? "button" : void 0 };
 }
+<<<<<<< HEAD
 function Ot(e) {
   const { children: t, className: n, ...o } = e, r = Zt(t) ? be(t, {
+=======
+function Bt(e) {
+  const { children: t, className: n, ...o } = e, r = Jt(t) ? ge(t, {
+>>>>>>> 561af57 (placeholder color)
     "aria-hidden": !0,
     focusable: !1
   }) : t, s = S("chakra-button__icon", n);
@@ -3654,8 +3722,13 @@ function Ot(e) {
     }
   );
 }
+<<<<<<< HEAD
 Ot.displayName = "ButtonIcon";
 function Vt(e) {
+=======
+Bt.displayName = "ButtonIcon";
+function Rt(e) {
+>>>>>>> 561af57 (placeholder color)
   const {
     label: t,
     placement: n,
@@ -3679,11 +3752,15 @@ function Vt(e) {
   return /* @__PURE__ */ l.jsx(h.div, { className: c, ...i, __css: d, children: r });
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 Vt.displayName = "ButtonSpinner";
 var Jo = b((e, t) => {
   const n = ol(), o = pe("Button", { ...n, ...e }), {
 =======
 Bt.displayName = "ButtonSpinner";
+=======
+Rt.displayName = "ButtonSpinner";
+>>>>>>> 561af57 (placeholder color)
 var Uo = g((e, t) => {
   const n = el(), o = be("Button", { ...n, ...e }), {
 >>>>>>> d2c80eb (cosmetics)
@@ -3747,8 +3824,13 @@ var Uo = g((e, t) => {
 >>>>>>> d2c80eb (cosmetics)
       disabled: r || s,
       children: [
+<<<<<<< HEAD
         s && g === "start" && /* @__PURE__ */ l.jsx(
           Vt,
+=======
+        s && b === "start" && /* @__PURE__ */ l.jsx(
+          Rt,
+>>>>>>> 561af57 (placeholder color)
           {
             className: "chakra-button__spinner--start",
             label: d,
@@ -3764,8 +3846,12 @@ var Uo = g((e, t) => {
 =======
         s ? d || /* @__PURE__ */ l.jsx(h.span, { opacity: 0, children: /* @__PURE__ */ l.jsx(Gn, { ...w }) }) : /* @__PURE__ */ l.jsx(Gn, { ...w }),
         s && b === "end" && /* @__PURE__ */ l.jsx(
+<<<<<<< HEAD
           Bt,
 >>>>>>> d2c80eb (cosmetics)
+=======
+          Rt,
+>>>>>>> 561af57 (placeholder color)
           {
             className: "chakra-button__spinner--end",
             label: d,
@@ -3787,9 +3873,15 @@ function Gn(e) {
 >>>>>>> d2c80eb (cosmetics)
   const { leftIcon: t, rightIcon: n, children: o, iconSpacing: r } = e;
   return /* @__PURE__ */ l.jsxs(l.Fragment, { children: [
+<<<<<<< HEAD
     t && /* @__PURE__ */ l.jsx(Ot, { marginEnd: r, children: t }),
     o,
     n && /* @__PURE__ */ l.jsx(Ot, { marginStart: r, children: n })
+=======
+    t && /* @__PURE__ */ l.jsx(Bt, { marginEnd: r, children: t }),
+    o,
+    n && /* @__PURE__ */ l.jsx(Bt, { marginStart: r, children: n })
+>>>>>>> 561af57 (placeholder color)
   ] });
 }
 <<<<<<< HEAD
@@ -3924,7 +4016,7 @@ function fl(e = {}) {
   strict: !1
 });
 function Wn(e) {
-  return e && Be(e) && Be(e.target);
+  return e && Re(e) && Re(e.target);
 }
 function cl(e = {}) {
 >>>>>>> d2c80eb (cosmetics)
@@ -4505,12 +4597,16 @@ function Xo(e = {}) {
     "onFocus",
     "aria-describedby"
 <<<<<<< HEAD
+<<<<<<< HEAD
   ]), D = Se(p), M = Se(i), G = Se(c), [R, T] = L(!1), [z, $] = L(!1), [U, Q] = L(!1), [X, ee] = L(!1);
   q(() => tr(T), []);
   const A = V(null), [ie, me] = L(!0), [de, oe] = L(!!d), fe = f !== void 0, te = fe ? f : de, ae = x(
     (F) => {
 =======
   ]), W = Se(p), L = Se(i), Q = Se(c), [D, T] = F(!1), [$, B] = F(!1), [K, Y] = F(!1), [q, Z] = F(!1);
+=======
+  ]), W = Se(p), L = Se(i), Q = Se(c), [D, T] = F(!1), [$, R] = F(!1), [K, Y] = F(!1), [q, Z] = F(!1);
+>>>>>>> 561af57 (placeholder color)
   U(() => qo(T), []);
   const A = V(null), [ie, me] = F(!0), [de, oe] = F(!!d), fe = f !== void 0, ee = fe ? f : de, se = x(
     (M) => {
@@ -4540,12 +4636,21 @@ function Xo(e = {}) {
     ]
   );
   Ae(() => {
+<<<<<<< HEAD
     A.current && (A.current.indeterminate = !!g);
   }, [g]), tt(() => {
     n && $(!1);
   }, [n, $]), Ae(() => {
     const F = A.current;
     F != null && F.form && (F.form.onreset = () => {
+=======
+    A.current && (A.current.indeterminate = !!b);
+  }, [b]), tt(() => {
+    n && R(!1);
+  }, [n, R]), Ae(() => {
+    const M = A.current;
+    M != null && M.form && (M.form.onreset = () => {
+>>>>>>> 561af57 (placeholder color)
       oe(!!d);
     });
   }, []);
@@ -4645,11 +4750,19 @@ function Xo(e = {}) {
       "data-checked": O(te),
       "data-invalid": O(s)
     }),
+<<<<<<< HEAD
     [I, n, te, s, ie]
   ), B = x(
     (F = {}, H = null) => ({
       ...F,
       ref: ce(A, H),
+=======
+    [I, n, ee, s, ie]
+  ), B = x(
+    (M = {}, O = null) => ({
+      ...M,
+      ref: ue(A, O),
+>>>>>>> 561af57 (placeholder color)
       type: "checkbox",
       name: y,
       value: v,
@@ -4662,6 +4775,7 @@ function Xo(e = {}) {
       onChange: j(M.onChange, se),
 >>>>>>> d2c80eb (cosmetics)
       onBlur: j(
+<<<<<<< HEAD
         F.onBlur,
         M,
         () => $(!1)
@@ -4670,6 +4784,16 @@ function Xo(e = {}) {
         F.onFocus,
         G,
         () => $(!0)
+=======
+        M.onBlur,
+        L,
+        () => R(!1)
+      ),
+      onFocus: j(
+        M.onFocus,
+        Q,
+        () => R(!0)
+>>>>>>> 561af57 (placeholder color)
       ),
       onKeyDown: j(F.onKeyDown, ye),
       onKeyUp: j(F.onKeyUp, Ne),
@@ -5007,8 +5131,12 @@ Gl.displayName = "ControlBox";
 function Kl(e = {}) {
 =======
 Ll.displayName = "ControlBox";
+<<<<<<< HEAD
 function Rl(e = {}) {
 >>>>>>> d2c80eb (cosmetics)
+=======
+function Bl(e = {}) {
+>>>>>>> 561af57 (placeholder color)
   const {
     onChange: t,
     precision: n,
@@ -5141,7 +5269,7 @@ function im() {
   const r = Yo(o, t);
   return co(o, n ?? r);
 }
-var [Bl, bn] = te({
+var [Rl, bn] = te({
   name: "EditableStylesContext",
   errorMessage: `useEditableStyles returned is 'undefined'. Seems you forgot to wrap the components in "<Editable />" `
 }), [$l, it] = te({
@@ -5329,11 +5457,16 @@ function Xl(e = {}) {
     elements: [T, $]
 >>>>>>> d2c80eb (cosmetics)
   });
+<<<<<<< HEAD
   const $ = !k && !a;
+=======
+  const R = !_ && !a;
+>>>>>>> 561af57 (placeholder color)
   Ae(() => {
     var E, K;
     k && ((E = M.current) == null || E.focus(), f && ((K = M.current) == null || K.select()));
   }, []), tt(() => {
+<<<<<<< HEAD
     var E, K, B, ne;
     if (!k) {
       g ? (E = g.current) == null || E.focus() : (K = R.current) == null || K.focus();
@@ -5355,10 +5488,18 @@ function Xl(e = {}) {
     if (k)
 =======
     (R = L.current) == null || R.focus(), f && ((ne = L.current) == null || ne.select()), v == null || v();
+=======
+    var E, G, B, ne;
+    if (!_) {
+      b ? (E = b.current) == null || E.focus() : (G = D.current) == null || G.focus();
+      return;
+    }
+    (B = L.current) == null || B.focus(), f && ((ne = L.current) == null || ne.select()), v == null || v();
+>>>>>>> 561af57 (placeholder color)
   }, [_, v, f]);
   const K = x(() => {
-    B && N(!0);
-  }, [B]), Y = x(() => {
+    R && N(!0);
+  }, [R]), Y = x(() => {
     W(P);
   }, [P]), q = x(() => {
     N(!1), w(I), n == null || n(I), r == null || r(I);
@@ -5402,17 +5543,26 @@ function Xl(e = {}) {
       if (!k)
         return;
 <<<<<<< HEAD
+<<<<<<< HEAD
       const B = E.currentTarget.ownerDocument, ne = (K = E.relatedTarget) != null ? K : B.activeElement, ve = Zn(T.current, ne), F = Zn(z.current, ne);
       !ve && !F && (d ? ee() : X());
 =======
       const R = E.currentTarget.ownerDocument, ne = (G = E.relatedTarget) != null ? G : R.activeElement, he = Xn(T.current, ne), M = Xn($.current, ne);
+=======
+      const B = E.currentTarget.ownerDocument, ne = (G = E.relatedTarget) != null ? G : B.activeElement, he = Xn(T.current, ne), M = Xn($.current, ne);
+>>>>>>> 561af57 (placeholder color)
       !he && !M && (d ? Z() : q());
 >>>>>>> d2c80eb (cosmetics)
     },
     [d, ee, X, k]
   ), fe = x(
+<<<<<<< HEAD
     (E = {}, K = null) => {
       const B = $ && u ? 0 : void 0;
+=======
+    (E = {}, G = null) => {
+      const B = R && u ? 0 : void 0;
+>>>>>>> 561af57 (placeholder color)
       return {
         ...E,
 <<<<<<< HEAD
@@ -5427,15 +5577,20 @@ function Xl(e = {}) {
         children: de ? m : P,
         hidden: _,
         "aria-disabled": Ne(a),
-        tabIndex: R,
+        tabIndex: B,
         onFocus: j(E.onFocus, K, Y)
 >>>>>>> d2c80eb (cosmetics)
       };
     },
     [
       a,
+<<<<<<< HEAD
       k,
       $,
+=======
+      _,
+      R,
+>>>>>>> 561af57 (placeholder color)
       u,
       de,
 <<<<<<< HEAD
@@ -5573,10 +5728,14 @@ var Yl = g(function(t, n) {
     onEdit: d
   });
 <<<<<<< HEAD
+<<<<<<< HEAD
   return /* @__PURE__ */ l.jsx(Ul, { value: a, children: /* @__PURE__ */ l.jsx(ql, { value: o, children: /* @__PURE__ */ l.jsx(
 =======
   return /* @__PURE__ */ l.jsx($l, { value: a, children: /* @__PURE__ */ l.jsx(Bl, { value: o, children: /* @__PURE__ */ l.jsx(
 >>>>>>> d2c80eb (cosmetics)
+=======
+  return /* @__PURE__ */ l.jsx($l, { value: a, children: /* @__PURE__ */ l.jsx(Rl, { value: o, children: /* @__PURE__ */ l.jsx(
+>>>>>>> 561af57 (placeholder color)
     h.div,
     {
       ref: n,
@@ -6084,7 +6243,7 @@ function ec(e) {
   if (!t)
     return !1;
   const n = ca(t);
-  return !n || nn(t, n) ? !1 : !!Ra(n);
+  return !n || nn(t, n) ? !1 : !!Ba(n);
 }
 function ym(e, t) {
   const { shouldFocus: n, visible: o, focusRef: r } = t, s = n && !o;
@@ -7321,10 +7480,14 @@ var jm = g(
     }
   );
 <<<<<<< HEAD
+<<<<<<< HEAD
 }), Xc = b(function(e, t) {
 =======
 }), Rc = g(function(e, t) {
 >>>>>>> d2c80eb (cosmetics)
+=======
+}), Bc = g(function(e, t) {
+>>>>>>> 561af57 (placeholder color)
   const { ratio: n = 4 / 3, children: o, className: r, ...s } = e, a = Ze.only(o), i = S("chakra-aspect-ratio", r);
   return /* @__PURE__ */ l.jsx(
     h.div,
@@ -7362,12 +7525,17 @@ var jm = g(
   );
 });
 <<<<<<< HEAD
+<<<<<<< HEAD
 Xc.displayName = "AspectRatio";
 var Yc = b(function(t, n) {
   const o = pe("Badge", t), { className: r, ...s } = W(t);
 =======
 Rc.displayName = "AspectRatio";
 var Bc = g(function(t, n) {
+=======
+Bc.displayName = "AspectRatio";
+var Rc = g(function(t, n) {
+>>>>>>> 561af57 (placeholder color)
   const o = be("Badge", t), { className: r, ...s } = H(t);
 >>>>>>> d2c80eb (cosmetics)
   return /* @__PURE__ */ l.jsx(
@@ -7386,10 +7554,14 @@ var Bc = g(function(t, n) {
   );
 });
 <<<<<<< HEAD
+<<<<<<< HEAD
 Yc.displayName = "Badge";
 var Zc = h("div", {
 =======
 Bc.displayName = "Badge";
+=======
+Rc.displayName = "Badge";
+>>>>>>> 561af57 (placeholder color)
 var $c = h("div", {
 >>>>>>> d2c80eb (cosmetics)
   baseStyle: {
@@ -7949,9 +8121,9 @@ function tu(e = {}) {
     format: D,
     parse: T,
     ...$
-  } = e, B = Se(w), K = Se(I), Y = Se(W), q = Se(
+  } = e, R = Se(w), K = Se(I), Y = Se(W), q = Se(
     Q ?? Qc
-  ), Z = Se(L), A = Rl(e), {
+  ), Z = Se(L), A = Bl(e), {
     update: ie,
     increment: me,
     decrement: de
@@ -7964,7 +8136,7 @@ function tu(e = {}) {
       return (X = T == null ? void 0 : T(C)) != null ? X : C;
     },
     [T]
-  ), R = x(
+  ), B = x(
     (C) => {
       var X;
       return ((X = D == null ? void 0 : D(C)) != null ? X : C).toString();
@@ -7973,9 +8145,15 @@ function tu(e = {}) {
     [R]
   );
   tt(() => {
+<<<<<<< HEAD
     (A.valueAsNumber > s || A.valueAsNumber < r) && (Q == null || Q("rangeOverflow", B(A.value), A.valueAsNumber));
   }, [A.valueAsNumber, A.value, B, Q]), Ae(() => {
     if (!ae.current)
+=======
+    (A.valueAsNumber > s || A.valueAsNumber < r) && (Y == null || Y("rangeOverflow", B(A.value), A.valueAsNumber));
+  }, [A.valueAsNumber, A.value, B, Y]), Ae(() => {
+    if (!se.current)
+>>>>>>> 561af57 (placeholder color)
       return;
     if (ae.current.value != A.value) {
       const Z = K(ae.current.value);
@@ -8054,10 +8232,16 @@ function tu(e = {}) {
 =======
     (C) => {
       var X, ce, xe;
+<<<<<<< HEAD
       B == null || B(C), pe.current && (C.target.selectionStart = (ce = pe.current.start) != null ? ce : (X = C.currentTarget.value) == null ? void 0 : X.length, C.currentTarget.selectionEnd = (xe = pe.current.end) != null ? xe : C.currentTarget.selectionStart);
 >>>>>>> d2c80eb (cosmetics)
     },
     [$]
+=======
+      R == null || R(C), pe.current && (C.target.selectionStart = (ce = pe.current.start) != null ? ce : (X = C.currentTarget.value) == null ? void 0 : X.length, C.currentTarget.selectionEnd = (xe = pe.current.end) != null ? xe : C.currentTarget.selectionStart);
+    },
+    [R]
+>>>>>>> 561af57 (placeholder color)
   ), re = x(
 <<<<<<< HEAD
     (N) => {
@@ -8107,13 +8291,13 @@ function tu(e = {}) {
       if (C.nativeEvent.isComposing)
         return;
       eu(C, q) || C.preventDefault();
-      const X = _e(C) * a, ce = C.key, Re = {
+      const X = _e(C) * a, ce = C.key, Be = {
         ArrowUp: () => ne(X),
         ArrowDown: () => he(X),
         Home: () => ie(r),
         End: () => ie(s)
       }[ce];
-      Re && (C.preventDefault(), Re(C));
+      Be && (C.preventDefault(), Be(C));
     },
     [q, a, ne, he, ie, r, s]
   ), _e = (C) => {
@@ -8211,8 +8395,8 @@ function tu(e = {}) {
     "wheel",
     (C) => {
       var X, ce;
-      const Re = ((ce = (X = se.current) == null ? void 0 : X.ownerDocument) != null ? ce : document).activeElement === se.current;
-      if (!p || !Re)
+      const Be = ((ce = (X = se.current) == null ? void 0 : X.ownerDocument) != null ? ce : document).activeElement === se.current;
+      if (!p || !Be)
         return;
       C.preventDefault();
       const et = _e(C) * a, jn = Math.sign(C.deltaY);
@@ -8238,7 +8422,7 @@ function tu(e = {}) {
       };
     },
     [A.isAtMax, o, In, M.stop, c]
-  ), Rr = x(
+  ), Br = x(
     (C = {}, X = null) => {
       const ce = c || o && A.isAtMin;
       return {
@@ -8256,9 +8440,9 @@ function tu(e = {}) {
       };
     },
     [A.isAtMin, o, En, M.stop, c]
-  ), Br = x(
+  ), Rr = x(
     (C = {}, X = null) => {
-      var ce, xe, Re, et;
+      var ce, xe, Be, et;
       return {
         name: k,
 >>>>>>> d2c80eb (cosmetics)
@@ -8282,11 +8466,15 @@ function tu(e = {}) {
         ...C,
         readOnly: (ce = C.readOnly) != null ? ce : i,
         "aria-readonly": (xe = C.readOnly) != null ? xe : i,
-        "aria-required": (Re = C.required) != null ? Re : u,
+        "aria-required": (Be = C.required) != null ? Be : u,
         required: (et = C.required) != null ? et : u,
         ref: ue(se, X),
+<<<<<<< HEAD
         value: R(A.value),
 >>>>>>> d2c80eb (cosmetics)
+=======
+        value: B(A.value),
+>>>>>>> 561af57 (placeholder color)
         role: "spinbutton",
         "aria-valuemin": r,
         "aria-valuemax": s,
@@ -8326,9 +8514,16 @@ function tu(e = {}) {
       f,
       w,
       P,
+<<<<<<< HEAD
       B,
       k,
       g,
+=======
+      N,
+      B,
+      _,
+      b,
+>>>>>>> 561af57 (placeholder color)
       c,
       u,
       i,
@@ -8376,8 +8571,8 @@ var [gu, It] = J({
     return /* @__PURE__ */ l.jsx(yu, { value: c, children: /* @__PURE__ */ l.jsx(gu, { value: o, children: /* @__PURE__ */ l.jsx(
 =======
     getIncrementButtonProps: Lr,
-    getDecrementButtonProps: Rr,
-    getInputProps: Br,
+    getDecrementButtonProps: Br,
+    getInputProps: Rr,
     htmlProps: $
   };
 }
@@ -8519,7 +8714,7 @@ var lu = g(function(t, n) {
 lu.displayName = "NumberIncrementStepper";
 var [
   cu,
-  Rm,
+  Bm,
   uu,
   du
 ] = Kt(), [fu, mu] = te({
@@ -8575,9 +8770,15 @@ function pu(e = {}) {
       if (!k || !i)
 >>>>>>> d2c80eb (cosmetics)
         return;
+<<<<<<< HEAD
       const $ = v.next(z, !1);
       $ && requestAnimationFrame(() => {
         $.node.focus();
+=======
+      const R = v.next($, !1);
+      R && requestAnimationFrame(() => {
+        R.node.focus();
+>>>>>>> 561af57 (placeholder color)
       });
     },
 <<<<<<< HEAD
@@ -8620,30 +8821,30 @@ function pu(e = {}) {
 =======
     [v, k, i]
   ), L = x(
-    ($, B, K = !0) => {
+    ($, R, K = !0) => {
       const Y = [...w];
-      Y[B] = $, I(Y), $ !== "" && Y.length === v.count() && Y.every(
+      Y[R] = $, I(Y), $ !== "" && Y.length === v.count() && Y.every(
         (Z) => Z != null && Z !== ""
-      ) ? s == null || s(Y.join("")) : K && W(B);
+      ) ? s == null || s(Y.join("")) : K && W(R);
     },
     [w, I, W, s, v]
   ), Q = x(() => {
     var $;
-    const B = Array(v.count()).fill("");
-    I(B);
+    const R = Array(v.count()).fill("");
+    I(R);
     const K = v.first();
     ($ = K == null ? void 0 : K.node) == null || $.focus();
-  }, [v, I]), D = x(($, B) => {
-    let K = B;
-    return ($ == null ? void 0 : $.length) > 0 && ($[0] === B.charAt(0) ? K = B.charAt(1) : $[0] === B.charAt(1) && (K = B.charAt(0))), K;
+  }, [v, I]), D = x(($, R) => {
+    let K = R;
+    return ($ == null ? void 0 : $.length) > 0 && ($[0] === R.charAt(0) ? K = R.charAt(1) : $[0] === R.charAt(1) && (K = R.charAt(0))), K;
   }, []);
   return {
     getInputProps: x(
       ($) => {
-        const { index: B, ...K } = $, Y = (de) => {
-          const oe = de.target.value, fe = w[B], ee = D(fe, oe);
+        const { index: R, ...K } = $, Y = (de) => {
+          const oe = de.target.value, fe = w[R], ee = D(fe, oe);
           if (ee === "") {
-            L("", B);
+            L("", R);
             return;
           }
           if (oe.length > 2) {
@@ -8652,12 +8853,13 @@ function pu(e = {}) {
               I(se), se.length === v.count() && (s == null || s(se.join("")));
             }
           } else
-            no(ee, m) && L(ee, B), _(!0);
+            no(ee, m) && L(ee, R), _(!0);
         }, q = (de) => {
 >>>>>>> d2c80eb (cosmetics)
           var oe;
           if (de.key === "Backspace" && i)
             if (de.target.value === "") {
+<<<<<<< HEAD
               const fe = v.prev($, !1);
               fe && (M("", $ - 1, !1), (oe = fe.node) == null || oe.focus(), k(!0));
             } else
@@ -8667,6 +8869,17 @@ function pu(e = {}) {
         }, A = () => {
           w(-1);
         }, ie = P === $;
+=======
+              const fe = v.prev(R, !1);
+              fe && (L("", R - 1, !1), (oe = fe.node) == null || oe.focus(), _(!0));
+            } else
+              _(!1);
+        }, Z = () => {
+          P(R);
+        }, A = () => {
+          P(-1);
+        }, ie = N === R;
+>>>>>>> 561af57 (placeholder color)
         return {
           "aria-label": "Please enter your pin code",
           inputMode: m === "number" ? "numeric" : "text",
@@ -8683,15 +8896,19 @@ function pu(e = {}) {
           value: C[$] || "",
 =======
           ...K,
-          id: `${y}-${B}`,
+          id: `${y}-${R}`,
           disabled: d,
           "aria-invalid": Ne(f),
           onChange: j(K.onChange, Y),
           onKeyDown: j(K.onKeyDown, q),
           onFocus: j(K.onFocus, Z),
           onBlur: j(K.onBlur, A),
+<<<<<<< HEAD
           value: w[B] || "",
 >>>>>>> d2c80eb (cosmetics)
+=======
+          value: w[R] || "",
+>>>>>>> 561af57 (placeholder color)
           autoComplete: c ? "one-time-code" : "off",
           placeholder: ie ? "" : a
         };
@@ -8846,8 +9063,12 @@ function _u(e = {}) {
 =======
   } = e, { isOpen: v, onClose: k, onOpen: _, onToggle: N } = xs(e), P = V(null), w = V(null), I = V(null), W = V(!1), L = V(!1);
   v && (L.current = !0);
+<<<<<<< HEAD
   const [Q, D] = F(!1), [T, $] = F(!1), B = Ve(), K = r ?? B, [Y, q, Z, A] = [
 >>>>>>> d2c80eb (cosmetics)
+=======
+  const [Q, D] = F(!1), [T, $] = F(!1), R = Ve(), K = r ?? R, [Y, q, Z, A] = [
+>>>>>>> 561af57 (placeholder color)
     "popover-trigger",
     "popover-content",
     "popover-header",
@@ -8989,18 +9210,31 @@ function _u(e = {}) {
       ...H,
       ref: ce(le, w, ie)
     }),
+<<<<<<< HEAD
     [w, ie]
   ), E = V(), K = V(), B = x(
     (H) => {
       w.current == null && ie(H);
+=======
+    [P, ie]
+  ), E = V(), G = V(), B = x(
+    (O) => {
+      P.current == null && ie(O);
+>>>>>>> 561af57 (placeholder color)
     },
     [ie]
   ), ne = x(
     (H = {}, le = null) => {
       const re = {
+<<<<<<< HEAD
         ...H,
         ref: ce(C, le, B),
         id: Q,
+=======
+        ...O,
+        ref: ue(w, le, B),
+        id: Y,
+>>>>>>> 561af57 (placeholder color)
         "aria-haspopup": "dialog",
         "aria-expanded": v,
         "aria-controls": X
@@ -9041,7 +9275,13 @@ function _u(e = {}) {
       X,
       u,
       B,
+<<<<<<< HEAD
       P,
+=======
+      N,
+      _,
+      t,
+>>>>>>> 561af57 (placeholder color)
       k,
       t,
 <<<<<<< HEAD
@@ -9390,6 +9630,7 @@ var Fu = Ie({
     transform: "rotate(360deg)"
   }
 <<<<<<< HEAD
+<<<<<<< HEAD
 }), Qu = Ee({
   "0%": { left: "-40%" },
   "100%": { left: "100%" }
@@ -9400,9 +9641,12 @@ var Fu = Ie({
 function Nr(e) {
 =======
 }), Ru = Ie({
+=======
+}), Bu = Ie({
+>>>>>>> 561af57 (placeholder color)
   "0%": { left: "-40%" },
   "100%": { left: "100%" }
-}), Bu = Ie({
+}), Ru = Ie({
   from: { backgroundPosition: "1rem 0" },
   to: { backgroundPosition: "0 0" }
 });
@@ -9617,16 +9861,21 @@ var [Ou, yr] = te({
     role: y,
     ...v
 <<<<<<< HEAD
+<<<<<<< HEAD
   } = W(e), _ = se("Progress", e), k = u ?? ((n = _.track) == null ? void 0 : n.borderRadius), P = { animation: `${ed} 1s linear infinite` }, I = {
     ...!d && a && i && P,
 =======
   } = H(e), k = ae("Progress", e), _ = u ?? ((n = k.track) == null ? void 0 : n.borderRadius), N = { animation: `${Bu} 1s linear infinite` }, I = {
+=======
+  } = H(e), k = ae("Progress", e), _ = u ?? ((n = k.track) == null ? void 0 : n.borderRadius), N = { animation: `${Ru} 1s linear infinite` }, I = {
+>>>>>>> 561af57 (placeholder color)
     ...!d && a && i && N,
 >>>>>>> d2c80eb (cosmetics)
     ...d && {
       position: "absolute",
       willChange: "left",
       minWidth: "50%",
+<<<<<<< HEAD
 <<<<<<< HEAD
       animation: `${Qu} 1s ease infinite normal none running`
     }
@@ -9636,6 +9885,9 @@ var [Ou, yr] = te({
     ..._.track
 =======
       animation: `${Ru} 1s ease infinite normal none running`
+=======
+      animation: `${Bu} 1s ease infinite normal none running`
+>>>>>>> 561af57 (placeholder color)
     }
   }, W = {
     overflow: "hidden",
@@ -9712,7 +9964,7 @@ function id(e = {}) {
 };
 Hu.displayName = "ProgressLabel";
 function Gu(e) {
-  return e && Be(e) && Be(e.target);
+  return e && Re(e) && Re(e.target);
 }
 function Wu(e = {}) {
 >>>>>>> d2c80eb (cosmetics)
@@ -9915,12 +10167,16 @@ function Xu(e = {}) {
   } = e, y = `radio-${Ve()}`, v = Ut(), _ = !!xr() || !!m;
   let P = !!v && !_ ? v.id : y;
   P = f ?? P;
-  const w = r ?? (v == null ? void 0 : v.isDisabled), I = s ?? (v == null ? void 0 : v.isReadOnly), W = a ?? (v == null ? void 0 : v.isRequired), L = c ?? (v == null ? void 0 : v.isInvalid), [Q, D] = F(!1), [T, $] = F(!1), [B, K] = F(!1), [Y, q] = F(!1), [Z, A] = F(!!t), ie = typeof n < "u", me = ie ? n : Z;
+  const w = r ?? (v == null ? void 0 : v.isDisabled), I = s ?? (v == null ? void 0 : v.isReadOnly), W = a ?? (v == null ? void 0 : v.isRequired), L = c ?? (v == null ? void 0 : v.isInvalid), [Q, D] = F(!1), [T, $] = F(!1), [R, K] = F(!1), [Y, q] = F(!1), [Z, A] = F(!!t), ie = typeof n < "u", me = ie ? n : Z;
   U(() => qo(D), []);
 >>>>>>> d2c80eb (cosmetics)
   const de = x(
     (B) => {
+<<<<<<< HEAD
       if (I || C) {
+=======
+      if (I || w) {
+>>>>>>> 561af57 (placeholder color)
         B.preventDefault();
         return;
       }
@@ -9929,11 +10185,16 @@ function Xu(e = {}) {
     [ie, C, I, i]
   ), oe = x(
     (B) => {
+<<<<<<< HEAD
       B.key === " " && X(!0);
+=======
+      B.key === " " && q(!0);
+>>>>>>> 561af57 (placeholder color)
     },
     [X]
   ), fe = x(
     (B) => {
+<<<<<<< HEAD
       B.key === " " && X(!1);
     },
     [X]
@@ -9962,36 +10223,75 @@ function Xu(e = {}) {
         () => U(!1)
 =======
         R.onMouseEnter,
+=======
+      B.key === " " && q(!1);
+    },
+    [q]
+  ), ee = x(
+    (B = {}, ne = null) => ({
+      ...B,
+      ref: ne,
+      "data-active": z(Y),
+      "data-hover": z(R),
+      "data-disabled": z(w),
+      "data-invalid": z(L),
+      "data-checked": z(me),
+      "data-focus": z(T),
+      "data-focus-visible": z(T && Q),
+      "data-readonly": z(I),
+      "aria-hidden": !0,
+      onMouseDown: j(B.onMouseDown, () => q(!0)),
+      onMouseUp: j(B.onMouseUp, () => q(!1)),
+      onMouseEnter: j(
+        B.onMouseEnter,
+>>>>>>> 561af57 (placeholder color)
         () => K(!0)
       ),
       onMouseLeave: j(
-        R.onMouseLeave,
+        B.onMouseLeave,
         () => K(!1)
 >>>>>>> d2c80eb (cosmetics)
       )
     }),
     [
+<<<<<<< HEAD
       Q,
       $,
       C,
       M,
+=======
+      Y,
+      R,
+      w,
+      L,
+>>>>>>> 561af57 (placeholder color)
       me,
       T,
       I,
       G
     ]
+<<<<<<< HEAD
   ), { onFocus: ae, onBlur: he } = v ?? {}, ye = x(
     (B = {}, ne = null) => {
       const ve = C && !o;
       return {
         ...B,
         id: w,
+=======
+  ), { onFocus: se, onBlur: pe } = v ?? {}, ye = x(
+    (B = {}, ne = null) => {
+      const he = w && !o;
+      return {
+        ...B,
+        id: P,
+>>>>>>> 561af57 (placeholder color)
         ref: ne,
         type: "radio",
         name: u,
         value: d,
         onChange: j(B.onChange, de),
         onBlur: j(
+<<<<<<< HEAD
           he,
           B.onBlur,
           () => z(!1)
@@ -10000,6 +10300,16 @@ function Xu(e = {}) {
           ae,
           B.onFocus,
           () => z(!0)
+=======
+          pe,
+          B.onBlur,
+          () => $(!1)
+        ),
+        onFocus: j(
+          se,
+          B.onFocus,
+          () => $(!0)
+>>>>>>> 561af57 (placeholder color)
         ),
         onKeyDown: j(B.onKeyDown, oe),
         onKeyUp: j(B.onKeyUp, fe),
@@ -10053,9 +10363,15 @@ function Xu(e = {}) {
       isInvalid: M,
       isFocused: T,
       isChecked: me,
+<<<<<<< HEAD
       isActive: Q,
       isHovered: $,
       isDisabled: C,
+=======
+      isActive: Y,
+      isHovered: R,
+      isDisabled: w,
+>>>>>>> 561af57 (placeholder color)
       isReadOnly: I,
 <<<<<<< HEAD
       isRequired: D
@@ -10070,12 +10386,16 @@ function Xu(e = {}) {
       ...B,
       ref: ne,
 <<<<<<< HEAD
+<<<<<<< HEAD
       onMouseDown: j(B.onMouseDown, fd),
       "data-disabled": O(C),
       "data-checked": O(me),
       "data-invalid": O(M)
 =======
       onMouseDown: j(R.onMouseDown, Yu),
+=======
+      onMouseDown: j(B.onMouseDown, Yu),
+>>>>>>> 561af57 (placeholder color)
       "data-disabled": z(w),
       "data-checked": z(me),
       "data-invalid": z(L)
@@ -10160,7 +10480,11 @@ var Ju = g((e, t) => {
     cursor: "pointer",
     position: "relative",
     ...a.container
+<<<<<<< HEAD
   }, $ = {
+=======
+  }, R = {
+>>>>>>> 561af57 (placeholder color)
     display: "inline-flex",
     alignItems: "center",
     justifyContent: "center",
@@ -10181,8 +10505,13 @@ var Ju = g((e, t) => {
       h.span,
       {
         className: "chakra-radio__control",
+<<<<<<< HEAD
         ...M,
         __css: $
+=======
+        ...L,
+        __css: R
+>>>>>>> 561af57 (placeholder color)
       }
     ),
     u && /* @__PURE__ */ l.jsx(
@@ -10819,7 +11148,7 @@ var [Rd, Be] = J(
 xd.displayName = "StatNumber";
 var [Sd, Fe] = te(
   { name: "StepContext" }
-), [_d, He] = jo("Stepper"), Bm = g(function(t, n) {
+), [_d, He] = jo("Stepper"), Rm = g(function(t, n) {
   const { status: o } = Fe(), r = He();
 >>>>>>> d2c80eb (cosmetics)
   return /* @__PURE__ */ l.jsx(
@@ -11467,12 +11796,16 @@ function tf(e) {
     onFocus: t ? void 0 : j(e.onFocus, p)
   };
 }
-var [Rd, Bd] = te({});
+var [Bd, Rd] = te({});
 function $d(e) {
   const t = lt(), { id: n, selectedIndex: o } = t, s = Oe(e.children).map(
     (a, i) => Gs(
+<<<<<<< HEAD
       Rd,
 >>>>>>> d2c80eb (cosmetics)
+=======
+      Bd,
+>>>>>>> 561af57 (placeholder color)
       {
         key: i,
         value: {
@@ -11499,7 +11832,7 @@ function nf(e) {
   const u = po({
 =======
 function Od(e) {
-  const { children: t, ...n } = e, { isLazy: o, lazyBehavior: r } = lt(), { isSelected: s, id: a, tabId: i } = Bd(), c = V(!1);
+  const { children: t, ...n } = e, { isLazy: o, lazyBehavior: r } = lt(), { isSelected: s, id: a, tabId: i } = Rd(), c = V(!1);
   s && (c.current = !0);
   const u = mo({
 >>>>>>> d2c80eb (cosmetics)
@@ -12038,10 +12371,6 @@ const Ar = {
     _disabled: {
       bg: "grayShade2",
       borderColor: "grayShade2"
-    },
-    _placeholder: {
-      fontSize: "12px",
-      fontFamily: "inter"
     }
   }
 }), wf = Nn({
@@ -12092,7 +12421,7 @@ const Ar = {
     },
     gray: {
       default: "#a0a0a0",
-      dark: "#A6A6A6"
+      _dark: "#A6A6A6"
     },
     grayShade1: {
       default: "#CBCBCB",
@@ -12101,6 +12430,64 @@ const Ar = {
     grayShade2: {
       default: "#E2E2E2",
       _dark: "#4D4D4D"
+    },
+    primary: {
+      default: "#21B182",
+      _dark: "#229570"
+    },
+    primaryShade1: {
+      default: "#65D3AF",
+      _dark: "#326756"
+    },
+    primaryShade2: {
+      default: "#E6F2EE",
+      _dark: "#264339"
+    },
+    labels: {
+      red: {
+        default: "#EB5757",
+        _dark: "#C44D4D"
+      },
+      orange: {
+        default: "#f2994a",
+        _dark: "#C0844E"
+      },
+      purple: {
+        default: "#9B51E0",
+        _dark: "#8449BB"
+      },
+      yellow: {
+        default: "#FFE600",
+        _dark: "#D4BF08"
+      },
+      green: {
+        default: "#21B182",
+        _dark: "#229570"
+      },
+      blue: {
+        default: "#186781",
+        _dark: "#2885A4"
+      },
+      blueShade1: {
+        default: "#41B7DC",
+        _dark: "#2D5E6E"
+      },
+      blueShade2: {
+        default: "#ECF8FC",
+        _dark: "#243439"
+      },
+      orangeShade2: {
+        default: "#FDF0E4",
+        _dark: "#503E2E"
+      },
+      redShade2: {
+        default: "#F8DEDE",
+        _dark: "#4E3131"
+      },
+      purpleShade2: {
+        default: "#F5EEFC",
+        _dark: "#8449BB"
+      }
     }
   }
 }, { definePartsStyle: Ef, defineMultiStyleConfig: jf } = Ye(Ts.keys), Af = Ef({
@@ -12139,6 +12526,9 @@ const Ar = {
       "*, *::before, &::after": {
         fontFamily: "Inter"
       },
+      "*::placeholder": {
+        color: "gray"
+      },
       "a:focus-visible": {
         outlineOffset: "-1px",
         transition: "none",
@@ -12174,7 +12564,6 @@ const Ar = {
     Slider: _f,
     Input: Nf,
     Tag: Tf
-    // Form: formStyle,
   },
   semanticTokens: If
 }), Qm = ({ children: e }) => /* @__PURE__ */ l.jsx(
@@ -12472,7 +12861,7 @@ export {
   Pi as AccordionButton,
   Di as AccordionIcon,
   Fi as AccordionItem,
-  Bi as AccordionPanel,
+  Ri as AccordionPanel,
   Ii as AccordionProvider,
   fn as Alert,
   un as AlertDescription,
@@ -12485,11 +12874,11 @@ export {
   lp as AlertDialogOverlay,
   Do as AlertIcon,
   dn as AlertTitle,
-  Rc as AspectRatio,
+  Bc as AspectRatio,
   Ui as Avatar,
   zi as AvatarBadge,
   Xi as AvatarGroup,
-  Bc as Badge,
+  Rc as Badge,
   fs as Box,
   Ji as Breadcrumb,
   Zi as BreadcrumbItem,
@@ -12497,7 +12886,7 @@ export {
   Lt as BreadcrumbSeparator,
   Uo as Button,
   ol as ButtonGroup,
-  Bt as ButtonSpinner,
+  Rt as ButtonSpinner,
   Us as CSSPolyfill,
   qs as CSSReset,
   Ya as CSSVars,
@@ -12593,8 +12982,8 @@ export {
   ys as ModalContent,
   Fp as ModalContextProvider,
   Lp as ModalFocusScope,
-  Rp as ModalFooter,
-  Bp as ModalHeader,
+  Bp as ModalFooter,
+  Rp as ModalHeader,
   $p as ModalOverlay,
   iu as NumberDecrementStepper,
   lu as NumberIncrementStepper,
@@ -12947,7 +13336,7 @@ export {
   so as StepNumber,
   Wm as StepSeparator,
   kd as StepStatus,
-  Bm as StepTitle,
+  Rm as StepTitle,
   Om as Stepper,
   Hf as StylesProvider,
   Pd as Switch,
@@ -12977,7 +13366,7 @@ export {
   Eo as ThemeProvider,
   hi as Toast,
   vi as ToastOptionProvider,
-  Ro as ToastProvider,
+  Bo as ToastProvider,
   rh as Tooltip,
   Um as Tr,
   gc as UnorderedList,
@@ -13046,8 +13435,8 @@ export {
   Dh as ring,
   Fh as scaleFadeConfig,
   Lh as scroll,
-  Rh as shouldForwardProp,
-  Bh as slideFadeConfig,
+  Bh as shouldForwardProp,
+  Rh as slideFadeConfig,
   $h as space,
   Oh as styled,
   Vh as systemProps,
@@ -13087,7 +13476,7 @@ export {
   Pm as useConst,
   Ql as useControllableProp,
   hm as useControllableState,
-  Rl as useCounter,
+  Bl as useCounter,
   Nm as useDimensions,
   vm as useDisclosure,
   Qh as useDrawerContext,

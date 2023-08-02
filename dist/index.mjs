@@ -82718,7 +82718,8 @@ const iSe = nSe, owe = ({
             py: 0
           }),
           placeholder: Ao({
-            fontSize: "12px"
+            fontSize: "12px",
+            color: "gray"
           }),
           input: Ao({
             fontSize: "12px"

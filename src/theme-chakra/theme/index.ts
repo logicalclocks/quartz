@@ -30,6 +30,9 @@ export const chakraTheme = extendTheme({
       '*, *::before, &::after': {
         fontFamily: 'Inter',
       },
+      '*::placeholder': {
+        color: 'gray',
+      },
       'a:focus-visible': {
         outlineOffset: '-1px',
         transition: 'none',

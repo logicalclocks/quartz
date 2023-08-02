@@ -29,10 +29,6 @@ const base = definePartsStyle({
       bg: 'grayShade2',
       borderColor: 'grayShade2',
     },
-    _placeholder: {
-      fontSize: '12px',
-      fontFamily: 'inter',
-    },
   },
 });
 

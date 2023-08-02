@@ -110,6 +110,7 @@ const EditableSelect = ({
           }),
           placeholder: R.mergeLeft({
             fontSize: '12px',
+            color: 'gray',
           }),
           input: R.mergeLeft({
             fontSize: '12px',
