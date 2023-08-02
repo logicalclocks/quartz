@@ -56,7 +56,7 @@ export const Multi: StoryObj<typeof EditableSelect> = {
     label: 'Label',
     labelAction: '(optional)',
     placeholder: 'placeholder',
-    // noDataMessage: 'no options',
+    noDataMessage: 'no options',
     disabled: false,
     isMulti: true,
     value: ['integer', 'string'],

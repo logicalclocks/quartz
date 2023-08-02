@@ -4,19 +4,12 @@ export declare const menuTheme: {
             py: string;
             borderRadius: string;
             bg: string;
-            _dark: {
-                bg: string;
-            };
         };
         item: {
             fontSize: string;
             fontWeight: string;
             color: string;
             bg: string;
-            _dark: {
-                color: string;
-                bg: string;
-            };
             _hover: {
                 bg: string;
                 _dark: {

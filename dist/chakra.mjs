@@ -12223,21 +12223,14 @@ const Ar = {
     // this will style the MenuList component
     py: "2",
     borderRadius: "sm",
-    bg: "white._light",
-    _dark: {
-      bg: "white._dark"
-    }
+    bg: "background"
   },
   item: {
     // this will style the MenuItem and MenuItemOption components
     fontSize: "14px",
     fontWeight: "600",
-    color: "black._light",
-    bg: "white._light",
-    _dark: {
-      color: "black._dark",
-      bg: "white._dark"
-    },
+    color: "text",
+    bg: "background",
     _hover: {
       bg: "primaryShade2._light",
       _dark: {
