@@ -4,6 +4,7 @@ import Value from '../typography/value';
 import Labeling from '../typography/labeling';
 
 import * as S from './styles';
+import Spinner from '../spinner';
 
 export interface Props extends Omit<BoxProps, 'css'> {
   /** Text for the badge. E.g. `deployment` */
@@ -12,12 +13,14 @@ export interface Props extends Omit<BoxProps, 'css'> {
   value: string | number;
   /** Color variants: e.g. `green` */
   variant?: 'white' | 'gray';
+  loading?: boolean;
 }
 
 export const TextValueBadge = ({
   text,
   value,
   variant = 'white',
+  loading,
   sx,
   ...props
 }: Props) => (
@@ -28,6 +31,8 @@ export const TextValueBadge = ({
     {...props}
   >
     <Labeling as="span">{text}</Labeling>
-    <Value as="span">{value}</Value>
+    <Value as="span">
+      {loading ? <Spinner height="10px" color="gray" size={12} /> : value}
+    </Value>
   </Box>
 );
