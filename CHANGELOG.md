@@ -1,3 +1,10 @@
+## [3.3.1](https://github.com/logicalclocks/quartz/compare/v3.3.0...v3.3.1) (2023-08-03)
+
+
+### Bug Fixes
+
+* **build:** commit build output changes - 3.3.1 ([#480](https://github.com/logicalclocks/quartz/issues/480)) ([b1a4fc9](https://github.com/logicalclocks/quartz/commit/b1a4fc93f81a702cfb8c2b065f88dbbb72fb2216))
+
 # [3.3.0](https://github.com/logicalclocks/quartz/compare/v3.2.2...v3.3.0) (2023-08-03)
 
 
