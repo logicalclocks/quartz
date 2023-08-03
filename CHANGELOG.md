@@ -1,3 +1,10 @@
+# [3.3.0](https://github.com/logicalclocks/quartz/compare/v3.2.2...v3.3.0) (2023-08-03)
+
+
+### Features
+
+* **TextValueBadge:** Add loading to TextValueBadge ([#478](https://github.com/logicalclocks/quartz/issues/478)) ([0227af2](https://github.com/logicalclocks/quartz/commit/0227af221ad272139c342031df7cc2568fc33069))
+
 ## [3.2.2](https://github.com/logicalclocks/quartz/compare/v3.2.1...v3.2.2) (2023-07-13)
 
 
