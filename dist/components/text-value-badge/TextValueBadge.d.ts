@@ -6,5 +6,6 @@ export interface Props extends Omit<BoxProps, 'css'> {
     value: string | number;
     /** Color variants: e.g. `green` */
     variant?: 'white' | 'gray';
+    loading?: boolean;
 }
-export declare const TextValueBadge: ({ text, value, variant, sx, ...props }: Props) => import("react/jsx-runtime").JSX.Element;
+export declare const TextValueBadge: ({ text, value, variant, loading, sx, ...props }: Props) => import("react/jsx-runtime").JSX.Element;
