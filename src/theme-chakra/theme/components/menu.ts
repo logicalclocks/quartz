@@ -19,12 +19,14 @@ const baseStyle = definePartsStyle({
     bg: 'background',
     _hover: {
       bg: 'primaryShade2._light',
+      color: 'text',
       _dark: {
         bg: 'primaryShade2._dark',
       },
     },
     _focus: {
       bg: 'primaryShade2._light',
+      color: 'text',
       _dark: {
         bg: 'primaryShade2._dark',
       },
