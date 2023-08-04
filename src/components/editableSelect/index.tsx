@@ -65,15 +65,11 @@ const EditableSelect = ({
 
   const handleChange = useCallback(
     (option: OnChangeValue<Option, boolean>) => {
-      if (!option) {
-        onChange([]);
-        return;
-      }
-      if (isMultiOption(option)) {
-        onChange(option.map((it) => it.value));
-      } else {
-        onChange([option!.value]);
-      }
+      R.cond<any, void>([
+        [R.isNil, () => onChange([])],
+        [isMultiOption, (opt: Option[]) => onChange(opt.map(R.prop('value')))],
+        [R.T, (opt: Option) => onChange([opt.value])],
+      ])(option);
     },
     [onChange],
   );
