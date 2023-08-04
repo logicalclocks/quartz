@@ -1,3 +1,10 @@
+## [3.4.1](https://github.com/logicalclocks/quartz/compare/v3.4.0...v3.4.1) (2023-08-04)
+
+
+### Bug Fixes
+
+* **EditableSelect:** add back isMulti prop ([#481](https://github.com/logicalclocks/quartz/issues/481)) ([835b994](https://github.com/logicalclocks/quartz/commit/835b994d46a34da16f2ae9555e5c357df9b3b0f5))
+
 # [3.4.0](https://github.com/logicalclocks/quartz/compare/v3.3.1...v3.4.0) (2023-08-04)
 
 
