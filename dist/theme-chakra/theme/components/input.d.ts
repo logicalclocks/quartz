@@ -5,6 +5,7 @@ export declare const inputTheme: {
             outline: string;
             transition: string;
             fontFamily: string;
+            fontWeight: string;
             fontSize: string;
             lineHeight: string;
             borderWidth: string;
