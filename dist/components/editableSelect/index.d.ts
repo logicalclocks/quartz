@@ -19,5 +19,5 @@ interface Option extends OptionBase {
     label: string;
     value: string;
 }
-declare const EditableSelect: ({ label, value, options: optionsAsStrings, onChange, labelAction, placeholder, width, isMulti, disabled, noDataMessage, preventAdding, variant, isInvalid, errorMessage, ...props }: EditableSelectProps) => import("react/jsx-runtime").JSX.Element;
+declare const EditableSelect: ({ label, value, options: optionsAsStrings, onChange, labelAction, placeholder, isMulti, disabled, noDataMessage, preventAdding, variant, isInvalid, errorMessage, ...props }: EditableSelectProps) => import("react/jsx-runtime").JSX.Element;
 export default EditableSelect;
