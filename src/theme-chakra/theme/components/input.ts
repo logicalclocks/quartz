@@ -19,6 +19,9 @@ const base = definePartsStyle({
     borderWidth: '1px !important',
     borderColor: 'transparent',
 
+    _invalid: {
+      borderColor: 'labels.red',
+    },
     _hover: {
       borderColor: 'grayShade1',
     },

@@ -9,6 +9,9 @@ export declare const inputTheme: {
             lineHeight: string;
             borderWidth: string;
             borderColor: string;
+            _invalid: {
+                borderColor: string;
+            };
             _hover: {
                 borderColor: string;
             };

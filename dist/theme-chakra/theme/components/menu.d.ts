@@ -12,16 +12,16 @@ export declare const menuTheme: {
             bg: string;
             _hover: {
                 bg: string;
+                color: string;
                 _dark: {
                     bg: string;
-                    color: string;
                 };
             };
             _focus: {
                 bg: string;
+                color: string;
                 _dark: {
                     bg: string;
-                    color: string;
                 };
             };
         };

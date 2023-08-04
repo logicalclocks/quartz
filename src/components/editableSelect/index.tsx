@@ -1,18 +1,25 @@
-import { Box, FormControl, FormLabel, HStack } from '@chakra-ui/react';
+import {
+  Box,
+  FormControl,
+  FormErrorMessage,
+  FormLabel,
+  HStack,
+} from '@chakra-ui/react';
 import {
   CreatableSelect,
   MultiValue,
   OnChangeValue,
   OptionBase,
   Select,
+  CreatableProps,
 } from 'chakra-react-select';
 import * as R from 'ramda';
 import { useCallback, useMemo } from 'react';
-import Label, { LabelProps } from '../label';
+import Label from '../label';
 import Labeling from '../typography/labeling';
 
 export interface EditableSelectProps
-  extends Omit<LabelProps, 'onChange' | 'children'> {
+  extends Omit<CreatableProps<Option, boolean, any>, 'onChange' | 'value'> {
   label?: string;
   width?: string;
   value: string[];
@@ -25,6 +32,7 @@ export interface EditableSelectProps
   onChange: (value: string[]) => void;
   preventAdding?: boolean;
   variant?: 'primary' | 'white';
+  errorMessage?: string;
 }
 
 interface Option extends OptionBase {
@@ -42,11 +50,14 @@ const EditableSelect = ({
   width = 'auto',
   isMulti = true,
   disabled = false,
-  noDataMessage = 'nothing to choose',
+  noDataMessage,
   preventAdding = false,
   variant = 'primary',
+  isInvalid,
+  errorMessage = '',
   ...props
 }: EditableSelectProps) => {
+  const isSingle = !isMulti;
   const options = useMemo<Option[]>(
     () => optionsAsStrings.map(toOption),
     [optionsAsStrings],
@@ -54,6 +65,10 @@ const EditableSelect = ({
 
   const handleChange = useCallback(
     (option: OnChangeValue<Option, boolean>) => {
+      if (!option) {
+        onChange([]);
+        return;
+      }
       if (isMultiOption(option)) {
         onChange(option.map((it) => it.value));
       } else {
@@ -71,7 +86,7 @@ const EditableSelect = ({
       };
 
   return (
-    <FormControl isDisabled={disabled}>
+    <FormControl isDisabled={disabled} isInvalid={isInvalid}>
       {label && (
         <FormLabel>
           <Label
@@ -85,7 +100,6 @@ const EditableSelect = ({
                 mr: 0,
               },
             }}
-            {...props}
           />
         </FormLabel>
       )}
@@ -97,7 +111,7 @@ const EditableSelect = ({
         useBasicStyles
         menuPortalTarget={document.querySelector('.chakra-portal') as any}
         styles={{
-          menuPortal: (provided) => ({ ...provided, zIndex: 200 }),
+          menuPortal: (provided) => ({ ...provided, zIndex: 2000 }),
         }}
         chakraStyles={{
           menuList: R.mergeLeft({
@@ -121,23 +135,36 @@ const EditableSelect = ({
           noOptionsMessage: R.mergeLeft({
             fontSize: '12px',
           }),
+          singleValue: R.mergeLeft({
+            fontSize: '12px',
+          }),
           multiValue: R.mergeLeft({
             bg: variant === 'white' ? 'grayShade3' : 'background',
           }),
         }}
-        closeMenuOnSelect={false}
+        closeMenuOnSelect={isSingle || isInvalid} // close selection if it's invalid
+        isClearable={isSingle} // removes clear button [X] that clears the whole select
         openMenuOnFocus // needed for accessibility, e.g. trigger on a label click
-        isClearable={false} // removes clear button [X] that clears the whole select
         options={options}
-        value={isMulti ? value.map(toOption) : toOption(value[0])}
-        selectedOptionColorScheme="gray"
+        value={R.cond<any, Option | Option[] | undefined>([
+          [R.either(R.isNil, R.isEmpty), R.always(undefined)],
+          [R.always(isMulti), R.map(toOption)],
+          [R.T, R.pipe(R.head, toOption)],
+        ])(value)}
         onChange={handleChange}
-        noOptionsMessage={R.always(noDataMessage)}
+        selectedOptionColorScheme="gray"
+        noOptionsMessage={R.always(
+          isNotEmptyAndNotUndefined(noDataMessage) ? noDataMessage! : '— • —',
+        )}
         placeholder={placeholder}
         isMulti={isMulti}
         isDisabled={disabled}
+        {...props}
         {...propsForCreatable}
       />
+      {errorMessage && (
+        <FormErrorMessage fontSize="12px">{errorMessage}</FormErrorMessage>
+      )}
     </FormControl>
   );
 };
@@ -157,3 +184,7 @@ const isMultiOption = (option: any): option is MultiValue<Option> =>
   Array.isArray(option);
 
 const toOption = (text: string): Option => ({ value: text, label: text });
+const isNotEmptyAndNotUndefined = R.both(
+  R.complement(R.isNil),
+  R.complement(R.isEmpty),
+);

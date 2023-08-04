@@ -37,6 +37,11 @@ const meta: Meta<typeof EditableSelect> = {
     isMulti: {
       control: { type: 'boolean' },
     },
+    preventAdding: {
+      description:
+        'Turns off ability to create new options, the "add <>" thing',
+      control: { type: 'boolean' },
+    },
     labelAction: {
       description: 'React Component',
     },
