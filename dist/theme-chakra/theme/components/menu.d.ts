@@ -4,27 +4,22 @@ export declare const menuTheme: {
             py: string;
             borderRadius: string;
             bg: string;
-            _dark: {
-                bg: string;
-            };
         };
         item: {
             fontSize: string;
             fontWeight: string;
             color: string;
             bg: string;
-            _dark: {
-                color: string;
-                bg: string;
-            };
             _hover: {
                 bg: string;
+                color: string;
                 _dark: {
                     bg: string;
                 };
             };
             _focus: {
                 bg: string;
+                color: string;
                 _dark: {
                     bg: string;
                 };
@@ -33,12 +28,12 @@ export declare const menuTheme: {
     } | undefined;
     sizes?: {
         [key: string]: import("@chakra-ui/styled-system").PartsStyleInterpolation<{
-            keys: ("list" | "button" | "item" | "command" | "groupTitle" | "divider")[];
+            keys: ("list" | "button" | "item" | "command" | "divider" | "groupTitle")[];
         }>;
     } | undefined;
     variants?: {
         [key: string]: import("@chakra-ui/styled-system").PartsStyleInterpolation<{
-            keys: ("list" | "button" | "item" | "command" | "groupTitle" | "divider")[];
+            keys: ("list" | "button" | "item" | "command" | "divider" | "groupTitle")[];
         }>;
     } | undefined;
     defaultProps?: {
@@ -46,5 +41,5 @@ export declare const menuTheme: {
         variant?: string | number | undefined;
         colorScheme?: string | undefined;
     } | undefined;
-    parts: ("list" | "button" | "item" | "command" | "groupTitle" | "divider")[];
+    parts: ("list" | "button" | "item" | "command" | "divider" | "groupTitle")[];
 };

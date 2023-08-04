@@ -1,163 +1,184 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import useDropdown from '../../utils/useDropdown';
-import { Intents } from '../intents';
-import Label, { LabelProps } from '../label';
-import EditableSelectContainer from './EditableSelectContainer';
-import EditableSelectDropdown from './EditableSelectDropdown';
-import EditableSelectInfo from './EditableSelectInfo';
-import { EditableSelectTypes, ChipsVariants } from './types';
-import DropdownWrapper from '../dropdown-wrapper/DropdownWrapper';
+import {
+  Box,
+  FormControl,
+  FormErrorMessage,
+  FormLabel,
+  HStack,
+} from '@chakra-ui/react';
+import {
+  CreatableSelect,
+  MultiValue,
+  OnChangeValue,
+  OptionBase,
+  Select,
+  CreatableProps,
+} from 'chakra-react-select';
+import * as R from 'ramda';
+import { useCallback, useMemo } from 'react';
+import Label from '../label';
+import Labeling from '../typography/labeling';
 
 export interface EditableSelectProps
-  extends Omit<LabelProps, 'onChange' | 'children'> {
-  appendToBody?: boolean;
-  info?: string;
+  extends Omit<CreatableProps<Option, boolean, any>, 'onChange' | 'value'> {
   label?: string;
   width?: string;
   value: string[];
-  intent?: Intents;
   options: string[];
   isMulti?: boolean;
-  inputWidth?: string;
   disabled?: boolean;
   placeholder: string;
-  inlineLegend?: string;
   noDataMessage?: string;
-  maxListHeight?: string;
-  type?: EditableSelectTypes;
-  variant?: ChipsVariants;
   labelAction?: React.ReactNode;
   onChange: (value: string[]) => void;
+  preventAdding?: boolean;
+  variant?: 'primary' | 'white';
+  errorMessage?: string;
+}
+
+interface Option extends OptionBase {
+  label: string;
+  value: string;
 }
 
 const EditableSelect = ({
-  info,
   label = '',
   value,
-  options,
+  options: optionsAsStrings,
   onChange,
-  inputWidth,
   labelAction,
   placeholder,
-  inlineLegend,
-  appendToBody = false,
   width = 'auto',
   isMulti = true,
-  type = 'editable',
   disabled = false,
-  intent = 'default',
+  noDataMessage,
+  preventAdding = false,
   variant = 'primary',
-  maxListHeight = '150px',
-  noDataMessage = 'no options',
+  isInvalid,
+  errorMessage = '',
   ...props
 }: EditableSelectProps) => {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const [search, setSearch] = useState(isMulti ? '' : value[0] || '');
-
-  const [isOpen, handleToggle, handleClickOutside] = useDropdown(false);
-
-  const unselectedOpts = useMemo(
-    () => options.filter((opt) => !value.includes(opt)),
-    [options, value],
+  const isSingle = !isMulti;
+  const options = useMemo<Option[]>(
+    () => optionsAsStrings.map(toOption),
+    [optionsAsStrings],
   );
 
-  const filteredOptions = useMemo(() => {
-    const baseOptions = isMulti ? unselectedOpts : options;
-    const matching = baseOptions.filter((opt) => opt.includes(search));
-    if (!isMulti && value[0] && !options.includes(value[0])) {
-      // For single section display current search as option.
-      return [value[0], ...matching];
-    }
-    return matching;
-  }, [search, options, value, isMulti, unselectedOpts]);
+  const handleChange = useCallback(
+    (option: OnChangeValue<Option, boolean>) => {
+      R.cond<any, void>([
+        [R.isNil, () => onChange([])],
+        [isMultiOption, (opt: Option[]) => onChange(opt.map(R.prop('value')))],
+        [R.T, (opt: Option) => onChange([opt.value])],
+      ])(option);
+    },
+    [onChange],
+  );
 
-  const handleValueChange = (selection: string[]) => {
-    // Remove focus from input
-    if (containerRef.current && !isMulti) containerRef.current.focus();
-    setSearch(isMulti ? '' : selection[0]);
-    const newValue = isMulti ? [...value, ...selection] : selection;
-    onChange(newValue);
-  };
-
-  const handleChipsSelection = (selection: string[]) => {
-    if (isOpen) handleToggle();
-    onChange(selection);
-  };
-
-  useEffect(() => {
-    // Reopen dropdrown when typing.
-    if (!isOpen && search !== '' && (isMulti || search !== value[0])) {
-      handleToggle();
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [search]);
-
-  const dropdrownWidth = useCallback(() => {
-    if (containerRef.current) {
-      return `${containerRef.current.offsetWidth - 2}px`;
-    }
-    return 'auto';
-  }, []);
-
-  const dropdrownPosition = useCallback(() => {
-    if (containerRef.current) {
-      return containerRef.current.offsetHeight + 1;
-    }
-    return 33;
-  }, []);
+  const Component = preventAdding ? Select : CreatableSelect;
+  const propsForCreatable = preventAdding
+    ? {}
+    : {
+        formatCreateLabel: CreateLabel,
+      };
 
   return (
-    <Label
-      as="span"
-      text={label}
-      width={width}
-      action={labelAction}
-      {...props}
-      onClick={() => !disabled && !isOpen && handleToggle()}
-    >
-      <EditableSelectContainer
-        ref={containerRef}
-        type={type}
-        label={label}
-        value={value}
-        search={search}
-        intent={intent}
-        isMulti={isMulti}
+    <FormControl isDisabled={disabled} isInvalid={isInvalid}>
+      {label && (
+        <FormLabel>
+          <Label
+            as="span"
+            text={label}
+            width={width}
+            action={labelAction}
+            sx={{
+              span: {
+                mb: 0,
+                mr: 0,
+              },
+            }}
+          />
+        </FormLabel>
+      )}
+
+      <Component<Option, boolean>
+        variant={variant}
+        tagVariant="solid"
+        size="sm"
+        useBasicStyles
+        menuPortalTarget={document.querySelector('.chakra-portal') as any}
+        styles={{
+          menuPortal: (provided) => ({ ...provided, zIndex: 2000 }),
+        }}
+        chakraStyles={{
+          menuList: R.mergeLeft({
+            my: 1,
+            py: 0,
+          }),
+          menu: R.mergeLeft({
+            my: 0,
+            py: 0,
+          }),
+          placeholder: R.mergeLeft({
+            fontSize: '12px',
+            color: 'gray',
+          }),
+          input: R.mergeLeft({
+            fontSize: '12px',
+          }),
+          option: R.mergeLeft({
+            fontSize: '12px',
+          }),
+          noOptionsMessage: R.mergeLeft({
+            fontSize: '12px',
+          }),
+          singleValue: R.mergeLeft({
+            fontSize: '12px',
+          }),
+          multiValue: R.mergeLeft({
+            bg: variant === 'white' ? 'grayShade3' : 'background',
+          }),
+        }}
+        closeMenuOnSelect={isSingle || isInvalid}
+        isClearable={isSingle} // removes clear button [X] that clears the whole select
+        openMenuOnFocus // needed for accessibility, e.g. trigger on a label click
         options={options}
-        disabled={disabled}
-        setSearch={setSearch}
-        inputWidth={inputWidth}
-        placeholder={placeholder}
-        noDataMessage={noDataMessage}
-        onChange={handleChipsSelection}
-        inlineLegend={inlineLegend}
-        variant={disabled ? 'disabled' : (variant as ChipsVariants)}
-      >
-        {isOpen && (
-          <DropdownWrapper
-            containerRef={containerRef}
-            appendToBody={appendToBody}
-            onClickOutside={handleClickOutside}
-          >
-            <EditableSelectDropdown
-              type={type}
-              value={value}
-              search={search}
-              isMulti={isMulti}
-              onClose={handleToggle}
-              width={dropdrownWidth()}
-              maxHeight={maxListHeight}
-              options={filteredOptions}
-              appendToBody={appendToBody}
-              position={dropdrownPosition()}
-              onChange={handleValueChange}
-            />
-          </DropdownWrapper>
+        value={R.cond<any, Option | Option[] | undefined>([
+          [R.either(R.isNil, R.isEmpty), R.always(undefined)],
+          [R.always(isMulti), R.map(toOption)],
+          [R.T, R.pipe(R.head, toOption)],
+        ])(value)}
+        onChange={handleChange}
+        selectedOptionColorScheme="gray"
+        noOptionsMessage={R.always(
+          isNotEmptyAndNotUndefined(noDataMessage) ? noDataMessage! : '— • —',
         )}
-      </EditableSelectContainer>
-      {info && <EditableSelectInfo intent={intent}>{info}</EditableSelectInfo>}
-    </Label>
+        isDisabled={disabled}
+        {...props}
+        {...propsForCreatable}
+      />
+      {errorMessage && (
+        <FormErrorMessage fontSize="12px">{errorMessage}</FormErrorMessage>
+      )}
+    </FormControl>
   );
 };
 
 export default EditableSelect;
+
+const CreateLabel = (text: string) => (
+  <HStack align="baseline">
+    <Labeling fontSize="11px" gray>
+      add
+    </Labeling>
+    <Box>{text}</Box>
+  </HStack>
+);
+
+const isMultiOption = (option: any): option is MultiValue<Option> =>
+  Array.isArray(option);
+
+const toOption = (text: string): Option => ({ value: text, label: text });
+const isNotEmptyAndNotUndefined = R.both(
+  R.complement(R.isNil),
+  R.complement(R.isEmpty),
+);

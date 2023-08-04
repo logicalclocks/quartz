@@ -51,7 +51,6 @@ import { ITheme } from './types';
 // Notifications
 import notification from './notifications';
 // Chip
-import editableSelect from './editableSelect';
 
 export const colors = {
   primary: '#21B182',
@@ -148,7 +147,6 @@ const defaultTheme: ITheme = {
     select,
     callout,
     icon,
-    editableSelect,
     ...typography,
   },
   text: {

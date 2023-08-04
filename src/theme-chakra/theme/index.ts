@@ -6,6 +6,9 @@ import { drawerTheme } from './components/drawer';
 import { menuTheme } from './components/menu';
 import { modalTheme } from './components/modal';
 import { sliderTheme } from './components/slider';
+import { inputTheme } from './components/input';
+import { semanticTokens } from './semanticTokens';
+import { tagTheme } from './components/tag';
 
 const createColors = (c: any, d: any): any =>
   R.mapObjIndexed((color: any, key: any) => {
@@ -27,6 +30,9 @@ export const chakraTheme = extendTheme({
       '*, *::before, &::after': {
         fontFamily: 'Inter',
       },
+      '*::placeholder': {
+        color: 'gray',
+      },
       'a:focus-visible': {
         outlineOffset: '-1px',
         transition: 'none',
@@ -43,5 +49,8 @@ export const chakraTheme = extendTheme({
     Menu: menuTheme,
     Modal: modalTheme,
     Slider: sliderTheme,
+    Input: inputTheme,
+    Tag: tagTheme,
   },
+  semanticTokens,
 });

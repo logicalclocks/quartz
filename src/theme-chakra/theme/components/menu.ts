@@ -9,29 +9,24 @@ const baseStyle = definePartsStyle({
     // this will style the MenuList component
     py: '2',
     borderRadius: 'sm',
-    bg: 'white._light',
-    _dark: {
-      bg: 'white._dark',
-    },
+    bg: 'background',
   },
   item: {
     // this will style the MenuItem and MenuItemOption components
     fontSize: '14px',
     fontWeight: '600',
-    color: 'black._light',
-    bg: 'white._light',
-    _dark: {
-      color: 'black._dark',
-      bg: 'white._dark',
-    },
+    color: 'text',
+    bg: 'background',
     _hover: {
       bg: 'primaryShade2._light',
+      color: 'text',
       _dark: {
         bg: 'primaryShade2._dark',
       },
     },
     _focus: {
       bg: 'primaryShade2._light',
+      color: 'text',
       _dark: {
         bg: 'primaryShade2._dark',
       },

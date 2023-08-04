@@ -1,7 +1,10 @@
-import { useState } from 'react';
-import { StoryObj, Meta } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { Box } from 'rebass';
+import { expect } from '@storybook/jest';
+import { Meta, StoryObj } from '@storybook/react';
+
+import { userEvent, within } from '@storybook/testing-library';
+import { useState } from 'react';
+import { Box } from '../../index';
 
 import EditableSelect from './index';
 
@@ -9,10 +12,6 @@ const meta: Meta<typeof EditableSelect> = {
   title: 'EditableSelect',
   component: EditableSelect,
   argTypes: {
-    info: {
-      description: 'String',
-      control: { type: 'text' },
-    },
     value: {
       description: 'Array of strings',
       control: { type: 'array' },
@@ -24,17 +23,6 @@ const meta: Meta<typeof EditableSelect> = {
     label: {
       control: { type: 'text' },
     },
-    maxListHeight: {
-      control: { type: 'text' },
-    },
-    width: {
-      description: 'string',
-      control: { type: 'array' },
-    },
-    inputWidth: {
-      description: 'string',
-      control: { type: 'array' },
-    },
     placeholder: {
       description: 'string',
       control: { type: 'text' },
@@ -43,70 +31,44 @@ const meta: Meta<typeof EditableSelect> = {
       description: 'string',
       control: { type: 'text' },
     },
-    inlineLegend: {
-      description: 'String',
-      control: { type: 'text' },
-    },
     disabled: {
       control: { type: 'boolean' },
     },
     isMulti: {
       control: { type: 'boolean' },
     },
-    appendToBody: {
+    preventAdding: {
+      description:
+        'Turns off ability to create new options, the "add <>" thing',
       control: { type: 'boolean' },
-    },
-    type: {
-      control: { type: 'select', options: ['base', 'editable', 'searchable'] },
-      defaultValue: { description: 'editable' },
-    },
-    variant: {
-      control: { type: 'select', options: ['primary', 'white'] },
-      defaultValue: { description: 'primary' },
-    },
-    intent: {
-      control: { type: 'select', options: ['default', 'error'] },
-      defaultValue: { description: 'default' },
     },
     labelAction: {
       description: 'React Component',
     },
-    onChange: {
-      description: 'Change callback function',
+    variant: {
+      control: { type: 'select' },
+      description: 'Component can look different with different variants',
+      options: ['primary', 'white'],
     },
   },
 };
 export default meta;
 
-const options = [
-  'integer',
-  'string',
-  'boolean',
-  'float',
-  'bigInt',
-  'integer1',
-  'string1',
-  'boolean1',
-  'float1',
-];
+const options = ['integer', 'string', 'boolean', 'float', 'bigInt'];
 
-export const Default: StoryObj<typeof EditableSelect> = {
+export const Multi: StoryObj<typeof EditableSelect> = {
   args: {
-    info: '',
     label: 'Label',
+    labelAction: '(optional)',
     placeholder: 'placeholder',
     noDataMessage: 'no options',
     disabled: false,
-    type: 'editable',
-    variant: 'primary',
-    intent: 'default',
     isMulti: true,
-    appendToBody: false,
-    inlineLegend: '',
+    value: ['integer', 'string'],
+    options,
   },
-  render: (props) => {
-    const [value, setValue] = useState<string[]>([]);
-    const [customOptions] = useState(options);
+  render: ({ value: initialValue, options, ...props }) => {
+    const [value, setValue] = useState<string[]>(initialValue);
 
     const handleChange = (data: string[]) => {
       action('onChange')(data);
@@ -114,14 +76,124 @@ export const Default: StoryObj<typeof EditableSelect> = {
     };
 
     return (
-      <Box width="600px">
+      <Box minHeight="400px" width="600px">
         <EditableSelect
           {...props}
           value={value}
-          options={customOptions}
+          options={options}
           onChange={handleChange}
         />
       </Box>
+    );
+  },
+  play: async ({ canvasElement, step }) => {
+    const canvas = within(canvasElement);
+
+    await step('Ensure default values are used for first render', () => {
+      expect(canvas.getByText('integer')).toBeDefined();
+      expect(canvas.getByText('string')).toBeDefined();
+    });
+
+    await step('Clicking on label opens the menu', async () => {
+      await userEvent.click(document.querySelector('label')!);
+      expect(canvas.getByText('bigInt')).toBeVisible(); // last element
+    });
+
+    await step(
+      'Select all options, run out of them, see *noDataMessage*',
+      async () => {
+        // select all remaining options
+        await userEvent.keyboard(
+          '[ArrowDown][Enter][ArrowDown][Enter][ArrowDown][Enter]',
+        );
+        await userEvent.keyboard('[ArrowDown]');
+        expect(canvas.getByText('no options')).toBeVisible();
+      },
+    );
+
+    await step('Remove last two items, see them gone', async () => {
+      await userEvent.keyboard('[Backspace][Backspace]');
+      await userEvent.keyboard('[Escape][Tab]');
+      expect(canvas.queryByText('boolean')).toBeNull();
+      expect(canvas.queryByText('bigInt')).toBeNull();
+    });
+
+    await step(
+      'Add a new option, see "add <new option>", then see it added',
+      async () => {
+        await userEvent.click(document.querySelector('label')!);
+
+        await userEvent.keyboard('New option');
+        expect(canvas.getByText('add')).toBeVisible();
+        expect(canvas.getByText('New option')).toBeVisible();
+
+        await userEvent.keyboard('[Enter]');
+        expect(canvas.queryByText('add')).toBeNull();
+        expect(canvas.getByText('New option')).toBeVisible();
+      },
+    );
+  },
+};
+
+export const Single: StoryObj<typeof EditableSelect> = {
+  args: {
+    label: 'Label',
+    labelAction: '(optional)',
+    placeholder: 'placeholder',
+    noDataMessage: 'no options',
+    disabled: false,
+    isMulti: false,
+    value: ['integer'],
+    options,
+  },
+  render: ({ value: initialValue, options, ...props }) => {
+    const [value, setValue] = useState<string[]>(initialValue);
+
+    const handleChange = (data: string[]) => {
+      action('onChange')(data);
+      setValue(data);
+    };
+
+    return (
+      <Box minHeight="400px" width="600px">
+        <EditableSelect
+          // isOpen
+          {...props}
+          value={value}
+          options={options}
+          onChange={handleChange}
+        />
+      </Box>
+    );
+  },
+  play: async ({ canvasElement, step }) => {
+    const canvas = within(canvasElement);
+
+    await step('Ensure "integer" is selected by value, from props', () => {
+      expect(canvas.getByText('integer')).toBeVisible();
+    });
+
+    await step('Clicking on label opens the menu', async () => {
+      await userEvent.click(document.querySelector('label')!);
+      expect(canvas.getByText('bigInt')).toBeVisible(); // last element
+    });
+
+    await step('Choose third option, see it being chosen', async () => {
+      await userEvent.keyboard('[ArrowDown][ArrowDown][Enter]');
+      expect(canvas.getByText('boolean')).toBeVisible();
+    });
+
+    await step(
+      'Add a new option, see "add <new option>", then see it added',
+      async () => {
+        await userEvent.keyboard('New option');
+        expect(canvas.getByText('add')).toBeVisible();
+        expect(canvas.getByText('New option')).toBeVisible();
+
+        await userEvent.keyboard('[Enter]');
+        expect(canvas.queryByText('add')).toBeNull();
+        expect(canvas.getByText('New option')).toBeVisible();
+      },
     );
   },
 };
