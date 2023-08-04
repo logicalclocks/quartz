@@ -1,3 +1,10 @@
+# [3.4.0](https://github.com/logicalclocks/quartz/compare/v3.3.1...v3.4.0) (2023-08-04)
+
+
+### Features
+
+* **EditableSelect:** rewrite it to Chakra ([#473](https://github.com/logicalclocks/quartz/issues/473)) ([6f13bf3](https://github.com/logicalclocks/quartz/commit/6f13bf3cf8ae93233b53842bd6cb9ce882b0b8ff))
+
 ## [3.3.1](https://github.com/logicalclocks/quartz/compare/v3.3.0...v3.3.1) (2023-08-03)
 
 
