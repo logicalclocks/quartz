@@ -47,7 +47,6 @@ const EditableSelect = ({
   onChange,
   labelAction,
   placeholder,
-  width = 'auto',
   isMulti = true,
   disabled = false,
   noDataMessage,
@@ -67,7 +66,7 @@ const EditableSelect = ({
     (option: OnChangeValue<Option, boolean>) => {
       R.cond<any, void>([
         [R.isNil, () => onChange([])],
-        [isMultiOption, (opt: Option[]) => onChange(opt.map(R.prop('value')))],
+        [isMultiOption, (opt: Option[]) => onChange(opt.map((it) => it.value))],
         [R.T, (opt: Option) => onChange([opt.value])],
       ])(option);
     },
@@ -88,7 +87,6 @@ const EditableSelect = ({
           <Label
             as="span"
             text={label}
-            width={width}
             action={labelAction}
             sx={{
               span: {
@@ -138,7 +136,7 @@ const EditableSelect = ({
             bg: variant === 'white' ? 'grayShade3' : 'background',
           }),
         }}
-        closeMenuOnSelect={isSingle || isInvalid}
+        closeMenuOnSelect={isSingle}
         isClearable={isSingle} // removes clear button [X] that clears the whole select
         openMenuOnFocus // needed for accessibility, e.g. trigger on a label click
         options={options}
@@ -153,6 +151,7 @@ const EditableSelect = ({
           isNotEmptyAndNotUndefined(noDataMessage) ? noDataMessage! : '— • —',
         )}
         isDisabled={disabled}
+        isMulti={isMulti}
         {...props}
         {...propsForCreatable}
       />
