@@ -142,7 +142,7 @@ const EditableSelect = ({
             bg: variant === 'white' ? 'grayShade3' : 'background',
           }),
         }}
-        closeMenuOnSelect={isSingle || isInvalid} // close selection if it's invalid
+        closeMenuOnSelect={isSingle || isInvalid}
         isClearable={isSingle} // removes clear button [X] that clears the whole select
         openMenuOnFocus // needed for accessibility, e.g. trigger on a label click
         options={options}
@@ -156,8 +156,6 @@ const EditableSelect = ({
         noOptionsMessage={R.always(
           isNotEmptyAndNotUndefined(noDataMessage) ? noDataMessage! : '— • —',
         )}
-        placeholder={placeholder}
-        isMulti={isMulti}
         isDisabled={disabled}
         {...props}
         {...propsForCreatable}
