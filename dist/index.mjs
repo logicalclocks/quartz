@@ -55401,6 +55401,7 @@ const r$e = ({
   zIndex: 30,
   width: "100%",
   height: "70px",
+  minHeight: "70px",
   borderBottomWidth: "1px",
   borderBottomStyle: "solid"
 }, y$e = ({ width: t = 114, height: e = 22, withName: n = !1 }) => {
