@@ -1,3 +1,10 @@
+## [3.4.2](https://github.com/logicalclocks/quartz/compare/v3.4.1...v3.4.2) (2023-08-07)
+
+
+### Bug Fixes
+
+* **Header:** Fix header changing height ([#482](https://github.com/logicalclocks/quartz/issues/482)) ([02addc4](https://github.com/logicalclocks/quartz/commit/02addc4bbc4bc4046bb4517d827b0d24ef9dd39f))
+
 ## [3.4.1](https://github.com/logicalclocks/quartz/compare/v3.4.0...v3.4.1) (2023-08-04)
 
 
