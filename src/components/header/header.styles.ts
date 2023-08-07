@@ -59,6 +59,7 @@ export default {
 
   width: '100%',
   height: '70px',
+  minHeight: '70px',
 
   borderBottomWidth: '1px',
   borderBottomStyle: 'solid',
