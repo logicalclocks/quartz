@@ -1,4 +1,3 @@
-import { SxStyleProp } from 'rebass';
 export declare const tab: (active: boolean) => {
     cursor: string;
     textAlign: string;
@@ -19,7 +18,16 @@ export declare const tab: (active: boolean) => {
         borderBottomColor: string;
     };
 };
-export declare const wrapper: (topContent: boolean) => SxStyleProp;
+export declare const wrapper: (topContent: boolean) => {
+    p: string;
+    pb: number;
+    position: string;
+    bg: string;
+    flexDirection: string;
+    boxShadow: string;
+    zIndex: number;
+    width: string;
+};
 export declare const base: {
     position: string;
     height: string;

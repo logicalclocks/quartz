@@ -1,5 +1,3 @@
-import { SxStyleProp } from 'rebass';
-
 export const tab = (active: boolean) => ({
   cursor: 'pointer',
 
@@ -26,23 +24,22 @@ export const tab = (active: boolean) => ({
   },
 });
 
-export const wrapper = (topContent: boolean) =>
-  ({
-    p: topContent ? '20px' : '0px 20px 0px 10px',
-    pb: 0,
+export const wrapper = (topContent: boolean) => ({
+  p: topContent ? '20px' : '0px 20px 0px 10px',
+  pb: 0,
 
-    position: 'relative',
+  position: 'relative',
 
-    bg: 'white',
+  bg: 'white',
 
-    flexDirection: 'column',
+  flexDirection: 'column',
 
-    boxShadow: topContent ? '0 -5px 0 grayShade3' : '',
+  boxShadow: topContent ? '0 -5px 0 grayShade3' : '',
 
-    zIndex: 25,
+  zIndex: 25,
 
-    width: '100%',
-  } as SxStyleProp);
+  width: '100%',
+});
 
 export const base = {
   position: 'absolute',

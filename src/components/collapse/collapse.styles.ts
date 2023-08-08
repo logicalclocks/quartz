@@ -1,5 +1,3 @@
-import { SxStyleProp } from 'rebass';
-
 const paddingY = 40;
 
 export const contentStyles = (isOpen: boolean, height: number) => ({
@@ -17,37 +15,36 @@ export const containerStyles = {
   borderColor: 'grayShade2',
 };
 
-export default (isOpen: boolean) =>
-  ({
-    p: '8px',
-    bg: 'grayShade3',
-    cursor: 'pointer',
-    justifyContent: 'space-between',
+export default (isOpen: boolean) => ({
+  p: '8px',
+  bg: 'grayShade3',
+  cursor: 'pointer',
+  justifyContent: 'space-between',
 
-    transition: 'background-color .25s ease',
+  transition: 'background-color .25s ease',
 
-    ...(isOpen && {
-      borderBottomWidth: '1px',
-      borderBottomStyle: 'solid',
-      borderBottomColor: 'grayShade2',
-    }),
+  ...(isOpen && {
+    borderBottomWidth: '1px',
+    borderBottomStyle: 'solid',
+    borderBottomColor: 'grayShade2',
+  }),
 
-    ':hover': {
-      backgroundColor: 'grayShade2',
-    },
+  ':hover': {
+    backgroundColor: 'grayShade2',
+  },
 
+  div: {
     div: {
-      div: {
-        height: '15px',
+      height: '15px',
 
-        svg: {
-          width: '16px',
-          height: '16px',
+      svg: {
+        width: '16px',
+        height: '16px',
 
-          path: {
-            fill: isOpen ? 'black' : 'gray',
-          },
+        path: {
+          fill: isOpen ? 'black' : 'gray',
         },
       },
     },
-  } as SxStyleProp);
+  },
+});
