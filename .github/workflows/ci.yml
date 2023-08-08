@@ -42,7 +42,7 @@ jobs:
 
       - name: Build Quartz
         run: |
-          pbpm build
+          pnpm build
 
       - name: Build StoryBook🤖
         run: |
