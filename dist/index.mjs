@@ -67629,10 +67629,7 @@ const nX = ({ animationDuration: t, progress: e, variant: n }) => /* @__PURE__ *
   ":hover": {
     ...VZ("borderBottomColor", EW)
   }
-}, Obe = ({
-  active: t,
-  disabled: e
-}) => ({
+}, Obe = ({ active: t, disabled: e }) => ({
   ...abe,
   ...t ? EW : {},
   ...e ? obe : {}
