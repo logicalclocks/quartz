@@ -34,4 +34,4 @@ export default (withShadow: boolean, withBorderBottom: boolean) =>
     '> div': {
       ml: 'auto',
     },
-  } as SxStyleProp);
+  }) as SxStyleProp;

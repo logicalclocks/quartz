@@ -15,7 +15,7 @@ const getStyles = ({ active, disabled }: Pick<Props, 'active' | 'disabled'>) =>
     ...S.tab,
     ...(active ? S.activeTab : {}),
     ...(disabled ? S.disabledTab : {}),
-  } as SxStyleProp);
+  }) as SxStyleProp;
 
 const Tab = ({ title, ...props }: Props) => {
   const propagatedProps = R.pick(['disabled', 'onClick'], props);

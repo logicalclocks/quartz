@@ -42,7 +42,7 @@ export const wrapper = (topContent: boolean) =>
     zIndex: 25,
 
     width: '100%',
-  } as SxStyleProp);
+  }) as SxStyleProp;
 
 export const base = {
   position: 'absolute',
