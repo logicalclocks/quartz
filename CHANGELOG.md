@@ -1,3 +1,10 @@
+## [3.4.9](https://github.com/logicalclocks/quartz/compare/v3.4.8...v3.4.9) (2023-08-09)
+
+
+### Bug Fixes
+
+* **react-spring:** remove unused package ([#484](https://github.com/logicalclocks/quartz/issues/484)) ([341121a](https://github.com/logicalclocks/quartz/commit/341121af5fdd41f84ad8ab9c1a9f89fc478d83bf))
+
 ## [3.4.8](https://github.com/logicalclocks/quartz/compare/v3.4.7...v3.4.8) (2023-08-08)
 
 ## [3.4.7](https://github.com/logicalclocks/quartz/compare/v3.4.6...v3.4.7) (2023-08-08)
