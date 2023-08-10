@@ -33,7 +33,6 @@
     "test:lint": "eslint --ext .ts,.tsx ./src",
     "test:prettier": "prettier --check ./src",
     "prettier": "prettier --write ./src",
-    "predeploy": "pnpm storybook build",
     "deploy": "gh-pages -d storybook-static",
     "build-storybook": "storybook build",
     "storybook": "storybook dev -p 6006",
