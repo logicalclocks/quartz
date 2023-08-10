@@ -1,26 +1,23 @@
 /// <reference types="react" />
-import { Intents } from '../intents';
-import { LabelProps } from '../label';
-import { EditableSelectTypes, ChipsVariants } from './types';
-export interface EditableSelectProps extends Omit<LabelProps, 'onChange' | 'children'> {
-    appendToBody?: boolean;
-    info?: string;
+import { OptionBase, CreatableProps } from 'chakra-react-select';
+export interface EditableSelectProps extends Omit<CreatableProps<Option, boolean, any>, 'onChange' | 'value'> {
     label?: string;
     width?: string;
     value: string[];
-    intent?: Intents;
     options: string[];
     isMulti?: boolean;
-    inputWidth?: string;
     disabled?: boolean;
     placeholder: string;
-    inlineLegend?: string;
     noDataMessage?: string;
-    maxListHeight?: string;
-    type?: EditableSelectTypes;
-    variant?: ChipsVariants;
     labelAction?: React.ReactNode;
     onChange: (value: string[]) => void;
+    preventAdding?: boolean;
+    variant?: 'primary' | 'white';
+    errorMessage?: string;
 }
-declare const EditableSelect: ({ info, label, value, options, onChange, inputWidth, labelAction, placeholder, inlineLegend, appendToBody, width, isMulti, type, disabled, intent, variant, maxListHeight, noDataMessage, ...props }: EditableSelectProps) => import("react/jsx-runtime").JSX.Element;
+interface Option extends OptionBase {
+    label: string;
+    value: string;
+}
+declare const EditableSelect: ({ label, value, options: optionsAsStrings, onChange, labelAction, placeholder, isMulti, disabled, noDataMessage, preventAdding, variant, isInvalid, errorMessage, ...props }: EditableSelectProps) => import("react/jsx-runtime").JSX.Element;
 export default EditableSelect;

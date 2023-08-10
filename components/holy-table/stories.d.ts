@@ -1,7 +1,7 @@
-import { StoryObj } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 import HT from '.';
-declare const _default: import("@storybook/types").ComponentAnnotations<import("@storybook/react/dist/types-0a347bb9").R, import("@storybook/types").Args>;
-export default _default;
+declare const meta: Meta;
+export default meta;
 type Story = StoryObj<typeof HT>;
 export declare const HolyTableWithLegend: Story;
 export declare const HolyTableCustom: Story;

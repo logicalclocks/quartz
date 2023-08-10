@@ -1,2 +1,0 @@
-import{a as p}from"./_curry2-9db85ff5.js";import{_ as g}from"./_curry3-2506b18d.js";import{_ as f}from"./_isObject-00cd8d55.js";import{_ as o}from"./_has-a7b62b2c.js";var s=g(function(n,r,t){var i={},e;for(e in r)o(e,r)&&(i[e]=o(e,t)?n(e,r[e],t[e]):r[e]);for(e in t)o(e,t)&&!o(e,i)&&(i[e]=t[e]);return i}),a=g(function m(n,r,t){return s(function(i,e,u){return f(e)&&f(u)?m(n,e,u):n(i,e,u)},r,t)}),c=p(function(n,r){return a(function(t,i,e){return e},n,r)});const D=c;export{D as m};
-//# sourceMappingURL=mergeDeepRight-fe0d0885.js.map

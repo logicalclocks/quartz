@@ -1,5 +1,4 @@
-export declare const useColorMode: () => {
-    colorMode: import("@chakra-ui/color-mode/dist/color-mode-types").ColorMode;
+import { ColorModeContextType } from '@chakra-ui/react';
+export declare const useColorMode: () => Omit<ColorModeContextType, "setColorMode"> & {
     changeColorMode: (value: any) => void;
-    toggleColorMode: () => void;
 };

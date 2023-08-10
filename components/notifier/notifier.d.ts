@@ -1,4 +1,4 @@
-import { AlertStatus, ToastId } from '@chakra-ui/react';
+import { AlertStatus, CreateToastFnReturn, ToastId, ToastPosition } from '@chakra-ui/react';
 import { ReactNode } from 'react';
 export interface INotification {
     /** Title of the alert. */
@@ -12,19 +12,26 @@ export interface INotification {
     /** A unique ID that blocks other notifications with the same ID */
     uniqueId?: ToastId;
 }
+declare const buildNotifier: (toast: CreateToastFnReturn, status: AlertStatus) => (notification: INotification) => React.ReactNode;
+type Notifier = ReturnType<typeof buildNotifier>;
 export declare const useNotifier: () => {
-    success: (notification: INotification) => ToastId | null;
-    error: (notification: INotification) => ToastId | null;
-    info: (notification: INotification) => ToastId | null;
-    warning: (notification: INotification) => ToastId | null;
-    closeAll: (options?: import("@chakra-ui/toast/dist/toast.types-f226a101").c | undefined) => void;
-    close: (id: ToastId) => void;
+    success: Notifier;
+    error: Notifier;
+    info: Notifier;
+    warning: Notifier;
+    closeAll: (options?: {
+        positions?: ToastPosition[];
+    }) => void;
+    close: (toastId: number | string) => void;
 };
-export declare const createNotifier: () => {
-    success: (notification: INotification) => ToastId | null;
-    error: (notification: INotification) => ToastId | null;
-    info: (notification: INotification) => ToastId | null;
-    warning: (notification: INotification) => ToastId | null;
-    closeAll: (options?: import("@chakra-ui/toast/dist/toast.types-f226a101").c | undefined) => void;
-    close: (id: ToastId) => void;
+export declare const createNotifier: (standaloneToast: CreateToastFnReturn) => {
+    success: Notifier;
+    error: Notifier;
+    info: Notifier;
+    warning: Notifier;
+    closeAll: (options?: {
+        positions?: ToastPosition[];
+    }) => void;
+    close: (toastId: number | string) => void;
 };
+export {};

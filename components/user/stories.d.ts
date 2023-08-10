@@ -1,7 +1,7 @@
-import { StoryObj } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 import { User } from './index';
-declare const _default: import("@storybook/types").ComponentAnnotations<import("@storybook/react/dist/types-0a347bb9").R, import("./User").Props>;
-export default _default;
+declare const meta: Meta<typeof User>;
+export default meta;
 type Story = StoryObj<typeof User>;
 export declare const Default: Story;
 export declare const WithSecondaryText: Story;

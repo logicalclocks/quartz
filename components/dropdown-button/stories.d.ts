@@ -1,5 +1,7 @@
-import { StoryObj } from '@storybook/react';
+import { StoryObj, Meta } from '@storybook/react';
 import { DropdownButton } from './DropdownButton';
-declare const _default: import("@storybook/types").ComponentAnnotations<import("@storybook/react/dist/types-0a347bb9").R, import("./DropdownButton").Props>;
-export default _default;
+import { DropdownButton2 } from './DropdownButton2';
+declare const meta: Meta<typeof DropdownButton>;
+export default meta;
 export declare const Default: StoryObj<typeof DropdownButton>;
+export declare const DropdownButton2Story: StoryObj<typeof DropdownButton2>;

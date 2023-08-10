@@ -2,7 +2,7 @@ import { StoryObj } from '@storybook/react';
 import { TextValueBadge } from './TextValueBadge';
 declare const _default: {
     title: string;
-    component: ({ text, value, variant, sx, ...props }: import("./TextValueBadge").Props) => import("react/jsx-runtime").JSX.Element;
+    component: ({ text, value, variant, loading, sx, ...props }: import("./TextValueBadge").Props) => import("react/jsx-runtime").JSX.Element;
     args: {
         text: string;
         value: string;

@@ -1,2 +1,0 @@
-import{j as a}from"./index.esm-01e799b2.js";import{P as r}from"./index-6b912fbe.js";import"./index-570b25c1.js";import"./_commonjsHelpers-042e6b4d.js";const s={title:"PerformanceBar",component:r},t={args:{bars:[{variant:"perf.orange",proportion:1}]},render:o=>a.jsx(r,{...o})},f={...t,args:{bars:[{variant:"perf.black",proportion:.1},{variant:"perf.gray",proportion:.2},{variant:"perf.green",proportion:.5},{variant:"perf.orange",proportion:.2}]}};export{t as Default,f as Mix,s as default};
-//# sourceMappingURL=stories-8ab24a71.js.map
