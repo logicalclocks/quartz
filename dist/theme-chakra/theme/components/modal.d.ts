@@ -10,6 +10,10 @@ export declare const modalTheme: {
             fontWeight: string;
             pb: string;
         };
+        dialogContainer: {
+            width: string;
+            height: string;
+        };
         dialog: {
             minHeight: string;
             borderTopStyle: string;
