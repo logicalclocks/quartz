@@ -42,6 +42,10 @@ const baseStyle = definePartsStyle({
     fontWeight: 'bold',
     pb: '0px',
   },
+  dialogContainer: {
+    width: '100%',
+    height: '100%',
+  },
   dialog: {
     minHeight: '140px',
     borderTopStyle: 'solid',
