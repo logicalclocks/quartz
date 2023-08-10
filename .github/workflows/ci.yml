@@ -46,7 +46,7 @@ jobs:
 
       - name: Build StoryBook🤖
         run: |
-          NODE_OPTIONS=--max_old_space_size=4096 pnpm run predeploy
+          NODE_OPTIONS=--max_old_space_size=4096 pnpm run build-storybook
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4.4.3
