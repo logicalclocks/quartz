@@ -1,3 +1,10 @@
+# [3.5.0](https://github.com/logicalclocks/quartz/compare/v3.4.11...v3.5.0) (2023-08-10)
+
+
+### Features
+
+* **icon:** add airflow icon ([#487](https://github.com/logicalclocks/quartz/issues/487)) ([7909ed9](https://github.com/logicalclocks/quartz/commit/7909ed9972a3c65a4579173eb38a5ce7a277ca01))
+
 ## [3.4.11](https://github.com/logicalclocks/quartz/compare/v3.4.10...v3.4.11) (2023-08-10)
 
 
