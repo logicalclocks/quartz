@@ -1,3 +1,10 @@
+## [3.4.11](https://github.com/logicalclocks/quartz/compare/v3.4.10...v3.4.11) (2023-08-10)
+
+
+### Bug Fixes
+
+* **Modal:** zoom ([#486](https://github.com/logicalclocks/quartz/issues/486)) ([8ee579d](https://github.com/logicalclocks/quartz/commit/8ee579d0eca2d823172f029fadfeaf4ac1990d03))
+
 ## [3.4.10](https://github.com/logicalclocks/quartz/compare/v3.4.9...v3.4.10) (2023-08-10)
 
 ## [3.4.9](https://github.com/logicalclocks/quartz/compare/v3.4.8...v3.4.9) (2023-08-09)
