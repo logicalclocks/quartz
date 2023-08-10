@@ -3,13 +3,13 @@ import { useState } from 'react';
 import { StoryObj, Meta } from '@storybook/react';
 
 import { Box } from 'rebass';
-import Select from './index';
+import SingleSelect from './index';
 import { Popup, RadioGroup, Value } from '../../index';
 import Labeling from '../typography/labeling';
 
-const meta: Meta<typeof Select> = {
-  title: 'Select',
-  component: Select,
+const meta: Meta<typeof SingleSelect> = {
+  title: 'SingleSelect',
+  component: SingleSelect,
   argTypes: {
     value: {
       description: 'Array of strings',
@@ -98,7 +98,7 @@ export default meta;
 
 const options = ['name', 'creation date', 'size', '# of rows', '# of features'];
 
-export const Default: StoryObj<typeof Select> = {
+export const Default: StoryObj<typeof SingleSelect> = {
   args: {
     placeholder: 'placeholder',
     width: '100%',
@@ -150,7 +150,7 @@ export const Default: StoryObj<typeof Select> = {
 
     return (
       <Box width="600px" height="600px">
-        <Select
+        <SingleSelect
           {...props}
           value={value}
           maxListHeight="initial"
@@ -162,7 +162,7 @@ export const Default: StoryObj<typeof Select> = {
               value={selected}
               flexDirection="row"
               onChange={handleChangeFilter}
-              onClick={(e) => e.stopPropagation()}
+              onClick={(e) => e.preventDefault()}
               options={['all', 'matching feature only']}
             />
           }
