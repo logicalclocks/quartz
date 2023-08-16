@@ -1,4 +1,4 @@
-import { FormControl, FormLabel, Box, Text } from '@chakra-ui/react';
+import { FormControl, FormLabel } from '@chakra-ui/react';
 import {
   OptionBase,
   Select,
@@ -6,82 +6,74 @@ import {
   SingleValue,
   chakraComponents,
 } from 'chakra-react-select';
-import { useMemo } from 'react';
 import * as R from 'ramda';
 import { Intents } from '../intents';
 import Label from '../label';
 
 export interface Props
   extends Omit<SelectProps, 'onChange' | 'children' | 'className'> {
-  value: string[];
-  options: string[];
+  value: SingleSelectOption['value'] | undefined;
+  options: SingleSelectOption[];
   placeholder: string;
   label?: string;
   disabled?: boolean;
   width?: string | number;
   maxListHeight?: string;
   labelAction?: React.ReactNode;
-  listWidth?: string | number;
+  /** @deprecated not used meaningfully anywhere */
+  listWidth?: string | number; // deprecate
+  onChange: (value: SingleSelectOption | undefined) => void;
   variant?: 'primary' | 'white';
-  info?: string;
-  intent?: Intents;
-  onChange: (value: string[]) => void;
   noDataMessage?: string;
+  isClearable?: boolean; // just show X or not
+
+  // out of scope rn
+  intent?: Intents;
+  customFilter?: React.ReactNode;
   bottomActionText?: string;
   bottomActionHandler?: () => void;
-  hasPlaceholder?: boolean;
-  hasSearch?: boolean;
-  searchPlaceholder?: string;
-  customFilter?: React.ReactNode;
   additionalTexts?: string[];
   additionalComponents?: React.ReactNode[];
-  noMathText?: string; // -
-  needSecondaryText?: boolean; // -
-  deletabled?: boolean; // just show X or not
   needSwap?: boolean;
 }
 
-interface Option extends OptionBase {
+export interface SingleSelectOption extends OptionBase {
   label: string;
-  value: string;
+  value: string | number; // TODO do we need number?
+  additionalText?: string;
+  additionalComponent?: React.ReactNode;
 }
 
 const MenuList = ({ children, ...props }: any) => {
-  const handleInputChange = (event: any) => {};
-
-  console.log(props);
   return (
-    <chakraComponents.MenuList {...props}>
-      <Box py={2}>{props.selectProps.customFilter}</Box>
+    <chakraComponents.MenuList {...props} background="red">
+      {props.selectProps.customFilter}
       {children} {/* This renders the options */}
     </chakraComponents.MenuList>
   );
 };
 
 const SingleSelect = ({
-  options: optionsAsStrings,
+  options,
   value,
   onChange,
   placeholder,
-  additionalTexts,
-  additionalComponents,
   disabled,
   label,
   labelAction,
-  ...props
+  width,
+  maxListHeight,
+  variant,
+  noDataMessage,
+  isClearable = false,
 }: Props) => {
-  const options = useMemo<Option[]>(
-    () => optionsAsStrings.map(toOption),
-    [optionsAsStrings],
-  );
-
   // Handle selection change
-  const handleChange = (selectedOption: SingleValue<Option>) => {
-    onChange(selectedOption ? [selectedOption.value] : []);
+  const handleChange = (selectedOption: SingleValue<SingleSelectOption>) => {
+    onChange(selectedOption ?? undefined);
   };
 
   return (
-    <FormControl isDisabled={disabled}>
+    <FormControl isDisabled={disabled} width={width}>
       {label && (
         <FormLabel>
           <Label
@@ -97,17 +89,37 @@ const SingleSelect = ({
           />
         </FormLabel>
       )}
-      <Select<Option>
+      <Select<SingleSelectOption>
+        isMulti={false}
+        variant={variant}
+        useBasicStyles
+        isClearable={isClearable}
+        // menuIsOpen
         size="sm"
         options={options}
         placeholder={placeholder}
-        value={toOption(value[0])}
+        value={options.find((it) => it.value === value)}
         onChange={handleChange}
-        chakraStyles={chakraStyles}
-        components={{
-          MenuList,
+        selectedOptionColorScheme="red"
+        closeMenuOnSelect={false}
+        noOptionsMessage={R.always(noDataMessage)}
+        menuPortalTarget={document.querySelector('.chakra-portal') as any}
+        styles={{
+          menuPortal: (provided) => ({ ...provided, zIndex: 2000 }),
         }}
-        {...props}
+        chakraStyles={{
+          ...chakraStyles,
+          menuList: R.mergeLeft({
+            my: 1,
+            py: 0,
+            maxHeight: maxListHeight,
+          }),
+        }}
+        components={
+          {
+            MenuList,
+          } as any
+        }
         // Additional customization can be added here
         // {...props}
       />
@@ -116,16 +128,8 @@ const SingleSelect = ({
 };
 
 export default SingleSelect;
-const toOption = (text: string): Option => ({ value: text, label: text });
+
 const chakraStyles = {
-  menuList: R.mergeLeft({
-    my: 1,
-    py: 0,
-  }),
-  menu: R.mergeLeft({
-    my: 0,
-    py: 0,
-  }),
   placeholder: R.mergeLeft({
     fontSize: '12px',
     color: 'gray',
@@ -145,4 +149,8 @@ const chakraStyles = {
   // multiValue: R.mergeLeft({
   //   bg: variant === 'white' ? 'grayShade3' : 'background',
   // }),
+  menu: R.mergeLeft({
+    my: 0,
+    py: 0,
+  }),
 };

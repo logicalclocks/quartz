@@ -3,8 +3,8 @@ import { useState } from 'react';
 import { StoryObj, Meta } from '@storybook/react';
 
 import { Box } from 'rebass';
-import SingleSelect from './index';
-import { Popup, RadioGroup, Value } from '../../index';
+import SingleSelect, { SingleSelectOption } from './index';
+import { RadioGroup, Value } from '../../index';
 import Labeling from '../typography/labeling';
 
 const meta: Meta<typeof SingleSelect> = {
@@ -73,9 +73,6 @@ const meta: Meta<typeof SingleSelect> = {
     disabled: {
       control: { type: 'boolean' },
     },
-    appendToBody: {
-      control: { type: 'boolean' },
-    },
     width: {
       control: { type: 'text' },
       defaultValue: { description: 'auto' },
@@ -96,17 +93,38 @@ const meta: Meta<typeof SingleSelect> = {
 };
 export default meta;
 
-const options = ['name', 'creation date', 'size', '# of rows', '# of features'];
+const options = [
+  {
+    value: 1,
+    label: 'One',
+    additionalText: 'add_one',
+    additionalComponent: <Value>text</Value>,
+  },
+  {
+    value: 2,
+    label: 'Two',
+    additionalComponent: (
+      <Labeling bold gray>
+        text
+      </Labeling>
+    ),
+  },
+  { value: 3, label: 'Three', additionalText: 'add_three' },
+  {
+    value: 4,
+    label: 'Four',
+    additionalText: 'add_four',
+    additionalComponent: <Value>text</Value>,
+  },
+];
 
 export const Default: StoryObj<typeof SingleSelect> = {
   args: {
     placeholder: 'placeholder',
-    width: '100%',
+    // width: '100px',
     label: 'Label',
-    listWidth: '100%',
     variant: 'primary',
     hasPlaceholder: false,
-    appendToBody: false,
     isMulti: false,
     noDataMessage: 'no labels',
     hasSearch: true,
@@ -114,38 +132,29 @@ export const Default: StoryObj<typeof SingleSelect> = {
     bottomActionHandler: () => {
       action('on bottom action')();
     },
-    additionalTexts: ['text1', 'text2', 'text3', 'text4', 'text5'],
-    additionalComponents: [
-      <Value>text</Value>,
-      <Labeling bold gray>
-        text gray
-      </Labeling>,
-      null,
-      <Value>text</Value>,
-      <Value>text</Value>,
-    ],
     deletabled: false,
   },
   render: (props) => {
-    const [value, setValue] = useState<string[]>([]);
+    const [value, setValue] = useState<SingleSelectOption['value']>();
     const [customOptions, setOptions] = useState(options);
 
     const [selected, setSelected] = useState('all');
 
-    const handleChange = (data: string[]) => {
-      action('onChange')(data);
+    const handleChange = (data: SingleSelectOption | undefined) => {
+      // action('onChange')(data);
 
-      setValue(data);
+      setValue(data?.value);
     };
 
     const handleChangeFilter = (data: string) => {
-      setSelected(data);
+      // setSelected(data);
+      console.log(data);
 
-      if (data === 'all') {
-        setOptions(options);
-      } else {
-        setOptions(options.slice(3, 5));
-      }
+      // if (data === 'all') {
+      //   setOptions(options);
+      // } else {
+      //   setOptions(options.slice(3, 5));
+      // }
     };
 
     return (
@@ -153,7 +162,6 @@ export const Default: StoryObj<typeof SingleSelect> = {
         <SingleSelect
           {...props}
           value={value}
-          maxListHeight="initial"
           options={customOptions}
           onChange={handleChange}
           customFilter={
@@ -162,10 +170,17 @@ export const Default: StoryObj<typeof SingleSelect> = {
               value={selected}
               flexDirection="row"
               onChange={handleChangeFilter}
-              onClick={(e) => e.preventDefault()}
+              onMouseDown={(e) => {
+                e.stopPropagation();
+                e.stopPropagation();
+                console.log(e.isPropagationStopped());
+              }}
               options={['all', 'matching feature only']}
             />
           }
+          // customFilter={
+          //   <Button onClick={console.log}>Hey</Button>
+          // }
         />
       </Box>
     );

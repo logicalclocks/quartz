@@ -233,6 +233,7 @@ export {
 };
 
 export { default as EmbeddedTabs } from './components/embedded-tabs';
+export { default as SingleSelect } from './components/single-select';
 
 export type { Props as EditableTable2Props } from './components/table/editable/EditableTable2';
 export type {
