@@ -1,9 +1,10 @@
+import * as R from 'ramda';
 import {
   ChakraProvider,
+  ChakraProviderProps,
   CreateStandaloneToastReturn,
   createStandaloneToast as createStandaloneToastC,
 } from '@chakra-ui/react';
-import { PropsWithChildren } from 'react';
 import { chakraTheme as theme } from './theme';
 
 export const createStandaloneToast = (): CreateStandaloneToastReturn =>
@@ -11,10 +12,17 @@ export const createStandaloneToast = (): CreateStandaloneToastReturn =>
     theme,
   });
 
-export const ChakraThemeProvider = ({ children }: PropsWithChildren) => (
+export const ChakraThemeProvider = ({
+  children,
+  toastOptions = {},
+  ...restProps
+}: ChakraProviderProps) => (
   <ChakraProvider
-    toastOptions={{ defaultOptions: { position: 'top-right' } }}
+    toastOptions={R.mergeDeepLeft(toastOptions, {
+      defaultOptions: { position: 'top-right' as any },
+    })}
     theme={theme}
+    {...restProps}
   >
     {children}
   </ChakraProvider>

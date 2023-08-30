@@ -88,7 +88,7 @@ export const DefaultExpandable: Story = {
     title: 'cargo.sh',
     expandable: true,
     wrapLongLines: true,
-    language: 'sql',
+    language: 'shell',
   },
   render: (props) => {
     return (
