@@ -1,8 +1,7 @@
-import { FormControl, FormLabel } from '@chakra-ui/react';
+import { BoxProps, FormControl, FormLabel } from '@chakra-ui/react';
 import {
   OptionBase,
   Select,
-  Props as SelectProps,
   SingleValue,
   chakraComponents,
 } from 'chakra-react-select';
@@ -11,10 +10,10 @@ import { Intents } from '../intents';
 import Label from '../label';
 
 export interface Props
-  extends Omit<SelectProps, 'onChange' | 'children' | 'className'> {
-  value: SingleSelectOption['value'] | undefined;
-  options: SingleSelectOption[];
-  placeholder: string;
+  extends Omit<BoxProps, 'onChange' | 'children' | 'className'> {
+  value: SingleSelectOption['value'];
+  options: SingleSelectOption[] | string[];
+  placeholder?: string;
   label?: string;
   disabled?: boolean;
   width?: string | number;
@@ -22,10 +21,11 @@ export interface Props
   labelAction?: React.ReactNode;
   /** @deprecated not used meaningfully anywhere */
   listWidth?: string | number; // deprecate
-  onChange: (value: SingleSelectOption | undefined) => void;
+  onChange: (value: SingleSelectOption['value']) => void;
   variant?: 'primary' | 'white';
   noDataMessage?: string;
   isClearable?: boolean; // just show X or not
+  labelPosition?: 'left' | 'top' | 'bottom' | 'right';
 
   // out of scope rn
   intent?: Intents;
@@ -39,7 +39,7 @@ export interface Props
 
 export interface SingleSelectOption extends OptionBase {
   label: string;
-  value: string | number; // TODO do we need number?
+  value: string | number | undefined; // TODO do we need number?
   additionalText?: string;
   additionalComponent?: React.ReactNode;
 }
@@ -53,8 +53,12 @@ const MenuList = ({ children, ...props }: any) => {
   );
 };
 
-const SingleSelect = ({
-  options,
+const hasStringOptions = (
+  it: (string | SingleSelectOption)[],
+): it is string[] => typeof it[0] === 'string';
+
+export const SingleSelect = ({
+  options: rawOptions,
   value,
   onChange,
   placeholder,
@@ -66,14 +70,28 @@ const SingleSelect = ({
   variant,
   noDataMessage,
   isClearable = false,
+  labelPosition = 'top',
+  ...props
 }: Props) => {
+  const options: SingleSelectOption[] = hasStringOptions(rawOptions)
+    ? rawOptions.map((it) => ({ value: it, label: it }))
+    : rawOptions;
   // Handle selection change
   const handleChange = (selectedOption: SingleValue<SingleSelectOption>) => {
-    onChange(selectedOption ?? undefined);
+    onChange(selectedOption?.value);
   };
 
   return (
-    <FormControl isDisabled={disabled} width={width}>
+    <FormControl
+      isDisabled={disabled}
+      width={width}
+      display="inline-flex"
+      alignItems="baseline"
+      flexDirection={
+        ['top', 'bottom'].includes(labelPosition) ? 'column' : 'row' // add handling
+      }
+      {...props}
+    >
       {label && (
         <FormLabel>
           <Label
@@ -100,8 +118,8 @@ const SingleSelect = ({
         placeholder={placeholder}
         value={options.find((it) => it.value === value)}
         onChange={handleChange}
-        selectedOptionColorScheme="red"
-        closeMenuOnSelect={false}
+        // selectedOptionColorScheme="gree"
+        closeMenuOnSelect
         noOptionsMessage={R.always(noDataMessage)}
         menuPortalTarget={document.querySelector('.chakra-portal') as any}
         styles={{
@@ -109,6 +127,9 @@ const SingleSelect = ({
         }}
         chakraStyles={{
           ...chakraStyles,
+          container: R.mergeLeft({
+            width,
+          }),
           menuList: R.mergeLeft({
             my: 1,
             py: 0,
@@ -126,8 +147,6 @@ const SingleSelect = ({
     </FormControl>
   );
 };
-
-export default SingleSelect;
 
 const chakraStyles = {
   placeholder: R.mergeLeft({

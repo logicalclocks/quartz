@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { StoryObj, Meta } from '@storybook/react';
 
 import { Box } from 'rebass';
-import SingleSelect, { SingleSelectOption } from './index';
+import { SingleSelect, SingleSelectOption } from './index';
 import { RadioGroup, Value } from '../../index';
 import Labeling from '../typography/labeling';
 
@@ -17,13 +17,6 @@ const meta: Meta<typeof SingleSelect> = {
     options: {
       description: 'Array of strings',
       control: { type: 'array' },
-    },
-    searchPlaceholder: {
-      control: { type: 'text' },
-    },
-    hasSearch: {
-      control: { type: 'boolean' },
-      defaultValue: { description: 'Has search input' },
     },
     additionalComponents: {
       description: 'Array of components(right)',
@@ -53,20 +46,21 @@ const meta: Meta<typeof SingleSelect> = {
       control: { type: 'boolean' },
       defaultValue: { description: 'false' },
     },
-    deletabled: {
+    isClearable: {
       control: { type: 'boolean' },
       defaultValue: { description: 'deletabled (need to select a value)' },
-    },
-    info: {
-      control: {
-        type: 'text',
-      },
-      description: 'Message text (validation error)',
     },
     intent: {
       control: {
         type: 'select',
         options: ['default', 'error'],
+      },
+      description: 'Select intent (error border)',
+    },
+    labelPosition: {
+      control: {
+        type: 'select',
+        options: ['top', 'bottom', 'right', 'left'],
       },
       description: 'Select intent (error border)',
     },
@@ -124,15 +118,9 @@ export const Default: StoryObj<typeof SingleSelect> = {
     // width: '100px',
     label: 'Label',
     variant: 'primary',
-    hasPlaceholder: false,
-    isMulti: false,
+    labelPosition: 'top',
     noDataMessage: 'no labels',
-    hasSearch: true,
-    bottomActionText: 'Add another label',
-    bottomActionHandler: () => {
-      action('on bottom action')();
-    },
-    deletabled: false,
+    isClearable: false,
   },
   render: (props) => {
     const [value, setValue] = useState<SingleSelectOption['value']>();
@@ -140,10 +128,10 @@ export const Default: StoryObj<typeof SingleSelect> = {
 
     const [selected, setSelected] = useState('all');
 
-    const handleChange = (data: SingleSelectOption | undefined) => {
+    const handleChange = (data: SingleSelectOption['value']) => {
       // action('onChange')(data);
 
-      setValue(data?.value);
+      setValue(data);
     };
 
     const handleChangeFilter = (data: string) => {
@@ -164,6 +152,7 @@ export const Default: StoryObj<typeof SingleSelect> = {
           value={value}
           options={customOptions}
           onChange={handleChange}
+          labelPosition="left"
           customFilter={
             <RadioGroup
               ml="10px"
