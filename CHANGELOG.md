@@ -1,3 +1,10 @@
+# [3.6.0](https://github.com/logicalclocks/quartz/compare/v3.5.1...v3.6.0) (2023-08-30)
+
+
+### Features
+
+* **chakrathemeprovider:** make it customizable ([#497](https://github.com/logicalclocks/quartz/issues/497)) ([55d0d2e](https://github.com/logicalclocks/quartz/commit/55d0d2e033dc746c717d77108282ec5fdc8ebaa0))
+
 ## [3.5.1](https://github.com/logicalclocks/quartz/compare/v3.5.0...v3.5.1) (2023-08-10)
 
 # [3.5.0](https://github.com/logicalclocks/quartz/compare/v3.4.11...v3.5.0) (2023-08-10)
