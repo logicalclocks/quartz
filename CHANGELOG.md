@@ -1,3 +1,10 @@
+# [3.7.0](https://github.com/logicalclocks/quartz/compare/v3.6.1...v3.7.0) (2023-08-30)
+
+
+### Features
+
+* **newicon:** adds gitdiff icon ([#498](https://github.com/logicalclocks/quartz/issues/498)) ([67b2f83](https://github.com/logicalclocks/quartz/commit/67b2f839d7defc420c1b4a3c42a42d4b50025127))
+
 ## [3.6.1](https://github.com/logicalclocks/quartz/compare/v3.6.0...v3.6.1) (2023-08-30)
 
 
