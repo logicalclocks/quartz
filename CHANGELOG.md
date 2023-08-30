@@ -1,3 +1,10 @@
+## [3.6.1](https://github.com/logicalclocks/quartz/compare/v3.6.0...v3.6.1) (2023-08-30)
+
+
+### Bug Fixes
+
+* **audit:** use patched versions of vulnerable packages ([#489](https://github.com/logicalclocks/quartz/issues/489)) ([94a5eb9](https://github.com/logicalclocks/quartz/commit/94a5eb9d48ef46e34e8f21cb4e3a355da7c66077))
+
 # [3.6.0](https://github.com/logicalclocks/quartz/compare/v3.5.1...v3.6.0) (2023-08-30)
 
 
