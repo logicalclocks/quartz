@@ -22,12 +22,9 @@
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "noEmit": true
+    "noEmit": true,
+    "incremental": true
   },
-  "include": [
-    "src",
-    "./vite.config.ts",
-    "@types/testing-library__jest-dom"
-  ],
+  "include": ["src", "./vite.config.ts", "@types/testing-library__jest-dom"],
   "exclude": ["node_modules", "dist"]
 }
