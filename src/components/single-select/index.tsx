@@ -1,16 +1,23 @@
-import { BoxProps, FormControl, FormLabel } from '@chakra-ui/react';
+import {
+  BoxProps,
+  FormControl,
+  FormErrorMessage,
+  FormLabel,
+  HStack,
+  Text,
+  Box,
+} from '@chakra-ui/react';
 import {
   OptionBase,
   Select,
-  SingleValue,
   chakraComponents,
+  type SingleValue as ISingleValue,
 } from 'chakra-react-select';
 import * as R from 'ramda';
 import { Intents } from '../intents';
 import Label from '../label';
 
-export interface Props
-  extends Omit<BoxProps, 'onChange' | 'children' | 'className'> {
+export interface Props extends Omit<BoxProps, 'onChange' | 'children' | 'className'> {
   value: SingleSelectOption['value'];
   options: SingleSelectOption[] | string[];
   placeholder?: string;
@@ -25,7 +32,8 @@ export interface Props
   variant?: 'primary' | 'white';
   noDataMessage?: string;
   isClearable?: boolean; // just show X or not
-  labelPosition?: 'left' | 'top' | 'bottom' | 'right';
+  labelPosition?: 'side' | 'inline' | 'outside';
+  labelPlacement?: 'default' | 'inverted';
 
   // out of scope rn
   intent?: Intents;
@@ -53,6 +61,24 @@ const MenuList = ({ children, ...props }: any) => {
   );
 };
 
+const SingleValue = ({ children, ...props }: any) => {
+  console.log(props.selectProps);
+  return (
+    <chakraComponents.SingleValue {...props} background="red">
+      <HStack w="max-content" align="stretch">
+        {props.selectProps.labelPosition === 'inline' && (
+          <Text fontWeight="normal" color="gray" mr="0.5ch">
+            {props.selectProps.label}
+          </Text>
+        )}
+        <Box>
+          {children} {/* This renders the options */}
+        </Box>
+      </HStack>
+    </chakraComponents.SingleValue>
+  );
+};
+
 const hasStringOptions = (
   it: (string | SingleSelectOption)[],
 ): it is string[] => typeof it[0] === 'string';
@@ -70,34 +96,46 @@ export const SingleSelect = ({
   variant,
   noDataMessage,
   isClearable = false,
-  labelPosition = 'top',
+  labelPosition = 'outside',
+  labelPlacement = 'inverted',
   ...props
 }: Props) => {
   const options: SingleSelectOption[] = hasStringOptions(rawOptions)
     ? rawOptions.map((it) => ({ value: it, label: it }))
     : rawOptions;
   // Handle selection change
-  const handleChange = (selectedOption: SingleValue<SingleSelectOption>) => {
+  const handleChange = (selectedOption: ISingleValue<SingleSelectOption>) => {
     onChange(selectedOption?.value);
   };
+
+  let xxx = 'column';
+  if (labelPosition !== 'inline') {
+    const flexDirection = labelPosition === 'side' ? 'row' : 'column';
+    xxx =
+      labelPlacement === 'inverted'
+        ? flexDirection + '-reverse'
+        : flexDirection;
+  }
 
   return (
     <FormControl
       isDisabled={disabled}
       width={width}
-      display="inline-flex"
+      display="flex"
       alignItems="baseline"
-      flexDirection={
-        ['top', 'bottom'].includes(labelPosition) ? 'column' : 'row' // add handling
-      }
+      justifyContent="start"
+      flexDirection={xxx as any}
+      gap={1}
+      isInvalid
       {...props}
     >
-      {label && (
+      {['outside', 'side'].includes(labelPosition) && label && (
         <FormLabel>
           <Label
             as="span"
             text={label}
             action={labelAction}
+            m={0}
             sx={{
               span: {
                 mb: 0,
@@ -139,11 +177,17 @@ export const SingleSelect = ({
         components={
           {
             MenuList,
+            SingleValue,
           } as any
         }
         // Additional customization can be added here
         // {...props}
+        label={label}
+        labelPosition={labelPosition}
       />
+      <FormErrorMessage m={0} fontSize="12px">
+        Huy
+      </FormErrorMessage>
     </FormControl>
   );
 };

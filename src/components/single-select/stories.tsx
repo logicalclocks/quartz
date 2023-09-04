@@ -18,33 +18,26 @@ const meta: Meta<typeof SingleSelect> = {
       description: 'Array of strings',
       control: { type: 'array' },
     },
-    additionalComponents: {
-      description: 'Array of components(right)',
-      control: { type: 'array' },
-    },
-    additionalTexts: {
-      description: 'Array of text(after option)',
-      control: { type: 'array' },
-    },
-    customFilter: {
-      description: 'Custom filter',
-      control: { type: 'React.ReactNode' },
-    },
     placeholder: {
       control: { type: 'text' },
     },
     noDataMessage: {
       control: { type: 'text' },
     },
-    onChange: {
-      description: 'Change callback function',
-    },
     label: {
       control: { type: 'text' },
     },
-    isMulti: {
-      control: { type: 'boolean' },
-      defaultValue: { description: 'false' },
+    labelPosition: {
+      control: {
+        type: 'select',
+        options: ['side', 'inline', 'outside'],
+      },
+    },
+    labelPlacement: {
+      control: {
+        type: 'select',
+        options: ['default', 'inverted'],
+      },
     },
     isClearable: {
       control: { type: 'boolean' },
@@ -54,13 +47,6 @@ const meta: Meta<typeof SingleSelect> = {
       control: {
         type: 'select',
         options: ['default', 'error'],
-      },
-      description: 'Select intent (error border)',
-    },
-    labelPosition: {
-      control: {
-        type: 'select',
-        options: ['top', 'bottom', 'right', 'left'],
       },
       description: 'Select intent (error border)',
     },
@@ -118,7 +104,7 @@ export const Default: StoryObj<typeof SingleSelect> = {
     // width: '100px',
     label: 'Label',
     variant: 'primary',
-    labelPosition: 'top',
+    labelPosition: 'outside',
     noDataMessage: 'no labels',
     isClearable: false,
   },
@@ -146,13 +132,12 @@ export const Default: StoryObj<typeof SingleSelect> = {
     };
 
     return (
-      <Box width="600px" height="600px">
+      <Box width="600px" height="300px">
         <SingleSelect
           {...props}
           value={value}
           options={customOptions}
           onChange={handleChange}
-          labelPosition="left"
           customFilter={
             <RadioGroup
               ml="10px"

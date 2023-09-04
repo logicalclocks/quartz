@@ -17,7 +17,8 @@ export interface Props extends Omit<BoxProps, 'onChange' | 'children' | 'classNa
     variant?: 'primary' | 'white';
     noDataMessage?: string;
     isClearable?: boolean;
-    labelPosition?: 'left' | 'top' | 'bottom' | 'right';
+    labelPosition?: 'side' | 'inline' | 'outside';
+    labelPlacement?: 'default' | 'inverted';
     intent?: Intents;
     customFilter?: React.ReactNode;
     bottomActionText?: string;
@@ -32,4 +33,4 @@ export interface SingleSelectOption extends OptionBase {
     additionalText?: string;
     additionalComponent?: React.ReactNode;
 }
-export declare const SingleSelect: ({ options: rawOptions, value, onChange, placeholder, disabled, label, labelAction, width, maxListHeight, variant, noDataMessage, isClearable, labelPosition, ...props }: Props) => import("react/jsx-runtime").JSX.Element;
+export declare const SingleSelect: ({ options: rawOptions, value, onChange, placeholder, disabled, label, labelAction, width, maxListHeight, variant, noDataMessage, isClearable, labelPosition, labelPlacement, ...props }: Props) => import("react/jsx-runtime").JSX.Element;
