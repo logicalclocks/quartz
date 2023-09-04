@@ -1,7 +1,7 @@
-/// <reference types="react" />
 import { BoxProps } from '@chakra-ui/react';
 import { OptionBase } from 'chakra-react-select';
 import { Intents } from '../intents';
+import { ReactNode } from 'react';
 export interface Props extends Omit<BoxProps, 'onChange' | 'children' | 'className'> {
     value: SingleSelectOption['value'];
     options: SingleSelectOption[] | string[];
@@ -19,6 +19,8 @@ export interface Props extends Omit<BoxProps, 'onChange' | 'children' | 'classNa
     isClearable?: boolean;
     labelPosition?: 'side' | 'inline' | 'outside';
     labelPlacement?: 'default' | 'inverted';
+    isInvalid?: boolean;
+    errorMessage?: ReactNode;
     intent?: Intents;
     customFilter?: React.ReactNode;
     bottomActionText?: string;
@@ -33,4 +35,4 @@ export interface SingleSelectOption extends OptionBase {
     additionalText?: string;
     additionalComponent?: React.ReactNode;
 }
-export declare const SingleSelect: ({ options: rawOptions, value, onChange, placeholder, disabled, label, labelAction, width, maxListHeight, variant, noDataMessage, isClearable, labelPosition, labelPlacement, ...props }: Props) => import("react/jsx-runtime").JSX.Element;
+export declare const SingleSelect: ({ options: rawOptions, value, onChange, placeholder, disabled, label, labelAction, width, maxListHeight, variant, noDataMessage, isClearable, labelPosition, labelPlacement, isInvalid, errorMessage, ...props }: Props) => import("react/jsx-runtime").JSX.Element;

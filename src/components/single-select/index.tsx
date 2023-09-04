@@ -16,6 +16,7 @@ import {
 import * as R from 'ramda';
 import { Intents } from '../intents';
 import Label from '../label';
+import { ReactNode } from 'react';
 
 export interface Props extends Omit<BoxProps, 'onChange' | 'children' | 'className'> {
   value: SingleSelectOption['value'];
@@ -34,6 +35,9 @@ export interface Props extends Omit<BoxProps, 'onChange' | 'children' | 'classNa
   isClearable?: boolean; // just show X or not
   labelPosition?: 'side' | 'inline' | 'outside';
   labelPlacement?: 'default' | 'inverted';
+
+  isInvalid?: boolean;
+  errorMessage?: ReactNode;
 
   // out of scope rn
   intent?: Intents;
@@ -98,6 +102,8 @@ export const SingleSelect = ({
   isClearable = false,
   labelPosition = 'outside',
   labelPlacement = 'inverted',
+  isInvalid = false,
+  errorMessage = '',
   ...props
 }: Props) => {
   const options: SingleSelectOption[] = hasStringOptions(rawOptions)
@@ -126,7 +132,7 @@ export const SingleSelect = ({
       justifyContent="start"
       flexDirection={xxx as any}
       gap={1}
-      isInvalid
+      isInvalid={isInvalid}
       {...props}
     >
       {['outside', 'side'].includes(labelPosition) && label && (
@@ -185,9 +191,11 @@ export const SingleSelect = ({
         label={label}
         labelPosition={labelPosition}
       />
-      <FormErrorMessage m={0} fontSize="12px">
-        Huy
-      </FormErrorMessage>
+      {errorMessage && (
+        <FormErrorMessage m={0} fontSize="12px">
+          {errorMessage}
+        </FormErrorMessage>
+      )}
     </FormControl>
   );
 };
