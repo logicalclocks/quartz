@@ -18,7 +18,8 @@ import { Intents } from '../intents';
 import Label from '../label';
 import { ReactNode } from 'react';
 
-export interface Props extends Omit<BoxProps, 'onChange' | 'children' | 'className'> {
+export interface Props
+  extends Omit<BoxProps, 'onChange' | 'children' | 'className'> {
   value: SingleSelectOption['value'];
   options: SingleSelectOption[] | string[];
   placeholder?: string;
@@ -69,7 +70,15 @@ const SingleValue = ({ children, ...props }: any) => {
   console.log(props.selectProps);
   return (
     <chakraComponents.SingleValue {...props} background="red">
-      <HStack w="max-content" align="stretch">
+      <HStack
+        w="max-content"
+        align="stretch"
+        direction={
+          props.selectProps.labelPlacement === 'inverted'
+            ? 'column-reverse'
+            : 'column'
+        }
+      >
         {props.selectProps.labelPosition === 'inline' && (
           <Text fontWeight="normal" color="gray" mr="0.5ch">
             {props.selectProps.label}
@@ -162,7 +171,7 @@ export const SingleSelect = ({
         placeholder={placeholder}
         value={options.find((it) => it.value === value)}
         onChange={handleChange}
-        // selectedOptionColorScheme="gree"
+        selectedOptionColorScheme="green"
         closeMenuOnSelect
         noOptionsMessage={R.always(noDataMessage)}
         menuPortalTarget={document.querySelector('.chakra-portal') as any}
