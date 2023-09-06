@@ -129,8 +129,8 @@ devDependencies:
     specifier: 7.2.2
     version: 7.2.2
   '@storybook/instrumenter':
-    specifier: 7.2.2
-    version: 7.2.2
+    specifier: 7.4.0
+    version: 7.4.0
   '@storybook/jest':
     specifier: ^0.1.0
     version: 0.1.0
@@ -6216,6 +6216,17 @@ packages:
       tiny-invariant: 1.3.1
     dev: true
 
+  /@storybook/channels@7.4.0:
+    resolution: {integrity: sha512-/1CU0s3npFumzVHLGeubSyPs21O3jNqtSppOjSB9iDTyV2GtQrjh5ntVwebfKpCkUSitx3x7TkCb9dylpEZ8+w==}
+    dependencies:
+      '@storybook/client-logger': 7.4.0
+      '@storybook/core-events': 7.4.0
+      '@storybook/global': 5.0.0
+      qs: 6.11.2
+      telejson: 7.2.0
+      tiny-invariant: 1.3.1
+    dev: true
+
   /@storybook/cli@7.2.2:
     resolution: {integrity: sha512-YoXRCRICj4NEqUvYvgVRmk5IJadou6feCymI5r94z7XHQiObMoZd3p6QjyEp8ayi8XpxoJM/Hrddu3hddxUvyw==}
     hasBin: true
@@ -6281,6 +6292,12 @@ packages:
 
   /@storybook/client-logger@7.2.2:
     resolution: {integrity: sha512-ULqPNTJsJdlWTQt5V/hEv4CUq7GgrLzLvcjhKB9IYbp4a0gjhinfq7jBFIcXRE8BSOQLui2PDGE3SzElzOp5/g==}
+    dependencies:
+      '@storybook/global': 5.0.0
+    dev: true
+
+  /@storybook/client-logger@7.4.0:
+    resolution: {integrity: sha512-4pBnf7+df1wXEVcF1civqxbrtccGGHQkfWQkJo49s53RXvF7SRTcif6XTx0V3cQV0v7I1C5mmLm0LNlmjPRP1Q==}
     dependencies:
       '@storybook/global': 5.0.0
     dev: true
@@ -6396,6 +6413,12 @@ packages:
 
   /@storybook/core-events@7.2.2:
     resolution: {integrity: sha512-0MUsOygFSyYRIWHrVAA7Y7zBoehdILgK2AbnV42qescmPD48YyovkSRiGq0BwSWvuvMRq+094dp7sh2tkfSGHg==}
+    dev: true
+
+  /@storybook/core-events@7.4.0:
+    resolution: {integrity: sha512-JavEo4dw7TQdF5pSKjk4RtqLgsG2R/eWRI8vZ3ANKa0ploGAnQR/eMTfSxf6TUH3ElBWLJhi+lvUCkKXPQD+dw==}
+    dependencies:
+      ts-dedent: 2.2.0
     dev: true
 
   /@storybook/core-server@7.2.2:
@@ -6541,11 +6564,21 @@ packages:
       '@storybook/preview-api': 7.2.2
     dev: true
 
+  /@storybook/instrumenter@7.4.0:
+    resolution: {integrity: sha512-jZKxLK0lGKxY8LEul6GP7s+PDlNuXT4JU6MnPY9+SVSo23lP0pAOxo/ojV8WTLf48tcoyL3ztSfbYhxnaJvBfw==}
+    dependencies:
+      '@storybook/channels': 7.4.0
+      '@storybook/client-logger': 7.4.0
+      '@storybook/core-events': 7.4.0
+      '@storybook/global': 5.0.0
+      '@storybook/preview-api': 7.4.0
+    dev: true
+
   /@storybook/jest@0.1.0:
     resolution: {integrity: sha512-TmybnEXlv5Fu2/Hq4nRj7alS9mw4CasLR0RDwaAzS+Vpvu1TC4+j9rh+b1BHtmWebbJh0JMT6mgzPqOyJdgtQA==}
     dependencies:
       '@storybook/expect': 28.1.3-5
-      '@storybook/instrumenter': 7.2.2
+      '@storybook/instrumenter': 7.4.0
       '@testing-library/jest-dom': 5.16.5
       jest-mock: 27.5.1
     dev: true
@@ -6664,6 +6697,25 @@ packages:
       '@storybook/csf': 0.1.1
       '@storybook/global': 5.0.0
       '@storybook/types': 7.2.2
+      '@types/qs': 6.9.7
+      dequal: 2.0.3
+      lodash: 4.17.21
+      memoizerific: 1.11.3
+      qs: 6.11.2
+      synchronous-promise: 2.0.17
+      ts-dedent: 2.2.0
+      util-deprecate: 1.0.2
+    dev: true
+
+  /@storybook/preview-api@7.4.0:
+    resolution: {integrity: sha512-ndXO0Nx+eE7ktVE4EqHpQZ0guX7yYBdruDdJ7B739C0+OoPWsJN7jAzUqq0NXaBcYrdaU5gTy+KnWJUt8R+OyA==}
+    dependencies:
+      '@storybook/channels': 7.4.0
+      '@storybook/client-logger': 7.4.0
+      '@storybook/core-events': 7.4.0
+      '@storybook/csf': 0.1.1
+      '@storybook/global': 5.0.0
+      '@storybook/types': 7.4.0
       '@types/qs': 6.9.7
       dequal: 2.0.3
       lodash: 4.17.21
@@ -6899,6 +6951,16 @@ packages:
       '@storybook/channels': 7.2.2
       '@types/babel__core': 7.20.1
       '@types/express': 4.17.17
+      file-system-cache: 2.3.0
+    dev: true
+
+  /@storybook/types@7.4.0:
+    resolution: {integrity: sha512-XyzYkmeklywxvElPrIWLczi/PWtEdgTL6ToT3++FVxptsC2LZKS3Ue+sBcQ9xRZhkRemw4HQHwed5EW3dO8yUg==}
+    dependencies:
+      '@storybook/channels': 7.4.0
+      '@types/babel__core': 7.20.1
+      '@types/express': 4.17.17
+      '@types/react': 16.14.46
       file-system-cache: 2.3.0
     dev: true
 
@@ -7694,6 +7756,14 @@ packages:
     dependencies:
       '@types/react': 18.2.21
     dev: false
+
+  /@types/react@16.14.46:
+    resolution: {integrity: sha512-Am4pyXMrr6cWWw/TN3oqHtEZl0j+G6Up/O8m65+xF/3ZaUgkv1GAtTPWw4yNRmH0HJXmur6xKCKoMo3rBGynuw==}
+    dependencies:
+      '@types/prop-types': 15.7.5
+      '@types/scheduler': 0.16.3
+      csstype: 3.1.2
+    dev: true
 
   /@types/react@18.2.21:
     resolution: {integrity: sha512-neFKG/sBAwGxHgXiIxnbm3/AAVQ/cMRS93hvBpg8xYRbeQSPVABp9U2bRnPf0iI4+Ucdv3plSxKK+3CW2ENJxA==}
@@ -16365,6 +16435,12 @@ packages:
 
   /telejson@7.1.0:
     resolution: {integrity: sha512-jFJO4P5gPebZAERPkJsqMAQ0IMA1Hi0AoSfxpnUaV6j6R2SZqlpkbS20U6dEUtA3RUYt2Ak/mTlkQzHH9Rv/hA==}
+    dependencies:
+      memoizerific: 1.11.3
+    dev: true
+
+  /telejson@7.2.0:
+    resolution: {integrity: sha512-1QTEcJkJEhc8OnStBx/ILRu5J2p0GjvWsBx56bmZRqnrkdBMUe+nX92jxV+p3dB4CP6PZCdJMQJwCggkNBMzkQ==}
     dependencies:
       memoizerific: 1.11.3
     dev: true
