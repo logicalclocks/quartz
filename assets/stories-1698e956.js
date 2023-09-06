@@ -1,2 +1,0 @@
-import{j as t}from"./index.esm-be1572f9.js";import{B as e}from"./index-8ef8b666.js";import{F as r}from"./Flex-18b8dffe.js";import"./index-c4905b50.js";import"./_commonjsHelpers-042e6b4d.js";const m={title:"Flex",component:r},g={args:{gap:"20px"},render:x=>t.jsxs(r,{...x,children:[t.jsx(e,{width:"200px",height:"200px",bg:"red"}),t.jsx(e,{width:"200px",height:"200px",bg:"green"}),t.jsx(e,{width:"200px",height:"200px",bg:"blue"})]})};export{g as Default,m as default};
-//# sourceMappingURL=stories-1698e956.js.map

@@ -1,2 +1,0 @@
-import{j as t,B as p}from"./index.esm-be1572f9.js";import{r as s}from"./index-c4905b50.js";const r=s.forwardRef(({children:o,...e},a)=>t.jsx(p,{ref:a,...e,children:o}));try{r.displayName="Box",r.__docgenInfo={description:"",displayName:"Box",props:{}}}catch{}try{Box.displayName="Box",Box.__docgenInfo={description:"",displayName:"Box",props:{}}}catch{}export{r as B};
-//# sourceMappingURL=index-8ef8b666.js.map

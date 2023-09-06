@@ -1,2 +1,0 @@
-import{j as r}from"./index.esm-be1572f9.js";import{I as t}from"./index-b82c2a51.js";import"./index-c4905b50.js";import"./_commonjsHelpers-042e6b4d.js";const p={title:"Input/Info",component:t,argTypes:{children:{description:"Message text"},intent:{control:{type:"select",options:["error","default"]},description:"Message intent"}}},a={args:{intent:"error",children:"message"},render:e=>r.jsx(t,{...e})};export{a as Default,p as default};
-//# sourceMappingURL=stories-bd167eeb.js.map
