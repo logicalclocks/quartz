@@ -27,7 +27,7 @@ export declare const inputTheme: {
     } | undefined;
     sizes?: {
         [key: string]: import("@chakra-ui/styled-system").PartsStyleInterpolation<{
-            keys: ("element" | "addon" | "field")[];
+            keys: ("group" | "element" | "addon" | "field")[];
         }>;
     } | undefined;
     variants?: {
@@ -62,5 +62,5 @@ export declare const inputTheme: {
         variant?: "white" | "primary" | undefined;
         colorScheme?: string | undefined;
     } | undefined;
-    parts: ("element" | "addon" | "field")[];
+    parts: ("group" | "element" | "addon" | "field")[];
 };
