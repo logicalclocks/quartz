@@ -92,7 +92,7 @@ const Card = ({
           <IconButton
             icon={expanded ? IconName.arrow_up : IconName.arrow_down}
             onClick={toggleExpanded}
-            sx={{ cursor: 'pointer', mr: '-31px' }}
+            sx={{ cursor: 'pointer', mb: '-31px' }}
           />
         </Flex>
       )}

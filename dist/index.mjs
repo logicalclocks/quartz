@@ -7814,7 +7814,7 @@ const yn = ({ primary: t, sx: e, ...n }) => /* @__PURE__ */ h.jsx(
               {
                 icon: c ? ze.arrow_up : ze.arrow_down,
                 onClick: u,
-                sx: { cursor: "pointer", mr: "-31px" }
+                sx: { cursor: "pointer", mb: "-31px" }
               }
             )
           }
