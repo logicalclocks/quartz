@@ -6,6 +6,7 @@ import {
   HStack,
   Text,
   Box,
+  Flex,
 } from '@chakra-ui/react';
 import {
   OptionBase,
@@ -67,16 +68,17 @@ const MenuList = ({ children, ...props }: any) => {
 };
 
 const SingleValue = ({ children, ...props }: any) => {
-  console.log(props.selectProps);
+  console.log(props.selectProps.labelPlacement);
   return (
     <chakraComponents.SingleValue {...props} background="red">
-      <HStack
-        w="max-content"
+      <Flex
         align="stretch"
+        w="max-content"
+        gap={1}
         direction={
           props.selectProps.labelPlacement === 'inverted'
-            ? 'column-reverse'
-            : 'column'
+            ? 'row-reverse'
+            : 'row'
         }
       >
         {props.selectProps.labelPosition === 'inline' && (
@@ -87,7 +89,7 @@ const SingleValue = ({ children, ...props }: any) => {
         <Box>
           {children} {/* This renders the options */}
         </Box>
-      </HStack>
+      </Flex>
     </chakraComponents.SingleValue>
   );
 };
@@ -171,7 +173,7 @@ export const SingleSelect = ({
         placeholder={placeholder}
         value={options.find((it) => it.value === value)}
         onChange={handleChange}
-        selectedOptionColorScheme="green"
+        selectedOptionColorScheme="gray"
         closeMenuOnSelect
         noOptionsMessage={R.always(noDataMessage)}
         menuPortalTarget={document.querySelector('.chakra-portal') as any}
@@ -199,6 +201,7 @@ export const SingleSelect = ({
         // {...props}
         label={label}
         labelPosition={labelPosition}
+        labelPlacement={labelPlacement}
       />
       {errorMessage && (
         <FormErrorMessage m={0} fontSize="12px">
