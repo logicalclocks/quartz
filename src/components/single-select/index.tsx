@@ -77,8 +77,8 @@ export const SingleSelect = ({
   isClearable = false,
   labelPosition = 'outside',
   labelPlacement = 'default',
-  isInvalid = true,
-  errorMessage = 'huemoe',
+  isInvalid = false,
+  errorMessage = '',
   ...props
 }: Props) => {
   const options: SingleSelectOption[] = hasStringOptions(rawOptions)
