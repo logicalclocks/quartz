@@ -77,8 +77,8 @@ export const SingleSelect = ({
   isClearable = false,
   labelPosition = 'outside',
   labelPlacement = 'default',
-  isInvalid = false,
-  errorMessage = '',
+  isInvalid = true,
+  errorMessage = 'huemoe',
   ...props
 }: Props) => {
   const options: SingleSelectOption[] = hasStringOptions(rawOptions)
@@ -106,14 +106,13 @@ export const SingleSelect = ({
       alignItems="baseline"
       justifyContent="start"
       flexDirection={xxx as any}
-      gap={1}
       isInvalid={isInvalid}
       {...props}
     >
       {['outside', 'side'].includes(labelPosition) && label && (
         <FormLabel>
           <Label
-            width="full"
+            width="full" // what if it's on the side????????
             as="span"
             text={label}
             action={labelAction}
@@ -135,7 +134,9 @@ export const SingleSelect = ({
         // menuIsOpen
         size="sm"
         options={options}
-        placeholder={placeholder}
+        placeholder={
+          labelPosition === 'inline' ? `${label} ${placeholder}` : placeholder
+        }
         value={options.find((it) => it.value === value)}
         onChange={handleChange}
         selectedOptionColorScheme="gray"
@@ -171,7 +172,7 @@ export const SingleSelect = ({
         labelPlacement={labelPlacement}
       />
       {errorMessage && (
-        <FormErrorMessage m={0} fontSize="12px">
+        <FormErrorMessage m={1} fontSize="12px">
           {errorMessage}
         </FormErrorMessage>
       )}
