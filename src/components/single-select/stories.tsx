@@ -138,6 +138,7 @@ export const Default: StoryObj<typeof SingleSelect> = {
           value={value}
           options={customOptions}
           onChange={handleChange}
+          width="100%"
           customFilter={
             <RadioGroup
               ml="10px"

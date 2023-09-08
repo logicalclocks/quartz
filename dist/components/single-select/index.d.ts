@@ -1,7 +1,7 @@
 import { BoxProps } from '@chakra-ui/react';
 import { OptionBase } from 'chakra-react-select';
-import { Intents } from '../intents';
 import { ReactNode } from 'react';
+import { Intents } from '../intents';
 export interface Props extends Omit<BoxProps, 'onChange' | 'children' | 'className'> {
     value: SingleSelectOption['value'];
     options: SingleSelectOption[] | string[];

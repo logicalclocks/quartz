@@ -1,12 +1,11 @@
 import {
+  Box,
   BoxProps,
+  Flex,
   FormControl,
   FormErrorMessage,
   FormLabel,
-  HStack,
   Text,
-  Box,
-  Flex,
 } from '@chakra-ui/react';
 import {
   OptionBase,
@@ -15,9 +14,10 @@ import {
   type SingleValue as ISingleValue,
 } from 'chakra-react-select';
 import * as R from 'ramda';
+import { ReactNode } from 'react';
 import { Intents } from '../intents';
 import Label from '../label';
-import { ReactNode } from 'react';
+import Labeling from '../typography/labeling';
 
 export interface Props
   extends Omit<BoxProps, 'onChange' | 'children' | 'className'> {
@@ -57,42 +57,6 @@ export interface SingleSelectOption extends OptionBase {
   additionalText?: string;
   additionalComponent?: React.ReactNode;
 }
-
-const MenuList = ({ children, ...props }: any) => {
-  return (
-    <chakraComponents.MenuList {...props} background="red">
-      {props.selectProps.customFilter}
-      {children} {/* This renders the options */}
-    </chakraComponents.MenuList>
-  );
-};
-
-const SingleValue = ({ children, ...props }: any) => {
-  console.log(props.selectProps.labelPlacement);
-  return (
-    <chakraComponents.SingleValue {...props} background="red">
-      <Flex
-        align="stretch"
-        w="max-content"
-        gap={1}
-        direction={
-          props.selectProps.labelPlacement === 'inverted'
-            ? 'row-reverse'
-            : 'row'
-        }
-      >
-        {props.selectProps.labelPosition === 'inline' && (
-          <Text fontWeight="normal" color="gray" mr="0.5ch">
-            {props.selectProps.label}
-          </Text>
-        )}
-        <Box>
-          {children} {/* This renders the options */}
-        </Box>
-      </Flex>
-    </chakraComponents.SingleValue>
-  );
-};
 
 const hasStringOptions = (
   it: (string | SingleSelectOption)[],
@@ -189,12 +153,14 @@ export const SingleSelect = ({
             my: 1,
             py: 0,
             maxHeight: maxListHeight,
+            width: 'max-content',
           }),
         }}
         components={
           {
             MenuList,
             SingleValue,
+            Option,
           } as any
         }
         // Additional customization can be added here
@@ -211,6 +177,8 @@ export const SingleSelect = ({
     </FormControl>
   );
 };
+
+//
 
 const chakraStyles = {
   placeholder: R.mergeLeft({
@@ -236,4 +204,52 @@ const chakraStyles = {
     my: 0,
     py: 0,
   }),
+};
+
+const SingleValue = ({ children, ...props }: any) => {
+  return (
+    <chakraComponents.SingleValue {...props} background="red">
+      <Flex
+        align="stretch"
+        w="max-content"
+        gap={1}
+        direction={
+          props.selectProps.labelPlacement === 'inverted'
+            ? 'row-reverse'
+            : 'row'
+        }
+      >
+        {props.selectProps.labelPosition === 'inline' && (
+          <Text fontWeight="normal" color="gray" mr="0.5ch">
+            {props.selectProps.label}
+          </Text>
+        )}
+        <Box>
+          {children} {/* This renders the options */}
+        </Box>
+      </Flex>
+    </chakraComponents.SingleValue>
+  );
+};
+
+const MenuList = ({ children, ...props }: any) => {
+  return (
+    <chakraComponents.MenuList {...props} background="red">
+      {props.selectProps.customFilter}
+      {children} {/* This renders the options */}
+    </chakraComponents.MenuList>
+  );
+};
+
+const Option = ({ children, ...props }: any) => {
+  console.log(props);
+  return (
+    <chakraComponents.Option {...props} background="red">
+      <Flex w="full" gap={2}>
+        {children} {/* This renders the options */}
+        <Labeling gray>{props.data.additionalText}</Labeling>
+        <Box ml="auto">{props.data.additionalComponent}</Box>
+      </Flex>
+    </chakraComponents.Option>
+  );
 };
