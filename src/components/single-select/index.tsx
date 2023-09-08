@@ -113,6 +113,7 @@ export const SingleSelect = ({
       {['outside', 'side'].includes(labelPosition) && label && (
         <FormLabel>
           <Label
+            width="full"
             as="span"
             text={label}
             action={labelAction}
