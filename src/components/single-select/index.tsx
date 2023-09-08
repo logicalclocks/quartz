@@ -76,7 +76,7 @@ export const SingleSelect = ({
   noDataMessage,
   isClearable = false,
   labelPosition = 'outside',
-  labelPlacement = 'inverted',
+  labelPlacement = 'default',
   isInvalid = false,
   errorMessage = '',
   ...props
