@@ -1,3 +1,10 @@
+## [3.7.2](https://github.com/logicalclocks/quartz/compare/v3.7.1...v3.7.2) (2023-09-12)
+
+
+### Bug Fixes
+
+* **editableselect:** show the passed placeholder ([#508](https://github.com/logicalclocks/quartz/issues/508)) ([6831816](https://github.com/logicalclocks/quartz/commit/683181625b53e8654fd3fc585cad4060568e0db1))
+
 ## [3.7.1](https://github.com/logicalclocks/quartz/compare/v3.7.0...v3.7.1) (2023-09-06)
 
 # [3.7.0](https://github.com/logicalclocks/quartz/compare/v3.6.1...v3.7.0) (2023-08-30)
