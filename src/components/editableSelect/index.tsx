@@ -46,7 +46,6 @@ const EditableSelect = ({
   options: optionsAsStrings,
   onChange,
   labelAction,
-  placeholder,
   isMulti = true,
   disabled = false,
   noDataMessage,

@@ -55709,32 +55709,31 @@ const K$e = J$e, kSe = ({
   options: n,
   onChange: i,
   labelAction: r,
-  placeholder: O,
-  isMulti: a = !0,
-  disabled: o = !1,
-  noDataMessage: s,
-  preventAdding: l = !1,
-  variant: c = "primary",
-  isInvalid: u,
-  errorMessage: d = "",
-  ...h
+  isMulti: O = !0,
+  disabled: a = !1,
+  noDataMessage: o,
+  preventAdding: s = !1,
+  variant: l = "primary",
+  isInvalid: c,
+  errorMessage: u = "",
+  ...d
 }) => {
-  const $ = !a, g = Ee(
+  const h = !O, $ = Ee(
     () => n.map(Fh),
     [n]
-  ), m = re(
-    (b) => {
+  ), g = re(
+    (S) => {
       vu([
         [Pu, () => i([])],
-        [tge, (y) => i(y.map((v) => v.value))],
-        [bu, (y) => i([y.value])]
-      ])(b);
+        [tge, (b) => i(b.map((y) => y.value))],
+        [bu, (b) => i([b.value])]
+      ])(S);
     },
     [i]
-  ), Q = l ? F$e : K$e, S = l ? {} : {
+  ), m = s ? F$e : K$e, Q = s ? {} : {
     formatCreateLabel: ege
   };
-  return /* @__PURE__ */ f.jsxs(A_, { isDisabled: o, isInvalid: u, children: [
+  return /* @__PURE__ */ f.jsxs(A_, { isDisabled: a, isInvalid: c, children: [
     t && /* @__PURE__ */ f.jsx(D_, { children: /* @__PURE__ */ f.jsx(
       rn,
       {
@@ -55750,15 +55749,15 @@ const K$e = J$e, kSe = ({
       }
     ) }),
     /* @__PURE__ */ f.jsx(
-      Q,
+      m,
       {
-        variant: c,
+        variant: l,
         tagVariant: "solid",
         size: "sm",
         useBasicStyles: !0,
         menuPortalTarget: document.querySelector(".chakra-portal"),
         styles: {
-          menuPortal: (b) => ({ ...b, zIndex: 2e3 })
+          menuPortal: (S) => ({ ...S, zIndex: 2e3 })
         },
         chakraStyles: {
           menuList: Rr({
@@ -55786,30 +55785,30 @@ const K$e = J$e, kSe = ({
             fontSize: "12px"
           }),
           multiValue: Rr({
-            bg: c === "white" ? "grayShade3" : "background"
+            bg: l === "white" ? "grayShade3" : "background"
           })
         },
-        closeMenuOnSelect: $,
-        isClearable: $,
+        closeMenuOnSelect: h,
+        isClearable: h,
         openMenuOnFocus: !0,
-        options: g,
+        options: $,
         value: vu([
           [fp(Pu, lP), us(void 0)],
-          [us(a), Nd(Fh)],
+          [us(O), Nd(Fh)],
           [bu, IR(dp, Fh)]
         ])(e),
-        onChange: m,
+        onChange: g,
         selectedOptionColorScheme: "gray",
         noOptionsMessage: us(
-          nge(s) ? s : "— • —"
+          nge(o) ? o : "— • —"
         ),
-        isDisabled: o,
-        isMulti: a,
-        ...h,
-        ...S
+        isDisabled: a,
+        isMulti: O,
+        ...d,
+        ...Q
       }
     ),
-    d && /* @__PURE__ */ f.jsx(L_, { fontSize: "12px", children: d })
+    u && /* @__PURE__ */ f.jsx(L_, { fontSize: "12px", children: u })
   ] });
 }, ege = (t) => /* @__PURE__ */ f.jsxs(F_, { align: "baseline", children: [
   /* @__PURE__ */ f.jsx(be, { fontSize: "11px", gray: !0, children: "add" }),
