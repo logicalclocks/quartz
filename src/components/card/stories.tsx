@@ -79,7 +79,7 @@ export const Template: StoryObj<typeof Card> = {
 
 export const TemplateSecondary: StoryObj<typeof CardSecondary> = {
   args: {
-    title: 'Title',
+    title: 'Title!',
     width: '830px',
     height: '270px',
     children: 'content',
