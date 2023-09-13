@@ -1,4 +1,5 @@
-import { Box } from 'rebass';
+import * as R from 'ramda';
+import { Box, SxStyleProp } from 'rebass';
 import { ReactElement, useMemo, useState } from 'react';
 
 import NavigationItem from '../item';
@@ -22,6 +23,7 @@ export interface NavigationProps {
   tree?: TreeNode[];
   onNavigate?: (node: TreeNode | null) => void;
   onBackCLick?: () => void;
+  sx?: SxStyleProp;
 }
 
 const Navigation: INavigation<NavigationProps> = ({
@@ -29,6 +31,7 @@ const Navigation: INavigation<NavigationProps> = ({
   header,
   children,
   tree: propsTree,
+  sx = {},
   ...props
 }) => {
   const tree = useMemo(() => {
@@ -50,7 +53,7 @@ const Navigation: INavigation<NavigationProps> = ({
       as="aside"
       tx="navigation"
       variant="container"
-      sx={styles(activePath.length > 1)}
+      sx={R.mergeDeepRight(styles(activePath.length > 1), sx as object)}
     >
       <NavigationProvider tree={tree} {...props} takeActivePath={setActivePath}>
         {!!header && <div>{header}</div>}

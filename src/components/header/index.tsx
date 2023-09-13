@@ -1,4 +1,5 @@
-import { Box, BoxProps } from 'rebass';
+import * as R from 'ramda';
+import { Box, BoxProps, SxStyleProp } from 'rebass';
 
 // Styles
 import styles, { leftSectionStyles, rightSectionStyles } from './header.styles';
@@ -11,6 +12,7 @@ export interface HeaderProps extends Omit<BoxProps, 'css'> {
   actions?: React.ReactNode[];
   menuAction: React.ReactNode;
   logoAction?: () => void;
+  sx?: SxStyleProp;
 }
 
 const Header = ({
@@ -19,8 +21,9 @@ const Header = ({
   actions,
   menuAction,
   logoAction,
+  sx = {},
 }: HeaderProps) => (
-  <Box sx={styles} variant="header">
+  <Box sx={R.mergeDeepRight(styles as object, sx as object)} variant="header">
     {/* Left Section */}
     <Box sx={leftSectionStyles} onClick={logoAction}>
       <Logo withName={true} height={35} width={160} />
