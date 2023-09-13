@@ -21,7 +21,7 @@ const Header = ({
   actions,
   menuAction,
   logoAction,
-  sx,
+  sx = {},
 }: HeaderProps) => (
   <Box sx={R.mergeDeepRight(styles as object, sx as object)} variant="header">
     {/* Left Section */}

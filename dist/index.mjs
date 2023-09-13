@@ -50799,7 +50799,7 @@ const pfe = ({
   actions: n,
   menuAction: i,
   logoAction: r,
-  sx: O
+  sx: O = {}
 }) => /* @__PURE__ */ f.jsxs(Y, { sx: DO(_fe, O), variant: "header", children: [
   /* @__PURE__ */ f.jsx(Y, { sx: Cfe, onClick: r, children: /* @__PURE__ */ f.jsx(Rfe, { withName: !0, height: 35, width: 160 }) }),
   /* @__PURE__ */ f.jsx(
@@ -59198,7 +59198,7 @@ const USe = ({
   header: e,
   children: n,
   tree: i,
-  sx: r,
+  sx: r = {},
   ...O
 }) => {
   const a = Ee(() => i || JC(n), [n, i]), o = Ee(

@@ -31,7 +31,7 @@ const Navigation: INavigation<NavigationProps> = ({
   header,
   children,
   tree: propsTree,
-  sx,
+  sx = {},
   ...props
 }) => {
   const tree = useMemo(() => {
