@@ -1,4 +1,5 @@
 /// <reference types="react" />
+import { SxStyleProp } from 'rebass';
 import { NavigationCategoryProps } from '../category';
 import { NavigationItemProps, TreeNode } from '../types';
 type INavigation<P> = React.FC<P> & {
@@ -13,6 +14,7 @@ export interface NavigationProps {
     tree?: TreeNode[];
     onNavigate?: (node: TreeNode | null) => void;
     onBackCLick?: () => void;
+    sx?: SxStyleProp;
 }
 declare const Navigation: INavigation<NavigationProps>;
 export default Navigation;
