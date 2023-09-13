@@ -1,3 +1,10 @@
+# [3.8.0](https://github.com/logicalclocks/quartz/compare/v3.7.2...v3.8.0) (2023-09-13)
+
+
+### Features
+
+* **release:** for the sake of new release ([#510](https://github.com/logicalclocks/quartz/issues/510)) ([08c1074](https://github.com/logicalclocks/quartz/commit/08c1074aa71853979f1b33a0d97ed050dda00557))
+
 ## [3.7.2](https://github.com/logicalclocks/quartz/compare/v3.7.1...v3.7.2) (2023-09-12)
 
 
