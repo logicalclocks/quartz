@@ -19,8 +19,7 @@ import { Intents } from '../intents';
 import Label from '../label';
 import Labeling from '../typography/labeling';
 
-export interface Props
-  extends Omit<BoxProps, 'onChange' | 'children' | 'className'> {
+export interface Props extends Omit<BoxProps, 'onChange' | 'children' | 'className'> {
   value: SingleSelectOption['value'];
   options: SingleSelectOption[] | string[];
   placeholder?: string;
@@ -36,8 +35,7 @@ export interface Props
   noDataMessage?: string;
   isClearable?: boolean; // just show X or not
   labelPosition?: 'side' | 'inline' | 'outside';
-  labelPlacement?: 'default' | 'inverted';
-
+  invertLabelPosition?: boolean;
   isInvalid?: boolean;
   errorMessage?: ReactNode;
 
@@ -76,7 +74,7 @@ export const SingleSelect = ({
   noDataMessage,
   isClearable = false,
   labelPosition = 'outside',
-  labelPlacement = 'default',
+  invertLabelPosition = false,
   isInvalid = false,
   errorMessage = '',
   ...props
@@ -84,18 +82,23 @@ export const SingleSelect = ({
   const options: SingleSelectOption[] = hasStringOptions(rawOptions)
     ? rawOptions.map((it) => ({ value: it, label: it }))
     : rawOptions;
-  // Handle selection change
+
   const handleChange = (selectedOption: ISingleValue<SingleSelectOption>) => {
     onChange(selectedOption?.value);
   };
 
-  let xxx = 'column';
-  if (labelPosition !== 'inline') {
-    const flexDirection = labelPosition === 'side' ? 'row' : 'column';
-    xxx =
-      labelPlacement === 'inverted'
-        ? flexDirection + '-reverse'
-        : flexDirection;
+  const labelProps: Pick<
+    Props,
+    'invertLabelPosition' | 'labelPosition' | 'label'
+  > = {
+    labelPosition,
+    invertLabelPosition,
+    label,
+  };
+
+  let flexDirection: BoxProps['flexDirection'] = 'column';
+  if (labelPosition === 'side') {
+    flexDirection = `row${invertLabelPosition ? '-reverse' : ''}`;
   }
 
   return (
@@ -105,7 +108,7 @@ export const SingleSelect = ({
       display="flex"
       alignItems="baseline"
       justifyContent="start"
-      flexDirection={xxx as any}
+      flexDirection={flexDirection}
       isInvalid={isInvalid}
       {...props}
     >
@@ -130,7 +133,6 @@ export const SingleSelect = ({
         variant={variant}
         useBasicStyles
         isClearable={isClearable}
-        // menuIsOpen
         size="sm"
         options={options}
         placeholder={
@@ -166,9 +168,7 @@ export const SingleSelect = ({
         }
         // Additional customization can be added here
         // {...props}
-        label={label}
-        labelPosition={labelPosition}
-        labelPlacement={labelPlacement}
+        {...labelProps}
       />
       {errorMessage && (
         <FormErrorMessage m={1} fontSize="12px">
@@ -198,26 +198,21 @@ const chakraStyles = {
   singleValue: R.mergeLeft({
     fontSize: '12px',
   }),
-  // multiValue: R.mergeLeft({
-  //   bg: variant === 'white' ? 'grayShade3' : 'background',
-  // }),
   menu: R.mergeLeft({
     my: 0,
     py: 0,
   }),
 };
 
-const SingleValue = ({ children, ...props }: any) => {
+const SingleValue = ({ children, selectProps, ...props }: any) => {
   return (
-    <chakraComponents.SingleValue {...props} background="red">
+    <chakraComponents.SingleValue {...props}>
       <Flex
         align="stretch"
         w="max-content"
         gap={1}
         direction={
-          props.selectProps.labelPlacement === 'inverted'
-            ? 'row-reverse'
-            : 'row'
+          props.selectProps.invertLabelPosition ? 'row-reverse' : 'row'
         }
       >
         {props.selectProps.labelPosition === 'inline' && (
@@ -243,7 +238,6 @@ const MenuList = ({ children, ...props }: any) => {
 };
 
 const Option = ({ children, ...props }: any) => {
-  console.log(props);
   return (
     <chakraComponents.Option {...props} background="red">
       <Flex w="full" gap={2}>

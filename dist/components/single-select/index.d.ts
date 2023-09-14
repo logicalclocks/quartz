@@ -18,7 +18,7 @@ export interface Props extends Omit<BoxProps, 'onChange' | 'children' | 'classNa
     noDataMessage?: string;
     isClearable?: boolean;
     labelPosition?: 'side' | 'inline' | 'outside';
-    labelPlacement?: 'default' | 'inverted';
+    invertLabelPosition?: boolean;
     isInvalid?: boolean;
     errorMessage?: ReactNode;
     intent?: Intents;
@@ -35,4 +35,4 @@ export interface SingleSelectOption extends OptionBase {
     additionalText?: string;
     additionalComponent?: React.ReactNode;
 }
-export declare const SingleSelect: ({ options: rawOptions, value, onChange, placeholder, disabled, label, labelAction, width, maxListHeight, variant, noDataMessage, isClearable, labelPosition, labelPlacement, isInvalid, errorMessage, ...props }: Props) => import("react/jsx-runtime").JSX.Element;
+export declare const SingleSelect: ({ options: rawOptions, value, onChange, placeholder, disabled, label, labelAction, width, maxListHeight, variant, noDataMessage, isClearable, labelPosition, invertLabelPosition, isInvalid, errorMessage, ...props }: Props) => import("react/jsx-runtime").JSX.Element;
