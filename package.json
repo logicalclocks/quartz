@@ -91,7 +91,7 @@
     "@storybook/addon-links": "^7.2.2",
     "@storybook/core-common": "7.2.2",
     "@storybook/csf-tools": "7.2.2",
-    "@storybook/instrumenter": "7.2.2",
+    "@storybook/instrumenter": "7.4.2",
     "@storybook/jest": "^0.1.0",
     "@storybook/node-logger": "7.2.2",
     "@storybook/react": "^7.2.2",
