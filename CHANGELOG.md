@@ -1,3 +1,10 @@
+# [3.9.0](https://github.com/logicalclocks/quartz/compare/v3.8.0...v3.9.0) (2023-09-20)
+
+
+### Features
+
+* **codeinput:** Add auto focus to code input ([#515](https://github.com/logicalclocks/quartz/issues/515)) ([37c1569](https://github.com/logicalclocks/quartz/commit/37c1569c238da23f31040ec1452f21465d467ab5))
+
 # [3.8.0](https://github.com/logicalclocks/quartz/compare/v3.7.2...v3.8.0) (2023-09-13)
 
 
