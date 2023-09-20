@@ -25,9 +25,6 @@ export interface Props extends Omit<BoxProps, 'onChange' | 'children' | 'classNa
     customFilter?: React.ReactNode;
     bottomActionText?: string;
     bottomActionHandler?: () => void;
-    additionalTexts?: string[];
-    additionalComponents?: React.ReactNode[];
-    needSwap?: boolean;
 }
 export interface SingleSelectOption extends OptionBase {
     label: string;

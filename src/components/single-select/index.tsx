@@ -210,12 +210,12 @@ const SingleValue = ({ children, selectProps, ...props }: any) => {
         w="max-content"
         gap={1}
         direction={
-          props.selectProps.invertLabelPosition ? 'row-reverse' : 'row'
+          props.selectProps?.invertLabelPosition ? 'row-reverse' : 'row'
         }
       >
-        {props.selectProps.labelPosition === 'inline' && (
+        {props.selectProps?.labelPosition === 'inline' && (
           <Text fontWeight="normal" color="gray" mr="0.5ch">
-            {props.selectProps.label}
+            {props.selectProps?.label}
           </Text>
         )}
         <Box>
