@@ -50949,18 +50949,19 @@ const pfe = ({
     readOnly: c = !1,
     info: u,
     intent: d = "default",
-    ...h
+    codeMirrorProps: h,
+    ...$
   }) => {
-    const $ = (O || o || a) && /* @__PURE__ */ f.jsxs(G, { children: [
+    const g = (O || o || a) && /* @__PURE__ */ f.jsxs(G, { children: [
       O,
       a && /* @__PURE__ */ f.jsx(be, { ml: "8px", bold: !0, gray: !0, children: "optional" }),
       o && /* @__PURE__ */ f.jsx(Dt, { mainText: o, children: /* @__PURE__ */ f.jsx(je, { mt: "3px", ml: "3px", size: "xs", icon: Ze.info_block }) })
     ] });
-    return /* @__PURE__ */ f.jsxs(Y, { width: i, tx: "inputs", ...h, children: [
+    return /* @__PURE__ */ f.jsxs(Y, { width: i, tx: "inputs", ...$, children: [
       /* @__PURE__ */ f.jsx(
         rn,
         {
-          action: $,
+          action: g,
           text: t,
           width: i,
           ...s,
@@ -50984,7 +50985,8 @@ const pfe = ({
                   theme: MT,
                   onChange: l,
                   readOnly: c,
-                  height: r
+                  height: r,
+                  ...h
                 }
               )
             }
