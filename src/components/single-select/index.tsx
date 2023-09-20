@@ -12,6 +12,7 @@ import {
   Select,
   chakraComponents,
   type SingleValue as ISingleValue,
+  Props as PublicBaseSelectProps,
 } from 'chakra-react-select';
 import * as R from 'ramda';
 import { ReactNode } from 'react';
@@ -19,7 +20,11 @@ import { Intents } from '../intents';
 import Label from '../label';
 import Labeling from '../typography/labeling';
 
-export interface Props extends Omit<BoxProps, 'onChange' | 'children' | 'className'> {
+type ParentProps = Pick<PublicBaseSelectProps, 'menuPlacement'>;
+
+export interface Props
+  extends Omit<BoxProps, 'onChange' | 'children' | 'className'>,
+    ParentProps {
   value: SingleSelectOption['value'];
   options: SingleSelectOption[] | string[];
   placeholder?: string;
@@ -74,6 +79,7 @@ export const SingleSelect = ({
   invertLabelPosition = false,
   isInvalid = false,
   errorMessage = '',
+  menuPlacement,
   ...props
 }: Props) => {
   const options: SingleSelectOption[] = hasStringOptions(rawOptions)
@@ -141,10 +147,11 @@ export const SingleSelect = ({
         closeMenuOnSelect
         noOptionsMessage={R.always(noDataMessage)}
         menuPortalTarget={document.body}
+        menuShouldBlockScroll
         styles={{
           menuPortal: (provided) => ({ ...provided, zIndex: 2000 }),
         }}
-        menuPlacement="auto"
+        menuPlacement={menuPlacement}
         chakraStyles={{
           ...chakraStyles,
           container: R.mergeLeft({
