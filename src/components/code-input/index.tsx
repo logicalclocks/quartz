@@ -3,7 +3,7 @@ import { Box, Flex } from 'rebass';
 
 import { loadLanguage } from '@uiw/codemirror-extensions-langs';
 import { darcula } from '@uiw/codemirror-theme-darcula';
-import CodeMirror from '@uiw/react-codemirror';
+import CodeMirror, { ReactCodeMirrorProps } from '@uiw/react-codemirror';
 
 // Components
 import { BoxProps } from '../box';
@@ -29,6 +29,7 @@ export interface CodeInputProps
   readOnly: boolean;
   info?: string;
   intent?: Intents;
+  codeMirrorProps?: ReactCodeMirrorProps;
 }
 
 const CodeInput = forwardRef(
@@ -46,6 +47,7 @@ const CodeInput = forwardRef(
     readOnly = false,
     info,
     intent = 'default',
+    codeMirrorProps,
     ...props
   }: CodeInputProps) => {
     const actions = (labelAction || tooltipInfo || optional) && (
@@ -90,6 +92,7 @@ const CodeInput = forwardRef(
               onChange={onChange}
               readOnly={readOnly}
               height={height}
+              {...codeMirrorProps}
             />
           </Box>
         </Label>
