@@ -140,10 +140,11 @@ export const SingleSelect = ({
         selectedOptionColorScheme="gray"
         closeMenuOnSelect
         noOptionsMessage={R.always(noDataMessage)}
-        menuPortalTarget={document.querySelector('.chakra-portal') as any}
+        menuPortalTarget={document.body}
         styles={{
           menuPortal: (provided) => ({ ...provided, zIndex: 2000 }),
         }}
+        menuPlacement="auto"
         chakraStyles={{
           ...chakraStyles,
           container: R.mergeLeft({
