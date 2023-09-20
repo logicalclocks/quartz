@@ -1,4 +1,5 @@
 /// <reference types="react" />
+import { ReactCodeMirrorProps } from '@uiw/react-codemirror';
 import { BoxProps } from '../box';
 import { Intents } from '../intents';
 import { LabelProps } from '../label';
@@ -16,6 +17,7 @@ export interface CodeInputProps extends Omit<BoxProps, 'children' | 'onChange'> 
     readOnly: boolean;
     info?: string;
     intent?: Intents;
+    codeMirrorProps?: ReactCodeMirrorProps;
 }
 declare const CodeInput: import("react").ForwardRefExoticComponent<Omit<CodeInputProps, "ref"> & import("react").RefAttributes<unknown>>;
 export default CodeInput;
