@@ -202,7 +202,7 @@ const chakraStyles = {
   }),
 };
 
-const SingleValue = ({ children, selectProps, ...props }: any) => {
+const SingleValue = ({ children, ...props }: any) => {
   return (
     <chakraComponents.SingleValue {...props}>
       <Flex
