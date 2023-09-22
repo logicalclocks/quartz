@@ -13,6 +13,7 @@ import {
   chakraComponents,
   type SingleValue as ISingleValue,
   Props as PublicBaseSelectProps,
+  PropsValue,
 } from 'chakra-react-select';
 import * as R from 'ramda';
 import { ReactNode } from 'react';
@@ -21,11 +22,14 @@ import Label from '../label';
 import Labeling from '../typography/labeling';
 
 type ParentProps = Pick<PublicBaseSelectProps, 'menuPlacement'>;
+type CleanBoxProps = Omit<
+  BoxProps,
+  'onChange' | 'children' | 'className' | 'defaultValue'
+>;
 
-export interface Props
-  extends Omit<BoxProps, 'onChange' | 'children' | 'className'>,
-    ParentProps {
+export interface Props extends ParentProps, CleanBoxProps {
   value: SingleSelectOption['value'];
+  defaultValue: SingleSelectOption['value'];
   options: SingleSelectOption[] | string[];
   placeholder?: string;
   label?: string;
@@ -65,6 +69,7 @@ const hasStringOptions = (
 export const SingleSelect = ({
   options: rawOptions,
   value,
+  defaultValue,
   onChange,
   placeholder,
   disabled,
@@ -134,12 +139,15 @@ export const SingleSelect = ({
       <Select<SingleSelectOption>
         isMulti={false}
         variant={variant}
+        defaultValue={options.find((it) => it.value === defaultValue)}
         useBasicStyles
         isClearable={isClearable}
         size="sm"
         options={options}
         placeholder={
-          labelPosition === 'inline' ? `${label} ${placeholder}` : placeholder
+          label && labelPosition === 'inline'
+            ? `${label} ${placeholder ?? ''}`
+            : placeholder
         }
         value={options.find((it) => it.value === value)}
         onChange={handleChange}
@@ -151,7 +159,7 @@ export const SingleSelect = ({
         styles={{
           menuPortal: (provided) => ({ ...provided, zIndex: 2000 }),
         }}
-        menuPlacement={menuPlacement}
+        menuPlacement={menuPlacement ?? 'auto'}
         chakraStyles={{
           ...chakraStyles,
           container: R.mergeLeft({
