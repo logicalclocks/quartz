@@ -47,7 +47,6 @@ export type Props = ParentProps &
   CleanBoxProps &
   Conditionals & {
     value: SingleSelectOption['value'];
-    defaultValue: SingleSelectOption['value'];
     options: SingleSelectOption[] | string[];
     placeholder?: string;
     label?: string;
@@ -149,7 +148,6 @@ export const SingleSelect = ({
       <Select<SingleSelectOption>
         isMulti={false}
         variant={variant}
-        defaultValue={options.find((it) => it.value === defaultValue)}
         useBasicStyles
         isClearable={isClearable}
         size="sm"
