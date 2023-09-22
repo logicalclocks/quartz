@@ -9,11 +9,10 @@ import {
 } from '@chakra-ui/react';
 import {
   OptionBase,
+  Props as PublicBaseSelectProps,
   Select,
   chakraComponents,
   type SingleValue as ISingleValue,
-  Props as PublicBaseSelectProps,
-  PropsValue,
 } from 'chakra-react-select';
 import * as R from 'ramda';
 import { ReactNode } from 'react';
@@ -21,46 +20,57 @@ import { Intents } from '../intents';
 import Label from '../label';
 import Labeling from '../typography/labeling';
 
+export interface SingleSelectOption extends OptionBase {
+  label: string;
+  value: string | undefined;
+  additionalText?: string;
+  additionalComponent?: React.ReactNode;
+}
+
 type ParentProps = Pick<PublicBaseSelectProps, 'menuPlacement'>;
 type CleanBoxProps = Omit<
   BoxProps,
   'onChange' | 'children' | 'className' | 'defaultValue'
 >;
 
-export interface Props extends ParentProps, CleanBoxProps {
-  value: SingleSelectOption['value'];
-  defaultValue: SingleSelectOption['value'];
-  options: SingleSelectOption[] | string[];
-  placeholder?: string;
-  label?: string;
-  disabled?: boolean;
-  width?: string | number;
-  maxListHeight?: string;
-  labelAction?: React.ReactNode;
-  /** @deprecated not used meaningfully anywhere */
-  listWidth?: string | number; // deprecate
-  onChange: (value: SingleSelectOption['value']) => void;
-  variant?: 'primary' | 'white';
-  noDataMessage?: string;
-  isClearable?: boolean; // just show X or not
-  labelPosition?: 'side' | 'inline' | 'outside';
-  invertLabelPosition?: boolean;
-  isInvalid?: boolean;
-  errorMessage?: ReactNode;
+type Conditionals =
+  | {
+      isClearable?: true | undefined;
+      onChange: (value: string | undefined) => void;
+    }
+  | {
+      isClearable?: false;
+      onChange: (value: string) => void;
+    };
 
-  // out of scope rn
-  intent?: Intents;
-  customFilter?: React.ReactNode;
-  bottomActionText?: string;
-  bottomActionHandler?: () => void;
-}
+export type Props = ParentProps &
+  CleanBoxProps &
+  Conditionals & {
+    value: SingleSelectOption['value'];
+    defaultValue: SingleSelectOption['value'];
+    options: SingleSelectOption[] | string[];
+    placeholder?: string;
+    label?: string;
+    disabled?: boolean;
+    width?: string | number;
+    maxListHeight?: string;
+    labelAction?: React.ReactNode;
+    /** @deprecated not used meaningfully anywhere */
+    listWidth?: string | number; // deprecate
+    variant?: 'primary' | 'white';
+    noDataMessage?: string;
+    isClearable?: boolean; // just show X or not
+    labelPosition?: 'side' | 'inline' | 'outside';
+    invertLabelPosition?: boolean;
+    isInvalid?: boolean;
+    errorMessage?: ReactNode;
 
-export interface SingleSelectOption extends OptionBase {
-  label: string;
-  value: string | number | undefined; // TODO do we need number?
-  additionalText?: string;
-  additionalComponent?: React.ReactNode;
-}
+    // out of scope rn
+    intent?: Intents;
+    customFilter?: React.ReactNode;
+    bottomActionText?: string;
+    bottomActionHandler?: () => void;
+  };
 
 const hasStringOptions = (
   it: (string | SingleSelectOption)[],
@@ -82,7 +92,7 @@ export const SingleSelect = ({
   isClearable = false,
   labelPosition = 'outside',
   invertLabelPosition = false,
-  isInvalid = false,
+  isInvalid,
   errorMessage = '',
   menuPlacement,
   ...props
@@ -92,7 +102,7 @@ export const SingleSelect = ({
     : rawOptions;
 
   const handleChange = (selectedOption: ISingleValue<SingleSelectOption>) => {
-    onChange(selectedOption?.value);
+    onChange(selectedOption?.value as string);
   };
 
   const labelProps: Pick<
@@ -261,3 +271,4 @@ const Option = ({ children, ...props }: any) => {
     </chakraComponents.Option>
   );
 };
+
