@@ -5,12 +5,14 @@ import {
   FormControl,
   FormErrorMessage,
   FormLabel,
+  HStack,
   Text,
 } from '@chakra-ui/react';
 import {
   OptionBase,
   Props as PublicBaseSelectProps,
   Select,
+  CreatableSelect,
   chakraComponents,
   type SingleValue as ISingleValue,
 } from 'chakra-react-select';
@@ -46,6 +48,7 @@ type Conditionals =
 export type Props = ParentProps &
   CleanBoxProps &
   Conditionals & {
+    editable?: boolean;
     value: SingleSelectOption['value'];
     options: SingleSelectOption[] | string[];
     placeholder?: string;
@@ -78,7 +81,6 @@ const hasStringOptions = (
 export const SingleSelect = ({
   options: rawOptions,
   value,
-  defaultValue,
   onChange,
   placeholder,
   disabled,
@@ -88,6 +90,7 @@ export const SingleSelect = ({
   maxListHeight,
   variant,
   noDataMessage,
+  editable = false,
   isClearable = false,
   labelPosition = 'outside',
   invertLabelPosition = false,
@@ -118,6 +121,14 @@ export const SingleSelect = ({
     flexDirection = `row${invertLabelPosition ? '-reverse' : ''}`;
   }
 
+  const Component = editable ? CreatableSelect : Select;
+
+  const propsForEditable = editable
+    ? {
+        formatCreateLabel: CreateLabel,
+      }
+    : {};
+
   return (
     <FormControl
       isDisabled={disabled}
@@ -145,12 +156,14 @@ export const SingleSelect = ({
           />
         </FormLabel>
       )}
-      <Select<SingleSelectOption>
+      <Component<SingleSelectOption>
         isMulti={false}
         variant={variant}
+        tagVariant="solid"
         useBasicStyles
         isClearable={isClearable}
         size="sm"
+        openMenuOnFocus // needed for accessibility, e.g. trigger on a label click
         options={options}
         placeholder={
           label && labelPosition === 'inline'
@@ -161,7 +174,9 @@ export const SingleSelect = ({
         onChange={handleChange}
         selectedOptionColorScheme="gray"
         closeMenuOnSelect
-        noOptionsMessage={R.always(noDataMessage)}
+        noOptionsMessage={R.always(
+          isNotEmptyAndNotUndefined(noDataMessage) ? noDataMessage! : '— • —',
+        )}
         menuPortalTarget={document.body}
         menuShouldBlockScroll
         styles={{
@@ -179,6 +194,9 @@ export const SingleSelect = ({
             maxHeight: maxListHeight,
             width: 'max-content',
           }),
+          multiValue: R.mergeLeft({
+            bg: variant === 'white' ? 'grayShade3' : 'background',
+          }),
         }}
         components={
           {
@@ -190,6 +208,7 @@ export const SingleSelect = ({
         // Additional customization can be added here
         // {...props}
         {...labelProps}
+        {...propsForEditable}
       />
       {errorMessage && (
         <FormErrorMessage m={1} fontSize="12px">
@@ -221,6 +240,10 @@ const chakraStyles = {
   }),
   menu: R.mergeLeft({
     my: 0,
+    py: 0,
+  }),
+  menuList: R.mergeLeft({
+    my: 1,
     py: 0,
   }),
 };
@@ -270,3 +293,16 @@ const Option = ({ children, ...props }: any) => {
   );
 };
 
+const isNotEmptyAndNotUndefined = R.both(
+  R.complement(R.isNil),
+  R.complement(R.isEmpty),
+);
+
+const CreateLabel = (text: string) => (
+  <HStack align="baseline">
+    <Labeling fontSize="11px" gray>
+      add
+    </Labeling>
+    <Box>{text}</Box>
+  </HStack>
+);

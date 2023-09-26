@@ -14,6 +14,10 @@ const meta: Meta<typeof SingleSelect> = {
     value: {
       description: 'Array of strings',
     },
+    editable: {
+      description: 'Allow to add new values',
+      control: { type: 'boolean' },
+    },
     options: {
       description: 'Array of strings',
       control: { type: 'array' },
@@ -101,6 +105,7 @@ const options = [
 export const Default: StoryObj<typeof SingleSelect> = {
   args: {
     placeholder: 'placeholder',
+    editable: false,
     // width: '100px',
     label: 'Label',
     variant: 'primary',
