@@ -177,7 +177,7 @@ export const SingleSelect = ({
         noOptionsMessage={R.always(
           isNotEmptyAndNotUndefined(noDataMessage) ? noDataMessage! : '— • —',
         )}
-        menuPortalTarget={document.body}
+        menuPortalTarget={document.querySelector('.chakra-portal') as any}
         menuShouldBlockScroll
         styles={{
           menuPortal: (provided) => ({ ...provided, zIndex: 2000 }),
