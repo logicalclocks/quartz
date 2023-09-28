@@ -1,9 +1,17 @@
 import { forwardRef } from 'react';
 import { Box, Flex } from 'rebass';
-
+// eslint-disable-next-line import/no-extraneous-dependencies
+import {
+  CompletionContext,
+  autocompletion,
+  Completion,
+} from '@codemirror/autocomplete';
 import { loadLanguage } from '@uiw/codemirror-extensions-langs';
 import { darcula } from '@uiw/codemirror-theme-darcula';
-import CodeMirror, { ReactCodeMirrorProps } from '@uiw/react-codemirror';
+import CodeMirror, {
+  Extension,
+  ReactCodeMirrorProps,
+} from '@uiw/react-codemirror';
 
 // Components
 import { BoxProps } from '../box';
@@ -13,6 +21,19 @@ import { Intents } from '../intents';
 import Label, { LabelProps } from '../label';
 import Tooltip from '../tooltip';
 import Labeling from '../typography/labeling';
+
+const createCompletions =
+  (completions: Completion[]) => (context: CompletionContext) => {
+    const before = context.matchBefore(/\w+/);
+    // If completion wasn't explicitly started and there
+    // is no word before the cursor, don't open completions.
+    if (!context.explicit && !before) return null;
+    return {
+      from: before ? before.from : context.pos,
+      options: completions,
+      validFor: /^\w*$/,
+    };
+  };
 
 export interface CodeInputProps
   extends Omit<BoxProps, 'children' | 'onChange'> {
@@ -30,6 +51,7 @@ export interface CodeInputProps
   info?: string;
   intent?: Intents;
   codeMirrorProps?: ReactCodeMirrorProps;
+  completions?: Completion[];
 }
 
 const CodeInput = forwardRef(
@@ -48,6 +70,7 @@ const CodeInput = forwardRef(
     info,
     intent = 'default',
     codeMirrorProps,
+    completions,
     ...props
   }: CodeInputProps) => {
     const actions = (labelAction || tooltipInfo || optional) && (
@@ -87,7 +110,16 @@ const CodeInput = forwardRef(
                 lineNumbers: true,
                 foldGutter: false,
               }}
-              extensions={[loadLanguage(mode)!].filter(Boolean)}
+              extensions={
+                [
+                  loadLanguage(mode)!,
+                  completions
+                    ? autocompletion({
+                        override: [createCompletions(completions)],
+                      })
+                    : false,
+                ].filter(Boolean) as Extension[]
+              }
               theme={darcula}
               onChange={onChange}
               readOnly={readOnly}

@@ -2,6 +2,7 @@ import { action } from '@storybook/addon-actions';
 import { Meta, StoryObj } from '@storybook/react';
 
 import CodeInput from '.';
+import { Flex } from '../flex';
 
 const meta: Meta<typeof CodeInput> = {
   title: 'CodeInput',
@@ -59,9 +60,21 @@ const meta: Meta<typeof CodeInput> = {
       },
       description: 'Select intent (error border)',
     },
+    completions: {
+      control: {
+        type: 'object',
+      },
+      description: 'Add some completions for code auto-complete',
+    },
   },
 };
 export default meta;
+
+const completions = [
+  { label: 'panic', type: 'keyword' },
+  { label: 'park', type: 'constant', info: 'Test completion' },
+  { label: 'password', type: 'variable' },
+];
 
 export const Default: StoryObj<typeof CodeInput> = {
   args: {
@@ -71,5 +84,9 @@ export const Default: StoryObj<typeof CodeInput> = {
     tooltipInfo: 'some tooltip',
     onChange: action('Input change'),
   },
-  render: (props) => <CodeInput {...props} />,
+  render: (props) => (
+    <Flex width="500px">
+      <CodeInput {...props} completions={completions} />
+    </Flex>
+  ),
 };
