@@ -55,6 +55,7 @@
     "@chakra-ui/anatomy": "^2.2.0",
     "@chakra-ui/react": "^2.8.0",
     "@chakra-ui/styled-system": "^2.9.1",
+    "@codemirror/autocomplete": "^6.9.1",
     "@codemirror/view": "^6.18.0",
     "@emotion/core": "^10.3.1",
     "@emotion/react": "^11.11.1",
