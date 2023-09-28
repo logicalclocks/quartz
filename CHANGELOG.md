@@ -1,3 +1,10 @@
+# [3.10.0](https://github.com/logicalclocks/quartz/compare/v3.9.0...v3.10.0) (2023-09-28)
+
+
+### Features
+
+* **code-input:** add auto completion ([#520](https://github.com/logicalclocks/quartz/issues/520)) ([3f5935c](https://github.com/logicalclocks/quartz/commit/3f5935c2d659f6a4aed41bbf10ef3cb12cac1a05))
+
 # [3.9.0](https://github.com/logicalclocks/quartz/compare/v3.8.0...v3.9.0) (2023-09-20)
 
 
