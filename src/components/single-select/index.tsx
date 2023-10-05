@@ -69,6 +69,8 @@ export type Props = ParentProps &
     labelPosition?: 'side' | 'inline' | 'outside';
     invertLabelPosition?: boolean;
     isInvalid?: boolean;
+    isDisabled?: boolean;
+    isLoading?: boolean;
     errorMessage?: ReactNode;
 
     // out of scope rn
@@ -99,6 +101,8 @@ export const SingleSelect = ({
   labelPosition = 'outside',
   invertLabelPosition = false,
   isInvalid,
+  isDisabled,
+  isLoading,
   errorMessage = '',
   menuPlacement,
   ...props
@@ -135,13 +139,13 @@ export const SingleSelect = ({
 
   return (
     <FormControl
-      isDisabled={disabled}
       width={width}
       display="flex"
       alignItems="baseline"
       justifyContent="start"
       flexDirection={flexDirection}
       isInvalid={isInvalid}
+      isDisabled={disabled}
       {...props}
     >
       {['outside', 'side'].includes(labelPosition) && label && (
@@ -209,6 +213,7 @@ export const SingleSelect = ({
             Option,
           } as any
         }
+        isLoading={isLoading}
         // Additional customization can be added here
         // {...props}
         {...labelProps}
