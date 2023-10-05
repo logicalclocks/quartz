@@ -9,10 +9,10 @@ import {
   Text,
 } from '@chakra-ui/react';
 import {
+  CreatableSelect,
   OptionBase,
   Props as PublicBaseSelectProps,
   Select,
-  CreatableSelect,
   chakraComponents,
   type SingleValue as ISingleValue,
 } from 'chakra-react-select';
@@ -37,11 +37,15 @@ type CleanBoxProps = Omit<
 
 type Conditionals =
   | {
-      isClearable?: true | undefined;
+      isClearable: true;
       onChange: (value: string | undefined) => void;
     }
   | {
-      isClearable?: false;
+      isClearable: false;
+      onChange: (value: string) => void;
+    }
+  | {
+      isClearable?: undefined;
       onChange: (value: string) => void;
     };
 
