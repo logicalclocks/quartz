@@ -4,7 +4,7 @@ import { StoryObj, Meta } from '@storybook/react';
 
 import { Box } from 'rebass';
 import Select from './index';
-import { Button, Popup, RadioGroup, Value } from '../../index';
+import { Button, RadioGroup, Value } from '../../index';
 import Labeling from '../typography/labeling';
 import { SelectOpt } from './types';
 
