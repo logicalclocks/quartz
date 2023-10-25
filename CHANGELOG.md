@@ -1,3 +1,10 @@
+## [3.10.1](https://github.com/logicalclocks/quartz/compare/v3.10.0...v3.10.1) (2023-10-25)
+
+
+### Bug Fixes
+
+* **select2:** fix select2 styling to show the main selected text ([#530](https://github.com/logicalclocks/quartz/issues/530)) ([f82a2dc](https://github.com/logicalclocks/quartz/commit/f82a2dcfcf8bd6e86b72bd5bdb74361b0337728a))
+
 # [3.10.0](https://github.com/logicalclocks/quartz/compare/v3.9.0...v3.10.0) (2023-09-28)
 
 
