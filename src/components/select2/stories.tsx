@@ -134,11 +134,15 @@ const options = [
       </Labeling>
     ),
   },
-  { key: 3, label: 'Three', additionalText: 'add_three' },
+  {
+    key: 3,
+    label: 'Three_Thats_loooong',
+    additionalText: 'add_three_thats_veryyyyy_loooooong',
+  },
   {
     key: 4,
     label: 'Four',
-    additionalText: 'add_four',
+    additionalText: 'add_four_thats_veryyyyy_loooooong',
     additionalComponent: <Value>text</Value>,
   },
 ] as SelectOpt[];
@@ -190,28 +194,27 @@ export const Default: StoryObj<typeof Select> = {
     };
 
     return (
-      <Popup isOpen onClose={() => {}}>
-        <Box height="60px" m="20px">
-          <Select
-            {...props}
-            value={val}
-            maxListHeight="initial"
-            options={customOptions}
-            onChange={handleChange}
-            customFilter={
-              // eslint-disable-next-line react/jsx-wrap-multilines
-              <RadioGroup
-                ml="10px"
-                value={selected}
-                flexDirection="row"
-                onChange={handleChangeFilter}
-                onClick={(e) => e.stopPropagation()}
-                options={['all', 'matching feature only']}
-              />
-            }
-          />
-        </Box>
-      </Popup>
+      <Box height="60px" m="20px">
+        <Select
+          {...props}
+          width="200px"
+          value={val}
+          maxListHeight="initial"
+          options={customOptions}
+          onChange={handleChange}
+          customFilter={
+            // eslint-disable-next-line react/jsx-wrap-multilines
+            <RadioGroup
+              ml="10px"
+              value={selected}
+              flexDirection="row"
+              onChange={handleChangeFilter}
+              onClick={(e) => e.stopPropagation()}
+              options={['all', 'matching feature only']}
+            />
+          }
+        />
+      </Box>
     );
   },
 };

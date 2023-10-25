@@ -94,11 +94,19 @@ const SelectLabel = forwardRef(
               {content}
             </Labeling>
             <Flex>
-              <Labeling px="5px" sx={valueStyles}>
+              <Labeling
+                px="5px"
+                sx={{ ...valueStyles, flex: 'none', maxWidth: '100px' }}
+              >
                 {getLabelText(value, options, isMulti)}
               </Labeling>
               {!isMulti && value[0]?.additionalText && needSecondaryText && (
-                <Labeling gray>{value[0].additionalText}</Labeling>
+                <Labeling
+                  gray
+                  sx={{ overflow: 'hidden', textOverflow: 'ellipsis' }}
+                >
+                  {value[0].additionalText}
+                </Labeling>
               )}
             </Flex>
           </Flex>
