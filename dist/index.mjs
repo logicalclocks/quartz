@@ -51691,8 +51691,22 @@ const pfe = ({
           ] }) : /* @__PURE__ */ f.jsxs(G, { children: [
             /* @__PURE__ */ f.jsx(be, { minWidth: "max-content", gray: !0, children: g }),
             /* @__PURE__ */ f.jsxs(G, { children: [
-              /* @__PURE__ */ f.jsx(be, { px: "5px", sx: Uw, children: Yw(i, O, o) }),
-              !o && ((m = i[0]) == null ? void 0 : m.additionalText) && u && /* @__PURE__ */ f.jsx(be, { gray: !0, children: i[0].additionalText })
+              /* @__PURE__ */ f.jsx(
+                be,
+                {
+                  px: "5px",
+                  sx: { ...Uw, flex: "none", maxWidth: "100px" },
+                  children: Yw(i, O, o)
+                }
+              ),
+              !o && ((m = i[0]) == null ? void 0 : m.additionalText) && u && /* @__PURE__ */ f.jsx(
+                be,
+                {
+                  gray: !0,
+                  sx: { overflow: "hidden", textOverflow: "ellipsis" },
+                  children: i[0].additionalText
+                }
+              )
             ] })
           ] }),
           /* @__PURE__ */ f.jsxs(G, { children: [
