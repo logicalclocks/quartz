@@ -50,8 +50,8 @@ dependencies:
     specifier: ^5.1.5
     version: 5.1.5
   '@tanem/react-nprogress':
-    specifier: ^5.0.49
-    version: 5.0.49(react-dom@18.2.0)(react@18.2.0)
+    specifier: ^5.0.51
+    version: 5.0.51(react-dom@18.2.0)(react@18.2.0)
   '@tanstack/react-table':
     specifier: ^8.9.7
     version: 8.9.7(react-dom@18.2.0)(react@18.2.0)
@@ -7339,8 +7339,8 @@ packages:
       jsonc-parser: 3.2.0
     dev: true
 
-  /@tanem/react-nprogress@5.0.49(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-y10a+aiZxelpgCWv1yDJVIL7kKz60yTfVx5dSrLlrMxs8AHxN+GwAu3AsAYYLG7DILoKH1GwGvJxwv2OhWhKsA==}
+  /@tanem/react-nprogress@5.0.51(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-YxNUCpznuBVA+PhjEzFmxaa1czXgU+5Ojchw5JBK7DQS6SHIgNudpFohWpNBWMu2KWByGJ2OLH2OwbM/XyP18Q==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
       react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
