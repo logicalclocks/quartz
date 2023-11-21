@@ -1,3 +1,10 @@
+## [3.10.6](https://github.com/logicalclocks/quartz/compare/v3.10.5...v3.10.6) (2023-11-21)
+
+
+### Bug Fixes
+
+* **build:** Update Vite v4 -> v5 ([#539](https://github.com/logicalclocks/quartz/issues/539)) ([6e9dc69](https://github.com/logicalclocks/quartz/commit/6e9dc692cb5fe54ca583014476ae821e79cc81aa))
+
 ## [3.10.5](https://github.com/logicalclocks/quartz/compare/v3.10.4...v3.10.5) (2023-11-21)
 
 ## [3.10.4](https://github.com/logicalclocks/quartz/compare/v3.10.3...v3.10.4) (2023-11-21)
