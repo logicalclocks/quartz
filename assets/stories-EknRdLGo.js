@@ -1,0 +1,2 @@
+import{j as o}from"./index.esm-1-8jp_UH.js";import{T as t}from"./TextValueBadge-wpR9rzIv.js";import"./index-IybTgENJ.js";import"./_commonjsHelpers-4gQjN7DL.js";import"./value-HjFKPSNN.js";import"./labeling-cqUFRDmz.js";import"./index-2SZDP6Ir.js";import"./core.browser.esm-CcTFRrWi.js";import"./inheritsLoose-fS6oVJzb.js";import"./setPrototypeOf-ahVgEFUp.js";const d={title:"Badges/TextValueBadge",component:t,args:{text:"text",value:"value"}},f={render:e=>o.jsx(t,{...e})};export{f as Default,d as default};
+//# sourceMappingURL=stories-EknRdLGo.js.map
