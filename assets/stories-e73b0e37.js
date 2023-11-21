@@ -1,0 +1,2 @@
+import{j as e,B as t}from"./index.esm-02d47693.js";import{F as r}from"./index-57211b90.js";import"./index-570b25c1.js";import"./_commonjsHelpers-042e6b4d.js";const l={title:"FormSummaryContainer",component:r,argTypes:{hasScrollOnScreen:{control:{type:"boolean"}}}},c={args:{hasScrollOnScreen:!1},render:o=>e.jsx(t,{width:"700px",children:e.jsx(r,{...o,children:"the content goes here"})})};export{c as Default,l as default};
+//# sourceMappingURL=stories-e73b0e37.js.map
