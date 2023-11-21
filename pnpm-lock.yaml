@@ -5,18 +5,7 @@ settings:
   excludeLinksFromLockfile: false
 
 overrides:
-  axios@<0.21.1: '>=0.21.1'
-  follow-redirects@<1.14.7: '>=1.14.7'
-  axios@<0.21.2: '>=0.21.2'
-  nth-check@<2.0.1: '>=2.0.1'
   semver@<5.7.2: '>=5.7.2'
-  semver@>=6.0.0 <6.3.1: '>=6.3.1'
-  semver@>=7.0.0 <7.5.2: '>=7.5.2'
-  follow-redirects@<1.14.8: '>=1.14.8'
-  postcss@<8.4.31: '>=8.4.31'
-  '@babel/traverse@<7.23.2': '>=7.23.2'
-  axios@>=0.8.1 <1.6.0: '>=1.6.0'
-  '@adobe/css-tools@<4.3.1': '>=4.3.1'
 
 dependencies:
   '@chakra-ui/anatomy':
@@ -4324,7 +4313,7 @@ packages:
       colors: 1.2.5
       lodash: 4.17.21
       resolve: 1.22.8
-      semver: 7.5.4
+      semver: 7.3.8
       source-map: 0.6.1
       typescript: 5.0.4
     transitivePeerDependencies:
@@ -5365,7 +5354,7 @@ packages:
       import-lazy: 4.0.0
       jju: 1.4.0
       resolve: 1.22.8
-      semver: 7.5.4
+      semver: 7.3.8
       z-schema: 5.0.5
     dev: true
 
@@ -8224,6 +8213,14 @@ packages:
   /axe-core@4.7.0:
     resolution: {integrity: sha512-M0JtH+hlOL5pLQwHOLNYZaXuhqmvS8oExsqB1SBYgA4Dk7u/xx+YdGHXaK5pyUfed5mYXdlYiphWq3G8cRi5JQ==}
     engines: {node: '>=4'}
+    dev: true
+
+  /axios@0.21.4:
+    resolution: {integrity: sha512-ut5vewkiu8jjGBdqpM44XxjuCjq9LAKeHVmoVfHVzy8eHgxxq8SbAVQNovDA8mVi05kP0Ea/n/UzcSHcTJQfNg==}
+    dependencies:
+      follow-redirects: 1.15.2
+    transitivePeerDependencies:
+      - debug
     dev: true
 
   /axios@1.6.2:
@@ -14984,6 +14981,14 @@ packages:
     hasBin: true
     dev: true
 
+  /semver@7.3.8:
+    resolution: {integrity: sha512-NB1ctGL5rlHrPJtFDVIVzTyQylMLu9N9VICA6HSFJo8MCGVTMW6gfpicwKmmK/dAjTOrqu5l63JJOpDSrAis3A==}
+    engines: {node: '>=10'}
+    hasBin: true
+    dependencies:
+      lru-cache: 6.0.0
+    dev: true
+
   /semver@7.5.4:
     resolution: {integrity: sha512-1bCSESV6Pv+i21Hvpxp3Dx+pSD8lIPt8uVjRrxAUt/nbswYc+tK6Y2btiULjd4+fnq15PX+nqQDC7Oft7WkwcA==}
     engines: {node: '>=10'}
@@ -16307,7 +16312,7 @@ packages:
     engines: {node: '>=8.9.0'}
     hasBin: true
     dependencies:
-      axios: 1.6.2
+      axios: 0.21.4
       joi: 17.11.0
       lodash: 4.17.21
       minimist: 1.2.8
