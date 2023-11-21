@@ -13,6 +13,10 @@ overrides:
   semver@>=6.0.0 <6.3.1: '>=6.3.1'
   semver@>=7.0.0 <7.5.2: '>=7.5.2'
   follow-redirects@<1.14.8: '>=1.14.8'
+  postcss@<8.4.31: '>=8.4.31'
+  '@babel/traverse@<7.23.2': '>=7.23.2'
+  axios@>=0.8.1 <1.6.0: '>=1.6.0'
+  '@adobe/css-tools@<4.3.1': '>=4.3.1'
 
 dependencies:
   '@chakra-ui/anatomy':
@@ -2776,20 +2780,6 @@ packages:
     dependencies:
       '@chakra-ui/system': 2.6.0(@emotion/react@11.11.1)(@emotion/styled@11.11.0)(react@18.2.0)
       react: 18.2.0
-    dev: false
-
-  /@codemirror/autocomplete@6.8.1(@codemirror/language@6.8.0)(@codemirror/state@6.2.1)(@codemirror/view@6.18.0)(@lezer/common@1.0.3):
-    resolution: {integrity: sha512-HpphvDcTdOx+9R3eUw9hZK9JA77jlaBF0kOt2McbyfvY0rX9pnMoO8rkkZc0GzSbzhIY4m5xJ0uHHgjfqHNmXQ==}
-    peerDependencies:
-      '@codemirror/language': ^6.0.0
-      '@codemirror/state': ^6.0.0
-      '@codemirror/view': ^6.0.0
-      '@lezer/common': ^1.0.0
-    dependencies:
-      '@codemirror/language': 6.8.0
-      '@codemirror/state': 6.2.1
-      '@codemirror/view': 6.18.0
-      '@lezer/common': 1.0.3
     dev: false
 
   /@codemirror/autocomplete@6.9.1(@codemirror/language@6.8.0)(@codemirror/state@6.2.1)(@codemirror/view@6.18.0)(@lezer/common@1.0.3):
@@ -6536,7 +6526,7 @@ packages:
       '@svgr/core': 5.5.0
       '@svgr/plugin-prettier': 5.5.0
       '@svgr/plugin-svgo': 5.5.0
-      axios: 1.4.0
+      axios: 1.6.2
       chalk: 4.1.2
       dotenv: 16.3.1
       figma-api-exporter: 0.0.2
@@ -8503,25 +8493,8 @@ packages:
     engines: {node: '>=4'}
     dev: true
 
-  /axios@0.21.4:
-    resolution: {integrity: sha512-ut5vewkiu8jjGBdqpM44XxjuCjq9LAKeHVmoVfHVzy8eHgxxq8SbAVQNovDA8mVi05kP0Ea/n/UzcSHcTJQfNg==}
-    dependencies:
-      follow-redirects: 1.15.2
-    transitivePeerDependencies:
-      - debug
-    dev: true
-
-  /axios@0.27.2:
-    resolution: {integrity: sha512-t+yRIyySRTp/wua5xEr+z1q60QmLq8ABsS5O9Me1AsE5dfKqgnCFzwiCZZ/cGNd1lq4/7akDWMxdhVlucjmnOQ==}
-    dependencies:
-      follow-redirects: 1.15.2
-      form-data: 4.0.0
-    transitivePeerDependencies:
-      - debug
-    dev: true
-
-  /axios@1.4.0:
-    resolution: {integrity: sha512-S4XCWMEmzvo64T9GfvQDOXgYRDJ/wsSZc7Jvdgx5u1sd0JwsuPLqb3SYmusag+edF6ziyMensPVqLTSc1PiSEA==}
+  /axios@1.6.2:
+    resolution: {integrity: sha512-7i24Ri4pmDRfJTR7LDBhsOTtcm+9kjX5WiY1X3wIisx6G9So3pfMkEiU7emUBe46oceVImccTEM3k6C5dbVW8A==}
     dependencies:
       follow-redirects: 1.15.2
       form-data: 4.0.0
@@ -9208,7 +9181,7 @@ packages:
   /codemirror@6.0.1(@lezer/common@1.0.3):
     resolution: {integrity: sha512-J8j+nZ+CdWmIeFIGXEFbFPtpiYacFMDR8GlHK3IyHQJMCaVRfGx9NT+Hxivv1ckLWPvNdZqndbr/7lVhrf/Svg==}
     dependencies:
-      '@codemirror/autocomplete': 6.8.1(@codemirror/language@6.8.0)(@codemirror/state@6.2.1)(@codemirror/view@6.18.0)(@lezer/common@1.0.3)
+      '@codemirror/autocomplete': 6.9.1(@codemirror/language@6.8.0)(@codemirror/state@6.2.1)(@codemirror/view@6.18.0)(@lezer/common@1.0.3)
       '@codemirror/commands': 6.2.4
       '@codemirror/language': 6.8.0
       '@codemirror/lint': 6.4.0
@@ -10850,7 +10823,7 @@ packages:
   /figma-api-exporter@0.0.2:
     resolution: {integrity: sha512-9cCPZPUKVuD0JetpAnp82wSmBQiYDQ0TTBc7+BFHXwPiW+KxirfiPuCPJY+p4rTplKPzn0hkfrCvGpAS9Rehhg==}
     dependencies:
-      axios: 1.4.0
+      axios: 1.6.2
       figma-js: 1.16.0
       figma-transformer: 1.0.0
       fs: 0.0.1-security
@@ -10864,7 +10837,7 @@ packages:
     resolution: {integrity: sha512-cImQT9DAJp1J0xr6FMUAswXKEnjwrDz4QKAgIBpUyydKAgDS/lm862stjweHp99uco5qLoNv+GbwQWBHyDvDQw==}
     engines: {node: '>=8.9'}
     dependencies:
-      axios: 0.21.4
+      axios: 1.6.2
     transitivePeerDependencies:
       - debug
     dev: true
@@ -17052,7 +17025,7 @@ packages:
     engines: {node: '>=8.9.0'}
     hasBin: true
     dependencies:
-      axios: 0.21.4
+      axios: 1.6.2
       joi: 17.9.2
       lodash: 4.17.21
       minimist: 1.2.8
@@ -17066,7 +17039,7 @@ packages:
     engines: {node: '>=12.0.0'}
     hasBin: true
     dependencies:
-      axios: 0.27.2
+      axios: 1.6.2
       joi: 17.9.2
       lodash: 4.17.21
       minimist: 1.2.8
