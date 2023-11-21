@@ -63,7 +63,7 @@
     "@rebass/forms": "^4.0.6",
     "@styled-system/css": "^5.1.5",
     "@tanem/react-nprogress": "^5.0.51",
-    "@tanstack/react-table": "^8.9.7",
+    "@tanstack/react-table": "^8.10.7",
     "@types/testing-library__jest-dom": "^5.14.7",
     "@uiw/codemirror-extensions-langs": "^4.21.20",
     "@uiw/codemirror-theme-darcula": "^4.21.20",
