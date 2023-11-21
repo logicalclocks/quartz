@@ -94,8 +94,8 @@ devDependencies:
     specifier: ^2.4.1
     version: 2.4.1
   '@playwright/experimental-ct-react':
-    specifier: ^1.31.2
-    version: 1.35.1(@types/node@16.18.38)(vite@4.3.9)
+    specifier: ^1.40.0
+    version: 1.40.0(@types/node@16.18.38)(vite@4.3.9)
   '@semantic-release/changelog':
     specifier: ^6.0.3
     version: 6.0.3(semantic-release@21.0.1)
@@ -4897,49 +4897,41 @@ packages:
       tslib: 2.6.0
     dev: true
 
-  /@playwright/experimental-ct-core@1.35.1(@types/node@16.18.38):
-    resolution: {integrity: sha512-NSoUf6JDLeZFy0HiENwA1GkIwZHvg5KrygnZknwWs7O8yksYLsmiuMb09sf2zsZmfYgVen401SNgf3KfekbweA==}
+  /@playwright/experimental-ct-core@1.40.0(@types/node@16.18.38):
+    resolution: {integrity: sha512-fsavfzF5RR4kuXuHpqUAZz1eWhlQLVSSHQAzFFuGklV1RCePtUPfo6Vfru/K4SfcYK6QKKmWnvBxt/3PIamQgA==}
     engines: {node: '>=16'}
     hasBin: true
     dependencies:
-      '@playwright/test': 1.35.1
-      vite: 4.3.9(@types/node@16.18.38)
+      playwright: 1.40.0
+      playwright-core: 1.40.0
+      vite: 4.5.0(@types/node@16.18.38)
     transitivePeerDependencies:
       - '@types/node'
       - less
+      - lightningcss
       - sass
       - stylus
       - sugarss
       - terser
     dev: true
 
-  /@playwright/experimental-ct-react@1.35.1(@types/node@16.18.38)(vite@4.3.9):
-    resolution: {integrity: sha512-QXbjAJRr0eJkEsPyC5Q+nQyeVpVE/vrKUbo8yy5uZwHSy7KRsvyGkGPnOV5JMoeyEfK66Sx43I363tgzNByySw==}
+  /@playwright/experimental-ct-react@1.40.0(@types/node@16.18.38)(vite@4.3.9):
+    resolution: {integrity: sha512-r0JQT18zM8YISO5IsqoBYz5JgCQ3cl9Rfp/Wljuh83JQwQsRE26pJ9Ze3YOoMqwZw5NYPiiBG6z+y8n47w2X/w==}
     engines: {node: '>=16'}
     hasBin: true
     dependencies:
-      '@playwright/experimental-ct-core': 1.35.1(@types/node@16.18.38)
+      '@playwright/experimental-ct-core': 1.40.0(@types/node@16.18.38)
       '@vitejs/plugin-react': 4.0.4(vite@4.3.9)
     transitivePeerDependencies:
       - '@types/node'
       - less
+      - lightningcss
       - sass
       - stylus
       - sugarss
       - supports-color
       - terser
       - vite
-    dev: true
-
-  /@playwright/test@1.35.1:
-    resolution: {integrity: sha512-b5YoFe6J9exsMYg0pQAobNDR85T1nLumUYgUTtKm4d21iX2L7WqKq9dW8NGJ+2vX0etZd+Y7UeuqsxDXm9+5ZA==}
-    engines: {node: '>=16'}
-    hasBin: true
-    dependencies:
-      '@types/node': 16.18.38
-      playwright-core: 1.35.1
-    optionalDependencies:
-      fsevents: 2.3.2
     dev: true
 
   /@pnpm/config.env-replace@1.1.0:
@@ -14736,6 +14728,12 @@ packages:
     hasBin: true
     dev: true
 
+  /playwright-core@1.40.0:
+    resolution: {integrity: sha512-fvKewVJpGeca8t0ipM56jkVSU6Eo0RmFvQ/MaCQNDYm+sdvKkMBBWTE1FdeMqIdumRaXXjZChWHvIzCGM/tA/Q==}
+    engines: {node: '>=16'}
+    hasBin: true
+    dev: true
+
   /playwright@1.35.1:
     resolution: {integrity: sha512-NbwBeGJLu5m7VGM0+xtlmLAH9VUfWwYOhUi/lSEDyGg46r1CA9RWlvoc5yywxR9AzQb0mOCm7bWtOXV7/w43ZA==}
     engines: {node: '>=16'}
@@ -14743,6 +14741,16 @@ packages:
     requiresBuild: true
     dependencies:
       playwright-core: 1.35.1
+    dev: true
+
+  /playwright@1.40.0:
+    resolution: {integrity: sha512-gyHAgQjiDf1m34Xpwzaqb76KgfzYrhK7iih+2IzcOCoZWr/8ZqmdBw+t0RU85ZmfJMgtgAiNtBQ/KS2325INXw==}
+    engines: {node: '>=16'}
+    hasBin: true
+    dependencies:
+      playwright-core: 1.40.0
+    optionalDependencies:
+      fsevents: 2.3.2
     dev: true
 
   /polished@4.2.2:
@@ -14754,6 +14762,15 @@ packages:
 
   /postcss@8.4.24:
     resolution: {integrity: sha512-M0RzbcI0sO/XJNucsGjvWU9ERWxb/ytp1w6dKtxTKgixdtQDq4rmx/g8W1hnaheq9jgwL/oyEdH5Bc4WwJKMqg==}
+    engines: {node: ^10 || ^12 || >=14}
+    dependencies:
+      nanoid: 3.3.6
+      picocolors: 1.0.0
+      source-map-js: 1.0.2
+    dev: true
+
+  /postcss@8.4.31:
+    resolution: {integrity: sha512-PS08Iboia9mts/2ygV3eLpY5ghnUcfLV/EXTOW1E2qYxJKGGBUtNjN76FYHnMs36RmARn41bC0AZmn+rR0OVpQ==}
     engines: {node: ^10 || ^12 || >=14}
     dependencies:
       nanoid: 3.3.6
@@ -15626,6 +15643,14 @@ packages:
 
   /rollup@3.26.1:
     resolution: {integrity: sha512-I5gJCSpSMr3U9wv4D5YA8g7w7cj3eaSDeo7t+JcaFQOmoOUBgu4K9iMp8k3EZnwbJrjQxUMSKxMyB8qEQzzaSg==}
+    engines: {node: '>=14.18.0', npm: '>=8.0.0'}
+    hasBin: true
+    optionalDependencies:
+      fsevents: 2.3.2
+    dev: true
+
+  /rollup@3.29.4:
+    resolution: {integrity: sha512-oWzmBZwvYrU0iJHtDmhsm662rC15FRXmcjCk1xD771dFDx5jJ02ufAQQTn0etB2emNk4J9EZg/yWKpsn9BWGRw==}
     engines: {node: '>=14.18.0', npm: '>=8.0.0'}
     hasBin: true
     optionalDependencies:
@@ -17048,6 +17073,42 @@ packages:
       esbuild: 0.17.19
       postcss: 8.4.24
       rollup: 3.26.1
+    optionalDependencies:
+      fsevents: 2.3.2
+    dev: true
+
+  /vite@4.5.0(@types/node@16.18.38):
+    resolution: {integrity: sha512-ulr8rNLA6rkyFAlVWw2q5YJ91v098AFQ2R0PRFwPzREXOUJQPtFUG0t+/ZikhaOCDqFoDhN6/v8Sq0o4araFAw==}
+    engines: {node: ^14.18.0 || >=16.0.0}
+    hasBin: true
+    peerDependencies:
+      '@types/node': '>= 14'
+      less: '*'
+      lightningcss: ^1.21.0
+      sass: '*'
+      stylus: '*'
+      sugarss: '*'
+      terser: ^5.4.0
+    peerDependenciesMeta:
+      '@types/node':
+        optional: true
+      less:
+        optional: true
+      lightningcss:
+        optional: true
+      sass:
+        optional: true
+      stylus:
+        optional: true
+      sugarss:
+        optional: true
+      terser:
+        optional: true
+    dependencies:
+      '@types/node': 16.18.38
+      esbuild: 0.18.17
+      postcss: 8.4.31
+      rollup: 3.29.4
     optionalDependencies:
       fsevents: 2.3.2
     dev: true
