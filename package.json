@@ -5,7 +5,6 @@
   "description": "Logical Clocks Design System Library",
   "author": "logicalclocks",
   "license": "MIT",
-  "type": "module",
   "repository": {
     "type": "git",
     "url": "https://github.com/logicalclocks/quartz.git"
