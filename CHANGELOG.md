@@ -1,3 +1,10 @@
+## [3.10.2](https://github.com/logicalclocks/quartz/compare/v3.10.1...v3.10.2) (2023-11-21)
+
+
+### Bug Fixes
+
+* **audit:** override couple of packages using "pnpm audit --fix" and "pnpm i" ([#536](https://github.com/logicalclocks/quartz/issues/536)) ([424fb24](https://github.com/logicalclocks/quartz/commit/424fb24764f25c1f0458ceda148effdcbe28e26b))
+
 ## [3.10.1](https://github.com/logicalclocks/quartz/compare/v3.10.0...v3.10.1) (2023-10-25)
 
 
