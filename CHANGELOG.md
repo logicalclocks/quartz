@@ -1,3 +1,10 @@
+## [3.10.7](https://github.com/logicalclocks/quartz/compare/v3.10.6...v3.10.7) (2023-11-22)
+
+
+### Bug Fixes
+
+* **vite:** Roll to Vite v4 ([#540](https://github.com/logicalclocks/quartz/issues/540)) ([c13eb64](https://github.com/logicalclocks/quartz/commit/c13eb64dc63068bccbc3bd03c3b94906df391de0))
+
 ## [3.10.6](https://github.com/logicalclocks/quartz/compare/v3.10.5...v3.10.6) (2023-11-21)
 
 
