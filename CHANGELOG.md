@@ -1,3 +1,10 @@
+# [3.11.0](https://github.com/logicalclocks/quartz/compare/v3.10.7...v3.11.0) (2023-12-15)
+
+
+### Features
+
+* **icon:** add gpu icon ([#551](https://github.com/logicalclocks/quartz/issues/551)) ([bb1aa48](https://github.com/logicalclocks/quartz/commit/bb1aa489d039e533d661427addc53ac611c17438))
+
 ## [3.10.7](https://github.com/logicalclocks/quartz/compare/v3.10.6...v3.10.7) (2023-11-22)
 
 
