@@ -1,3 +1,10 @@
+## [3.11.1](https://github.com/logicalclocks/quartz/compare/v3.11.0...v3.11.1) (2023-12-21)
+
+
+### Bug Fixes
+
+* **release:** Improve releases ([#554](https://github.com/logicalclocks/quartz/issues/554)) ([3a3790c](https://github.com/logicalclocks/quartz/commit/3a3790c5827997974fb5317fb4aecb01eeddcc4c))
+
 # [3.11.0](https://github.com/logicalclocks/quartz/compare/v3.10.7...v3.11.0) (2023-12-15)
 
 
