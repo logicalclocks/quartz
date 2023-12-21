@@ -118,8 +118,6 @@ export * from './components/freshness-bar';
 export * from './components/range-slider';
 export * from './components/slider';
 
-export * from './Test';
-
 export * from './theme/useColorMode';
 
 export {
