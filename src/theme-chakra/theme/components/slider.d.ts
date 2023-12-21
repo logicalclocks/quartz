@@ -24,12 +24,12 @@ export declare const sliderTheme: {
     } | undefined;
     sizes?: {
         [key: string]: import("@chakra-ui/styled-system").PartsStyleInterpolation<{
-            keys: ("mark" | "track" | "container" | "filledTrack" | "thumb")[];
+            keys: ("container" | "track" | "filledTrack" | "thumb" | "mark")[];
         }>;
     } | undefined;
     variants?: {
         [key: string]: import("@chakra-ui/styled-system").PartsStyleInterpolation<{
-            keys: ("mark" | "track" | "container" | "filledTrack" | "thumb")[];
+            keys: ("container" | "track" | "filledTrack" | "thumb" | "mark")[];
         }>;
     } | undefined;
     defaultProps?: {
@@ -37,5 +37,5 @@ export declare const sliderTheme: {
         variant?: string | number | undefined;
         colorScheme?: string | undefined;
     } | undefined;
-    parts: ("mark" | "track" | "container" | "filledTrack" | "thumb")[];
+    parts: ("container" | "track" | "filledTrack" | "thumb" | "mark")[];
 };
