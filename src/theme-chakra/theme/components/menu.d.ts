@@ -28,12 +28,12 @@ export declare const menuTheme: {
     } | undefined;
     sizes?: {
         [key: string]: import("@chakra-ui/styled-system").PartsStyleInterpolation<{
-            keys: ("list" | "button" | "icon" | "item" | "groupTitle" | "command" | "divider")[];
+            keys: ("button" | "list" | "icon" | "item" | "groupTitle" | "command" | "divider")[];
         }>;
     } | undefined;
     variants?: {
         [key: string]: import("@chakra-ui/styled-system").PartsStyleInterpolation<{
-            keys: ("list" | "button" | "icon" | "item" | "groupTitle" | "command" | "divider")[];
+            keys: ("button" | "list" | "icon" | "item" | "groupTitle" | "command" | "divider")[];
         }>;
     } | undefined;
     defaultProps?: {
@@ -41,5 +41,5 @@ export declare const menuTheme: {
         variant?: string | number | undefined;
         colorScheme?: string | undefined;
     } | undefined;
-    parts: ("list" | "button" | "icon" | "item" | "groupTitle" | "command" | "divider")[];
+    parts: ("button" | "list" | "icon" | "item" | "groupTitle" | "command" | "divider")[];
 };

@@ -17,12 +17,12 @@ export declare const tagTheme: {
     } | undefined;
     sizes?: {
         [key: string]: import("@chakra-ui/styled-system").PartsStyleInterpolation<{
-            keys: ("container" | "label" | "closeButton")[];
+            keys: ("label" | "container" | "closeButton")[];
         }>;
     } | undefined;
     variants?: {
         [key: string]: import("@chakra-ui/styled-system").PartsStyleInterpolation<{
-            keys: ("container" | "label" | "closeButton")[];
+            keys: ("label" | "container" | "closeButton")[];
         }>;
     } | undefined;
     defaultProps?: {
@@ -30,5 +30,5 @@ export declare const tagTheme: {
         variant?: string | number | undefined;
         colorScheme?: string | undefined;
     } | undefined;
-    parts: ("container" | "label" | "closeButton")[];
+    parts: ("label" | "container" | "closeButton")[];
 };

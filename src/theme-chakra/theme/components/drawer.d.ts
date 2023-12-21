@@ -42,12 +42,12 @@ export declare const drawerTheme: {
     } | undefined;
     sizes?: {
         [key: string]: import("@chakra-ui/styled-system").PartsStyleInterpolation<{
-            keys: ("overlay" | "header" | "dialogContainer" | "dialog" | "closeButton" | "body" | "footer")[];
+            keys: ("body" | "dialog" | "footer" | "header" | "overlay" | "dialogContainer" | "closeButton")[];
         }>;
     } | undefined;
     variants?: {
         [key: string]: import("@chakra-ui/styled-system").PartsStyleInterpolation<{
-            keys: ("overlay" | "header" | "dialogContainer" | "dialog" | "closeButton" | "body" | "footer")[];
+            keys: ("body" | "dialog" | "footer" | "header" | "overlay" | "dialogContainer" | "closeButton")[];
         }>;
     } | undefined;
     defaultProps?: {
@@ -55,5 +55,5 @@ export declare const drawerTheme: {
         variant?: string | number | undefined;
         colorScheme?: string | undefined;
     } | undefined;
-    parts: ("overlay" | "header" | "dialogContainer" | "dialog" | "closeButton" | "body" | "footer")[];
+    parts: ("body" | "dialog" | "footer" | "header" | "overlay" | "dialogContainer" | "closeButton")[];
 };

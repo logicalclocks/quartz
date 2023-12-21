@@ -73,5 +73,5 @@ export declare const modalTheme: {
         variant?: "drawer" | undefined;
         colorScheme?: string | undefined;
     } | undefined;
-    parts: ("overlay" | "header" | "dialogContainer" | "dialog" | "closeButton" | "body" | "footer")[];
+    parts: ("body" | "dialog" | "footer" | "header" | "overlay" | "dialogContainer" | "closeButton")[];
 };
