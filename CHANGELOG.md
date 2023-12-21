@@ -1,3 +1,10 @@
+## [3.11.2](https://github.com/logicalclocks/quartz/compare/v3.11.1...v3.11.2) (2023-12-21)
+
+
+### Bug Fixes
+
+* **release:** remove test since release was successfull with excluding dist folder from gitghun ([#555](https://github.com/logicalclocks/quartz/issues/555)) ([342a7ac](https://github.com/logicalclocks/quartz/commit/342a7aca0c289e2d3738d20bcba37c800e9b9562))
+
 ## [3.11.1](https://github.com/logicalclocks/quartz/compare/v3.11.0...v3.11.1) (2023-12-21)
 
 
