@@ -75,7 +75,6 @@ export type Props = ParentProps &
 
     // out of scope rn
     intent?: Intents;
-    customFilter?: React.ReactNode;
     bottomActionText?: string;
     bottomActionHandler?: () => void;
   };
@@ -136,6 +135,7 @@ export const SingleSelect = ({
         formatCreateLabel: CreateLabel,
       }
     : {};
+  console.log({ p2: props });
 
   return (
     <FormControl
@@ -191,21 +191,7 @@ export const SingleSelect = ({
           menuPortal: (provided) => ({ ...provided, zIndex: 2000 }),
         }}
         menuPlacement={menuPlacement ?? 'auto'}
-        chakraStyles={{
-          ...chakraStyles,
-          container: R.mergeLeft({
-            width,
-          }),
-          menuList: R.mergeLeft({
-            my: 1,
-            py: 0,
-            maxHeight: maxListHeight,
-            width: 'max-content',
-          }),
-          multiValue: R.mergeLeft({
-            bg: variant === 'white' ? 'grayShade3' : 'background',
-          }),
-        }}
+        chakraStyles={chakraStyles({ width, maxListHeight, variant })}
         components={
           {
             MenuList,
@@ -230,7 +216,23 @@ export const SingleSelect = ({
 
 //
 
-const chakraStyles = {
+const chakraStyles = ({
+  width,
+  maxListHeight,
+  variant,
+}: Pick<Props, 'width' | 'maxListHeight' | 'variant'>) => ({
+  container: R.mergeLeft({
+    width,
+  }),
+  menuList: R.mergeLeft({
+    my: 1,
+    py: 0,
+    maxHeight: maxListHeight,
+    width: 'max-content',
+  }),
+  multiValue: R.mergeLeft({
+    bg: variant === 'white' ? 'grayShade3' : 'background',
+  }),
   placeholder: R.mergeLeft({
     fontSize: '12px',
     color: 'gray',
@@ -251,11 +253,7 @@ const chakraStyles = {
     my: 0,
     py: 0,
   }),
-  menuList: R.mergeLeft({
-    my: 1,
-    py: 0,
-  }),
-};
+});
 
 const SingleValue = ({ children, ...props }: any) => {
   return (
@@ -284,7 +282,6 @@ const SingleValue = ({ children, ...props }: any) => {
 const MenuList = ({ children, ...props }: any) => {
   return (
     <chakraComponents.MenuList {...props} background="red">
-      {props.selectProps.customFilter}
       {children} {/* This renders the options */}
     </chakraComponents.MenuList>
   );

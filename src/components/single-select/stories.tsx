@@ -77,15 +77,15 @@ const meta: Meta<typeof SingleSelect> = {
 };
 export default meta;
 
-const options = [
+const customOptions = [
   {
-    value: 1,
+    value: '1',
     label: 'One',
     additionalText: 'add_one',
     additionalComponent: <Value>text</Value>,
   },
   {
-    value: 2,
+    value: '2',
     label: 'Two',
     additionalComponent: (
       <Labeling bold gray>
@@ -93,9 +93,9 @@ const options = [
       </Labeling>
     ),
   },
-  { value: 3, label: 'Three', additionalText: 'add_three' },
+  { value: '3', label: 'Three', additionalText: 'add_three' },
   {
-    value: 4,
+    value: '4',
     label: 'Four',
     additionalText: 'add_four',
     additionalComponent: <Value>text</Value>,
@@ -115,9 +115,6 @@ export const Default: StoryObj<typeof SingleSelect> = {
   },
   render: (props) => {
     const [value, setValue] = useState<SingleSelectOption['value']>();
-    const [customOptions, setOptions] = useState(options);
-
-    const [selected, setSelected] = useState('all');
 
     const handleChange = (data: SingleSelectOption['value']) => {
       // action('onChange')(data);
@@ -144,23 +141,6 @@ export const Default: StoryObj<typeof SingleSelect> = {
           options={customOptions}
           onChange={handleChange}
           width="100%"
-          customFilter={
-            <RadioGroup
-              ml="10px"
-              value={selected}
-              flexDirection="row"
-              onChange={handleChangeFilter}
-              onMouseDown={(e) => {
-                e.stopPropagation();
-                e.stopPropagation();
-                console.log(e.isPropagationStopped());
-              }}
-              options={['all', 'matching feature only']}
-            />
-          }
-          // customFilter={
-          //   <Button onClick={console.log}>Hey</Button>
-          // }
         />
       </Box>
     );
