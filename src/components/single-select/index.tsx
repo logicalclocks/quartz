@@ -135,7 +135,6 @@ export const SingleSelect = ({
         formatCreateLabel: CreateLabel,
       }
     : {};
-  console.log({ p2: props });
 
   return (
     <FormControl
