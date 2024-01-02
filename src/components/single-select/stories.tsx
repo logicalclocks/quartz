@@ -1,10 +1,9 @@
-import { action } from '@storybook/addon-actions';
 import { useState } from 'react';
 import { StoryObj, Meta } from '@storybook/react';
 
 import { Box } from 'rebass';
 import { SingleSelect, SingleSelectOption } from './index';
-import { RadioGroup, Value } from '../../index';
+import { Value } from '../../index';
 import Labeling from '../typography/labeling';
 
 const meta: Meta<typeof SingleSelect> = {
@@ -35,12 +34,6 @@ const meta: Meta<typeof SingleSelect> = {
       control: {
         type: 'select',
         options: ['side', 'inline', 'outside'],
-      },
-    },
-    labelPlacement: {
-      control: {
-        type: 'select',
-        options: ['default', 'inverted'],
       },
     },
     isClearable: {
@@ -106,7 +99,6 @@ export const Default: StoryObj<typeof SingleSelect> = {
   args: {
     placeholder: 'placeholder',
     editable: false,
-    // width: '100px',
     label: 'Label',
     variant: 'primary',
     labelPosition: 'outside',
@@ -117,22 +109,8 @@ export const Default: StoryObj<typeof SingleSelect> = {
     const [value, setValue] = useState<SingleSelectOption['value']>();
 
     const handleChange = (data: SingleSelectOption['value']) => {
-      // action('onChange')(data);
-
       setValue(data);
     };
-
-    const handleChangeFilter = (data: string) => {
-      // setSelected(data);
-      console.log(data);
-
-      // if (data === 'all') {
-      //   setOptions(options);
-      // } else {
-      //   setOptions(options.slice(3, 5));
-      // }
-    };
-
     return (
       <Box width="600px" height="300px">
         <SingleSelect

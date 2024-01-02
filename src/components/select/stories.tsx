@@ -4,7 +4,7 @@ import { StoryObj, Meta } from '@storybook/react';
 
 import { Box } from 'rebass';
 import Select from './index';
-import { Popup, RadioGroup, Value } from '../../index';
+import { RadioGroup, Value } from '../../index';
 import Labeling from '../typography/labeling';
 
 const meta: Meta<typeof Select> = {
