@@ -117,6 +117,7 @@ export * from './components/project-badge';
 export * from './components/freshness-bar';
 export * from './components/range-slider';
 export * from './components/slider';
+export * from './components/single-select';
 
 export * from './theme/useColorMode';
 

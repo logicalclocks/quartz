@@ -4,7 +4,7 @@ import { StoryObj, Meta } from '@storybook/react';
 
 import { Box } from 'rebass';
 import Select from './index';
-import { Popup, RadioGroup, Value } from '../../index';
+import { RadioGroup, Value } from '../../index';
 import Labeling from '../typography/labeling';
 
 const meta: Meta<typeof Select> = {
@@ -149,27 +149,25 @@ export const Default: StoryObj<typeof Select> = {
     };
 
     return (
-      <Popup isOpen onClose={() => {}}>
-        <Box width="300px" height="60px" m="20px">
-          <Select
-            {...props}
-            value={value}
-            maxListHeight="initial"
-            options={customOptions}
-            onChange={handleChange}
-            customFilter={
-              <RadioGroup
-                ml="10px"
-                value={selected}
-                flexDirection="row"
-                onChange={handleChangeFilter}
-                onClick={(e) => e.stopPropagation()}
-                options={['all', 'matching feature only']}
-              />
-            }
-          />
-        </Box>
-      </Popup>
+      <Box width="600px" height="600px">
+        <Select
+          {...props}
+          value={value}
+          maxListHeight="initial"
+          options={customOptions}
+          onChange={handleChange}
+          customFilter={
+            <RadioGroup
+              ml="10px"
+              value={selected}
+              flexDirection="row"
+              onChange={handleChangeFilter}
+              onClick={(e) => e.stopPropagation()}
+              options={['all', 'matching feature only']}
+            />
+          }
+        />
+      </Box>
     );
   },
 };
