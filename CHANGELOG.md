@@ -1,3 +1,10 @@
+# [3.12.0](https://github.com/logicalclocks/quartz/compare/v3.11.2...v3.12.0) (2024-01-10)
+
+
+### Features
+
+* **singleselect:** add new component SingleSelect ([#511](https://github.com/logicalclocks/quartz/issues/511)) ([f02b1d3](https://github.com/logicalclocks/quartz/commit/f02b1d36a31438670dc574d5d278961b55c1267b))
+
 ## [3.11.2](https://github.com/logicalclocks/quartz/compare/v3.11.1...v3.11.2) (2023-12-21)
 
 
