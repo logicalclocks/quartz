@@ -3,6 +3,7 @@ import {
   BoxProps,
   Flex,
   FormControl,
+  FormControlProps,
   FormErrorMessage,
   FormLabel,
   HStack,
@@ -50,6 +51,7 @@ type Conditionals =
     };
 
 export type Props = ParentProps &
+  FormControlProps &
   CleanBoxProps &
   Conditionals & {
     editable?: boolean;
@@ -57,7 +59,6 @@ export type Props = ParentProps &
     options: SingleSelectOption[] | string[];
     placeholder?: string;
     label?: string;
-    disabled?: boolean;
     width?: string | number;
     maxListHeight?: string;
     labelAction?: React.ReactNode;
@@ -68,8 +69,6 @@ export type Props = ParentProps &
     isClearable?: boolean; // just show X or not
     labelPosition?: 'side' | 'inline' | 'outside';
     invertLabelPosition?: boolean;
-    isInvalid?: boolean;
-    isDisabled?: boolean;
     isLoading?: boolean;
     errorMessage?: ReactNode;
 
@@ -88,7 +87,6 @@ export const SingleSelect = ({
   value,
   onChange,
   placeholder,
-  disabled,
   label,
   labelAction,
   width,
@@ -99,8 +97,6 @@ export const SingleSelect = ({
   isClearable = false,
   labelPosition = 'outside',
   invertLabelPosition = false,
-  isInvalid,
-  isDisabled,
   isLoading,
   errorMessage = '',
   menuPlacement,
@@ -143,8 +139,6 @@ export const SingleSelect = ({
       alignItems="baseline"
       justifyContent="start"
       flexDirection={flexDirection}
-      isInvalid={isInvalid}
-      isDisabled={disabled}
       {...props}
     >
       {['outside', 'side'].includes(labelPosition) && label && (
