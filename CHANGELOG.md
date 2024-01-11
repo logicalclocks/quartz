@@ -1,3 +1,10 @@
+## [3.12.4](https://github.com/logicalclocks/quartz/compare/v3.12.3...v3.12.4) (2024-01-11)
+
+
+### Bug Fixes
+
+* **single-select:** fix duplicate disabled/isDisabled prop and fix typing ([#559](https://github.com/logicalclocks/quartz/issues/559)) ([e6147f0](https://github.com/logicalclocks/quartz/commit/e6147f041656c6dd1c7ab9489aa6dec1cfb6bec4))
+
 ## [3.12.3](https://github.com/logicalclocks/quartz/compare/v3.12.2...v3.12.3) (2024-01-10)
 
 ## [3.12.2](https://github.com/logicalclocks/quartz/compare/v3.12.1...v3.12.2) (2024-01-10)
