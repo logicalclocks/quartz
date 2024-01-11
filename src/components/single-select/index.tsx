@@ -51,7 +51,7 @@ type Conditionals =
     };
 
 export type Props = ParentProps &
-  FormControlProps &
+  Omit<FormControlProps, 'onChange'> &
   CleanBoxProps &
   Conditionals & {
     editable?: boolean;
