@@ -1,3 +1,10 @@
+## [3.12.5](https://github.com/logicalclocks/quartz/compare/v3.12.4...v3.12.5) (2024-01-11)
+
+
+### Bug Fixes
+
+* **singleselect:** fix onChange type ([#560](https://github.com/logicalclocks/quartz/issues/560)) ([19aae35](https://github.com/logicalclocks/quartz/commit/19aae35e89ff9b4c170c33c910d4dc40ff369e07))
+
 ## [3.12.4](https://github.com/logicalclocks/quartz/compare/v3.12.3...v3.12.4) (2024-01-11)
 
 
