@@ -1,4 +1,4 @@
-import { BoxProps } from '@chakra-ui/react';
+import { BoxProps, FormControlProps } from '@chakra-ui/react';
 import { OptionBase, Props as PublicBaseSelectProps } from 'chakra-react-select';
 import { ReactNode } from 'react';
 import { Intents } from '../intents';
@@ -20,13 +20,12 @@ type Conditionals = {
     isClearable?: undefined;
     onChange: (value: string) => void;
 };
-export type Props = ParentProps & CleanBoxProps & Conditionals & {
+export type Props = ParentProps & FormControlProps & CleanBoxProps & Conditionals & {
     editable?: boolean;
     value: SingleSelectOption['value'];
     options: SingleSelectOption[] | string[];
     placeholder?: string;
     label?: string;
-    disabled?: boolean;
     width?: string | number;
     maxListHeight?: string;
     labelAction?: React.ReactNode;
@@ -37,13 +36,11 @@ export type Props = ParentProps & CleanBoxProps & Conditionals & {
     isClearable?: boolean;
     labelPosition?: 'side' | 'inline' | 'outside';
     invertLabelPosition?: boolean;
-    isInvalid?: boolean;
-    isDisabled?: boolean;
     isLoading?: boolean;
     errorMessage?: ReactNode;
     intent?: Intents;
     bottomActionText?: string;
     bottomActionHandler?: () => void;
 };
-export declare const SingleSelect: ({ options: rawOptions, value, onChange, placeholder, disabled, label, labelAction, width, maxListHeight, variant, noDataMessage, editable, isClearable, labelPosition, invertLabelPosition, isInvalid, isDisabled, isLoading, errorMessage, menuPlacement, ...props }: Props) => import("react/jsx-runtime").JSX.Element;
+export declare const SingleSelect: ({ options: rawOptions, value, onChange, placeholder, label, labelAction, width, maxListHeight, variant, noDataMessage, editable, isClearable, labelPosition, invertLabelPosition, isLoading, errorMessage, menuPlacement, ...props }: Props) => import("react/jsx-runtime").JSX.Element;
 export {};
