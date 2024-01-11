@@ -20,7 +20,7 @@ type Conditionals = {
     isClearable?: undefined;
     onChange: (value: string) => void;
 };
-export type Props = ParentProps & FormControlProps & CleanBoxProps & Conditionals & {
+export type Props = ParentProps & Omit<FormControlProps, 'onChange'> & CleanBoxProps & Conditionals & {
     editable?: boolean;
     value: SingleSelectOption['value'];
     options: SingleSelectOption[] | string[];
