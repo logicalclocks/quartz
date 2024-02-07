@@ -19,38 +19,41 @@ const createColors = (c: any, d: any): any =>
 
 const themeColors = createColors(colors, darkThemeColors);
 
-export const chakraTheme = extendTheme({
-  config: {
-    cssVarPrefix: 'quartz',
-    initialColorMode: 'system',
-    useSystemColorMode: true,
-  },
-  styles: {
-    global: {
-      '*, *::before, &::after': {
-        fontFamily: 'Inter',
+export const chakraTheme = (extendConfig: object = {}) =>
+  extendTheme(
+    R.mergeDeepLeft(extendConfig, {
+      config: {
+        cssVarPrefix: 'quartz',
+        initialColorMode: 'system',
+        useSystemColorMode: true,
       },
-      '*::placeholder': {
-        color: 'gray',
-      },
-      'a:focus-visible': {
-        outlineOffset: '-1px',
-        transition: 'none',
-        outlineColor: 'rgba(33, 177, 130, 0.6)',
-        _dark: {
-          outlineColor: 'rgba(33, 177, 130, 0.6)',
+      styles: {
+        global: {
+          '*, *::before, &::after': {
+            fontFamily: 'Inter',
+          },
+          '*::placeholder': {
+            color: 'gray',
+          },
+          'a:focus-visible': {
+            outlineOffset: '-1px',
+            transition: 'none',
+            outlineColor: 'rgba(33, 177, 130, 0.6)',
+            _dark: {
+              outlineColor: 'rgba(33, 177, 130, 0.6)',
+            },
+          },
         },
       },
-    },
-  },
-  colors: themeColors,
-  components: {
-    Drawer: drawerTheme,
-    Menu: menuTheme,
-    Modal: modalTheme,
-    Slider: sliderTheme,
-    Input: inputTheme,
-    Tag: tagTheme,
-  },
-  semanticTokens,
-});
+      colors: themeColors,
+      components: {
+        Drawer: drawerTheme,
+        Menu: menuTheme,
+        Modal: modalTheme,
+        Slider: sliderTheme,
+        Input: inputTheme,
+        Tag: tagTheme,
+      },
+      semanticTokens,
+    }),
+  );
