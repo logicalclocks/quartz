@@ -1,1 +1,1 @@
-export declare const chakraTheme: Record<string, any>;
+export declare const chakraTheme: (extendConfig?: object) => Record<string, any>;
