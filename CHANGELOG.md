@@ -1,3 +1,16 @@
+# [3.13.0](https://github.com/logicalclocks/quartz/compare/v3.12.5...v3.13.0) (2024-02-08)
+
+
+### Features
+
+* **theme:** theme should be extendable and accept  default config ([#571](https://github.com/logicalclocks/quartz/issues/571)) ([244f1b6](https://github.com/logicalclocks/quartz/commit/244f1b6ff8df21f23c6b95f2786a66ffa228c434))
+
+
+### BREAKING CHANGES
+
+* **theme:** chakraTheme is not an object but a function which accept themeExtend object and
+returns the theme object
+
 ## [3.12.5](https://github.com/logicalclocks/quartz/compare/v3.12.4...v3.12.5) (2024-01-11)
 
 
