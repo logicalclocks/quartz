@@ -1,3 +1,10 @@
+## [3.13.1](https://github.com/logicalclocks/quartz/compare/v3.13.0...v3.13.1) (2024-02-20)
+
+
+### Bug Fixes
+
+* **packages:** Update path and minor outdated packages ([#579](https://github.com/logicalclocks/quartz/issues/579)) ([52a7523](https://github.com/logicalclocks/quartz/commit/52a7523304b82b50bea034ec862e5ffe5018abb5))
+
 # [3.13.0](https://github.com/logicalclocks/quartz/compare/v3.12.5...v3.13.0) (2024-02-08)
 
 
