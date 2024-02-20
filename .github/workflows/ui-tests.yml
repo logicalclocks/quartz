@@ -52,7 +52,7 @@ jobs:
         uses: chromaui/action@latest
         with:
           projectToken: chpt_a6f31d991d0cce7
-          onlyChanged: true
+          # onlyChanged: true
 
       - name: Install chromium
         run: pnpm playwright install chromium
