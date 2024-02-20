@@ -43,11 +43,6 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name: Use variables
-        run: echo "$CHROMATIC_PROJECT_TOKEN"
-        env:
-          CHROMATIC_PROJECT_TOKEN: ${{ secrets.CHROMATIC_PROJECT_TOKEN}}
-
       - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.EHSAN_GITHUB_TOKEN }}

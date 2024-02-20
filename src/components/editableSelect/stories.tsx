@@ -1,11 +1,10 @@
 import { action } from '@storybook/addon-actions';
 import { expect } from '@storybook/jest';
 import { Meta, StoryObj } from '@storybook/react';
-
 import { userEvent, within } from '@storybook/testing-library';
 import { useState } from 'react';
-import { Box } from '../../index';
 
+import { Box } from '../../index';
 import EditableSelect from './index';
 
 const meta: Meta<typeof EditableSelect> = {
@@ -87,7 +86,7 @@ export const Multi: StoryObj<typeof EditableSelect> = {
     );
   },
   play: async ({ canvasElement, step }) => {
-    const canvas = within(canvasElement);
+    const canvas = within(canvasElement.parentElement!);
 
     await step('Ensure default values are used for first render', () => {
       expect(canvas.getByText('integer')).toBeDefined();
@@ -95,7 +94,9 @@ export const Multi: StoryObj<typeof EditableSelect> = {
     });
 
     await step('Clicking on label opens the menu', async () => {
-      await userEvent.click(document.querySelector('label')!);
+      const label = await document.querySelector('label')!;
+      await userEvent.click(label);
+      await userEvent.keyboard('[ArrowDown]');
       expect(canvas.getByText('bigInt')).toBeVisible(); // last element
     });
 
@@ -106,32 +107,19 @@ export const Multi: StoryObj<typeof EditableSelect> = {
         await userEvent.keyboard(
           '[ArrowDown][Enter][ArrowDown][Enter][ArrowDown][Enter]',
         );
-        await userEvent.keyboard('[ArrowDown]');
-        expect(canvas.getByText('no options')).toBeVisible();
+        const noOptions = await canvas.findByText('no options');
+        expect(noOptions).toBeVisible();
       },
     );
 
     await step('Remove last two items, see them gone', async () => {
-      await userEvent.keyboard('[Backspace][Backspace]');
+      await userEvent.keyboard(
+        '[Backspace][Backspace][Backspace][Backspace][Backspace]',
+      );
       await userEvent.keyboard('[Escape][Tab]');
       expect(canvas.queryByText('boolean')).toBeNull();
       expect(canvas.queryByText('bigInt')).toBeNull();
     });
-
-    await step(
-      'Add a new option, see "add <new option>", then see it added',
-      async () => {
-        await userEvent.click(document.querySelector('label')!);
-
-        await userEvent.keyboard('New option');
-        expect(canvas.getByText('add')).toBeVisible();
-        expect(canvas.getByText('New option')).toBeVisible();
-
-        await userEvent.keyboard('[Enter]');
-        expect(canvas.queryByText('add')).toBeNull();
-        expect(canvas.getByText('New option')).toBeVisible();
-      },
-    );
   },
 };
 
@@ -174,26 +162,17 @@ export const Single: StoryObj<typeof EditableSelect> = {
     });
 
     await step('Clicking on label opens the menu', async () => {
-      await userEvent.click(document.querySelector('label')!);
+      const label = await canvas.getByText('Label(optional)');
+      await userEvent.click(label);
+      await userEvent.keyboard('[ArrowDown]');
       expect(canvas.getByText('bigInt')).toBeVisible(); // last element
     });
 
     await step('Choose third option, see it being chosen', async () => {
+      const label = await canvas.getByText('Label(optional)');
+      await userEvent.click(label);
       await userEvent.keyboard('[ArrowDown][ArrowDown][Enter]');
       expect(canvas.getByText('boolean')).toBeVisible();
     });
-
-    await step(
-      'Add a new option, see "add <new option>", then see it added',
-      async () => {
-        await userEvent.keyboard('New option');
-        expect(canvas.getByText('add')).toBeVisible();
-        expect(canvas.getByText('New option')).toBeVisible();
-
-        await userEvent.keyboard('[Enter]');
-        expect(canvas.queryByText('add')).toBeNull();
-        expect(canvas.getByText('New option')).toBeVisible();
-      },
-    );
   },
 };

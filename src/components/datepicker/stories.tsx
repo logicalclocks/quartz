@@ -20,8 +20,10 @@ export const Default: StoryObj<typeof DatePicker> = {
     excludeTimes: [new Date()],
   },
   render: ({ selectProps, ...restProps }) => {
-    const [startDate, setStartDate] = useState(new Date());
-    const [startDate2, setStartDate2] = useState(new Date());
+    const [startDate, setStartDate] = useState(new Date('2024-02-20T16:24:00'));
+    const [startDate2, setStartDate2] = useState(
+      new Date('2024-02-20T15:24:00'),
+    );
 
     return (
       <Flex height="300px">
@@ -34,7 +36,7 @@ export const Default: StoryObj<typeof DatePicker> = {
           selected={startDate}
           onChange={(date) => setStartDate(date as Date)}
           excludeDateIntervals={[
-            { start: subDays(5, new Date()), end: addDays(5, new Date()) },
+            { start: subDays(5, startDate), end: addDays(5, startDate) },
           ]}
           startDate={new Date(startDate)}
           endDate={startDate2}
@@ -48,7 +50,7 @@ export const Default: StoryObj<typeof DatePicker> = {
           selected={startDate2}
           onChange={(date) => setStartDate2(date as Date)}
           excludeDateIntervals={[
-            { start: subDays(5, new Date()), end: addDays(5, new Date()) },
+            { start: subDays(5, startDate2), end: addDays(5, startDate2) },
           ]}
           startDate={startDate}
           endDate={new Date(startDate2)}
