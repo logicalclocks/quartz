@@ -48,6 +48,11 @@ jobs:
       # - name: Serve Storybook and run tests
       #   run: pnpm run serve:storybook:test
 
+      - name: Publish to Chromatic
+        uses: chromaui/action@latest
+        with:
+          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+
       - name: Install chromium
         run: pnpm playwright install chromium
 

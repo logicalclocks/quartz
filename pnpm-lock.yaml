@@ -179,8 +179,8 @@ devDependencies:
     specifier: ^4.2.1
     version: 4.2.1(vite@4.5.2)
   chromatic:
-    specifier: ^6.21.0
-    version: 6.21.0
+    specifier: ^10.9.6
+    version: 10.9.6
   commitizen:
     specifier: ^4.3.0
     version: 4.3.0(@swc/core@1.3.68)
@@ -308,7 +308,6 @@ packages:
     dependencies:
       '@babel/highlight': 7.23.4
       chalk: 2.4.2
-    dev: true
 
   /@babel/compat-data@7.22.9:
     resolution: {integrity: sha512-5UamI7xkUcJ3i9qVDS+KFDEK8/7oJ55/sJMB1Ge7IEapr7KfdfV/HErR+koZwOfd+SgtFKOKRhRakdg++DcJpQ==}
@@ -7221,7 +7220,7 @@ packages:
     resolution: {integrity: sha512-0DGPd9AR3+iDTjGoMpxIkAsUihHZ3Ai6CneU6bRRrffXMgzCdlNk43jTrD2/5LT6CBb3MWTP8v510JzYtahD2w==}
     engines: {node: '>=14'}
     dependencies:
-      '@babel/code-frame': 7.23.4
+      '@babel/code-frame': 7.23.5
       '@babel/runtime': 7.23.4
       '@types/aria-query': 5.0.1
       aria-query: 5.1.3
@@ -8935,9 +8934,17 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /chromatic@6.21.0:
-    resolution: {integrity: sha512-Nnp28jrhk6T4z1izFXQZVRG9Uivq5ZWibRJ3f/SbHUzJuWb1otHFqbUMomrYm770ar8ByIF09Mx+5VEW+RDrug==}
+  /chromatic@10.9.6:
+    resolution: {integrity: sha512-1MoT+/U+vQwEiq2GuehPyStbqhxqHmM1B9pdpVU1dKh26userQg1FyOFYifkTgy+9reo2w2p7sAbc0JRd2kzlA==}
     hasBin: true
+    peerDependencies:
+      '@chromatic-com/cypress': ^0.5.2 || ^1.0.0
+      '@chromatic-com/playwright': ^0.5.2 || ^1.0.0
+    peerDependenciesMeta:
+      '@chromatic-com/cypress':
+        optional: true
+      '@chromatic-com/playwright':
+        optional: true
     dev: true
 
   /ci-info@3.8.0:
@@ -14037,7 +14044,7 @@ packages:
     resolution: {integrity: sha512-ayCKvm/phCGxOkYRSCM82iDwct8/EonSEgCSxWxD7ve6jHggsFl4fZVQBPRNgQoKiuV/odhFrGzQXZwbifC8Rg==}
     engines: {node: '>=8'}
     dependencies:
-      '@babel/code-frame': 7.23.4
+      '@babel/code-frame': 7.23.5
       error-ex: 1.3.2
       json-parse-even-better-errors: 2.3.1
       lines-and-columns: 1.2.4
