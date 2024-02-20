@@ -25,6 +25,6 @@
     "noEmit": true,
     "incremental": true
   },
-  "include": ["src", "./vite.config.ts", "@types/testing-library__jest-dom"],
+  "include": ["src", "./vite.config.ts"],
   "exclude": ["node_modules", "dist"]
 }
