@@ -1,2 +1,1 @@
 import{j as a}from"./index.esm-95acea13.js";import{P as r}from"./index-524518b1.js";import"./index-8ee6c85d.js";import"./_commonjsHelpers-de833af9.js";const s={title:"PerformanceBar",component:r},t={args:{bars:[{variant:"perf.orange",proportion:1}]},render:o=>a.jsx(r,{...o})},f={...t,args:{bars:[{variant:"perf.black",proportion:.1},{variant:"perf.gray",proportion:.2},{variant:"perf.green",proportion:.5},{variant:"perf.orange",proportion:.2}]}};export{t as Default,f as Mix,s as default};
-//# sourceMappingURL=stories-a1b3c5bf.js.map

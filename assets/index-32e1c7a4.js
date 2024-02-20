@@ -10,4 +10,3 @@ Color palettes can be configured with the ThemeProvider to use keys as prop valu
 Array values are converted into responsive values.
 
 [MDN reference](https://developer.mozilla.org/en-US/docs/Web/CSS/color)`,name:"color",required:!1,type:{name:"string"}}}}}catch{}export{l as S};
-//# sourceMappingURL=index-32e1c7a4.js.map

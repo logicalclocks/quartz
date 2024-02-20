@@ -4,4 +4,3 @@ import{j as a,T as d,B as n}from"./index.esm-95acea13.js";const p=({gray:e,sx:i,
 - Numbers greater than 1 are converted to pixel values.
 - String values are passed as raw CSS values.
 - And arrays are converted to responsive width styles.`,name:"width",required:!1,type:{name:"string"}},legend:{defaultValue:null,description:"",name:"legend",required:!1,type:{name:"string"}}}}}catch{}export{u as D,p as M};
-//# sourceMappingURL=index-9f5bc5f4.js.map
