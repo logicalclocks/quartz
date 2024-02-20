@@ -94,7 +94,7 @@ export const Multi: StoryObj<typeof EditableSelect> = {
     });
 
     await step('Clicking on label opens the menu', async () => {
-      const label = await document.querySelector('label')!
+      const label = await document.querySelector('label')!;
       await userEvent.click(label);
       await userEvent.keyboard('[ArrowDown]');
       expect(canvas.getByText('bigInt')).toBeVisible(); // last element
@@ -107,18 +107,19 @@ export const Multi: StoryObj<typeof EditableSelect> = {
         await userEvent.keyboard(
           '[ArrowDown][Enter][ArrowDown][Enter][ArrowDown][Enter]',
         );
-        const noOptions = await canvas.findByText('no options')
+        const noOptions = await canvas.findByText('no options');
         expect(noOptions).toBeVisible();
       },
     );
 
     await step('Remove last two items, see them gone', async () => {
-      await userEvent.keyboard('[Backspace][Backspace][Backspace][Backspace][Backspace]');
+      await userEvent.keyboard(
+        '[Backspace][Backspace][Backspace][Backspace][Backspace]',
+      );
       await userEvent.keyboard('[Escape][Tab]');
       expect(canvas.queryByText('boolean')).toBeNull();
       expect(canvas.queryByText('bigInt')).toBeNull();
     });
-
   },
 };
 
@@ -161,14 +162,14 @@ export const Single: StoryObj<typeof EditableSelect> = {
     });
 
     await step('Clicking on label opens the menu', async () => {
-      const label = await canvas.getByText('Label(optional)')
+      const label = await canvas.getByText('Label(optional)');
       await userEvent.click(label);
       await userEvent.keyboard('[ArrowDown]');
       expect(canvas.getByText('bigInt')).toBeVisible(); // last element
     });
 
     await step('Choose third option, see it being chosen', async () => {
-      const label = await canvas.getByText('Label(optional)')
+      const label = await canvas.getByText('Label(optional)');
       await userEvent.click(label);
       await userEvent.keyboard('[ArrowDown][ArrowDown][Enter]');
       expect(canvas.getByText('boolean')).toBeVisible();
