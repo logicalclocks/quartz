@@ -84,27 +84,22 @@ export const Primary: Story = {
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
     const portal = within(document.querySelector('.chakra-portal')!);
-
     userEvent.click(canvas.getByText('Success'));
     expect(
       await portal.findByText('Success: Something happened'),
     ).toBeInTheDocument();
-
     userEvent.click(canvas.getByText('Warning'));
     expect(
       await portal.findByText('Warning: Something happened'),
     ).toBeInTheDocument();
-
     userEvent.click(canvas.getByText('Info'));
     expect(
       await portal.findByText('Info: Something happened'),
     ).toBeInTheDocument();
-
     userEvent.click(canvas.getByText('Error'));
     expect(
       await portal.findByText('Error: Something happened'),
     ).toBeInTheDocument();
-
     userEvent.click(canvas.getByText('Clear all notifications'));
     await waitFor(() =>
       expect(portal.queryByText('Something happened')).not.toBeInTheDocument(),
@@ -276,27 +271,22 @@ export const Standalone: Story = {
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
     const portal = within(document.querySelector('.chakra-portal')!);
-
     userEvent.click(canvas.getByText('Success'));
     expect(
       await portal.findByText('Success: Something happened'),
     ).toBeInTheDocument();
-
     userEvent.click(canvas.getByText('Warning'));
     expect(
       await portal.findByText('Warning: Something happened'),
     ).toBeInTheDocument();
-
     userEvent.click(canvas.getByText('Info'));
     expect(
       await portal.findByText('Info: Something happened'),
     ).toBeInTheDocument();
-
     userEvent.click(canvas.getByText('Error'));
     expect(
       await portal.findByText('Error: Something happened'),
     ).toBeInTheDocument();
-
     userEvent.click(canvas.getByText('Clear all notifications'));
     await waitFor(() =>
       expect(portal.queryByText('Something happened')).not.toBeInTheDocument(),
