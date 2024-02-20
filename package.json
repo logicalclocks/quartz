@@ -41,7 +41,7 @@
     "test-storybook": "test-storybook",
     "test-ct": "playwright test -c playwright-ct.config.ts",
     "report-test": "playwright show-report",
-    "chromatic": "npx chromatic --project-token dqq8k95raoo",
+    "chromatic": "npx chromatic --project-token chpt_a6f31d991d0cce7",
     "semantic-release": "semantic-release",
     "commit": "cz",
     "publish-local": "yalc publish --push",
