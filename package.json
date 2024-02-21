@@ -36,7 +36,7 @@
     "test:prettier": "prettier --check ./src",
     "prettier": "prettier --write ./src",
     "deploy": "gh-pages -d storybook-static",
-    "build-storybook": "storybook build --webpack-stats-json",
+    "build-storybook": "storybook build",
     "storybook": "storybook dev -p 6006",
     "test-storybook": "test-storybook",
     "test-ct": "playwright test -c playwright-ct.config.ts",
