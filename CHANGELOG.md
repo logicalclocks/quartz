@@ -1,3 +1,10 @@
+## [4.1.1](https://github.com/logicalclocks/quartz/compare/v4.1.0...v4.1.1) (2024-02-21)
+
+
+### Bug Fixes
+
+* **storybook-deployments:** Lets use storybook official documentation for github actions ([#584](https://github.com/logicalclocks/quartz/issues/584)) ([5d9d5ca](https://github.com/logicalclocks/quartz/commit/5d9d5ca717f530fbc3715bb310d91b8f98290fe2))
+
 # [4.1.0](https://github.com/logicalclocks/quartz/compare/v4.0.4...v4.1.0) (2024-02-21)
 
 
