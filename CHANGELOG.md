@@ -1,3 +1,10 @@
+# [4.1.0](https://github.com/logicalclocks/quartz/compare/v4.0.4...v4.1.0) (2024-02-21)
+
+
+### Features
+
+* **date-picker:** upgrade date-fns and react-datepicker to the latest versions ([#582](https://github.com/logicalclocks/quartz/issues/582)) ([0c1b877](https://github.com/logicalclocks/quartz/commit/0c1b877be544cc2d8b7bd2f342735e5236d2c7a9))
+
 ## [4.0.4](https://github.com/logicalclocks/quartz/compare/v4.0.3...v4.0.4) (2024-02-20)
 
 ## [4.0.3](https://github.com/logicalclocks/quartz/compare/v4.0.2...v4.0.3) (2024-02-20)
