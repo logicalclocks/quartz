@@ -1,8 +1,7 @@
 import { Box, BoxProps, Flex } from 'rebass';
-
 import { format } from 'date-fns';
-import Value from '../../typography/value';
 
+import Value from '../../typography/value';
 import {
   FileExplorerInfoStyle,
   blockInfoStyles,
@@ -14,6 +13,8 @@ import { Button } from '../../button';
 import formatSizeUnits from '../../../utils/getFormatSizeUnit';
 import { GetIcon, IconName } from '../../icon';
 
+const dateFormat = (date: string) =>
+  format(new Date(date), 'yyyy-MM-dd - HH:mm:ss');
 export interface FileExplorerInfoProps extends Omit<BoxProps, 'css'> {
   children?: string[];
   activeFile?: ActiveFile | null;
@@ -27,9 +28,6 @@ const FileExplorerInfo = ({
   disableDownload,
   handleDownloadFile,
 }: FileExplorerInfoProps) => {
-  const dateFormat = (date: string) =>
-    format(new Date(date), 'yyyy-MM-dd - HH:mm:ss');
-
   return (
     <Box
       sx={{
