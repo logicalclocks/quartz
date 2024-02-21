@@ -4,8 +4,23 @@ on:
   push:
     branches:
       - dev
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+concurrency:
+  group: 'pages'
+  cancel-in-progress: false
+
 jobs:
   build-and-deploy-storybook:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout 🗒️
@@ -40,16 +55,16 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name: Build Quartz
-        run: |
-          pnpm build
+      - run: NODE_OPTIONS=--max_old_space_size=4096 pnpm run build-storybook
 
-      - name: Build StoryBook🤖
-        run: |
-          NODE_OPTIONS=--max_old_space_size=4096 pnpm run build-storybook
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
 
-      - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@v4.5.0
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          branch: gh-pages
-          folder: storybook-static
+          path: './storybook-static'
+
+      - name: Deploy to GitHub Pages 🚀
+        id: deployment
+        uses: actions/deploy-pages@v4
