@@ -1,0 +1,4975 @@
+{
+  "modules": [
+    {
+      "id": "./sb-preview/runtime.js",
+      "name": "./sb-preview/runtime.js",
+      "reasons": [
+        {
+          "moduleName": "./iframe.html"
+        }
+      ]
+    },
+    {
+      "id": "/virtual:/@storybook/builder-vite/vite-app.js",
+      "name": "/virtual:/@storybook/builder-vite/vite-app.js",
+      "reasons": [
+        {
+          "moduleName": "./iframe.html"
+        }
+      ]
+    },
+    {
+      "id": "/virtual:/@storybook/builder-vite/setup-addons.js",
+      "name": "/virtual:/@storybook/builder-vite/setup-addons.js",
+      "reasons": [
+        {
+          "moduleName": "/virtual:/@storybook/builder-vite/vite-app.js"
+        }
+      ]
+    },
+    {
+      "id": "/virtual:/@storybook/builder-vite/storybook-stories.js",
+      "name": "/virtual:/@storybook/builder-vite/storybook-stories.js",
+      "reasons": [
+        {
+          "moduleName": "/virtual:/@storybook/builder-vite/vite-app.js"
+        }
+      ]
+    },
+    {
+      "id": "./.storybook/preview.tsx",
+      "name": "./.storybook/preview.tsx",
+      "reasons": [
+        {
+          "moduleName": "/virtual:/@storybook/builder-vite/vite-app.js"
+        },
+        {
+          "moduleName": "/virtual:/@storybook/builder-vite/vite-app.js"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/alternative-header/stories.tsx",
+      "name": "./src/components/alternative-header/stories.tsx",
+      "reasons": [
+        {
+          "moduleName": "/virtual:/@storybook/builder-vite/storybook-stories.js"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/animated-progress/stories.tsx",
+      "name": "./src/components/animated-progress/stories.tsx",
+      "reasons": [
+        {
+          "moduleName": "/virtual:/@storybook/builder-vite/storybook-stories.js"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/badge/stories.tsx",
+      "name": "./src/components/badge/stories.tsx",
+      "reasons": [
+        {
+          "moduleName": "/virtual:/@storybook/builder-vite/storybook-stories.js"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/bar/stories.tsx",
+      "name": "./src/components/bar/stories.tsx",
+      "reasons": [
+        {
+          "moduleName": "/virtual:/@storybook/builder-vite/storybook-stories.js"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/button/stories.tsx",
+      "name": "./src/components/button/stories.tsx",
+      "reasons": [
+        {
+          "moduleName": "/virtual:/@storybook/builder-vite/storybook-stories.js"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/callout/stories.tsx",
+      "name": "./src/components/callout/stories.tsx",
+      "reasons": [
+        {
+          "moduleName": "/virtual:/@storybook/builder-vite/storybook-stories.js"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/card-header/stories.tsx",
+      "name": "./src/components/card-header/stories.tsx",
+      "reasons": [
+        {
+          "moduleName": "/virtual:/@storybook/builder-vite/storybook-stories.js"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/card/stories.tsx",
+      "name": "./src/components/card/stories.tsx",
+      "reasons": [
+        {
+          "moduleName": "/virtual:/@storybook/builder-vite/storybook-stories.js"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/checkbox/group.stories.tsx",
+      "name": "./src/components/checkbox/group.stories.tsx",
+      "reasons": [
+        {
+          "moduleName": "/virtual:/@storybook/builder-vite/storybook-stories.js"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/checkbox/stories.tsx",
+      "name": "./src/components/checkbox/stories.tsx",
+      "reasons": [
+        {
+          "moduleName": "/virtual:/@storybook/builder-vite/storybook-stories.js"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/code-input/stories.tsx",
+      "name": "./src/components/code-input/stories.tsx",
+      "reasons": [
+        {
+          "moduleName": "/virtual:/@storybook/builder-vite/storybook-stories.js"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/code/stories.tsx",
+      "name": "./src/components/code/stories.tsx",
+      "reasons": [
+        {
+          "moduleName": "/virtual:/@storybook/builder-vite/storybook-stories.js"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/collapse/stories.tsx",
+      "name": "./src/components/collapse/stories.tsx",
+      "reasons": [
+        {
+          "moduleName": "/virtual:/@storybook/builder-vite/storybook-stories.js"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/compact-button/stories.tsx",
+      "name": "./src/components/compact-button/stories.tsx",
+      "reasons": [
+        {
+          "moduleName": "/virtual:/@storybook/builder-vite/storybook-stories.js"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/datepicker/stories.tsx",
+      "name": "./src/components/datepicker/stories.tsx",
+      "reasons": [
+        {
+          "moduleName": "/virtual:/@storybook/builder-vite/storybook-stories.js"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/divider/stories.tsx",
+      "name": "./src/components/divider/stories.tsx",
+      "reasons": [
+        {
+          "moduleName": "/virtual:/@storybook/builder-vite/storybook-stories.js"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/dot/stories.tsx",
+      "name": "./src/components/dot/stories.tsx",
+      "reasons": [
+        {
+          "moduleName": "/virtual:/@storybook/builder-vite/storybook-stories.js"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/dropdown-button/stories.tsx",
+      "name": "./src/components/dropdown-button/stories.tsx",
+      "reasons": [
+        {
+          "moduleName": "/virtual:/@storybook/builder-vite/storybook-stories.js"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/dropdown/stories.tsx",
+      "name": "./src/components/dropdown/stories.tsx",
+      "reasons": [
+        {
+          "moduleName": "/virtual:/@storybook/builder-vite/storybook-stories.js"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/editableSelect/stories.tsx",
+      "name": "./src/components/editableSelect/stories.tsx",
+      "reasons": [
+        {
+          "moduleName": "/virtual:/@storybook/builder-vite/storybook-stories.js"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/embedded-tabs/stories.tsx",
+      "name": "./src/components/embedded-tabs/stories.tsx",
+      "reasons": [
+        {
+          "moduleName": "/virtual:/@storybook/builder-vite/storybook-stories.js"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/expand-viewer/stories.tsx",
+      "name": "./src/components/expand-viewer/stories.tsx",
+      "reasons": [
+        {
+          "moduleName": "/virtual:/@storybook/builder-vite/storybook-stories.js"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/file-button/stories.tsx",
+      "name": "./src/components/file-button/stories.tsx",
+      "reasons": [
+        {
+          "moduleName": "/virtual:/@storybook/builder-vite/storybook-stories.js"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/file-loader/stories.tsx",
+      "name": "./src/components/file-loader/stories.tsx",
+      "reasons": [
+        {
+          "moduleName": "/virtual:/@storybook/builder-vite/storybook-stories.js"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/file-system-explorer/file-item-explorer/stories.tsx",
+      "name": "./src/components/file-system-explorer/file-item-explorer/stories.tsx",
+      "reasons": [
+        {
+          "moduleName": "/virtual:/@storybook/builder-vite/storybook-stories.js"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/file-system-explorer/folder/stories.tsx",
+      "name": "./src/components/file-system-explorer/folder/stories.tsx",
+      "reasons": [
+        {
+          "moduleName": "/virtual:/@storybook/builder-vite/storybook-stories.js"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/file-system-explorer/footer/stories.tsx",
+      "name": "./src/components/file-system-explorer/footer/stories.tsx",
+      "reasons": [
+        {
+          "moduleName": "/virtual:/@storybook/builder-vite/storybook-stories.js"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/file-system-explorer/stories.tsx",
+      "name": "./src/components/file-system-explorer/stories.tsx",
+      "reasons": [
+        {
+          "moduleName": "/virtual:/@storybook/builder-vite/storybook-stories.js"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/flex/stories.tsx",
+      "name": "./src/components/flex/stories.tsx",
+      "reasons": [
+        {
+          "moduleName": "/virtual:/@storybook/builder-vite/storybook-stories.js"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/footer-button/stories.tsx",
+      "name": "./src/components/footer-button/stories.tsx",
+      "reasons": [
+        {
+          "moduleName": "/virtual:/@storybook/builder-vite/storybook-stories.js"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/form-summary-container/stories.tsx",
+      "name": "./src/components/form-summary-container/stories.tsx",
+      "reasons": [
+        {
+          "moduleName": "/virtual:/@storybook/builder-vite/storybook-stories.js"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/form-tabs/stories.tsx",
+      "name": "./src/components/form-tabs/stories.tsx",
+      "reasons": [
+        {
+          "moduleName": "/virtual:/@storybook/builder-vite/storybook-stories.js"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/form-tabs/tab/stories.tsx",
+      "name": "./src/components/form-tabs/tab/stories.tsx",
+      "reasons": [
+        {
+          "moduleName": "/virtual:/@storybook/builder-vite/storybook-stories.js"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/freshness-bar/stories.tsx",
+      "name": "./src/components/freshness-bar/stories.tsx",
+      "reasons": [
+        {
+          "moduleName": "/virtual:/@storybook/builder-vite/storybook-stories.js"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/graphs/split-graph/stories.tsx",
+      "name": "./src/components/graphs/split-graph/stories.tsx",
+      "reasons": [
+        {
+          "moduleName": "/virtual:/@storybook/builder-vite/storybook-stories.js"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/header/stories.tsx",
+      "name": "./src/components/header/stories.tsx",
+      "reasons": [
+        {
+          "moduleName": "/virtual:/@storybook/builder-vite/storybook-stories.js"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/holy-table/stories.tsx",
+      "name": "./src/components/holy-table/stories.tsx",
+      "reasons": [
+        {
+          "moduleName": "/virtual:/@storybook/builder-vite/storybook-stories.js"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/icon-button/stories.tsx",
+      "name": "./src/components/icon-button/stories.tsx",
+      "reasons": [
+        {
+          "moduleName": "/virtual:/@storybook/builder-vite/storybook-stories.js"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/icon/stories.tsx",
+      "name": "./src/components/icon/stories.tsx",
+      "reasons": [
+        {
+          "moduleName": "/virtual:/@storybook/builder-vite/storybook-stories.js"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/input-info/stories.tsx",
+      "name": "./src/components/input-info/stories.tsx",
+      "reasons": [
+        {
+          "moduleName": "/virtual:/@storybook/builder-vite/storybook-stories.js"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/input/stories.tsx",
+      "name": "./src/components/input/stories.tsx",
+      "reasons": [
+        {
+          "moduleName": "/virtual:/@storybook/builder-vite/storybook-stories.js"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/label/stories.tsx",
+      "name": "./src/components/label/stories.tsx",
+      "reasons": [
+        {
+          "moduleName": "/virtual:/@storybook/builder-vite/storybook-stories.js"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/list/item/stories.tsx",
+      "name": "./src/components/list/item/stories.tsx",
+      "reasons": [
+        {
+          "moduleName": "/virtual:/@storybook/builder-vite/storybook-stories.js"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/list/stories.tsx",
+      "name": "./src/components/list/stories.tsx",
+      "reasons": [
+        {
+          "moduleName": "/virtual:/@storybook/builder-vite/storybook-stories.js"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/navigation/stories.tsx",
+      "name": "./src/components/navigation/stories.tsx",
+      "reasons": [
+        {
+          "moduleName": "/virtual:/@storybook/builder-vite/storybook-stories.js"
+        },
+        {
+          "moduleName": "./src/components/header/stories.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/notifier/stories.tsx",
+      "name": "./src/components/notifier/stories.tsx",
+      "reasons": [
+        {
+          "moduleName": "/virtual:/@storybook/builder-vite/storybook-stories.js"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/pagination/stories.tsx",
+      "name": "./src/components/pagination/stories.tsx",
+      "reasons": [
+        {
+          "moduleName": "/virtual:/@storybook/builder-vite/storybook-stories.js"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/performance-bar/stories.tsx",
+      "name": "./src/components/performance-bar/stories.tsx",
+      "reasons": [
+        {
+          "moduleName": "/virtual:/@storybook/builder-vite/storybook-stories.js"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/performance-card/stories.tsx",
+      "name": "./src/components/performance-card/stories.tsx",
+      "reasons": [
+        {
+          "moduleName": "/virtual:/@storybook/builder-vite/storybook-stories.js"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/popup/drawer/stories.tsx",
+      "name": "./src/components/popup/drawer/stories.tsx",
+      "reasons": [
+        {
+          "moduleName": "/virtual:/@storybook/builder-vite/storybook-stories.js"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/popup/stories.tsx",
+      "name": "./src/components/popup/stories.tsx",
+      "reasons": [
+        {
+          "moduleName": "/virtual:/@storybook/builder-vite/storybook-stories.js"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/popup/tiny/stories.tsx",
+      "name": "./src/components/popup/tiny/stories.tsx",
+      "reasons": [
+        {
+          "moduleName": "/virtual:/@storybook/builder-vite/storybook-stories.js"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/project-badge/stories.tsx",
+      "name": "./src/components/project-badge/stories.tsx",
+      "reasons": [
+        {
+          "moduleName": "/virtual:/@storybook/builder-vite/storybook-stories.js"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/radio/stories.tsx",
+      "name": "./src/components/radio/stories.tsx",
+      "reasons": [
+        {
+          "moduleName": "/virtual:/@storybook/builder-vite/storybook-stories.js"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/range-slider/stories.tsx",
+      "name": "./src/components/range-slider/stories.tsx",
+      "reasons": [
+        {
+          "moduleName": "/virtual:/@storybook/builder-vite/storybook-stories.js"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/row/stories.tsx",
+      "name": "./src/components/row/stories.tsx",
+      "reasons": [
+        {
+          "moduleName": "/virtual:/@storybook/builder-vite/storybook-stories.js"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/select/stories.tsx",
+      "name": "./src/components/select/stories.tsx",
+      "reasons": [
+        {
+          "moduleName": "/virtual:/@storybook/builder-vite/storybook-stories.js"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/select2/stories.tsx",
+      "name": "./src/components/select2/stories.tsx",
+      "reasons": [
+        {
+          "moduleName": "/virtual:/@storybook/builder-vite/storybook-stories.js"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/single-select/stories.tsx",
+      "name": "./src/components/single-select/stories.tsx",
+      "reasons": [
+        {
+          "moduleName": "/virtual:/@storybook/builder-vite/storybook-stories.js"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/slider/stories.tsx",
+      "name": "./src/components/slider/stories.tsx",
+      "reasons": [
+        {
+          "moduleName": "/virtual:/@storybook/builder-vite/storybook-stories.js"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/spinner/stories.tsx",
+      "name": "./src/components/spinner/stories.tsx",
+      "reasons": [
+        {
+          "moduleName": "/virtual:/@storybook/builder-vite/storybook-stories.js"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/sticky-summary/stories.tsx",
+      "name": "./src/components/sticky-summary/stories.tsx",
+      "reasons": [
+        {
+          "moduleName": "/virtual:/@storybook/builder-vite/storybook-stories.js"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/symbol/stories.tsx",
+      "name": "./src/components/symbol/stories.tsx",
+      "reasons": [
+        {
+          "moduleName": "/virtual:/@storybook/builder-vite/storybook-stories.js"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/table/stories.tsx",
+      "name": "./src/components/table/stories.tsx",
+      "reasons": [
+        {
+          "moduleName": "/virtual:/@storybook/builder-vite/storybook-stories.js"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/text-value-badge/stories.tsx",
+      "name": "./src/components/text-value-badge/stories.tsx",
+      "reasons": [
+        {
+          "moduleName": "/virtual:/@storybook/builder-vite/storybook-stories.js"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/toggle-button/stories.tsx",
+      "name": "./src/components/toggle-button/stories.tsx",
+      "reasons": [
+        {
+          "moduleName": "/virtual:/@storybook/builder-vite/storybook-stories.js"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/tooltip/stories.tsx",
+      "name": "./src/components/tooltip/stories.tsx",
+      "reasons": [
+        {
+          "moduleName": "/virtual:/@storybook/builder-vite/storybook-stories.js"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/typography/typography.stories.tsx",
+      "name": "./src/components/typography/typography.stories.tsx",
+      "reasons": [
+        {
+          "moduleName": "/virtual:/@storybook/builder-vite/storybook-stories.js"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/user/stories.tsx",
+      "name": "./src/components/user/stories.tsx",
+      "reasons": [
+        {
+          "moduleName": "/virtual:/@storybook/builder-vite/storybook-stories.js"
+        }
+      ]
+    },
+    {
+      "id": "./src/theme-chakra/ChakraThemeProvider.tsx",
+      "name": "./src/theme-chakra/ChakraThemeProvider.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/chakra.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/notifier/index.ts",
+      "name": "./src/components/notifier/index.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/chakra.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/alternative-header/AlternativeHeader.tsx",
+      "name": "./src/components/alternative-header/AlternativeHeader.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/components/alternative-header/index.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/box/Box.tsx",
+      "name": "./src/components/box/Box.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/components/box/index.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/button/Button.tsx",
+      "name": "./src/components/button/Button.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/components/button/index.tsx"
+        },
+        {
+          "moduleName": "./src/components/button/stories.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/flex/Flex.tsx",
+      "name": "./src/components/flex/Flex.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/components/flex/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/icon/GetIcon.tsx",
+      "name": "./src/components/icon/GetIcon.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/components/icon/index.tsx"
+        },
+        {
+          "moduleName": "./src/components/icon/stories.tsx"
+        },
+        {
+          "moduleName": "./src/components/project-badge/ProjectBadge.tsx"
+        },
+        {
+          "moduleName": "./src/components/icon-button/index.tsx"
+        },
+        {
+          "moduleName": "./src/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/icon/list.tsx",
+      "name": "./src/components/icon/list.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/components/icon/index.tsx"
+        },
+        {
+          "moduleName": "./src/components/badge/stories.tsx"
+        },
+        {
+          "moduleName": "./src/components/icon-button/stories.tsx"
+        },
+        {
+          "moduleName": "./src/components/icon/stories.tsx"
+        },
+        {
+          "moduleName": "./src/components/badge/Badge.tsx"
+        },
+        {
+          "moduleName": "./src/components/expand-viewer/index.tsx"
+        },
+        {
+          "moduleName": "./src/components/icon/GetIcon.tsx"
+        },
+        {
+          "moduleName": "./src/components/pagination/index.tsx"
+        },
+        {
+          "moduleName": "./src/components/project-badge/ProjectBadge.tsx"
+        },
+        {
+          "moduleName": "./src/index.ts"
+        },
+        {
+          "moduleName": "./src/components/table/editable/row-left-content.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/compact-button/compact-button.tsx",
+      "name": "./src/components/compact-button/compact-button.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/components/compact-button/index.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/constants/dateTimeFormats.ts",
+      "name": "./src/constants/dateTimeFormats.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/constants/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/embedded-tabs/EmbeddedTabs.tsx",
+      "name": "./src/components/embedded-tabs/EmbeddedTabs.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/components/embedded-tabs/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/user/User.tsx",
+      "name": "./src/components/user/User.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/components/user/index.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/holy-table/cell/cell.tsx",
+      "name": "./src/components/holy-table/cell/cell.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/components/holy-table/index.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/holy-table/row/index.ts",
+      "name": "./src/components/holy-table/row/index.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/components/holy-table/index.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/holy-table/holy-table.tsx",
+      "name": "./src/components/holy-table/holy-table.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/components/holy-table/index.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/holy-table/head-cell/index.ts",
+      "name": "./src/components/holy-table/head-cell/index.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/components/holy-table/index.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/navigation/context/navigation.context.ts",
+      "name": "./src/components/navigation/context/navigation.context.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/components/navigation/useNavigation.ts"
+        },
+        {
+          "moduleName": "./src/index.ts"
+        },
+        {
+          "moduleName": "./src/components/navigation/item/index.tsx"
+        },
+        {
+          "moduleName": "./src/components/navigation/context/navigation.provider.tsx"
+        },
+        {
+          "moduleName": "./src/components/navigation/category/index.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/chakra.ts",
+      "name": "./src/chakra.ts",
+      "reasons": [
+        {
+          "moduleName": "./.storybook/preview.tsx"
+        },
+        {
+          "moduleName": "./src/components/notifier/stories.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/theme/ThemeProvider.tsx",
+      "name": "./src/theme/ThemeProvider.tsx",
+      "reasons": [
+        {
+          "moduleName": "./.storybook/preview.tsx"
+        },
+        {
+          "moduleName": "./src/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/alternative-header/index.tsx",
+      "name": "./src/components/alternative-header/index.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/components/alternative-header/stories.tsx"
+        },
+        {
+          "moduleName": "./src/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/box/index.tsx",
+      "name": "./src/components/box/index.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/components/animated-progress/stories.tsx"
+        },
+        {
+          "moduleName": "./src/components/flex/stories.tsx"
+        },
+        {
+          "moduleName": "./src/components/notifier/stories.tsx"
+        },
+        {
+          "moduleName": "./src/components/bar/Bar.tsx"
+        },
+        {
+          "moduleName": "./src/components/sticky-summary/index.tsx"
+        },
+        {
+          "moduleName": "./src/components/table/editable/EditableTable2.tsx"
+        },
+        {
+          "moduleName": "./src/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/button/index.tsx",
+      "name": "./src/components/button/index.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/components/animated-progress/stories.tsx"
+        },
+        {
+          "moduleName": "./src/components/callout/stories.tsx"
+        },
+        {
+          "moduleName": "./src/components/card/stories.tsx"
+        },
+        {
+          "moduleName": "./src/components/collapse/stories.tsx"
+        },
+        {
+          "moduleName": "./src/components/embedded-tabs/stories.tsx"
+        },
+        {
+          "moduleName": "./src/components/file-system-explorer/stories.tsx"
+        },
+        {
+          "moduleName": "./src/components/label/stories.tsx"
+        },
+        {
+          "moduleName": "./src/components/notifier/stories.tsx"
+        },
+        {
+          "moduleName": "./src/components/row/stories.tsx"
+        },
+        {
+          "moduleName": "./src/components/sticky-summary/stories.tsx"
+        },
+        {
+          "moduleName": "./src/components/tooltip/stories.tsx"
+        },
+        {
+          "moduleName": "./src/components/file-system-explorer/footer/index.tsx"
+        },
+        {
+          "moduleName": "./src/components/form-tabs/index.tsx"
+        },
+        {
+          "moduleName": "./src/components/list/item/index.tsx"
+        },
+        {
+          "moduleName": "./src/components/popup/tiny/index.tsx"
+        },
+        {
+          "moduleName": "./src/components/icon-button/index.tsx"
+        },
+        {
+          "moduleName": "./src/components/code/index.tsx"
+        },
+        {
+          "moduleName": "./src/index.ts"
+        },
+        {
+          "moduleName": "./src/components/calloutWithButton/index.tsx"
+        },
+        {
+          "moduleName": "./src/components/popup/drawer/drawer-section.tsx"
+        },
+        {
+          "moduleName": "./src/components/file-system-explorer/info/index.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/flex/index.ts",
+      "name": "./src/components/flex/index.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/components/animated-progress/stories.tsx"
+        },
+        {
+          "moduleName": "./src/components/bar/stories.tsx"
+        },
+        {
+          "moduleName": "./src/components/card/stories.tsx"
+        },
+        {
+          "moduleName": "./src/components/code-input/stories.tsx"
+        },
+        {
+          "moduleName": "./src/components/datepicker/stories.tsx"
+        },
+        {
+          "moduleName": "./src/components/flex/stories.tsx"
+        },
+        {
+          "moduleName": "./src/components/freshness-bar/stories.tsx"
+        },
+        {
+          "moduleName": "./src/components/notifier/stories.tsx"
+        },
+        {
+          "moduleName": "./src/components/bar/Bar.tsx"
+        },
+        {
+          "moduleName": "./src/components/card/index.tsx"
+        },
+        {
+          "moduleName": "./src/components/sticky-summary/index.tsx"
+        },
+        {
+          "moduleName": "./src/index.ts"
+        },
+        {
+          "moduleName": "./src/components/notifier/Notification.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/animated-progress/AnimatedProgress.tsx",
+      "name": "./src/components/animated-progress/AnimatedProgress.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/components/animated-progress/stories.tsx"
+        },
+        {
+          "moduleName": "./src/components/animated-progress/index.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/badge/Badge.tsx",
+      "name": "./src/components/badge/Badge.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/components/badge/stories.tsx"
+        },
+        {
+          "moduleName": "./src/components/badge/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/bar/Bar.tsx",
+      "name": "./src/components/bar/Bar.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/components/bar/stories.tsx"
+        },
+        {
+          "moduleName": "./src/components/bar/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/icon/index.tsx",
+      "name": "./src/components/icon/index.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/components/button/stories.tsx"
+        },
+        {
+          "moduleName": "./src/components/compact-button/stories.tsx"
+        },
+        {
+          "moduleName": "./src/components/dropdown-button/stories.tsx"
+        },
+        {
+          "moduleName": "./src/components/dropdown/stories.tsx"
+        },
+        {
+          "moduleName": "./src/components/footer-button/stories.tsx"
+        },
+        {
+          "moduleName": "./src/components/header/stories.tsx"
+        },
+        {
+          "moduleName": "./src/components/input/stories.tsx"
+        },
+        {
+          "moduleName": "./src/components/navigation/stories.tsx"
+        },
+        {
+          "moduleName": "./src/components/callout/index.tsx"
+        },
+        {
+          "moduleName": "./src/components/card/index.tsx"
+        },
+        {
+          "moduleName": "./src/components/collapse/index.tsx"
+        },
+        {
+          "moduleName": "./src/components/dropdown/index.tsx"
+        },
+        {
+          "moduleName": "./src/components/file-button/index.tsx"
+        },
+        {
+          "moduleName": "./src/components/file-loader/index.tsx"
+        },
+        {
+          "moduleName": "./src/components/file-system-explorer/folder/index.tsx"
+        },
+        {
+          "moduleName": "./src/components/input/index.tsx"
+        },
+        {
+          "moduleName": "./src/components/select/index.tsx"
+        },
+        {
+          "moduleName": "./src/components/select2/index.tsx"
+        },
+        {
+          "moduleName": "./src/components/table/editable/EditableTable2.tsx"
+        },
+        {
+          "moduleName": "./src/components/button/Button.tsx"
+        },
+        {
+          "moduleName": "./src/components/code-input/index.tsx"
+        },
+        {
+          "moduleName": "./src/components/code/index.tsx"
+        },
+        {
+          "moduleName": "./src/components/datepicker/index.tsx"
+        },
+        {
+          "moduleName": "./src/components/compact-button/compact-button.tsx"
+        },
+        {
+          "moduleName": "./src/components/file-system-explorer/info/index.tsx"
+        },
+        {
+          "moduleName": "./src/components/form-tabs/tab/TabDescription.tsx"
+        },
+        {
+          "moduleName": "./src/components/select/label.tsx"
+        },
+        {
+          "moduleName": "./src/components/select2/label.tsx"
+        },
+        {
+          "moduleName": "./src/components/typography/input-validation/utils.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/callout/index.tsx",
+      "name": "./src/components/callout/index.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/components/callout/stories.tsx"
+        },
+        {
+          "moduleName": "./src/index.ts"
+        },
+        {
+          "moduleName": "./src/components/calloutWithButton/index.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/card-header/index.tsx",
+      "name": "./src/components/card-header/index.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/components/card-header/stories.tsx"
+        },
+        {
+          "moduleName": "./src/components/card/index.tsx"
+        },
+        {
+          "moduleName": "./src/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/card/index.tsx",
+      "name": "./src/components/card/index.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/components/card/stories.tsx"
+        },
+        {
+          "moduleName": "./src/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/card/card-secondary.tsx",
+      "name": "./src/components/card/card-secondary.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/components/card/stories.tsx"
+        },
+        {
+          "moduleName": "./src/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/checkbox/index.tsx",
+      "name": "./src/components/checkbox/index.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/components/checkbox/stories.tsx"
+        },
+        {
+          "moduleName": "./src/components/file-system-explorer/file-item-explorer/FileItemExplorer.tsx"
+        },
+        {
+          "moduleName": "./src/components/checkbox/checkbox-group.tsx"
+        },
+        {
+          "moduleName": "./src/index.ts"
+        },
+        {
+          "moduleName": "./src/components/select/lists/select-list-multi.tsx"
+        },
+        {
+          "moduleName": "./src/components/select2/lists/select-list-multi.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/code-input/index.tsx",
+      "name": "./src/components/code-input/index.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/components/code-input/stories.tsx"
+        },
+        {
+          "moduleName": "./src/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/code/index.tsx",
+      "name": "./src/components/code/index.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/components/code/stories.tsx"
+        },
+        {
+          "moduleName": "./src/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/index.ts",
+      "name": "./src/index.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/components/collapse/stories.tsx"
+        },
+        {
+          "moduleName": "./src/components/editableSelect/stories.tsx"
+        },
+        {
+          "moduleName": "./src/components/form-tabs/stories.tsx"
+        },
+        {
+          "moduleName": "./src/components/header/stories.tsx"
+        },
+        {
+          "moduleName": "./src/components/list/item/stories.tsx"
+        },
+        {
+          "moduleName": "./src/components/popup/drawer/stories.tsx"
+        },
+        {
+          "moduleName": "./src/components/popup/stories.tsx"
+        },
+        {
+          "moduleName": "./src/components/popup/tiny/stories.tsx"
+        },
+        {
+          "moduleName": "./src/components/select/stories.tsx"
+        },
+        {
+          "moduleName": "./src/components/select2/stories.tsx"
+        },
+        {
+          "moduleName": "./src/components/single-select/stories.tsx"
+        },
+        {
+          "moduleName": "./src/components/table/stories.tsx"
+        },
+        {
+          "moduleName": "./src/components/typography/typography.stories.tsx"
+        },
+        {
+          "moduleName": "./src/components/dropdown-button/DropdownButton2.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/collapse/index.tsx",
+      "name": "./src/components/collapse/index.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/components/collapse/stories.tsx"
+        },
+        {
+          "moduleName": "./src/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/compact-button/index.tsx",
+      "name": "./src/components/compact-button/index.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/components/compact-button/stories.tsx"
+        },
+        {
+          "moduleName": "./src/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/datepicker/index.tsx",
+      "name": "./src/components/datepicker/index.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/components/datepicker/stories.tsx"
+        },
+        {
+          "moduleName": "./src/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/constants/index.ts",
+      "name": "./src/constants/index.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/components/datepicker/stories.tsx"
+        },
+        {
+          "moduleName": "./src/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/divider/index.tsx",
+      "name": "./src/components/divider/index.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/components/divider/stories.tsx"
+        },
+        {
+          "moduleName": "./src/components/range-slider/stories.tsx"
+        },
+        {
+          "moduleName": "./src/components/select/index.tsx"
+        },
+        {
+          "moduleName": "./src/components/select2/index.tsx"
+        },
+        {
+          "moduleName": "./src/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/dot/Dot.tsx",
+      "name": "./src/components/dot/Dot.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/components/dot/stories.tsx"
+        },
+        {
+          "moduleName": "./src/components/dot/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/dropdown-button/DropdownButton.tsx",
+      "name": "./src/components/dropdown-button/DropdownButton.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/components/dropdown-button/stories.tsx"
+        },
+        {
+          "moduleName": "./src/components/dropdown-button/index.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/icon-button/index.tsx",
+      "name": "./src/components/icon-button/index.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/components/dropdown-button/stories.tsx"
+        },
+        {
+          "moduleName": "./src/components/icon-button/stories.tsx"
+        },
+        {
+          "moduleName": "./src/components/card/index.tsx"
+        },
+        {
+          "moduleName": "./src/components/pagination/index.tsx"
+        },
+        {
+          "moduleName": "./src/index.ts"
+        },
+        {
+          "moduleName": "./src/components/table/editable/row-left-content.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/dropdown-button/DropdownButton2.tsx",
+      "name": "./src/components/dropdown-button/DropdownButton2.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/components/dropdown-button/stories.tsx"
+        },
+        {
+          "moduleName": "./src/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/dropdown/index.tsx",
+      "name": "./src/components/dropdown/index.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/components/dropdown/stories.tsx"
+        },
+        {
+          "moduleName": "./src/components/dropdown-button/DropdownButton.tsx"
+        },
+        {
+          "moduleName": "./src/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/editableSelect/index.tsx",
+      "name": "./src/components/editableSelect/index.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/components/editableSelect/stories.tsx"
+        },
+        {
+          "moduleName": "./src/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/typography/labeling.tsx",
+      "name": "./src/components/typography/labeling.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/components/embedded-tabs/stories.tsx"
+        },
+        {
+          "moduleName": "./src/components/icon/stories.tsx"
+        },
+        {
+          "moduleName": "./src/components/performance-card/stories.tsx"
+        },
+        {
+          "moduleName": "./src/components/range-slider/stories.tsx"
+        },
+        {
+          "moduleName": "./src/components/select/stories.tsx"
+        },
+        {
+          "moduleName": "./src/components/select2/stories.tsx"
+        },
+        {
+          "moduleName": "./src/components/single-select/stories.tsx"
+        },
+        {
+          "moduleName": "./src/components/user/stories.tsx"
+        },
+        {
+          "moduleName": "./src/components/typography/typography.stories.tsx"
+        },
+        {
+          "moduleName": "./src/components/checkbox/index.tsx"
+        },
+        {
+          "moduleName": "./src/components/collapse/index.tsx"
+        },
+        {
+          "moduleName": "./src/components/file-system-explorer/footer/index.tsx"
+        },
+        {
+          "moduleName": "./src/components/graphs/split-graph/index.tsx"
+        },
+        {
+          "moduleName": "./src/components/input/index.tsx"
+        },
+        {
+          "moduleName": "./src/components/pagination/index.tsx"
+        },
+        {
+          "moduleName": "./src/components/radio/index.tsx"
+        },
+        {
+          "moduleName": "./src/components/range-slider/range-slider.tsx"
+        },
+        {
+          "moduleName": "./src/components/row/container/index.tsx"
+        },
+        {
+          "moduleName": "./src/components/slider/slider.tsx"
+        },
+        {
+          "moduleName": "./src/components/sticky-summary/index.tsx"
+        },
+        {
+          "moduleName": "./src/components/text-value-badge/TextValueBadge.tsx"
+        },
+        {
+          "moduleName": "./src/components/toggle-button/index.tsx"
+        },
+        {
+          "moduleName": "./src/components/code-input/index.tsx"
+        },
+        {
+          "moduleName": "./src/index.ts"
+        },
+        {
+          "moduleName": "./src/components/datepicker/index.tsx"
+        },
+        {
+          "moduleName": "./src/components/popup/drawer/drawer-section.tsx"
+        },
+        {
+          "moduleName": "./src/components/navigation/category/index.tsx"
+        },
+        {
+          "moduleName": "./src/components/editableSelect/index.tsx"
+        },
+        {
+          "moduleName": "./src/components/single-select/index.tsx"
+        },
+        {
+          "moduleName": "./src/components/file-system-explorer/info/index.tsx"
+        },
+        {
+          "moduleName": "./src/components/select/label.tsx"
+        },
+        {
+          "moduleName": "./src/components/select/lists/select-list.tsx"
+        },
+        {
+          "moduleName": "./src/components/select/lists/select-list-multi.tsx"
+        },
+        {
+          "moduleName": "./src/components/select2/label.tsx"
+        },
+        {
+          "moduleName": "./src/components/select2/lists/select-list.tsx"
+        },
+        {
+          "moduleName": "./src/components/select2/lists/select-list-multi.tsx"
+        },
+        {
+          "moduleName": "./src/components/holy-table/head-cell/head-cell.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/embedded-tabs/index.ts",
+      "name": "./src/components/embedded-tabs/index.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/components/embedded-tabs/stories.tsx"
+        },
+        {
+          "moduleName": "./src/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/expand-viewer/index.tsx",
+      "name": "./src/components/expand-viewer/index.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/components/expand-viewer/stories.tsx"
+        },
+        {
+          "moduleName": "./src/components/code/index.tsx"
+        },
+        {
+          "moduleName": "./src/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/file-button/index.tsx",
+      "name": "./src/components/file-button/index.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/components/file-button/stories.tsx"
+        },
+        {
+          "moduleName": "./src/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/file-loader/index.tsx",
+      "name": "./src/components/file-loader/index.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/components/file-loader/stories.tsx"
+        },
+        {
+          "moduleName": "./src/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/file-system-explorer/file-item-explorer/FileItemExplorer.tsx",
+      "name": "./src/components/file-system-explorer/file-item-explorer/FileItemExplorer.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/components/file-system-explorer/file-item-explorer/stories.tsx"
+        },
+        {
+          "moduleName": "./src/components/file-system-explorer/file-explorer-column/index.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/file-system-explorer/folder/index.tsx",
+      "name": "./src/components/file-system-explorer/folder/index.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/components/file-system-explorer/folder/stories.tsx"
+        },
+        {
+          "moduleName": "./src/components/file-system-explorer/file-explorer-column/index.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/file-system-explorer/footer/index.tsx",
+      "name": "./src/components/file-system-explorer/footer/index.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/components/file-system-explorer/footer/stories.tsx"
+        },
+        {
+          "moduleName": "./src/components/file-system-explorer/index.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/file-system-explorer/index.tsx",
+      "name": "./src/components/file-system-explorer/index.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/components/file-system-explorer/stories.tsx"
+        },
+        {
+          "moduleName": "./src/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/file-system-explorer/test-data.ts",
+      "name": "./src/components/file-system-explorer/test-data.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/components/file-system-explorer/stories.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/footer-button/index.tsx",
+      "name": "./src/components/footer-button/index.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/components/footer-button/stories.tsx"
+        },
+        {
+          "moduleName": "./src/index.ts"
+        },
+        {
+          "moduleName": "./src/components/popup/drawer/index.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/form-summary-container/index.tsx",
+      "name": "./src/components/form-summary-container/index.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/components/form-summary-container/stories.tsx"
+        },
+        {
+          "moduleName": "./src/components/form-tabs/index.tsx"
+        },
+        {
+          "moduleName": "./src/components/sticky-summary/index.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/form-tabs/index.tsx",
+      "name": "./src/components/form-tabs/index.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/components/form-tabs/stories.tsx"
+        },
+        {
+          "moduleName": "./src/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/form-tabs/tab/Tab.tsx",
+      "name": "./src/components/form-tabs/tab/Tab.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/components/form-tabs/tab/stories.tsx"
+        },
+        {
+          "moduleName": "./src/components/form-tabs/index.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/form-tabs/types.ts",
+      "name": "./src/components/form-tabs/types.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/components/form-tabs/tab/stories.tsx"
+        },
+        {
+          "moduleName": "./src/components/form-tabs/index.tsx"
+        },
+        {
+          "moduleName": "./src/components/form-tabs/tab/Tab.tsx"
+        },
+        {
+          "moduleName": "./src/components/form-tabs/tab/TabDescription.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/freshness-bar/FreshnessBar.tsx",
+      "name": "./src/components/freshness-bar/FreshnessBar.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/components/freshness-bar/stories.tsx"
+        },
+        {
+          "moduleName": "./src/components/freshness-bar/index.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/label/index.tsx",
+      "name": "./src/components/label/index.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/components/freshness-bar/stories.tsx"
+        },
+        {
+          "moduleName": "./src/components/label/stories.tsx"
+        },
+        {
+          "moduleName": "./src/components/pagination/stories.tsx"
+        },
+        {
+          "moduleName": "./src/components/form-tabs/tab/Tab.tsx"
+        },
+        {
+          "moduleName": "./src/components/graphs/split-graph/index.tsx"
+        },
+        {
+          "moduleName": "./src/components/checkbox/checkbox-group.tsx"
+        },
+        {
+          "moduleName": "./src/components/input/index.tsx"
+        },
+        {
+          "moduleName": "./src/components/select/index.tsx"
+        },
+        {
+          "moduleName": "./src/components/select2/index.tsx"
+        },
+        {
+          "moduleName": "./src/components/table/read-only/index.tsx"
+        },
+        {
+          "moduleName": "./src/components/table/editable/index.tsx"
+        },
+        {
+          "moduleName": "./src/components/table/editable/EditableTable2.tsx"
+        },
+        {
+          "moduleName": "./src/components/code-input/index.tsx"
+        },
+        {
+          "moduleName": "./src/index.ts"
+        },
+        {
+          "moduleName": "./src/components/editableSelect/index.tsx"
+        },
+        {
+          "moduleName": "./src/components/single-select/index.tsx"
+        },
+        {
+          "moduleName": "./src/components/form-tabs/tab/TabDescription.tsx"
+        },
+        {
+          "moduleName": "./src/components/user/User.tsx"
+        },
+        {
+          "moduleName": "./src/components/embedded-tabs/Tab.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/graphs/split-graph/index.tsx",
+      "name": "./src/components/graphs/split-graph/index.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/components/graphs/split-graph/stories.tsx"
+        },
+        {
+          "moduleName": "./src/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/typography/subtitle.tsx",
+      "name": "./src/components/typography/subtitle.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/components/header/stories.tsx"
+        },
+        {
+          "moduleName": "./src/components/typography/typography.stories.tsx"
+        },
+        {
+          "moduleName": "./src/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/header/index.tsx",
+      "name": "./src/components/header/index.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/components/header/stories.tsx"
+        },
+        {
+          "moduleName": "./src/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/header/menu-button.tsx",
+      "name": "./src/components/header/menu-button.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/components/header/stories.tsx"
+        },
+        {
+          "moduleName": "./src/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/user/index.tsx",
+      "name": "./src/components/user/index.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/components/header/stories.tsx"
+        },
+        {
+          "moduleName": "./src/components/row/stories.tsx"
+        },
+        {
+          "moduleName": "./src/components/user/stories.tsx"
+        },
+        {
+          "moduleName": "./src/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/holy-table/index.tsx",
+      "name": "./src/components/holy-table/index.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/components/holy-table/stories.tsx"
+        },
+        {
+          "moduleName": "./src/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/checkbox/checkbox-group.tsx",
+      "name": "./src/components/checkbox/checkbox-group.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/components/checkbox/group.stories.tsx"
+        },
+        {
+          "moduleName": "./src/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/input-info/index.tsx",
+      "name": "./src/components/input-info/index.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/components/input-info/stories.tsx"
+        },
+        {
+          "moduleName": "./src/components/input/index.tsx"
+        },
+        {
+          "moduleName": "./src/components/code-input/index.tsx"
+        },
+        {
+          "moduleName": "./src/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/tooltip/index.tsx",
+      "name": "./src/components/tooltip/index.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/components/icon/stories.tsx"
+        },
+        {
+          "moduleName": "./src/components/tooltip/stories.tsx"
+        },
+        {
+          "moduleName": "./src/components/checkbox/index.tsx"
+        },
+        {
+          "moduleName": "./src/components/dot/Dot.tsx"
+        },
+        {
+          "moduleName": "./src/components/dropdown/index.tsx"
+        },
+        {
+          "moduleName": "./src/components/file-system-explorer/file-item-explorer/FileItemExplorer.tsx"
+        },
+        {
+          "moduleName": "./src/components/file-system-explorer/folder/index.tsx"
+        },
+        {
+          "moduleName": "./src/components/freshness-bar/FreshnessBar.tsx"
+        },
+        {
+          "moduleName": "./src/components/input/index.tsx"
+        },
+        {
+          "moduleName": "./src/components/pagination/index.tsx"
+        },
+        {
+          "moduleName": "./src/components/radio/index.tsx"
+        },
+        {
+          "moduleName": "./src/components/select2/index.tsx"
+        },
+        {
+          "moduleName": "./src/components/symbol/index.tsx"
+        },
+        {
+          "moduleName": "./src/components/icon-button/index.tsx"
+        },
+        {
+          "moduleName": "./src/components/code-input/index.tsx"
+        },
+        {
+          "moduleName": "./src/index.ts"
+        },
+        {
+          "moduleName": "./src/components/navigation/item/index.tsx"
+        },
+        {
+          "moduleName": "./src/components/row/button/index.tsx"
+        },
+        {
+          "moduleName": "./src/components/user/User.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/theme/theme.ts",
+      "name": "./src/theme/theme.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/components/icon/stories.tsx"
+        },
+        {
+          "moduleName": "./src/components/badge/Badge.tsx"
+        },
+        {
+          "moduleName": "./src/components/icon/list.tsx"
+        },
+        {
+          "moduleName": "./src/components/expand-viewer/index.tsx"
+        },
+        {
+          "moduleName": "./src/components/icon/GetIcon.tsx"
+        },
+        {
+          "moduleName": "./src/theme/ThemeProvider.tsx"
+        },
+        {
+          "moduleName": "./src/index.ts"
+        },
+        {
+          "moduleName": "./src/components/navigation/item/index.tsx"
+        },
+        {
+          "moduleName": "./src/components/logo/index.tsx"
+        },
+        {
+          "moduleName": "./src/theme-chakra/theme/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/input/index.tsx",
+      "name": "./src/components/input/index.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/components/icon/stories.tsx"
+        },
+        {
+          "moduleName": "./src/components/input/stories.tsx"
+        },
+        {
+          "moduleName": "./src/components/select/index.tsx"
+        },
+        {
+          "moduleName": "./src/components/select2/index.tsx"
+        },
+        {
+          "moduleName": "./src/components/table/editable/blur-input.tsx"
+        },
+        {
+          "moduleName": "./src/components/table/editable/EditableTable2.tsx"
+        },
+        {
+          "moduleName": "./src/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/navigation/container/index.tsx",
+      "name": "./src/components/navigation/container/index.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/components/navigation/stories.tsx"
+        },
+        {
+          "moduleName": "./src/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/navigation/useNavigation.ts",
+      "name": "./src/components/navigation/useNavigation.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/components/navigation/stories.tsx"
+        },
+        {
+          "moduleName": "./src/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/typography/value.tsx",
+      "name": "./src/components/typography/value.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/components/notifier/stories.tsx"
+        },
+        {
+          "moduleName": "./src/components/range-slider/stories.tsx"
+        },
+        {
+          "moduleName": "./src/components/row/stories.tsx"
+        },
+        {
+          "moduleName": "./src/components/typography/typography.stories.tsx"
+        },
+        {
+          "moduleName": "./src/components/bar/Bar.tsx"
+        },
+        {
+          "moduleName": "./src/components/badge/Badge.tsx"
+        },
+        {
+          "moduleName": "./src/components/expand-viewer/index.tsx"
+        },
+        {
+          "moduleName": "./src/components/project-badge/ProjectBadge.tsx"
+        },
+        {
+          "moduleName": "./src/components/range-slider/range-slider.tsx"
+        },
+        {
+          "moduleName": "./src/components/select/index.tsx"
+        },
+        {
+          "moduleName": "./src/components/select2/index.tsx"
+        },
+        {
+          "moduleName": "./src/components/slider/slider.tsx"
+        },
+        {
+          "moduleName": "./src/components/text-value-badge/TextValueBadge.tsx"
+        },
+        {
+          "moduleName": "./src/components/code/index.tsx"
+        },
+        {
+          "moduleName": "./src/components/alternative-header/AlternativeHeader.tsx"
+        },
+        {
+          "moduleName": "./src/index.ts"
+        },
+        {
+          "moduleName": "./src/components/datepicker/index.tsx"
+        },
+        {
+          "moduleName": "./src/components/file-system-explorer/empty-folder-info/index.tsx"
+        },
+        {
+          "moduleName": "./src/components/file-system-explorer/info/index.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/notifier/notifier.tsx",
+      "name": "./src/components/notifier/notifier.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/components/notifier/stories.tsx"
+        },
+        {
+          "moduleName": "./src/components/notifier/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/list/item/index.tsx",
+      "name": "./src/components/list/item/index.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/components/list/stories.tsx"
+        },
+        {
+          "moduleName": "./src/components/dropdown/index.tsx"
+        },
+        {
+          "moduleName": "./src/index.ts"
+        },
+        {
+          "moduleName": "./src/components/select/lists/select-list.tsx"
+        },
+        {
+          "moduleName": "./src/components/select/lists/select-list-multi.tsx"
+        },
+        {
+          "moduleName": "./src/components/select2/lists/select-list.tsx"
+        },
+        {
+          "moduleName": "./src/components/select2/lists/select-list-multi.tsx"
+        },
+        {
+          "moduleName": "./src/components/table/thead.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/list/container/index.tsx",
+      "name": "./src/components/list/container/index.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/components/list/stories.tsx"
+        },
+        {
+          "moduleName": "./src/components/dropdown/index.tsx"
+        },
+        {
+          "moduleName": "./src/components/select/index.tsx"
+        },
+        {
+          "moduleName": "./src/components/select2/index.tsx"
+        },
+        {
+          "moduleName": "./src/index.ts"
+        },
+        {
+          "moduleName": "./src/components/table/thead.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/performance-bar/index.tsx",
+      "name": "./src/components/performance-bar/index.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/components/performance-bar/stories.tsx"
+        },
+        {
+          "moduleName": "./src/components/performance-card/index.tsx"
+        },
+        {
+          "moduleName": "./src/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/popup/storyUitls.ts",
+      "name": "./src/components/popup/storyUitls.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/components/popup/drawer/stories.tsx"
+        },
+        {
+          "moduleName": "./src/components/popup/stories.tsx"
+        },
+        {
+          "moduleName": "./src/components/popup/tiny/stories.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/popup/index.tsx",
+      "name": "./src/components/popup/index.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/components/popup/stories.tsx"
+        },
+        {
+          "moduleName": "./src/components/expand-viewer/index.tsx"
+        },
+        {
+          "moduleName": "./src/components/popup/tiny/index.tsx"
+        },
+        {
+          "moduleName": "./src/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/pagination/index.tsx",
+      "name": "./src/components/pagination/index.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/components/pagination/stories.tsx"
+        },
+        {
+          "moduleName": "./src/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/popup/tiny/index.tsx",
+      "name": "./src/components/popup/tiny/index.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/components/popup/tiny/stories.tsx"
+        },
+        {
+          "moduleName": "./src/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/performance-card/index.tsx",
+      "name": "./src/components/performance-card/index.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/components/performance-card/stories.tsx"
+        },
+        {
+          "moduleName": "./src/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/project-badge/ProjectBadge.tsx",
+      "name": "./src/components/project-badge/ProjectBadge.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/components/project-badge/stories.tsx"
+        },
+        {
+          "moduleName": "./src/components/project-badge/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/radio/index.tsx",
+      "name": "./src/components/radio/index.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/components/radio/stories.tsx"
+        },
+        {
+          "moduleName": "./src/index.ts"
+        },
+        {
+          "moduleName": "./src/components/radio/radio-group.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/range-slider/range-slider.tsx",
+      "name": "./src/components/range-slider/range-slider.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/components/range-slider/stories.tsx"
+        },
+        {
+          "moduleName": "./src/components/range-slider/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/row/container/index.tsx",
+      "name": "./src/components/row/container/index.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/components/row/stories.tsx"
+        },
+        {
+          "moduleName": "./src/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/row/group/index.tsx",
+      "name": "./src/components/row/group/index.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/components/row/stories.tsx"
+        },
+        {
+          "moduleName": "./src/components/row/container/index.tsx"
+        },
+        {
+          "moduleName": "./src/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/row/item/index.tsx",
+      "name": "./src/components/row/item/index.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/components/row/stories.tsx"
+        },
+        {
+          "moduleName": "./src/components/row/group/index.tsx"
+        },
+        {
+          "moduleName": "./src/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/row/container/types.ts",
+      "name": "./src/components/row/container/types.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/components/row/stories.tsx"
+        },
+        {
+          "moduleName": "./src/components/row/container/index.tsx"
+        },
+        {
+          "moduleName": "./src/components/row/group/index.tsx"
+        },
+        {
+          "moduleName": "./src/components/row/item/index.tsx"
+        },
+        {
+          "moduleName": "./src/components/row/item/row-item.styles.ts"
+        },
+        {
+          "moduleName": "./src/components/row/group/row-group.styles.ts"
+        },
+        {
+          "moduleName": "./src/components/row/button/row-button.styles.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/row/item/types.ts",
+      "name": "./src/components/row/item/types.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/components/row/stories.tsx"
+        },
+        {
+          "moduleName": "./src/components/row/container/index.tsx"
+        },
+        {
+          "moduleName": "./src/components/row/group/index.tsx"
+        },
+        {
+          "moduleName": "./src/components/row/item/index.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/select/index.tsx",
+      "name": "./src/components/select/index.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/components/select/stories.tsx"
+        },
+        {
+          "moduleName": "./src/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/select2/index.tsx",
+      "name": "./src/components/select2/index.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/components/select2/stories.tsx"
+        },
+        {
+          "moduleName": "./src/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/single-select/index.tsx",
+      "name": "./src/components/single-select/index.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/components/single-select/stories.tsx"
+        },
+        {
+          "moduleName": "./src/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/slider/slider.tsx",
+      "name": "./src/components/slider/slider.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/components/slider/stories.tsx"
+        },
+        {
+          "moduleName": "./src/components/slider/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/spinner/index.tsx",
+      "name": "./src/components/spinner/index.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/components/spinner/stories.tsx"
+        },
+        {
+          "moduleName": "./src/components/dropdown/index.tsx"
+        },
+        {
+          "moduleName": "./src/components/file-loader/index.tsx"
+        },
+        {
+          "moduleName": "./src/components/text-value-badge/TextValueBadge.tsx"
+        },
+        {
+          "moduleName": "./src/components/button/Button.tsx"
+        },
+        {
+          "moduleName": "./src/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/symbol/index.tsx",
+      "name": "./src/components/symbol/index.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/components/symbol/stories.tsx"
+        },
+        {
+          "moduleName": "./src/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/tooltip/positions.ts",
+      "name": "./src/components/tooltip/positions.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/components/symbol/stories.tsx"
+        },
+        {
+          "moduleName": "./src/components/dot/Dot.tsx"
+        },
+        {
+          "moduleName": "./src/components/dropdown/index.tsx"
+        },
+        {
+          "moduleName": "./src/index.ts"
+        },
+        {
+          "moduleName": "./src/components/navigation/item/index.tsx"
+        },
+        {
+          "moduleName": "./src/components/table/editable/row-left-content.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/symbol/types.ts",
+      "name": "./src/components/symbol/types.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/components/symbol/stories.tsx"
+        },
+        {
+          "moduleName": "./src/components/symbol/index.tsx"
+        },
+        {
+          "moduleName": "./src/index.ts"
+        },
+        {
+          "moduleName": "./src/components/symbol/utils.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/sticky-summary/index.tsx",
+      "name": "./src/components/sticky-summary/index.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/components/sticky-summary/stories.tsx"
+        },
+        {
+          "moduleName": "./src/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/table/index.tsx",
+      "name": "./src/components/table/index.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/components/table/stories.tsx"
+        },
+        {
+          "moduleName": "./src/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/table/read-only/index.tsx",
+      "name": "./src/components/table/read-only/index.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/components/table/stories.tsx"
+        },
+        {
+          "moduleName": "./src/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/table/read-only/dummydata.json",
+      "name": "./src/components/table/read-only/dummydata.json",
+      "reasons": [
+        {
+          "moduleName": "./src/components/table/stories.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/table/editable/dummydata.json",
+      "name": "./src/components/table/editable/dummydata.json",
+      "reasons": [
+        {
+          "moduleName": "./src/components/table/stories.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/table/editable/index.tsx",
+      "name": "./src/components/table/editable/index.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/components/table/stories.tsx"
+        },
+        {
+          "moduleName": "./src/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/table/editable/blur-input.tsx",
+      "name": "./src/components/table/editable/blur-input.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/components/table/stories.tsx"
+        },
+        {
+          "moduleName": "./src/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/table/editable/EditableTable2.tsx",
+      "name": "./src/components/table/editable/EditableTable2.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/components/table/stories.tsx"
+        },
+        {
+          "moduleName": "./src/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/text-value-badge/TextValueBadge.tsx",
+      "name": "./src/components/text-value-badge/TextValueBadge.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/components/text-value-badge/stories.tsx"
+        },
+        {
+          "moduleName": "./src/components/text-value-badge/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/toggle-button/index.tsx",
+      "name": "./src/components/toggle-button/index.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/components/toggle-button/stories.tsx"
+        },
+        {
+          "moduleName": "./src/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/typography/title.tsx",
+      "name": "./src/components/typography/title.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/components/typography/typography.stories.tsx"
+        },
+        {
+          "moduleName": "./src/components/sticky-summary/index.tsx"
+        },
+        {
+          "moduleName": "./src/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/typography/microlabeling.tsx",
+      "name": "./src/components/typography/microlabeling.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/components/typography/typography.stories.tsx"
+        },
+        {
+          "moduleName": "./src/components/divider/index.tsx"
+        },
+        {
+          "moduleName": "./src/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/typography/input-validation/input-validation.tsx",
+      "name": "./src/components/typography/input-validation/input-validation.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/components/typography/typography.stories.tsx"
+        },
+        {
+          "moduleName": "./src/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/badge/utils/index.ts",
+      "name": "./src/components/badge/utils/index.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/components/badge/Badge.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/callout/callout.styles.ts",
+      "name": "./src/components/callout/callout.styles.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/components/callout/index.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/card-header/card-header.styles.ts",
+      "name": "./src/components/card-header/card-header.styles.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/components/card-header/index.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/card/card.styles.ts",
+      "name": "./src/components/card/card.styles.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/components/card/index.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/utils/usePopup.ts",
+      "name": "./src/utils/usePopup.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/components/card/index.tsx"
+        },
+        {
+          "moduleName": "./src/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/checkbox/checkbox-styles.ts",
+      "name": "./src/components/checkbox/checkbox-styles.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/components/checkbox/index.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/card/card-secondary.styles.ts",
+      "name": "./src/components/card/card-secondary.styles.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/components/card/card-secondary.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/collapse/collapse.styles.ts",
+      "name": "./src/components/collapse/collapse.styles.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/components/collapse/index.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/divider/divider.styles.ts",
+      "name": "./src/components/divider/divider.styles.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/components/divider/index.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/dropdown-button/styles.ts",
+      "name": "./src/components/dropdown-button/styles.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/components/dropdown-button/DropdownButton.tsx"
+        },
+        {
+          "moduleName": "./src/components/dropdown-button/DropdownButton2.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/utils/useDropdown.ts",
+      "name": "./src/utils/useDropdown.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/components/dropdown-button/DropdownButton.tsx"
+        },
+        {
+          "moduleName": "./src/components/select/index.tsx"
+        },
+        {
+          "moduleName": "./src/components/select2/index.tsx"
+        },
+        {
+          "moduleName": "./src/index.ts"
+        },
+        {
+          "moduleName": "./src/components/table/thead.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/utils/useClickOutside.ts",
+      "name": "./src/utils/useClickOutside.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/components/dropdown/index.tsx"
+        },
+        {
+          "moduleName": "./src/index.ts"
+        },
+        {
+          "moduleName": "./src/components/dropdown-wrapper/DropdownWrapper.tsx"
+        },
+        {
+          "moduleName": "./src/components/table/thead.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/expand-viewer/expand-viewer.styles.ts",
+      "name": "./src/components/expand-viewer/expand-viewer.styles.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/components/expand-viewer/index.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/file-button/file-button.styles.ts",
+      "name": "./src/components/file-button/file-button.styles.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/components/file-button/index.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/file-loader/file-loader.styles.ts",
+      "name": "./src/components/file-loader/file-loader.styles.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/components/file-loader/index.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/file-system-explorer/file-item-explorer/styles.ts",
+      "name": "./src/components/file-system-explorer/file-item-explorer/styles.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/components/file-system-explorer/file-item-explorer/FileItemExplorer.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/file-system-explorer/folder/folder-explorer.styles.ts",
+      "name": "./src/components/file-system-explorer/folder/folder-explorer.styles.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/components/file-system-explorer/folder/index.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/file-system-explorer/footer/footer.styles.ts",
+      "name": "./src/components/file-system-explorer/footer/footer.styles.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/components/file-system-explorer/footer/index.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/file-system-explorer/types.ts",
+      "name": "./src/components/file-system-explorer/types.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/components/file-system-explorer/footer/index.tsx"
+        },
+        {
+          "moduleName": "./src/components/file-system-explorer/index.tsx"
+        },
+        {
+          "moduleName": "./src/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/file-system-explorer/header/index.tsx",
+      "name": "./src/components/file-system-explorer/header/index.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/components/file-system-explorer/index.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/file-system-explorer/file-explorer-column/index.tsx",
+      "name": "./src/components/file-system-explorer/file-explorer-column/index.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/components/file-system-explorer/index.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/file-system-explorer/info/index.tsx",
+      "name": "./src/components/file-system-explorer/info/index.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/components/file-system-explorer/index.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/file-system-explorer/empty-folder-info/index.tsx",
+      "name": "./src/components/file-system-explorer/empty-folder-info/index.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/components/file-system-explorer/index.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/file-system-explorer/file-system-explorer.styles.ts",
+      "name": "./src/components/file-system-explorer/file-system-explorer.styles.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/components/file-system-explorer/index.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/footer-button/footer-button.styles.ts",
+      "name": "./src/components/footer-button/footer-button.styles.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/components/footer-button/index.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/form-summary-container/form-summary-container.styles.ts",
+      "name": "./src/components/form-summary-container/form-summary-container.styles.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/components/form-summary-container/index.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/form-tabs/form-tabs.styles.ts",
+      "name": "./src/components/form-tabs/form-tabs.styles.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/components/form-tabs/index.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/form-tabs/tab/TabDescription.tsx",
+      "name": "./src/components/form-tabs/tab/TabDescription.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/components/form-tabs/tab/Tab.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/form-tabs/tab/tab.styles.ts",
+      "name": "./src/components/form-tabs/tab/tab.styles.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/components/form-tabs/tab/Tab.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/freshness-bar/Bar.tsx",
+      "name": "./src/components/freshness-bar/Bar.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/components/freshness-bar/FreshnessBar.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/label/label.styles.ts",
+      "name": "./src/components/label/label.styles.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/components/label/index.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/graphs/split-graph/styles.ts",
+      "name": "./src/components/graphs/split-graph/styles.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/components/graphs/split-graph/index.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/badge/index.ts",
+      "name": "./src/components/badge/index.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/components/graphs/split-graph/index.tsx"
+        },
+        {
+          "moduleName": "./src/components/sticky-summary/index.tsx"
+        },
+        {
+          "moduleName": "./src/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/header/header.styles.ts",
+      "name": "./src/components/header/header.styles.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/components/header/index.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/logo/index.tsx",
+      "name": "./src/components/logo/index.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/components/header/index.tsx"
+        },
+        {
+          "moduleName": "./src/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/input-info/input-info.styles.ts",
+      "name": "./src/components/input-info/input-info.styles.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/components/input-info/index.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/input/input.styles.ts",
+      "name": "./src/components/input/input.styles.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/components/input/index.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/navigation/item/index.tsx",
+      "name": "./src/components/navigation/item/index.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/components/navigation/container/index.tsx"
+        },
+        {
+          "moduleName": "./src/index.ts"
+        },
+        {
+          "moduleName": "./src/components/navigation/category/index.tsx"
+        },
+        {
+          "moduleName": "./src/components/navigation/context/buildComponentsTree.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/navigation/context/navigation.provider.tsx",
+      "name": "./src/components/navigation/context/navigation.provider.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/components/navigation/container/index.tsx"
+        },
+        {
+          "moduleName": "./src/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/navigation/category/index.tsx",
+      "name": "./src/components/navigation/category/index.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/components/navigation/container/index.tsx"
+        },
+        {
+          "moduleName": "./src/index.ts"
+        },
+        {
+          "moduleName": "./src/components/navigation/context/buildComponentsTree.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/navigation/container/navigation.styles.ts",
+      "name": "./src/components/navigation/container/navigation.styles.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/components/navigation/container/index.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/navigation/context/buildComponentsTree.ts",
+      "name": "./src/components/navigation/context/buildComponentsTree.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/components/navigation/container/index.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/navigation/context/buildTree.ts",
+      "name": "./src/components/navigation/context/buildTree.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/components/navigation/container/index.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/list/item/list-item.styles.ts",
+      "name": "./src/components/list/item/list-item.styles.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/components/list/item/index.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/notifier/Notification.tsx",
+      "name": "./src/components/notifier/Notification.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/components/notifier/notifier.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/performance-bar/performance-bar.styles.ts",
+      "name": "./src/components/performance-bar/performance-bar.styles.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/components/performance-bar/index.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/pagination/pagination.styles.ts",
+      "name": "./src/components/pagination/pagination.styles.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/components/pagination/index.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/typography/text.tsx",
+      "name": "./src/components/typography/text.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/components/popup/tiny/index.tsx"
+        },
+        {
+          "moduleName": "./src/components/symbol/index.tsx"
+        },
+        {
+          "moduleName": "./src/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/performance-card/performance-card.styles.ts",
+      "name": "./src/components/performance-card/performance-card.styles.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/components/performance-card/index.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/radio/radio-styles.ts",
+      "name": "./src/components/radio/radio-styles.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/components/radio/index.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/row/container/container.styles.ts",
+      "name": "./src/components/row/container/container.styles.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/components/row/container/index.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/row/item/row-item.styles.ts",
+      "name": "./src/components/row/item/row-item.styles.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/components/row/container/index.tsx"
+        },
+        {
+          "moduleName": "./src/components/row/item/index.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/row/group/row-group.styles.ts",
+      "name": "./src/components/row/group/row-group.styles.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/components/row/group/index.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/utils/useKeyUp.ts",
+      "name": "./src/utils/useKeyUp.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/components/select/index.tsx"
+        },
+        {
+          "moduleName": "./src/components/select2/index.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/dropdown-wrapper/DropdownWrapper.tsx",
+      "name": "./src/components/dropdown-wrapper/DropdownWrapper.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/components/select/index.tsx"
+        },
+        {
+          "moduleName": "./src/components/select2/index.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/select/info/index.tsx",
+      "name": "./src/components/select/info/index.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/components/select/index.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/select/label.tsx",
+      "name": "./src/components/select/label.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/components/select/index.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/select/lists/select-list.tsx",
+      "name": "./src/components/select/lists/select-list.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/components/select/index.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/select/lists/select-list-multi.tsx",
+      "name": "./src/components/select/lists/select-list-multi.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/components/select/index.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/select/select.styles.ts",
+      "name": "./src/components/select/select.styles.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/components/select/index.tsx"
+        },
+        {
+          "moduleName": "./src/components/select/label.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/select2/label.tsx",
+      "name": "./src/components/select2/label.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/components/select2/index.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/select2/info/index.tsx",
+      "name": "./src/components/select2/info/index.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/components/select2/index.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/select2/lists/select-list.tsx",
+      "name": "./src/components/select2/lists/select-list.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/components/select2/index.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/select2/lists/select-list-multi.tsx",
+      "name": "./src/components/select2/lists/select-list-multi.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/components/select2/index.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/select2/types.ts",
+      "name": "./src/components/select2/types.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/components/select2/index.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/select2/select.styles.ts",
+      "name": "./src/components/select2/select.styles.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/components/select2/index.tsx"
+        },
+        {
+          "moduleName": "./src/components/select2/label.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/spinner/spinner-styles.ts",
+      "name": "./src/components/spinner/spinner-styles.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/components/spinner/index.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/symbol/symbol.styles.ts",
+      "name": "./src/components/symbol/symbol.styles.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/components/symbol/index.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/symbol/utils.ts",
+      "name": "./src/components/symbol/utils.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/components/symbol/index.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/sticky-summary/sticky-summary.styles.ts",
+      "name": "./src/components/sticky-summary/sticky-summary.styles.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/components/sticky-summary/index.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/table/table.styles.tsx",
+      "name": "./src/components/table/table.styles.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/components/table/read-only/index.tsx"
+        },
+        {
+          "moduleName": "./src/components/table/editable/index.tsx"
+        },
+        {
+          "moduleName": "./src/components/table/editable/EditableTable2.tsx"
+        },
+        {
+          "moduleName": "./src/components/table/thead.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/table/thead.tsx",
+      "name": "./src/components/table/thead.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/components/table/read-only/index.tsx"
+        },
+        {
+          "moduleName": "./src/components/table/editable/index.tsx"
+        },
+        {
+          "moduleName": "./src/components/table/editable/EditableTable2.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/utils/KeysCollection.ts",
+      "name": "./src/utils/KeysCollection.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/components/table/editable/index.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/table/editable/row-left-content.tsx",
+      "name": "./src/components/table/editable/row-left-content.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/components/table/editable/index.tsx"
+        },
+        {
+          "moduleName": "./src/components/table/editable/EditableTable2.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/text-value-badge/styles.ts",
+      "name": "./src/components/text-value-badge/styles.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/components/text-value-badge/TextValueBadge.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/toggle-button/toggle-button.styles.ts",
+      "name": "./src/components/toggle-button/toggle-button.styles.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/components/toggle-button/index.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/theme/buttons/index.ts",
+      "name": "./src/theme/buttons/index.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/theme/theme.ts"
+        },
+        {
+          "moduleName": "./src/components/button/styles.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/theme/icon-buttons/index.ts",
+      "name": "./src/theme/icon-buttons/index.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/theme/theme.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/theme/footer-buttons/index.ts",
+      "name": "./src/theme/footer-buttons/index.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/theme/theme.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/theme/file-buttons/index.ts",
+      "name": "./src/theme/file-buttons/index.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/theme/theme.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/theme/toggle-button/index.ts",
+      "name": "./src/theme/toggle-button/index.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/theme/theme.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/theme/label.ts",
+      "name": "./src/theme/label.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/theme/theme.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/theme/tooltip.ts",
+      "name": "./src/theme/tooltip.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/theme/theme.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/theme/cards/index.ts",
+      "name": "./src/theme/cards/index.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/theme/theme.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/theme/input-info/index.ts",
+      "name": "./src/theme/input-info/index.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/theme/theme.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/theme/inputs/index.ts",
+      "name": "./src/theme/inputs/index.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/theme/theme.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/theme/intents.ts",
+      "name": "./src/theme/intents.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/theme/theme.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/theme/navigation/index.ts",
+      "name": "./src/theme/navigation/index.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/theme/theme.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/theme/list/index.ts",
+      "name": "./src/theme/list/index.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/theme/theme.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/theme/header/index.ts",
+      "name": "./src/theme/header/index.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/theme/theme.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/theme/typography/index.ts",
+      "name": "./src/theme/typography/index.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/theme/theme.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/theme/popup/index.ts",
+      "name": "./src/theme/popup/index.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/theme/theme.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/theme/badges/index.ts",
+      "name": "./src/theme/badges/index.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/theme/theme.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/theme/checkbox/index.ts",
+      "name": "./src/theme/checkbox/index.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/theme/theme.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/theme/radio/index.ts",
+      "name": "./src/theme/radio/index.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/theme/theme.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/theme/select/index.ts",
+      "name": "./src/theme/select/index.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/theme/theme.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/theme/select-info/index.ts",
+      "name": "./src/theme/select-info/index.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/theme/theme.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/theme/bar/index.ts",
+      "name": "./src/theme/bar/index.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/theme/theme.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/theme/perf/index.ts",
+      "name": "./src/theme/perf/index.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/theme/theme.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/theme/code.ts",
+      "name": "./src/theme/code.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/theme/theme.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/theme/callout/index.ts",
+      "name": "./src/theme/callout/index.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/theme/theme.ts"
+        },
+        {
+          "moduleName": "./src/components/calloutWithButton/index.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/theme/icon.ts",
+      "name": "./src/theme/icon.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/theme/theme.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/theme/pagination/index.ts",
+      "name": "./src/theme/pagination/index.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/theme/theme.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/theme/notifications/index.ts",
+      "name": "./src/theme/notifications/index.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/theme/theme.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/animated-progress/Bar.tsx",
+      "name": "./src/components/animated-progress/Bar.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/components/animated-progress/AnimatedProgress.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/animated-progress/Container.tsx",
+      "name": "./src/components/animated-progress/Container.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/components/animated-progress/AnimatedProgress.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/typography/input-validation/utils.tsx",
+      "name": "./src/components/typography/input-validation/utils.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/components/typography/input-validation/input-validation.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/theme-chakra/theme/index.ts",
+      "name": "./src/theme-chakra/theme/index.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/theme-chakra/ChakraThemeProvider.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/button/styles.ts",
+      "name": "./src/components/button/styles.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/components/button/Button.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/button/link-button.css",
+      "name": "./src/components/button/link-button.css",
+      "reasons": [
+        {
+          "moduleName": "./src/components/button/Button.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/icon-button/icon-button.styles.ts",
+      "name": "./src/components/icon-button/icon-button.styles.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/components/icon-button/index.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/utils/index.ts",
+      "name": "./src/utils/index.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/components/code/index.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/code/code.styles.ts",
+      "name": "./src/components/code/code.styles.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/components/code/index.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/badge/utils/get-border-color.ts",
+      "name": "./src/components/badge/utils/get-border-color.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/components/badge/utils/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/badge/utils/get-border-animation.ts",
+      "name": "./src/components/badge/utils/get-border-animation.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/components/badge/utils/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/alternative-header/styles.ts",
+      "name": "./src/components/alternative-header/styles.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/components/alternative-header/AlternativeHeader.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/calloutWithButton/index.tsx",
+      "name": "./src/components/calloutWithButton/index.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/dropdown-button/index.tsx",
+      "name": "./src/components/dropdown-button/index.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/radio/radio-group.tsx",
+      "name": "./src/components/radio/radio-group.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/slider/index.ts",
+      "name": "./src/components/slider/index.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/range-slider/index.ts",
+      "name": "./src/components/range-slider/index.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/popup/drawer/index.tsx",
+      "name": "./src/components/popup/drawer/index.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/popup/drawer/drawer-section.tsx",
+      "name": "./src/components/popup/drawer/drawer-section.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/index.ts"
+        },
+        {
+          "moduleName": "./src/components/popup/drawer/index.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/row/button/index.tsx",
+      "name": "./src/components/row/button/index.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/typography/hoverable.tsx",
+      "name": "./src/components/typography/hoverable.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/animated-progress/index.tsx",
+      "name": "./src/components/animated-progress/index.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/bar/index.ts",
+      "name": "./src/components/bar/index.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/dot/index.ts",
+      "name": "./src/components/dot/index.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/text-value-badge/index.ts",
+      "name": "./src/components/text-value-badge/index.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/project-badge/index.ts",
+      "name": "./src/components/project-badge/index.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/freshness-bar/index.tsx",
+      "name": "./src/components/freshness-bar/index.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/theme/useColorMode.ts",
+      "name": "./src/theme/useColorMode.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/datepicker/datepicker.styles.ts",
+      "name": "./src/components/datepicker/datepicker.styles.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/components/datepicker/index.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/utils/randomString.ts",
+      "name": "./src/utils/randomString.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/components/radio/radio-group.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/navigation/item/navigation-item.styles.ts",
+      "name": "./src/components/navigation/item/navigation-item.styles.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/components/navigation/item/index.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/navigation/context/getNode.ts",
+      "name": "./src/components/navigation/context/getNode.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/components/navigation/context/navigation.provider.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/navigation/context/getPathInTree.ts",
+      "name": "./src/components/navigation/context/getPathInTree.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/components/navigation/context/navigation.provider.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/navigation/category/navigation-category.styles.ts",
+      "name": "./src/components/navigation/category/navigation-category.styles.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/components/navigation/category/index.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/row/button/row-button.styles.ts",
+      "name": "./src/components/row/button/row-button.styles.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/components/row/button/index.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/compact-button/styles.ts",
+      "name": "./src/components/compact-button/styles.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/components/compact-button/compact-button.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/embedded-tabs/styles.ts",
+      "name": "./src/components/embedded-tabs/styles.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/components/embedded-tabs/EmbeddedTabs.tsx"
+        },
+        {
+          "moduleName": "./src/components/embedded-tabs/Tab.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/embedded-tabs/Tab.tsx",
+      "name": "./src/components/embedded-tabs/Tab.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/components/embedded-tabs/EmbeddedTabs.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/file-system-explorer/header/file-explorer-header.styles.ts",
+      "name": "./src/components/file-system-explorer/header/file-explorer-header.styles.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/components/file-system-explorer/header/index.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/file-system-explorer/empty-folder-info/empty-folder-info.styles.ts",
+      "name": "./src/components/file-system-explorer/empty-folder-info/empty-folder-info.styles.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/components/file-system-explorer/empty-folder-info/index.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/file-system-explorer/info/file-explorer-info.styles.ts",
+      "name": "./src/components/file-system-explorer/info/file-explorer-info.styles.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/components/file-system-explorer/info/index.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/utils/getFormatSizeUnit.ts",
+      "name": "./src/utils/getFormatSizeUnit.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/components/file-system-explorer/info/index.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/holy-table/row/row.tsx",
+      "name": "./src/components/holy-table/row/row.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/components/holy-table/row/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/holy-table/head-cell/head-cell.tsx",
+      "name": "./src/components/holy-table/head-cell/head-cell.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/components/holy-table/head-cell/index.ts"
+        },
+        {
+          "moduleName": "./src/components/holy-table/holy-table.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/theme/buttons/ghost.ts",
+      "name": "./src/theme/buttons/ghost.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/theme/buttons/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/theme/buttons/inline.ts",
+      "name": "./src/theme/buttons/inline.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/theme/buttons/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/theme/buttons/primary.ts",
+      "name": "./src/theme/buttons/primary.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/theme/buttons/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/theme/buttons/secondary.ts",
+      "name": "./src/theme/buttons/secondary.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/theme/buttons/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/theme/buttons/alert.ts",
+      "name": "./src/theme/buttons/alert.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/theme/buttons/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/theme/icon-buttons/primary.ts",
+      "name": "./src/theme/icon-buttons/primary.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/theme/icon-buttons/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/theme/icon-buttons/ghost.ts",
+      "name": "./src/theme/icon-buttons/ghost.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/theme/icon-buttons/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/theme/icon-buttons/ghost-white.ts",
+      "name": "./src/theme/icon-buttons/ghost-white.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/theme/icon-buttons/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/theme/footer-buttons/primary.ts",
+      "name": "./src/theme/footer-buttons/primary.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/theme/footer-buttons/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/theme/file-buttons/secondary.ts",
+      "name": "./src/theme/file-buttons/secondary.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/theme/file-buttons/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/user/styles.ts",
+      "name": "./src/components/user/styles.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/components/user/User.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/holy-table/holy-table.context.ts",
+      "name": "./src/components/holy-table/holy-table.context.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/components/holy-table/cell/cell.tsx"
+        },
+        {
+          "moduleName": "./src/components/holy-table/holy-table.tsx"
+        },
+        {
+          "moduleName": "./src/components/holy-table/row/row.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/holy-table/cell/styles.ts",
+      "name": "./src/components/holy-table/cell/styles.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/components/holy-table/cell/cell.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/holy-table/styles.ts",
+      "name": "./src/components/holy-table/styles.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/components/holy-table/holy-table.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/theme/cards/card.ts",
+      "name": "./src/theme/cards/card.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/theme/cards/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/theme/cards/readOnly.ts",
+      "name": "./src/theme/cards/readOnly.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/theme/cards/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/theme/input-info/error.ts",
+      "name": "./src/theme/input-info/error.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/theme/input-info/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/theme/input-info/default.ts",
+      "name": "./src/theme/input-info/default.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/theme/input-info/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/theme/inputs/primary.ts",
+      "name": "./src/theme/inputs/primary.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/theme/inputs/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/theme/inputs/white.ts",
+      "name": "./src/theme/inputs/white.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/theme/inputs/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/theme/inputs/disabled.ts",
+      "name": "./src/theme/inputs/disabled.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/theme/inputs/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/theme/navigation/category.ts",
+      "name": "./src/theme/navigation/category.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/theme/navigation/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/theme/navigation/container/index.ts",
+      "name": "./src/theme/navigation/container/index.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/theme/navigation/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/theme/navigation/item/index.ts",
+      "name": "./src/theme/navigation/item/index.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/theme/navigation/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/theme/navigation/sub-item/index.ts",
+      "name": "./src/theme/navigation/sub-item/index.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/theme/navigation/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/theme/list/container/index.ts",
+      "name": "./src/theme/list/container/index.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/theme/list/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/theme/list/item/index.ts",
+      "name": "./src/theme/list/item/index.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/theme/list/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/theme/typography/title.ts",
+      "name": "./src/theme/typography/title.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/theme/typography/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/theme/typography/subtitle.ts",
+      "name": "./src/theme/typography/subtitle.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/theme/typography/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/theme/typography/labeling.ts",
+      "name": "./src/theme/typography/labeling.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/theme/typography/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/theme/typography/microlabeling.ts",
+      "name": "./src/theme/typography/microlabeling.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/theme/typography/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/theme/typography/microlabelingGray.ts",
+      "name": "./src/theme/typography/microlabelingGray.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/theme/typography/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/theme/typography/value.ts",
+      "name": "./src/theme/typography/value.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/theme/typography/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/theme/typography/valuePrimary.ts",
+      "name": "./src/theme/typography/valuePrimary.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/theme/typography/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/theme/typography/text.ts",
+      "name": "./src/theme/typography/text.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/theme/typography/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/theme/typography/labelingGray.ts",
+      "name": "./src/theme/typography/labelingGray.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/theme/typography/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/theme/typography/input-validation.neutral.ts",
+      "name": "./src/theme/typography/input-validation.neutral.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/theme/typography/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/theme/typography/input-validation.success.ts",
+      "name": "./src/theme/typography/input-validation.success.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/theme/typography/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/theme/typography/input-validation.warning.ts",
+      "name": "./src/theme/typography/input-validation.warning.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/theme/typography/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/theme/popup/primary.ts",
+      "name": "./src/theme/popup/primary.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/theme/popup/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/theme/popup/drawerSection.ts",
+      "name": "./src/theme/popup/drawerSection.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/theme/popup/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/theme/badges/dot.ts",
+      "name": "./src/theme/badges/dot.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/theme/badges/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/theme/badges/blink.ts",
+      "name": "./src/theme/badges/blink.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/theme/badges/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/theme/badges/keyValue/index.ts",
+      "name": "./src/theme/badges/keyValue/index.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/theme/badges/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/theme/badges/primary.ts",
+      "name": "./src/theme/badges/primary.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/theme/badges/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/theme/badges/bordered.ts",
+      "name": "./src/theme/badges/bordered.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/theme/badges/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/theme/select/primary.ts",
+      "name": "./src/theme/select/primary.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/theme/select/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/theme/select/white.ts",
+      "name": "./src/theme/select/white.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/theme/select/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/theme/select/disabled.ts",
+      "name": "./src/theme/select/disabled.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/theme/select/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/theme/select-info/error.ts",
+      "name": "./src/theme/select-info/error.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/theme/select-info/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/theme/select-info/default.ts",
+      "name": "./src/theme/select-info/default.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/theme/select-info/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/theme/callout/valid.ts",
+      "name": "./src/theme/callout/valid.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/theme/callout/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/theme/callout/error.ts",
+      "name": "./src/theme/callout/error.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/theme/callout/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/theme/callout/warning.ts",
+      "name": "./src/theme/callout/warning.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/theme/callout/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/theme/callout/neutral.ts",
+      "name": "./src/theme/callout/neutral.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/theme/callout/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/theme/pagination/primary.ts",
+      "name": "./src/theme/pagination/primary.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/theme/pagination/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/theme/pagination/white.ts",
+      "name": "./src/theme/pagination/white.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/theme/pagination/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/theme/pagination/disabled.ts",
+      "name": "./src/theme/pagination/disabled.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/theme/pagination/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/sticky-portal/StickyPortal.tsx",
+      "name": "./src/components/sticky-portal/StickyPortal.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/components/dropdown-wrapper/DropdownWrapper.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/select/info/select-info.styles.ts",
+      "name": "./src/components/select/info/select-info.styles.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/components/select/info/index.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/select2/useArrowsSelect.ts",
+      "name": "./src/components/select2/useArrowsSelect.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/components/select/lists/select-list.tsx"
+        },
+        {
+          "moduleName": "./src/components/select/lists/select-list-multi.tsx"
+        },
+        {
+          "moduleName": "./src/components/select2/lists/select-list.tsx"
+        },
+        {
+          "moduleName": "./src/components/select2/lists/select-list-multi.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/select2/info/select-info.styles.ts",
+      "name": "./src/components/select2/info/select-info.styles.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/components/select2/info/index.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/sources/basketSvgs.tsx",
+      "name": "./src/sources/basketSvgs.tsx",
+      "reasons": [
+        {
+          "moduleName": "./src/components/symbol/utils.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/theme-chakra/theme/components/drawer.ts",
+      "name": "./src/theme-chakra/theme/components/drawer.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/theme-chakra/theme/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/theme-chakra/theme/components/menu.ts",
+      "name": "./src/theme-chakra/theme/components/menu.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/theme-chakra/theme/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/theme-chakra/theme/components/modal.ts",
+      "name": "./src/theme-chakra/theme/components/modal.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/theme-chakra/theme/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/theme-chakra/theme/components/slider.ts",
+      "name": "./src/theme-chakra/theme/components/slider.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/theme-chakra/theme/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/theme-chakra/theme/components/input.ts",
+      "name": "./src/theme-chakra/theme/components/input.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/theme-chakra/theme/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/theme-chakra/theme/semanticTokens.ts",
+      "name": "./src/theme-chakra/theme/semanticTokens.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/theme-chakra/theme/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/theme-chakra/theme/components/tag.ts",
+      "name": "./src/theme-chakra/theme/components/tag.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/theme-chakra/theme/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/holy-table/row/styles.ts",
+      "name": "./src/components/holy-table/row/styles.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/components/holy-table/row/row.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/components/holy-table/head-cell/styles.ts",
+      "name": "./src/components/holy-table/head-cell/styles.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/components/holy-table/head-cell/head-cell.tsx"
+        }
+      ]
+    },
+    {
+      "id": "./src/theme/navigation/item/default.ts",
+      "name": "./src/theme/navigation/item/default.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/theme/navigation/item/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/theme/navigation/item/active.ts",
+      "name": "./src/theme/navigation/item/active.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/theme/navigation/item/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/theme/navigation/item/disabled.ts",
+      "name": "./src/theme/navigation/item/disabled.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/theme/navigation/item/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/theme/navigation/sub-item/disabled.ts",
+      "name": "./src/theme/navigation/sub-item/disabled.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/theme/navigation/sub-item/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/theme/navigation/sub-item/default.ts",
+      "name": "./src/theme/navigation/sub-item/default.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/theme/navigation/sub-item/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/theme/navigation/sub-item/active.ts",
+      "name": "./src/theme/navigation/sub-item/active.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/theme/navigation/sub-item/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/theme/list/item/primary.ts",
+      "name": "./src/theme/list/item/primary.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/theme/list/item/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/theme/list/item/active.ts",
+      "name": "./src/theme/list/item/active.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/theme/list/item/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/theme/badges/keyValue/gray.ts",
+      "name": "./src/theme/badges/keyValue/gray.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/theme/badges/keyValue/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/theme/badges/keyValue/white.ts",
+      "name": "./src/theme/badges/keyValue/white.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/theme/badges/keyValue/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/theme-chakra/theme/components/close-button.ts",
+      "name": "./src/theme-chakra/theme/components/close-button.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/theme-chakra/theme/components/drawer.ts"
+        },
+        {
+          "moduleName": "./src/theme-chakra/theme/components/modal.ts"
+        }
+      ]
+    },
+    {
+      "id": "./src/theme-chakra/theme/components/overlay.ts",
+      "name": "./src/theme-chakra/theme/components/overlay.ts",
+      "reasons": [
+        {
+          "moduleName": "./src/theme-chakra/theme/components/drawer.ts"
+        },
+        {
+          "moduleName": "./src/theme-chakra/theme/components/modal.ts"
+        }
+      ]
+    }
+  ]
+}
