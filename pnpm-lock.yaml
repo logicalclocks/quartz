@@ -60,8 +60,8 @@ dependencies:
     specifier: ^3.3.1
     version: 3.3.1
   emotion-theming:
-    specifier: ^10.3.0
-    version: 10.3.0(@emotion/core@10.3.1)(react@18.2.0)
+    specifier: ^11.0.0
+    version: 11.0.0
   ramda:
     specifier: ^0.28.0
     version: 0.28.0
@@ -9642,17 +9642,8 @@ packages:
     resolution: {integrity: sha512-5U0rVMU5Y2n2+ykNLQqMoqklN9ICBT/KsvC1Gz6vqHbz2AXXGkG+Pm5rMWk/8Vjrr/mY9985Hi8DYzn1F09Nyw==}
     dev: true
 
-  /emotion-theming@10.3.0(@emotion/core@10.3.1)(react@18.2.0):
-    resolution: {integrity: sha512-mXiD2Oj7N9b6+h/dC6oLf9hwxbtKHQjoIqtodEyL8CpkN4F3V4IK/BT4D0C7zSs4BBFOu4UlPJbvvBLa88SGEA==}
-    peerDependencies:
-      '@emotion/core': ^10.0.27
-      react: '>=16.3.0'
-    dependencies:
-      '@babel/runtime': 7.23.4
-      '@emotion/core': 10.3.1(react@18.2.0)
-      '@emotion/weak-memoize': 0.2.5
-      hoist-non-react-statics: 3.3.2
-      react: 18.2.0
+  /emotion-theming@11.0.0:
+    resolution: {integrity: sha512-OhYpCGBjaLcD9c4ptwCr9SxHjfRTDqeqdzMobusJ+a/drlfnJ3AT9gmGKIhNHiXtr6626h6fsvLY22Or9CxUqw==}
     dev: false
 
   /encodeurl@1.0.2:
@@ -12789,7 +12780,7 @@ packages:
     engines: {node: '>=6'}
     dependencies:
       pify: 4.0.1
-      semver: 7.5.4
+      semver: 5.7.2
     dev: true
 
   /make-dir@3.1.0:
