@@ -101,7 +101,7 @@
     "@storybook/testing-library": "^0.2.2",
     "@storybook/theming": "^7.6.17",
     "@storybook/types": "^7.6.17",
-    "@types/node": "^20.11.19",
+    "@types/node": "^20.11.20",
     "@types/ramda": "^0.28.1",
     "@types/react": "^18.2.57",
     "@types/react-datepicker": "^6.0.1",
