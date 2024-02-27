@@ -109,7 +109,7 @@
     "@types/rebass": "^4.0.14",
     "@types/rebass__forms": "^4.0.10",
     "@typescript-eslint/eslint-plugin": "^7.0.2",
-    "@typescript-eslint/parser": "^7.0.2",
+    "@typescript-eslint/parser": "^7.1.0",
     "@vitejs/plugin-react": "^4.2.1",
     "chromatic": "^10.9.6",
     "commitizen": "^4.3.0",
