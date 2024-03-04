@@ -176,8 +176,8 @@ devDependencies:
     specifier: ^4.2.1
     version: 4.2.1(vite@4.5.2)
   chromatic:
-    specifier: ^10.9.6
-    version: 10.9.6
+    specifier: ^11.0.0
+    version: 11.0.0
   commitizen:
     specifier: ^4.3.0
     version: 4.3.0(@swc/core@1.3.68)
@@ -8706,8 +8706,8 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /chromatic@10.9.6:
-    resolution: {integrity: sha512-1MoT+/U+vQwEiq2GuehPyStbqhxqHmM1B9pdpVU1dKh26userQg1FyOFYifkTgy+9reo2w2p7sAbc0JRd2kzlA==}
+  /chromatic@11.0.0:
+    resolution: {integrity: sha512-utzRVqdMrpzYwZNf7dHWU0z0/rx6SH/FUVNozQxYHDtQfYUdEj+Ro4OSch5+Wsk2FoUmznJyLkaC2J839z1N7A==}
     hasBin: true
     peerDependencies:
       '@chromatic-com/cypress': ^0.5.2 || ^1.0.0
