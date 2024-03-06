@@ -264,9 +264,12 @@ const SingleValue = ({ children, ...props }: any) => {
             {props.selectProps?.label}
           </Text>
         )}
-        <Box>
-          {children} {/* This renders the options */}
-        </Box>
+        <Flex gap="10px">
+          {children}
+          {props.data.additionalText && (
+            <Text color="gray">{props.data.additionalText}</Text>
+          )}
+        </Flex>
       </Flex>
     </chakraComponents.SingleValue>
   );
