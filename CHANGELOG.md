@@ -1,3 +1,10 @@
+# [4.2.0](https://github.com/logicalclocks/quartz/compare/v4.1.7...v4.2.0) (2024-03-06)
+
+
+### Features
+
+* **SingleSelect:** Show additional text when value selected ([#596](https://github.com/logicalclocks/quartz/issues/596)) ([7372e1f](https://github.com/logicalclocks/quartz/commit/7372e1fa91a74d05494aaf6a68b557fd638d8a93))
+
 ## [4.1.7](https://github.com/logicalclocks/quartz/compare/v4.1.6...v4.1.7) (2024-03-05)
 
 ## [4.1.6](https://github.com/logicalclocks/quartz/compare/v4.1.5...v4.1.6) (2024-03-05)
