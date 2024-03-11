@@ -49,7 +49,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-pnpm-store-
 
-      - uses: bitovi/github-actions-storybook-to-github-pages@v1.0.2
+      - uses: bitovi/github-actions-storybook-to-github-pages@v1.0.3
         with:
           install_command: pnpm install
           build_command: NODE_OPTIONS=--max_old_space_size=4096 pnpm run build-storybook
