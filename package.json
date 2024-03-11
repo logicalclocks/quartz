@@ -100,7 +100,7 @@
     "@storybook/test-runner": "^0.16.0",
     "@storybook/testing-library": "^0.2.2",
     "@storybook/theming": "^7.6.17",
-    "@storybook/types": "^7.6.17",
+    "@storybook/types": "^8.0.0",
     "@types/node": "^20.11.20",
     "@types/ramda": "^0.28.1",
     "@types/react": "^18.2.57",
