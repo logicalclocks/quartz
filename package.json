@@ -88,7 +88,7 @@
     "@storybook/addon-actions": "^7.6.17",
     "@storybook/addon-docs": "^7.6.17",
     "@storybook/addon-essentials": "^7.6.17",
-    "@storybook/addon-interactions": "^7.6.17",
+    "@storybook/addon-interactions": "^8.0.5",
     "@storybook/addon-links": "^7.6.17",
     "@storybook/core-common": "^7.6.17",
     "@storybook/csf-tools": "^7.6.17",
