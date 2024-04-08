@@ -36,12 +36,33 @@ const meta: Meta<typeof Table> = {
 };
 export default meta;
 
+const Score = ({ value, isHovered }: any) => (
+  <Box
+    sx={{
+      p: '8px',
+      whiteSpace: 'nowrap',
+      textOverflow: 'ellipsis',
+      overflow: 'hidden',
+      maxWidth: '400px',
+      ...(isHovered && {
+        overflow: 'initial',
+        whiteSpace: 'initial',
+        height: '100%',
+      }),
+    }}
+  >
+    {value}
+  </Box>
+);
+
 const headers = [
   {
     identifier: { name: 'away_team_id' },
+    cellRender: ({ value }: { value: string }) => `${value} ++`,
   },
   {
     identifier: { name: 'score' },
+    cellRender: Score,
   },
   {
     identifier: { name: 'dummycolumn_test1' },
