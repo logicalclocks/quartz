@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { Box } from 'rebass';
+import { useMemo, useState } from 'react';
+import { Box, SxStyleProp } from 'rebass';
 
 import { TableProps } from '../index';
 import {
@@ -20,6 +20,7 @@ export interface ReadOnlyTableProps extends Omit<TableProps, 'value'> {
     label: string;
     handler: (column: string) => void;
   }>;
+  sx: SxStyleProp;
 }
 
 const ReadOnlyTable = ({
@@ -27,27 +28,37 @@ const ReadOnlyTable = ({
   values,
   columnHeaders,
   actions,
+  sx = {},
 }: ReadOnlyTableProps) => {
-  const [hoverColumn, setHoverColumn] = useState<string>();
+  const [hoverColumn, setHoverColumn] = useState<{
+    column: string;
+    rowIdx: number;
+  }>();
 
   const [staticColumn, setStaticColumn] = useState<string | undefined>(
     initialStaticColumn,
   );
-  const sortValues = (
-    cells: TableCell[][],
-    headers: TableHeader[],
-  ): TableCell[][] => {
-    return cells.map((row) => {
-      return headers.map((header) => {
-        return row.find(
-          (cell) => cell.identifierName === header.identifier.name,
-        )!;
-      });
-    });
+
+  const sortedValues = useMemo(
+    () =>
+      values.map((row) =>
+        columnHeaders.map((header) => ({
+          ...row.find(
+            (cell) => cell.identifierName === header.identifier.name,
+          )!,
+          render: header.cellRender,
+        })),
+      ) as TableCell[][],
+    [columnHeaders, values],
+  );
+
+  const renderCell = ({ value, render }: TableCell, isHovered: boolean) => {
+    if (render) return render({ value, isHovered });
+    return value;
   };
 
   return (
-    <Box sx={containerStyles}>
+    <Box sx={{ ...containerStyles, ...sx } as SxStyleProp}>
       <Box as="table" sx={tableStyles}>
         <Box as="thead" sx={theadStyles}>
           <Box as="tr">
@@ -75,7 +86,7 @@ const ReadOnlyTable = ({
                   );
                 })()}
                 className={`static-column ${
-                  hoverColumn === staticColumn && 'hover-column'
+                  hoverColumn?.column === staticColumn && 'hover-column'
                 }`}
               />
             )}
@@ -101,7 +112,8 @@ const ReadOnlyTable = ({
                     ...actions,
                   ]}
                   className={`${
-                    hoverColumn === header.identifier.name && 'hover-column'
+                    hoverColumn?.column === header.identifier.name &&
+                    'hover-column'
                   }`}
                 />
               ))}
@@ -113,7 +125,7 @@ const ReadOnlyTable = ({
             backgroundColor: 'white',
           }}
         >
-          {sortValues(values, columnHeaders).map((row, index) => (
+          {sortedValues.map((row, index) => (
             // eslint-disable-next-line react/no-array-index-key
             <Box key={index} as="tr" sx={trowStyles}>
               <Box as="td" id={String(index + 1)}>
@@ -124,15 +136,21 @@ const ReadOnlyTable = ({
                 <Box
                   as="td"
                   className={`static-column ${
-                    hoverColumn === staticColumn && 'hover-column'
+                    hoverColumn?.column === staticColumn && 'hover-column'
                   }`}
-                  onMouseEnter={() => setHoverColumn(staticColumn)}
-                  onMouseLeave={() => setHoverColumn(undefined)}
-                >
-                  {
-                    row.find((cell) => cell.identifierName === staticColumn)
-                      ?.value
+                  onMouseEnter={() =>
+                    setHoverColumn({ column: staticColumn, rowIdx: index })
                   }
+                  onMouseLeave={() => setHoverColumn(undefined)}
+                  sx={{
+                    ...(row.find((cell) => cell.identifierName === staticColumn)
+                      ?.render && { p: '0px !important' }),
+                  }}
+                >
+                  {renderCell(
+                    row.find((cell) => cell.identifierName === staticColumn)!,
+                    hoverColumn?.rowIdx === index,
+                  )}
                 </Box>
               )}
               {row
@@ -146,12 +164,20 @@ const ReadOnlyTable = ({
                     key={cell.identifierName}
                     as="td"
                     className={
-                      hoverColumn === cell.identifierName ? 'hover-column' : ''
+                      hoverColumn?.column === cell.identifierName
+                        ? 'hover-column'
+                        : ''
                     }
-                    onMouseEnter={() => setHoverColumn(cell.identifierName)}
+                    onMouseEnter={() =>
+                      setHoverColumn({
+                        column: cell.identifierName,
+                        rowIdx: index,
+                      })
+                    }
                     onMouseLeave={() => setHoverColumn(undefined)}
+                    sx={{ ...(cell.render && { p: '0px !important' }) }}
                   >
-                    {cell.value}
+                    {renderCell(cell, hoverColumn?.rowIdx === index)}
                   </Box>
                 ))}
             </Box>

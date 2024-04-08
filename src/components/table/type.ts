@@ -6,11 +6,14 @@ export interface TableCell {
   identifierName: string;
   value: TableCellType;
   readOnly?: boolean;
+  /* no usage just for fixing type, use `cellRender` in TableHeader props instead */
+  render?: TableHeader['cellRender'];
 }
 
 export interface TableHeader {
   identifier: ColumnIdentifier;
   headerRender?: (isOpen: boolean) => React.ReactElement;
+  cellRender?: (props: { value: any; isHovered?: boolean }) => React.ReactNode;
 }
 
 export interface ColumnIdentifier {
