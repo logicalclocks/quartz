@@ -1,3 +1,10 @@
+# [4.3.0](https://github.com/logicalclocks/quartz/compare/v4.2.1...v4.3.0) (2024-04-08)
+
+
+### Features
+
+* **readonlytable:** add possibility to render custom cell ([#612](https://github.com/logicalclocks/quartz/issues/612)) ([8c08aeb](https://github.com/logicalclocks/quartz/commit/8c08aebec9485de53d7ba1e2c966fc8e5bc43cc2))
+
 ## [4.2.1](https://github.com/logicalclocks/quartz/compare/v4.2.0...v4.2.1) (2024-04-04)
 
 # [4.2.0](https://github.com/logicalclocks/quartz/compare/v4.1.7...v4.2.0) (2024-03-06)
