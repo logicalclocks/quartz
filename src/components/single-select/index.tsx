@@ -28,6 +28,7 @@ export interface SingleSelectOption extends OptionBase {
   value: string | undefined;
   additionalText?: string;
   additionalComponent?: React.ReactNode;
+  isDisabled?: boolean;
 }
 
 type ParentProps = Pick<PublicBaseSelectProps, 'menuPlacement'>;
@@ -245,6 +246,14 @@ const chakraStyles = ({
   menu: R.mergeLeft({
     my: 0,
     py: 0,
+  }),
+  clearIndicator: R.mergeLeft({
+    m: 0,
+    mr: '-8px',
+    fontSize: '8px',
+  }),
+  dropdownIndicator: R.mergeLeft({
+    mx: '5px',
   }),
 });
 
