@@ -247,6 +247,14 @@ const chakraStyles = ({
     my: 0,
     py: 0,
   }),
+  clearIndicator: R.mergeLeft({
+    m: 0,
+    mr: '-8px',
+    fontSize: '8px',
+  }),
+  dropdownIndicator: R.mergeLeft({
+    mx: '5px',
+  }),
 });
 
 const SingleValue = ({ children, ...props }: any) => {

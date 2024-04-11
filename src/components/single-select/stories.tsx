@@ -96,9 +96,8 @@ const customOptions = [
   },
   {
     value: '5',
-    label: 'fiveeeeeeeeeeeeeeeeee',
+    label: 'fiveeeeeeeeeeeeeeeeee very long text',
     additionalText: 'add_five',
-    isDisabled: true,
   },
 ];
 
