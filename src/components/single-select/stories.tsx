@@ -76,6 +76,7 @@ const customOptions = [
     label: 'One',
     additionalText: 'add_one',
     additionalComponent: <Value>text</Value>,
+    isDisabled: true,
   },
   {
     value: '2',
@@ -92,6 +93,12 @@ const customOptions = [
     label: 'Four',
     additionalText: 'add_four',
     additionalComponent: <Value>text</Value>,
+  },
+  {
+    value: '5',
+    label: 'fiveeeeeeeeeeeeeeeeee',
+    additionalText: 'add_five',
+    isDisabled: true,
   },
 ];
 

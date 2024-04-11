@@ -28,6 +28,7 @@ export interface SingleSelectOption extends OptionBase {
   value: string | undefined;
   additionalText?: string;
   additionalComponent?: React.ReactNode;
+  isDisabled?: boolean;
 }
 
 type ParentProps = Pick<PublicBaseSelectProps, 'menuPlacement'>;
@@ -283,7 +284,7 @@ const MenuList = ({ children, ...props }: any) => {
   );
 };
 
-const Option = ({ children, ...props }: any) => {
+const Option = ({ children, disabled, ...props }: any) => {
   return (
     <chakraComponents.Option {...props} background="red">
       <Flex w="full" gap={2}>
