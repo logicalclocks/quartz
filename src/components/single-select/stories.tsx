@@ -47,7 +47,7 @@ const meta: Meta<typeof SingleSelect> = {
       },
       description: 'Select intent (error border)',
     },
-    disabled: {
+    isDisabled: {
       control: { type: 'boolean' },
     },
     width: {
@@ -104,6 +104,7 @@ export const Default: StoryObj<typeof SingleSelect> = {
     labelPosition: 'outside',
     noDataMessage: 'no labels',
     isClearable: false,
+    isDisabled: false,
   },
   render: (props) => {
     const [value, setValue] = useState<SingleSelectOption['value']>();
