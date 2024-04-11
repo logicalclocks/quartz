@@ -292,7 +292,7 @@ const MenuList = ({ children, ...props }: any) => {
   );
 };
 
-const Option = ({ children, disabled, ...props }: any) => {
+const Option = ({ children, ...props }: any) => {
   return (
     <chakraComponents.Option {...props} background="red">
       <Flex w="full" gap={2}>
