@@ -1,3 +1,10 @@
+# [4.4.0](https://github.com/logicalclocks/quartz/compare/v4.3.1...v4.4.0) (2024-04-11)
+
+
+### Features
+
+* **datepicker:** update react-datepicker `v6.1.0` => `v6.3.0` ([#618](https://github.com/logicalclocks/quartz/issues/618)) ([f6b1469](https://github.com/logicalclocks/quartz/commit/f6b14692b78515a1bd68d2d2ca372d1af03658e2))
+
 ## [4.3.1](https://github.com/logicalclocks/quartz/compare/v4.3.0...v4.3.1) (2024-04-11)
 
 # [4.3.0](https://github.com/logicalclocks/quartz/compare/v4.2.1...v4.3.0) (2024-04-08)
