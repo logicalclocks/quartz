@@ -45,8 +45,8 @@ dependencies:
     specifier: ^8.12.0
     version: 8.12.0(react-dom@18.2.0)(react@18.2.0)
   '@uiw/codemirror-extensions-langs':
-    specifier: ^4.21.22
-    version: 4.21.22(@codemirror/autocomplete@6.12.0)(@codemirror/language-data@6.3.1)(@codemirror/language@6.9.2)(@codemirror/legacy-modes@6.3.2)(@codemirror/state@6.2.1)(@codemirror/view@6.22.0)(@lezer/common@1.1.1)(@lezer/highlight@1.1.6)(@lezer/javascript@1.4.4)(@lezer/lr@1.3.14)
+    specifier: ^4.21.25
+    version: 4.21.25(@codemirror/autocomplete@6.12.0)(@codemirror/language-data@6.3.1)(@codemirror/language@6.9.2)(@codemirror/legacy-modes@6.3.2)(@codemirror/state@6.2.1)(@codemirror/view@6.22.0)(@lezer/common@1.1.1)(@lezer/highlight@1.1.6)(@lezer/javascript@1.4.4)(@lezer/lr@1.3.14)
   '@uiw/codemirror-theme-darcula':
     specifier: ^4.21.24
     version: 4.21.24(@codemirror/language@6.9.2)(@codemirror/state@6.2.1)(@codemirror/view@6.22.0)
@@ -7512,8 +7512,8 @@ packages:
       '@codemirror/view': 6.22.0
     dev: false
 
-  /@uiw/codemirror-extensions-langs@4.21.22(@codemirror/autocomplete@6.12.0)(@codemirror/language-data@6.3.1)(@codemirror/language@6.9.2)(@codemirror/legacy-modes@6.3.2)(@codemirror/state@6.2.1)(@codemirror/view@6.22.0)(@lezer/common@1.1.1)(@lezer/highlight@1.1.6)(@lezer/javascript@1.4.4)(@lezer/lr@1.3.14):
-    resolution: {integrity: sha512-1yY5ruwjCShF7Qx1t22lkjxHRXE1DTsY4ecNggA4O5ZKzw/MA/rfVtnQIavs6BZ/m+yBiqyuOa8OW5h4YU5siQ==}
+  /@uiw/codemirror-extensions-langs@4.21.25(@codemirror/autocomplete@6.12.0)(@codemirror/language-data@6.3.1)(@codemirror/language@6.9.2)(@codemirror/legacy-modes@6.3.2)(@codemirror/state@6.2.1)(@codemirror/view@6.22.0)(@lezer/common@1.1.1)(@lezer/highlight@1.1.6)(@lezer/javascript@1.4.4)(@lezer/lr@1.3.14):
+    resolution: {integrity: sha512-d+lJnY1pXC+dyhIZkTfsKtiizrtoWSDgSfT+OfvZC6Ga3IodEx0MtHi3MFA0P5xnReTqaKQebmwV87NPRxjHPg==}
     peerDependencies:
       '@codemirror/language-data': '>=6.0.0'
       '@codemirror/legacy-modes': '>=6.0.0'
