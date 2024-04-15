@@ -96,7 +96,7 @@
     "@storybook/jest": "^0.2.3",
     "@storybook/node-logger": "^7.6.17",
     "@storybook/react": "^7.6.17",
-    "@storybook/react-vite": "^7.6.17",
+    "@storybook/react-vite": "^8.0.8",
     "@storybook/test-runner": "^0.17.0",
     "@storybook/testing-library": "^0.2.2",
     "@storybook/theming": "^7.6.17",
