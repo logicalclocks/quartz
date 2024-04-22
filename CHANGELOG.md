@@ -1,3 +1,10 @@
+# [4.6.0](https://github.com/logicalclocks/quartz/compare/v4.5.0...v4.6.0) (2024-04-22)
+
+
+### Features
+
+* **icon:** Add refresh circle icon ([#626](https://github.com/logicalclocks/quartz/issues/626)) ([2bc3100](https://github.com/logicalclocks/quartz/commit/2bc3100782a174eb275da695935bc2fe77d0b0a6))
+
 # [4.5.0](https://github.com/logicalclocks/quartz/compare/v4.4.4...v4.5.0) (2024-04-22)
 
 
