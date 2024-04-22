@@ -78,11 +78,20 @@ const Pagination = ({
       sx={{ ...styles, ...props.sx }}
     >
       <IconButton
+        icon={IconName.arrow_left_double}
+        intent="ghost-white"
+        tooltip="first page"
+        disabled={disabled || currentPage <= 1}
+        onClick={() => onChange(1)}
+        mr="2px"
+      />
+      <IconButton
         icon={IconName.arrow_left}
         intent="ghost-white"
         tooltip="prev page"
         disabled={disabled || currentPage <= 1}
         onClick={handlePageClick(-1)}
+        mr="2px"
       />
 
       <Tooltip
@@ -120,6 +129,14 @@ const Pagination = ({
         tooltip="next page"
         disabled={disabled || currentPage >= totalPages}
         onClick={handlePageClick()}
+      />
+      <IconButton
+        icon={IconName.arrow_right_double}
+        intent="ghost-white"
+        tooltip="last page"
+        disabled={disabled || currentPage >= totalPages}
+        onClick={() => onChange(totalPages)}
+        ml="2px"
       />
     </Flex>
   );
