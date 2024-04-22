@@ -1,3 +1,10 @@
+# [4.5.0](https://github.com/logicalclocks/quartz/compare/v4.4.4...v4.5.0) (2024-04-22)
+
+
+### Features
+
+* **pagination:** Add double arrow left and right to pagination ([#625](https://github.com/logicalclocks/quartz/issues/625)) ([4df4344](https://github.com/logicalclocks/quartz/commit/4df434430fbdbc5cfc062fa40cdf59c388804535))
+
 ## [4.4.4](https://github.com/logicalclocks/quartz/compare/v4.4.3...v4.4.4) (2024-04-16)
 
 ## [4.4.3](https://github.com/logicalclocks/quartz/compare/v4.4.2...v4.4.3) (2024-04-11)
