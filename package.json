@@ -66,7 +66,7 @@
     "@styled-system/css": "^5.1.5",
     "@tanem/react-nprogress": "^5.0.51",
     "@tanstack/react-table": "^8.16.0",
-    "@uiw/codemirror-extensions-langs": "^4.21.22",
+    "@uiw/codemirror-extensions-langs": "^4.22.0",
     "@uiw/codemirror-theme-darcula": "^4.21.24",
     "@uiw/react-codemirror": "^4.21.22",
     "chakra-react-select": "^4.7.6",
