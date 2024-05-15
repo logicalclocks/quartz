@@ -59,9 +59,9 @@ const meta: Meta<typeof Input> = {
       description: 'Input intent (error border)',
     },
     type: {
+      options: ['textarea', 'text', 'number', 'password'],
       control: {
         type: 'select',
-        options: ['textarea', 'text', 'number'],
       },
       required: false,
     },
