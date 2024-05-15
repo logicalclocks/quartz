@@ -1,3 +1,10 @@
+# [4.7.0](https://github.com/logicalclocks/quartz/compare/v4.6.1...v4.7.0) (2024-05-15)
+
+
+### Features
+
+* **input:** show eye icon if input type is password ([#632](https://github.com/logicalclocks/quartz/issues/632)) ([4a4a6a7](https://github.com/logicalclocks/quartz/commit/4a4a6a7e7e79a6a4e7fadbf7e51b2960d69bc656))
+
 ## [4.6.1](https://github.com/logicalclocks/quartz/compare/v4.6.0...v4.6.1) (2024-05-15)
 
 # [4.6.0](https://github.com/logicalclocks/quartz/compare/v4.5.0...v4.6.0) (2024-04-22)
