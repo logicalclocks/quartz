@@ -29,6 +29,8 @@ const getStyles = (intent: Intents, isTextArea: boolean): SxStyleProp => ({
   ...(isTextArea && { resize: 'vertical' }),
 });
 
+export default getStyles;
+
 export const getIconStyle = {
   left: '8px',
   position: 'absolute',
@@ -36,4 +38,30 @@ export const getIconStyle = {
   fontSize: '14px',
 };
 
-export default getStyles;
+export const passwordStyles = (isShow: boolean, disabled: boolean) => ({
+  border: 'none',
+  right: '5px',
+  position: 'absolute',
+  top: '16px',
+  transform: 'translateY(-50%)',
+  fontSize: '14px',
+  userSelect: 'none',
+
+  cursor: 'pointer',
+
+  div: {
+    ': hover': {
+      backgroundColor: 'grayShade2',
+    },
+    height: '25px',
+    border: 'none',
+    backgroundColor: 'grayShade3',
+
+    svg: {
+      path: {
+        // eslint-disable-next-line no-nested-ternary
+        fill: disabled ? 'gray' : isShow ? 'primary' : 'black',
+      },
+    },
+  },
+});
