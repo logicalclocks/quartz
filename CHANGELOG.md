@@ -1,3 +1,10 @@
+# [4.8.0](https://github.com/logicalclocks/quartz/compare/v4.7.0...v4.8.0) (2024-05-21)
+
+
+### Features
+
+* **card:** set default value of `withoutShadow` to `true`([#638](https://github.com/logicalclocks/quartz/issues/638)) ([70c59da](https://github.com/logicalclocks/quartz/commit/70c59da47ce8101699822d411f466c5ce88c5084))
+
 # [4.7.0](https://github.com/logicalclocks/quartz/compare/v4.6.1...v4.7.0) (2024-05-15)
 
 
