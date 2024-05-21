@@ -27,7 +27,7 @@ const Card = ({
   maxHeight,
   readOnly,
   contentProps,
-  withoutShadow = false,
+  withoutShadow = true,
   expandable = false,
   ...props
 }: CardProps) => {
