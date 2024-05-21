@@ -150,7 +150,7 @@
     "access": "public",
     "registry": "https://npm.pkg.github.com"
   },
-  "packageManager": "pnpm@9.0.0",
+  "packageManager": "pnpm@9.1.2",
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
