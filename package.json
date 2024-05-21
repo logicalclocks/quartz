@@ -94,7 +94,7 @@
     "@storybook/csf-tools": "^7.6.17",
     "@storybook/instrumenter": "^7.6.17",
     "@storybook/jest": "^0.2.3",
-    "@storybook/node-logger": "^7.6.17",
+    "@storybook/node-logger": "^8.1.1",
     "@storybook/react": "^7.6.17",
     "@storybook/react-vite": "^7.6.17",
     "@storybook/test-runner": "^0.17.0",
