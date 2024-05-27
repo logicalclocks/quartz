@@ -99,7 +99,7 @@
     "@storybook/react-vite": "^7.6.17",
     "@storybook/test-runner": "^0.17.0",
     "@storybook/testing-library": "^0.2.2",
-    "@storybook/theming": "^7.6.17",
+    "@storybook/theming": "^8.1.4",
     "@storybook/types": "^7.6.17",
     "@types/node": "^20.12.7",
     "@types/ramda": "^0.28.1",
