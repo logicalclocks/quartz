@@ -1,3 +1,10 @@
+## [4.8.2](https://github.com/logicalclocks/quartz/compare/v4.8.1...v4.8.2) (2024-06-24)
+
+
+### Bug Fixes
+
+* **build:** build for es modules after vite 5 ([#657](https://github.com/logicalclocks/quartz/issues/657)) ([123caf4](https://github.com/logicalclocks/quartz/commit/123caf4688292b9287d1c36510e37ea149079e1c))
+
 ## [4.8.1](https://github.com/logicalclocks/quartz/compare/v4.8.0...v4.8.1) (2024-06-24)
 
 # [4.8.0](https://github.com/logicalclocks/quartz/compare/v4.7.0...v4.8.0) (2024-05-21)
