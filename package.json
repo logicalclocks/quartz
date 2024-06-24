@@ -11,17 +11,17 @@
     "url": "https://github.com/logicalclocks/quartz.git"
   },
   "type": "module",
-  "main": "./dist/index.mjs",
-  "module": "./dist/index.mjs",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "source": "src/index.ts",
   "exports": {
     ".": {
-      "import": "./dist/index.mjs",
+      "import": "./dist/index.js",
       "types": "./dist/index.d.ts"
     },
     "./chakra": {
-      "import": "./dist/chakra.mjs",
+      "import": "./dist/chakra.js",
       "types": "./dist/chakra.d.ts"
     }
   },
