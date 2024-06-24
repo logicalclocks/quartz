@@ -93,7 +93,7 @@
     "@storybook/addon-links": "^7.6.20",
     "@storybook/core-common": "^7.6.20",
     "@storybook/csf-tools": "^7.6.20",
-    "@storybook/instrumenter": "^7.6.20",
+    "@storybook/instrumenter": "^8.1.10",
     "@storybook/jest": "^0.2.3",
     "@storybook/node-logger": "^7.6.20",
     "@storybook/react": "^7.6.20",
