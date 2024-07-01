@@ -90,7 +90,7 @@
     "@storybook/addon-docs": "^7.6.20",
     "@storybook/addon-essentials": "^7.6.20",
     "@storybook/addon-interactions": "^7.6.20",
-    "@storybook/addon-links": "^7.6.20",
+    "@storybook/addon-links": "^8.1.11",
     "@storybook/core-common": "^7.6.20",
     "@storybook/csf-tools": "^7.6.20",
     "@storybook/instrumenter": "^7.6.20",
