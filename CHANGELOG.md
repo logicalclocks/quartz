@@ -1,3 +1,10 @@
+# [4.9.0](https://github.com/logicalclocks/quartz/compare/v4.8.2...v4.9.0) (2024-07-30)
+
+
+### Features
+
+* **editable-select:** add support for grouped options([#662](https://github.com/logicalclocks/quartz/issues/662)) ([a51a291](https://github.com/logicalclocks/quartz/commit/a51a291eb4e9de4840a1071952bbc59b6e3b520a))
+
 ## [4.8.2](https://github.com/logicalclocks/quartz/compare/v4.8.1...v4.8.2) (2024-06-24)
 
 
