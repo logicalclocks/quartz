@@ -130,7 +130,7 @@ export const Single: StoryObj<typeof EditableSelect> = {
     placeholder: 'placeholder',
     noDataMessage: 'no options',
     disabled: false,
-    isMulti: true,
+    isMulti: false,
     value: ['integer'],
     options,
   },
