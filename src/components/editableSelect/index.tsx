@@ -33,6 +33,7 @@ export interface EditableSelectProps
   preventAdding?: boolean;
   variant?: 'primary' | 'white';
   errorMessage?: string;
+  dontModifyOptions?: boolean;
 }
 
 interface Option extends OptionBase {
@@ -53,12 +54,16 @@ const EditableSelect = ({
   variant = 'primary',
   isInvalid,
   errorMessage = '',
+  dontModifyOptions = false,
   ...props
 }: EditableSelectProps) => {
   const isSingle = !isMulti;
   const options = useMemo<Option[]>(
-    () => optionsAsStrings.map(toOption),
-    [optionsAsStrings],
+    () =>
+      dontModifyOptions
+        ? (optionsAsStrings as any)
+        : optionsAsStrings.map(toOption),
+    [dontModifyOptions, optionsAsStrings],
   );
 
   const handleChange = useCallback(
