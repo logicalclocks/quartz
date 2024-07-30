@@ -142,6 +142,10 @@ const EditableSelect = ({
           multiValue: R.mergeLeft({
             bg: variant === 'white' ? 'grayShade3' : 'background',
           }),
+          groupHeading: R.mergeLeft({
+            color: 'gray',
+            bg: 'grayShade3',
+          }),
         }}
         closeMenuOnSelect={isSingle}
         isClearable={isSingle} // removes clear button [X] that clears the whole select
