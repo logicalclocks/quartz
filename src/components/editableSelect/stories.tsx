@@ -176,3 +176,48 @@ export const Single: StoryObj<typeof EditableSelect> = {
     });
   },
 };
+
+export const GroupedSelect: StoryObj<typeof EditableSelect> = {
+  args: {
+    label: 'Label',
+    labelAction: '(optional)',
+    placeholder: 'placeholder',
+    noDataMessage: 'no options',
+    disabled: false,
+    isMulti: true,
+    value: ['integer'],
+    options: [
+      {
+        label: 'label1',
+        options: options.map((value) => ({ value, label: value })),
+      },
+      {
+        label: 'group 2',
+        options: options.map((value) => ({
+          value: `${value} second`,
+          label: `${value} second`,
+        })),
+      },
+    ],
+  },
+  render: ({ value: initialValue, options, ...props }) => {
+    const [value, setValue] = useState<string[]>(initialValue);
+
+    const handleChange = (data: string[]) => {
+      action('onChange')(data);
+      setValue(data);
+    };
+
+    return (
+      <Box minHeight="400px" width="600px">
+        <EditableSelect
+          // isOpen
+          {...props}
+          value={value}
+          options={options}
+          onChange={handleChange}
+        />
+      </Box>
+    );
+  },
+};

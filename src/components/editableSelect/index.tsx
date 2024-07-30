@@ -12,6 +12,7 @@ import {
   OptionBase,
   Select,
   CreatableProps,
+  GroupBase,
 } from 'chakra-react-select';
 import * as R from 'ramda';
 import { useCallback, useMemo } from 'react';
@@ -19,11 +20,14 @@ import Label from '../label';
 import Labeling from '../typography/labeling';
 
 export interface EditableSelectProps
-  extends Omit<CreatableProps<Option, boolean, any>, 'onChange' | 'value'> {
+  extends Omit<
+    CreatableProps<Option, boolean, any>,
+    'onChange' | 'value' | 'options'
+  > {
   label?: string;
   width?: string;
   value: string[];
-  options: string[];
+  options: string[] | GroupBase<Option>[];
   isMulti?: boolean;
   disabled?: boolean;
   placeholder: string;
@@ -56,8 +60,12 @@ const EditableSelect = ({
   ...props
 }: EditableSelectProps) => {
   const isSingle = !isMulti;
-  const options = useMemo<Option[]>(
-    () => optionsAsStrings.map(toOption),
+  const options = useMemo<Option[] | GroupBase<Option>[]>(
+    () =>
+      R.when(
+        (x: any[]) => R.type(x[0]) === 'String',
+        R.map(toOption),
+      )(optionsAsStrings as any) as any,
     [optionsAsStrings],
   );
 
@@ -133,6 +141,10 @@ const EditableSelect = ({
           }),
           multiValue: R.mergeLeft({
             bg: variant === 'white' ? 'grayShade3' : 'background',
+          }),
+          groupHeading: R.mergeLeft({
+            color: 'gray',
+            bg: 'grayShade3',
           }),
         }}
         closeMenuOnSelect={isSingle}
