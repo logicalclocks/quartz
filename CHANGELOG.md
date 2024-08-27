@@ -1,3 +1,10 @@
+# [4.10.0](https://github.com/logicalclocks/quartz/compare/v4.9.0...v4.10.0) (2024-08-27)
+
+
+### Features
+
+* **libs:** update patch and minor version of deprecated packages[#663](https://github.com/logicalclocks/quartz/issues/663)) ([1bb237c](https://github.com/logicalclocks/quartz/commit/1bb237c8f505c2194b6c8e61064bd85bccd2eafb))
+
 # [4.9.0](https://github.com/logicalclocks/quartz/compare/v4.8.2...v4.9.0) (2024-07-30)
 
 
