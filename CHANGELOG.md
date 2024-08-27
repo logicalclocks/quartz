@@ -1,3 +1,5 @@
+## [4.10.1](https://github.com/logicalclocks/quartz/compare/v4.10.0...v4.10.1) (2024-08-27)
+
 # [4.10.0](https://github.com/logicalclocks/quartz/compare/v4.9.0...v4.10.0) (2024-08-27)
 
 
