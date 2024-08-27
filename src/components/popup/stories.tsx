@@ -1,6 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { userEvent, within, screen, waitFor } from '@storybook/testing-library';
-import { expect } from '@storybook/jest';
+import { expect, userEvent, within, screen, waitFor } from '@storybook/test';
 
 import { Box, Button, usePopup } from '../..';
 import Popup from './index';

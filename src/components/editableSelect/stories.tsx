@@ -1,7 +1,6 @@
 import { action } from '@storybook/addon-actions';
-import { expect } from '@storybook/jest';
+import { expect, userEvent, within } from '@storybook/test';
 import { Meta, StoryObj } from '@storybook/react';
-import { userEvent, within } from '@storybook/testing-library';
 import { useState } from 'react';
 
 import { Box } from '../../index';
