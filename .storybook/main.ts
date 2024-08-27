@@ -16,19 +16,30 @@ const config: StorybookConfig = {
           : [],
     });
   },
+
   stories: [
     '../src/**/*/stories.@(ts|tsx)',
     '../src/**/*.stories.@(js|jsx|ts|tsx)',
   ],
+
   addons: [
     '@storybook/addon-links',
     '@storybook/addon-essentials',
     '@storybook/addon-interactions',
     'storybook-dark-mode',
+    '@chromatic-com/storybook',
   ],
+
+  core: {
+    builder: '@storybook/builder-vite',
+  },
+
   framework: '@storybook/react-vite',
-  docs: {
-    autodocs: true,
+
+  docs: {},
+
+  typescript: {
+    reactDocgen: 'react-docgen-typescript',
   },
 };
 export default config;

@@ -8,16 +8,10 @@ import { ChakraThemeProvider } from '../src/chakra';
 import ThemeProvider from '../src/theme/ThemeProvider';
 
 export const parameters = {
-  actions: { argTypesRegex: '^on[A-Z].*' },
   layout: 'centered',
   controls: { expanded: true },
   docs: {
-    container: (props) => (
-      <DocsContainer
-        {...props}
-        theme={useDarkMode() ? themes.dark : themes.light}
-      />
-    ),
+    container: DocsContainer,
   },
   darkMode: {
     dark: themes.dark,
@@ -38,3 +32,4 @@ export const decorators = [
     </>
   ),
 ];
+export const tags = ['autodocs'];
