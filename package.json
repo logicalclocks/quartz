@@ -1,7 +1,7 @@
 {
   "homepage": "https://github.com/logicalclocks/quartz",
   "name": "@logicalclocks/quartz",
-  "version": "2.13.3",
+  "version": "4.10.5",
   "description": "Logical Clocks Design System Library",
   "author": "logicalclocks",
   "license": "MIT",
@@ -141,7 +141,6 @@
     "vite-plugin-dts": "^3.9.1",
     "vite-plugin-svgr": "^4.2.0",
     "vite-plugin-turbosnap": "^1.0.3",
-    "wait-on": "^7.2.0",
     "yalc": "1.0.0-pre.53"
   },
   "files": [
