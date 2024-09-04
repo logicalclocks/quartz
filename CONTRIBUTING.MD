@@ -8,7 +8,7 @@ Our commits rely on [conventional commits](https://www.conventionalcommits.org/e
 
 Releases are tied to the commit messages via [semantic-release](https://github.com/semantic-release/semantic-release).
 
-Any commit(a PR merge) into `dev`, which is our main branch, is published to NPM under the [`@logicalclocks/quartz` package](https://www.npmjs.com/package/@logicalclocks/quartz).
+Any commit(a PR merge) into `dev`, which is our main branch, is published to Github.
 
 ## Commit rules
 
@@ -44,7 +44,7 @@ The `footer` is optional. The [Commit Message Footer](#commit-footer) format des
   │       │             │
   │       │             └─⫸ Summary in present tense. Not capitalized. No period at the end.
   │       │
-  │       └─⫸ Commit Scope: animations|bazel|benchpress|common|compiler|compiler-cli|core|
+  │       └─⫸ Commit Scope: component|animations|bazel|benchpress|common|compiler|compiler-cli|core|
   │                          elements|forms|http|language-service|localize|platform-browser|
   │                          platform-browser-dynamic|platform-server|router|service-worker|
   │                          upgrade|zone.js|packaging|changelog|docs-infra|migrations|ngcc|ve|
@@ -71,7 +71,7 @@ Must be one of the following:
 
 
 ##### Scope
-The scope should be the name of the npm package affected (as perceived by the person reading the changelog generated from commit messages).
+The scope should be the name of the npm package or component affected (as perceived by the person reading the changelog generated from commit messages).
 
 The following is the list of supported scopes:
 
@@ -116,6 +116,8 @@ We no longer need to specify `width` by hand.
 ## Releases:
 
 - if the commit header has `feat`, we do a minor release(1.**2**.0)
+
+- if the commit header has `break`, we do a major release(**2**.0.0)
 
 - everything else produces a patch(1.1.**2**)
 
