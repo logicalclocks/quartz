@@ -82,7 +82,7 @@
     "@chromatic-com/storybook": "^1.8.0",
     "@playwright/experimental-ct-react": "^1.46.1",
     "@semantic-release/changelog": "^6.0.3",
-    "@semantic-release/commit-analyzer": "^11.1.0",
+    "@semantic-release/commit-analyzer": "^13.0.0",
     "@semantic-release/git": "^10.0.1",
     "@semantic-release/github": "^10.3.0",
     "@semantic-release/npm": "^11.0.3",
