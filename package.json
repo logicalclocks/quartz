@@ -80,7 +80,7 @@
   "devDependencies": {
     "@chakra-ui/cli": "^2.4.1",
     "@chromatic-com/storybook": "^1.8.0",
-    "@playwright/experimental-ct-react": "^1.46.1",
+    "@playwright/experimental-ct-react": "^1.47.2",
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/commit-analyzer": "^11.1.0",
     "@semantic-release/git": "^10.0.1",
