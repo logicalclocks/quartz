@@ -138,7 +138,7 @@
     "typescript": "^5.5.4",
     "vite": "^5.4.2",
     "vite-plugin-css-injected-by-js": "^3.5.1",
-    "vite-plugin-dts": "^3.9.1",
+    "vite-plugin-dts": "^4.2.3",
     "vite-plugin-svgr": "^4.2.0",
     "vite-plugin-turbosnap": "^1.0.3",
     "yalc": "1.0.0-pre.53"
