@@ -159,7 +159,15 @@ export {
   List,
   ListItem,
   Pagination,
+  /**
+   * @deprecated
+   * use EditableSelect or SingleSelect
+   */
   Select,
+  /**
+   * @deprecated
+   * use EditableSelect or SingleSelect
+   */
   Select2,
   EditableSelect,
   ThemeProvider,
