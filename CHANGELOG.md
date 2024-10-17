@@ -1,3 +1,10 @@
+# [4.11.0](https://github.com/logicalclocks/quartz/compare/v4.10.5...v4.11.0) (2024-10-17)
+
+
+### Features
+
+* **icon:** Add menu, attachment and new chat icons ([#686](https://github.com/logicalclocks/quartz/issues/686)) ([648a556](https://github.com/logicalclocks/quartz/commit/648a5560cabcc073a690ceeda034753d3ebe7ee5))
+
 ## [4.10.5](https://github.com/logicalclocks/quartz/compare/v4.10.4...v4.10.5) (2024-09-03)
 
 ## [4.10.4](https://github.com/logicalclocks/quartz/compare/v4.10.3...v4.10.4) (2024-09-03)
