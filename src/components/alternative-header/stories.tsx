@@ -2,6 +2,7 @@ import { Meta, StoryObj } from '@storybook/react';
 import { useMemo, useState } from 'react';
 import { Box } from 'rebass';
 import { AlternativeHeader } from './index';
+import TooltipPositions from '../tooltip/positions';
 
 const meta: Meta<typeof AlternativeHeader> = {
   title: 'AlternativeHeader',
@@ -32,9 +33,14 @@ export const Default: Story = {
           onClick: () => setActive('another tab'),
         },
         {
-          title: 'one more tab',
+          title: 'one more tabss',
           isActive: active === 'one more tab',
           onClick: () => setActive('one more tab'),
+          disabled: true,
+          tooltipProps: {
+            mainText: 'this is disabled due to',
+            position: TooltipPositions.right,
+          },
         },
       ],
       [active],

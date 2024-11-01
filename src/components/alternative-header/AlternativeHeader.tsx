@@ -2,12 +2,17 @@ import React, { useMemo } from 'react';
 import { Box, BoxProps, Flex } from 'rebass';
 import Value from '../typography/value';
 import * as S from './styles';
+import Tooltip, { TooltipProps } from '../tooltip';
 
 export interface Tab {
   /** Title for the tab */
   title: string;
   /** Additional content, e.g. counter */
   altContent?: React.ReactElement | null;
+  /** tooltip props on tab */
+  tooltipProps?: Omit<TooltipProps, 'children'>;
+  /** Whether tab is active or not */
+  disabled?: boolean;
   /** Whether tab is active or not */
   isActive: boolean;
   /** Handler called when tab is clicked */
@@ -56,10 +61,17 @@ export const AlternativeHeader = ({
             <Box
               onClick={tab.onClick}
               key={tab.title}
-              sx={S.tab(activeTabIndex === index)}
+              sx={S.tab(activeTabIndex === index, tab.disabled)}
             >
               <Flex alignItems="baseline" pb="10px">
-                <Value fontFamily="Inter">{tab.title}</Value>
+                <Tooltip {...tab.tooltipProps}>
+                  <Value
+                    fontFamily="Inter"
+                    color={tab.disabled ? 'gray' : 'black'}
+                  >
+                    {tab.title}
+                  </Value>
+                </Tooltip>
                 {React.isValidElement(tab.altContent) && (
                   <Flex ml="10px">
                     <Flex

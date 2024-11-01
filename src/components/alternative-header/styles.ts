@@ -1,6 +1,6 @@
 import { SxStyleProp } from 'rebass';
 
-export const tab = (active: boolean) => ({
+export const tab = (active: boolean, disabled?: boolean) => ({
   cursor: 'pointer',
 
   textAlign: 'center',
@@ -24,6 +24,14 @@ export const tab = (active: boolean) => ({
     borderBottom: '2px solid',
     borderBottomColor: 'grayShade1',
   },
+  ...(disabled && {
+    ':after': {
+      display: 'none',
+    },
+    cursor: 'default !important',
+    border: 'none !important',
+    color: 'red !important',
+  }),
 });
 
 export const wrapper = (topContent: boolean) =>
