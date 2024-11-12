@@ -1,3 +1,10 @@
+# [4.13.0](https://github.com/logicalclocks/quartz/compare/v4.12.0...v4.13.0) (2024-11-12)
+
+
+### Features
+
+* **icon:** add rstudio logo ([#697](https://github.com/logicalclocks/quartz/issues/697)) ([1a0d029](https://github.com/logicalclocks/quartz/commit/1a0d029d53e9a0b6d1618b65af15e5475ce07a66))
+
 # [4.12.0](https://github.com/logicalclocks/quartz/compare/v4.11.1...v4.12.0) (2024-11-01)
 
 
