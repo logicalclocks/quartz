@@ -132,8 +132,8 @@ importers:
         specifier: ^8.4.0
         version: 8.4.0(storybook@8.4.0(prettier@3.3.3))
       '@storybook/node-logger':
-        specifier: ^8.4.0
-        version: 8.4.0(storybook@8.4.0(prettier@3.3.3))
+        specifier: ^8.4.6
+        version: 8.4.6(storybook@8.4.0(prettier@3.3.3))
       '@storybook/react':
         specifier: ^8.4.0
         version: 8.4.0(@storybook/test@8.4.0(storybook@8.4.0(prettier@3.3.3)))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(storybook@8.4.0(prettier@3.3.3))(typescript@5.6.3)
@@ -1890,10 +1890,10 @@ packages:
     peerDependencies:
       storybook: ^8.4.0
 
-  '@storybook/node-logger@8.4.0':
-    resolution: {integrity: sha512-X/VInfndMzFco5of+4I3iqPxOT1oCoe3Rx3XMWenTq0LS9ewWwIvvTC5UML8dt0n/c0UIS30nWjulyY2f9r1pQ==}
+  '@storybook/node-logger@8.4.6':
+    resolution: {integrity: sha512-MC2UTE+TmlJ7E3Oh2IzVfJLmitbvVgqHLfULWHi9UdvzUvDO6p3p44t+C3v7jRMy8UETtkbrtbUEYPR17gzFpA==}
     peerDependencies:
-      storybook: ^8.4.0
+      storybook: ^8.2.0 || ^8.3.0-0 || ^8.4.0-0 || ^8.5.0-0 || ^8.6.0-0
 
   '@storybook/preview-api@8.4.0':
     resolution: {integrity: sha512-Z9yduQRqzqeV85GEFyaTKtRtg/QYCb89bKhi4xcxY9l7DMAr7/lqpUxqngW5ogiNslusQzct3zI7os6INBlMFg==}
@@ -8457,7 +8457,7 @@ snapshots:
     dependencies:
       storybook: 8.4.0(prettier@3.3.3)
 
-  '@storybook/node-logger@8.4.0(storybook@8.4.0(prettier@3.3.3))':
+  '@storybook/node-logger@8.4.6(storybook@8.4.0(prettier@3.3.3))':
     dependencies:
       storybook: 8.4.0(prettier@3.3.3)
 
