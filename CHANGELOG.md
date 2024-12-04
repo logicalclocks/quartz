@@ -1,3 +1,10 @@
+# [4.14.0](https://github.com/logicalclocks/quartz/compare/v4.13.0...v4.14.0) (2024-12-04)
+
+
+### Features
+
+* **packages:** update outdated packages ([#704](https://github.com/logicalclocks/quartz/issues/704)) ([ac13bd4](https://github.com/logicalclocks/quartz/commit/ac13bd4b0ee9eea834ee0825deb2e7bae6dc60b4))
+
 # [4.13.0](https://github.com/logicalclocks/quartz/compare/v4.12.0...v4.13.0) (2024-11-12)
 
 
