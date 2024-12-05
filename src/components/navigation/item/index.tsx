@@ -123,6 +123,7 @@ const NavigationItem = (props: NavigationItemProps) => {
           }}
           onClick={(e) => e.stopPropagation()}
           to={href}
+          replace={href.includes('#')}
         >
           {component}
         </Link>
