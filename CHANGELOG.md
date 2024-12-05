@@ -1,3 +1,10 @@
+# [4.15.0](https://github.com/logicalclocks/quartz/compare/v4.14.1...v4.15.0) (2024-12-05)
+
+
+### Features
+
+* **navbar:** when clicking on a child in navigation bar we want to replace the history ([#705](https://github.com/logicalclocks/quartz/issues/705)) ([3a5fce4](https://github.com/logicalclocks/quartz/commit/3a5fce4de7766cd2b66bee9ff0640cda15e52a87))
+
 ## [4.14.1](https://github.com/logicalclocks/quartz/compare/v4.14.0...v4.14.1) (2024-12-04)
 
 # [4.14.0](https://github.com/logicalclocks/quartz/compare/v4.13.0...v4.14.0) (2024-12-04)
