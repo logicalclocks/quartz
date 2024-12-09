@@ -123,8 +123,8 @@ importers:
         specifier: ^8.4.6
         version: 8.4.6(storybook@8.4.6(prettier@3.4.2))(vite@5.4.11(@types/node@20.17.9))
       '@storybook/core-common':
-        specifier: ^8.4.6
-        version: 8.4.6(storybook@8.4.6(prettier@3.4.2))
+        specifier: ^8.4.7
+        version: 8.4.7(storybook@8.4.6(prettier@3.4.2))
       '@storybook/csf-tools':
         specifier: ^8.4.6
         version: 8.4.6(storybook@8.4.6(prettier@3.4.2))
@@ -1850,8 +1850,8 @@ packages:
     peerDependencies:
       storybook: ^8.2.0 || ^8.3.0-0 || ^8.4.0-0 || ^8.5.0-0 || ^8.6.0-0
 
-  '@storybook/core-common@8.4.6':
-    resolution: {integrity: sha512-XIst96ikly+k4/NRXbGlt1hKFyCNsgFvQAWgUnDAg9ukIm7Oq4vz2gGUounhxi/U0CXOIpe7qnZoTse8An2GRQ==}
+  '@storybook/core-common@8.4.7':
+    resolution: {integrity: sha512-WgVg9UR/Ye4vnoB0i9pQkJsy47IlerkBaxSHycaxIlg87znrYL1K31a5Os1qUXq+eJbH6Jk70dfUmbRh/UOS6A==}
     peerDependencies:
       storybook: ^8.2.0 || ^8.3.0-0 || ^8.4.0-0 || ^8.5.0-0 || ^8.6.0-0
 
@@ -8402,7 +8402,7 @@ snapshots:
     dependencies:
       storybook: 8.4.6(prettier@3.4.2)
 
-  '@storybook/core-common@8.4.6(storybook@8.4.6(prettier@3.4.2))':
+  '@storybook/core-common@8.4.7(storybook@8.4.6(prettier@3.4.2))':
     dependencies:
       storybook: 8.4.6(prettier@3.4.2)
 
@@ -8517,7 +8517,7 @@ snapshots:
       '@babel/template': 7.25.9
       '@babel/types': 7.26.0
       '@jest/types': 29.6.3
-      '@storybook/core-common': 8.4.6(storybook@8.4.6(prettier@3.4.2))
+      '@storybook/core-common': 8.4.7(storybook@8.4.6(prettier@3.4.2))
       '@storybook/csf': 0.1.12
       '@storybook/csf-tools': 8.4.6(storybook@8.4.6(prettier@3.4.2))
       '@storybook/preview-api': 8.4.6(storybook@8.4.6(prettier@3.4.2))
