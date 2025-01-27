@@ -70,7 +70,7 @@
     "@uiw/codemirror-extensions-langs": "^4.23.6",
     "@uiw/codemirror-theme-darcula": "^4.23.6",
     "@uiw/react-codemirror": "^4.23.6",
-    "chakra-react-select": "^4.10.1",
+    "chakra-react-select": "^5.0.4",
     "date-fns": "^3.6.0",
     "emotion-theming": "^10.3.0",
     "ramda": "^0.28.0",
