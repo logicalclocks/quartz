@@ -93,7 +93,7 @@
     "@storybook/addon-interactions": "^8.4.6",
     "@storybook/addon-links": "^8.4.6",
     "@storybook/builder-vite": "^8.4.6",
-    "@storybook/core-common": "^8.4.6",
+    "@storybook/core-common": "^8.5.3",
     "@storybook/csf-tools": "^8.4.6",
     "@storybook/instrumenter": "^8.4.6",
     "@storybook/node-logger": "^8.4.6",
