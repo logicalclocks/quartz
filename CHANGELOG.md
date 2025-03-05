@@ -1,3 +1,10 @@
+# [4.16.0](https://github.com/logicalclocks/quartz/compare/v4.15.1...v4.16.0) (2025-03-05)
+
+
+### Features
+
+* **icon:** Add cloud and kafka icons ([#726](https://github.com/logicalclocks/quartz/issues/726)) ([aeb0f34](https://github.com/logicalclocks/quartz/commit/aeb0f34e6df3a9065b201410058c56b0ed981e36))
+
 ## [4.15.1](https://github.com/logicalclocks/quartz/compare/v4.15.0...v4.15.1) (2024-12-05)
 
 # [4.15.0](https://github.com/logicalclocks/quartz/compare/v4.14.1...v4.15.0) (2024-12-05)
