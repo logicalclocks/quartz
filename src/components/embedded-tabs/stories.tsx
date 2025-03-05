@@ -76,7 +76,7 @@ export const Controlled: Story = {
         />
         <Box mt={3}>
           <Labeling bold>
-            This component is controlled. Active tab: {tabs[activeTab].title}{' '}
+            This component is controlled. Active tab: {tabs[activeTab].title}
           </Labeling>
           <Flex mt={2} sx={{ gap: '10px' }}>
             <Button onClick={() => setActiveTab(2)}>Jump to Statistics</Button>
