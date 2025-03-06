@@ -1,3 +1,10 @@
+# [4.17.0](https://github.com/logicalclocks/quartz/compare/v4.16.0...v4.17.0) (2025-03-06)
+
+
+### Features
+
+* **stickysummary:** add support for ternary button in sticky summary component ([#728](https://github.com/logicalclocks/quartz/issues/728)) ([d51dd25](https://github.com/logicalclocks/quartz/commit/d51dd25982a823de1544c322a41d18b8ad6379b4))
+
 # [4.16.0](https://github.com/logicalclocks/quartz/compare/v4.15.1...v4.16.0) (2025-03-05)
 
 
