@@ -6,4 +6,5 @@ export const boxStyles = {
 export const boxButtonStyles = {
   justifyContent: 'space-between',
   alignItems: 'center',
+  gap: '20px',
 };

@@ -12,6 +12,7 @@ export interface StickySummaryProps {
   secondValue?: string;
   mainButton: React.ReactNode;
   secondaryButton?: React.ReactNode;
+  ternaryButton?: React.ReactNode;
   errorsValue?: string;
   hasScrollOnScreen?: boolean;
 }
@@ -22,6 +23,7 @@ const StickySummary = ({
   secondValue,
   mainButton,
   secondaryButton,
+  ternaryButton,
   hasScrollOnScreen = true,
   errorsValue,
   ...props
@@ -47,7 +49,8 @@ const StickySummary = ({
     </Flex>
     <Flex sx={{ ...boxButtonStyles }}>
       {secondaryButton && <Box>{secondaryButton}</Box>}
-      <Box ml="20px">{mainButton}</Box>
+      {ternaryButton && <Box>{ternaryButton}</Box>}
+      <Box>{mainButton}</Box>
     </Flex>
   </FormSummaryContainer>
 );
