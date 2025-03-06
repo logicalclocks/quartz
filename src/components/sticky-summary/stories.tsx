@@ -1,11 +1,11 @@
 import { StoryObj, Meta } from '@storybook/react';
 import { Box } from 'rebass';
-import Stickydescription from './index';
+import StickySummary from './index';
 import { Button } from '../button';
 
-const meta: Meta<typeof Stickydescription> = {
-  title: 'Stickydescription',
-  component: Stickydescription,
+const meta: Meta<typeof StickySummary> = {
+  title: 'StickySummary',
+  component: StickySummary,
   argTypes: {
     title: {
       control: {
@@ -48,7 +48,7 @@ const meta: Meta<typeof Stickydescription> = {
 };
 export default meta;
 
-export const Default: StoryObj<typeof Stickydescription> = {
+export const Default: StoryObj<typeof StickySummary> = {
   args: {
     title: 'Title',
     firstValue: 'value 1',
@@ -59,10 +59,11 @@ export const Default: StoryObj<typeof Stickydescription> = {
       </Button>
     ),
     secondaryButton: <Button intent="secondary">secondary</Button>,
+    ternaryButton: <Button intent="secondary">ternary</Button>,
   },
   render: (props) => (
-    <Box width="700px">
-      <Stickydescription {...props} />
+    <Box width="800px" pt="20px">
+      <StickySummary {...props} />
     </Box>
   ),
 };
