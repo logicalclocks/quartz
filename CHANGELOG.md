@@ -1,3 +1,10 @@
+# [4.18.0](https://github.com/logicalclocks/quartz/compare/v4.17.0...v4.18.0) (2025-03-21)
+
+
+### Features
+
+* **icon:** add filled square icon ([#737](https://github.com/logicalclocks/quartz/issues/737)) ([bc74819](https://github.com/logicalclocks/quartz/commit/bc7481920ec1f6e6ad83d9082b557776e821438b))
+
 # [4.17.0](https://github.com/logicalclocks/quartz/compare/v4.16.0...v4.17.0) (2025-03-06)
 
 
