@@ -103,7 +103,9 @@ export function EditableTable2<T>({
                           />
                         )}
                         {flexRender(
-                          header.column.columnDef.header,
+                          (header.column.columnDef as any).HeaderComp
+                            ? (header.column.columnDef as any).HeaderComp()
+                            : header.column.columnDef.header,
                           header.getContext(),
                         )}
                       </Label>
