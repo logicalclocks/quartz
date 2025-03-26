@@ -27,7 +27,7 @@ import { GetIcon, IconName } from '../../icon';
 export interface Props<T>
   extends Omit<TableOptions<T>, 'getCoreRowModel' | 'enablePinning'> {
   updateData?: TableMeta<T>['updateData'];
-  onDeleteRow: (rowIndex: number) => void;
+  onDeleteRow?: (rowIndex: number) => void;
   hasFreezeButton?: boolean;
   actions?: Array<{
     label: string;
@@ -78,7 +78,7 @@ export function EditableTable2<T>({
         <Box as="thead" sx={theadStyles}>
           {table.getHeaderGroups().map((headerGroup) => (
             <Box as="tr" key={headerGroup.id}>
-              <Box as="th" className="table-corner" />
+              {onDeleteRow && <Box as="th" className="table-corner" />}
 
               {headerGroup.headers.map((header) => (
                 <Thead
@@ -136,10 +136,12 @@ export function EditableTable2<T>({
         <Box as="tbody">
           {table.getRowModel().rows.map((row, rowIndex) => (
             <Box key={row.id} as="tr" sx={trowStyles}>
-              <RowLeftContent
-                onDelete={() => onDeleteRow(rowIndex)}
-                index={rowIndex}
-              />
+              {onDeleteRow && (
+                <RowLeftContent
+                  onDelete={() => onDeleteRow(rowIndex)}
+                  index={rowIndex}
+                />
+              )}
               {row.getVisibleCells().map((cell) => (
                 <Box
                   key={cell.id}
