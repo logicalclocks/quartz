@@ -1,3 +1,10 @@
+# [4.19.0](https://github.com/logicalclocks/quartz/compare/v4.18.0...v4.19.0) (2025-03-26)
+
+
+### Features
+
+* **editable-table:** add ability to render customized header + make delete button and row number optional ([#741](https://github.com/logicalclocks/quartz/issues/741)) ([78a3385](https://github.com/logicalclocks/quartz/commit/78a33857af50d72a4727ba2c0dd23d06db26e5b6))
+
 # [4.18.0](https://github.com/logicalclocks/quartz/compare/v4.17.0...v4.18.0) (2025-03-21)
 
 
