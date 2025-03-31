@@ -101,7 +101,7 @@
     "@storybook/react-vite": "^8.6.3",
     "@storybook/test": "^8.6.3",
     "@storybook/test-runner": "^0.19.1",
-    "@storybook/theming": "^8.6.3",
+    "@storybook/theming": "^8.6.11",
     "@storybook/types": "^8.6.3",
     "@types/node": "^20.17.23",
     "@types/ramda": "^0.28.25",
