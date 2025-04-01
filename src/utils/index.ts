@@ -1,8 +1,12 @@
 export const copyToClipboard = async (content: string) => {
   // Navigator clipboard api needs a secure context (https)
   if (navigator.clipboard && window.isSecureContext) {
-    await navigator.clipboard.writeText(content);
-    return true;
+    try {
+      await navigator.clipboard.writeText(content);
+      return true;
+    } catch {
+      // continue
+    }
   }
   // Use the 'out of viewport hidden text area' trick
   const textArea = document.createElement('textarea');
