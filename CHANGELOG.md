@@ -1,3 +1,10 @@
+## [4.19.1](https://github.com/logicalclocks/quartz/compare/v4.19.0...v4.19.1) (2025-04-01)
+
+
+### Bug Fixes
+
+* **codecomponent:** fix copying to the clipboard ([#745](https://github.com/logicalclocks/quartz/issues/745)) ([d51c2d0](https://github.com/logicalclocks/quartz/commit/d51c2d0e21ea6671250ad32e8d19bb0002dec7eb))
+
 # [4.19.0](https://github.com/logicalclocks/quartz/compare/v4.18.0...v4.19.0) (2025-03-26)
 
 
