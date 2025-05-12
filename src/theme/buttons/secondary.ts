@@ -6,7 +6,7 @@ export default {
   borderStyle: 'solid',
   borderColor: 'grayShade2',
 
-  boxShadow: 'secondary',
+  // Removed boxShadow property
 
   ':hover': {
     bg: 'primaryShade2',

@@ -5,7 +5,7 @@ export default {
 
   borderColor: 'grayShade2',
 
-  boxShadow: 'secondary',
+  // Removed boxShadow property
 
   ':hover': {
     bg: 'labels.redShade2',
