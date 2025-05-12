@@ -9,7 +9,7 @@ export const wrapper = {
   py: '8px',
   px: '15px',
 
-  borderRadius: 0,
+  borderRadius: '1px',
   boxSizing: 'border-box',
 
   fontFamily: 'label',

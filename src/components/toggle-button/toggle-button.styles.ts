@@ -10,7 +10,7 @@ export default {
 
     borderWidth: '1px',
     borderStyle: 'solid',
-    borderRadius: 0,
+    borderRadius: '1px',
 
     transition: 'all 0.25s ease',
 
