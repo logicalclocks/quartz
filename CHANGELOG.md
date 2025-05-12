@@ -1,3 +1,10 @@
+## [4.19.2](https://github.com/logicalclocks/quartz/compare/v4.19.1...v4.19.2) (2025-05-12)
+
+
+### Bug Fixes
+
+* removed drop shadow on main button variants & added a pixel for border radius ([#753](https://github.com/logicalclocks/quartz/issues/753)) ([5a88eab](https://github.com/logicalclocks/quartz/commit/5a88eab12100a450686fdc122b6cd2596ebc6c9f))
+
 ## [4.19.1](https://github.com/logicalclocks/quartz/compare/v4.19.0...v4.19.1) (2025-04-01)
 
 
