@@ -9,4 +9,5 @@ export default {
   borderWidth: '1px',
   borderStyle: 'solid',
   boxSizing: 'border-box',
+  borderRadius: '1px',
 } as SxStyleProp;

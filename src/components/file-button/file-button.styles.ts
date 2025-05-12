@@ -12,7 +12,7 @@ export const fileButton = {
 
   cursor: 'pointer',
 
-  borderRadius: 0,
+  borderRadius: '1px',
   boxSizing: 'border-box',
 
   fontFamily: 'label',

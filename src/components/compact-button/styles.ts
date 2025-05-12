@@ -2,7 +2,7 @@ export default {
   default: {
     border: '1px solid',
     borderColor: 'grayShade3',
-    borderRadius: '2px',
+    borderRadius: '1px',
     backgroundColor: 'grayShade3',
     cursor: 'pointer',
     boxShadow: 'none',

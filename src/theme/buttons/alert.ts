@@ -5,7 +5,6 @@ export default {
 
   borderColor: 'grayShade2',
 
-  boxShadow: 'secondary',
 
   ':hover': {
     bg: 'labels.redShade2',

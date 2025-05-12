@@ -5,4 +5,5 @@ export const wrapper = {
 
   height: '32px',
   width: '32px',
+  borderRadius: '1px',
 };

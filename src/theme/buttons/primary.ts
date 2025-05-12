@@ -6,7 +6,6 @@ export default {
   borderStyle: 'solid',
   borderColor: 'primary',
 
-  boxShadow: 'primary',
 
   ':hover': {
     bg: 'primaryShade1',
