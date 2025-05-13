@@ -1,3 +1,10 @@
+## [4.19.3](https://github.com/logicalclocks/quartz/compare/v4.19.2...v4.19.3) (2025-05-13)
+
+
+### Bug Fixes
+
+* **StickySummary:** fix height issuer ([#755](https://github.com/logicalclocks/quartz/issues/755)) ([71961e7](https://github.com/logicalclocks/quartz/commit/71961e75d2921b8d5a8af4287cc6937d93e886e7))
+
 ## [4.19.2](https://github.com/logicalclocks/quartz/compare/v4.19.1...v4.19.2) (2025-05-12)
 
 
