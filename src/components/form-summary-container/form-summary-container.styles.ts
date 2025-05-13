@@ -38,6 +38,7 @@ export default (hasScrollOnScreen: boolean) => {
     justifyContent: 'center',
     alignItems: 'center',
     height: '75px',
+    minHeight: '75px',
     zIndex: 1,
     backgroundColor: 'white',
   } as SxStyleProp;

@@ -9,9 +9,10 @@ export interface FormSummaryContainerProps extends Omit<FlexProps, 'css'> {
 const FormSummaryContainer = ({
   hasScrollOnScreen = true,
   children,
+  sx,
   ...props
 }: FormSummaryContainerProps) => (
-  <Flex sx={{ ...styles(hasScrollOnScreen) }} {...props}>
+  <Flex sx={{ ...styles(hasScrollOnScreen), ...sx }} {...props}>
     <Flex sx={{ ...mainBoxStyles }}>{children}</Flex>
   </Flex>
 );
