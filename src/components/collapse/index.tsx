@@ -37,12 +37,6 @@ const Collapse = ({
   }, [contentRef, containerRef]);
 
   useEffect(() => {
-    if (typeof openChange === 'function') {
-      openChange(isOpen);
-    }
-  }, [openChange, isOpen]);
-
-  useEffect(() => {
     if (isOpen !== isOpenProps) {
       setOpen(isOpenProps);
     }
@@ -51,7 +45,17 @@ const Collapse = ({
 
   return (
     <Box sx={containerStyles} {...props}>
-      <Flex sx={styles(isOpen)} onClick={() => setOpen((state) => !state)}>
+      <Flex
+        sx={styles(isOpen)}
+        onClick={() =>
+          setOpen((state) => {
+            if (openChange) {
+              openChange(!state);
+            }
+            return !state;
+          })
+        }
+      >
         <Flex>
           <Box>
             <GetIcon
@@ -69,7 +73,7 @@ const Collapse = ({
         sx={contentStyles(isOpen, height)}
         {...contentProps}
       >
-        <Flex id="container" ref={contentRef} flexDirection="column">
+        <Flex ref={contentRef} flexDirection="column">
           {children}
         </Flex>
       </Box>
