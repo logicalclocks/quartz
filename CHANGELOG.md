@@ -1,3 +1,10 @@
+## [4.19.4](https://github.com/logicalclocks/quartz/compare/v4.19.3...v4.19.4) (2025-05-14)
+
+
+### Bug Fixes
+
+* **collapse:** remove wrong usage of id - id should be unique ([#756](https://github.com/logicalclocks/quartz/issues/756)) ([e4f3892](https://github.com/logicalclocks/quartz/commit/e4f3892853cac2b282d72ed4c4676d69987f54c0))
+
 ## [4.19.3](https://github.com/logicalclocks/quartz/compare/v4.19.2...v4.19.3) (2025-05-13)
 
 
