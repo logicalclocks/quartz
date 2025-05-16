@@ -16,19 +16,21 @@ export interface ReadOnlyTableProps extends Omit<TableProps, 'value'> {
   initialStaticColumn?: string;
   values: TableCell[][];
   columnHeaders: TableHeader[];
-  actions: Array<{
+  actions?: Array<{
     label: string;
     handler: (column: string) => void;
   }>;
   sx: SxStyleProp;
+  noFreezeAction?: boolean;
 }
 
 const ReadOnlyTable = ({
   initialStaticColumn,
   values,
   columnHeaders,
-  actions,
+  actions = [],
   sx = {},
+  noFreezeAction = false,
 }: ReadOnlyTableProps) => {
   const [hoverColumn, setHoverColumn] = useState<{
     column: string;
@@ -67,12 +69,16 @@ const ReadOnlyTable = ({
               <Thead
                 column={staticColumn}
                 actions={[
-                  {
-                    label: 'unfreeze',
-                    handler: () => {
-                      setStaticColumn(undefined);
-                    },
-                  },
+                  ...(noFreezeAction
+                    ? []
+                    : [
+                        {
+                          label: 'unfreeze',
+                          handler: () => {
+                            setStaticColumn(undefined);
+                          },
+                        },
+                      ]),
                   ...actions,
                 ]}
                 headerRender={(() => {
@@ -103,12 +109,16 @@ const ReadOnlyTable = ({
                     (() => <Label>{header.identifier.name}</Label>)
                   }
                   actions={[
-                    {
-                      label: 'freeze',
-                      handler: (column) => {
-                        setStaticColumn(column);
-                      },
-                    },
+                    ...(noFreezeAction
+                      ? []
+                      : [
+                          {
+                            label: 'freeze',
+                            handler: (column: string) => {
+                              setStaticColumn(column);
+                            },
+                          },
+                        ]),
                     ...actions,
                   ]}
                   className={`${
