@@ -1,3 +1,10 @@
+# [4.20.0](https://github.com/logicalclocks/quartz/compare/v4.19.4...v4.20.0) (2025-05-16)
+
+
+### Features
+
+* **readonly-table:** make actions optional and allow not showing of freeze action ([#757](https://github.com/logicalclocks/quartz/issues/757)) ([c20678a](https://github.com/logicalclocks/quartz/commit/c20678a027208f01832a19f1b724625720c6d71b))
+
 ## [4.19.4](https://github.com/logicalclocks/quartz/compare/v4.19.3...v4.19.4) (2025-05-14)
 
 
