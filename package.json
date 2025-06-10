@@ -45,7 +45,7 @@
     "chromatic": "npx chromatic --project-token chpt_a6f31d991d0cce7",
     "semantic-release": "semantic-release",
     "commit": "cz",
-    "publish-local": "yalc publish --push",
+    "publish-local": "yalc publish --push --private",
     "push-local": "yalc push",
     "serve:storybook:test": "pnpm storybook & pnpm wait-on http://localhost:6006 && pnpm run test-storybook"
   },
