@@ -7,7 +7,7 @@ import Header from './index';
 import MenuButton from './menu-button';
 import { User } from '../user';
 import { GetIcon, IconName } from '../icon';
-import { Default as NavigationStory } from '../navigation/stories';
+import { TreeObject as NavigationStory } from '../navigation/stories';
 
 const meta: Meta<typeof Header> = {
   title: 'Header',
