@@ -1,5 +1,5 @@
 import * as R from 'ramda';
-import React, { useCallback, useContext, useEffect, useMemo } from 'react';
+import React, { useCallback, useContext, useEffect } from 'react';
 import { Box } from 'rebass';
 import { Link } from 'react-router-dom';
 
@@ -47,16 +47,6 @@ const NavigationItem = (props: NavigationItemProps) => {
   const display = children && isActiveItem && isOpen ? 'block' : 'none';
 
   const disableTooltip = !mainTooltipText && !secondaryTooltipText;
-
-  const childs = useMemo(
-    () =>
-      React.Children.map(children, (child) =>
-        React.cloneElement(child as React.ReactElement<NavigationItemProps>, {
-          isSubItem: true,
-        }),
-      ),
-    [children],
-  );
 
   // Handlers
   const handleClick = useCallback(() => {
@@ -131,9 +121,9 @@ const NavigationItem = (props: NavigationItemProps) => {
         component
       )}
       {hasDivider && <div />}
-      {childs && (
+      {children && (
         <Box paddingLeft="33px" as="ul" aria-label="submenu" display={display}>
-          {childs}
+          {children}
         </Box>
       )}
     </Box>

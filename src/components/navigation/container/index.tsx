@@ -1,51 +1,29 @@
 import * as R from 'ramda';
 import { Box, SxStyleProp } from 'rebass';
-import { ReactElement, useMemo, useState } from 'react';
+import { memo, useState } from 'react';
 
-import NavigationItem from '../item';
 import NavigationProvider from '../context/navigation.provider';
-import NavigationCategory, { NavigationCategoryProps } from '../category';
-import { NavigationItemProps, TreeNode } from '../types';
+import { TreeNode } from '../types';
 import styles from './navigation.styles';
-import buildComponentsTree from '../context/buildComponentsTree';
-import buildTree from '../context/buildTree';
-
-type INavigation<P> = React.FC<P> & {
-  Item: React.FC<NavigationItemProps>;
-  Category: React.FC<NavigationCategoryProps>;
-};
+import { TreeItem } from '../context/TreeItem';
 
 export interface NavigationProps {
-  children?: React.ReactNode;
   footer?: React.ReactNode;
   header?: React.ReactNode;
   trackBy?: keyof TreeNode;
-  tree?: TreeNode[];
+  tree: TreeNode[];
   onNavigate?: (node: TreeNode | null) => void;
   onBackCLick?: () => void;
   sx?: SxStyleProp;
 }
 
-const Navigation: INavigation<NavigationProps> = ({
+const Navigation = ({
   footer,
   header,
-  children,
-  tree: propsTree,
+  tree,
   sx = {},
   ...props
-}) => {
-  const tree = useMemo(() => {
-    if (!propsTree) {
-      return buildTree(children as ReactElement<NavigationItemProps>);
-    }
-
-    return propsTree;
-  }, [children, propsTree]);
-
-  const child = useMemo(
-    () => (propsTree ? buildComponentsTree(propsTree) : children),
-    [propsTree, children],
-  );
+}: NavigationProps) => {
   const [activePath, setActivePath] = useState([]);
 
   return (
@@ -57,14 +35,11 @@ const Navigation: INavigation<NavigationProps> = ({
     >
       <NavigationProvider tree={tree} {...props} takeActivePath={setActivePath}>
         {!!header && <div>{header}</div>}
-        <ul>{child}</ul>
+        <TreeItem tree={tree} isFirstLevel />
         {!!footer && <div>{footer}</div>}
       </NavigationProvider>
     </Box>
   );
 };
 
-Navigation.Item = NavigationItem;
-Navigation.Category = NavigationCategory;
-
-export default Navigation;
+export default memo(Navigation);

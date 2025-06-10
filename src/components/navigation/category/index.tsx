@@ -26,7 +26,7 @@ const NavigationCategory = ({
   }, [onBack, title]);
 
   return (
-    <NavigationItem title={title} {...props}>
+    <NavigationItem title={title} {...(props as any)}>
       <Box sx={styles} tx="navigation" variant="category">
         {!hideBack && (
           <div onClick={handleBackClick} role="button" tabIndex={-1}>
