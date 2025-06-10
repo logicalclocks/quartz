@@ -11,13 +11,9 @@ const TreeItemHelper = ({
   isFirstLevel?: boolean;
 }) => {
   if (Array.isArray(tree)) {
-    return (
-      <ul>
-        {tree.map((node: any) => (
-          <TreeItem key={node.id} tree={node} isFirstLevel={isFirstLevel} />
-        ))}
-      </ul>
-    );
+    return tree.map((node: any) => (
+      <TreeItem key={node.id} tree={node} isFirstLevel={isFirstLevel} />
+    ));
   }
 
   if (Array.isArray(tree.children)) {

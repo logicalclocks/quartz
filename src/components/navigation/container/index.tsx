@@ -35,7 +35,9 @@ const Navigation = ({
     >
       <NavigationProvider tree={tree} {...props} takeActivePath={setActivePath}>
         {!!header && <div>{header}</div>}
-        <TreeItem tree={tree} isFirstLevel />
+        <ul>
+          <TreeItem tree={tree} isFirstLevel />
+        </ul>
         {!!footer && <div>{footer}</div>}
       </NavigationProvider>
     </Box>
