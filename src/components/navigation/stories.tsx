@@ -70,34 +70,6 @@ export const Footer = () => {
 
 type Story = StoryObj<typeof Navigation>;
 
-export const Default = () => (
-  <Box height="100vh">
-    <Navigation onNavigate={action('On Navigate')} footer={<Footer />}>
-      <Navigation.Category id="1" title="Home">
-        <Navigation.Item id="2" title="Overview1" />
-      </Navigation.Category>
-      <Navigation.Category id="3" title="Feature Groups">
-        <Navigation.Item id="4" title="Overview">
-          <Navigation.Item id="5" title="Feature List" />
-          <Navigation.Item
-            id="6"
-            title="Schematised Tags"
-            isActive
-            onClick={action('Navigate to')}
-          />
-          <Navigation.Item id="7" title="Running Code" />
-          <Navigation.Item id="8" title="API" />
-        </Navigation.Item>
-        <Navigation.Item id="9" title="Data" />
-        <Navigation.Item id="10" title="Activity" />
-      </Navigation.Category>
-      <Navigation.Item id="11" title="Training Datasets" hasDivider />
-      <Navigation.Item id="12" title="Sources" />
-      <Navigation.Item id="13" title="Jobs" />
-    </Navigation>
-  </Box>
-);
-
 export const TreeObject: Story = {
   render: () => {
     const tree: TreeNode[] = [
@@ -129,6 +101,7 @@ export const TreeObject: Story = {
                 title: 'Feature List',
                 id: '4',
                 icon: <GetIcon icon={IconName.folder} />,
+                isSubItem: true,
               },
               {
                 title: 'Schematised Tags',
@@ -136,15 +109,18 @@ export const TreeObject: Story = {
                 icon: <GetIcon icon={IconName.folder} />,
                 onClick: action('Tags Click'),
                 isActive: true,
+                isSubItem: true,
               },
               {
                 title: 'Running Code',
                 id: '6',
+                isSubItem: true,
               },
               {
                 title: 'API',
                 id: '7',
                 disabled: true,
+                isSubItem: true,
               },
             ],
           },

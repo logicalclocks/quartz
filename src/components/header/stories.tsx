@@ -7,7 +7,6 @@ import Header from './index';
 import MenuButton from './menu-button';
 import { User } from '../user';
 import { GetIcon, IconName } from '../icon';
-import { Default as NavigationStory } from '../navigation/stories';
 
 const meta: Meta<typeof Header> = {
   title: 'Header',
@@ -68,7 +67,6 @@ export const Default: StoryObj<typeof Header> = {
   render: (props) => (
     <Box width="90vw" height="90vh">
       <Header {...props} />
-      <NavigationStory />
     </Box>
   ),
 };
