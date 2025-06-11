@@ -1,3 +1,26 @@
+# [5.0.0](https://github.com/logicalclocks/quartz/compare/v4.20.0...v5.0.0) (2025-06-11)
+
+
+### break
+
+* **navigation:** improve performance and fix hash string issue ([#765](https://github.com/logicalclocks/quartz/issues/765)) ([63a9955](https://github.com/logicalclocks/quartz/commit/63a9955d21e0ad96ae246dbc7eae3b785aa492cf))
+
+
+### BREAKING CHANGES
+
+* **navigation:** For menu children which are in second level using anchors we need to explicitly set
+the property isSubItem to true
+
+* ci(publish-local): enforce yalc local publish to have --private
+
+* chore(navitem): let's keep one level of ul as before
+
+* Removed unused story for navigation
+
+* Fix removed Default nav import
+
+* Exclude Header story from Navigation
+
 # [4.20.0](https://github.com/logicalclocks/quartz/compare/v4.19.4...v4.20.0) (2025-05-16)
 
 
