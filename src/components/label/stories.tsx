@@ -4,7 +4,7 @@ import Label from '.';
 import { Button } from '../button';
 
 const meta: Meta<typeof Label> = {
-  title: 'Input/Label',
+  title: 'Typography/Label',
   component: Label,
   argTypes: {
     text: {

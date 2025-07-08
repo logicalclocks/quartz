@@ -2,7 +2,7 @@ import { StoryObj } from '@storybook/react';
 import { ProjectBadge } from './ProjectBadge';
 
 export default {
-  title: 'Badges/ProjectBadge',
+  title: 'DataDisplay/Badge/ProjectBadge',
   component: ProjectBadge,
   args: {
     value: 'ml demo web',

@@ -4,7 +4,7 @@ import Labeling from '../typography/labeling';
 import { User } from './index';
 
 const meta: Meta<typeof User> = {
-  title: 'User',
+  title: 'Media and Icons/User',
   component: User,
   args: {
     firstName: 'Martin',

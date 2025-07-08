@@ -5,7 +5,7 @@ import { Button } from './Button';
 import { IconName } from '../icon';
 
 const meta: Meta = {
-  title: 'Buttons',
+  title: 'Forms/Buttons/Button',
   component: Button,
   args: {
     children: 'Button',

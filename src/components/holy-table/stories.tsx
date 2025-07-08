@@ -3,7 +3,7 @@ import { Box } from 'rebass';
 import HT from '.';
 
 const meta: Meta = {
-  title: 'HolyTable',
+  title: 'DataDisplay/Tables/HolyTable',
   component: HT,
   args: {
     standalone: false,

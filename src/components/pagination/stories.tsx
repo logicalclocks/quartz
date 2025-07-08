@@ -6,7 +6,7 @@ import Label from '../label';
 import Pagination from './index';
 
 const meta: Meta<typeof Pagination> = {
-  title: 'Pagination',
+  title: 'Navigation/Pagination',
   component: Pagination,
   argTypes: {
     onChange: {

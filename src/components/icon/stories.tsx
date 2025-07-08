@@ -10,7 +10,7 @@ import Labeling from '../typography/labeling';
 import Input from '../input';
 
 const meta: Meta = {
-  title: 'GetIcon',
+  title: 'Media and Icons/GetIcon',
   component: GetIcon,
   argTypes: {
     icon: {

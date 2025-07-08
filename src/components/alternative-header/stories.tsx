@@ -5,7 +5,7 @@ import { AlternativeHeader } from './index';
 import TooltipPositions from '../tooltip/positions';
 
 const meta: Meta<typeof AlternativeHeader> = {
-  title: 'AlternativeHeader',
+  title: 'Navigation/Headers/AlternativeHeader',
   component: AlternativeHeader,
   args: {
     title: 'Cluster settings',

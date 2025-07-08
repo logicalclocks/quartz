@@ -6,7 +6,8 @@ import Popup from './index';
 import { reusableArgs } from './storyUitls';
 
 const meta: Meta<typeof Popup> = {
-  title: 'Popup',
+  title: 'Overlay/Popup/Popup',
+  component: Popup,
   argTypes: {
     size: {
       options: [

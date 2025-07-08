@@ -3,7 +3,7 @@ import { StoryObj, Meta } from '@storybook/react';
 import FileExplorerFolder from '.';
 
 const meta: Meta = {
-  title: 'FileSystemExplorer/Folder',
+  title: 'Miscellaneous/FileSystemExplorer/Folder',
   component: FileExplorerFolder,
   args: {
     name: 'folder',

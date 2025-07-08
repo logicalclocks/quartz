@@ -6,7 +6,7 @@ import Input from '.';
 import { GetIcon, IconName } from '../icon';
 
 const meta: Meta<typeof Input> = {
-  title: 'Input',
+  title: 'Forms/Inputs/Input',
   component: Input,
   argTypes: {
     onChange: {

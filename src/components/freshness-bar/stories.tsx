@@ -11,7 +11,7 @@ const threeMonthsAgo = addMonths(new Date(), -3);
 const almostAYearAgo = addMonths(new Date(), -11);
 
 const meta: Meta = {
-  title: 'FreshnessBar',
+  title: 'Feedback/Progress/FreshnessBar',
   component: FreshnessBar,
   argTypes: {
     expirationDate: {

@@ -5,7 +5,7 @@ import Tab from './Tab';
 import { TabState } from '../types';
 
 const meta: Meta<typeof Tab> = {
-  title: 'FormTabs/Tab',
+  title: 'Disclosure/Tabs/Tab',
   component: Tab,
 
   argTypes: {

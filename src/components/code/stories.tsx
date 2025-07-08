@@ -3,7 +3,8 @@ import { Box } from 'rebass';
 import Code, { defaultPopupProps } from './index';
 
 const meta: Meta<typeof Code> = {
-  title: 'Code',
+  title: 'DataDisplay/Code',
+  component: Code,
   argTypes: {
     content: {
       control: {

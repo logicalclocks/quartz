@@ -3,7 +3,8 @@ import { Flex } from '../flex';
 import { Bar } from './Bar';
 
 const meta: Meta<typeof Bar> = {
-  title: 'Bar',
+  title: 'Feedback/Progress/Bar',
+  component: Bar,
 };
 export default meta;
 

@@ -4,7 +4,7 @@ import StickySummary from './index';
 import { Button } from '../button';
 
 const meta: Meta<typeof StickySummary> = {
-  title: 'StickySummary',
+  title: 'DataDisplay/StickySummary',
   component: StickySummary,
   argTypes: {
     title: {

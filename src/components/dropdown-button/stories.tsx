@@ -8,7 +8,7 @@ import { IconButton } from '../icon-button';
 import { DropdownButton2 } from './DropdownButton2';
 
 const meta: Meta<typeof DropdownButton> = {
-  title: 'DropdownButton',
+  title: 'Forms/Dropdowns/DropdownButton',
   component: DropdownButton,
   args: {
     renderButton: ({ onClick }: any) => (

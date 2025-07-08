@@ -2,7 +2,7 @@ import { StoryObj } from '@storybook/react';
 import { Dot } from './Dot';
 
 export default {
-  title: 'Badges/Dot',
+  title: 'DataDisplay/Badge/Dot',
   component: Dot,
 };
 

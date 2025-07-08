@@ -5,7 +5,7 @@ import FileItemExplorer, {
 } from './FileItemExplorer';
 
 const meta: Meta = {
-  title: 'FileSystemExplorer/File',
+  title: 'Miscellaneous/FileSystemExplorer/File',
   component: FileItemExplorer,
   args: {
     itemInfo: { attributes: { name: 'file-name' } },

@@ -3,7 +3,7 @@ import { StoryObj, Meta } from '@storybook/react';
 import FileLoader from '.';
 
 const meta: Meta<typeof FileLoader> = {
-  title: 'FileLoader',
+  title: 'Feedback/Progress/FileLoader',
   component: FileLoader,
 
   argTypes: {

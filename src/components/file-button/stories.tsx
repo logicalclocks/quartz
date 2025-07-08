@@ -4,7 +4,7 @@ import { StoryObj, Meta } from '@storybook/react';
 import FileButton from './index';
 
 const meta: Meta<typeof FileButton> = {
-  title: 'Buttons',
+  title: 'Forms/Buttons/FileButton',
   argTypes: {
     disabled: {
       control: {

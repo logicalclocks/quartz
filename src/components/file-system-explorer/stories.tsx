@@ -1,14 +1,14 @@
 import { action } from '@storybook/addon-actions';
 import { StoryObj, Meta } from '@storybook/react';
 
-import FileSystemExplorer from '.';
+import FileSystemExplorerComponent from '.';
 import { Button } from '../button';
 // Data
 import testData from './test-data';
 
-const meta: Meta<typeof FileSystemExplorer> = {
-  title: 'FileSystemExplorer',
-  component: FileSystemExplorer,
+const meta: Meta<typeof FileSystemExplorerComponent> = {
+  title: 'Miscellaneous/FileSystemExplorer/FileSystemExplorer',
+  component: FileSystemExplorerComponent,
   argTypes: {
     title: {
       type: { name: 'string', required: false },
@@ -102,7 +102,7 @@ const meta: Meta<typeof FileSystemExplorer> = {
 };
 export default meta;
 
-export const Default: StoryObj<typeof FileSystemExplorer> = {
+export const FileSystemExplorer: StoryObj<typeof FileSystemExplorerComponent> = {
   args: {
     data: testData,
     shortcutActions: (
@@ -113,5 +113,5 @@ export const Default: StoryObj<typeof FileSystemExplorer> = {
     width: '830px',
     height: '100%',
   },
-  render: (props) => <FileSystemExplorer {...props} />,
+  render: (props) => <FileSystemExplorerComponent {...props} />,
 };

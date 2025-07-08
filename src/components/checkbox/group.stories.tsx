@@ -3,7 +3,8 @@ import { Meta, StoryObj } from '@storybook/react';
 import CheckboxGroup from './checkbox-group';
 
 const meta: Meta<typeof CheckboxGroup> = {
-  title: 'CheckboxGroup',
+  title: 'Forms/Checkboxes/CheckboxGroup',
+  component: CheckboxGroup,
   argTypes: {
     onChange: {},
     disabledUnselect: {

@@ -3,7 +3,7 @@ import { StoryObj, Meta } from '@storybook/react';
 import RadioGroup from './radio-group';
 
 const meta: Meta<typeof RadioGroup> = {
-  title: 'RadioGroup',
+  title: 'Forms/RadioGroup',
   component: RadioGroup,
   argTypes: {
     onChange: {

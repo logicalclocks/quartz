@@ -9,7 +9,7 @@ import { User } from '../user';
 import { GetIcon, IconName } from '../icon';
 
 const meta: Meta<typeof Header> = {
-  title: 'Header',
+  title: 'Navigation/Headers/Header',
   component: Header,
   argTypes: {
     children: {

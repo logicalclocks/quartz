@@ -20,7 +20,7 @@ import {
 import { EditableTable2 } from './editable/EditableTable2';
 
 const meta: Meta<typeof Table> = {
-  title: 'Tables',
+  title: 'DataDisplay/Tables/Table',
   component: Table,
 
   argTypes: {

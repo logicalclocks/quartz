@@ -7,7 +7,7 @@ import Divider from '../divider';
 import Labeling from '../typography/labeling';
 
 const meta: Meta = {
-  title: 'RangeSlider',
+  title: 'Forms/SpecializedInputs/RangeSlider',
   component: RangeSlider,
 };
 export default meta;

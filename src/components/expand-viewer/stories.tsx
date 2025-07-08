@@ -3,7 +3,7 @@ import { Box } from 'rebass';
 import ExpandViewer from './index';
 
 const meta: Meta<typeof ExpandViewer> = {
-  title: 'ExpandViewer',
+  title: 'Miscellaneous/ExpandViewer',
   component: ExpandViewer,
   argTypes: {
     NormalComponent: {

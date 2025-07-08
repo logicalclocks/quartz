@@ -6,7 +6,8 @@ import TinyPopup from '.';
 import { reusableArgs } from '../storyUitls';
 
 const meta: Meta<typeof TinyPopup> = {
-  title: 'TinyPopup',
+  title: 'Overlay/Popup/TinyPopup',
+  component: TinyPopup,
 };
 export default meta;
 

@@ -5,7 +5,8 @@ import { Meta, StoryObj } from '@storybook/react';
 import CardHeader from '.';
 
 const meta: Meta<typeof CardHeader> = {
-  title: 'CardHeader',
+  title: 'DataDisplay/Cards/CardHeader',
+  component: CardHeader,
   argTypes: {
     title: {
       description: 'Card title',

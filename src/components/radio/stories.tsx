@@ -2,7 +2,7 @@ import { StoryObj, Meta } from '@storybook/react';
 import Radio from './index';
 
 const meta: Meta<typeof Radio> = {
-  title: 'Radio',
+  title: 'Forms/Radios/Radio',
   component: Radio,
   argTypes: {
     onChange: {

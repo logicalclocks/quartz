@@ -2,7 +2,7 @@ import { StoryObj, Meta } from '@storybook/react';
 import PerformanceBar from '.';
 
 const meta: Meta = {
-  title: 'PerformanceBar',
+  title: 'Feedback/Progress/PerformanceBar',
   component: PerformanceBar,
 };
 export default meta;

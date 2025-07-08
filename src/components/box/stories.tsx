@@ -1,10 +1,9 @@
 import { StoryObj } from '@storybook/react';
 import { Box } from '../box';
-import { Flex } from './index';
 
 export default {
-  title: 'Layout/Flex',
-  component: Flex,
+  title: 'Layout/Box',
+  component: Box,
 };
 
 export const Default: StoryObj<typeof Flex> = {
@@ -12,10 +11,9 @@ export const Default: StoryObj<typeof Flex> = {
     gap: '20px',
   },
   render: (props) => (
-    <Flex {...props}>
+ 
       <Box width="200px" height="200px" bg="red" />
-      <Box width="200px" height="200px" bg="green" />
-      <Box width="200px" height="200px" bg="blue" />
-    </Flex>
+
+    
   ),
 };

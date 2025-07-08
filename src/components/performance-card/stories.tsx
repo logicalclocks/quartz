@@ -4,7 +4,7 @@ import Labeling from '../typography/labeling';
 import PerformanceCard from '.';
 
 const meta: Meta = {
-  title: 'PerformanceCard',
+  title: 'DataDisplay/Cards/PerformanceCard',
   component: PerformanceCard,
 };
 export default meta;

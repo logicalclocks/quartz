@@ -6,7 +6,8 @@ import Dropdown from './index';
 import { IconName } from '../icon';
 
 const meta: Meta<typeof Dropdown> = {
-  title: 'Dropdown',
+  title: 'Forms/Dropdowns/Dropdown',
+  component: Dropdown,
   argTypes: {
     items: {
       description: 'Array of Items',

@@ -5,7 +5,7 @@ import FormTabs, { ValidateOpts } from './index';
 import { Button } from '../..';
 
 const meta: Meta<typeof FormTabs> = {
-  title: 'FormTabs',
+  title: 'Disclosure/Tabs/FormTabs',
   component: FormTabs,
   argTypes: {
     tabs: {

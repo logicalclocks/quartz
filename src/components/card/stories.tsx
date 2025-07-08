@@ -7,7 +7,7 @@ import CardSecondary from './card-secondary';
 import { Flex } from '../flex';
 
 const meta: Meta<typeof Card> = {
-  title: 'Cards',
+  title: 'DataDisplay/Cards/Card',
   component: Card,
 
   argTypes: {

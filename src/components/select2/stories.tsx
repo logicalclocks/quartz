@@ -9,7 +9,7 @@ import Labeling from '../typography/labeling';
 import { SelectOpt } from './types';
 
 const meta: Meta<typeof Select> = {
-  title: 'Select2',
+  title: 'Forms/Selects/Select2',
   component: Select,
   argTypes: {
     value: {

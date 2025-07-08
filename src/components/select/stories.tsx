@@ -8,7 +8,7 @@ import { RadioGroup, Value } from '../../index';
 import Labeling from '../typography/labeling';
 
 const meta: Meta<typeof Select> = {
-  title: 'Select',
+  title: 'Forms/Selects/Select',
   component: Select,
   argTypes: {
     value: {

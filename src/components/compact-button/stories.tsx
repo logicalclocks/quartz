@@ -4,7 +4,8 @@ import CompactButton from '.';
 import { GetIcon, IconName } from '../icon';
 
 const meta: Meta<typeof CompactButton> = {
-  title: 'CompactButton',
+  title: 'Forms/Buttons/CompactButton',
+  component: CompactButton,
   argTypes: {
     isActive: {
       control: { type: 'boolean' },

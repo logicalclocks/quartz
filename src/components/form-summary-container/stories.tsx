@@ -3,7 +3,7 @@ import { Box } from 'rebass';
 import FormSummaryContainer from './index';
 
 const meta: Meta<typeof FormSummaryContainer> = {
-  title: 'FormSummaryContainer',
+  title: 'Layout/FormSummaryContainer',
   component: FormSummaryContainer,
   argTypes: {
     hasScrollOnScreen: {

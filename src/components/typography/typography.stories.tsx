@@ -10,7 +10,8 @@ import { HoverableText, Text } from '../../index';
 import InputValidation from './input-validation/input-validation';
 
 const meta: Meta = {
-  title: 'Typography',
+  title: 'Typography/Typography',
+  component: Typography,
 };
 export default meta;
 

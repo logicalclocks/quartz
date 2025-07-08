@@ -24,7 +24,8 @@ const YellowBox = (props: Omit<BoxProps, 'css'>) => (
 );
 
 const meta: Meta<typeof Drawer> = {
-  title: 'Drawer',
+  title: 'Overlay/Drawer/Drawer',
+  component: Drawer,
 };
 export default meta;
 

@@ -7,7 +7,7 @@ import { Value } from '../../index';
 import Labeling from '../typography/labeling';
 
 const meta: Meta<typeof SingleSelect> = {
-  title: 'SingleSelect',
+  title: 'Forms/Selects/SingleSelect',
   component: SingleSelect,
   argTypes: {
     value: {

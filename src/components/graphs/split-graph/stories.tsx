@@ -3,7 +3,7 @@ import { Box, Flex } from 'rebass';
 import SplitGraph, { defaultGraphColors } from './index';
 
 const meta: Meta<typeof SplitGraph> = {
-  title: 'SplitGraph',
+  title: 'DataDisplay/Graphs/SplitGraph',
   component: SplitGraph,
   args: {
     withoutPercentage: false,

@@ -2,7 +2,7 @@ import { StoryObj } from '@storybook/react';
 import { TextValueBadge } from './TextValueBadge';
 
 export default {
-  title: 'Badges/TextValueBadge',
+  title: 'DataDisplay/Badge/TextValueBadge',
   component: TextValueBadge,
   args: {
     text: 'text',

@@ -4,7 +4,7 @@ import TooltipPositions from '../tooltip/positions';
 import { SymbolMode } from './types';
 
 const meta: Meta<typeof Symbol> = {
-  title: 'Symbol',
+  title: 'Media and Icons/Symbol',
   component: Symbol,
   argTypes: {
     inBasket: {

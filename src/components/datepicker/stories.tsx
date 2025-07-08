@@ -8,7 +8,7 @@ import { DATE_TIME } from '../../constants';
 import { Flex } from '../flex';
 
 const meta: Meta<typeof DatePicker> = {
-  title: 'DatePicker',
+  title: 'Forms/SpecializedInputs/DatePicker',
   component: DatePicker,
 };
 export default meta;

@@ -6,7 +6,8 @@ import { Flex } from '../flex';
 import { AnimatedProgress } from './AnimatedProgress';
 
 const meta: Meta<typeof AnimatedProgress> = {
-  title: 'AnimatedProgress',
+  title: 'Feedback/Progress/AnimatedProgress',
+  component: AnimatedProgress,
   argTypes: {
     isAnimating: {
       defaultValue: false,
@@ -82,7 +83,7 @@ export const Default: Story = {
     variant: 'perf.green',
   },
   render: (args) => {
-    const [isAnimating, setIsAnimating] = useState<boolean>();
+    const [isAnimating, setIsAnimating] = useState<boolean>(false);
     return (
       <Box width="700px">
         <Flex my="20px" justifyContent="center" sx={{ gap: '20px' }}>

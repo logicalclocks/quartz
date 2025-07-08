@@ -5,8 +5,8 @@ import CodeInput from '.';
 import { Flex } from '../flex';
 
 const meta: Meta<typeof CodeInput> = {
-  title: 'CodeInput',
-
+  title: 'Forms/Inputs/CodeInput',
+  component: CodeInput,
   argTypes: {
     onChange: {
       description: 'Input change callback function',

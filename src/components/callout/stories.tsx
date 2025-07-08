@@ -5,7 +5,8 @@ import Callout, { CalloutTypes } from './index';
 import { Button } from '../button';
 
 const meta: Meta<typeof Callout> = {
-  title: 'Callout',
+  title: 'Feedback/Callouts/Callout',
+  component: Callout,
   argTypes: {
     type: {
       control: {

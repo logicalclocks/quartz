@@ -6,7 +6,8 @@ import { Labeling, Value } from '../../index';
 import Collapse from './index';
 
 const meta: Meta<typeof Collapse> = {
-  title: 'Collapse',
+  title: 'Disclosure/Collapse',
+  component: Collapse,
   argTypes: {
     title: {
       control: {

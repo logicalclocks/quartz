@@ -5,7 +5,7 @@ import FooterButton from '.';
 import { GetIcon, IconName } from '../icon';
 
 const meta: Meta<typeof FooterButton> = {
-  title: 'Buttons/FooterButton',
+  title: 'Forms/Buttons/FooterButton',
   component: FooterButton,
 
   argTypes: {

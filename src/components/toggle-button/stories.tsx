@@ -2,7 +2,7 @@ import { StoryObj, Meta } from '@storybook/react';
 import ToggleButton from './index';
 
 const meta: Meta<typeof ToggleButton> = {
-  title: 'Buttons/Toggle',
+  title: 'Forms/ToggleButton',
   component: ToggleButton,
   argTypes: {
     onChange: {

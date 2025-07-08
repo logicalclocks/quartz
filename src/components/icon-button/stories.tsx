@@ -5,7 +5,7 @@ import { IconButton } from '.';
 import { IconName } from '../icon/list';
 
 const meta: Meta<typeof IconButton> = {
-  title: 'IconButton',
+  title: 'Forms/IconButton',
   component: IconButton,
   argTypes: {
     intent: {

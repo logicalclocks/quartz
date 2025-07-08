@@ -4,7 +4,7 @@ import { Box } from 'rebass';
 import Slider from './slider';
 
 const meta: Meta<typeof Slider> = {
-  title: 'Slider',
+  title: 'Forms/SpecializedInputs/Slider',
   component: Slider,
 };
 

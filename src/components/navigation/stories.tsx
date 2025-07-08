@@ -8,7 +8,7 @@ import useNavigation from './useNavigation';
 import { GetIcon, IconName } from '../icon';
 
 const meta: Meta<typeof Navigation> = {
-  title: 'Navigation',
+  title: 'Navigation/Navigations/Navigation',
   component: Navigation,
   argTypes: {
     children: {

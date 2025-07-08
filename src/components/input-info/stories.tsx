@@ -3,7 +3,7 @@ import { StoryObj, Meta } from '@storybook/react';
 import InputInfo from '.';
 
 const meta: Meta<typeof InputInfo> = {
-  title: 'Input/Info',
+  title: 'Forms/Inputs/InputInfo',
   component: InputInfo,
   argTypes: {
     children: {
