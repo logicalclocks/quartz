@@ -2,12 +2,12 @@ import { action } from '@storybook/addon-actions';
 import { Meta, StoryObj } from '@storybook/react';
 
 import { Box } from 'rebass';
-import Input from '.';
+import InputComponent from '.';
 import { GetIcon, IconName } from '../icon';
 
-const meta: Meta<typeof Input> = {
+const meta: Meta<typeof InputComponent> = {
   title: 'Forms/Inputs/Input',
-  component: Input,
+  component: InputComponent,
   argTypes: {
     onChange: {
       description: 'Input change callback function',
@@ -108,7 +108,7 @@ const meta: Meta<typeof Input> = {
 };
 export default meta;
 
-export const Default: StoryObj<typeof Input> = {
+export const Input: StoryObj<typeof InputComponent> = {
   args: {
     label: 'Label',
     placeholder: 'Placeholder',
@@ -116,6 +116,6 @@ export const Default: StoryObj<typeof Input> = {
     tooltipInfo: 'tooltip info',
   },
   render: (props) => (
-    <Input icon={IconName.glass} iconPaddingRight="40px" {...props} />
+    <InputComponent icon={IconName.glass} iconPaddingRight="40px" {...props} />
   ),
 };

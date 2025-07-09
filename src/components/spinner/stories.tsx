@@ -1,9 +1,9 @@
 import { StoryObj, Meta } from '@storybook/react';
-import Spinner from '.';
+import SpinnerComponent from '.';
 
 const meta: Meta = {
   title: 'Feedback/Spinner',
-  component: Spinner,
+  component: SpinnerComponent,
   argTypes: {
     color: {
       control: {
@@ -19,10 +19,10 @@ const meta: Meta = {
 };
 export default meta;
 
-export const Default: StoryObj<typeof Spinner> = {
+export const Spinner: StoryObj<typeof SpinnerComponent> = {
   args: {
     color: 'labels.green',
     size: 20,
   },
-  render: (props) => <Spinner {...props} />,
+  render: (props) => <SpinnerComponent {...props} />,
 };

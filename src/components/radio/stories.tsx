@@ -1,9 +1,9 @@
 import { StoryObj, Meta } from '@storybook/react';
-import Radio from './index';
+import RadioComponent from './index';
 
-const meta: Meta<typeof Radio> = {
+const meta: Meta<typeof RadioComponent> = {
   title: 'Forms/Radios/Radio',
-  component: Radio,
+  component: RadioComponent,
   argTypes: {
     onChange: {
       description: 'Change callback function',
@@ -30,9 +30,9 @@ const meta: Meta<typeof Radio> = {
 };
 export default meta;
 
-export const Default: StoryObj<typeof Radio> = {
+export const Radio: StoryObj<typeof RadioComponent> = {
   args: {
     label: 'nullable',
   },
-  render: (props) => <Radio {...props} />,
+  render: (props) => <RadioComponent {...props} />,
 };

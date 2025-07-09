@@ -1,11 +1,11 @@
 import { StoryObj, Meta } from '@storybook/react';
 
-import Label from '.';
+import LabelComponent from '.';
 import { Button } from '../button';
 
-const meta: Meta<typeof Label> = {
+const meta: Meta<typeof LabelComponent> = {
   title: 'Typography/Label',
-  component: Label,
+  component: LabelComponent,
   argTypes: {
     text: {
       control: {
@@ -23,14 +23,14 @@ const meta: Meta<typeof Label> = {
 };
 export default meta;
 
-type Story = StoryObj<typeof Label>;
+type Story = StoryObj<typeof LabelComponent>;
 
-export const Default: Story = {
+export const Label: Story = {
   args: {
     text: 'Label',
     children: <input type="text" />,
   },
-  render: (props) => <Label {...props} />,
+  render: (props) => <LabelComponent {...props} />,
 };
 
 export const WithAction: Story = {
@@ -43,5 +43,5 @@ export const WithAction: Story = {
       </Button>
     ),
   },
-  render: (props) => <Label {...props} />,
+  render: (props) => <LabelComponent {...props} />,
 };

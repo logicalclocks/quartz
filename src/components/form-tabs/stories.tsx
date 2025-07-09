@@ -1,12 +1,12 @@
 import { action } from '@storybook/addon-actions';
 import { StoryObj, Meta } from '@storybook/react';
 import { Box } from 'rebass';
-import FormTabs, { ValidateOpts } from './index';
+import FormTabsComponent, { ValidateOpts } from './index';
 import { Button } from '../..';
 
-const meta: Meta<typeof FormTabs> = {
+const meta: Meta<typeof FormTabsComponent> = {
   title: 'Disclosure/Tabs/FormTabs',
-  component: FormTabs,
+  component: FormTabsComponent,
   argTypes: {
     tabs: {
       required: true,
@@ -72,7 +72,7 @@ const tabs = [
   },
 ];
 
-export const Default: StoryObj<typeof FormTabs> = {
+export const FormTabs: StoryObj<typeof FormTabsComponent> = {
   args: {
     tabs,
     hasScrollOnScreen: false,
@@ -84,7 +84,7 @@ export const Default: StoryObj<typeof FormTabs> = {
   },
   render: (props) => (
     <Box width="700px">
-      <FormTabs {...props} />
+      <FormTabsComponent {...props} />
     </Box>
   ),
 };

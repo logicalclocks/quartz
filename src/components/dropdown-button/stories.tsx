@@ -2,14 +2,14 @@ import { StoryObj, Meta } from '@storybook/react';
 import { Box } from 'rebass';
 import { action } from '@storybook/addon-actions';
 
-import { DropdownButton } from './DropdownButton';
+import { DropdownButton as DropdownButtonComponent } from './DropdownButton';
 import { IconName } from '../icon';
 import { IconButton } from '../icon-button';
 import { DropdownButton2 } from './DropdownButton2';
 
-const meta: Meta<typeof DropdownButton> = {
+const meta: Meta<typeof DropdownButtonComponent> = {
   title: 'Forms/Dropdowns/DropdownButton',
-  component: DropdownButton,
+  component: DropdownButtonComponent,
   args: {
     renderButton: ({ onClick }: any) => (
       <IconButton icon={IconName.more} onClick={onClick} />
@@ -40,10 +40,10 @@ const meta: Meta<typeof DropdownButton> = {
 };
 export default meta;
 
-export const Default: StoryObj<typeof DropdownButton> = {
+export const DropdownButton: StoryObj<typeof DropdownButtonComponent> = {
   render: (props) => (
     <Box width="700px" height="115px">
-      <DropdownButton {...props} />
+      <DropdownButtonComponent {...props} />
     </Box>
   ),
 };

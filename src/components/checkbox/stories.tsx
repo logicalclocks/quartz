@@ -1,9 +1,9 @@
 import { Meta, StoryObj } from '@storybook/react';
-import Checkbox from './index';
+import CheckboxComponent from './index';
 
-const meta: Meta<typeof Checkbox> = {
+const meta: Meta<typeof CheckboxComponent> = {
   title: 'Forms/Checkboxes/Checkbox',
-  component: Checkbox,
+  component: CheckboxComponent,
 
   argTypes: {
     onChange: {},
@@ -26,9 +26,9 @@ const meta: Meta<typeof Checkbox> = {
 };
 export default meta;
 
-export const Default: StoryObj<typeof Checkbox> = {
+export const Checkbox: StoryObj<typeof CheckboxComponent> = {
   args: {
     label: 'nullable',
   },
-  render: (props) => <Checkbox {...props} />,
+  render: (props) => <CheckboxComponent {...props} />,
 };

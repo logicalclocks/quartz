@@ -1,7 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react';
 
 import { addMonths } from 'date-fns';
-import { FreshnessBar } from './FreshnessBar';
+import { FreshnessBar as FreshnessBarComponent } from './FreshnessBar';
 import Label from '../label';
 import { Flex } from '../flex';
 
@@ -12,7 +12,7 @@ const almostAYearAgo = addMonths(new Date(), -11);
 
 const meta: Meta = {
   title: 'Feedback/Progress/FreshnessBar',
-  component: FreshnessBar,
+  component: FreshnessBarComponent,
   argTypes: {
     expirationDate: {
       control: {
@@ -23,7 +23,7 @@ const meta: Meta = {
 };
 export default meta;
 
-export const Default: StoryObj<typeof FreshnessBar> = {
+export const FreshnessBar: StoryObj<typeof FreshnessBarComponent> = {
   args: {
     expirationDate: new Date(monthAgo),
     size: 'md',
@@ -32,19 +32,19 @@ export const Default: StoryObj<typeof FreshnessBar> = {
     <Flex flexDirection="column" alignItems="center" sx={{ gap: '40px' }}>
       <Flex sx={{ gap: '20px' }}>
         <Label text="Half a year ago">
-          <FreshnessBar expirationDate={halfAYearAgo} />
+          <FreshnessBarComponent expirationDate={halfAYearAgo} />
         </Label>
         <Label text="3 months ago">
-          <FreshnessBar expirationDate={threeMonthsAgo} />
+          <FreshnessBarComponent expirationDate={threeMonthsAgo} />
         </Label>
         <Label text="11 months ago, expiring soon">
-          <FreshnessBar expirationDate={almostAYearAgo} />
+          <FreshnessBarComponent expirationDate={almostAYearAgo} />
         </Label>
       </Flex>
 
       <Flex>
         <Label text="try out datepicker below">
-          <FreshnessBar {...props} />
+          <FreshnessBarComponent {...props} />
         </Label>
       </Flex>
     </Flex>

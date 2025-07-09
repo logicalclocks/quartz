@@ -1,14 +1,14 @@
 import { Meta, StoryObj } from '@storybook/react';
 import { Flex } from '../flex';
-import { Bar } from './Bar';
+import { Bar as BarComponent } from './Bar';
 
-const meta: Meta<typeof Bar> = {
+const meta: Meta<typeof BarComponent> = {
   title: 'Feedback/Progress/Bar',
-  component: Bar,
+  component: BarComponent,
 };
 export default meta;
 
-export const Default: StoryObj<typeof Bar> = {
+export const Bar: StoryObj<typeof BarComponent> = {
   args: {
     value: 50,
   },
@@ -21,7 +21,7 @@ export const Default: StoryObj<typeof Bar> = {
         height="150px"
         bg="antiquewhite"
       >
-        <Bar {...args} />
+        <BarComponent {...args} />
       </Flex>
     );
   },

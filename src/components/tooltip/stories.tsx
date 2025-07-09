@@ -1,10 +1,10 @@
 import { StoryObj, Meta } from '@storybook/react';
 import { Button } from '../button';
-import Tooltip from './index';
+import TooltipComponent from './index';
 
-const meta: Meta<typeof Tooltip> = {
+const meta: Meta<typeof TooltipComponent> = {
   title: 'Overlay/Tooltip',
-  component: Tooltip,
+  component: TooltipComponent,
   argTypes: {
     mainText: {
       control: {
@@ -49,14 +49,14 @@ const meta: Meta<typeof Tooltip> = {
 };
 export default meta;
 
-export const Default: StoryObj<typeof Tooltip> = {
+export const Tooltip: StoryObj<typeof TooltipComponent> = {
   args: {
     mainText: 'tooltip',
     secondaryText: 'secondary',
   },
   render: (props) => (
-    <Tooltip {...props}>
+    <TooltipComponent {...props}>
       <Button intent="ghost">Button with tooltip</Button>
-    </Tooltip>
+    </TooltipComponent>
   ),
 };

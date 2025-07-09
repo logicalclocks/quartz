@@ -1,9 +1,9 @@
 import { StoryObj, Meta } from '@storybook/react';
-import Divider from './index';
+import DividerComponent from './index';
 
-const meta: Meta<typeof Divider> = {
+const meta: Meta<typeof DividerComponent> = {
   title: 'DataDisplay/Divider',
-  component: Divider,
+  component: DividerComponent,
   argTypes: {
     mt: {
       control: {
@@ -45,8 +45,8 @@ const meta: Meta<typeof Divider> = {
 };
 export default meta;
 
-type Story = StoryObj<typeof Divider>;
-export const Default: Story = {
+type Story = StoryObj<typeof DividerComponent>;
+export const Divider: Story = {
   render: (props) => (
     <div
       style={{
@@ -56,13 +56,13 @@ export const Default: Story = {
         border: '1px solid grey',
       }}
     >
-      <Divider {...props} />
+      <DividerComponent {...props} />
     </div>
   ),
 };
 
 export const WithLegend: Story = {
-  ...Default,
+  ...Divider,
   args: {
     legend: 'Legend',
   },

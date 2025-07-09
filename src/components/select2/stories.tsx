@@ -3,14 +3,14 @@ import { useState } from 'react';
 import { StoryObj, Meta } from '@storybook/react';
 
 import { Box } from 'rebass';
-import Select from './index';
+import SelectComponent from './index';
 import { Button, RadioGroup, Value } from '../../index';
 import Labeling from '../typography/labeling';
 import { SelectOpt } from './types';
 
-const meta: Meta<typeof Select> = {
+const meta: Meta<typeof SelectComponent> = {
   title: 'Forms/Selects/Select2',
-  component: Select,
+  component: SelectComponent,
   argTypes: {
     value: {
       description: 'Current selection. Matches option.key',
@@ -147,7 +147,7 @@ const options = [
   },
 ] as SelectOpt[];
 
-export const Default: StoryObj<typeof Select> = {
+export const Select2: StoryObj<typeof SelectComponent> = {
   args: {
     value: '',
     placeholder: 'placeholder',
@@ -195,7 +195,7 @@ export const Default: StoryObj<typeof Select> = {
 
     return (
       <Box height="60px" m="20px">
-        <Select
+        <SelectComponent
           {...props}
           width="200px"
           value={val}

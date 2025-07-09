@@ -1,12 +1,12 @@
 import { Meta, StoryObj } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { Box } from 'rebass';
-import Callout, { CalloutTypes } from './index';
+import CalloutComponent, { CalloutTypes } from './index';
 import { Button } from '../button';
 
-const meta: Meta<typeof Callout> = {
+const meta: Meta<typeof CalloutComponent> = {
   title: 'Feedback/Callouts/Callout',
-  component: Callout,
+  component: CalloutComponent,
   argTypes: {
     type: {
       control: {
@@ -28,17 +28,17 @@ const meta: Meta<typeof Callout> = {
 };
 export default meta;
 
-type Story = StoryObj<typeof Callout>;
+type Story = StoryObj<typeof CalloutComponent>;
 
 const Template: Story = {
   render: (props) => (
     <Box width="700px">
-      <Callout {...props} />
+      <CalloutComponent {...props} />
     </Box>
   ),
 };
 
-export const Default: Story = {
+export const Callout: Story = {
   ...Template,
   args: {
     type: CalloutTypes.valid,

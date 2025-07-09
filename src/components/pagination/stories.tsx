@@ -3,11 +3,11 @@ import { useState } from 'react';
 import { StoryObj, Meta } from '@storybook/react';
 import Label from '../label';
 
-import Pagination from './index';
+import PaginationComponent from './index';
 
-const meta: Meta<typeof Pagination> = {
+const meta: Meta<typeof PaginationComponent> = {
   title: 'Navigation/Pagination',
-  component: Pagination,
+  component: PaginationComponent,
   argTypes: {
     onChange: {
       description: 'Input change callback function, receives page number',
@@ -40,7 +40,7 @@ const meta: Meta<typeof Pagination> = {
 };
 export default meta;
 
-export const Default: StoryObj<typeof Pagination> = {
+export const Pagination: StoryObj<typeof PaginationComponent> = {
   args: {
     totalPages: 10,
   },
@@ -55,7 +55,11 @@ export const Default: StoryObj<typeof Pagination> = {
 
     return (
       <Label as="span" text="go to page" align="left">
-        <Pagination {...props} currentPage={page} onChange={handleChange} />
+        <PaginationComponent
+          {...props}
+          currentPage={page}
+          onChange={handleChange}
+        />
       </Label>
     );
   },

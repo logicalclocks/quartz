@@ -1,10 +1,10 @@
 import { Meta, StoryObj } from '@storybook/react';
 import { Box, Flex } from 'rebass';
-import SplitGraph, { defaultGraphColors } from './index';
+import SplitGraphComponent, { defaultGraphColors } from './index';
 
-const meta: Meta<typeof SplitGraph> = {
+const meta: Meta<typeof SplitGraphComponent> = {
   title: 'DataDisplay/Graphs/SplitGraph',
-  component: SplitGraph,
+  component: SplitGraphComponent,
   args: {
     withoutPercentage: false,
     labelProps: { width: '50px' },
@@ -52,10 +52,10 @@ const meta: Meta<typeof SplitGraph> = {
 };
 export default meta;
 
-export const Default: StoryObj<typeof SplitGraph> = {
+export const SplitGraph: StoryObj<typeof SplitGraphComponent> = {
   render: (props) => (
     <Box width="700px">
-      <SplitGraph {...props} />
+      <SplitGraphComponent {...props} />
     </Box>
   ),
 };

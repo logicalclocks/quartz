@@ -1,12 +1,12 @@
 import { action } from '@storybook/addon-actions';
 import { StoryObj, Meta } from '@storybook/react';
 import { Flex } from 'rebass';
-import Tab from './Tab';
+import TabComponent from './Tab';
 import { TabState } from '../types';
 
-const meta: Meta<typeof Tab> = {
+const meta: Meta<typeof TabComponent> = {
   title: 'Disclosure/Tabs/Tab',
-  component: Tab,
+  component: TabComponent,
 
   argTypes: {
     title: {
@@ -32,7 +32,7 @@ const meta: Meta<typeof Tab> = {
 };
 export default meta;
 
-export const Default: StoryObj<typeof Tab> = {
+export const Tab: StoryObj<typeof TabComponent> = {
   args: {
     title: 'Title',
     active: false,
@@ -41,7 +41,7 @@ export const Default: StoryObj<typeof Tab> = {
   },
   render: (props) => (
     <Flex width="700px" alignItems="center" justifyContent="center">
-      <Tab {...props} />
+      <TabComponent {...props} />
     </Flex>
   ),
 };

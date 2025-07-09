@@ -2,13 +2,16 @@ import { useState } from 'react';
 import { StoryObj, Meta } from '@storybook/react';
 
 import { Box } from 'rebass';
-import { SingleSelect, SingleSelectOption } from './index';
+import {
+  SingleSelect as SingleSelectComponent,
+  SingleSelectOption,
+} from './index';
 import { Value } from '../../index';
 import Labeling from '../typography/labeling';
 
-const meta: Meta<typeof SingleSelect> = {
+const meta: Meta<typeof SingleSelectComponent> = {
   title: 'Forms/Selects/SingleSelect',
-  component: SingleSelect,
+  component: SingleSelectComponent,
   argTypes: {
     value: {
       description: 'Array of strings',
@@ -101,7 +104,7 @@ const customOptions = [
   },
 ];
 
-export const Default: StoryObj<typeof SingleSelect> = {
+export const SingleSelect: StoryObj<typeof SingleSelectComponent> = {
   args: {
     placeholder: 'placeholder',
     editable: false,
@@ -120,7 +123,7 @@ export const Default: StoryObj<typeof SingleSelect> = {
     };
     return (
       <Box width="600px" height="300px">
-        <SingleSelect
+        <SingleSelectComponent
           {...props}
           value={value}
           options={customOptions}

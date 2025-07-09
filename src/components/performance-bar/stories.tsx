@@ -1,14 +1,14 @@
 import { StoryObj, Meta } from '@storybook/react';
-import PerformanceBar from '.';
+import PerformanceBarComponent from '.';
 
 const meta: Meta = {
   title: 'Feedback/Progress/PerformanceBar',
-  component: PerformanceBar,
+  component: PerformanceBarComponent,
 };
 export default meta;
 
-type Story = StoryObj<typeof PerformanceBar>;
-export const Default: Story = {
+type Story = StoryObj<typeof PerformanceBarComponent>;
+export const PerformanceBar: Story = {
   args: {
     bars: [
       {
@@ -17,11 +17,11 @@ export const Default: Story = {
       },
     ],
   },
-  render: (props) => <PerformanceBar {...props} />,
+  render: (props) => <PerformanceBarComponent {...props} />,
 };
 
 export const Mix: Story = {
-  ...Default,
+  ...PerformanceBar,
   args: {
     bars: [
       {

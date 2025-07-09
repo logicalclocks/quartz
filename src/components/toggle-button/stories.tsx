@@ -1,9 +1,9 @@
 import { StoryObj, Meta } from '@storybook/react';
-import ToggleButton from './index';
+import ToggleButtonComponent from './index';
 
-const meta: Meta<typeof ToggleButton> = {
+const meta: Meta<typeof ToggleButtonComponent> = {
   title: 'Forms/ToggleButton',
-  component: ToggleButton,
+  component: ToggleButtonComponent,
   argTypes: {
     onChange: {
       description: 'Change callback function',
@@ -27,9 +27,9 @@ const meta: Meta<typeof ToggleButton> = {
 };
 export default meta;
 
-export const Default: StoryObj<typeof ToggleButton> = {
+export const ToggleButton: StoryObj<typeof ToggleButtonComponent> = {
   args: {
     children: 'partition key only',
   },
-  render: (props) => <ToggleButton {...props} />,
+  render: (props) => <ToggleButtonComponent {...props} />,
 };

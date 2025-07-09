@@ -1,14 +1,12 @@
 import { StoryObj } from '@storybook/react';
-import { ProjectBadge } from './ProjectBadge';
+import { ProjectBadge as ProjectBadgeComponent } from './ProjectBadge';
 
 export default {
   title: 'DataDisplay/Badge/ProjectBadge',
-  component: ProjectBadge,
+  component: ProjectBadgeComponent,
   args: {
     value: 'ml demo web',
   },
 };
 
-export const Default: StoryObj<typeof ProjectBadge> = {
-  render: (props) => <ProjectBadge {...props} />,
-};
+export const ProjectBadge: StoryObj<typeof ProjectBadgeComponent> = {};

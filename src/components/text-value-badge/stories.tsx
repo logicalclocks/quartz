@@ -1,15 +1,13 @@
 import { StoryObj } from '@storybook/react';
-import { TextValueBadge } from './TextValueBadge';
+import { TextValueBadge as TextValueBadgeComponent } from './TextValueBadge';
 
 export default {
   title: 'DataDisplay/Badge/TextValueBadge',
-  component: TextValueBadge,
+  component: TextValueBadgeComponent,
   args: {
     text: 'text',
     value: 'value',
   },
 };
 
-export const Default: StoryObj<typeof TextValueBadge> = {
-  render: (props) => <TextValueBadge {...props} />,
-};
+export const TextValueBadge: StoryObj<typeof TextValueBadgeComponent> = {};

@@ -2,12 +2,12 @@ import { action } from '@storybook/addon-actions';
 import { Box } from 'rebass';
 import { StoryObj, Meta } from '@storybook/react';
 
-import Dropdown from './index';
+import DropdownComponent from './index';
 import { IconName } from '../icon';
 
-const meta: Meta<typeof Dropdown> = {
+const meta: Meta<typeof DropdownComponent> = {
   title: 'Forms/Dropdowns/Dropdown',
-  component: Dropdown,
+  component: DropdownComponent,
   argTypes: {
     items: {
       description: 'Array of Items',
@@ -27,7 +27,7 @@ const meta: Meta<typeof Dropdown> = {
 };
 export default meta;
 
-export const Default: StoryObj<typeof Dropdown> = {
+export const Dropdown: StoryObj<typeof DropdownComponent> = {
   args: {
     items: [
       {
@@ -52,7 +52,7 @@ export const Default: StoryObj<typeof Dropdown> = {
   },
   render: (props) => (
     <Box width="300px">
-      <Dropdown {...props} onClickOutside={action('outside')} />
+      <DropdownComponent {...props} onClickOutside={action('outside')} />
     </Box>
   ),
 };

@@ -1,16 +1,15 @@
 import { StoryObj, Meta } from '@storybook/react';
 import { Box } from 'rebass';
-
 import { IconButton, Label, List, ListItem } from '../../index';
 import Subtitle from '../typography/subtitle';
-import Header from './index';
+import HeaderComponent from './index';
 import MenuButton from './menu-button';
 import { User } from '../user';
 import { GetIcon, IconName } from '../icon';
 
-const meta: Meta<typeof Header> = {
+const meta: Meta<typeof HeaderComponent> = {
   title: 'Navigation/Headers/Header',
-  component: Header,
+  component: HeaderComponent,
   argTypes: {
     children: {
       description: 'Header left side content',
@@ -32,7 +31,7 @@ const meta: Meta<typeof Header> = {
 };
 export default meta;
 
-export const Default: StoryObj<typeof Header> = {
+export const Header: StoryObj<typeof HeaderComponent> = {
   args: {
     user: (
       <>
@@ -66,7 +65,7 @@ export const Default: StoryObj<typeof Header> = {
   },
   render: (props) => (
     <Box width="90vw" height="90vh">
-      <Header {...props} />
+      <HeaderComponent {...props} />
     </Box>
   ),
 };

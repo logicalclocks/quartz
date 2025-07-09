@@ -1,12 +1,11 @@
 import { action } from '@storybook/addon-actions';
-
 import { Box, Button } from 'rebass';
 import { Meta, StoryObj } from '@storybook/react';
-import CardHeader from '.';
+import CardHeaderComponent from '.';
 
-const meta: Meta<typeof CardHeader> = {
+const meta: Meta<typeof CardHeaderComponent> = {
   title: 'DataDisplay/Cards/CardHeader',
-  component: CardHeader,
+  component: CardHeaderComponent,
   argTypes: {
     title: {
       description: 'Card title',
@@ -56,9 +55,9 @@ const meta: Meta<typeof CardHeader> = {
       control: {
         type: 'boolean',
       },
-      table: {
-        defaultValue: { summary: false },
-      },
+      // table: {
+      //   defaultValue: { summary: 'false' },
+      // },
     },
     withBorderBottom: {
       description: 'To show border bottom',
@@ -71,7 +70,7 @@ const meta: Meta<typeof CardHeader> = {
         type: 'boolean',
       },
       table: {
-        defaultValue: { summary: false },
+        defaultValue: { summary: 'false' },
       },
     },
   },
@@ -85,7 +84,7 @@ const meta: Meta<typeof CardHeader> = {
 };
 export default meta;
 
-export const Default: StoryObj<typeof CardHeader> = {
+export const CardHeader: StoryObj<typeof CardHeaderComponent> = {
   args: {
     title: 'Title',
     actions: (
@@ -94,5 +93,4 @@ export const Default: StoryObj<typeof CardHeader> = {
       </Button>
     ),
   },
-  render: (args) => <CardHeader {...args} />,
 };

@@ -3,11 +3,11 @@ import { useState } from 'react';
 import { Box } from '../box';
 import { Button } from '../button';
 import { Flex } from '../flex';
-import { AnimatedProgress } from './AnimatedProgress';
+import { AnimatedProgress as AnimatedProgressComponent } from './AnimatedProgress';
 
-const meta: Meta<typeof AnimatedProgress> = {
+const meta: Meta<typeof AnimatedProgressComponent> = {
   title: 'Feedback/Progress/AnimatedProgress',
-  component: AnimatedProgress,
+  component: AnimatedProgressComponent,
   argTypes: {
     isAnimating: {
       defaultValue: false,
@@ -76,9 +76,9 @@ const meta: Meta<typeof AnimatedProgress> = {
 };
 export default meta;
 
-type Story = StoryObj<typeof AnimatedProgress>;
+type Story = StoryObj<typeof AnimatedProgressComponent>;
 
-export const Default: Story = {
+export const AnimatedProgress: Story = {
   args: {
     variant: 'perf.green',
   },
@@ -94,7 +94,7 @@ export const Default: Story = {
             done
           </Button>
         </Flex>
-        <AnimatedProgress {...args} isAnimating={isAnimating} />
+        <AnimatedProgressComponent {...args} isAnimating={isAnimating} />
       </Box>
     );
   },

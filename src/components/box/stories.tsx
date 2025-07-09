@@ -1,19 +1,15 @@
 import { StoryObj } from '@storybook/react';
-import { Box } from '../box';
+import { Box as BoxComponent } from './Box';
 
 export default {
   title: 'Layout/Box',
-  component: Box,
+  component: BoxComponent,
 };
 
-export const Default: StoryObj<typeof Flex> = {
+export const Box: StoryObj<typeof BoxComponent> = {
   args: {
-    gap: '20px',
+    height: '200px',
+    width: '200px',
+    bg: 'red',
   },
-  render: (props) => (
- 
-      <Box width="200px" height="200px" bg="red" />
-
-    
-  ),
 };

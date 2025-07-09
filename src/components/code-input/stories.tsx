@@ -1,12 +1,12 @@
 import { action } from '@storybook/addon-actions';
 import { Meta, StoryObj } from '@storybook/react';
 
-import CodeInput from '.';
+import CodeInputComponent from '.';
 import { Flex } from '../flex';
 
-const meta: Meta<typeof CodeInput> = {
+const meta: Meta<typeof CodeInputComponent> = {
   title: 'Forms/Inputs/CodeInput',
-  component: CodeInput,
+  component: CodeInputComponent,
   argTypes: {
     onChange: {
       description: 'Input change callback function',
@@ -76,7 +76,7 @@ const completions = [
   { label: 'password', type: 'variable' },
 ];
 
-export const Default: StoryObj<typeof CodeInput> = {
+export const CodeInput: StoryObj<typeof CodeInputComponent> = {
   args: {
     label: 'Label',
     mode: 'javascript',
@@ -86,7 +86,7 @@ export const Default: StoryObj<typeof CodeInput> = {
   },
   render: (props) => (
     <Flex width="500px">
-      <CodeInput {...props} completions={completions} />
+      <CodeInputComponent {...props} completions={completions} />
     </Flex>
   ),
 };

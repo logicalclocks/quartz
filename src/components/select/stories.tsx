@@ -3,13 +3,13 @@ import { useState } from 'react';
 import { StoryObj, Meta } from '@storybook/react';
 
 import { Box } from 'rebass';
-import Select from './index';
+import SelectComponent from './index';
 import { RadioGroup, Value } from '../../index';
 import Labeling from '../typography/labeling';
 
-const meta: Meta<typeof Select> = {
+const meta: Meta<typeof SelectComponent> = {
   title: 'Forms/Selects/Select',
-  component: Select,
+  component: SelectComponent,
   argTypes: {
     value: {
       description: 'Array of strings',
@@ -98,7 +98,7 @@ export default meta;
 
 const options = ['name', 'creation date', 'size', '# of rows', '# of features'];
 
-export const Default: StoryObj<typeof Select> = {
+export const Select: StoryObj<typeof SelectComponent> = {
   args: {
     placeholder: 'placeholder',
     width: '100%',
@@ -150,7 +150,7 @@ export const Default: StoryObj<typeof Select> = {
 
     return (
       <Box width="600px" height="600px">
-        <Select
+        <SelectComponent
           {...props}
           value={value}
           maxListHeight="initial"

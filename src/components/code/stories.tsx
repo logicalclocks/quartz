@@ -1,10 +1,10 @@
 import { StoryObj, Meta } from '@storybook/react';
 import { Box } from 'rebass';
-import Code, { defaultPopupProps } from './index';
+import CodeComponent, { defaultPopupProps } from './index';
 
-const meta: Meta<typeof Code> = {
+const meta: Meta<typeof CodeComponent> = {
   title: 'DataDisplay/Code',
-  component: Code,
+  component: CodeComponent,
   argTypes: {
     content: {
       control: {
@@ -68,8 +68,8 @@ const meta: Meta<typeof Code> = {
 };
 export default meta;
 
-type Story = StoryObj<typeof Code>;
-export const Default: Story = {
+type Story = StoryObj<typeof CodeComponent>;
+export const Code: Story = {
   args: {
     copyButton: true,
     downloadButton: true,
@@ -79,12 +79,12 @@ export const Default: Story = {
   },
   render: (props) => (
     <Box width="700px">
-      <Code {...props} />
+      <CodeComponent {...props} />
     </Box>
   ),
 };
 
-export const DefaultExpandable: Story = {
+export const CodeExpandable: Story = {
   args: {
     title: 'cargo.sh',
     expandable: true,
@@ -94,7 +94,7 @@ export const DefaultExpandable: Story = {
   render: (props) => {
     return (
       <Box width="700px">
-        <Code {...props} content={content} />
+        <CodeComponent {...props} content={content} />
       </Box>
     );
   },

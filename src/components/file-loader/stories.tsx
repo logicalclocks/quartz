@@ -1,10 +1,10 @@
 import { StoryObj, Meta } from '@storybook/react';
 
-import FileLoader from '.';
+import FileLoaderComponent from '.';
 
-const meta: Meta<typeof FileLoader> = {
+const meta: Meta<typeof FileLoaderComponent> = {
   title: 'Feedback/Progress/FileLoader',
-  component: FileLoader,
+  component: FileLoaderComponent,
 
   argTypes: {
     fileName: {
@@ -50,12 +50,12 @@ const meta: Meta<typeof FileLoader> = {
 };
 export default meta;
 
-export const Default: StoryObj<typeof FileLoader> = {
+export const FileLoader: StoryObj<typeof FileLoaderComponent> = {
   args: {
     fileName: 'TestFile.pdf',
     located: '/files/jars',
     percentage: 0,
   },
 
-  render: (props) => <FileLoader {...props} />,
+  render: (props) => <FileLoaderComponent {...props} />,
 };

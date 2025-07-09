@@ -1,11 +1,10 @@
 import { StoryObj, Meta } from '@storybook/react';
-
-import CompactButton from '.';
+import CompactButtonComponent from '.';
 import { GetIcon, IconName } from '../icon';
 
-const meta: Meta<typeof CompactButton> = {
+const meta: Meta<typeof CompactButtonComponent> = {
   title: 'Forms/Buttons/CompactButton',
-  component: CompactButton,
+  component: CompactButtonComponent,
   argTypes: {
     isActive: {
       control: { type: 'boolean' },
@@ -36,10 +35,12 @@ const meta: Meta<typeof CompactButton> = {
 };
 export default meta;
 
-export const CompactButtonTemplate: StoryObj<typeof CompactButton> = {
+export const CompactButtonTemplate: StoryObj<typeof CompactButtonComponent> = {
   args: {
     mode: 'default',
     href: '/test',
   },
-  render: (props) => <CompactButton {...props}>1</CompactButton>,
+  render: (props) => (
+    <CompactButtonComponent {...props}>1</CompactButtonComponent>
+  ),
 };
