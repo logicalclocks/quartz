@@ -45,5 +45,4 @@ export default meta;
 
 type Story = StoryObj<typeof BadgeComponent>;
 
-export const Badge: Story = { render: (props) => <BadgeComponent {...props} /> };
-export const Default: Story = { render: (props) => <Badge {...props} /> };
+export const Badge: Story = {};
