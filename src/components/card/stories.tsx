@@ -3,7 +3,7 @@ import { Meta, StoryObj } from '@storybook/react';
 
 import Card from '.';
 import { Button } from '../button';
-import CardSecondary from './card-secondary';
+import CardSecondaryComponent from './card-secondary';
 import { Flex } from '../flex';
 
 const meta: Meta<typeof Card> = {
@@ -77,12 +77,12 @@ export const Template: StoryObj<typeof Card> = {
   render: (props) => <Card {...props} />,
 };
 
-export const TemplateSecondary: StoryObj<typeof CardSecondary> = {
+export const TemplateSecondary: StoryObj<typeof CardSecondaryComponent> = {
   args: {
     title: 'Title!',
     width: '830px',
     height: '270px',
     children: 'content',
   },
-  render: (props) => <CardSecondary {...props} />,
+  render: (props) => <CardSecondaryComponent {...props} />,
 };
