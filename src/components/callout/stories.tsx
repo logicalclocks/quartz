@@ -9,20 +9,14 @@ const meta: Meta<typeof CalloutComponent> = {
   component: CalloutComponent,
   argTypes: {
     type: {
-      control: {
-        type: 'select',
-        options: CalloutTypes,
-      },
+      control: { type: 'select' },
+      options: Object.values(CalloutTypes),
     },
     content: {
-      control: {
-        type: 'text',
-      },
+      control: { type: 'text' },
     },
     cta: {
-      control: {
-        type: 'object',
-      },
+      control: { type: 'object' },
     },
   },
 };
@@ -30,7 +24,7 @@ export default meta;
 
 type Story = StoryObj<typeof CalloutComponent>;
 
-const Template: Story = {
+const template: Partial<Story> = {
   render: (props) => (
     <Box width="700px">
       <CalloutComponent {...props} />
@@ -38,8 +32,38 @@ const Template: Story = {
   ),
 };
 
-export const Callout: Story = {
-  ...Template,
+export const Valid: Story = {
+  ...template,
+  args: {
+    type: CalloutTypes.valid,
+    content: 'lorem ipsum',
+  },
+};
+export const Warning: Story = {
+  ...template,
+  args: {
+    type: CalloutTypes.warning,
+    content: 'lorem ipsum',
+  },
+};
+
+export const Error: Story = {
+  ...template,
+  args: {
+    type: CalloutTypes.error,
+    content: 'lorem ipsum',
+  },
+};
+export const Neutral: Story = {
+  ...template,
+  args: {
+    type: CalloutTypes.neutral,
+    content: 'lorem ipsum',
+  },
+};
+
+export const CalloutWithCTA: Story = {
+  ...template,
   args: {
     type: CalloutTypes.valid,
     content: 'lorem ipsum',
@@ -48,13 +72,5 @@ export const Callout: Story = {
         Secondary
       </Button>
     ),
-  },
-};
-
-export const WithoutCTA: Story = {
-  ...Template,
-  args: {
-    type: CalloutTypes.valid,
-    content: 'lorem ipsum',
   },
 };
