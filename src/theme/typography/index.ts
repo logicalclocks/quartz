@@ -11,6 +11,7 @@ import labelingGray from './labelingGray';
 import inputValidationneutral from './input-validation.neutral';
 import inputValidationsuccess from './input-validation.success';
 import inputValidationwarning from './input-validation.warning';
+import inputValidationfail from './input-validation.fail';
 
 const variants = {
   title,
@@ -25,6 +26,7 @@ const variants = {
   inputValidationneutral,
   inputValidationsuccess,
   inputValidationwarning,
+  inputValidationfail,
 };
 
 export default variants;
