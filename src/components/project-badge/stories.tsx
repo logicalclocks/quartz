@@ -1,5 +1,6 @@
 import { StoryObj } from '@storybook/react';
 import { ProjectBadge as ProjectBadgeComponent } from './ProjectBadge';
+import { Flex } from '../flex';
 
 export default {
   title: 'DataDisplay/Badge/ProjectBadge',
@@ -9,4 +10,10 @@ export default {
   },
 };
 
-export const ProjectBadge: StoryObj<typeof ProjectBadgeComponent> = {};
+export const ProjectBadge: StoryObj<typeof ProjectBadgeComponent> = {
+  render: (props) => (
+    <Flex justifyContent="center">
+      <ProjectBadgeComponent {...props} />
+    </Flex>
+  ),
+};
