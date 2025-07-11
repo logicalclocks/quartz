@@ -11,7 +11,6 @@ import { createStandaloneToast } from '../../chakra';
 
 const meta: Meta<INotification> = {
   title: 'Feedback/Notifier',
-  // component: Notifier,
   args: {
     title: 'Something happened',
     content: 'You have to see it.',

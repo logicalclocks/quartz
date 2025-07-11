@@ -1,6 +1,5 @@
 import { action } from '@storybook/addon-actions';
 import { StoryObj, Meta } from '@storybook/react';
-import { Flex } from 'rebass';
 import TabComponent from './Tab';
 import { TabState } from '../types';
 
@@ -39,9 +38,4 @@ export const Tab: StoryObj<typeof TabComponent> = {
     state: TabState.default,
     onClick: action('onClick'),
   },
-  render: (props) => (
-    <Flex width="700px" alignItems="center" justifyContent="center">
-      <TabComponent {...props} />
-    </Flex>
-  ),
 };

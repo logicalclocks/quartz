@@ -17,7 +17,6 @@ export const PerformanceBar: Story = {
       },
     ],
   },
-  render: (props) => <PerformanceBarComponent {...props} />,
 };
 
 export const Mix: Story = {

@@ -2,12 +2,12 @@ import { Meta, StoryObj } from '@storybook/react';
 import { expect, userEvent, within, screen, waitFor } from '@storybook/test';
 
 import { Box, Button, usePopup } from '../..';
-import Popup from './index';
+import PopupComponent from './index';
 import { reusableArgs } from './storyUitls';
 
-const meta: Meta<typeof Popup> = {
+const meta: Meta<typeof PopupComponent> = {
   title: 'Overlay/Popup/Popup',
-  component: Popup,
+  component: PopupComponent,
   argTypes: {
     size: {
       options: [
@@ -36,7 +36,7 @@ const meta: Meta<typeof Popup> = {
 };
 export default meta;
 
-export const PopupStory: StoryObj<typeof Popup> = {
+export const Popup: StoryObj<typeof PopupComponent> = {
   args: {
     title: 'Title',
     footer: 'some footer',
@@ -56,9 +56,9 @@ export const PopupStory: StoryObj<typeof Popup> = {
         >
           Open Popup
         </Button>
-        <Popup {...props} isOpen={isOpen} onClose={handleToggle}>
+        <PopupComponent {...props} isOpen={isOpen} onClose={handleToggle}>
           <div>this is children</div>
-        </Popup>
+        </PopupComponent>
       </Box>
     );
   },

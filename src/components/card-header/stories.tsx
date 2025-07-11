@@ -55,9 +55,9 @@ const meta: Meta<typeof CardHeaderComponent> = {
       control: {
         type: 'boolean',
       },
-      // table: {
-      //   defaultValue: { summary: 'false' },
-      // },
+      table: {
+        defaultValue: { summary: 'false' },
+      },
     },
     withBorderBottom: {
       description: 'To show border bottom',

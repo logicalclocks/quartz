@@ -31,5 +31,4 @@ export const ToggleButton: StoryObj<typeof ToggleButtonComponent> = {
   args: {
     children: 'partition key only',
   },
-  render: (props) => <ToggleButtonComponent {...props} />,
 };

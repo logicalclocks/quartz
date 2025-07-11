@@ -24,5 +24,4 @@ export const Spinner: StoryObj<typeof SpinnerComponent> = {
     color: 'labels.green',
     size: 20,
   },
-  render: (props) => <SpinnerComponent {...props} />,
 };

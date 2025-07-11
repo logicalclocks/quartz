@@ -1,6 +1,5 @@
 import { action } from '@storybook/addon-actions';
 import { StoryObj, Meta } from '@storybook/react';
-import { Box } from 'rebass';
 import FormTabsComponent, { ValidateOpts } from './index';
 import { Button } from '../..';
 
@@ -81,10 +80,9 @@ export const FormTabs: StoryObj<typeof FormTabsComponent> = {
       <Button onClick={() => handleSubmit(validateAll)}>Create feature</Button>
     ),
     initialTab: 'title2',
+    sx: {
+      mt: '0px',
+      maxWidth: '900px',
+    },
   },
-  render: (props) => (
-    <Box width="700px">
-      <FormTabsComponent {...props} />
-    </Box>
-  ),
 };

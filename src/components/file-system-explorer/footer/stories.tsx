@@ -3,7 +3,7 @@ import { StoryObj, Meta } from '@storybook/react';
 import FooterFileExplorer from './index';
 
 const meta: Meta = {
-  title: 'Miscellaneous/FileSystemExplorer/Footer',
+  title: 'Miscellaneous/FileSystemExplorer/FooterFileExplorer',
   component: FooterFileExplorer,
   args: {
     value: 'pick a file',
@@ -20,6 +20,4 @@ const meta: Meta = {
 };
 export default meta;
 
-export const Default: StoryObj<typeof FooterFileExplorer> = {
-  render: (props) => <FooterFileExplorer {...props} />,
-};
+export const Default: StoryObj<typeof FooterFileExplorer> = {};

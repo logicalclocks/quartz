@@ -1,5 +1,4 @@
 import { StoryObj, Meta } from '@storybook/react';
-import { Box } from 'rebass';
 import FormSummaryContainerComponent from './index';
 
 const meta: Meta<typeof FormSummaryContainerComponent> = {
@@ -20,12 +19,8 @@ export const FormSummaryContainer: StoryObj<
 > = {
   args: {
     hasScrollOnScreen: false,
+    mt: '20px',
+    maxWidth: '900px',
+    children: 'the content goes here',
   },
-  render: (props) => (
-    <Box width="700px">
-      <FormSummaryContainerComponent {...props}>
-        the content goes here
-      </FormSummaryContainerComponent>
-    </Box>
-  ),
 };

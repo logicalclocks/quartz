@@ -1,5 +1,4 @@
 import { action } from '@storybook/addon-actions';
-import { Box } from 'rebass';
 import { StoryObj, Meta } from '@storybook/react';
 
 import DropdownComponent from './index';
@@ -9,16 +8,10 @@ const meta: Meta<typeof DropdownComponent> = {
   title: 'Forms/Dropdowns/Dropdown',
   component: DropdownComponent,
   argTypes: {
-    items: {
-      description: 'Array of Items',
-    },
+    items: { description: 'Array of Items' },
     isOpen: {
-      control: {
-        type: 'boolean',
-      },
-      defaultValue: {
-        summary: 'left',
-      },
+      control: { type: 'boolean' },
+      defaultValue: { summary: 'left' },
     },
     onClickOutside: {
       description: 'Fires on clicking outside the dropdown',
@@ -29,6 +22,7 @@ export default meta;
 
 export const Dropdown: StoryObj<typeof DropdownComponent> = {
   args: {
+    onClickOutside: action('outside'),
     items: [
       {
         value: 'project_1',
@@ -50,9 +44,4 @@ export const Dropdown: StoryObj<typeof DropdownComponent> = {
       },
     ],
   },
-  render: (props) => (
-    <Box width="300px">
-      <DropdownComponent {...props} onClickOutside={action('outside')} />
-    </Box>
-  ),
 };

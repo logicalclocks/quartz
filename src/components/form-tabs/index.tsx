@@ -9,7 +9,9 @@ import {
   buttonsContainerStyles,
   gradientStyles,
 } from './form-tabs.styles';
-import FormSummaryContainer from '../form-summary-container';
+import FormSummaryContainer, {
+  FormSummaryContainerProps,
+} from '../form-summary-container';
 import Tab from './tab/Tab';
 import { Button } from '../button';
 import { TabState } from './types';
@@ -29,7 +31,7 @@ export interface TabItem {
   validationFn: () => ValidateOpts;
 }
 
-export interface FormTabsProps {
+export interface FormTabsProps extends FormSummaryContainerProps {
   tabs: TabItem[];
   SubmitButton: React.FC<any>;
   initialTab?: string;

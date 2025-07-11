@@ -8,9 +8,7 @@ const meta: Meta<typeof LabelComponent> = {
   component: LabelComponent,
   argTypes: {
     text: {
-      control: {
-        type: 'text',
-      },
+      control: { type: 'text' },
       description: 'Label text',
     },
     children: {
@@ -28,20 +26,18 @@ type Story = StoryObj<typeof LabelComponent>;
 export const Label: Story = {
   args: {
     text: 'Label',
-    children: <input type="text" />,
+    children: <input aria-label="label" type="text" />,
   },
-  render: (props) => <LabelComponent {...props} />,
 };
 
 export const WithAction: Story = {
   args: {
     text: 'Label',
-    children: <input type="text" />,
+    children: <input aria-label="label" type="text" />,
     action: (
       <Button p="0 0 0 10px" intent="inline">
         reference
       </Button>
     ),
   },
-  render: (props) => <LabelComponent {...props} />,
 };

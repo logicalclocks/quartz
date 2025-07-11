@@ -5,7 +5,7 @@ import { action } from '@storybook/addon-actions';
 import { DropdownButton as DropdownButtonComponent } from './DropdownButton';
 import { IconName } from '../icon';
 import { IconButton } from '../icon-button';
-import { DropdownButton2 } from './DropdownButton2';
+import { DropdownButton2 as DropdownButton2Component } from './DropdownButton2';
 
 const meta: Meta<typeof DropdownButtonComponent> = {
   title: 'Forms/Dropdowns/DropdownButton',
@@ -40,21 +40,12 @@ const meta: Meta<typeof DropdownButtonComponent> = {
 };
 export default meta;
 
-export const DropdownButton: StoryObj<typeof DropdownButtonComponent> = {
-  render: (props) => (
-    <Box width="700px" height="115px">
-      <DropdownButtonComponent {...props} />
-    </Box>
-  ),
-};
+export const DropdownButton: StoryObj<typeof DropdownButtonComponent> = {};
 
-export const DropdownButton2Story: StoryObj<typeof DropdownButton2> = {
-  args: {
-    // matchWidth: true,
-  },
+export const DropdownButton2: StoryObj<typeof DropdownButton2Component> = {
   render: (props) => (
     <Box width="700px" height="115px">
-      <DropdownButton2 {...props} />
+      <DropdownButton2Component {...props} />
     </Box>
   ),
 };

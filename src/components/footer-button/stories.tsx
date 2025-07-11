@@ -45,5 +45,4 @@ export const FooterButton: StoryObj<typeof FooterButtonComponent> = {
     ),
     onClick: action('onClick'),
   },
-  render: (props) => <FooterButtonComponent {...props} />,
 };

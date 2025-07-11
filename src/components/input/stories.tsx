@@ -13,73 +13,54 @@ const meta: Meta<typeof InputComponent> = {
       description: 'Input change callback function',
     },
     placeholder: {
-      control: {
-        type: 'text',
-      },
+      control: { type: 'text' },
       description: 'Input placeholder',
     },
     disabled: {
-      control: {
-        type: 'boolean',
-      },
+      control: { type: 'boolean' },
     },
     variant: {
-      control: {
-        type: 'select',
-        options: ['primary', 'white'],
-      },
+      control: { type: 'select' },
+      options: ['primary', 'white'],
       description: 'Input variant',
     },
     info: {
-      control: {
-        type: 'text',
-      },
+      control: { type: 'text' },
       description: 'Message text (validation error)',
     },
     label: {
-      control: {
-        type: 'text',
-      },
+      control: { type: 'text' },
     },
     labelAction: {
       description: 'Label action (React node)',
     },
     width: {
-      control: {
-        type: 'text',
-      },
+      control: { type: 'text' },
       description: 'Width of the input group (px, %, em)',
       defaultValue: { description: '180px' },
     },
     intent: {
-      control: {
-        type: 'select',
-        options: ['default', 'error'],
-      },
+      control: { type: 'select' },
+      options: ['default', 'error'],
       description: 'Input intent (error border)',
     },
     type: {
+      control: { type: 'select' },
       options: ['textarea', 'text', 'number', 'password'],
-      control: {
-        type: 'select',
-      },
       required: false,
     },
     rows: {
-      control: {
-        type: 'number',
-      },
+      control: { type: 'number' },
       description: 'Textarea rows count',
     },
     icon: {
+      control: { type: 'select' },
       options: Object.values(IconName).filter((x) => typeof x === 'string'),
       mapping: IconName,
-      control: {
-        type: 'select',
-      },
       description: 'Left icon. Receives IconName',
     },
     rightIcon: {
+      control: { type: 'select' },
       options: ['none', 'example'],
       mapping: {
         none: null,
@@ -89,18 +70,13 @@ const meta: Meta<typeof InputComponent> = {
           </Box>
         ),
       },
-      control: {
-        type: 'select',
-      },
       description: `
         Right icon. 
         Receives JSX element. Wants an absolute position, as the parent is relative.
         Should not really be called rightIcon(or exist), but it is a long story :)`,
     },
     suffix: {
-      control: {
-        type: 'text',
-      },
+      control: { type: 'text' },
       description:
         'Suffix for the input, e.g. `MB` to show that the input shows megabytes',
     },
@@ -114,8 +90,7 @@ export const Input: StoryObj<typeof InputComponent> = {
     placeholder: 'Placeholder',
     onChange: action('Input change'),
     tooltipInfo: 'tooltip info',
+    icon: IconName.glass,
+    iconPaddingRight: '40px',
   },
-  render: (props) => (
-    <InputComponent icon={IconName.glass} iconPaddingRight="40px" {...props} />
-  ),
 };

@@ -58,5 +58,4 @@ export const Symbol: StoryObj<typeof SymbolComponent> = {
     },
     handleClick: () => console.log('clicked'),
   },
-  render: (props) => <SymbolComponent {...props} />,
 };

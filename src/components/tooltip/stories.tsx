@@ -7,10 +7,7 @@ const meta: Meta<typeof TooltipComponent> = {
   component: TooltipComponent,
   argTypes: {
     mainText: {
-      control: {
-        type: 'text',
-        default: 'tooltip',
-      },
+      control: { type: 'text' },
       description: 'Tooltip text',
     },
     secondaryText: {
@@ -40,9 +37,9 @@ const meta: Meta<typeof TooltipComponent> = {
     position: {
       control: {
         type: 'select',
-        default: 'bottom',
-        options: ['bottom', 'right', 'top', 'left'],
       },
+      default: 'bottom',
+      options: ['bottom', 'right', 'top', 'left'],
       description: 'Tooltip position according to the wrapped component',
     },
   },
@@ -53,10 +50,7 @@ export const Tooltip: StoryObj<typeof TooltipComponent> = {
   args: {
     mainText: 'tooltip',
     secondaryText: 'secondary',
+    position: 'left',
+    children: <Button intent="ghost">Button with tooltip</Button>,
   },
-  render: (props) => (
-    <TooltipComponent {...props}>
-      <Button intent="ghost">Button with tooltip</Button>
-    </TooltipComponent>
-  ),
 };

@@ -71,7 +71,7 @@ const meta: Meta<typeof FileSystemExplorerComponent> = {
     data: {
       type: { name: 'string', required: true },
       control: {
-        type: 'array',
+        type: 'text',
       },
     },
 
@@ -83,7 +83,7 @@ const meta: Meta<typeof FileSystemExplorerComponent> = {
         type: 'boolean',
       },
       table: {
-        defaultValue: { summary: false },
+        defaultValue: { summary: 'false' },
       },
     },
 
@@ -102,16 +102,18 @@ const meta: Meta<typeof FileSystemExplorerComponent> = {
 };
 export default meta;
 
-export const FileSystemExplorer: StoryObj<typeof FileSystemExplorerComponent> = {
-  args: {
-    data: testData,
-    shortcutActions: (
-      <Button padding="0" variant="inline" onClick={action('Shortcut action')}>
-        {'->'}Go directly to Jupyter notebook directory
-      </Button>
-    ),
-    width: '830px',
-    height: '100%',
-  },
-  render: (props) => <FileSystemExplorerComponent {...props} />,
-};
+export const FileSystemExplorer: StoryObj<typeof FileSystemExplorerComponent> =
+  {
+    args: {
+      data: testData,
+      shortcutActions: (
+        <Button
+          padding="0"
+          variant="inline"
+          onClick={action('Shortcut action')}
+        >
+          {'->'}Go directly to Jupyter notebook directory
+        </Button>
+      ),
+    },
+  };

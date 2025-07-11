@@ -34,5 +34,4 @@ export const Radio: StoryObj<typeof RadioComponent> = {
   args: {
     label: 'nullable',
   },
-  render: (props) => <RadioComponent {...props} />,
 };

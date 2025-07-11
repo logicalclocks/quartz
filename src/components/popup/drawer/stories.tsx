@@ -2,7 +2,7 @@ import { action } from '@storybook/addon-actions';
 import { Meta, StoryObj } from '@storybook/react';
 
 import { Box, BoxProps } from 'rebass';
-import { Button, Drawer, usePopup } from '../../..';
+import { Button, Drawer as DrawerComponent, usePopup } from '../../..';
 import { reusableArgs } from '../storyUitls';
 
 const YellowBox = (props: Omit<BoxProps, 'css'>) => (
@@ -23,13 +23,13 @@ const YellowBox = (props: Omit<BoxProps, 'css'>) => (
   />
 );
 
-const meta: Meta<typeof Drawer> = {
-  title: 'Overlay/Drawer/Drawer',
-  component: Drawer,
+const meta: Meta<typeof DrawerComponent> = {
+  title: 'Overlay/Drawer',
+  component: DrawerComponent,
 };
 export default meta;
 
-export const Simple: StoryObj<typeof Drawer> = {
+export const Drawer: StoryObj<typeof DrawerComponent> = {
   args: {
     headerLine: <YellowBox width="268px">head line</YellowBox>,
     headerSummary: <YellowBox>header summary</YellowBox>,
@@ -43,26 +43,26 @@ export const Simple: StoryObj<typeof Drawer> = {
     return (
       <>
         <Button onClick={handleToggle}>Open Drawer</Button>
-        <Drawer isOpen={isOpen} {...props} onClose={handleToggle}>
-          <Drawer.Section
+        <DrawerComponent isOpen={isOpen} {...props} onClose={handleToggle}>
+          <DrawerComponent.Section
             title="Section title"
             action={['section link', action('section action')]}
           >
             <YellowBox height="64px">content</YellowBox>
-          </Drawer.Section>
-          <Drawer.Section
+          </DrawerComponent.Section>
+          <DrawerComponent.Section
             title="Section title"
             action={['section link', action('section action')]}
           >
             <YellowBox height="121px">content</YellowBox>
-          </Drawer.Section>
-          <Drawer.Section
+          </DrawerComponent.Section>
+          <DrawerComponent.Section
             title="Section title"
             action={['section link', action('section action')]}
           >
             <YellowBox height="163px">content</YellowBox>
-          </Drawer.Section>
-        </Drawer>
+          </DrawerComponent.Section>
+        </DrawerComponent>
       </>
     );
   },

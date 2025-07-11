@@ -40,13 +40,8 @@ export const ExpandViewer: StoryObj<typeof ExpandViewerComponent> = {
     ),
     NormalComponent: () => (
       <Box height={400} width="100%" bg="primary" p={3}>
-        show this as an expanded component in the popup
+        show this as an expanded component on the popup
       </Box>
     ),
   },
-  render: (props) => (
-    <Box width="700px">
-      <ExpandViewerComponent {...props} />
-    </Box>
-  ),
 };
