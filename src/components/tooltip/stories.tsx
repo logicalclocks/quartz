@@ -1,16 +1,13 @@
 import { StoryObj, Meta } from '@storybook/react';
 import { Button } from '../button';
-import Tooltip from './index';
+import TooltipComponent from './index';
 
-const meta: Meta<typeof Tooltip> = {
-  title: 'Tooltips',
-  component: Tooltip,
+const meta: Meta<typeof TooltipComponent> = {
+  title: 'Overlay/Tooltip',
+  component: TooltipComponent,
   argTypes: {
     mainText: {
-      control: {
-        type: 'text',
-        default: 'tooltip',
-      },
+      control: { type: 'text' },
       description: 'Tooltip text',
     },
     secondaryText: {
@@ -40,23 +37,20 @@ const meta: Meta<typeof Tooltip> = {
     position: {
       control: {
         type: 'select',
-        default: 'bottom',
-        options: ['bottom', 'right', 'top', 'left'],
       },
+      default: 'bottom',
+      options: ['bottom', 'right', 'top', 'left'],
       description: 'Tooltip position according to the wrapped component',
     },
   },
 };
 export default meta;
 
-export const Default: StoryObj<typeof Tooltip> = {
+export const Tooltip: StoryObj<typeof TooltipComponent> = {
   args: {
     mainText: 'tooltip',
     secondaryText: 'secondary',
+    position: 'left',
+    children: <Button intent="ghost">Button with tooltip</Button>,
   },
-  render: (props) => (
-    <Tooltip {...props}>
-      <Button intent="ghost">Button with tooltip</Button>
-    </Tooltip>
-  ),
 };

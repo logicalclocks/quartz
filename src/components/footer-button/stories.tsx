@@ -1,12 +1,12 @@
 import { action } from '@storybook/addon-actions';
 import { StoryObj, Meta } from '@storybook/react';
 
-import FooterButton from '.';
+import FooterButtonComponent from '.';
 import { GetIcon, IconName } from '../icon';
 
-const meta: Meta<typeof FooterButton> = {
-  title: 'Buttons/FooterButton',
-  component: FooterButton,
+const meta: Meta<typeof FooterButtonComponent> = {
+  title: 'Forms/Buttons/FooterButton',
+  component: FooterButtonComponent,
 
   argTypes: {
     intent: {
@@ -34,7 +34,7 @@ const meta: Meta<typeof FooterButton> = {
 };
 export default meta;
 
-export const Default: StoryObj<typeof FooterButton> = {
+export const FooterButton: StoryObj<typeof FooterButtonComponent> = {
   args: {
     intent: 'primary',
     children: (
@@ -45,5 +45,4 @@ export const Default: StoryObj<typeof FooterButton> = {
     ),
     onClick: action('onClick'),
   },
-  render: (props) => <FooterButton {...props} />,
 };

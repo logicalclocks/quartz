@@ -1,17 +1,18 @@
 import { StoryObj, Meta } from '@storybook/react';
 import Labeling from '../typography/labeling';
 
-import PerformanceCard from '.';
+import PerformanceCardComponent from '.';
 
 const meta: Meta = {
-  title: 'PerformanceCard',
-  component: PerformanceCard,
+  title: 'DataDisplay/Cards/PerformanceCard',
+  component: PerformanceCardComponent,
 };
 export default meta;
 
-type Story = StoryObj<typeof PerformanceCard>;
-export const Default: Story = {
+type Story = StoryObj<typeof PerformanceCardComponent>;
+export const PerformanceCard: Story = {
   args: {
+    children: <Labeling bold>Some content</Labeling>,
     bars: [
       {
         variant: 'perf.gray',
@@ -23,11 +24,6 @@ export const Default: Story = {
       },
     ],
   },
-  render: (props) => (
-    <PerformanceCard {...props}>
-      <Labeling bold>Some content</Labeling>
-    </PerformanceCard>
-  ),
 };
 
 export const PerformanceCard2: Story = {

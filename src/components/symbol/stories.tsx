@@ -1,11 +1,11 @@
 import { Meta, StoryObj } from '@storybook/react';
-import Symbol from './index';
+import SymbolComponent from './index';
 import TooltipPositions from '../tooltip/positions';
 import { SymbolMode } from './types';
 
-const meta: Meta<typeof Symbol> = {
-  title: 'Symbol',
-  component: Symbol,
+const meta: Meta<typeof SymbolComponent> = {
+  title: 'Media and Icons/Symbol',
+  component: SymbolComponent,
   argTypes: {
     inBasket: {
       control: {
@@ -48,7 +48,7 @@ const meta: Meta<typeof Symbol> = {
 };
 export default meta;
 
-export const Default: StoryObj<typeof Symbol> = {
+export const Symbol: StoryObj<typeof SymbolComponent> = {
   args: {
     inBasket: true,
     tooltipSecondaryText: '12 features',
@@ -58,5 +58,4 @@ export const Default: StoryObj<typeof Symbol> = {
     },
     handleClick: () => console.log('clicked'),
   },
-  render: (props) => <Symbol {...props} />,
 };

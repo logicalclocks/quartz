@@ -3,10 +3,11 @@ import { useState } from 'react';
 import { Box } from '../box';
 import { Button } from '../button';
 import { Flex } from '../flex';
-import { AnimatedProgress } from './AnimatedProgress';
+import { AnimatedProgress as AnimatedProgressComponent } from './AnimatedProgress';
 
-const meta: Meta<typeof AnimatedProgress> = {
-  title: 'AnimatedProgress',
+const meta: Meta<typeof AnimatedProgressComponent> = {
+  title: 'Feedback/Progress/AnimatedProgress',
+  component: AnimatedProgressComponent,
   argTypes: {
     isAnimating: {
       defaultValue: false,
@@ -75,14 +76,14 @@ const meta: Meta<typeof AnimatedProgress> = {
 };
 export default meta;
 
-type Story = StoryObj<typeof AnimatedProgress>;
+type Story = StoryObj<typeof AnimatedProgressComponent>;
 
-export const Default: Story = {
+export const AnimatedProgress: Story = {
   args: {
     variant: 'perf.green',
   },
   render: (args) => {
-    const [isAnimating, setIsAnimating] = useState<boolean>();
+    const [isAnimating, setIsAnimating] = useState<boolean>(false);
     return (
       <Box width="700px">
         <Flex my="20px" justifyContent="center" sx={{ gap: '20px' }}>
@@ -93,7 +94,7 @@ export const Default: Story = {
             done
           </Button>
         </Flex>
-        <AnimatedProgress {...args} isAnimating={isAnimating} />
+        <AnimatedProgressComponent {...args} isAnimating={isAnimating} />
       </Box>
     );
   },

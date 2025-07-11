@@ -2,18 +2,15 @@ import { Box } from 'rebass';
 import { action } from '@storybook/addon-actions';
 import { StoryObj, Meta } from '@storybook/react';
 
-import Navigation from './container';
+import NavigationComponent from './container';
 import { TreeNode } from './types';
 import useNavigation from './useNavigation';
 import { GetIcon, IconName } from '../icon';
 
-const meta: Meta<typeof Navigation> = {
-  title: 'Navigation',
-  component: Navigation,
+const meta: Meta<typeof NavigationComponent> = {
+  title: 'Navigation/Navigations/Navigation',
+  component: NavigationComponent,
   argTypes: {
-    children: {
-      description: 'Navigation Components (Item, Category)',
-    },
     tree: {
       description: 'Navigation object representation',
     },
@@ -68,93 +65,92 @@ export const Footer = () => {
   );
 };
 
-type Story = StoryObj<typeof Navigation>;
+type Story = StoryObj<typeof NavigationComponent>;
 
-export const TreeObject: Story = {
-  render: () => {
-    const tree: TreeNode[] = [
+const tree: TreeNode[] = [
+  {
+    title: 'Home',
+    icon: <GetIcon icon={IconName.folder} />,
+    id: '1',
+    children: [
       {
-        title: 'Home',
-        icon: <GetIcon icon={IconName.folder} />,
-        id: '1',
-        children: [
-          {
-            id: '32',
-            title: 'Owerview 2',
-          },
-        ] as any,
-        secondaryTooltipText: 'Home',
+        id: '32',
+        title: 'Owerview 2',
       },
+    ] as any,
+    secondaryTooltipText: 'Home',
+  },
+  {
+    title: 'Feature Groups',
+    icon: <GetIcon icon={IconName.folder} />,
+    id: '2',
+    disabled: true,
+    secondaryTooltipText: 'Feature Groups',
+    hideBack: true,
+    children: [
       {
-        title: 'Feature Groups',
-        icon: <GetIcon icon={IconName.folder} />,
-        id: '2',
-        disabled: true,
-        secondaryTooltipText: 'Feature Groups',
-        hideBack: true,
+        title: 'Overview',
+        id: '3',
         children: [
           {
-            title: 'Overview',
-            id: '3',
-            children: [
-              {
-                title: 'Feature List',
-                id: '4',
-                icon: <GetIcon icon={IconName.folder} />,
-                isSubItem: true,
-              },
-              {
-                title: 'Schematised Tags',
-                id: '5',
-                icon: <GetIcon icon={IconName.folder} />,
-                onClick: action('Tags Click'),
-                isActive: true,
-                isSubItem: true,
-              },
-              {
-                title: 'Running Code',
-                id: '6',
-                isSubItem: true,
-              },
-              {
-                title: 'API',
-                id: '7',
-                disabled: true,
-                isSubItem: true,
-              },
-            ],
+            title: 'Feature List',
+            id: '4',
+            icon: <GetIcon icon={IconName.folder} />,
+            isSubItem: true,
           },
           {
-            title: 'Data',
+            title: 'Schematised Tags',
+            id: '5',
             icon: <GetIcon icon={IconName.folder} />,
-            id: '8',
-            sx: { color: 'red', backgroundColor: 'blueShade1' },
+            onClick: action('Tags Click'),
+            isActive: true,
+            isSubItem: true,
           },
           {
-            title: 'Activity',
-            icon: <GetIcon icon={IconName.folder} />,
-            id: '9',
+            title: 'Running Code',
+            id: '6',
+            isSubItem: true,
+          },
+          {
+            title: 'API',
+            id: '7',
+            disabled: true,
+            isSubItem: true,
           },
         ],
       },
       {
-        title: 'Training Datasets',
-        id: '10',
-        hasDivider: true,
+        title: 'Data',
+        icon: <GetIcon icon={IconName.folder} />,
+        id: '8',
+        sx: { color: 'red', backgroundColor: 'blueShade1' },
       },
-      { title: 'Source', id: '11' },
-      { title: 'Jobs', id: '12' },
-    ] as any;
-
-    return (
-      <Box height="100vh">
-        <Navigation
-          onNavigate={action('On Navigate')}
-          tree={tree}
-          header="Header"
-          footer={<Footer />}
-        />
-      </Box>
-    );
+      {
+        title: 'Activity',
+        icon: <GetIcon icon={IconName.folder} />,
+        id: '9',
+      },
+    ],
   },
+  {
+    title: 'Training Datasets',
+    id: '10',
+    hasDivider: true,
+  },
+  { title: 'Source', id: '11' },
+  { title: 'Jobs', id: '12' },
+] as any;
+
+export const Navigation: Story = {
+  args: {
+    onNavigate: action('On Navigate'),
+    tree,
+    header: 'Header',
+    footer: <Footer />,
+  },
+  render: (props) => (
+    <Box height="100vh">
+      <NavigationComponent {...props} />
+    </Box>
+  ),
 };

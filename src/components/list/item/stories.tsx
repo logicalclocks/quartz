@@ -3,7 +3,7 @@ import { StoryObj, Meta } from '@storybook/react';
 import { ListItem } from '../../..';
 
 const meta: Meta<typeof ListItem> = {
-  title: 'ListItem',
+  title: 'Forms/Lists/ListItem',
   component: ListItem,
 
   argTypes: {

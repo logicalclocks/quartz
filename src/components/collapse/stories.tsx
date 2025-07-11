@@ -3,10 +3,11 @@ import { StoryObj, Meta } from '@storybook/react';
 
 import { Button } from '../button';
 import { Labeling, Value } from '../../index';
-import Collapse from './index';
+import CollapseComponent from './index';
 
-const meta: Meta<typeof Collapse> = {
-  title: 'Collapse',
+const meta: Meta<typeof CollapseComponent> = {
+  title: 'Disclosure/Collapse',
+  component: CollapseComponent,
   argTypes: {
     title: {
       control: {
@@ -24,7 +25,7 @@ const meta: Meta<typeof Collapse> = {
 };
 export default meta;
 
-export const Default: StoryObj<typeof Collapse> = {
+export const Collapse: StoryObj<typeof CollapseComponent> = {
   args: {
     title: <Labeling ml="8px">section title</Labeling>,
     secondaryContent: <Labeling gray>secondary text</Labeling>,
@@ -32,13 +33,13 @@ export const Default: StoryObj<typeof Collapse> = {
   render: (props) => {
     return (
       <Box height="300px">
-        <Collapse width="500px" {...props}>
+        <CollapseComponent width="500px" {...props}>
           <Box>
             <Value>some text</Value>
             <Button>button</Button>
           </Box>
-        </Collapse>
-        <Collapse mt="8px" width="500px" {...props}>
+        </CollapseComponent>
+        <CollapseComponent mt="8px" width="500px" {...props}>
           <Box>
             <Value>some text</Value>
             <Button>button</Button>
@@ -47,7 +48,7 @@ export const Default: StoryObj<typeof Collapse> = {
             <Value>some text</Value>
             <Button>button</Button>
           </Box>
-        </Collapse>
+        </CollapseComponent>
       </Box>
     );
   },

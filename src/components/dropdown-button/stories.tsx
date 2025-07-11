@@ -2,14 +2,14 @@ import { StoryObj, Meta } from '@storybook/react';
 import { Box } from 'rebass';
 import { action } from '@storybook/addon-actions';
 
-import { DropdownButton } from './DropdownButton';
+import { DropdownButton as DropdownButtonComponent } from './DropdownButton';
 import { IconName } from '../icon';
 import { IconButton } from '../icon-button';
-import { DropdownButton2 } from './DropdownButton2';
+import { DropdownButton2 as DropdownButton2Component } from './DropdownButton2';
 
-const meta: Meta<typeof DropdownButton> = {
-  title: 'DropdownButton',
-  component: DropdownButton,
+const meta: Meta<typeof DropdownButtonComponent> = {
+  title: 'Forms/Dropdowns/DropdownButton',
+  component: DropdownButtonComponent,
   args: {
     renderButton: ({ onClick }: any) => (
       <IconButton icon={IconName.more} onClick={onClick} />
@@ -40,21 +40,12 @@ const meta: Meta<typeof DropdownButton> = {
 };
 export default meta;
 
-export const Default: StoryObj<typeof DropdownButton> = {
-  render: (props) => (
-    <Box width="700px" height="115px">
-      <DropdownButton {...props} />
-    </Box>
-  ),
-};
+export const DropdownButton: StoryObj<typeof DropdownButtonComponent> = {};
 
-export const DropdownButton2Story: StoryObj<typeof DropdownButton2> = {
-  args: {
-    // matchWidth: true,
-  },
+export const DropdownButton2: StoryObj<typeof DropdownButton2Component> = {
   render: (props) => (
     <Box width="700px" height="115px">
-      <DropdownButton2 {...props} />
+      <DropdownButton2Component {...props} />
     </Box>
   ),
 };

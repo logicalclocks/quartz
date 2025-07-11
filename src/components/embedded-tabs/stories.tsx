@@ -6,7 +6,7 @@ import EmbeddedTabs from '.';
 import { Button } from '../button';
 
 const meta: Meta<typeof EmbeddedTabs> = {
-  title: 'EmbeddedTabs',
+  title: 'Disclosure/Tabs/EmbeddedTabs',
   component: EmbeddedTabs,
   argTypes: {
     tabs: {

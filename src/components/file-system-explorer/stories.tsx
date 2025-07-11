@@ -1,14 +1,14 @@
 import { action } from '@storybook/addon-actions';
 import { StoryObj, Meta } from '@storybook/react';
 
-import FileSystemExplorer from '.';
+import FileSystemExplorerComponent from '.';
 import { Button } from '../button';
 // Data
 import testData from './test-data';
 
-const meta: Meta<typeof FileSystemExplorer> = {
-  title: 'FileSystemExplorer',
-  component: FileSystemExplorer,
+const meta: Meta<typeof FileSystemExplorerComponent> = {
+  title: 'Miscellaneous/FileSystemExplorer/FileSystemExplorer',
+  component: FileSystemExplorerComponent,
   argTypes: {
     title: {
       type: { name: 'string', required: false },
@@ -71,7 +71,7 @@ const meta: Meta<typeof FileSystemExplorer> = {
     data: {
       type: { name: 'string', required: true },
       control: {
-        type: 'array',
+        type: 'text',
       },
     },
 
@@ -83,7 +83,7 @@ const meta: Meta<typeof FileSystemExplorer> = {
         type: 'boolean',
       },
       table: {
-        defaultValue: { summary: false },
+        defaultValue: { summary: 'false' },
       },
     },
 
@@ -102,16 +102,18 @@ const meta: Meta<typeof FileSystemExplorer> = {
 };
 export default meta;
 
-export const Default: StoryObj<typeof FileSystemExplorer> = {
-  args: {
-    data: testData,
-    shortcutActions: (
-      <Button padding="0" variant="inline" onClick={action('Shortcut action')}>
-        {'->'}Go directly to Jupyter notebook directory
-      </Button>
-    ),
-    width: '830px',
-    height: '100%',
-  },
-  render: (props) => <FileSystemExplorer {...props} />,
-};
+export const FileSystemExplorer: StoryObj<typeof FileSystemExplorerComponent> =
+  {
+    args: {
+      data: testData,
+      shortcutActions: (
+        <Button
+          padding="0"
+          variant="inline"
+          onClick={action('Shortcut action')}
+        >
+          {'->'}Go directly to Jupyter notebook directory
+        </Button>
+      ),
+    },
+  };

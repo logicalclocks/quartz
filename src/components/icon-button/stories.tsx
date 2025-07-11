@@ -1,12 +1,12 @@
 import { action } from '@storybook/addon-actions';
 import { Meta, StoryObj } from '@storybook/react';
 
-import { IconButton } from '.';
+import { IconButton as IconButtonComponent } from '.';
 import { IconName } from '../icon/list';
 
-const meta: Meta<typeof IconButton> = {
-  title: 'IconButton',
-  component: IconButton,
+const meta: Meta<typeof IconButtonComponent> = {
+  title: 'Forms/IconButton',
+  component: IconButtonComponent,
   argTypes: {
     intent: {
       control: {
@@ -46,7 +46,7 @@ const meta: Meta<typeof IconButton> = {
 };
 export default meta;
 
-export const Default: StoryObj<typeof IconButton> = {
+export const IconButton: StoryObj<typeof IconButtonComponent> = {
   args: {
     icon: IconName.more,
     intent: 'primary',
@@ -54,5 +54,5 @@ export const Default: StoryObj<typeof IconButton> = {
     onClick: action('onClick'),
     onClickIcon: action('onClickIcon'),
   },
-  render: (props) => <IconButton {...props} />,
+  render: (props) => <IconButtonComponent {...props} />,
 };

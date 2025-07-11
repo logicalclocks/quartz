@@ -1,14 +1,19 @@
 import { StoryObj } from '@storybook/react';
-import { ProjectBadge } from './ProjectBadge';
+import { ProjectBadge as ProjectBadgeComponent } from './ProjectBadge';
+import { Flex } from '../flex';
 
 export default {
-  title: 'Badges/ProjectBadge',
-  component: ProjectBadge,
+  title: 'DataDisplay/Badge/ProjectBadge',
+  component: ProjectBadgeComponent,
   args: {
     value: 'ml demo web',
   },
 };
 
-export const Default: StoryObj<typeof ProjectBadge> = {
-  render: (props) => <ProjectBadge {...props} />,
+export const ProjectBadge: StoryObj<typeof ProjectBadgeComponent> = {
+  render: (props) => (
+    <Flex justifyContent="center">
+      <ProjectBadgeComponent {...props} />
+    </Flex>
+  ),
 };

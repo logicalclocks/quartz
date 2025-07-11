@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import { StoryObj, Meta } from '@storybook/react';
-import RadioGroup from './radio-group';
+import RadioGroupComponent from './radio-group';
 
-const meta: Meta<typeof RadioGroup> = {
-  title: 'RadioGroup',
-  component: RadioGroup,
+const meta: Meta<typeof RadioGroupComponent> = {
+  title: 'Forms/Radios/RadioGroup',
+  component: RadioGroupComponent,
   argTypes: {
     onChange: {
       description: 'Change callback function',
@@ -28,14 +28,14 @@ const meta: Meta<typeof RadioGroup> = {
 };
 export default meta;
 
-type Story = StoryObj<typeof RadioGroup>;
+type Story = StoryObj<typeof RadioGroupComponent>;
 
-export const GroupTemplate: Story = {
+export const RadioGroup: Story = {
   render: (props) => {
     const [value, setValue] = useState<string | null>(null);
 
     return (
-      <RadioGroup
+      <RadioGroupComponent
         {...props}
         value={value}
         onChange={setValue}

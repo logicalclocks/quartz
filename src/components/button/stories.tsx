@@ -1,12 +1,12 @@
 import { action } from '@storybook/addon-actions';
 import { StoryObj, Meta } from '@storybook/react';
 
-import { Button } from './Button';
+import { Button as ButtonComponent } from './Button';
 import { IconName } from '../icon';
 
 const meta: Meta = {
-  title: 'Buttons',
-  component: Button,
+  title: 'Forms/Buttons/Button',
+  component: ButtonComponent,
   args: {
     children: 'Button',
     onClick: action('onClick'),
@@ -32,6 +32,6 @@ const meta: Meta = {
 };
 export default meta;
 
-export const Default: StoryObj<typeof Button> = {
-  render: (props) => <Button {...props} />,
+export const Button: StoryObj<typeof ButtonComponent> = {
+  render: (props) => <ButtonComponent {...props} />,
 };

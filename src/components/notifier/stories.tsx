@@ -10,7 +10,7 @@ import { INotification, createNotifier, useNotifier } from './notifier';
 import { createStandaloneToast } from '../../chakra';
 
 const meta: Meta<INotification> = {
-  title: 'Notifier',
+  title: 'Feedback/Notifier',
   args: {
     title: 'Something happened',
     content: 'You have to see it.',

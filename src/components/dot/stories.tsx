@@ -1,14 +1,13 @@
 import { StoryObj } from '@storybook/react';
-import { Dot } from './Dot';
+import { Dot as DotComponent } from './Dot';
 
 export default {
-  title: 'Badges/Dot',
-  component: Dot,
+  title: 'DataDisplay/Badge/Dot',
+  component: DotComponent,
 };
 
-export const Default: StoryObj<typeof Dot> = {
+export const Dot: StoryObj<typeof DotComponent> = {
   args: {
     mainText: 'tooltip text(hover the dot)',
   },
-  render: (props) => <Dot {...props} />,
 };

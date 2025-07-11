@@ -1,44 +1,69 @@
 import { Meta, StoryObj } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { Box } from 'rebass';
-import Callout, { CalloutTypes } from './index';
+import CalloutComponent, { CalloutTypes } from './index';
 import { Button } from '../button';
 
-const meta: Meta<typeof Callout> = {
-  title: 'Callout',
+const meta: Meta<typeof CalloutComponent> = {
+  title: 'Feedback/Callouts/Callout',
+  component: CalloutComponent,
   argTypes: {
     type: {
-      control: {
-        type: 'select',
-        options: CalloutTypes,
-      },
+      control: { type: 'select' },
+      options: Object.values(CalloutTypes),
     },
     content: {
-      control: {
-        type: 'text',
-      },
+      control: { type: 'text' },
     },
     cta: {
-      control: {
-        type: 'object',
-      },
+      control: { type: 'object' },
     },
   },
 };
 export default meta;
 
-type Story = StoryObj<typeof Callout>;
+type Story = StoryObj<typeof CalloutComponent>;
 
-const Template: Story = {
+const template: Partial<Story> = {
   render: (props) => (
     <Box width="700px">
-      <Callout {...props} />
+      <CalloutComponent {...props} />
     </Box>
   ),
 };
 
-export const Default: Story = {
-  ...Template,
+export const Valid: Story = {
+  ...template,
+  args: {
+    type: CalloutTypes.valid,
+    content: 'lorem ipsum',
+  },
+};
+export const Warning: Story = {
+  ...template,
+  args: {
+    type: CalloutTypes.warning,
+    content: 'lorem ipsum',
+  },
+};
+
+export const Error: Story = {
+  ...template,
+  args: {
+    type: CalloutTypes.error,
+    content: 'lorem ipsum',
+  },
+};
+export const Neutral: Story = {
+  ...template,
+  args: {
+    type: CalloutTypes.neutral,
+    content: 'lorem ipsum',
+  },
+};
+
+export const CalloutWithCTA: Story = {
+  ...template,
   args: {
     type: CalloutTypes.valid,
     content: 'lorem ipsum',
@@ -47,13 +72,5 @@ export const Default: Story = {
         Secondary
       </Button>
     ),
-  },
-};
-
-export const WithoutCTA: Story = {
-  ...Template,
-  args: {
-    type: CalloutTypes.valid,
-    content: 'lorem ipsum',
   },
 };

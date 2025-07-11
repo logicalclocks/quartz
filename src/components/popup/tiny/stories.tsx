@@ -2,17 +2,18 @@ import { action } from '@storybook/addon-actions';
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { Button, Input, usePopup } from '../../..';
-import TinyPopup from '.';
+import TinyPopupComponent from '.';
 import { reusableArgs } from '../storyUitls';
 
-const meta: Meta<typeof TinyPopup> = {
-  title: 'TinyPopup',
+const meta: Meta<typeof TinyPopupComponent> = {
+  title: 'Overlay/Popup/TinyPopup',
+  component: TinyPopupComponent,
 };
 export default meta;
 
-type Story = StoryObj<typeof TinyPopup>;
+type Story = StoryObj<typeof TinyPopupComponent>;
 
-export const PopupTiny: Story = {
+export const TinyPopup: Story = {
   args: {
     title: 'Title',
     secondaryText: 'Secondary text',
@@ -35,9 +36,9 @@ export const PopupTiny: Story = {
     return (
       <>
         <Button onClick={handleToggle}>Open Tiny popup</Button>
-        <TinyPopup {...props} onClose={handleToggle} isOpen={isOpen}>
+        <TinyPopupComponent {...props} onClose={handleToggle} isOpen={isOpen}>
           <Input label="Value" />
-        </TinyPopup>
+        </TinyPopupComponent>
       </>
     );
   },

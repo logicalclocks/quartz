@@ -5,7 +5,7 @@ import ListItem from './item';
 import List from './container';
 
 const meta: Meta<typeof List> = {
-  title: 'List',
+  title: 'Forms/Lists/List',
   component: List,
 };
 export default meta;

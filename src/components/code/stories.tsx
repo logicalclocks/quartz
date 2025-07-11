@@ -1,64 +1,46 @@
 import { StoryObj, Meta } from '@storybook/react';
-import { Box } from 'rebass';
-import Code, { defaultPopupProps } from './index';
+import CodeComponent, { defaultPopupProps } from './index';
 
-const meta: Meta<typeof Code> = {
-  title: 'Code',
+const meta: Meta<typeof CodeComponent> = {
+  title: 'DataDisplay/Code',
+  component: CodeComponent,
   argTypes: {
     content: {
-      control: {
-        type: 'text',
-      },
+      control: { type: 'text' },
     },
     title: {
-      control: {
-        type: 'text',
-      },
+      control: { type: 'text' },
     },
     language: {
-      control: {
-        type: 'text',
-      },
+      control: { type: 'text' },
     },
     copyButton: {
-      control: {
-        type: 'boolean',
-      },
+      control: { type: 'boolean' },
       defaultValue: { summary: false },
     },
     downloadButton: {
-      control: {
-        type: 'boolean',
-      },
+      control: { type: 'boolean' },
       description: 'Show download to clipboard button',
       defaultValue: { summary: false },
     },
     wrapLongLines: {
-      control: {
-        type: 'boolean',
-      },
+      control: { type: 'boolean' },
       description: 'Wrap long lines',
       defaultValue: { summary: false },
     },
     showLineNumbers: {
-      control: {
-        type: 'boolean',
-      },
+      control: { type: 'boolean' },
       description: 'Show line numbers',
       defaultValue: { summary: false },
     },
     expandable: {
-      control: {
-        type: 'boolean',
-      },
+      control: { type: 'boolean' },
       description:
         'Limit the content to 12 number of lines and add an expandable button to show the full content on popup',
       defaultValue: { summary: false },
     },
     popupProps: {
-      control: {
-        type: 'object',
-      },
+      control: { type: 'object' },
       description:
         'Setting custom style for the popup when showing the expanded version',
       defaultValue: defaultPopupProps,
@@ -67,35 +49,14 @@ const meta: Meta<typeof Code> = {
 };
 export default meta;
 
-type Story = StoryObj<typeof Code>;
-export const Default: Story = {
+type Story = StoryObj<typeof CodeComponent>;
+export const Code: Story = {
   args: {
     copyButton: true,
     downloadButton: true,
     content:
       'SELECT ‘fg2’.’home_team_id’, ‘fg2’.\nFROM ‘demo_featurestore_admin000’\nINNER JOIN ‘demo_featurestore’',
     language: 'sql',
-  },
-  render: (props) => (
-    <Box width="700px">
-      <Code {...props} />
-    </Box>
-  ),
-};
-
-export const DefaultExpandable: Story = {
-  args: {
-    title: 'cargo.sh',
-    expandable: true,
-    wrapLongLines: true,
-    language: 'shell',
-  },
-  render: (props) => {
-    return (
-      <Box width="700px">
-        <Code {...props} content={content} />
-      </Box>
-    );
   },
 };
 
@@ -120,3 +81,13 @@ mvn -Dglassfish.port=$port -Dglassfish.admin_port=$admin_port -Dglassfish.hostna
 cd scripts
 ./jim-bbc1-scp.sh
 `;
+
+export const CodeExpandable: Story = {
+  args: {
+    title: 'cargo.sh',
+    expandable: true,
+    wrapLongLines: true,
+    language: 'shell',
+    content,
+  },
+};

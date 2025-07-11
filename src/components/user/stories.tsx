@@ -1,11 +1,11 @@
 import { Meta, StoryObj } from '@storybook/react';
 import { Flex } from 'rebass';
 import Labeling from '../typography/labeling';
-import { User } from './index';
+import { User as UserComponent } from './index';
 
-const meta: Meta<typeof User> = {
-  title: 'User',
-  component: User,
+const meta: Meta<typeof UserComponent> = {
+  title: 'Media and Icons/User',
+  component: UserComponent,
   args: {
     firstName: 'Martin',
     lastName: 'Heidegger',
@@ -13,13 +13,13 @@ const meta: Meta<typeof User> = {
 };
 export default meta;
 
-type Story = StoryObj<typeof User>;
-export const Default: Story = {
-  render: (props) => <User {...props} />,
+type Story = StoryObj<typeof UserComponent>;
+export const User: Story = {
+  render: (props) => <UserComponent {...props} />,
 };
 
 export const WithSecondaryText: Story = {
-  ...Default,
+  ...User,
   args: {
     secondaryText: 'you can add some stuff here',
   },
@@ -29,6 +29,10 @@ export const WithTitle = () => (
   <Flex alignItems="center">
     <Labeling mr={2}>hover your mouse on the user to see the title</Labeling>
 
-    <User firstName="Martin" lastName="Heidegger" title="Philosopher" />
+    <UserComponent
+      firstName="Martin"
+      lastName="Heidegger"
+      title="Philosopher"
+    />
   </Flex>
 );

@@ -1,12 +1,12 @@
 import { StoryObj, Meta } from '@storybook/react';
 
-import FileExplorerFolder from '.';
+import FolderExplorerComponent from '.';
 
 const meta: Meta = {
-  title: 'FileSystemExplorer/Folder',
-  component: FileExplorerFolder,
+  title: 'Miscellaneous/FileSystemExplorer/FolderExplorer',
+  component: FolderExplorerComponent,
   args: {
-    name: 'folder',
+    name: 'Folder',
     id: 5,
     isActive: false,
     selected: false,
@@ -24,9 +24,4 @@ const meta: Meta = {
 } as Meta;
 export default meta;
 
-export const Default: StoryObj<typeof FileExplorerFolder> = {
-  args: {
-    name: 'Folder',
-  },
-  render: (props) => <FileExplorerFolder {...props} />,
-};
+export const Folder: StoryObj<typeof FolderExplorerComponent> = {};

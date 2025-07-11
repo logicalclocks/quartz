@@ -1,12 +1,12 @@
 import { Meta, StoryObj } from '@storybook/react';
 import { useMemo, useState } from 'react';
 import { Box } from 'rebass';
-import { AlternativeHeader } from './index';
+import { AlternativeHeader as AlternativeHeaderComponent } from './index';
 import TooltipPositions from '../tooltip/positions';
 
-const meta: Meta<typeof AlternativeHeader> = {
-  title: 'AlternativeHeader',
-  component: AlternativeHeader,
+const meta: Meta<typeof AlternativeHeaderComponent> = {
+  title: 'Navigation/Headers/AlternativeHeader',
+  component: AlternativeHeaderComponent,
   args: {
     title: 'Cluster settings',
     withBase: false,
@@ -14,9 +14,9 @@ const meta: Meta<typeof AlternativeHeader> = {
 };
 export default meta;
 
-type Story = StoryObj<typeof AlternativeHeader>;
+type Story = StoryObj<typeof AlternativeHeaderComponent>;
 
-export const Default: Story = {
+export const AlternativeHeader: Story = {
   render: (props) => {
     const [active, setActive] = useState('tab');
 
@@ -48,7 +48,7 @@ export const Default: Story = {
 
     return (
       <Box overflow="hidden" minHeight="200px">
-        <AlternativeHeader {...props} tabs={tabs} />
+        <AlternativeHeaderComponent {...props} tabs={tabs} />
       </Box>
     );
   },

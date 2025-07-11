@@ -2,7 +2,7 @@ import { useMemo, useState } from 'react';
 import { StoryObj, Meta } from '@storybook/react';
 
 import { Box, Flex } from 'rebass';
-import GetIcon from './GetIcon';
+import GetIconComponent from './GetIcon';
 import { IconName } from './list';
 import Tooltip from '../tooltip';
 import theme from '../../theme/theme';
@@ -10,8 +10,8 @@ import Labeling from '../typography/labeling';
 import Input from '../input';
 
 const meta: Meta = {
-  title: 'GetIcon',
-  component: GetIcon,
+  title: 'Media and Icons/GetIcon',
+  component: GetIconComponent,
   argTypes: {
     icon: {
       description: 'Icon name - Hover over above icons to see the name',
@@ -68,7 +68,7 @@ export default meta;
 
 const allIcons = Object.values(IconName);
 
-export const Default: StoryObj<typeof GetIcon> = {
+export const GetIcon: StoryObj<typeof GetIconComponent> = {
   args: {
     color: 'black',
     size: 'lg',
@@ -110,7 +110,7 @@ export const Default: StoryObj<typeof GetIcon> = {
                 setCopiedIcon(icon);
               }}
             >
-              <GetIcon
+              <GetIconComponent
                 {...props}
                 icon={IconName[icon as keyof typeof IconName]}
               />

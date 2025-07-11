@@ -1,20 +1,20 @@
 import { Meta, StoryObj } from '@storybook/react';
 import { useState } from 'react';
 import { Box } from 'rebass';
-import RangeSlider from './range-slider';
+import RangeSliderComponent from './range-slider';
 import Value from '../typography/value';
 import Divider from '../divider';
 import Labeling from '../typography/labeling';
 
 const meta: Meta = {
-  title: 'RangeSlider',
-  component: RangeSlider,
+  title: 'Forms/SpecializedInputs/RangeSlider',
+  component: RangeSliderComponent,
 };
 export default meta;
 
-type Story = StoryObj<typeof RangeSlider>;
+type Story = StoryObj<typeof RangeSliderComponent>;
 
-export const DefaultSlider: Story = {
+export const RangeSlider: Story = {
   args: {
     label: 'CPU cores',
     step: 1,
@@ -25,7 +25,7 @@ export const DefaultSlider: Story = {
 
     return (
       <Box width="700px">
-        <RangeSlider value={value} onChange={setValue} {...props} />
+        <RangeSliderComponent value={value} onChange={setValue} {...props} />
         <Divider />
         <Labeling>Current value:</Labeling>
         <Value>[{value.join(', ')}]</Value>
@@ -46,7 +46,7 @@ export const WithCustomDisplayValue: Story = {
 
     return (
       <Box width="700px">
-        <RangeSlider value={value} onChange={setValue} {...props} />
+        <RangeSliderComponent value={value} onChange={setValue} {...props} />
         <Divider />
         <Labeling>Current value:</Labeling>
         <Value>[{value.join(', ')}]</Value>

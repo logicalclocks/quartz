@@ -1,10 +1,10 @@
 import { StoryObj, Meta } from '@storybook/react';
 
-import InputInfo from '.';
+import InputInfoComponent from '.';
 
-const meta: Meta<typeof InputInfo> = {
-  title: 'Input/Info',
-  component: InputInfo,
+const meta: Meta<typeof InputInfoComponent> = {
+  title: 'Forms/Inputs/InputInfo',
+  component: InputInfoComponent,
   argTypes: {
     children: {
       description: 'Message text',
@@ -20,10 +20,10 @@ const meta: Meta<typeof InputInfo> = {
 };
 export default meta;
 
-export const Default: StoryObj<typeof InputInfo> = {
+export const InputInfo: StoryObj<typeof InputInfoComponent> = {
   args: {
     intent: 'error',
     children: 'message',
   },
-  render: (props) => <InputInfo {...props} />,
+  render: (props) => <InputInfoComponent {...props} />,
 };

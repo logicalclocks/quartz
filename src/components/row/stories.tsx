@@ -40,7 +40,7 @@ const args = {
   ],
 };
 const meta: Meta<typeof Row> = {
-  title: 'Row',
+  title: 'DataDisplay/Tables/Row',
   component: Row,
   args,
 };

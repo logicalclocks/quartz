@@ -2,18 +2,18 @@ import { useState } from 'react';
 import { StoryObj, Meta } from '@storybook/react';
 import { addDays, subDays } from 'date-fns/fp';
 
-import DatePicker from './index';
+import DatePickerComponent from './index';
 
 import { DATE_TIME } from '../../constants';
 import { Flex } from '../flex';
 
-const meta: Meta<typeof DatePicker> = {
-  title: 'DatePicker',
-  component: DatePicker,
+const meta: Meta<typeof DatePickerComponent> = {
+  title: 'Forms/SpecializedInputs/DatePicker',
+  component: DatePickerComponent,
 };
 export default meta;
 
-export const Default: StoryObj<typeof DatePicker> = {
+export const DatePicker: StoryObj<typeof DatePickerComponent> = {
   args: {
     showTimeSelect: true,
     dateFormat: DATE_TIME.DATE_TIME_FULL_MONTH,
@@ -27,7 +27,7 @@ export const Default: StoryObj<typeof DatePicker> = {
 
     return (
       <Flex height="300px">
-        <DatePicker
+        <DatePickerComponent
           {...restProps}
           selectProps={{
             ...selectProps,
@@ -41,7 +41,7 @@ export const Default: StoryObj<typeof DatePicker> = {
           startDate={new Date(startDate)}
           endDate={startDate2}
         />
-        <DatePicker
+        <DatePickerComponent
           {...restProps}
           selectProps={{
             ...selectProps,

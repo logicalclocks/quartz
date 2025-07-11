@@ -1,10 +1,9 @@
 import { StoryObj, Meta } from '@storybook/react';
-import { Box } from 'rebass';
-import FormSummaryContainer from './index';
+import FormSummaryContainerComponent from './index';
 
-const meta: Meta<typeof FormSummaryContainer> = {
-  title: 'FormSummaryContainer',
-  component: FormSummaryContainer,
+const meta: Meta<typeof FormSummaryContainerComponent> = {
+  title: 'Layout/FormSummaryContainer',
+  component: FormSummaryContainerComponent,
   argTypes: {
     hasScrollOnScreen: {
       control: {
@@ -15,15 +14,13 @@ const meta: Meta<typeof FormSummaryContainer> = {
 };
 export default meta;
 
-export const Default: StoryObj<typeof FormSummaryContainer> = {
+export const FormSummaryContainer: StoryObj<
+  typeof FormSummaryContainerComponent
+> = {
   args: {
     hasScrollOnScreen: false,
+    mt: '20px',
+    maxWidth: '900px',
+    children: 'the content goes here',
   },
-  render: (props) => (
-    <Box width="700px">
-      <FormSummaryContainer {...props}>
-        the content goes here
-      </FormSummaryContainer>
-    </Box>
-  ),
 };

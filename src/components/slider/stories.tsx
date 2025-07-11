@@ -1,18 +1,18 @@
 import { Meta, StoryObj } from '@storybook/react';
 import { useState } from 'react';
 import { Box } from 'rebass';
-import Slider from './slider';
+import SliderComponent from './slider';
 
-const meta: Meta<typeof Slider> = {
-  title: 'Slider',
-  component: Slider,
+const meta: Meta<typeof SliderComponent> = {
+  title: 'Forms/SpecializedInputs/Slider',
+  component: SliderComponent,
 };
 
 export default meta;
 
-type Story = StoryObj<typeof Slider>;
+type Story = StoryObj<typeof SliderComponent>;
 
-export const DefaultSlider: Story = {
+export const Slider: Story = {
   args: {
     label: 'CPU cores',
     step: 1,
@@ -23,7 +23,7 @@ export const DefaultSlider: Story = {
 
     return (
       <Box width="700px">
-        <Slider {...props} value={value} onChange={setValue} />
+        <SliderComponent {...props} value={value} onChange={setValue} />
       </Box>
     );
   },
@@ -41,7 +41,7 @@ export const WithCustomDisplayValue: Story = {
 
     return (
       <Box width="700px">
-        <Slider {...props} value={value} onChange={setValue} />
+        <SliderComponent {...props} value={value} onChange={setValue} />
       </Box>
     );
   },

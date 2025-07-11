@@ -1,14 +1,13 @@
 import { action } from '@storybook/addon-actions';
 import { Meta, StoryObj } from '@storybook/react';
 
-import Card from '.';
+import CardComponent from '.';
 import { Button } from '../button';
-import CardSecondary from './card-secondary';
 import { Flex } from '../flex';
 
-const meta: Meta<typeof Card> = {
-  title: 'Cards',
-  component: Card,
+const meta: Meta<typeof CardComponent> = {
+  title: 'DataDisplay/Cards/Card',
+  component: CardComponent,
 
   argTypes: {
     children: {
@@ -61,7 +60,7 @@ const meta: Meta<typeof Card> = {
 };
 export default meta;
 
-export const Template: StoryObj<typeof Card> = {
+export const Card: StoryObj<typeof CardComponent> = {
   args: {
     title: 'Title',
     width: '830px',
@@ -74,15 +73,4 @@ export const Template: StoryObj<typeof Card> = {
     children: <Flex height="270px">Hello world!</Flex>,
     expandable: true,
   },
-  render: (props) => <Card {...props} />,
-};
-
-export const TemplateSecondary: StoryObj<typeof CardSecondary> = {
-  args: {
-    title: 'Title!',
-    width: '830px',
-    height: '270px',
-    children: 'content',
-  },
-  render: (props) => <CardSecondary {...props} />,
 };

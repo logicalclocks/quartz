@@ -7,7 +7,7 @@ import { Box } from '../../index';
 import EditableSelect from './index';
 
 const meta: Meta<typeof EditableSelect> = {
-  title: 'EditableSelect',
+  title: 'Forms/Selects/EditableSelect',
   component: EditableSelect,
   argTypes: {
     value: {

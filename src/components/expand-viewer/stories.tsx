@@ -1,10 +1,10 @@
 import { StoryObj, Meta } from '@storybook/react';
 import { Box } from 'rebass';
-import ExpandViewer from './index';
+import ExpandViewerComponent from './index';
 
-const meta: Meta<typeof ExpandViewer> = {
-  title: 'ExpandViewer',
-  component: ExpandViewer,
+const meta: Meta<typeof ExpandViewerComponent> = {
+  title: 'Miscellaneous/ExpandViewer',
+  component: ExpandViewerComponent,
   argTypes: {
     NormalComponent: {
       control: {
@@ -30,7 +30,7 @@ const meta: Meta<typeof ExpandViewer> = {
 };
 export default meta;
 
-export const Default: StoryObj<typeof ExpandViewer> = {
+export const ExpandViewer: StoryObj<typeof ExpandViewerComponent> = {
   args: {
     title: 'Some title goes here',
     BriefComponent: () => (
@@ -40,13 +40,8 @@ export const Default: StoryObj<typeof ExpandViewer> = {
     ),
     NormalComponent: () => (
       <Box height={400} width="100%" bg="primary" p={3}>
-        show this as an expanded component in the popup
+        show this as an expanded component on the popup
       </Box>
     ),
   },
-  render: (props) => (
-    <Box width="700px">
-      <ExpandViewer {...props} />
-    </Box>
-  ),
 };
