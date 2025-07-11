@@ -9,7 +9,6 @@ import { ChakraThemeProvider } from '../src/chakra';
 import ThemeProvider from '../src/theme/ThemeProvider';
 
 export const parameters: Parameters = {
-  // title: 'Quartz',
   layout: 'centered',
   controls: { expanded: true },
 
