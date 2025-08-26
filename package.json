@@ -74,7 +74,7 @@
     "date-fns": "^3.6.0",
     "emotion-theming": "^10.3.0",
     "ramda": "^0.28.0",
-    "react-datepicker": "^6.9.0",
+    "react-datepicker": "^8.7.0",
     "rebass": "^4.0.7"
   },
   "devDependencies": {
