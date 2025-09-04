@@ -1,3 +1,10 @@
+# [5.1.0](https://github.com/logicalclocks/quartz/compare/v5.0.1...v5.1.0) (2025-09-04)
+
+
+### Features
+
+* **icon:** add Kubernetes (k8s) icon to icon library ([#784](https://github.com/logicalclocks/quartz/issues/784)) ([4b1c614](https://github.com/logicalclocks/quartz/commit/4b1c614ac16598ae3e121332a945eba2c547f3ef))
+
 ## [5.0.1](https://github.com/logicalclocks/quartz/compare/v5.0.0...v5.0.1) (2025-07-11)
 
 # [5.0.0](https://github.com/logicalclocks/quartz/compare/v4.20.0...v5.0.0) (2025-06-11)
