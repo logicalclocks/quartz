@@ -1,3 +1,10 @@
+# [5.2.0](https://github.com/logicalclocks/quartz/compare/v5.1.0...v5.2.0) (2025-09-05)
+
+
+### Features
+
+* **iconbutton:** add support for setting icon color for IconButton component ([#785](https://github.com/logicalclocks/quartz/issues/785)) ([9d34669](https://github.com/logicalclocks/quartz/commit/9d34669743a10539f8790290443744d0e99f04d0))
+
 # [5.1.0](https://github.com/logicalclocks/quartz/compare/v5.0.1...v5.1.0) (2025-09-04)
 
 
