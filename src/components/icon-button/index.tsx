@@ -7,6 +7,7 @@ import Tooltip, { TooltipProps } from '../tooltip';
 import { Button } from '../button';
 import GetIcon from '../icon/GetIcon';
 import { IconName } from '../icon/list';
+import { Color } from '../../theme/types';
 
 import * as S from './icon-button.styles';
 
@@ -14,6 +15,7 @@ export interface IconButtonProps extends Omit<ButtonProps, 'css'> {
   intent?: 'primary' | 'ghost' | 'ghost-white'; // TODO remove this intent, not used
   tooltip?: string;
   icon: IconName;
+  iconColor?: Color;
   disabled?: boolean;
   href?: string;
   tooltipProps?: Omit<TooltipProps, 'children' | 'mainText'>;
@@ -24,6 +26,7 @@ export const IconButton = ({
   intent: _, // TODO remove this
   tooltip,
   icon,
+  iconColor,
   disabled = false,
   tooltipProps,
   href,
@@ -42,7 +45,12 @@ export const IconButton = ({
           disabled={disabled}
           {...props}
         >
-          <GetIcon disabled={disabled} icon={icon} size="sm" />
+          <GetIcon
+            disabled={disabled}
+            icon={icon}
+            color={iconColor}
+            size="sm"
+          />
         </Button>
       </Tooltip>
     );
@@ -54,7 +62,7 @@ export const IconButton = ({
         disabled={disabled}
         {...props}
       >
-        <GetIcon disabled={disabled} icon={icon} size="sm" />
+        <GetIcon disabled={disabled} icon={icon} color={iconColor} size="sm" />
       </Button>
     );
   }
