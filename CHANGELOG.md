@@ -1,3 +1,10 @@
+# [5.3.0](https://github.com/logicalclocks/quartz/compare/v5.2.0...v5.3.0) (2025-09-30)
+
+
+### Features
+
+* **icon:** add publish chart icon ([#792](https://github.com/logicalclocks/quartz/issues/792)) ([79e28fd](https://github.com/logicalclocks/quartz/commit/79e28fd620e91e7a8be18a493b2f65e40c424aa0))
+
 # [5.2.0](https://github.com/logicalclocks/quartz/compare/v5.1.0...v5.2.0) (2025-09-05)
 
 
