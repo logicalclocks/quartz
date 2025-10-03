@@ -7,7 +7,7 @@ import Tooltip, { TooltipProps } from '../tooltip';
 import { Button } from '../button';
 import GetIcon from '../icon/GetIcon';
 import { IconName } from '../icon/list';
-import { Color } from '../../theme/types';
+import { Color, IconSizes } from '../../theme/types';
 
 import * as S from './icon-button.styles';
 
@@ -16,6 +16,7 @@ export interface IconButtonProps extends Omit<ButtonProps, 'css'> {
   tooltip?: string;
   icon: IconName;
   iconColor?: Color;
+  iconSize?: IconSizes;
   disabled?: boolean;
   href?: string;
   tooltipProps?: Omit<TooltipProps, 'children' | 'mainText'>;
@@ -27,6 +28,7 @@ export const IconButton = ({
   tooltip,
   icon,
   iconColor,
+  iconSize,
   disabled = false,
   tooltipProps,
   href,
@@ -49,7 +51,7 @@ export const IconButton = ({
             disabled={disabled}
             icon={icon}
             color={iconColor}
-            size="sm"
+            size={iconSize ?? 'sm'}
           />
         </Button>
       </Tooltip>
