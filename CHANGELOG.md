@@ -1,3 +1,10 @@
+# [5.4.0](https://github.com/logicalclocks/quartz/compare/v5.3.0...v5.4.0) (2025-10-03)
+
+
+### Features
+
+* **iconbutton:** size of icon in IconButton component should be cutomizable ([#793](https://github.com/logicalclocks/quartz/issues/793)) ([c877d7b](https://github.com/logicalclocks/quartz/commit/c877d7be768c09e5e7ade96a8544eed2b3fc2dad))
+
 # [5.3.0](https://github.com/logicalclocks/quartz/compare/v5.2.0...v5.3.0) (2025-09-30)
 
 
