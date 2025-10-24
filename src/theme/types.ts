@@ -9,6 +9,7 @@ export interface IThemeColors {
   grayShade1: string;
   grayShade2: string;
   grayShade3: string;
+  grayShade4: string;
 
   black: string;
   white: string;
