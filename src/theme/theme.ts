@@ -61,6 +61,7 @@ export const colors = {
   grayShade1: '#CBCBCB',
   grayShade2: '#E2E2E2',
   grayShade3: '#F5F5F5',
+  grayShade4: '#FAFAFA',
 
   black: '#272727',
   white: '#FFFFFF',
@@ -182,6 +183,7 @@ export const darkThemeColors: ITheme['colors'] = {
   grayShade1: '#707070',
   grayShade2: '#4D4D4D',
   grayShade3: '#1e2021',
+  grayShade4: '#0A0A0A',
 
   black: '#F0F0F0',
 

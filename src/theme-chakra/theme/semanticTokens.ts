@@ -24,6 +24,10 @@ export const semanticTokens = {
       default: '#E2E2E2',
       _dark: '#4D4D4D',
     },
+    grayShade4: {
+      default: '#FAFAFA',
+      _dark: '#0A0A0A',
+    },
     primary: {
       default: '#21B182',
       _dark: '#229570',
