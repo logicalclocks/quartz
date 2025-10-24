@@ -1,3 +1,10 @@
+# [5.5.0](https://github.com/logicalclocks/quartz/compare/v5.4.0...v5.5.0) (2025-10-24)
+
+
+### Features
+
+* add grayShade4 color to theme ([#802](https://github.com/logicalclocks/quartz/issues/802)) ([89b0871](https://github.com/logicalclocks/quartz/commit/89b08711592fda6d11c6a99fdf6b0c0aaf919584)), closes [#0A0A0](https://github.com/logicalclocks/quartz/issues/0A0A0)
+
 # [5.4.0](https://github.com/logicalclocks/quartz/compare/v5.3.0...v5.4.0) (2025-10-03)
 
 
