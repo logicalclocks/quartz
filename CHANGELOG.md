@@ -1,3 +1,10 @@
+# [5.6.0](https://github.com/logicalclocks/quartz/compare/v5.5.0...v5.6.0) (2025-10-31)
+
+
+### Features
+
+* **toggle:** new toggle component ([#806](https://github.com/logicalclocks/quartz/issues/806)) ([4421055](https://github.com/logicalclocks/quartz/commit/44210558041e1c2e86d5cbd1dc3da09d31ce2178))
+
 # [5.5.0](https://github.com/logicalclocks/quartz/compare/v5.4.0...v5.5.0) (2025-10-24)
 
 
