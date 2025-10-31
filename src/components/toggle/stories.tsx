@@ -5,7 +5,6 @@ import Toggle from './index';
 const meta: Meta<typeof Toggle> = {
   title: 'Forms/Toggle',
   component: Toggle,
-  tags: ['autodocs'],
 };
 
 export default meta;
