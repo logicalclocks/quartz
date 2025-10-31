@@ -13,23 +13,20 @@ export interface SwitchProps extends Omit<RebassCheckboxProps, 'css'> {
 
 const Switch = forwardRef<HTMLInputElement, SwitchProps>(
   (
-    {
-      label,
-      name,
-      id,
-      disabled,
-      onChange,
-      checked,
-      isChecked,
-      ...props
-    },
+    { label, name, id, disabled, onChange, checked, isChecked, ...props },
     ref,
   ) => {
     const isControlled = isChecked !== undefined;
     const checkedValue = isControlled ? isChecked : checked;
 
     return (
-      <Flex alignItems="center" flexDirection="row" as="label" sx={styles} {...props}>
+      <Flex
+        alignItems="center"
+        flexDirection="row"
+        as="label"
+        sx={styles}
+        {...props}
+      >
         <Box
           ref={ref}
           as="input"
