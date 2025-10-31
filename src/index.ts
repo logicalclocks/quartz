@@ -9,6 +9,7 @@ import CardHeader from './components/card-header';
 
 import Code from './components/code';
 import Checkbox from './components/checkbox';
+import Toggle from './components/toggle';
 import Callout, { CalloutTypes } from './components/callout';
 import CalloutWithButton from './components/calloutWithButton';
 import CheckboxGroup from './components/checkbox/checkbox-group';
@@ -131,6 +132,7 @@ export {
   Code,
   InputValidation,
   Checkbox,
+  Toggle,
   Callout,
   CalloutTypes,
   CalloutWithButton,
@@ -281,6 +283,7 @@ export type { FileSystemExplorerProps } from './components/file-system-explorer'
 export type { FileExplorData } from './components/file-system-explorer/types';
 export type { GetIconProps } from './components/icon/GetIcon';
 export type { RadioProps } from './components/radio';
+export type { ToggleProps } from './components/toggle';
 export type { DropdownButtonProps } from './components/dropdown-button';
 export type { DropdownItem } from './components/dropdown/types';
 export type {
