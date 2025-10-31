@@ -8,7 +8,7 @@ export default {
     opacity: 0,
   },
 
-  '.switch-track': {
+  '.toggle-track': {
     position: 'relative',
     display: 'inline-block',
     width: '40px',
@@ -19,7 +19,7 @@ export default {
     boxSizing: 'border-box',
   },
 
-  '.switch-thumb': {
+  '.toggle-thumb': {
     position: 'absolute',
     top: '2px',
     left: '2px',
@@ -32,16 +32,16 @@ export default {
   },
 
   // Checked state
-  '> input:checked ~ .switch-track': {
+  '> input:checked ~ .toggle-track': {
     backgroundColor: 'primary',
   },
 
-  '> input:checked ~ .switch-track .switch-thumb': {
+  '> input:checked ~ .toggle-track .toggle-thumb': {
     transform: 'translateX(20px)',
   },
 
   // Disabled state
-  '> input:disabled ~ .switch-track': {
+  '> input:disabled ~ .toggle-track': {
     opacity: 0.5,
     cursor: 'not-allowed',
   },

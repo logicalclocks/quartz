@@ -1,21 +1,21 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { useState } from 'react';
-import Switch from './index';
+import Toggle from './index';
 
-const meta: Meta<typeof Switch> = {
-  title: 'Components/Switch',
-  component: Switch,
+const meta: Meta<typeof Toggle> = {
+  title: 'Components/Toggle',
+  component: Toggle,
   tags: ['autodocs'],
 };
 
 export default meta;
-type Story = StoryObj<typeof Switch>;
+type Story = StoryObj<typeof Toggle>;
 
 export const Default: Story = {
   render: () => {
     const [checked, setChecked] = useState(false);
     return (
-      <Switch
+      <Toggle
         isChecked={checked}
         onChange={(e) => setChecked(e.target.checked)}
       />
@@ -27,7 +27,7 @@ export const WithLabel: Story = {
   render: () => {
     const [checked, setChecked] = useState(false);
     return (
-      <Switch
+      <Toggle
         label="Enable feature"
         isChecked={checked}
         onChange={(e) => setChecked(e.target.checked)}
@@ -40,7 +40,7 @@ export const Checked: Story = {
   render: () => {
     const [checked, setChecked] = useState(true);
     return (
-      <Switch
+      <Toggle
         label="Feature enabled"
         isChecked={checked}
         onChange={(e) => setChecked(e.target.checked)}
@@ -51,7 +51,7 @@ export const Checked: Story = {
 
 export const Disabled: Story = {
   args: {
-    label: 'Disabled switch',
+    label: 'Disabled toggle',
     disabled: true,
     checked: false,
   },

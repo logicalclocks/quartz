@@ -3,15 +3,15 @@ import { Box, Flex } from 'rebass';
 import { CheckboxProps as RebassCheckboxProps } from '@rebass/forms';
 
 import Labeling from '../typography/labeling';
-import styles from './switch.styles';
+import styles from './toggle.styles';
 
-export interface SwitchProps extends Omit<RebassCheckboxProps, 'css'> {
+export interface ToggleProps extends Omit<RebassCheckboxProps, 'css'> {
   label?: string;
   isChecked?: boolean;
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-const Switch = forwardRef<HTMLInputElement, SwitchProps>(
+const Toggle = forwardRef<HTMLInputElement, ToggleProps>(
   (
     { label, name, id, disabled, onChange, checked, isChecked, ...props },
     ref,
@@ -37,8 +37,8 @@ const Switch = forwardRef<HTMLInputElement, SwitchProps>(
           onChange={onChange}
           checked={checkedValue}
         />
-        <Box className="switch-track">
-          <Box className="switch-thumb" />
+        <Box className="toggle-track">
+          <Box className="toggle-thumb" />
         </Box>
         {label && (
           <Labeling bold ml="10px">
@@ -50,4 +50,6 @@ const Switch = forwardRef<HTMLInputElement, SwitchProps>(
   },
 );
 
-export default Switch;
+Toggle.displayName = 'Toggle';
+
+export default Toggle;
