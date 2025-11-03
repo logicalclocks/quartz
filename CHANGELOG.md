@@ -1,3 +1,10 @@
+# [5.8.0](https://github.com/logicalclocks/quartz/compare/v5.7.0...v5.8.0) (2025-11-03)
+
+
+### Features
+
+* **code-input:** replace extensions with autoCompleteOverrides ([#808](https://github.com/logicalclocks/quartz/issues/808)) ([272310e](https://github.com/logicalclocks/quartz/commit/272310ecbf2de8aae82b74a71c6db07554a84ac1))
+
 # [5.7.0](https://github.com/logicalclocks/quartz/compare/v5.6.0...v5.7.0) (2025-11-03)
 
 
