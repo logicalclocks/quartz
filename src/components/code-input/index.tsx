@@ -52,6 +52,7 @@ export interface CodeInputProps
   intent?: Intents;
   codeMirrorProps?: ReactCodeMirrorProps;
   completions?: Completion[];
+  extensions?: Extension[];
 }
 
 const CodeInput = forwardRef(
@@ -71,6 +72,7 @@ const CodeInput = forwardRef(
     intent = 'default',
     codeMirrorProps,
     completions,
+    extensions = [],
     ...props
   }: CodeInputProps) => {
     const actions = (labelAction || tooltipInfo || optional) && (
@@ -118,6 +120,7 @@ const CodeInput = forwardRef(
                         override: [createCompletions(completions)],
                       })
                     : false,
+                  ...extensions,
                 ].filter(Boolean) as Extension[]
               }
               theme={darcula}
