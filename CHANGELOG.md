@@ -1,3 +1,10 @@
+# [5.7.0](https://github.com/logicalclocks/quartz/compare/v5.6.0...v5.7.0) (2025-11-03)
+
+
+### Features
+
+* **code-input:** add support for passing custom extensions array ([#807](https://github.com/logicalclocks/quartz/issues/807)) ([3526bdd](https://github.com/logicalclocks/quartz/commit/3526bdd31dca2b68caf0c09417ce02d1cd551d90))
+
 # [5.6.0](https://github.com/logicalclocks/quartz/compare/v5.5.0...v5.6.0) (2025-10-31)
 
 
