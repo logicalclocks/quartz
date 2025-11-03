@@ -5,6 +5,7 @@ import {
   CompletionContext,
   autocompletion,
   Completion,
+  CompletionSource,
 } from '@codemirror/autocomplete';
 import { loadLanguage } from '@uiw/codemirror-extensions-langs';
 import { darcula } from '@uiw/codemirror-theme-darcula';
@@ -52,7 +53,7 @@ export interface CodeInputProps
   intent?: Intents;
   codeMirrorProps?: ReactCodeMirrorProps;
   completions?: Completion[];
-  extensions?: Extension[];
+  autoCompleteOverrides?: readonly CompletionSource[];
 }
 
 const CodeInput = forwardRef(
@@ -72,7 +73,7 @@ const CodeInput = forwardRef(
     intent = 'default',
     codeMirrorProps,
     completions,
-    extensions = [],
+    autoCompleteOverrides = [],
     ...props
   }: CodeInputProps) => {
     const actions = (labelAction || tooltipInfo || optional) && (
@@ -115,12 +116,16 @@ const CodeInput = forwardRef(
               extensions={
                 [
                   loadLanguage(mode)!,
-                  completions
+                  completions || autoCompleteOverrides
                     ? autocompletion({
-                        override: [createCompletions(completions)],
+                        override: [
+                          ...(completions
+                            ? [createCompletions(completions)]
+                            : []),
+                          ...autoCompleteOverrides,
+                        ],
                       })
                     : false,
-                  ...extensions,
                 ].filter(Boolean) as Extension[]
               }
               theme={darcula}
