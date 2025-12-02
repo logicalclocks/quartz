@@ -1,3 +1,10 @@
+# [5.9.0](https://github.com/logicalclocks/quartz/compare/v5.8.0...v5.9.0) (2025-12-02)
+
+
+### Features
+
+* **theme-provider:** make it possible to pass partial light and dark themes to ThemeProvide ([831eb78](https://github.com/logicalclocks/quartz/commit/831eb78a01d0fe33c8c87727f5fd469a472e78d4))
+
 # [5.8.0](https://github.com/logicalclocks/quartz/compare/v5.7.0...v5.8.0) (2025-11-03)
 
 
