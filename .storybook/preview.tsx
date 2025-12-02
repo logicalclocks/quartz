@@ -4,6 +4,7 @@ import type { Parameters } from '@storybook/react';
 import { themes } from '@storybook/theming';
 import React from 'react';
 import { useDarkMode } from 'storybook-dark-mode';
+import { css, Global } from '@emotion/core';
 import { ChakraThemeProvider } from '../src/chakra';
 
 import ThemeProvider from '../src/theme/ThemeProvider';
@@ -30,6 +31,12 @@ export const parameters: Parameters = {
 export const decorators = [
   (Story) => (
     <>
+      <Global
+        styles={css`
+          @import url('https://fonts.googleapis.com/css2?family=Inter:wght@500;700&display=swap');
+          @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@700&display=swap');
+        `}
+      />
       <ColorModeScript />
       <ChakraThemeProvider>
         <ThemeProvider colorMode={useDarkMode() ? 'dark' : 'light'}>
