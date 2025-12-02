@@ -1,20 +1,24 @@
 import { useColorMode } from '@chakra-ui/react';
-import { css, Global } from '@emotion/core';
 import { ThemeProvider as EmotionThemeProvider } from 'emotion-theming';
 import { useEffect } from 'react';
+import * as R from 'ramda';
 
 import defaultTheme, { darkTheme } from './theme';
+import { ITheme } from './types';
+import { DeepPartial } from '../utils/type-utils';
 
 export type ThemeVariant = 'dark' | 'light';
 
 export interface ThemeProviderProps {
   children: React.ReactNode;
   colorMode?: ThemeVariant;
+  theme?: { light: DeepPartial<ITheme>; dark: DeepPartial<ITheme> };
 }
 
 const ThemeProvider = ({
   children,
   colorMode: colorModeFromProps,
+  theme: themeFromProps = { light: defaultTheme, dark: darkTheme },
 }: ThemeProviderProps) => {
   const { colorMode, setColorMode } = useColorMode();
 
@@ -24,20 +28,13 @@ const ThemeProvider = ({
 
   const colorModeToUse = colorModeFromProps ?? colorMode; // the outer one overrides inner state
 
+  const themeToUse = R.mergeDeepLeft(
+    themeFromProps[colorModeToUse],
+    colorModeToUse === 'light' ? defaultTheme : darkTheme,
+  );
+
   return (
-    <>
-      <Global
-        styles={css`
-          @import url('https://fonts.googleapis.com/css2?family=Inter:wght@500;700&display=swap');
-          @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@700&display=swap');
-        `}
-      />
-      <EmotionThemeProvider
-        theme={colorModeToUse === 'light' ? defaultTheme : darkTheme}
-      >
-        {children}
-      </EmotionThemeProvider>
-    </>
+    <EmotionThemeProvider theme={themeToUse}>{children}</EmotionThemeProvider>
   );
 };
 

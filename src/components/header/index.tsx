@@ -13,6 +13,7 @@ export interface HeaderProps extends Omit<BoxProps, 'css'> {
   menuAction: React.ReactNode;
   logoAction?: () => void;
   sx?: SxStyleProp;
+  logo?: React.ReactNode;
 }
 
 const Header = ({
@@ -21,12 +22,13 @@ const Header = ({
   actions,
   menuAction,
   logoAction,
+  logo,
   sx = {},
 }: HeaderProps) => (
   <Box sx={R.mergeDeepRight(styles as object, sx as object)} variant="header">
     {/* Left Section */}
     <Box sx={leftSectionStyles} onClick={logoAction}>
-      <Logo withName={true} height={35} width={160} />
+      {logo ?? <Logo withName={true} height={35} width={160} />}
     </Box>
     <Box
       sx={{
