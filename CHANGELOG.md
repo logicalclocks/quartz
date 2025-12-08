@@ -1,3 +1,10 @@
+# [5.10.0](https://github.com/logicalclocks/quartz/compare/v5.9.0...v5.10.0) (2025-12-08)
+
+
+### Features
+
+* **theme-colors:** export default light and dark theme colors ([#811](https://github.com/logicalclocks/quartz/issues/811)) ([ac1e96f](https://github.com/logicalclocks/quartz/commit/ac1e96f40af753cf272f973ef18734892182ce46))
+
 # [5.9.0](https://github.com/logicalclocks/quartz/compare/v5.8.0...v5.9.0) (2025-12-02)
 
 
