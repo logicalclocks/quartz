@@ -24,9 +24,8 @@ export default {
     outline: 'none',
   },
 
-  '.react-datepicker__input-container input': {
-    width: '50px',
-    visibility: 'hidden',
+  'input:focus': {
+    backgroundColor: 'primaryShade2',
   },
 
   '.react-datepicker__triangle': {
@@ -94,10 +93,15 @@ export default {
     {
       color: 'black',
     },
-  '.react-datepicker__day--disabled, react-datepicker__day--excluded, .react-datepicker__day--disabled: hover':
+  '.react-datepicker__day--disabled, .react-datepicker__day--excluded, .react-datepicker__day--disabled:hover':
     {
       color: 'grayShade1',
       cursor: 'not-allowed',
+    },
+  '.react-datepicker__day--in-range.react-datepicker__day--disabled, .react-datepicker__day--in-range.react-datepicker__day--excluded':
+    {
+      backgroundColor: 'grayShade3',
+      color: 'grayShade1',
     },
 
   '': {
