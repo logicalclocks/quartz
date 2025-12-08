@@ -93,7 +93,11 @@ import {
 } from './components/typography/hoverable';
 // Theme
 import ThemeProvider from './theme/ThemeProvider';
-import theme, { useTheme } from './theme/theme';
+import theme, {
+  useTheme,
+  colors as lightThemeColors,
+  darkThemeColors,
+} from './theme/theme';
 // Hooks
 import useDropdown from './utils/useDropdown';
 import useNavigation from './components/navigation/useNavigation';
@@ -241,6 +245,8 @@ export {
   // Constants
   constants,
   Spinner,
+  lightThemeColors,
+  darkThemeColors,
 };
 
 export { default as EmbeddedTabs } from './components/embedded-tabs';
