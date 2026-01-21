@@ -24,6 +24,7 @@ export interface IThemeColors {
     yellow: string;
     yellowShade2: string;
     green: string;
+    greenShade2: string;
     blue: string;
     blueShade1: string;
     blueShade2: string;

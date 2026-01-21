@@ -40,7 +40,7 @@ const variants = {
       color: 'labels.green',
     },
 
-    bg: 'primaryShade2',
+    bg: 'labels.greenShade2',
     border: '1px solid',
     borderColor: 'labels.green',
   },
