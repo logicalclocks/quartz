@@ -12,7 +12,7 @@ const variants = {
     },
   },
   green: {
-    bg: 'primaryShade2',
+    bg: 'labels.greenShade2',
     '& > div': {
       bg: 'primary',
     },

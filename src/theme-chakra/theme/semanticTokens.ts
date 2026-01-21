@@ -61,6 +61,10 @@ export const semanticTokens = {
         default: '#21B182',
         _dark: '#229570',
       },
+      greenShade2: {
+        default: '#E6F2EE',
+        _dark: '#264339',
+      },
       blue: {
         default: '#186781',
         _dark: '#2885A4',

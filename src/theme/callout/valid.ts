@@ -2,7 +2,7 @@ import { SxStyleProp } from 'rebass';
 
 export default {
   color: 'labels.green',
-  bg: 'primaryShade2',
+  bg: 'labels.greenShade2',
   borderLeftWidth: 0,
   borderLeftStyle: 'solid',
   borderLeftColor: 'labels.green',
