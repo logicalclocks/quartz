@@ -1,3 +1,10 @@
+# [5.11.0](https://github.com/logicalclocks/quartz/compare/v5.10.0...v5.11.0) (2026-01-21)
+
+
+### Features
+
+* **theme:** Add new theme color greenShade2 for success badge, performance bar and success callout ([#816](https://github.com/logicalclocks/quartz/issues/816)) ([382fb00](https://github.com/logicalclocks/quartz/commit/382fb00a5270e127138611a5bf045d1cb68912f1))
+
 # [5.10.0](https://github.com/logicalclocks/quartz/compare/v5.9.0...v5.10.0) (2025-12-08)
 
 
