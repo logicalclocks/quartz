@@ -4,8 +4,10 @@ import Label, { LabelProps } from '../label';
 import Checkbox from './index';
 import { TooltipProps } from '../tooltip';
 
-export interface CheckboxGroupProps
-  extends Omit<LabelProps, 'children' | 'onChange'> {
+export interface CheckboxGroupProps extends Omit<
+  LabelProps,
+  'children' | 'onChange'
+> {
   label: string;
   value: string[];
   options: string[];

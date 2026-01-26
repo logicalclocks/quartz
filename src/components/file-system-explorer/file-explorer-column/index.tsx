@@ -5,8 +5,10 @@ import FolderItemExplorer from '../folder';
 import FileItemExplorer from '../file-item-explorer/FileItemExplorer';
 import { FileExplorData, FileExplorerMode } from '../types';
 
-export interface FileExplorerColumnProps
-  extends Omit<BoxProps, 'css' | 'action'> {
+export interface FileExplorerColumnProps extends Omit<
+  BoxProps,
+  'css' | 'action'
+> {
   items: FileExplorData[];
   setColumns?: any;
   mode?: FileExplorerMode;

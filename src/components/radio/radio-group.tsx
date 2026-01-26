@@ -10,8 +10,10 @@ export type RadioGroupOption<T = string> = RadioProps & {
   key: T;
   text: string;
 };
-export interface RadioGroupProps<T = string>
-  extends Omit<RadioProps, 'label' | 'onChange' | 'options' | 'value'> {
+export interface RadioGroupProps<T = string> extends Omit<
+  RadioProps,
+  'label' | 'onChange' | 'options' | 'value'
+> {
   value: T;
   options: string[] | RadioGroupOption<T>[];
   onChange: (value: T) => void;

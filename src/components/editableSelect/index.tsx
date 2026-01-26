@@ -19,11 +19,10 @@ import { useCallback, useMemo } from 'react';
 import Label from '../label';
 import Labeling from '../typography/labeling';
 
-export interface EditableSelectProps
-  extends Omit<
-    CreatableProps<Option, boolean, any>,
-    'onChange' | 'value' | 'options'
-  > {
+export interface EditableSelectProps extends Omit<
+  CreatableProps<Option, boolean, any>,
+  'onChange' | 'value' | 'options'
+> {
   label?: string;
   width?: string;
   value: string[];

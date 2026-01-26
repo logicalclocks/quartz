@@ -9,8 +9,10 @@ import {
 // Styles
 import styles, { cardHeaderStyles } from './card-secondary.styles';
 
-export interface CardSecondaryProps
-  extends Omit<RebassCardProps, 'css' | 'title'> {
+export interface CardSecondaryProps extends Omit<
+  RebassCardProps,
+  'css' | 'title'
+> {
   title?: React.ReactElement | string;
   children: React.ReactNode;
   placeholder?: string;

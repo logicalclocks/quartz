@@ -3,8 +3,10 @@ import Callout, { CalloutTypes } from '../callout';
 import { Button } from '../button';
 import variants from '../../theme/callout/index';
 
-export interface ICalloutWithButtonProps
-  extends Omit<FlexProps, 'content' | 'css' | 'onClick'> {
+export interface ICalloutWithButtonProps extends Omit<
+  FlexProps,
+  'content' | 'css' | 'onClick'
+> {
   buttonContent?: string | JSX.Element;
   content: string;
   type: CalloutTypes;

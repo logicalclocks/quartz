@@ -14,8 +14,10 @@ import {
   ModalHeaderProps,
 } from '@chakra-ui/react';
 
-export interface PopupProps
-  extends Omit<ModalProps, 'title' | 'closeOnOverlayClick' | 'children'> {
+export interface PopupProps extends Omit<
+  ModalProps,
+  'title' | 'closeOnOverlayClick' | 'children'
+> {
   title?: React.ReactNode;
   children?: React.ReactNode;
   footer?: React.ReactNode;

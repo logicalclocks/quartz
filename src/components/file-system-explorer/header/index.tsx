@@ -3,8 +3,10 @@ import { Box, BoxProps, Flex } from 'rebass';
 // Styles
 import style from './file-explorer-header.styles';
 
-export interface FileExplorerHeaderProps
-  extends Omit<BoxProps, 'css' | 'action'> {
+export interface FileExplorerHeaderProps extends Omit<
+  BoxProps,
+  'css' | 'action'
+> {
   shortcutActions?: React.ReactNode;
   title?: string;
 }
