@@ -1,3 +1,10 @@
+# [5.12.0](https://github.com/logicalclocks/quartz/compare/v5.11.0...v5.12.0) (2026-01-26)
+
+
+### Features
+
+* **card:** make style customizable through passing sx property ([#817](https://github.com/logicalclocks/quartz/issues/817)) ([30b9976](https://github.com/logicalclocks/quartz/commit/30b9976fff8914c6c200510c676eb699ec2a57cd))
+
 # [5.11.0](https://github.com/logicalclocks/quartz/compare/v5.10.0...v5.11.0) (2026-01-21)
 
 
