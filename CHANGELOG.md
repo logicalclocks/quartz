@@ -1,3 +1,10 @@
+## [5.12.1](https://github.com/logicalclocks/quartz/compare/v5.12.0...v5.12.1) (2026-01-26)
+
+
+### Performance Improvements
+
+* **packages:** Upgrade dependencies and fix audit ([#818](https://github.com/logicalclocks/quartz/issues/818)) ([863cd3a](https://github.com/logicalclocks/quartz/commit/863cd3ae2544ee1e2624871dc916a881ffe17c14))
+
 # [5.12.0](https://github.com/logicalclocks/quartz/compare/v5.11.0...v5.12.0) (2026-01-26)
 
 
