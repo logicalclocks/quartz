@@ -71,7 +71,7 @@
     "@uiw/codemirror-theme-darcula": "^4.24.2",
     "@uiw/react-codemirror": "^4.24.2",
     "chakra-react-select": "^4.10.1",
-    "date-fns": "^3.6.0",
+    "date-fns": "^4.1.0",
     "emotion-theming": "^10.3.0",
     "ramda": "^0.28.0",
     "react-datepicker": "^6.9.0",
