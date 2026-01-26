@@ -21,7 +21,7 @@ export default defineConfig({
       formats: ['es'],
     },
     rollupOptions: {
-      external: ['react', 'react-dom', 'react-router-dom', '@codemirror/lang-jinja'],
+      external: ['react', 'react-dom', 'react-router-dom'],
     },
   },
 });
