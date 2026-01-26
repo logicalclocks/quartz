@@ -1,3 +1,4 @@
+import * as R from 'ramda';
 import { memo, useRef } from 'react';
 import { Box, Card as RebassCard, CardProps as RebassCardProps } from 'rebass';
 
@@ -27,6 +28,7 @@ const Card = ({
   maxHeight,
   readOnly,
   contentProps,
+  sx = {},
   withoutShadow = true,
   expandable = false,
   ...props
@@ -49,7 +51,7 @@ const Card = ({
       tx="variants"
       variant={readOnly ? 'readOnly' : 'card'}
       maxHeight={realHeight}
-      sx={styles}
+      sx={R.mergeRight(styles as object, sx as object)}
     >
       {/* Header */}
       {isShowHeader && (
