@@ -36,8 +36,10 @@ const createCompletions =
     };
   };
 
-export interface CodeInputProps
-  extends Omit<BoxProps, 'children' | 'onChange'> {
+export interface CodeInputProps extends Omit<
+  BoxProps,
+  'children' | 'onChange'
+> {
   label?: string;
   value: string;
   mode: 'json' | 'javascript' | 'yaml' | 'python' | 'sql';

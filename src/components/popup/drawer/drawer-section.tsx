@@ -6,8 +6,10 @@ import Labeling from '../../typography/labeling';
 // Types
 import Action from '../../action.type';
 
-export interface DrawerSectionProps
-  extends Omit<BoxProps, 'css' | 'title' | 'action'> {
+export interface DrawerSectionProps extends Omit<
+  BoxProps,
+  'css' | 'title' | 'action'
+> {
   title: string;
   action?: Action<React.MouseEvent<HTMLButtonElement>>;
   children?: React.ReactNode;

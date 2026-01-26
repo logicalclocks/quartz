@@ -43,7 +43,11 @@ const Header = ({
     {/* Right Section  */}
     <Box sx={rightSectionStyles}>
       {/*  Actions */}
-      <Box>{actions?.map((action) => <span>{action}</span>)}</Box>
+      <Box>
+        {actions?.map((action) => (
+          <span>{action}</span>
+        ))}
+      </Box>
 
       {/* User */}
       <Box

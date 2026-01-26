@@ -24,8 +24,10 @@ import Label from '../../label';
 import { TableCellType, TableRowComponent } from '../type';
 import { GetIcon, IconName } from '../../icon';
 
-export interface Props<T>
-  extends Omit<TableOptions<T>, 'getCoreRowModel' | 'enablePinning'> {
+export interface Props<T> extends Omit<
+  TableOptions<T>,
+  'getCoreRowModel' | 'enablePinning'
+> {
   updateData?: TableMeta<T>['updateData'];
   onDeleteRow?: (rowIndex: number) => void;
   hasFreezeButton?: boolean;

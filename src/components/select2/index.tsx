@@ -24,8 +24,10 @@ import useDropdown from '../../utils/useDropdown';
 import { GetIcon, IconName } from '../icon';
 import DropdownWrapper from '../dropdown-wrapper/DropdownWrapper';
 
-export interface Select2Props
-  extends Omit<LabelProps, 'onChange' | 'children' | 'value'> {
+export interface Select2Props extends Omit<
+  LabelProps,
+  'onChange' | 'children' | 'value'
+> {
   // Value of the select. Needs to match one of the keys of the options.
   // Array if isMulti
   value: (string | number) | (string | number)[];

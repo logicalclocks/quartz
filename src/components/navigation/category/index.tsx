@@ -7,8 +7,10 @@ import styles from './navigation-category.styles';
 import NavigationContext from '../context/navigation.context';
 import { NavigationItemProps } from '../types';
 
-export interface NavigationCategoryProps
-  extends Omit<NavigationItemProps, 'isSubItem'> {
+export interface NavigationCategoryProps extends Omit<
+  NavigationItemProps,
+  'isSubItem'
+> {
   onBackClick?: () => void;
   hideBack?: boolean;
 }

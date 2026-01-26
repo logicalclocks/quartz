@@ -9,8 +9,10 @@ import { Intents } from '../intents';
 import { SelectOpt } from './types';
 import { GetIcon, IconName } from '../icon';
 
-export interface SelectLabelProps
-  extends Omit<BoxProps, 'css' | 'onChange' | 'value'> {
+export interface SelectLabelProps extends Omit<
+  BoxProps,
+  'css' | 'onChange' | 'value'
+> {
   variant: 'primary' | 'white' | 'disabled';
   placeholder: string;
   value: SelectOpt[];

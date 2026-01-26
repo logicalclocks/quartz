@@ -16,8 +16,10 @@ import { ActiveFile, FileExplorData, FileExplorerMode } from './types';
 // Styles
 import styles from './file-system-explorer.styles';
 
-export interface FileSystemExplorerProps
-  extends Omit<RebassCardProps, 'css' | 'title' | 'data'> {
+export interface FileSystemExplorerProps extends Omit<
+  RebassCardProps,
+  'css' | 'title' | 'data'
+> {
   title?: string;
   mode?: FileExplorerMode;
   data: FileExplorData[][];
