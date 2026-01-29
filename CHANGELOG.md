@@ -1,3 +1,10 @@
+# [5.13.0](https://github.com/logicalclocks/quartz/compare/v5.12.3...v5.13.0) (2026-01-29)
+
+
+### Features
+
+* **popup:** add expandable property with full-screen toggle ([#824](https://github.com/logicalclocks/quartz/issues/824)) ([dc6d53e](https://github.com/logicalclocks/quartz/commit/dc6d53ebab26fee93d2e08c667edbf34fa7abf5c))
+
 ## [5.12.3](https://github.com/logicalclocks/quartz/compare/v5.12.2...v5.12.3) (2026-01-27)
 
 ## [5.12.2](https://github.com/logicalclocks/quartz/compare/v5.12.1...v5.12.2) (2026-01-27)
