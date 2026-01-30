@@ -1,3 +1,10 @@
+## [5.13.2](https://github.com/logicalclocks/quartz/compare/v5.13.1...v5.13.2) (2026-01-30)
+
+
+### Bug Fixes
+
+* **popup:** fix order of props ([#827](https://github.com/logicalclocks/quartz/issues/827)) ([29f3bb4](https://github.com/logicalclocks/quartz/commit/29f3bb49fd95812bd3aa5e0a995e511e73d13eeb))
+
 ## [5.13.1](https://github.com/logicalclocks/quartz/compare/v5.13.0...v5.13.1) (2026-01-29)
 
 # [5.13.0](https://github.com/logicalclocks/quartz/compare/v5.12.3...v5.13.0) (2026-01-29)
