@@ -109,6 +109,11 @@ const Popup = ({
   title,
   children,
   footer,
+  overlayProps,
+  contentProps,
+  headerProps,
+  bodyProps,
+  footerProps,
   size = 'sm',
   hasBackdrop = true,
   isOpen = false,
@@ -116,11 +121,6 @@ const Popup = ({
   onClose = () => {},
   hasCloseButton = false,
   expandable = false,
-  overlayProps,
-  contentProps,
-  headerProps,
-  bodyProps,
-  footerProps,
   scrollBehavior = 'inside',
   ...props
 }: PopupProps) => {
