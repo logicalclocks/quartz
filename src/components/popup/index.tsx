@@ -14,7 +14,7 @@ import {
   ModalHeaderProps,
   IconButton,
 } from '@chakra-ui/react';
-import { useState, useMemo, useCallback } from 'react';
+import { useState, useCallback } from 'react';
 import { GetIcon, IconName } from '../icon';
 
 /**
@@ -61,6 +61,8 @@ export interface PopupProps extends Omit<
   bodyProps?: ModalBodyProps;
   /** Props passed to the ModalFooter component */
   footerProps?: ModalFooterProps;
+  /** Scroll behavior for the modal content @default 'inside' */
+  scrollBehavior?: 'inside' | 'outside';
   /** @deprecated Use CSS positioning instead */
   left?: string;
   /** @deprecated Use CSS positioning instead */
@@ -119,30 +121,20 @@ const Popup = ({
   headerProps,
   bodyProps,
   footerProps,
-  scrollBehavior = "inside",
+  scrollBehavior = 'inside',
   ...props
 }: PopupProps) => {
   const [isExpanded, setIsExpanded] = useState(false);
 
-  const scrollBehavior_ = isExpanded ? "inside" : scrollBehavior
+  const currentSize = isExpanded ? 'full' : size;
 
-  // Memoize the current modal size to avoid recalculation on every render
-  const currentSize = useMemo(
-    () => (isExpanded ? 'full' : size),
-    [isExpanded, size],
-  );
+  const currentScrollBehavior = isExpanded ? 'inside' : scrollBehavior;
 
-  // Memoize the icon selection to avoid recalculating on every render
-  const expandIcon = useMemo(
-    () => (isExpanded ? IconName.arrows_minimize : IconName.arrows_maximize),
-    [isExpanded],
-  );
+  const expandIcon = isExpanded
+    ? IconName.arrows_minimize
+    : IconName.arrows_maximize;
 
-  // Memoize the aria-label to avoid string recreation on every render
-  const expandAriaLabel = useMemo(
-    () => (isExpanded ? 'Minimize' : 'Expand to full screen'),
-    [isExpanded],
-  );
+  const expandAriaLabel = isExpanded ? 'Minimize' : 'Expand to full screen';
 
   // Memoize the expand button click handler
   const handleExpandToggle = useCallback(() => {
@@ -155,7 +147,7 @@ const Popup = ({
       onClose={onClose}
       size={currentSize}
       closeOnOverlayClick={closeOnBackdropClick}
-      scrollBehavior={scrollBehavior_}
+      scrollBehavior={currentScrollBehavior}
       isCentered
       {...props}
     >
