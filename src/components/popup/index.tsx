@@ -119,9 +119,12 @@ const Popup = ({
   headerProps,
   bodyProps,
   footerProps,
+  scrollBehavior = "inside",
   ...props
 }: PopupProps) => {
   const [isExpanded, setIsExpanded] = useState(false);
+
+  const scrollBehavior_ = isExpanded ? "inside" : scrollBehavior
 
   // Memoize the current modal size to avoid recalculation on every render
   const currentSize = useMemo(
@@ -152,7 +155,7 @@ const Popup = ({
       onClose={onClose}
       size={currentSize}
       closeOnOverlayClick={closeOnBackdropClick}
-      scrollBehavior="inside"
+      scrollBehavior={scrollBehavior_}
       isCentered
       {...props}
     >
