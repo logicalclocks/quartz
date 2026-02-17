@@ -132,7 +132,7 @@ const CodeSnippet = ({
       variant="code"
       sx={{
         p: 0,
-        '*': { fontFamily: 'IBM Plex Mono' },
+        '*': { fontFamily: 'IBM Plex Mono', fontSize: 'small' },
       }}
       {...props}
     >
