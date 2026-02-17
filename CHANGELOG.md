@@ -1,3 +1,10 @@
+## [5.13.3](https://github.com/logicalclocks/quartz/compare/v5.13.2...v5.13.3) (2026-02-17)
+
+
+### Bug Fixes
+
+* **code/codeinput:** set font-family to "IBM Plex Mono" ([#834](https://github.com/logicalclocks/quartz/issues/834)) ([9783f64](https://github.com/logicalclocks/quartz/commit/9783f648fa2ae6e4fe41dc69c97d0e96fd98ce90))
+
 ## [5.13.2](https://github.com/logicalclocks/quartz/compare/v5.13.1...v5.13.2) (2026-01-30)
 
 
