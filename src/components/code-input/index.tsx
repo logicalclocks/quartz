@@ -105,7 +105,7 @@ const CodeInput = forwardRef(
         >
           <Box
             sx={{
-              '*': { fontFamily: 'inherit' },
+              '*': { fontFamily: 'IBM Plex Mono' },
             }}
           >
             <CodeMirror
