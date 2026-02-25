@@ -418,6 +418,89 @@ The project uses GitHub Actions for:
 
 Tests run on every PR and must pass before merging.
 
+## Claude Code Development Planning
+
+### Feature Planning Documentation
+
+When developing new features or major changes with Claude Code, always create a comprehensive plan document in the `.claude/plans/` directory. This ensures:
+
+1. **Structured Approach**: Clear planning before implementation
+2. **Documentation**: Permanent record of design decisions and rationale
+3. **Collaboration**: Easy reference for team members and future development
+4. **Progress Tracking**: Milestone-based development with clear deliverables
+
+#### Planning Directory Structure
+
+```
+.claude/
+└── plans/
+    ├── feature-name-implementation.md
+    ├── component-migration-strategy.md
+    ├── architecture-refactor.md
+    └── ...
+```
+
+#### Required Plan Contents
+
+Each feature plan should include:
+
+- **Overview**: Brief description and goals
+- **Current State Analysis**: What exists today
+- **Implementation Strategy**: Detailed approach and architecture
+- **Phase Breakdown**: Step-by-step implementation timeline
+- **Testing Strategy**: How to validate the changes
+- **Risk Mitigation**: Potential issues and solutions
+- **Success Metrics**: How to measure completion
+
+#### Plan Template
+
+```markdown
+# [Feature Name]: [Brief Description]
+
+> **Status**: [Planning/In Progress/Complete]  
+> **Created**: [Date]  
+> **Author**: Claude Code  
+> **Branch**: [feature-branch-name]  
+
+## Overview
+[Brief description and goals]
+
+## Current State Analysis
+[What exists today, pain points, requirements]
+
+## Implementation Strategy
+[Detailed approach, architecture decisions]
+
+## Phase Breakdown
+**Phase 1: [Name]**
+- [ ] Task 1
+- [ ] Task 2
+
+**Phase 2: [Name]**
+- [ ] Task 3
+- [ ] Task 4
+
+## Testing Strategy
+[How to validate changes]
+
+## Risk Mitigation
+[Potential issues and solutions]
+
+## Success Metrics
+[How to measure completion]
+```
+
+#### Example Usage
+
+Before implementing major features like:
+- Component library migrations
+- New component development
+- Architecture refactoring
+- Testing framework changes
+- Build system updates
+
+Always create a plan in `.claude/plans/[feature-name].md` following the template above.
+
 ## Resources
 
 - [Storybook Documentation](https://storybook.js.org/docs)
