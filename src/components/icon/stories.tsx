@@ -73,7 +73,7 @@ const allIcons = Object.values(IconName);
 export const GetIcon: StoryObj<typeof GetIconComponent> = {
   args: {
     color: 'black',
-    size: 'lg',
+    size: 'xl',
   },
   render: (props) => {
     const [copiedIcon, setCopiedIcon] = useState('');
@@ -134,11 +134,12 @@ export const LucideIcons: StoryObj<typeof GetIconComponent> = {
   },
   render: (props) => {
     const lucideIcons = getLucideMappedIcons();
-    
+
     return (
       <Box>
         <Labeling mb={3}>
-          Icons using Lucide React ({lucideIcons.length} icons) - Modern, tree-shakable icons
+          Icons using Lucide React ({lucideIcons.length} icons) - Modern,
+          tree-shakable icons
         </Labeling>
         <Flex flexWrap="wrap" sx={{ gap: '10px' }}>
           {lucideIcons.map((icon) => (
@@ -148,10 +149,7 @@ export const LucideIcons: StoryObj<typeof GetIconComponent> = {
               mainText={IconName[icon]}
               secondaryText="Lucide icon"
             >
-              <GetIconComponent
-                {...props}
-                icon={icon}
-              />
+              <GetIconComponent {...props} icon={icon} />
             </Tooltip>
           ))}
         </Flex>
@@ -169,16 +167,17 @@ export const CustomIcons: StoryObj<typeof GetIconComponent> = {
     // Show a sample of custom icons that are implemented
     const implementedCustomIcons = [
       IconName.hopworks,
-      IconName.jupyter, 
+      IconName.jupyter,
       IconName.fg,
       IconName.td,
-      IconName.sc
+      IconName.sc,
     ];
-    
+
     return (
       <Box>
         <Labeling mb={3}>
-          Custom SVG Icons (Platform & Domain Specific) - Sample of {CUSTOM_ICON_NAMES.length} total custom icons
+          Custom SVG Icons (Platform & Domain Specific) - Sample of{' '}
+          {CUSTOM_ICON_NAMES.length} total custom icons
         </Labeling>
         <Flex flexWrap="wrap" sx={{ gap: '10px' }}>
           {implementedCustomIcons.map((icon) => (
@@ -188,10 +187,7 @@ export const CustomIcons: StoryObj<typeof GetIconComponent> = {
               mainText={IconName[icon]}
               secondaryText="Custom SVG"
             >
-              <GetIconComponent
-                {...props}
-                icon={icon}
-              />
+              <GetIconComponent {...props} icon={icon} />
             </Tooltip>
           ))}
         </Flex>
@@ -213,32 +209,44 @@ export const IconComparison: StoryObj<typeof GetIconComponent> = {
       IconName.download,
       IconName.terminal,
     ];
-    
+
     const sampleCustomIcons = [
       IconName.hopworks,
       IconName.jupyter,
       IconName.fg,
     ];
-    
+
     return (
       <Box>
         <Flex flexDirection="column" sx={{ gap: '20px' }}>
           <Box>
-            <Labeling mb={2}>Lucide Icons (Tree-shakable, consistent design)</Labeling>
+            <Labeling mb={2}>
+              Lucide Icons (Tree-shakable, consistent design)
+            </Labeling>
             <Flex sx={{ gap: '15px' }}>
               {sampleLucideIcons.map((icon) => (
-                <Tooltip key={icon} mainText={IconName[icon]} secondaryText="Lucide">
+                <Tooltip
+                  key={icon}
+                  mainText={IconName[icon]}
+                  secondaryText="Lucide"
+                >
                   <GetIconComponent {...props} icon={icon} />
                 </Tooltip>
               ))}
             </Flex>
           </Box>
-          
+
           <Box>
-            <Labeling mb={2}>Custom Icons (Platform-specific, domain-specific)</Labeling>
+            <Labeling mb={2}>
+              Custom Icons (Platform-specific, domain-specific)
+            </Labeling>
             <Flex sx={{ gap: '15px' }}>
               {sampleCustomIcons.map((icon) => (
-                <Tooltip key={icon} mainText={IconName[icon]} secondaryText="Custom SVG">
+                <Tooltip
+                  key={icon}
+                  mainText={IconName[icon]}
+                  secondaryText="Custom SVG"
+                >
                   <GetIconComponent {...props} icon={icon} />
                 </Tooltip>
               ))}

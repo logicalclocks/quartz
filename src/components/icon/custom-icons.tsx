@@ -11,7 +11,6 @@ export function getCustomIcon(
   color: string,
   size: string,
 ): ReactElement<any, any> | null {
-  
   switch (iconName) {
     // Platform-specific icons
     case IconName.hopworks:
@@ -138,7 +137,7 @@ export function getCustomIcon(
 
     // Add more custom icons as needed...
     // For now, we'll add a few key ones and can expand later
-    
+
     default:
       // If no custom icon is found, return null
       // This will cause GetIcon to fall back to the original getIcon function
@@ -156,12 +155,12 @@ export const CUSTOM_ICON_NAMES: IconName[] = [
   IconName.jupyter,
   IconName.airflow,
   IconName.tensorflow,
-  IconName.rstudio, 
+  IconName.rstudio,
   IconName.grafana,
   IconName.kafka,
   IconName.k8s,
   IconName.python,
-  
+
   // Domain-specific (Hopsworks business logic)
   IconName.fg,
   IconName.td,
@@ -175,7 +174,7 @@ export const CUSTOM_ICON_NAMES: IconName[] = [
   IconName.deployments,
   IconName.models,
   IconName.datasets,
-  
+
   // Custom variants with specific styling
   IconName.arrow_down_filled,
   IconName.arrow_up_down,
@@ -200,6 +199,6 @@ export const CUSTOM_ICON_NAMES: IconName[] = [
   IconName.sharedFrom,
   IconName.sharedWith,
   IconName.lines,
-  
+
   // Will be populated as we implement more custom icons
 ];

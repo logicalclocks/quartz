@@ -1,17 +1,13 @@
-import { LucideIcon } from 'lucide-react';
-import { IconName } from './list';
-
 // Import Lucide icons for the mappings
-import { 
+import {
+  LucideIcon,
   Home,
   Terminal,
   Plus,
   Database,
   Settings,
+  ArrowBigLeft,
   ArrowLeft,
-  ArrowRight,
-  ArrowUp,
-  ArrowDown,
   ChevronsLeft,
   ChevronsRight,
   Maximize,
@@ -33,33 +29,43 @@ import {
   Eye,
   Lock,
   Loader,
-  UserCircle,
   User,
   Cpu,
-  HardDrive,
-  Zap,
   AlertTriangle,
-  AlertCircle,
   Info,
-  CheckCircle,
-  FileText,
   FileCode,
   Image,
-  Archive,
   Clock,
   History,
   BarChart3,
-  CreditCard,
   Search,
   Target,
   X,
-  MoreHorizontal,
   Paperclip,
-  Expand,
   PinIcon as Pin,
-  Star,
-  Bookmark
+  Sprout,
+  PinOff,
+  StretchHorizontal,
+  ChevronLeft,
+  ChevronRight,
+  ChevronUp,
+  ChevronDown,
+  CircleX,
+  MoreVertical,
+  MemoryStick,
+  Ban,
+  FileBraces,
+  FolderArchive,
+  FolderClosed,
+  MessageCircle,
+  UnfoldVertical,
+  FoldVertical,
+  Gpu,
+  Check,
+  CheckCheck,
 } from 'lucide-react';
+
+import { IconName } from './list';
 
 /**
  * Mapping of IconName enum values to Lucide React icon components
@@ -68,17 +74,17 @@ import {
 export const LUCIDE_ICON_MAP: Record<string, LucideIcon> = {
   // Navigation & Layout
   [IconName.home]: Home,
-  [IconName.back]: ArrowLeft,
-  [IconName.arrow_left]: ArrowLeft,
-  [IconName.arrow_right]: ArrowRight,
-  [IconName.arrow_up]: ArrowUp,
-  [IconName.arrow_down]: ArrowDown,
+  [IconName.back]: ArrowBigLeft,
+  [IconName.arrow_left]: ChevronLeft,
+  [IconName.arrow_right]: ChevronRight,
+  [IconName.arrow_up]: ChevronUp,
+  [IconName.arrow_down]: ChevronDown,
   [IconName.arrow_left_double]: ChevronsLeft,
   [IconName.arrow_right_double]: ChevronsRight,
   [IconName.arrows_maximize]: Maximize,
   [IconName.arrows_minimize]: Minimize,
-  [IconName.expand]: Expand,
-  [IconName.minimise]: Minimize,
+  [IconName.expand]: UnfoldVertical,
+  [IconName.minimise]: FoldVertical,
   [IconName.left]: ArrowLeft,
 
   // Actions & Controls
@@ -92,12 +98,14 @@ export const LUCIDE_ICON_MAP: Record<string, LucideIcon> = {
   [IconName.stop]: Square,
   [IconName.bin]: Trash2,
   [IconName.cross]: X,
-  [IconName.more]: MoreHorizontal,
+  [IconName.more]: MoreVertical,
   [IconName.attachment]: Paperclip,
+  [IconName.contact]: MessageCircle,
 
   // Data & Storage
   [IconName.db]: Database,
   [IconName.folder]: Folder,
+  [IconName.dataset]: FolderClosed,
   [IconName.file]: File,
   [IconName.table]: Table,
   [IconName.list]: List,
@@ -109,27 +117,27 @@ export const LUCIDE_ICON_MAP: Record<string, LucideIcon> = {
   [IconName.eye]: Eye,
   [IconName.lock]: Lock,
   [IconName.loading]: Loader,
-  [IconName.contact]: UserCircle,
   [IconName.user_square]: User,
 
   // System & Hardware
   [IconName.terminal]: Terminal,
   [IconName.cpu]: Cpu,
-  [IconName.ram]: HardDrive,
-  [IconName.gpu]: Zap, // closest equivalent
+  [IconName.ram]: MemoryStick,
+  [IconName.gpu]: Gpu,
 
   // Status & Alerts
   [IconName.warning]: AlertTriangle,
-  [IconName.error]: AlertCircle,
+  [IconName.error]: CircleX,
   [IconName.info]: Info,
-  [IconName.validate]: CheckCircle,
+  [IconName.validate]: Check,
+  [IconName.data_validation]: CheckCheck,
   [IconName.info_block]: Info,
 
   // Files & Documents
-  [IconName.fileData]: FileText,
+  [IconName.fileData]: FileBraces,
   [IconName.filecode]: FileCode,
   [IconName.fileImage]: Image,
-  [IconName.fileZip]: Archive,
+  [IconName.fileZip]: FolderArchive,
 
   // Time & History
   [IconName.time]: Clock,
@@ -139,16 +147,15 @@ export const LUCIDE_ICON_MAP: Record<string, LucideIcon> = {
   [IconName.stats]: BarChart3,
 
   // General UI
-  [IconName.card]: CreditCard,
-  [IconName.block]: Square,
+  [IconName.card]: StretchHorizontal,
+  [IconName.block]: Ban,
   [IconName.glass]: Search,
   [IconName.target]: Target,
-  [IconName.square]: Square,
-  
+
   // Additional mappings
   [IconName.pin_empty]: Pin,
-  [IconName.favouriteEmpty]: Star,
-  [IconName.creation]: Plus // closest equivalent
+  [IconName.pin_filled]: PinOff,
+  [IconName.creation]: Sprout, // closest equivalent
 };
 
 /**
@@ -169,7 +176,7 @@ export function getLucideIcon(iconName: IconName): LucideIcon | null {
  * Get all icon names that have Lucide mappings (for testing/debugging)
  */
 export function getLucideMappedIcons(): IconName[] {
-  return Object.keys(LUCIDE_ICON_MAP) as IconName[];
+  return Object.keys(LUCIDE_ICON_MAP) as unknown as IconName[];
 }
 
 /**
@@ -181,5 +188,5 @@ export const MAPPING_STATS = {
   get mappingPercentage() {
     // Approximate based on our analysis of 110 total icons
     return Math.round((this.totalLucideMapped / 110) * 100);
-  }
+  },
 };
