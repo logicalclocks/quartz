@@ -1,7 +1,8 @@
 # Icon Migration Plan: SVG to Lucide Icons
 
-> **Status**: Planning Phase  
+> **Status**: Phase 3 Complete - Direct LucideIcon Support Added  
 > **Created**: 2026-02-25  
+> **Updated**: 2026-02-26  
 > **Author**: Claude Code  
 > **Branch**: migrate-icons-to-lucide  
 
@@ -455,4 +456,94 @@ test('Custom icons still work', async ({ mount }) => {
 
 ---
 
-**Next Steps**: Begin Phase 1 implementation with dependency installation and infrastructure setup.
+## ✅ Recent Updates: Direct LucideIcon Support
+
+### Completed: Simplified LucideIcon Component
+
+**Date**: 2026-02-26  
+**Status**: ✅ Complete  
+
+#### Changes Made
+
+1. **Simplified LucideIcon Component**: 
+   - Removed string-based icon lookup (e.g., `icon="Home"`)
+   - Now only accepts Lucide icon components directly (e.g., `icon={Home}`)
+   - Maximum tree-shaking benefits - only imported icons are bundled
+   - Updated from default export to named export for consistency
+
+2. **Component Interface**:
+   ```typescript
+   // Before (supported both strings and components)
+   <LucideIcon icon="Home" color="primary" size="lg" />
+   <LucideIcon icon={Home} color="primary" size="lg" />
+
+   // Now (only components for maximum tree-shaking)
+   import { Home, Database, Settings } from 'lucide-react';
+   <LucideIcon icon={Home} color="primary" size="lg" />
+   <LucideIcon icon={Database} color="labels.blue" size="xl" />
+   ```
+
+3. **Benefits Achieved**:
+   - **Perfect Tree-Shaking**: Only imported Lucide icons are bundled
+   - **Direct Lucide Usage**: Import any icon directly from lucide-react
+   - **Simplified Implementation**: Removed complex string mapping logic
+   - **Future-Proof**: Automatically supports new Lucide icons
+   - **Consistent Theming**: Maintains full Quartz color/size system
+
+4. **Backward Compatibility**:
+   - ✅ `GetIcon` component unchanged - existing usage still works
+   - ✅ `IconName` enum preserved for existing mapped icons
+   - ✅ Custom icons (hopworks, jupyter, etc.) still work via GetIcon
+
+#### Usage Patterns
+
+**For existing mapped icons** (recommended approach):
+```typescript
+import { GetIcon, IconName } from '@logicalclocks/quartz';
+<GetIcon icon={IconName.home} color="primary" size="lg" />
+```
+
+**For direct Lucide access** (new capability):
+```typescript
+import { LucideIcon } from '@logicalclocks/quartz';
+import { BarChart3, TrendingUp, Users, Calendar } from 'lucide-react';
+
+<LucideIcon icon={BarChart3} color="labels.blue" size="lg" />
+<LucideIcon icon={TrendingUp} color="labels.green" size="md" />
+```
+
+#### Technical Implementation
+
+**Updated LucideIcon Component**:
+```typescript
+export interface LucideIconProps extends Omit<BoxProps, 'css' | 'color'> {
+  icon: LucideIconType;  // Only accepts Lucide components
+  color?: Color;
+  size?: IconSizes;
+  lucideProps?: Omit<LucideProps, 'color' | 'size'>;
+}
+
+export const LucideIcon = ({
+  icon: IconComponent,  // Direct component reference
+  color = 'black',
+  size = 'lg',
+  lucideProps = {},
+  ...props
+}: LucideIconProps) => {
+  // Apply Quartz theming to Lucide component
+  // No string mapping or lookup needed
+};
+```
+
+**Impact on Migration Plan**:
+- ✅ Phases 1-3 infrastructure is complete and working
+- ✅ Direct Lucide access now available via LucideIcon component  
+- ✅ GetIcon continues to use lucide-mappings.ts for backward compatibility
+- 📋 Remaining work: Complete custom icon extraction (Phase 3-4)
+
+---
+
+**Next Steps**: 
+1. Continue with Phase 4-5 to complete custom icon extraction
+2. Consider promoting LucideIcon usage for new components
+3. Evaluate gradual migration of existing GetIcon usage to LucideIcon where appropriate
