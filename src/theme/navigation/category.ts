@@ -8,10 +8,6 @@ export default {
 
     svg: {
       mr: '11px',
-
-      path: {
-        fill: 'black',
-      },
     },
   },
 

@@ -63,6 +63,7 @@ import {
   Gpu,
   Check,
   CheckCheck,
+  DatabaseSearch,
 } from 'lucide-react';
 
 import { IconName } from './list';
@@ -111,6 +112,7 @@ export const LUCIDE_ICON_MAP: Record<string, LucideIcon> = {
   [IconName.list]: List,
   [IconName.server]: Server,
   [IconName.cloud]: Cloud,
+  [IconName.dbSearch]: DatabaseSearch,
 
   // Interface Elements
   [IconName.settings]: Settings,
@@ -118,6 +120,7 @@ export const LUCIDE_ICON_MAP: Record<string, LucideIcon> = {
   [IconName.lock]: Lock,
   [IconName.loading]: Loader,
   [IconName.user_square]: User,
+  [IconName.sc]: Database,
 
   // System & Hardware
   [IconName.terminal]: Terminal,

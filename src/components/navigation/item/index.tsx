@@ -9,6 +9,7 @@ import { NavigationItemProps } from '../types';
 import Tooltip from '../../tooltip';
 import TooltipPositions from '../../tooltip/positions';
 import styles from './navigation-item.styles';
+import { GetIcon } from '../../icon';
 
 const getVariant = (isDisabled = false, isActive = false): string => {
   if (isDisabled) {
@@ -21,6 +22,7 @@ const getVariant = (isDisabled = false, isActive = false): string => {
 const NavigationItem = (props: NavigationItemProps) => {
   const { activePath, onActivate, trackBy } = useContext(NavigationContext);
   const theme = useTheme();
+  const [hovered, setHovered] = React.useState(false);
 
   const {
     // @ts-ignore
@@ -61,6 +63,12 @@ const NavigationItem = (props: NavigationItemProps) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isActive]);
 
+  const iconColor = (() => {
+    if (disabled) return 'gray';
+    if (isActiveItem || hovered) return 'primary';
+    return 'black';
+  })();
+
   const component = (
     <Box
       tx={tx}
@@ -68,6 +76,8 @@ const NavigationItem = (props: NavigationItemProps) => {
       sx={R.mergeDeepRight(styles, sx ?? {}) as object}
       onClick={!disabled ? handleClick : undefined}
       className={key === 'oldui' ? 'oldui' : ''}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
       {...restProps}
     >
       {icon && (
@@ -78,7 +88,7 @@ const NavigationItem = (props: NavigationItemProps) => {
             mainText={mainTooltipText}
             secondaryText={secondaryTooltipText}
           >
-            {icon}
+            <GetIcon icon={icon} color={iconColor} />
           </Tooltip>
         </div>
       )}

@@ -38,7 +38,7 @@ export const getIconStyle = {
   fontSize: '14px',
 };
 
-export const passwordStyles = (isShow: boolean, disabled: boolean) => ({
+export const passwordStyles = {
   border: 'none',
   right: '5px',
   position: 'absolute',
@@ -56,12 +56,5 @@ export const passwordStyles = (isShow: boolean, disabled: boolean) => ({
     height: '25px',
     border: 'none',
     backgroundColor: 'grayShade3',
-
-    svg: {
-      path: {
-        // eslint-disable-next-line no-nested-ternary
-        fill: disabled ? 'gray' : isShow ? 'primary' : 'black',
-      },
-    },
   },
-});
+};

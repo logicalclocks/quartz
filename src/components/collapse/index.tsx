@@ -59,7 +59,7 @@ const Collapse = ({
         <Flex>
           <Box>
             <GetIcon
-              color="primary"
+              color={isOpen ? 'black' : 'gray'}
               icon={isOpen ? IconName.arrow_up : IconName.arrow_down}
             />
           </Box>

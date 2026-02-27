@@ -40,10 +40,6 @@ export default (isOpen: boolean) => ({
       svg: {
         width: '16px',
         height: '16px',
-
-        path: {
-          fill: isOpen ? 'black' : 'gray',
-        },
       },
     },
   },

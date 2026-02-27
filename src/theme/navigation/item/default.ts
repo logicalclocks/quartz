@@ -4,26 +4,18 @@ export default {
 
   cursor: 'pointer',
 
-  path: {
-    fill: 'black',
-  },
-
   ':hover': {
     bg: 'grayShade3',
     color: 'primary',
-
-    path: {
-      fill: 'primary',
-    },
   },
 
   ':active': {
     bg: 'grayShade3',
     color: 'black',
+  },
 
-    path: {
-      fill: 'black',
-    },
+  'svg, svg *': {
+    transition: 'none !important',
   },
 
   '~ div': {
