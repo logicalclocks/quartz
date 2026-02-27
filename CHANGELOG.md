@@ -1,3 +1,15 @@
+# [6.0.0](https://github.com/logicalclocks/quartz/compare/v5.13.3...v6.0.0) (2026-02-27)
+
+
+### break
+
+* **icons:** Migrate icons to lucide icons and add support for using any lucide react component ([#835](https://github.com/logicalclocks/quartz/issues/835)) ([6eb8b05](https://github.com/logicalclocks/quartz/commit/6eb8b05d65902ca2730710f94737f2153ad21aba))
+
+
+### BREAKING CHANGES
+
+* **icons:** navigation items accept iconName instead of any component. \
+
 ## [5.13.3](https://github.com/logicalclocks/quartz/compare/v5.13.2...v5.13.3) (2026-02-17)
 
 
