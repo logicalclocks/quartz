@@ -21,9 +21,6 @@ const FileButton = ({
           height: '9px',
           svg: {
             mr: '11px',
-            path: {
-              fill: 'primary',
-            },
           },
         }}
       >

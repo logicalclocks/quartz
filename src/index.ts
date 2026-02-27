@@ -25,6 +25,8 @@ import FooterButton from './components/footer-button';
 import Header from './components/header';
 import { IconName, getIcon } from './components/icon/list';
 import GetIcon from './components/icon/GetIcon';
+import { LucideIcon } from './components/icon/LucideIcon';
+import { getAllLucideIconNames } from './components/icon/lucide-types';
 import { IconButton } from './components/icon-button';
 import MenuButton from './components/header/menu-button';
 import Input from './components/input';
@@ -154,6 +156,8 @@ export {
   IconName,
   getIcon,
   GetIcon,
+  LucideIcon,
+  getAllLucideIconNames,
   IconButton,
   MenuButton,
   Input,
@@ -288,6 +292,8 @@ export type { CardHeaderProps } from './components/card-header';
 export type { FileSystemExplorerProps } from './components/file-system-explorer';
 export type { FileExplorData } from './components/file-system-explorer/types';
 export type { GetIconProps } from './components/icon/GetIcon';
+export type { LucideIconProps } from './components/icon/LucideIcon';
+export type { LucideIconName, IconProp } from './components/icon/lucide-types';
 export type { RadioProps } from './components/radio';
 export type { ToggleProps } from './components/toggle';
 export type { DropdownButtonProps } from './components/dropdown-button';

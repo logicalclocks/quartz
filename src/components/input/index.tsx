@@ -106,13 +106,20 @@ const Input = forwardRef(
               onMouseDown={() => setIsShow(true)}
               onMouseUp={() => setIsShow(false)}
               onMouseOut={() => setIsShow(false)}
-              sx={passwordStyles(isShowPassword, !props.value)}
+              sx={passwordStyles}
             >
               <Tooltip
                 mainText="show password"
                 position={TooltipPositions.right}
               >
-                <GetIcon icon={IconName.eye} size="lg" />
+                <GetIcon
+                  icon={IconName.eye}
+                  size="lg"
+                  color={
+                    // eslint-disable-next-line no-nested-ternary
+                    !props.value ? 'gray' : isShowPassword ? 'primary' : 'black'
+                  }
+                />
               </Tooltip>
             </Box>
           )}

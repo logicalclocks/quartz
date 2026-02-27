@@ -11,16 +11,10 @@ export const loaderCross = (isLoading: boolean) => ({
       ? {
           width: '16px',
           height: '16px',
-          path: {
-            fill: 'black',
-          },
         }
       : {
           width: '20px',
           height: '20px',
-          path: {
-            fill: 'black',
-          },
         }),
   },
 });

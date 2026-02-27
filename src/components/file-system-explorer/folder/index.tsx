@@ -68,11 +68,6 @@ const FolderExplorer = ({
           minWidth: '16px',
           minHeight: '16px',
           marginRight: '9px',
-          svg: {
-            path: {
-              fill: 'black',
-            },
-          },
         }}
       >
         <GetIcon color="primary" size="sm" icon={IconName.folder} />

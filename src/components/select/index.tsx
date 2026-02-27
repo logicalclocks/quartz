@@ -200,10 +200,6 @@ const Select = ({
                         svg: {
                           width: '14px',
                           height: '14px',
-
-                          path: {
-                            fill: 'gray',
-                          },
                         },
                         zIndex: 1,
                       }}

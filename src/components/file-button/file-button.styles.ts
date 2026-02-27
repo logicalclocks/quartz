@@ -40,10 +40,5 @@ export const inputBox = {
   height: '15px',
   overflow: 'hidden',
   display: 'inline-block',
-  svg: {
-    mr: '11px',
-    path: {
-      fill: 'primary',
-    },
-  },
+  mr: '11px',
 };

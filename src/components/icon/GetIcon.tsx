@@ -3,6 +3,8 @@ import { BoxProps, Flex } from 'rebass';
 import { useTheme } from '../../theme/theme';
 import { Color, IconSizes } from '../../theme/types';
 import { getIcon, IconName } from './list';
+import { getLucideIcon } from './lucide-mappings';
+import { getCustomIcon } from './custom-icons';
 
 export interface GetIconProps extends Omit<BoxProps, 'css' | 'color'> {
   icon: IconName;
@@ -20,6 +22,27 @@ const GetIcon = ({
   const themeColor = path<string>(split('.', color), theme.colors)!;
   const iconSize = prop(size, theme.iconSizes);
 
+  // Icon resolution priority:
+  // 1. Try Lucide icon first (modern, tree-shakable)
+  // 2. Try custom icon implementation
+  // 3. Fall back to original getIcon function
+  const LucideIcon = getLucideIcon(icon);
+  let iconElement;
+
+  if (LucideIcon) {
+    // Use Lucide React icon
+    iconElement = <LucideIcon color={themeColor} size={iconSize} />;
+  } else {
+    // Try custom icon implementation
+    const customIcon = getCustomIcon(icon, themeColor, iconSize);
+    if (customIcon) {
+      iconElement = customIcon;
+    } else {
+      // Fall back to original system for any remaining icons
+      iconElement = getIcon(icon, themeColor, iconSize);
+    }
+  }
+
   return (
     <Flex
       {...props}
@@ -33,7 +56,7 @@ const GetIcon = ({
         ...props.sx,
       }}
     >
-      {getIcon(icon, themeColor, iconSize)}
+      {iconElement}
     </Flex>
   );
 };
