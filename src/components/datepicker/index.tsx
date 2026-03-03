@@ -13,6 +13,7 @@ import styles from './datepicker.styles';
 export interface DatePickerProps extends ReactDatePickerProps {
   selectProps: Pick<SelectProps, 'variant' | 'noDataMessage' | 'value'>;
   datePickerAlign?: 'left' | 'right';
+  editable?: boolean;
   sx?: SxStyleProp;
 }
 
@@ -22,6 +23,7 @@ const getPlacement = (align: DatePickerProps['datePickerAlign']) =>
 const DatePicker = ({
   selectProps,
   datePickerAlign = 'right',
+  editable = false,
   sx,
   ...props
 }: DatePickerProps) => {
@@ -33,7 +35,13 @@ const DatePicker = ({
         onCalendarClose={() => setOpen(false)}
         shouldCloseOnSelect
         {...props}
-        customInput={<DateSelect isOpen={isOpen} selectProps={selectProps} />}
+        customInput={
+          <DateSelect
+            isOpen={isOpen}
+            selectProps={selectProps}
+            editable={editable}
+          />
+        }
         popperPlacement={getPlacement(datePickerAlign)}
       />
     </Flex>
@@ -43,7 +51,7 @@ const DatePicker = ({
 export default memo(DatePicker);
 
 const DateSelect = forwardRef(
-  ({ value, selectProps, isOpen, ...props }: any, ref: any) => (
+  ({ value, selectProps, isOpen, editable, onChange, ...props }: any, ref: any) => (
     <Flex
       ref={ref}
       alignItems="center"
@@ -68,14 +76,32 @@ const DateSelect = forwardRef(
         </Labeling>
       )}
 
-      <Value
-        mr="5px"
-        sx={{ fontSize: 'text', fontWeight: 'text', fontFamily: 'text' }}
-        flexGrow={1}
-        flexShrink={0}
-      >
-        {selectProps?.value ?? value}
-      </Value>
+      {editable ? (
+        <input
+          value={value ?? ''}
+          onChange={onChange}
+          style={{
+            flexGrow: 1,
+            minWidth: '175px',
+            marginRight: '5px',
+            border: 'none',
+            outline: 'none',
+            fontFamily: 'Inter',
+            fontSize: '12px',
+            fontWeight: 500,
+            color: '#272727',
+          }}
+        />
+      ) : (
+        <Value
+          mr="5px"
+          sx={{ fontSize: 'text', fontWeight: 'text', fontFamily: 'text' }}
+          flexGrow={1}
+          flexShrink={0}
+        >
+          {selectProps?.value ?? value}
+        </Value>
+      )}
       <GetIcon flexShrink={0} icon={IconName.arrow_up_down} size="sm" />
     </Flex>
   ),

@@ -18,6 +18,7 @@ export const DatePicker: StoryObj<typeof DatePickerComponent> = {
     showTimeSelect: true,
     dateFormat: DATE_TIME.DATE_TIME_FULL_MONTH,
     excludeTimes: [new Date()],
+    editable: true,
   },
   render: ({ selectProps, ...restProps }) => {
     const [startDate, setStartDate] = useState(new Date('2024-02-20T16:24:00'));
